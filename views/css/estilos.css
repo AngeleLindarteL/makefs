@@ -273,16 +273,11 @@ body{
     position: fixed;
     left: 150px;
     top:340px;
-    size: ;
     min-width: 363px;
     height:172px;
     border: 2px black solid;
     font-size: 20px;
     font-family: balsamiq Sans,cursive;
-    
- 
-    
-
 }
 .formulario h1{
     text-align: center;
