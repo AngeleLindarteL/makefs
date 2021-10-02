@@ -26,7 +26,7 @@ section{
 
 
 header{
-    position: sticky;
+    position: fixed;
     width: 100%;
     background-color: var(--color5);
     height: 10vh;
@@ -35,7 +35,6 @@ header{
     justify-content: center;
     z-index: 999999;
     max-height: 80px;
-    top: 0;
 }
 
 .headerContainer{
@@ -46,6 +45,8 @@ header{
     width: 33%;
     height: 100%;
 }
+
+/* FIRST HEADER DIV - BUTTON ICONS */
 
 .header_icons{
     display: flex;
@@ -59,10 +60,9 @@ header{
     margin: 3%;
 }
 
-.headicons_ico:first-child:hover{
-    cursor: pointer;
+.headicons_ico:first-child{
+    margin-right: 10%;
 }
-
 .headicons_ico img{
     object-fit: contain;
     width: 100%;
@@ -86,44 +86,6 @@ header{
     margin: 0;
     padding: 0;
 }
-#nav-menu-btn{
-    margin: 0 3%;
-    margin-right: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    position: relative;
-    overflow: hidden;
-}
-
-.nav-btn-bar{
-    width: 100%;
-    height: 20%;
-    padding: 0;
-    background-color: white;
-    margin: 5% 0;
-    transition: .2s;
-}
-
-.displayedBar .nav-btn-bar:first-child{
-    position: absolute;
-    top: 25%;
-    transform: rotate(45deg);
-}
-
-.displayedBar .nav-btn-bar:nth-child(2){
-    position: absolute;
-    opacity: 0%;
-    left: -100%;
-}
-.displayedBar .nav-btn-bar:last-child{
-    position: absolute;
-    transform: rotate(-45deg);
-    top: 25%;
-}
-
 .header_logo article h2{
     font-size: .92em;
     margin: 0;
@@ -137,6 +99,9 @@ header{
     border-radius: 50%;
 }
 
+/* THIRD HEADER DIV - REGISTER AND LOGIN BUTTONS */
+
+
 .header_logreg{
     display: flex;
     justify-content: flex-end;
@@ -145,7 +110,7 @@ header{
 }
 
 #user_selection{
-    background-color:var(--color5);
+    background-color: var(--color5);
     position: absolute;
     top: 110%;
     width: 45%;
@@ -158,14 +123,14 @@ header{
     height: 100px;
     padding: 10px;
     transition: .2s;
-    border: 2px solid var(--color5);
+    display: flex;
 }
 
 #user_selection::before{
     width: 20px;
-    height: 10px;
+    height: 20px;
     position: absolute;
-    top: -11px;
+    top: -7%;
     right: 10%;
     content: '';
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
@@ -174,8 +139,7 @@ header{
 
 .userSelectClose{
     opacity: 0;
-    right: 0%;
-    display: none;
+    right: -100%;
 }
 
 .userSelectOpen{
@@ -193,21 +157,10 @@ header{
     width: 95%;
     text-decoration: none;
     height: 50%;
-    color: white;
-    transition: .2s;
-}
-
-.headlog_btn:hover{
-    background-color: white;
-    color: var(--color5);
-}
-
-.headlog_btn:hover img{
-    filter: drop-shadow(0px 4px 0px rgb(235, 66, 66));
 }
 
 .headlog_btn p{
-    color: inherit;
+    color: white;
     text-transform: uppercase;
     text-decoration: none;
     margin: 0;
@@ -218,20 +171,12 @@ header{
     height: 90%;
     width: 15%;
     object-fit: contain;
-    filter: hue-rotate(20);
 }
 
 #userlog{
     width: 15%;
     height: 80%;
     border-radius: 50%;
-    transition: .2s;
-    transform: scale(1);
-}
-
-#userlog:hover{
-    transform: scale(1.1);
-    cursor: pointer;
 }
 
 #userlog img{
@@ -247,13 +192,16 @@ body{
 .formulario{
     background-color: #fdfafa;
     border: 2px black solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 408px;
     height: 480px;
     margin: 0 auto;
     box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    position: absolute;
-    left: 132px;
-    top: 215px;
+    position: relative;
+    left: 20%;
     text-align: center;
     font-size: 25px;
 }
@@ -263,17 +211,17 @@ body{
     height: 48px;
     margin-top: 30px;
     border: 2px black solid;
-    position: fixed;
     left: 150px;
     cursor: pointer;
 
 }
 .reportedeta{
     text-align: left;
-    position: fixed;
+    display: flex;
+    align-items: center;
     left: 150px;
     top:340px;
-    min-width: 363px;
+    width: 98%;
     height:172px;
     border: 2px black solid;
     font-size: 20px;
@@ -281,25 +229,22 @@ body{
 }
 .formulario h1{
     text-align: center;
-    width: 213px;
-    height: 24px; 
-    
-
+    margin: 25px 0 0 0;
+    padding: 0px;
+    top: 0;
+    font-size: 1em;
 }
 .boton{
 
-    width: 370px;
-    height: 90px;
-    font-size: 16px;
+    width: 80%;
+    height: 10vh;
+    margin-top: 5%;
+    font-size: 1em;
     font-family: balsamiq Sans,cursive;
-    border-style: none;
     background: #FF2C29;
     color: white;
     border: 2px black solid;
     transition: all 300ms;
-    position: fixed;
-    top:550px ;
-    left: 155px;
 }  
 .boton:hover{ 
 background-color: brown;
@@ -341,16 +286,17 @@ transition: all 300ms;
     background-color: #fdfafa;
     border: 2px black solid;
     width: 508px;
-    height: 480px;
-    margin: 0 auto;
+    height: 60vh;
     box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    position: absolute;
-    left: 828px;
-    top: 215px;
+    position: relative;
     text-align: center;
     font-size: 25px;
-     
-
+    top: 25vh;
+}
+.receta img{
+    object-fit: contain;
+    width: 100%;
+    height: 94%;
 }
 
 
