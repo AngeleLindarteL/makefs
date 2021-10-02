@@ -1,0 +1,677 @@
+/*  ----------------------------------------------------------------------------------------------------- PRECONFIGS */
+
+:root{
+    --color1: #FFBE26;
+    --color2: #E08C1D;
+    --color3: #F56A14;
+    --color4: #E03D14;
+    --color5: #FF2C29;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+section{
+    margin: auto;
+    max-width: none;
+}
+
+.makefsContainer{
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+}
+
+/* --------------------------------------------------------------------------------------------------------- HEADER  */
+
+header{
+    position: sticky;
+    width: 100%;
+    background-color: var(--color5);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    max-height: 80px;
+    top: 0;
+}
+
+.headerContainer{
+    display: flex;
+    color: white;
+}
+.headerContainer div{
+    width: 33%;
+    height: 100%;
+}
+
+/* ----------------------------------------------------------------------------------- FIRST HEADER DIV - BUTTON ICONS */
+
+.header_icons{
+    display: flex;
+    align-items: center;
+}
+
+.headicons_ico{
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    margin: 3%;
+}
+
+.headicons_ico:first-child:hover{
+    cursor: pointer;
+}
+
+.headicons_ico img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* SECOND HEADER DIV - CENTRAL LOGO*/
+
+.header_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logo article{
+    margin: 0 2%;
+    padding: 0;
+}
+.header_logo article h1{
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+#nav-menu-btn{
+    margin: 0 3%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn-bar{
+    width: 100%;
+    height: 20%;
+    padding: 0;
+    background-color: white;
+    margin: 5% 0;
+    transition: .2s;
+}
+
+.displayedBar .nav-btn-bar:first-child{
+    position: absolute;
+    top: 25%;
+    transform: rotate(45deg);
+}
+
+.displayedBar .nav-btn-bar:nth-child(2){
+    position: absolute;
+    opacity: 0%;
+    left: -100%;
+}
+.displayedBar .nav-btn-bar:last-child{
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 25%;
+}
+
+.header_logo article h2{
+    font-size: .92em;
+    margin: 0;
+    padding: 0;
+}
+
+.header_logo img{
+    width: 15%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ------------------------------------------------------------------- THIRD HEADER DIV - REGISTER AND LOGIN BUTTONS */
+
+
+
+.header_logreg{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+#user_selection{
+    background-color:var(--color5);
+    position: absolute;
+    top: 110%;
+    width: 45%;
+    padding: 0;
+    margin: 5px;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    padding: 10px;
+    transition: .2s;
+    border: 2px solid var(--color5);
+}
+
+#user_selection::before{
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    top: -11px;
+    right: 10%;
+    content: '';
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: var(--color5);
+}
+
+.userSelectClose{
+    opacity: 0;
+    right: 0%;
+    display: none;
+}
+
+.userSelectOpen{
+    opacity: 100%;
+    right: 0;
+}
+
+.headlog_btn{
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 95%;
+    text-decoration: none;
+    height: 50%;
+    color: white;
+    transition: .2s;
+}
+
+.headlog_btn:hover{
+    background-color: white;
+    color: var(--color5);
+}
+
+.headlog_btn:hover img{
+    filter: drop-shadow(0px 4px 0px rgb(235, 66, 66));
+}
+
+.headlog_btn p{
+    color: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.headlog_btn img{
+    margin: 0;
+    height: 90%;
+    width: 15%;
+    object-fit: contain;
+    filter: hue-rotate(20);
+}
+
+#userlog{
+    width: 15%;
+    height: 80%;
+    border-radius: 50%;
+    transition: .2s;
+    transform: scale(1);
+}
+
+#userlog:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#userlog img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------------------------------------------------------------------------  NAV-BAR || SEARCH BAR   */
+
+#nav-bar{
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    height: 90vh;
+    width: 18%;
+    top: 10vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 0 20px 20px rgb(0 0 0 / 8%);
+    max-width: 370px;
+    z-index: 20;
+}
+
+.searchNav{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    background-color: white;
+}
+
+.searchNav input{
+    height: 35px;
+    width: 80%;
+    border-radius: 30px;
+    border: 2px solid var(--color5);
+    color: var(--color5);
+    text-align: center;
+    transition: .2s;
+}
+
+.searchNav input:hover{
+    cursor:text;
+    background-color: var(--color5);
+    color: white;
+}
+.searchNav input:focus{
+    outline: none;
+    border-color: var(--color5);
+}
+
+.searchNav input::placeholder{
+    color: inherit;
+}
+
+.searchNav button{
+    background-color: white;
+    transition: .2s;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: 2px solid black;
+    background-image: url(./img/nav-lup-s.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(0);
+    border-color: var(--color5);
+}
+
+.searchNav button:hover{
+    filter: invert(1);
+    border-color: rgb(41, 240, 203);
+    background-color: #17f7ce;
+    background-image: url(./img/nav-lup-d.png);
+    cursor: pointer;
+}
+
+#nav-bar h3{
+    margin: 0;
+    padding: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--color5);
+    color: white;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+#nav-bar ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: inherit;
+}
+
+#nav-bar ul li{
+    transition: .2s;
+    width: 95%;
+    list-style: none;
+    margin: 1% 0;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    text-transform: uppercase;
+    color: var(--color5);
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid var(--color5);
+}
+
+#nav-bar ul li:hover{
+    background-color: var(--color5);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.nav-bar-hidden{
+    left: -100%;
+    opacity: 0;
+}
+
+.nav-bar-showing{
+    left: 0;
+    opacity: 100%;
+}
+
+/* ------------------------------------------------------------ MAKEFS BODY RECIPE */
+
+.recipe-body{
+    padding-top: 20px;
+    text-align: center;
+}
+
+#title-ctc{
+    color: var(--color5);
+    font-size: 2em;
+    margin-bottom: 2em;
+}
+
+.general-recipes-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.recipe-template{
+    margin: 1%;
+    background-color: var(--color5);
+    width: 30%;
+    height: 350px;
+    position: relative;
+    padding: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    filter: brightness(90%);
+    transition: .2s;
+}
+
+.recipe-template:hover{
+    filter: brightness(100%);
+    transform: scale(1.1);
+}
+
+.likes-template{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 7px;
+    margin: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    background-color: var(--color5);
+    z-index: 3;
+}
+.likes-template img{
+    object-fit: contain;
+    width: 20px;
+    height: 20px;
+}
+
+
+.likes-template b{
+    margin-left: 5px;
+    color: white;
+}
+
+.image-template{
+    padding: 0%;
+    margin: 0%;
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+.image-template img{
+    transition: .2s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.recipe-template:hover .image-template img{
+    transform: scale(1.2);
+}
+
+.text-template{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    height: 20%;
+    color: white;
+}
+
+.text-template h3{
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.text-template a{
+    margin: 0;
+    padding: 20px;
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-image: url(./img/rhico-chef-white.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center;
+    transition: .2s;
+}
+
+.text-template a:hover{
+    transform: rotate(360deg);
+    background-color: white;
+    background-image: url(./img/rhico-chef-red.png);
+}
+
+/* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
+/* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
+/* /////////////////////////////////////////////  Chef Styles ////////////////////////////////////////////////////////// */
+/* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
+/* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
+
+#chef-view{
+    height: 90vh;
+    max-height: 950px;
+    text-align: center;
+}
+
+.chef-view-container{
+    display: flex;
+}
+
+/* ----------------------------------------------------- chef characteristics */
+
+.chef-char{
+    background-image: url(./test-imgs/ae.jpg);
+    background-size: contain;
+    padding-top: 2%;
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: 1px solid var(--color5);
+}
+
+.profile-pic{
+    outline: 2px solid var(--color5);
+    width: 92%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.profile-chars{
+    outline: 2px solid var(--color5);
+    width: 92%;
+    color: var(--color5);
+    background-color: white;
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.profile-chars p{
+    margin: 4%;
+}
+
+#profile-edit{
+    color: white;
+    background-color: var(--color5);
+    width: 93%;
+    height: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+#profile-edit:hover{
+    background-size: 8%;
+    background-position: right;
+    background-position-x: 95%;
+    background-image: url(./img/chef-edit.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    letter-spacing: 5px;
+}
+
+/* ---------------------------------------------------- Editable Recipe Styles */
+
+.edit-recipe-container{
+    padding-top: 2%;
+    width: 68%;
+    display: flex;
+    flex-wrap: wrap;
+    place-content: flex-start;
+    justify-content: center;
+    height: 95%;
+    overflow-y: scroll;
+    background-size: contain;
+}
+.edit-recipe-container::-webkit-scrollbar {
+    width: .6em;
+    background-color: #ff8583;
+    border-radius: 20px;
+}
+   
+.edit-recipe-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+   
+.edit-recipe-container::-webkit-scrollbar-thumb {
+    background-color: var(--color5);
+    border-radius: 20px;
+    width: .6em;
+}
+
+.editable-recipe{
+    height: 250px;
+    margin: 1%;
+}
+
+.editable-recipe:hover{
+    transform: scale(1.05);
+}
+
+.edit-template{
+    width: 20px;
+    height: 20px;
+    background-color: var(--color5);
+    margin: 5px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    z-index: 3;
+    transition: .2s;
+}
+
+.edit-template:hover{
+    margin: 7px;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.edit-template img{
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+
+
+/* ------------------------------------------------------- Lateral Buttons */
+
+.action-buttons-container{
+    padding-top: 2%;
+    width: 10%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.action-btn{
+    width: 130px;
+    height: 130px;
+    padding: 0;
+    background-color: var(--color5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    margin: 5% 0;
+    transition: .2s;
+}
+
+.action-btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.action-btn img{
+    object-fit: contain;
+    width: 40%;
+    height: 40%;
+}
+
+.action-btn p{
+    margin: 2% 0;
+}

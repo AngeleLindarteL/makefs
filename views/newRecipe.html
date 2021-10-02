@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Recipe!</title>
+    <link rel="stylesheet" href="./normalize.css">
+    <link rel="stylesheet" href="./newRecipeCss.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+</head>
+<body>
+    <header>
+        <div class="makefsContainer headerContainer">
+            <div class="header_icons">
+                <a class="headicons_ico" id="nav-menu-btn">
+                    <figure class="nav-btn-bar"></figure>
+                    <figure class="nav-btn-bar"></figure>
+                    <figure class="nav-btn-bar"></figure>
+                </a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-translate.png" alt="Translate Button"></a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-light.png" alt="Theme Menu"></a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-home.png" alt="Home Menu"></a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-favorites.png" alt="Saved Menu"></a>
+            </div>
+            <div class="header_logo">
+                <article class="headlogo_text">
+                    <h1>Makefs</h1>
+                    <h2>Making Chef's</h2>
+                </article>
+                <img class="headlogo_logo" src="./img/makefs-logo.png">
+            </div>
+            <div class="header_logreg">
+                <a id="userlog">
+                    <img src="./img/hico-user.png">
+                </a>
+                <ul id="user_selection" class="userSelectClose">
+                    <a class="headlog_btn" href="">
+                        <p>Ingresa y Enseña</p>
+                        <img class="headlog_ico" src="./img/hico-login.png">
+                    </a>
+                    <a class="headlog_btn" href="">
+                        <p>Unete y Aprende</p>
+                        <img class="headlog_ico" src="./img/hico-register.png">
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="makefsContainer">
+        <nav class="nav-bar-hidden" id="nav-bar">
+            <div class="searchNav">
+                <input class="text" placeholder="Buscar">
+                <button></button>
+            </div>
+            <h3>Categorias</h3>
+            <ul>
+                <li><a>Comida Mexicana</a></li>
+                <li><a>Comida Tipica</a></li>
+                <li><a>Comida Santandereana</a></li>
+                <li><a>Comida Paisa</a></li>
+                <li><a>Comida Tolimense</a></li>
+                <li><a>Comida Italiana</a></li>
+                <li><a>Comida Vegetariana</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1 class="tittle">NUEVA RECETA</h1>
+    <h2 class="subtittle">LLena los campos y agrega tu receta!</h2>
+    <section>
+        <div class="contenedor1 cont">
+            <form class="formulario1">
+                <label for="titulo" class="general">Titulo</label><br>
+                <input type="text" id="titulo" placeholder="El titulo de tu receta"><br>
+                <label for="categoria" class="general">Categoria de tu receta<span class="tooltip top">?<span class="tiptext">Elige la categoria donde se mostrará tu receta</span></span></label><br>
+                <select id="categoria" name="Categoría">
+                    <option value="Mexicana">Mexicana</option>
+                    <option value="Tipica">Tipica</option>
+                    <option value="Pastas">Pasta</option>
+                    <option value="Saludable" selected>Saludable</option>
+                    <option value="ComidaRapida">Comida Rapida</option>
+                    <option value="Mar">Comida de Mar</option>
+                    <option value="Sopas">Sopas</option>
+                </select><br>
+                <label for="ingrediente" class="general">Ingredientes</label><br>
+                <input type="text" id="ingrediente" placeholder="Ingrediente">
+                <button class = "addInput">+</button><br>
+                <label class="general">Instrucciones<span class="tooltip top">?<span class="tiptext">Ingresa los pasos para la preparacion!</span></span></label>
+                <br><br>
+                <label for="instruccion" class="instlabel">Instruccion #1</label><br>
+                <input type="text" id="instruccion" placeholder="Instruccion 1">
+                <button class = "addInput">+</button><br>
+            </form>
+        </div>
+        <div class="contenedor2 cont">
+            <form class="formulario2">
+                <label for="recipeVid" class="general" >Video de la Preparacion!</label>
+                <div class="insrtmedia">
+                    <p>Inserte el video de su Preparacion!</p>
+                    <input type="file" class = "upload" id="recipeVid" name="recipeVid" accept="video/mp4" style="display: none;">
+                    <label for="recipeVid">
+                        <img class="selector_mul" src="/img/video.png" id="vid_input" alt="Subir Imagen">
+                    </label>
+                </div>
+                <label for="recipeImg" class="general">Imagen de la Preparacion!</label>
+                <div class="insrtmedia">
+                    <p>Inserte la imagen de su Preparacion!</p>
+                    <input type="file" class="upload" id="recipeImg" name="recipeImg" accept="image/png, image/jpeg" style="display: none;">
+                    <label for="recipeImg">
+                        <img class="selector_mul" src="/img/imagen.png" id="img_input" alt="Subir Foto">
+                    </label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+    <script type="text/javascript" src="/index.js"></script>
+</html>

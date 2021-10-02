@@ -1,0 +1,538 @@
+:root{
+    --color1: #FFBE26;
+    --color2: #E08C1D;
+    --color3: #F56A14;
+    --color4: #E03D14;
+    --color5: #FF2C29;
+}
+
+.makefsContainer{
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    max-width: 1700px;
+    margin: auto;
+}
+
+/* --------------------------------------------------------------------------------------------------------- HEADER  */
+
+header{
+    position: sticky;
+    width: 100%;
+    background-color: var(--color5);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    max-height: 80px;
+    top: 0;
+}
+
+.headerContainer{
+    display: flex;
+    color: white;
+}
+.headerContainer div{
+    width: 33%;
+    height: 100%;
+}
+
+/* ----------------------------------------------------------------------------------- FIRST HEADER DIV - BUTTON ICONS */
+
+.header_icons{
+    display: flex;
+    align-items: center;
+}
+
+.headicons_ico{
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    margin: 3%;
+}
+
+.headicons_ico:first-child:hover{
+    cursor: pointer;
+}
+
+.headicons_ico img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* SECOND HEADER DIV - CENTRAL LOGO*/
+
+.header_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header_logo article{
+    margin: 0 2%;
+    padding: 0;
+}
+.header_logo article h1{
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+}
+#nav-menu-btn{
+    margin: 0 3%;
+    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-btn-bar{
+    width: 100%;
+    height: 20%;
+    padding: 0;
+    background-color: white;
+    margin: 5% 0;
+    transition: .2s;
+}
+
+.displayedBar .nav-btn-bar:first-child{
+    position: absolute;
+    top: 25%;
+    transform: rotate(45deg);
+}
+
+.displayedBar .nav-btn-bar:nth-child(2){
+    position: absolute;
+    opacity: 0%;
+    left: -100%;
+}
+.displayedBar .nav-btn-bar:last-child{
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 25%;
+}
+
+.header_logo article h2{
+    font-size: .92em;
+    margin: 0;
+    padding: 0;
+}
+
+.header_logo img{
+    width: 15%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ------------------------------------------------------------------- THIRD HEADER DIV - REGISTER AND LOGIN BUTTONS */
+
+
+
+.header_logreg{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+#user_selection{
+    background-color:var(--color5);
+    position: absolute;
+    top: 110%;
+    width: 45%;
+    padding: 0;
+    margin: 5px;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    padding: 10px;
+    transition: .2s;
+    border: 2px solid var(--color5);
+}
+
+#user_selection::before{
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    top: -11px;
+    right: 10%;
+    content: '';
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: var(--color5);
+}
+
+.userSelectClose{
+    opacity: 0;
+    right: 0%;
+    display: none;
+}
+
+.userSelectOpen{
+    opacity: 100%;
+    right: 0;
+}
+
+.headlog_btn{
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 95%;
+    text-decoration: none;
+    height: 50%;
+    color: white;
+    transition: .2s;
+}
+
+.headlog_btn:hover{
+    background-color: white;
+    color: var(--color5);
+}
+
+.headlog_btn:hover img{
+    filter: drop-shadow(0px 4px 0px rgb(235, 66, 66));
+}
+
+.headlog_btn p{
+    color: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.headlog_btn img{
+    margin: 0;
+    height: 90%;
+    width: 15%;
+    object-fit: contain;
+    filter: hue-rotate(20);
+}
+
+#userlog{
+    width: 15%;
+    height: 80%;
+    border-radius: 50%;
+    transition: .2s;
+    transform: scale(1);
+}
+
+#userlog:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#userlog img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+/* ----------------------------------------------------------------------------------  NAV-BAR || SEARCH BAR   */
+
+#nav-bar{
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    height: 90vh;
+    width: 18%;
+    top: 10vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 0 20px 20px rgb(0 0 0 / 8%);
+    max-width: 370px;
+    z-index: 20;
+}
+
+.searchNav{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 5% 0;
+    background-color: white;
+}
+
+.searchNav input{
+    height: 35px;
+    width: 80%;
+    border-radius: 30px;
+    border: 2px solid var(--color5);
+    color: var(--color5);
+    text-align: center;
+    transition: .2s;
+}
+
+.searchNav input:hover{
+    cursor:text;
+    background-color: var(--color5);
+    color: white;
+}
+.searchNav input:focus{
+    outline: none;
+    border-color: var(--color5);
+}
+
+.searchNav input::placeholder{
+    color: inherit;
+}
+
+.searchNav button{
+    background-color: white;
+    transition: .2s;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: none;
+    border: 2px solid black;
+    background-image: url(./img/nav-lup-s.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: invert(0);
+    border-color: var(--color5);
+}
+
+.searchNav button:hover{
+    filter: invert(1);
+    border-color: rgb(41, 240, 203);
+    background-color: #17f7ce;
+    background-image: url(./img/nav-lup-d.png);
+    cursor: pointer;
+}
+
+#nav-bar h3{
+    margin: 0;
+    padding: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--color5);
+    color: white;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+#nav-bar ul{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: inherit;
+}
+
+#nav-bar ul li{
+    transition: .2s;
+    width: 95%;
+    list-style: none;
+    margin: 1% 0;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    text-transform: uppercase;
+    color: var(--color5);
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid var(--color5);
+}
+
+#nav-bar ul li:hover{
+    background-color: var(--color5);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.nav-bar-hidden{
+    left: -100%;
+    opacity: 0;
+}
+
+.nav-bar-showing{
+    left: 0;
+    opacity: 100%;
+}
+
+/* ----- General ----- */
+
+body > h1,h2{
+    margin-top: 10px;
+    text-align: center;
+    font-variant: small-caps;
+}
+section{
+    display: flex;
+    width: 100%;
+    min-width: 100%;
+}
+div.cont{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+
+}
+form > label.general{
+    font-size: 1.8em;
+}
+
+/* ----- Formulario 1 ----- */
+
+div.contenedor1::-webkit-scrollbar{
+    width: 10px;
+    background:#d6ccc9;
+}
+
+div.contenedor1::-webkit-scrollbar-thumb{
+    background: rgba(224, 18, 18, 0.596);
+    border-radius: 10px;
+    border-right: 2px solid #494545be;
+}
+div.contenedor1{
+    overflow: auto;
+    height: 635px;
+}
+form.formulario1{
+    width: 90%;
+}
+form.formulario1 span{
+    border: var(--color5) 1px solid;
+    margin-left: 20px;
+    background-color: white;
+    padding: 0px 10px;
+    border-radius: 50%;
+}
+form.formulario1 button{
+    box-shadow: 2px 2px 2px var(--color4);
+}
+label.instlabel{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 15px 15px 0 0;
+}
+label.instlabel::before{
+    content: "- ";
+}
+form.formulario1  input, select{
+    padding:8px;
+    margin: 30px 5px 30px 0;
+    width: 70%;
+}
+form.formulario1  select{
+    width: 72%;
+}
+button.addInput{
+    background-color: var(--color5);
+    color: white;
+    border: var(--color5) 1px solid;
+    font-size: 25px;
+    font-weight: bolder;
+    border-radius: 50%;
+    padding: 1px 10px 5px;
+}
+
+/* ----- Formulario 2 ----- */
+
+div.contenedor2{
+    border-left: var(--color3) 2px solid;
+    position: sticky;
+    width: 70%;
+}
+form.formulario2{
+    width: 80%;
+    box-sizing: border-box;
+}
+div.insrtmedia{
+    margin: 40px 0 40px 40px;
+    border: var(--color5) 3px dashed;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    height: 200px;
+    box-shadow: var(--color5) 2px 2px 3px ;
+}
+div.insrtmedia p{
+    color: var(--color4);
+    font-size: 1.5em;
+    font-style: italic;
+    font-variant: small-caps;
+    position: static;
+}
+div.insrtmedia img{
+    display: inline;
+    position: block;
+    max-width: 90px;
+    border: none;
+    opacity: 1;
+    filter: invert(0.4) sepia(1) hue-rotate(320deg) saturate(800%);
+}
+
+/* ---- Pseudoelementos ---- */
+
+button{
+    cursor: pointer;
+}
+span{
+    cursor: help;
+}
+img.selector_mul{
+    cursor: pointer;
+}
+
+/* ----- ToolTip ----- */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: rgb(253, 253, 253);
+    color:var(--color4);
+    text-align: center;
+    border-radius: 3px;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.7em;
+}
+.tooltip .tiptext::after {
+    content: "";
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+}
+.tooltip:hover .tiptext {
+    visibility: visible;
+}
+.tooltip.top .tiptext{
+    margin-left: -120px;
+    bottom: 150%;
+    left: 50%;
+}
+.tooltip.top .tiptext::after{
+    margin-left: -5px;
+    top: 100%;
+    left: 50%;
+    border-color: #2E2E2E transparent transparent transparent;}
