@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
-    <link href="./reset.css" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet">
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/chef-index.css" rel="stylesheet">
     <title>Chef view</title>
 </head>
 <body>
@@ -67,6 +67,12 @@
     </div>
     <section id="chef-view">
         <div class="makefsContainer chef-view-container">
+            <div class="action-buttons-container">
+                <a class="action-btn"><img src="./img/chef-add.png"><p>Añadir Receta</p></a>
+                <a class="action-btn"><img src="./img/chef-flag.png"><p>Reportes</p></a>
+                <a class="action-btn"><img src="./img/chef-chart.png"><p>Analiticas</p></a>
+                <button id="chef-config"></button>
+            </div>
             <div class="chef-char">
                 <img class="profile-pic" src="./test-imgs/elBhicho.jfif">
                 <article class="profile-chars">
@@ -121,13 +127,9 @@
                     <div class="text-template"><h3>YA NO QUIERO COMER</h3><a href="#"></a></div>
                 </div>
             </div>
-            <div class="action-buttons-container">
-                <a class="action-btn"><img src="./img/chef-add.png"><p>Añadir Receta</p></a>
-                <a class="action-btn"><img src="./img/chef-flag.png"><p>Reportes</p></a>
-                <a class="action-btn"><img src="./img/chef-chart.png"><p>Analiticas</p></a>
-            </div>        
         </div>
     </section>
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/chef-view.js"></script>
 </body>
 </html>

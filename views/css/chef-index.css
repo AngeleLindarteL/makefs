@@ -308,7 +308,7 @@ header{
     border-radius: 50%;
     outline: none;
     border: 2px solid black;
-    background-image: url(./img/nav-lup-s.png);
+    background-image: url(../img/nav-lup-s.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -320,7 +320,7 @@ header{
     filter: invert(1);
     border-color: rgb(41, 240, 203);
     background-color: #17f7ce;
-    background-image: url(./img/nav-lup-d.png);
+    background-image: url(../img/nav-lup-d.png);
     cursor: pointer;
 }
 
@@ -481,7 +481,7 @@ header{
     color: inherit;
     border: 2px solid white;
     border-radius: 50%;
-    background-image: url(./img/rhico-chef-white.png);
+    background-image: url(../img/rhico-chef-white.png);
     background-repeat: no-repeat;
     background-size: 70%;
     background-position: center;
@@ -491,7 +491,7 @@ header{
 .text-template a:hover{
     transform: rotate(360deg);
     background-color: white;
-    background-image: url(./img/rhico-chef-red.png);
+    background-image: url(../img/rhico-chef-red.png);
 }
 
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
@@ -513,7 +513,7 @@ header{
 /* ----------------------------------------------------- chef characteristics */
 
 .chef-char{
-    background-image: url(./test-imgs/ae.jpg);
+    background-image: url(../test-imgs/ae.jpg);
     background-size: contain;
     padding-top: 2%;
     width: 22%;
@@ -563,7 +563,7 @@ header{
     background-size: 8%;
     background-position: right;
     background-position-x: 95%;
-    background-image: url(./img/chef-edit.png);
+    background-image: url(../img/chef-edit.png);
     background-repeat: no-repeat;
     cursor: pointer;
     letter-spacing: 5px;
@@ -641,15 +641,14 @@ header{
     padding-top: 2%;
     width: 10%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    flex-direction: column;
+    flex-direction:column;
+    flex-wrap: wrap;
 }
 
 .action-btn{
-    width: 130px;
-    height: 130px;
-    padding: 0;
+    width: 12.5vh;
+    height: 12.5vh;
     background-color: var(--color5);
     border-radius: 50%;
     display: flex;
@@ -659,6 +658,7 @@ header{
     color: white;
     margin: 5% 0;
     transition: .2s;
+    object-fit: contain;
 }
 
 .action-btn:hover{
@@ -674,4 +674,89 @@ header{
 
 .action-btn p{
     margin: 2% 0;
+    padding: 0% 10%;
+}
+
+#chef-config{
+    display: none;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    width: fit-content;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 2%;
+    border-radius: 50%;
+    object-fit: contain;
+    border: none;
+    background-color: white;
+    transition: .2s;
+    width: 10vh;
+    height: 10vh;
+    background-image: url(../img/cv-config-red.png);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid var(--color5);
+}
+
+/* ................... Responsive .............. */
+
+@media (max-width: 1290px) {
+    #chef-config{
+        display: flex;
+    }
+    .action-buttons-container{
+        justify-content: flex-end;
+        position: absolute;
+        right: 2%;
+        height: 0%;
+        width: 10vh;
+        bottom: calc(10vh + 3%);
+        overflow: hidden;
+        transition: .2s;
+        bottom: 10vh;
+        z-index: 5;
+    }.action-buttons-container a{
+        width: 0%;
+        height: 0%;
+        margin: 1.5% 0;
+        transition: .2s;
+    }
+    .action-btn p{
+        display: none;
+    }
+    .showing-action-container{
+        bottom: calc(10vh + 3%);
+        height: 36vh;
+    }
+    .showing-action-container #chef-config{
+        transform: rotate(360deg);
+        background-image: url(../img/cv-config-white.png);
+        background-color: var(--color5);
+    }
+    .showing-action-container a{
+        width: 100%;
+        height: 10vh;
+    }
+    .edit-recipe-container{
+        width: 78%;
+    }
+}
+@media (max-width: 1230px) {
+    .recipe-template{
+        width: 40%;
+    }
+}
+@media (max-width: 950px) {
+    .chef-char{
+        width: 40%;
+    }
+    .edit-recipe-container{
+        width: 60%;
+    }
+    .recipe-template{
+        width: 90%;
+    }
 }
