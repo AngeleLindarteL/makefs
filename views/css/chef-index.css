@@ -31,12 +31,11 @@ header{
     position: fixed;
     width: 100%;
     background-color: var(--color5);
-    height: 10vh;
+    height: 8vh;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 999999;
-    max-height: 80px;
     top: 0;
 }
 
@@ -135,8 +134,10 @@ header{
 }
 
 .header_logo img{
-    width: 15%;
-    height: 95%;
+    max-width: 78px;
+    max-height: 78px;
+    width: 8vh;
+    height: 8vh;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -250,21 +251,6 @@ header{
 
 /* ----------------------------------------------------------------------------------  NAV-BAR || SEARCH BAR   */
 
-#nav-bar{
-    transition: .2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: fixed;
-    height: 100vh;
-    width: 18%;
-    top: 8vh;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 3px 0 20px 20px rgb(0 0 0 / 8%);
-    max-width: 370px;
-    z-index: 20;
-}
 
 .searchNav{
     width: 100%;
@@ -322,6 +308,29 @@ header{
     background-color: #17f7ce;
     background-image: url(../img/nav-lup-d.png);
     cursor: pointer;
+}
+.nav-bar-container{
+    transition: .2s;
+    height: 92vh;
+    top: 8vh;
+    width: 30%;
+    position: fixed;
+    z-index: 25;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 0 20px 20px rgb(0 0 0 / 8%);
+}
+
+#nav-bar{
+    transition: .2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 0 20px 20px rgb(0 0 0 / 8%);
+    z-index: 20;
 }
 
 #nav-bar h3{
@@ -570,7 +579,7 @@ header{
     height: fit-content;
     width: fit-content;
     position: fixed;
-    bottom: 0;
+    bottom: 8vh;
     right: 0;
     margin: 2%;
     border-radius: 50%;
@@ -578,8 +587,8 @@ header{
     border: none;
     background-color: white;
     transition: .2s;
-    width: 10vh;
-    height: 10vh;
+    width: 8vh;
+    height: 8vh;
     background-image: url(../img/cv-config-red.png);
     background-size: 70%;
     background-position: center;
@@ -627,7 +636,7 @@ header{
     width: 100%;
     height: 50%;
     color: white;
-    background: linear-gradient(180deg, rgba(255, 45, 41, 0.055) 0%, rgba(255,44,41,0.7763480392156863) 50%, rgb(211, 38, 35) 100%);
+    background: linear-gradient(180deg, rgba(255, 45, 41, 0) 0%, rgba(255,44,41,0.7763480392156863) 50%, rgb(211, 38, 35) 100%);
     padding-bottom: 10%;
     display: flex;
     flex-direction: column;
@@ -748,6 +757,8 @@ header{
 @media (max-width: 1230px) {
     .recipe-template{
         width: 40%;
+    }.nav-bar-container{
+        width: 40%;
     }
 }
 @media (max-width: 1100px) {
@@ -822,11 +833,11 @@ header{
         display: flex;
     }
     .action-buttons-container{
-        justify-content: flex-end;
+        justify-content: center;
         position: fixed;
         right: 2%;
         height: 0%;
-        width: 10vh;
+        width: 8vh;
         bottom: calc(10vh + 3%);
         /* overflow: hidden; */
         transition: .2s;
@@ -836,8 +847,8 @@ header{
         border: none;
     }
     .showing-action-container{
-        bottom: calc(10vh + 3%);
-        height: 36vh;
+        bottom: 18vh;
+        height: 30vh;
     }
     .showing-action-container #chef-config{
         transform: rotate(360deg);
@@ -847,12 +858,45 @@ header{
     .action-buttons-container a{
         width: 0%;
         height: 0%;
-        margin: 1.5% 0;
+        margin: 1% 0;
         transition: .2s;
     }
     .showing-action-container a{
+        width: 8vh;
+        height: 8vh;
+    }
+    .headerContainer div{
+        width: 50%;
+        padding: 0 2%;
+    }
+    .header_icons{
+        position: fixed!important;
+        bottom: 0!important;
+        width: 100%!important;
+        background-color: var(--color5)!important;
+        height: 8vh!important;
+        justify-content: center!important;
+    }
+    .header_logo{
+        justify-content: flex-start;
+    }
+    .headlogo_text{
+        text-transform: uppercase;
+    }
+    .headlogo_text h2{
+        display: none;
+    }
+    .header_logreg{
+        justify-content: flex-end;
+    }
+    #userlog{
+        width: 6vh;
+        height: 6vh;
+    }
+    #nav-menu-btn{
+        margin: 3%;
+    }.nav-bar-container{
         width: 100%;
-        height: 10vh;
     }
 }
 @media (max-width: 970px) {

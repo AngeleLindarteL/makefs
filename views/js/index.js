@@ -1,6 +1,6 @@
 const userLog = document.querySelector("#userlog");
 const userSelection = document.querySelector("#user_selection");
-const navBar = document.querySelector("#nav-bar");
+const navBar = document.querySelector("#nav-bar-ct");
 const navButton = document.querySelector("#nav-menu-btn")
 
 userLog.addEventListener('click', () => {
@@ -18,7 +18,7 @@ userLog.addEventListener('click', () => {
 })
 
 navButton.addEventListener('click', () => {
-    if(navBar.className == "nav-bar-hidden"){
+    if(navBar.classList.contains("nav-bar-hidden")){
         navBar.classList.replace("nav-bar-hidden","nav-bar-showing")
         navButton.classList.add("displayedBar")
     }else{
