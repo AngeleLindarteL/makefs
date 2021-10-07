@@ -389,6 +389,10 @@ header{
 
 /* ------------------------------------------------------------ MAKEFS BODY RECIPE */
 
+#principal-recipes{
+    padding-top: 8vh;
+}
+
 .recipe-body{
     padding-top: 20px;
     text-align: center;
