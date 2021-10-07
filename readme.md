@@ -1,7 +1,7 @@
 Makef's Project
 
 JIRA:
-https://registronominatic.atlassian.net/jira/software/projects/MAK/boards/2
+https://makefs.atlassian.net/jira/software/projects/MAK/boards/1
 
 Equipo de Trabajo
 
