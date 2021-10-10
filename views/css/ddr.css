@@ -1,171 +1,183 @@
 /*  ----------------------------------------------------------------------------------------------------- PRECONFIGS */
 
-:root{
-    --color1: #FFBE26;
-    --color2: #E08C1D;
-    --color3: #F56A14;
-    --color4: #E03D14;
-    --color5: #FF2C29;
+:root {
+  --color1: #ffbe26;
+  --color2: #e08c1d;
+  --color3: #f56a14;
+  --color4: #e03d14;
+  --color5: #ff2c29;
 }
 
 /*----------------------------Pasos--------------------*/
-.receta_container{
-    display: flex;
-    flex-direction: row;
+.receta_container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 .container_list {
-    width: 10%;
-    height: 100vh;   
+  height: 100vh;
+  width: 30%;
 }
 
-.container_list ul{
-    width: fit-content;
-    height: 100%;
+.container_list ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10vh;
 }
-.container_list li {
-    width: 7vh;
-    height: 7vh;
-    text-align: center;
-    line-height: 2em;
-    border-radius: 50%;
-    background: rgb(255, 255, 255);
-    border: var(--color5) solid 3px;
-    margin: 3em 0em;
-    top: 2em;
-    display: flex;
-    position: relative;
-    font-family: sans-serif;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    color: var(--color5);
-    font-weight: bold;
-    transition: .2s;
-  }
-  .container_list li p{
-      font-size: 1.5em;
-  }
-  
-  .container_list li::before{
-    content: '';
-    position: absolute;
-    bottom: 103%;
-    left: calc(50% - .1.2em);
-    width: .5em;
-    height: 3em;
-    background: var(--color4);
-    transition: .2s;
-  }
-  .container_list li:hover{
-      transform: scale(1.1);
-      background-color: var(--color5);
-      border: var(--color5) solid 2px;
-      color: white;
-      cursor: pointer;
-  }
-  .container_list li:hover::before{
-      transform: scaleY(.9);
-      bottom: 99%;
-  }
-  
-  
-  .container_list li:first-child::before {
-    display: none;
-  }
-  
-  .container_list .active {
-    background: dodgerblue;
-  }
-  
-  .container_list .active ~ li {
-    background: lightblue;
-  }
-  
-  .container_list .active ~ li::before {
-    background: lightblue;
-  }
-  
+.container_list ul li {
+  list-style: none;
+  padding: 2%;
+  margin: 0;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: hidden;
+  transition: 0.2s;
+}
+.step-num {
+  width: 10vh;
+  height: 10vh;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  border: var(--color5) solid 3px;
+  display: flex;
+  position: relative;
+  font-family: sans-serif;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  color: var(--color5);
+  font-weight: bold;
+  transition: 0.2s;
+}
+.step-text {
+  height: 99%;
+  width: 80%;
+  margin: 0;
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+.container_list li:hover {
+  background-color: var(--color5);
+  border: var(--color5) solid 2px;
+  color: white;
+  cursor: pointer;
+  border-radius: 30px;
+  height: 10vh;
+}
+.container_list li:focus{
+  height: max-content;
+  border: var(--color5) solid 2px;
+  color: white;
+  transition: .2s;
+  border-radius: 30px;
+}
 
+.focus-step-on{
+  transition: .2s;
+  height: max-content!important;
+  background-color: var(--color5);
+  color: white;
+  border-radius: 30px;
+}
 
+.container_list .active {
+  background: dodgerblue;
+}
 
+.container_list .active ~ li {
+  background: lightblue;
+}
 
+.container_list .active ~ li::before {
+  background: lightblue;
+}
 
-
-
-  .titlesv{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-  }
-  .title_cont{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    margin: 0;
-    position: relative;
-    top: 20px;
-    left: -150px;
-  }
-  .title_cont  h1{
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 2.5em;
-    margin: 0;
-    width: 400px;
-    color: var(--color5);
-  }
-  .head_videos{
-      display: flex;
-      flex-direction: column;
-      margin: 0 53%;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 100%;
-
-  }
-  .head_videos img{
-    filter: invert(1);
-    height: 40px;
-    transition: .2s;
-    margin: 0 5px;
-  }
-  .titlesv img:hover{
-    height: 50px;
-    cursor: pointer;
-  }
-  .head_videos h1{
-    border: black solid 1px;
-    width: 100%;
-    text-align: center;
-    margin-right: 10px;
-    padding: 5px;
-  }
-  .put_video{
-      display: flex;
-      flex-direction: column;
-      border: #FF2C29 2px dotted;
-      background-color: #e98168;
-      height: 300px;
-      width: 550px;
-      margin: 10px 0;
-  }
-  .put_video h5{
-      color: rgba(0, 0, 0, 0.692);
-  }
-  .put_video img{
-      width: 150px;
-      height: 150px;
-      margin: auto auto;
-      transition: .2s;
-
-  }
-  .put_video img:hover{
-      height: 200px ;
-      width: 200px;
-      cursor: pointer;
-  }
-  
+.titlesv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.title_cont {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  top: 20px;
+  left: -150px;
+}
+.title_cont h1 {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 2.5em;
+  margin: 0;
+  width: 400px;
+  color: var(--color5);
+}
+.head_videos {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+.head_videos img {
+  filter: invert(1);
+  height: 40px;
+  transition: 0.2s;
+  margin: 0 5px;
+}
+.titlesv img:hover {
+  height: 50px;
+  cursor: pointer;
+}
+.head_videos h1 {
+  border: black solid 1px;
+  width: 100%;
+  text-align: center;
+  margin-right: 10px;
+  padding: 5px;
+}
+.put_video {
+  display: flex;
+  flex-direction: column;
+  border: #ff2c29 2px dotted;
+  background-color: #e98168;
+  height: 300px;
+  width: 550px;
+  margin: 10px 0;
+}
+.put_video h5 {
+  color: rgba(0, 0, 0, 0.692);
+}
+.put_video img {
+  width: 150px;
+  height: 150px;
+  margin: auto auto;
+  transition: 0.2s;
+}
+.put_video img:hover {
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
