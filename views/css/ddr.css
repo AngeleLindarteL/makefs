@@ -10,42 +10,54 @@
 
 /*----------------------------Pasos--------------------*/
 .receta_container {
+  margin-top: 10vh;
   display: flex;
   flex-direction: row;
   width: 100%;
+  overflow: hidden;
   height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 .container_list {
-  height: 100vh;
-  width: 30%;
+  height: 100%;
+  width: 40%;
+  position: relative;
 }
 
 .container_list ul {
   width: 100%;
-  height: 100%;
-  position: relative;
+  height: fit-content;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding-top: 10vh;
+  align-items: flex-start;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  transition: .4s;
 }
 .container_list ul li {
+  border: var(--color5) solid 2px;
+  border-radius: 30px;
   list-style: none;
-  padding: 2%;
-  margin: 0;
-  width: 100%;
+  padding: 2% 1%;
+  margin: .7% 0;
+  width: 95%;
   height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow-y: hidden;
   transition: 0.2s;
+  color: var(--color5);
 }
+
 .step-num {
-  width: 10vh;
-  height: 10vh;
+  width: 8vh;
+  height: 8vh;
   text-align: center;
   line-height: 2em;
   border-radius: 50%;
@@ -60,31 +72,28 @@
   color: var(--color5);
   font-weight: bold;
   transition: 0.2s;
+  font-size: 1.5em;
 }
 .step-text {
-  height: 99%;
+  height: 100%;
+  overflow: hidden;
   width: 80%;
   margin: 0;
   margin: 1%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   transition: 0.2s;
+  font-size: 1.2em;
+  color: inherit;
 }
 .container_list li:hover {
   background-color: var(--color5);
   border: var(--color5) solid 2px;
-  color: white;
   cursor: pointer;
   border-radius: 30px;
   height: 10vh;
-}
-.container_list li:focus{
-  height: max-content;
-  border: var(--color5) solid 2px;
   color: white;
-  transition: .2s;
-  border-radius: 30px;
 }
 
 .focus-step-on{
@@ -93,6 +102,11 @@
   background-color: var(--color5);
   color: white;
   border-radius: 30px;
+  transform: scale(1.01);
+}
+
+.focus-step-on .step-text{
+  color: white;
 }
 
 .container_list .active {
@@ -107,68 +121,116 @@
   background: lightblue;
 }
 
-.titlesv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-.title_cont {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  margin: 0;
-  position: relative;
-  top: 20px;
-  left: -150px;
-}
-.title_cont h1 {
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 2.5em;
-  margin: 0;
-  width: 400px;
-  color: var(--color5);
-}
 .head_videos {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  justify-content: center;
+  width: 60%;
+  /* margin: 0 0 0 2%; */
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
   height: 100%;
+  /* margin-top: 10vh; */
 }
 .head_videos img {
   filter: invert(1);
-  height: 40px;
   transition: 0.2s;
   margin: 0 5px;
 }
-.titlesv img:hover {
-  height: 50px;
-  cursor: pointer;
-}
-.head_videos h1 {
-  border: black solid 1px;
-  width: 100%;
-  text-align: center;
-  margin-right: 10px;
-  padding: 5px;
-}
+
+
 .put_video {
   display: flex;
   flex-direction: column;
   border: #ff2c29 2px dotted;
   background-color: #e98168;
-  height: 300px;
-  width: 550px;
-  margin: 10px 0;
+  width: 95%;
 }
-.put_video h5 {
-  color: rgba(0, 0, 0, 0.692);
+
+.put_video{
+  height: 59%;
+}
+.put_video video{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.put_video:last-child{
+  height: 40%;
+  margin: 1%;
+  background-color: white;
+  overflow: scroll;
+}
+
+.titlesv {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 1%;
+  background-color: var(--color5);
+  color: white;
+}
+.titlesv h1{
+  margin: 0;
+  padding: 0;
+  width: 60%;
+  text-align: left;
+  font-size: 1.5em;
+  padding: 2%;
+}
+.titlesv a{
+  width: 5%;
+  height: 100%;
+  margin: .5%;
+}
+.titlesv a img{
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  filter: invert(0);
+}
+.titlesv h2 {
+  border: 1px solid white;
+  width: 20%;
+  text-align: center;
+  margin-right: 10px;
+  padding: 5px;
+}
+.put_video h3 {
+  color: var(--color5);
+  margin: 1%;
+  padding: 0;
+  font-size: 1.4em;
+  text-transform: uppercase;
+}
+.ingredient{
+  height: fill;
+}
+.ingredient-list{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  padding-bottom: 10vh;
+}
+.ingredient-list li{
+  list-style: none;
+  margin: .5%;
+  padding: 1%;
+  border: 2px solid var(--color5);
+  color: var(--color5);
+  border-radius: 20px;
+  transition: .2s;
+}
+.ingredient-list li:hover{
+  background-color: var(--color5);
+  color: white;
 }
 .put_video img {
   width: 150px;
@@ -176,8 +238,22 @@
   margin: auto auto;
   transition: 0.2s;
 }
-.put_video img:hover {
-  height: 200px;
-  width: 200px;
-  cursor: pointer;
+
+
+@media (max-width: 830px) {
+  .receta_container{
+    flex-wrap: wrap;
+    overflow: scroll;
+  }
+  .head_videos{
+    width: 100%;
+  }
+  .container_list{
+    width: 100%;
+    overflow: hidden;
+  }
+  .container_list ul{
+    align-items: center;
+  }
+
 }
