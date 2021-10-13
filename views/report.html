@@ -46,26 +46,32 @@
             </div>
         </div>
     </header>
-    <div class="receta">Receta a Reportar
-        <img src="./iconos/makefslogo.jpg">
-        
+    <div class="backM">
+        <img src="./iconos/back.svg">
+        <h1>Regresar</h1>
     </div>
-    <div class="formulario"><h1>FORMULARIO DE REPORTE</h1>
-    <form>
-        
-        <select name="Reportar">
-            <option>Razón</option>
-            <option>Información falsa</option>
-            <option>Contenido inapropiado</option>
-            <option>Otro</option>
-        </select>
-        <input type="text" class="reportedeta" name="detalles" placeholder="Reporte detallado">
-        <input type="button" class="boton" value="Reportar">
-            
-    </div>
-    <input type="Button" class="Regresar" value="Regresar">
-    </form>
-
+    <section id="reportrecip">
+        <div class="receta">
+            <h1>Receta a reportar</h1>
+            <div id="recipereported">
+                <img src="./iconos/makefslogo.jpg">
+                <h2>Titulo Receta</h2>
+            </div>
+        </div>
+        <div class="formulario">
+            <h1>FORMULARIO DE REPORTE</h1>
+            <form>
+                <select class="razonreport">
+                    <option>Razón</option>
+                    <option>Información falsa</option>
+                    <option>Contenido inapropiado</option>
+                    <option>Otro</option>
+                </select>
+                <input type="text" class="reportedeta" name="detalles" placeholder="Reporte detallado"><br>
+                <input type="button" class="boton" value="Reportar" id="sendreport">
+            </form>      
+        </div>
+    </section>
     <script src="./js/index.js"></script>
 </body>
 </html>
