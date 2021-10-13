@@ -23,8 +23,6 @@ section{
     margin: auto;
 }
 
-
-
 header{
     position: fixed;
     width: 100%;
@@ -184,7 +182,7 @@ header{
     width: 100%;
     height: 100%;
 }
-/*report*/
+/*---------------------------------------------------------------------------- report ------------------*/
 body{
     background-color: rgb(230, 243, 243);
 }
@@ -270,7 +268,7 @@ body{
 .razonreport{
     padding: 10px;
     background-color: #ff2d29cc;
-    color:#fff;
+    color:#ffff;
     transition: .5s;
 }
 
