@@ -269,14 +269,24 @@ body{
 
 .razonreport{
     padding: 10px;
+    background-color: #ff2d29cc;
+    color:#fff;
+    transition: .5s;
 }
 
 .reportedeta{
-    text-align: start;
-    padding:2vh 0 25vh 2vh;
-    overflow-wrap: break-word;
+    word-break: break-all;
+    overflow: auto;
+    padding:2vh;
+    margin-bottom: 2%;
+    overflow:auto;
     border: 1px solid black;
     border-radius: 0 0 15px 15px;
+}
+
+.razonreport:focus{
+    background-color: white;
+    color:#000;
 }
 
 #sendreport{
