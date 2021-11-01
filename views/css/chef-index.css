@@ -413,13 +413,13 @@ header{
 }
 
 .recipe-template{
-    margin: 1%;
-    background-color: var(--color5);
+    margin: 1.5%;
     width: 30%;
-    height: 350px;
+    height: 50vh;
+    min-height: 200px;
+    max-height: 400px;
     position: relative;
     padding: 0;
-    border-radius: 20px;
     overflow: hidden;
     filter: brightness(90%);
     transition: .2s;
@@ -431,41 +431,73 @@ header{
 
 .recipe-template:hover{
     filter: brightness(100%);
-    transform: scale(1.1);
+    cursor: pointer;
 }
-
-.likes-template{
+.next-text-recipe{
+    margin-top: 2%;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.next-text-recipe img{
+    width: 5vh;
+    height: 5vh;
+    object-fit: cover;
+    border-radius: 50%;
+    max-width: 78px;
+    max-height: 78px;
+    box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.192);
+}
+.next-text-recipe a{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2%;
+    text-decoration: none;
+    max-width: 80%;
+}
+.next-text-recipe a p{
+    text-decoration: none;
+    margin: 0;
+    color: black;
+}
+.star-template{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px 7px;
     margin: 5px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 2%;
+    left: 2%;
     border-radius: 15px;
     /* border: 2px solid white; */
     z-index: 3;
-    background-color: var(--color5);
+    background-color: white;
 }
-.likes-template img{
+.star-template img{
     object-fit: contain;
-    width: 20px;
-    height: 20px;
+    width: 20px!important;
+    height: 20px!important;
 }
-
-
-.likes-template b{
+.star-template b{
     margin-left: 5px;
-    color: white;
+    color: var(--color5);
 }
 
 .image-template{
     padding: 0%;
     margin: 0%;
     width: 100%;
-    height: 100%;
+    height: 80%;
     overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .image-template img{
     transition: .2s;
@@ -475,48 +507,21 @@ header{
 }
 .recipe-template:hover .image-template img{
     transform: scale(1.2);
+    width: 100%;
+    height: 100%;
 }
 
 .text-template{
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.534) 40%, rgba(0, 0, 0, 0.808) 100%);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 30%;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-.text-template h3{
+    justify-content: center;
+    color: var(--color5);
+    width: fit-content;
     margin: 0;
-    margin-left: 2%;
-    text-transform: uppercase;
-}
-
-.text-template a{
-    margin: 0;
-    margin-right: 2%;
-    padding: 20px;
-    background-color: transparent;
+    overflow: hidden;
     text-decoration: none;
-    color: inherit;
-    border: 2px solid white;
-    border-radius: 50%;
-    background-image: url(../img/rhico-chef-white.png);
-    background-repeat: no-repeat;
-    background-size: 70%;
-    background-position: center;
-    transition: .2s;
+    max-height: 1.2rem;
+    text-align: start;
 }
-
-.text-template a:hover{
-    transform: rotate(360deg);
-    background-color: white;
-    background-image: url(../img/rhico-chef-red.png);
-}
-
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 /* /////////////////////////////////////////////  Chef Styles ////////////////////////////////////////////////////////// */
@@ -539,25 +544,28 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
     flex-wrap: wrap;
     margin: 0;
     height: 20%;
 }
 
 .action-btn{
-    width: 12.5vh;
-    height: 12.5vh;
+    width: 70%;
+    padding-right: 10%;
+    height: 8vh;
     background-color: var(--color5);
-    border-radius: 50%;
+    border-radius: 20px;
+    /* border-radius: 50%; */
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: flex-start;
+    /* flex-direction: column; */
     color: white;
     transition: .2s;
     object-fit: contain;
-    max-width: 200px;
-    max-height: 200px;
+    /* max-width: 200px;
+    max-height: 200px; */
 }
 
 .action-btn:hover{
@@ -567,13 +575,14 @@ header{
 
 .action-btn img{
     object-fit: contain;
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 60%;
 }
 
 .action-btn p{
     margin: 2% 0;
-    padding: 0% 10%;
+    padding: 0%;
+    font-size: 1.1rem;
 }
 
 #chef-config{
@@ -607,6 +616,8 @@ header{
     align-items: center;
     height: 90vh;
     margin-top: 10vh;
+    max-width: 404px;
+    min-width: 404px;
 }
 
 .chef-char{
@@ -616,73 +627,166 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: fit-content;
 }
 
 .char-template{
     width: 94%;
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .profile-pic{
+    position: relative;
+    width: 30vh;
+    height: 30vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 1%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.271);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 5%;
+    min-width: 247px;
+    min-height: 252px;
+}
+.profile-pic-img{
+    object-fit: cover;
+    border-radius: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
-
-.profile-chars{
+.followers{
     position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: -11%;
+    display: flex;
+}
+.followers img{
+    width: 2.8vh;
+    height: 2.8vh;
+}
+.followers p{
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--color5);
+}
+.profile-chars{
+    padding-top: 5%;
     width: 100%;
-    height: 50%;
-    color: white;
-    background: linear-gradient(180deg, rgba(255, 45, 41, 0) 0%, rgba(255,44,41,0.7763480392156863) 50%, rgb(211, 38, 35) 100%);
-    padding-bottom: 10%;
+    height: fit-content;
+    color: var(--color5);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    bottom: 0%;
     transition: .2s;
+    max-width: 500px;
 }
 
 .profile-chars p{
     width: 80%;
-    text-align: left;
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin: 1%;
-}.profile-chars p:first-child{
+    display: flex;
+    align-items: center;
+}
+#chef-name{
+    color: var(--color5);
+    font-size: 2rem;
+    margin: 0%;
+}
+.profile-chars p img{
+    width: 2.5vh;
+    height: 2.5vh;
+}
+.summary-info{
+    display: flex;
     width: 100%;
-    text-align: center;
-    font-size: 1.7em;
-}.profile-chars p:nth-child(2){
+    justify-content: center;
+    flex-direction: row;
+    width: 88%;
+    padding: 2% 0;
+    border-bottom: 1px solid;
+}
+.summary-info article{
+    width: 50%;
+    margin: 1%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.summary-info article span{
+    width: 2.2vh;
+    height: 2.2vh;
+    margin-right: 2%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-width: 20px;
+    min-height: 20px;
+}
+.summary-info article:first-child span{
+    background-image: url(../img/hico-star-red.png);
+}
+.summary-info article:last-child span{
+    background-image: url(../img/rhico-chef-red.png);
+}
+.chef-social-media{
+    display: flex;
+    padding: 0;
     width: 100%;
-    text-align: center;
-    font-size: .9em;
-    margin-bottom: 5%;
-    word-break: break-all;
+    height: max-content;
+    justify-content: space-evenly;
 }
 
+.chef-social-media a{
+    width: 3rem;
+    height: 3rem;
+}
+.chef-social-media a img{
+    width: 100%;
+    height: 100%;
+}
+.verified{
+    position: absolute;
+    width: 6vh;
+    height: 6vh;
+    display: flex;
+    top: 5%;
+    right: 5%;
+}
 #profile-edit{
     position: absolute;
     background-color: transparent;
-    border: 2px solid white;
-    width: 7vh;
-    height: 7vh;
-    right: 0;
-    bottom: 0;
-    margin: 10%;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    bottom: 5%;
+    right: 5%;
+    margin: 0%;
     transition: .2s;
     background-image: url(../img/chef-edit.png);
     background-size: 60%;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 50%;
+    background-color: var(--color5);
     z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
 }
 
 #profile-edit:hover{
@@ -692,12 +796,11 @@ header{
     background-color: white;
     transform: rotate(360deg);
 }
-
 /* ---------------------------------------------------- Editable Recipe Styles */
 
 .edit-recipe-container{
     margin-top: 8vh;
-    width: 68%;
+    width: inherit;
     display: flex;
     flex-wrap: wrap;
     place-content: flex-start;
@@ -723,7 +826,6 @@ header{
 }
 
 .editable-recipe{
-    height: 250px;
     margin: 1%;
 }
 
@@ -753,6 +855,7 @@ header{
     background-image: url(../img/chef-edit-red.png);
     cursor: pointer;
     background-color: white;
+    transform: rotate(360deg);
     
 }
 
@@ -765,26 +868,33 @@ header{
         width: 40%;
     }
 }
-@media (max-width: 1100px) {
-    .action-buttons-container a{
-        width: 10vh;
-        height: 10vh;
-        margin: 1.5% 0;
-        transition: .2s;
+
+@media (max-width: 970px) {
+    .action-btn{
+        width: 8vh;
+        height: 8vh;
+        margin: 2%;
+        border-radius: 50%;
+        justify-content: center;
+        padding: 0;
+    }
+    .action-btn img{
+        width: 50%;
+        height: 50%;
     }
     .action-btn p{
         display: none;
     }
-}
-@media (max-width: 970px) {
     .chef-view-container{
         flex-wrap: wrap;
     }
     .right-chef-view-menu{
         border: none;
         width: 100%;
-        height: 92vh;
+        height: 50vh;
         margin-top: 8vh;
+        max-width: none;
+        min-width: none;
     }
     .chef-char{
         width: 100%;
@@ -794,47 +904,92 @@ header{
         width: 100%;
         height: 100%;
         border-radius: 0;
-    }
-    #profile-edit{
-        top: 0;
-        margin: 3%;
-        background-color: var(--color5);
-        border: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
     .profile-chars{
-        top: 0;
-        height: 100%;
+        position: relative;
+        height: 90%;
+        width: 50%;
         background: transparent;
         justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column-reverse;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10%;
+        padding: 0;
+    }
+    #chef-name{
+        width: 100%;
+        justify-content: center;
+    }
+    .chef-social-media{
+        justify-content: center;
+        margin: 0;
+    }.chef-social-media a{
+        margin: 2%;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .profile-pic{
+        width: 35vh;
+        height: 35vh;
+    }
+    .followers{
+        bottom: 5%;
+        background-color: white;
+        border-radius: 30px;
+        padding: 1% 4%;
+    }
+    .profile-chars h2{
+        color: var(--color5);
+        margin: 0;
     }
     .profile-chars p{
-        text-align: left;
-        width: fit-content;
-        text-align: left;
+        text-align: center;
         padding: 0;
         margin: 1%;
         padding: 2%;
-        background-color: var(--color5);
-        border-radius: 20px;
-    }.profile-chars p:first-child{
-        text-align: left;
-        width: fit-content;
-        position: absolute;
-        top: 0;
-        margin: 2%;
-    }.profile-chars p:nth-child(2){
-        width: fit-content;
-        text-align: left;
-        justify-self: flex-end;
-        margin: 1%;
+        color: var(--color5);
+    }
+    .summary-info{
+        order: unset;
+        flex-direction: row;
+        width: 90%;
+        padding: 0;
+        justify-content: center;
+    }
+    .summary-info article{
+        width: 40%;
+    }
+    .summary-info article span{
+        width: 3.2vh;
+        height: 3.2vh;
+    }
+    .summary-info article p{
+        font-size: 1.3rem;
+        width: max-content;
+    }
+    .description{
+        text-align: start;
+        margin: 0;
+        width: 95%!important;
+        font-size: 1.1rem;
+        word-break:keep-all;
     }
     .edit-recipe-container{
         width: 100%;
+        overflow: visible;
+        height: fit-content;
+        padding-bottom: 10vh;
+    }
+    .recipe-template{
+        width: 45%;
     }
     #chef-config{
         display: flex;
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.26);
     }
     .action-buttons-container{
         justify-content: center;
@@ -852,7 +1007,7 @@ header{
     }
     .showing-action-container{
         bottom: 18vh;
-        height: 30vh;
+        height: 20vh;
     }
     .showing-action-container #chef-config{
         transform: rotate(360deg);
@@ -901,10 +1056,160 @@ header{
         margin: 3%;
     }.nav-bar-container{
         width: 100%;
+    }.next-text-recipe img{
+        width: 6vh;
+        height: 6vh;
     }
 }
-@media (max-width: 970px) {
+@media (max-width: 690px) {
+    .right-chef-view-menu{
+        height: fit-content;
+        min-width: 120px!important;
+    }
+    .profile-chars{
+        margin: 0;
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+    }
+    #chef-name{
+        margin: 1% 0;
+        font-size: 2.2rem;
+    }
+    .profile-pic{
+        margin: 0;
+        margin-top: 2%;
+    }
+    .summary-info{
+        justify-content: center;
+        border-radius: 20px;
+        border: 1px solid var(--color5);
+        width: 120%;
+    }
+    .summary-info article{
+        width: 40%;
+    }
+    .summary-info article{
+        justify-content: center;
+    }
+    .description{
+        text-align: center!important;
+        display: flex;
+        justify-content: center;
+    }
     .recipe-template{
         width: 90%;
+    }
+    .char-template{
+        flex-direction: column;
+    }
+}
+@media (max-width: 472px){
+    .text-template{
+        font-size: .90rem;
+    }.next-text-recipe a p{
+        font-size: .90rem;
+    }
+}
+@media (max-width: 430px){
+    .summary-info article p{
+        font-size: 1rem;
+    }
+    .description{
+        font-size: .9rem;
+    }
+    .chef-social-media a img{
+        object-fit: contain;
+    }
+}
+@media (max-height: 783px){
+    .action-buttons-container{
+        flex-direction: row;
+        justify-content: center;
+    }
+    .action-btn{
+        width: 30%;
+        margin: 1%;
+        height: 50%;
+    }
+    .action-btn img{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media (max-height: 783px) and (max-width: 970px){
+    .profile-pic{
+        margin-bottom: 0!important;
+        margin: 8% 0;
+    }
+}
+
+@media (max-height: 700px){
+    .action-btn{
+        width: 8vh;
+        height: 8vh;
+        margin: 2%;
+        border-radius: 50%;
+        justify-content: center;
+        padding: 0;
+    }
+    .action-btn img{
+        width: 50%;
+        height: 50%;
+    }
+    .action-btn p{
+        display: none;
+    }
+    .chef-social-media{
+        margin-bottom: 0;
+    }
+    .chef-social-media{
+        margin-bottom: 0;
+    }
+}
+@media (max-height: 638px){
+    #chef-config{
+        bottom: 0;
+        display: flex;
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.26);
+    }
+    .action-buttons-container{
+        justify-content: center;
+        position: fixed;
+        right: 2%;
+        height: 0%;
+        width: 8vh;
+        bottom: calc(10vh + 3%);
+        /* overflow: hidden; */
+        transition: .2s;
+        bottom: 10vh;
+        z-index: 5;
+        background: none;
+        border: none;
+    }
+    .showing-action-container{
+        bottom: 12vh;
+        height: 20vh;
+    }
+    .showing-action-container #chef-config{
+        transform: rotate(360deg);
+        background-image: url(../img/cv-config-white.png);
+        background-color: var(--color5);
+    }
+    .action-buttons-container a{
+        width: 0%;
+        height: 0%;
+        margin: 1% 0;
+        transition: .2s;
+    }
+    .showing-action-container a{
+        width: 8vh;
+        height: 8vh;
+    }
+    .followers{
+        bottom: 5%;
+        background-color: white;
+        border-radius: 30px;
+        padding: 1% 4%;
     }
 }
