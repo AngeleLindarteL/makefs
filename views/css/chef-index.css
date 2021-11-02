@@ -521,6 +521,7 @@ header{
     text-decoration: none;
     max-height: 1.2rem;
     text-align: start;
+    word-break: break-all;
 }
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
@@ -1159,6 +1160,18 @@ header{
     }
     .action-btn p{
         display: none;
+    }
+    .action-btn:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+        width: 50%;
+        border-radius: 20px;
+    }
+    .action-btn:hover p{
+        display: flex;
+    }
+    .action-btn:hover img{
+        width: 20%;
     }
     .chef-social-media{
         margin-bottom: 0;
