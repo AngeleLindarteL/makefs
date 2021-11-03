@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-    <link href="./reset.css" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet">
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/chef-index.css" rel="stylesheet">
+    <link href="./css/ddr.css" rel="stylesheet">
     <title>Receta</title>
 </head>
 <body>
@@ -47,11 +48,8 @@
             </div>
         </div>
     </header>
-    <div class="title_cont">
-        <div class="title_cont"><h1>Nombre receta</h1></div>
-    </div>
-    <div class="makefsContainer">
-        <nav class="nav-bar-hidden" id="nav-bar">
+    <div class="makefsContainer nav-bar-container nav-bar-hidden" id="nav-bar-ct">
+        <nav id="nav-bar">
             <div class="searchNav">
                 <input class="text" placeholder="Buscar">
                 <button></button>
@@ -69,33 +67,106 @@
         </nav>
     </div>
     <section class="receta_container">
-        <div class="container_list">
-        <ul>
-            <li><p>1</p> </li>
-            <li><p>2</p></li>
-            <li><p>3</p></li>
-            <li><p>4</p></li>
-            <li><p>5</p></li>
-            <li><p>6</p></li>
-        </ul>
-        </div>
+
         <div class="head_videos">
-            <div class="titlesv">
-                <h1>TIPO</h1>
-                <img src="./img/rhico-like.png">
-                <img src="./img/hico-favorites.png">
-                <img src="./img/chef-flag.png">
+            <div class="put_video">
+                <video src="./test-imgs/xdr.wmv" controls></video>
             </div>
             <div class="put_video">
-                <img src="./img/camera.png">
-                <h5>Video receta</h5>
+                <div class="titlesv">
+                    <h1>Pollo Triste porque me dejaste</h1>
+                    <h2>TIPO</h2>
+                    <a><img src="./img/rhico-like.png"></a>
+                    <a><img src="./img/hico-favorites.png"></a>
+                    <a><img src="./img/chef-flag.png"></a>
+                </div>
+                <div class="ingredients">
+                    <h3>Ingredientes</h5>
+                    <ul class="ingredient-list">
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                        <li>Pelao con botzo</li>
+                    </ul>
+                </div>
             </div>
-            <div class="put_video">
-                <img src="./img/instruccion.png">
-                <h5>Instrucciones paso</h5>
-            </div>
+        </div>
+        <div class="container_list">
+            <ul id="step-container">
+                <li class="step-li"><p class="step-num">1</p><p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere minima dicta omnis at ea in pariatur, error beatae excepturi tempora voluptatum eos deserunt quas perspiciatis quod velit corrupti commodi doloribus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, et facilis ut error distinctio soluta, in aut repudiandae reiciendis eaque suscipit itaque vitae, quia numquam dicta hic veniam tenetur totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus perferendis atque quidem alias? Id velit animi sapiente voluptates officia dignissimos amet perspiciatis et quia. Harum totam at minima iusto dolores. lorem*10</p></li>
+                <li class="step-li"><p class="step-num">2</p><p class="step-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat odio, harum perspiciatis quaerat voluptatem expedita velit. Molestias atque repudiandae, iusto officiis fuga iste nisi accusamus saepe minima, dicta earum deserunt.</p></li>
+                <li class="step-li"><p class="step-num">3</p><p class="step-text">asdioojhasihoasdhuioasdhuasdhuasd</p></li>
+                <li class="step-li"><p class="step-num">4</p><p class="step-text">asdioojhasihoasdhuioasdhuasdhuasd</p></li>
+                <li class="step-li"><p class="step-num">5</p><p class="step-text">asdioojhasihoasdhuioasdhuasdhuasd</p></li>
+                <li class="step-li"><p class="step-num">6</p><p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint harum est nulla libero delectus eveniet, aut, illo voluptas deleniti repellat, provident quis voluptates beatae cupiditate dicta maxime inventore sed?</p></li>
+                <li class="step-li"><p class="step-num">7</p><p class="step-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero placeat beatae minima aut minus eum animi iure quisquam. Asperiores quo maiores odio ea maxime! Dignissimos obcaecati quasi vel totam architecto.
+                Optio eligendi mollitia repellendus! Sunt quos corporis porro aliquam veritatis hic sed ab sit ratione, nostrum animi voluptatum illum voluptate consequatur amet nesciunt facilis. Vel rem expedita totam. Aliquid, illo.</p></li>
+            </ul>
         </div>
     </section>
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/ddr.js"></script>
 </body>
 </html>

@@ -535,4 +535,33 @@ img.selector_mul{
     margin-left: -5px;
     top: 100%;
     left: 50%;
-    border-color: #2E2E2E transparent transparent transparent;}
+    border-color: #2E2E2E transparent transparent transparent;
+}
+@media (max-width:900px) {
+    #section-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    div.contenedor2{
+        border-left:none;
+        margin-top: 0;
+    }
+    div.cont{
+        padding: 20px 20px 0px 20px;
+    }
+    div.contenedor1{
+        overflow-x: hidden;
+    }
+}
+@media (max-width:400px) {
+    div.contenedor2{
+        width: 100%;
+    }
+    .insrtmedia{
+        width: 100%;
+        margin-right: 20%;
+    }
+}

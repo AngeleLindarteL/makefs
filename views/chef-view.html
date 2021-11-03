@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
-    <link href="./reset.css" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet">
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/chef-index.css" rel="stylesheet">
     <title>Chef view</title>
 </head>
 <body>
@@ -47,8 +47,8 @@
             </div>
         </div>
     </header>
-    <div class="makefsContainer">
-        <nav class="nav-bar-hidden" id="nav-bar">
+    <div class="makefsContainer nav-bar-container nav-bar-hidden" id="nav-bar-ct">
+        <nav id="nav-bar">
             <div class="searchNav">
                 <input class="text" placeholder="Buscar">
                 <button></button>
@@ -67,67 +67,133 @@
     </div>
     <section id="chef-view">
         <div class="makefsContainer chef-view-container">
-            <div class="chef-char">
-                <img class="profile-pic" src="./test-imgs/elBhicho.jfif">
-                <article class="profile-chars">
-                    <b>INFORMACIÓN DE USUARIO</b>
-                    <p>Nombre: EL BICHO REX</p>
-                    <p>Edad: 999999999</p>
-                    <p>Correo: elBichoBendecido@Bichomail.com</p>
-                </article>
-                <a id="profile-edit">EDITAR</a>
+            <div class="right-chef-view-menu">
+                <div class="chef-char">
+                    <div class="char-template">
+                        <figure class="profile-pic">
+                            <img class="profile-pic-img" src="./test-imgs/xd.jpg">
+                            <a id="profile-edit"></a>
+                            <img class="verified" src="./img/chef-verified.png">
+                            <div class="followers"><img src="./img/hico-followers.png"><p>10M</p></div>
+                        </figure>
+                        <article class="profile-chars">
+                            <h2 id="chef-name">Angel Lindarte</h2>
+                            <div class="summary-info">
+                                <article><span></span><p>5.0 Valoración</p></article>
+                                <article><span></span><p>11 Recetas</p></article>
+                            </div>
+                            <p class="description">17 Años <br> Chef y Software Engineer <br> Contacto: angel@angel.com</p>
+                            <ul class="chef-social-media">
+                                <a href="https://facebook.com" target="__blank"><img src="./img/user-facebook.png"></a>
+                                <a href="https://instagram.com" target="__blank"><img src="./img/user-instagram.png"></a>
+                                <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
+                                <a href="https://youtube.com" target="__blank"><img src="./img/user-youtube.png"></a>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+                <div class="action-buttons-container">
+                    <a class="action-btn"><img src="./img/chef-add.png"><p>Añadir recetas</p></a>
+                    <a class="action-btn"><img src="./img/chef-flag.png"><p>Reportes</p></a>
+                    <button id="chef-config"></button>
+                </div>
             </div>
             <div class="edit-recipe-container">
                 <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount">100</b></figure>
-                    <figure class="image-template"><img src="./test-imgs/pollo.jpeg"></figure>
-                    <div class="text-template"><h3>Pollo broaster Makefsiano</h3><a href="#"></a></div>
+                    <a class="image-template" href="https://google.com" target="__blank">
+                        <img src="./test-imgs/pollo.jpeg">
+                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                    </a>
+                    <div class="next-text-recipe">
+                        <img src="./test-imgs/xd.jpg">
+                        <a href="https://google.com" target="__blank">
+                            <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                            <p>Angel Lindarte</p>
+                            <p>10M Vistas</p>
+                        </a>
+                    </div>
+                    <a class="edit-template"></a>
                 </div>
                 <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount">1,000,000</b></figure>
-                    <figure class="image-template"><img src="./test-imgs/polloq.jpeg"></figure>
-                    <div class="text-template"><h3>El melhor pollo do mundo</h3><a href="#"></a></div>
+                    <a class="image-template" href="https://google.com" target="__blank">
+                        <img src="./test-imgs/pastarica.jpg">
+                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                    </a>
+                    <div class="next-text-recipe">
+                        <img src="./test-imgs/xd.jpg">
+                        <a href="https://google.com" target="__blank">
+                            <h3 class="text-template">Pasta Casera hecha en casa con poc...</h3>
+                            <p>Angel Lindarte</p>
+                            <p>15,7K Vistas</p>
+                        </a>
+                    </div>
+                    <a class="edit-template"></a>
                 </div>
                 <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount">- 666,666,666</b></figure>
-                    <figure class="image-template"><img src="./test-imgs/XD.jfif"></figure>
-                    <div class="text-template"><h3>QUE</h3><a href="#"></a></div>
+                    <a class="image-template" href="https://google.com" target="__blank">
+                        <img src="./test-imgs/pollo.jpeg">
+                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                    </a>
+                    <div class="next-text-recipe">
+                        <img src="./test-imgs/xd.jpg">
+                        <a href="https://google.com" target="__blank">
+                            <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                            <p>Angel Lindarte</p>
+                            <p>10M Vistas</p>
+                        </a>
+                    </div>
+                    <a class="edit-template"></a>
                 </div>
                 <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount">100</b></figure>
-                    <figure class="image-template"><img src="./test-imgs/esnaikers.jpg"></figure>
-                    <div class="text-template"><h3>Esnaikers basados</h3><a href="#"></a></div>
+                    <a class="image-template" href="https://google.com" target="__blank">
+                        <img src="./test-imgs/pollo.jpeg">
+                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                    </a>
+                    <div class="next-text-recipe">
+                        <img src="./test-imgs/xd.jpg">
+                        <a href="https://google.com" target="__blank">
+                            <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                            <p>Angel Lindarte</p>
+                            <p>10M Vistas</p>
+                        </a>
+                    </div>
+                    <a class="edit-template"></a>
                 </div>
                 <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount">100,000,000,000,000</b></figure>
-                    <figure class="image-template"><img src="./test-imgs/pitsa.jpg"></figure>
-                    <div class="text-template"><h3>pitsa reseta kasera</h3><a href="#"></a></div>
+                    <a class="image-template" href="https://google.com" target="__blank">
+                        <img src="./test-imgs/pollo.jpeg">
+                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                    </a>
+                    <div class="next-text-recipe">
+                        <img src="./test-imgs/xd.jpg">
+                        <a href="https://google.com" target="__blank">
+                            <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                            <p>Angel Lindarte</p>
+                            <p>10M Vistas</p>
+                        </a>
+                    </div>
+                    <a class="edit-template"></a>
                 </div>
                 <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount">1</b></figure>
-                    <figure class="image-template"><img src="./test-imgs/pastarica.jpg"></figure>
-                    <div class="text-template"><h3>Pasta casera</h3><a href="#"></a></div>
-                </div>
-                <div class="recipe-template editable-recipe">
-                    <a class="edit-template"><img src="./img/chef-edit.png"></a>
-                    <figure class="likes-template"><img src="./img/rhico-like.png"><b id="likeCount"> - π⁶⁶⁶⁶ </b></figure>
-                    <figure class="image-template"><img src="./test-imgs/QUE.jfif"></figure>
-                    <div class="text-template"><h3>YA NO QUIERO COMER</h3><a href="#"></a></div>
+                    <a class="image-template" href="https://google.com" target="__blank">
+                        <img src="./test-imgs/pollo.jpeg">
+                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                    </a>
+                    <div class="next-text-recipe">
+                        <img src="./test-imgs/xd.jpg">
+                        <a href="https://google.com" target="__blank">
+                            <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                            <p>Angel Lindarte</p>
+                            <p>10M Vistas</p>
+                        </a>
+                    </div>
+                    <a class="edit-template"></a>
                 </div>
             </div>
-            <div class="action-buttons-container">
-                <a class="action-btn"><img src="./img/chef-add.png"><p>Añadir Receta</p></a>
-                <a class="action-btn"><img src="./img/chef-flag.png"><p>Reportes</p></a>
-                <a class="action-btn"><img src="./img/chef-chart.png"><p>Analiticas</p></a>
-            </div>        
+            
         </div>
     </section>
-    <script src="./index.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/chef-view.js"></script>
 </body>
 </html>

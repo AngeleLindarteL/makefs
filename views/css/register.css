@@ -350,3 +350,755 @@ header{
     left: 10%;
     width: 90%;
 }
+/*---------Responsive---------*/
+@media (max-width:1880px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 30%;
+        height: 75vh;
+        display: flex;
+        margin: 0 auto;
+        font-size: 1em;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 5%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 5%;
+    }
+}
+@media (max-width:1300px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 40%;
+        height: 75vh;
+        display: flex;
+        margin: 0 auto;
+        font-size: 1em;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 5%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 5%;
+    }
+}
+
+
+@media (max-width:1200px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 60%;
+        height: 70vh;
+        display: flex;
+        margin: 0 auto;
+        font-size: 0.8em;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 15%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 1vh 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+}
+@media (max-width:800px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 60%;
+        height: 65vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 15%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 1vh 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+}
+@media (max-width:768px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 70vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        font-size: 1em;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 25%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 0% 2%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+        width:30%;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 5%;
+    }
+}
+@media (max-width:600px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 70vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        font-size: 1em;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 25%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 0% 2%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+        width:30%;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 5%;
+    }
+}
+@media (max-width:540px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 90%;
+        height: 80vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        font-size: 0.8em;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 30%;
+    }
+    .registerM h2{
+        margin-left: 28%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 0.8% 4%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+        height: 7vh;
+        width:40%;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 5%;
+    }
+}
+@media (max-width:500px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 85%;
+        height: 75vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        font-size: 0.8em;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 30%;
+    }
+    .registerM h2{
+        margin-left: 28%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 0.8% 4%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 10px;
+        height: 7vh;
+        width:40%;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 5%;
+    }
+}
+@media (max-width:400px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        font-size: 1em;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 48%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        width:60%;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+}
+@media (max-width:380px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        font-size: 0.8em;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 60%;
+    }
+    .registerM h2{
+        margin-left: 40%;
+    }
+    .backM{
+        top: 11%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+        width:60%;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+}
+@media (max-width:360px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 95vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 80%;
+    }
+    .backM{
+        top: 11%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1% 5%;
+        justify-content: center;
+        align-items: center;
+        height: 8vh;
+        width: 40%;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+}
+@media (max-width:350px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 75vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 60%;
+    }
+    .registerM h2{
+        margin-left: 50%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        height: 8vh;
+        width: 60%;
+        font-size: 1em;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 2%;
+    }
+}
+@media (max-width:320px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 100%;
+    }
+    .registerM h2{
+        margin-left: 50%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 60%;
+        padding: 0px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        margin-top: 2%;
+    }
+}
+@media (max-width:280px) {
+    .registerM{
+        background-color: #fdfafa;
+        border: 2px black solid;
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        margin: 0 auto;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+        font-family: 'Ubuntu', sans-serif;
+        justify-content: flex-start;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8em;
+    }
+    .registerM{
+        border-radius: 1%;
+        padding: 20px;
+        margin-top: 100%;
+    }
+    .backM{
+        top: 10%;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        margin: 1%;
+        height: 2px;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 15px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        font-family: 'Ubuntu', sans-serif;
+        letter-spacing: 1px;
+        background-color: #FF2C29;
+        transition: .5s;
+        overflow: hidden;
+        cursor: pointer;
+        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    }
+    .checkR{
+        display:flex;
+        width: 100%;
+        align-items: center;
+        margin: 8px 0;
+        text-align: start;
+        font-size: 1.2em
+    }
+    .submit_r{
+        width: 25%;
+    }
+    .checkR input{
+        width: 10%;
+        margin: 2% 0 0 15px;
+    }
+}

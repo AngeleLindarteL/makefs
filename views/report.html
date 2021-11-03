@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./styles.css" rel="stylesheet">
+    <link href="./css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/estilos.css">
     <title>Report</title>
 </head>
 <body>
@@ -16,16 +17,21 @@
                     <figure class="nav-btn-bar"></figure>
                     <figure class="nav-btn-bar"></figure>
                 </a>
-
+                <a class="headicons_ico" href="#"><img src="./img/hico-translate.png" alt="Translate Button"></a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-light.png" alt="Theme Menu"></a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-home.png" alt="Home Menu"></a>
+                <a class="headicons_ico" href="#"><img src="./img/hico-favorites.png" alt="Saved Menu"></a>
             </div>
             <div class="header_logo">
                 <article class="headlogo_text">
                     <h1>Makefs</h1>
                     <h2>Making Chef's</h2>
                 </article>
+                <img class="headlogo_logo" src="./img/makefs-logo.png">
             </div>
             <div class="header_logreg">
-
+                <a id="userlog">
+                    <img src="./img/hico-user.png">
                 </a>
                 <ul id="user_selection" class="userSelectClose">
                     <a class="headlog_btn" href="">
@@ -40,26 +46,32 @@
             </div>
         </div>
     </header>
-    <div class="formulario">FORMULARIO DE REPORTE
-    <form>
-        
-        <select name="Reportar">
-            <option>Razón</option>
-            <option>Información falsa</option>
-            <option>Contenido inapropiado</option>
-            <option>Otro</option>
-        </select>
-        <input type="text" class="reportedeta" name="detalles" placeholder="Reporte detallado">
-        <input type="button" class="boton" value="Reportar">
-            
+    <div class="backM">
+        <img src="./iconos/back.svg">
+        <h1>Regresar</h1>
     </div>
-    <input type="Button" class="Regresar" value="Regresar">
-    </form>
-
-    <div class="receta">Receta a Reportar
-        <img src="./makefs-logo.png">
-        
-    </div>
-
+    <section id="reportrecip">
+        <div class="receta">
+            <h1>Receta a reportar</h1>
+            <div id="recipereported">
+                <img src="./iconos/makefslogo.jpg">
+                <h2>Titulo Receta</h2>
+            </div>
+        </div>
+        <div class="formulario">
+            <h1>FORMULARIO DE REPORTE</h1>
+            <form>
+                <select class="razonreport">
+                    <option>Razón</option>
+                    <option>Información falsa</option>
+                    <option>Contenido inapropiado</option>
+                    <option>Otro</option>
+                </select>
+                <textarea class="reportedeta" name="detalles" id="detalles" cols="30" rows="15" placeholder="Reporte detallado"></textarea>
+                <input type="button" class="boton" value="Reportar" id="sendreport">
+            </form>      
+        </div>
+    </section>
+    <script src="./js/index.js"></script>
 </body>
 </html>
