@@ -189,6 +189,8 @@ header{
     margin-top: 8vh;
     background-color: rgba(0, 0, 0, 0.301);
     display: flex;
+    position: absolute;
+    z-index: 9;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -211,21 +213,43 @@ header{
     width: 100%;
     height: 20%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    border: 2px solid black;
+    border-bottom: none;
+    box-sizing: border-box;
+}
+#closereport{
+    width: 8%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF2C29;
+    transition: .2s;
+    cursor: pointer;
+}
+#closereport img{
+    width: 50%;
+    transition: .2s;
+}
+#closereport:hover{
+    background-color: white;
+    
+}
+#closereport img:hover{
+    filter: invert(1);
 }
 .reasonReport select{
 	-moz-appearance: none;
-    width: 100%;
+    width: 92%;
     height: 100%;
     font-size: 1.2em;
     background-color: #FF2C29;
     color: white;
     padding-left: 20px;
-    border: 2px solid black;
-    border-bottom: none;
-    
+    border:none;
 }
 
 .inputsReport{
