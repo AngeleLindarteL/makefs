@@ -11,61 +11,10 @@
     <title>Receta</title>
 </head>
 <body>
-    <header>
-        <div class="makefsContainer headerContainer">
-            <div class="header_icons">
-                <a class="headicons_ico" id="nav-menu-btn">
-                    <figure class="nav-btn-bar"></figure>
-                    <figure class="nav-btn-bar"></figure>
-                    <figure class="nav-btn-bar"></figure>
-                </a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-translate.png" alt="Translate Button"></a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-light.png" alt="Theme Menu"></a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-home.png" alt="Home Menu"></a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-favorites.png" alt="Saved Menu"></a>
-            </div>
-            <div class="header_logo">
-                <article class="headlogo_text">
-                    <h1>Makefs</h1>
-                    <h2>Making Chef's</h2>
-                </article>
-                <img class="headlogo_logo" src="./img/makefs-logo.png">
-            </div>
-            <div class="header_logreg">
-                <a id="userlog">
-                    <img src="./img/hico-user.png">
-                </a>
-                <ul id="user_selection" class="userSelectClose">
-                    <a class="headlog_btn" href="">
-                        <p>Ingresa y Enseña</p>
-                        <img class="headlog_ico" src="./img/hico-login.png">
-                    </a>
-                    <a class="headlog_btn" href="">
-                        <p>Unete y Aprende</p>
-                        <img class="headlog_ico" src="./img/hico-register.png">
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <div class="makefsContainer nav-bar-container nav-bar-hidden" id="nav-bar-ct">
-        <nav id="nav-bar">
-            <div class="searchNav">
-                <input class="text" placeholder="Buscar">
-                <button></button>
-            </div>
-            <h3>Categorias</h3>
-            <ul>
-                <li><a>Comida Mexicana</a></li>
-                <li><a>Comida Tipica</a></li>
-                <li><a>Comida Santandereana</a></li>
-                <li><a>Comida Paisa</a></li>
-                <li><a>Comida Tolimense</a></li>
-                <li><a>Comida Italiana</a></li>
-                <li><a>Comida Vegetariana</a></li>
-            </ul>
-        </nav>
-    </div>
+    <?php
+        include('./header.php');
+        include_once('./menudesplegable.php');
+    ?>
     <section class="receta_container">
 
         <div class="head_videos">

@@ -1,22 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="./css/normalize.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet">
-</head>
-<body>
-<header>
+<?php
+    echo <<<EOT
+    <header>
     <div class="makefsContainer headerContainer">
         <div class="header_icons">
-            <a class="headicons_ico" id="nav-menu-btn">
-                <figure class="nav-btn-bar"></figure>
-                <figure class="nav-btn-bar"></figure>
-                <figure class="nav-btn-bar"></figure>
-            </a>
+    EOT;
+        $url = $_SERVER["REQUEST_URI"];
+        if($url != "/makefs/views/index.php" || $url != "/makefs/views/index.php"){
+            echo <<<EOT
+                <a class="headicons_ico" id="nav-menu-btn">
+                    <figure class="nav-btn-bar"></figure>
+                    <figure class="nav-btn-bar"></figure>
+                    <figure class="nav-btn-bar"></figure>
+                </a>
+                EOT;
+        }
+        echo <<<EOT
             <a class="headicons_ico" href="#"><img src="./img/hico-translate.png" alt="Translate Button"></a>
             <a class="headicons_ico" href="#"><img src="./img/hico-light.png" alt="Theme Menu"></a>
             <a class="headicons_ico" href="#"><img src="./img/hico-home.png" alt="Home Menu"></a>
@@ -37,8 +35,8 @@
                 <div class="userMiniInfo">
                     <img src="./img/hico-user.png">
                     <div class="infoUser">
-                        <h6>$nombre</h6>
-                        <p>$email</p>
+                        <h6>-nombre</h6>
+                        <p>-email</p>
                     </div>
                 </div>
                 <a class="headlog_btn" href="">
@@ -64,7 +62,6 @@
             </ul>
         </div>
     </div>
-</header>
-<script src="./js/index.js"></script>
-</body>
-</html>
+    </header>
+    EOT;
+?>

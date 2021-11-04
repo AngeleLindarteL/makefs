@@ -428,31 +428,45 @@ header{
 
 #principal-recipes{
     padding-top: 8vh;
+    width: 85%;
+    
 }
 
 .recipe-body{
     padding-top: 20px;
-    text-align: center;
 }
 
 #title-ctc{
-    color: var(--color5);
+    color: #FF2C29;
     font-size: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    margin-left: 1.5%;
+    border-bottom: 2px black solid;
 }
 
 .general-recipes-container{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
+    margin-bottom: 8vh;
+}
+
+#categories-down{
+    width: 83%;
+    position: fixed;
+    height: 8vh;
+    bottom: 0;
+    left: 8.5%;
+    background-color:#ff2d29;
+    border-top: white solid 2px;
 }
 
 .recipe-template{
     margin: 1.5%;
-    width: 30%;
-    height: 50vh;
+    width: 25%;
+    height: 40vh;
     min-height: 200px;
     max-height: 400px;
     position: relative;
