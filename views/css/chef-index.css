@@ -455,14 +455,46 @@ header{
 
 #categories-down{
     width: 83%;
+    max-width: 83%;
     position: fixed;
-    height: 8vh;
-    bottom: 0;
+    height: 9vh;
+    bottom: 0.5%;
     left: 8.5%;
-    background-color:#ff2d29;
-    border-top: white solid 2px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(15px);
+    border: 1px solid #FF2C29;
+    box-shadow: 0px 0px 10px 2px #8b181665;
+    border-radius: 20px ;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
-
+.categoryDiv{
+    width: 12%;
+    height: 70%;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background:#FF2C29;
+    cursor: pointer;
+}
+.categoryDiv a{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.categoryDiv img{
+    position: absolute;
+    width: 10vh;
+    height: 6vh;
+    bottom: 68%;
+}
 .recipe-template{
     margin: 1.5%;
     width: 25%;

@@ -132,8 +132,41 @@
                 
             </div>
             <div id="categories-down">
-                <div>
-
+                <div class="categoryDiv">
+                    <a href="#">
+                        <img src="./img/categoryColombian.png" alt="Colombian">
+                        <h2>Colombiana</h2>
+                    </a>
+                </div>
+                <div class="categoryDiv">
+                    <a href="#">
+                        <img src="./img/categoryItalian.png" alt="Italian">
+                        <h2>Italiano</h2>
+                    </a>
+                </div>
+                <div class="categoryDiv">
+                    <a href="#">
+                        <img src="./img/categoryMexican.png" alt="Mexican">
+                        <h2>Mexicano</h2>
+                    </a>
+                </div>
+                <div class="categoryDiv">
+                    <a href="#">
+                        <img src="./img/categoryVegetarian.png" alt="Vegetarian">
+                        <h2>Vegetariano</h2>
+                    </a>
+                </div>
+                <div class="categoryDiv">
+                    <a href="#">
+                        <img src="./img/categoryHamburguer.png" alt="Hamburguesa">
+                        <h2>Hamburguesas</h2>
+                    </a>
+                </div>
+                <div class="categoryDiv">
+                    <a href="#">
+                        <img src="./img/categoryPasta.png" alt="Pasta">
+                        <h2>Pastas</h2>
+                    </a>  
                 </div>
             </div>
         </div>
