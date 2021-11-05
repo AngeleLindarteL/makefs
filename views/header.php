@@ -41,10 +41,6 @@
                     <p>subir contenido</p>
                 </a>
                 <a class="headlog_btn" href="">
-                    <img class="headlog_ico first" src="./iconos/home.png">
-                    <p>Principal</p>
-                </a>
-                <a class="headlog_btn" href="">
                     <img class="headlog_ico first" src="./iconos/theme.png">
                     <p>Cambiar tema</p>
                 </a>
