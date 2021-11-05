@@ -13,6 +13,7 @@
 <body>
     <?php
         include('./header.php');
+        include('./menudesplegable.php');
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
