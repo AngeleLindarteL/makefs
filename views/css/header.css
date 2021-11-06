@@ -171,7 +171,7 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 50vh;
+    height: 48vh;
     padding: 0px;
     transition: .2s;
     border: 2px solid var(--color5);
