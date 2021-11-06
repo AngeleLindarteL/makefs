@@ -2,37 +2,37 @@
     echo <<<EOT
         <div class="categories-down" id="menuCATE">
             <div class="categoryDiv" >
-                <a href="#" id="latamCate">
+                <a id="latamCate">
                     <img src="./img/latamCat.png" alt="Colombian">
                     <h2>Latinoamerica</h2>
                 </a>
             </div>
             <div class="categoryDiv">
-                <a href="#" id="asiaCate">
+                <a id="asiaCate">
                     <img src="./img/asiaCat.png" alt="Italian">
                     <h2>Asia</h2>
                 </a>
             </div>
             <div class="categoryDiv">
-                <a href="#" id="norteamericaCate">
+                <a id="norteamericaCate">
                     <img src="./img/norteamericaCat.png" alt="Mexican">
                     <h2>Norteamerica</h2>
                 </a>
             </div>
             <div class="categoryDiv">
-                <a href="#" id="europaCate">
+                <a id="europaCate">
                     <img src="./img/europaCat.png" alt="Vegetarian">
                     <h2>Europa</h2>
                 </a>
             </div>
-            <div class="categoryDiv" id="africaCate">
-                <a href="#">
+            <div class="categoryDiv" >
+                <a id="africaCate">
                     <img src="./img/africaCat.png" alt="Hamburguesa">
                     <h2>Africa</h2>
                 </a>
             </div>
-            <div class="categoryDiv" id="oceaniaCate">
-                <a href="#">
+            <div class="categoryDiv" >
+                <a id="oceaniaCate">
                     <img src="./img/oceaniaCat.png" alt="Hamburguesa">
                     <h2>Oceania</h2>
                 </a>

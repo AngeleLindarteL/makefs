@@ -3,6 +3,10 @@ const userSelection = document.querySelector("#user_selection");
 const navBar = document.querySelector("#nav-bar-ct");
 const navButton = document.querySelector("#nav-menu-btn")
 
+const mostrarCategoriasBtn = document.getElementById("categorias");
+const categoriasDesp = document.getElementById("menuCATE-DESP");
+let mostrandoCategorias = false;
+
 userLog.addEventListener('click', () => {
     if(userSelection.className == "userSelectClose"){
         userSelection.style.display = "flex";
@@ -24,6 +28,25 @@ navButton.addEventListener('click', () => {
     }else{
         navBar.classList.replace("nav-bar-showing", "nav-bar-hidden");
         navButton.classList.remove("displayedBar")
+    }
+})
+
+mostrarCategoriasBtn.addEventListener('click',()=>{
+    if(mostrandoCategorias){
+        categoriasDesp.style.opacity="0";
+        categoriasDesp.style.top="-2%";
+        setTimeout(()=>{
+            categoriasDesp.style.display="none";
+        },300);
+        mostrandoCategorias=false;
+    }else{
+        categoriasDesp.style.display="flex";
+        setTimeout(()=>{
+            categoriasDesp.style.top="1%";
+            categoriasDesp.style.opacity="100%";
+        },300);
+        mostrandoCategorias=true;
+        
     }
 })
 

@@ -113,17 +113,6 @@ section{
     z-index: 20;
 }
 
-#nav-bar h3{
-    margin: 0;
-    padding: 20px 0;
-    text-transform: uppercase;
-    text-align: center;
-    background-color: var(--color5);
-    color: white;
-    width: 100%;
-    margin-bottom: 5%;
-}
-
 #nav-bar ul{
     padding: 0;
     margin: 0;
@@ -167,6 +156,126 @@ section{
     opacity: 100%;
 }
 
+.categories-down-desplegable{
+    width: 90%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -2%;
+    display: flex;
+    opacity: 0;
+    transition: .3s;
+    padding-bottom: 2vh;
+}
+.subcategories-down-despegable{
+    width: 90%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -2%;
+    display: flex;
+    transition: .3s;
+    padding-bottom: 2vh;
+    display: none;
+    opacity: 0;
+}
+.categoryDiv-desplegable{
+    width: 45%;
+    height: 90%;
+    display: flex;
+    color: #FF2C29;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background:white;
+    cursor: pointer;
+    border: 1px solid #FF2C29;   
+}
+.categoriasOpen{
+    cursor: pointer;
+    height: 6vh;
+    border: none;
+    width: 100%;
+    background: #FF2C29;
+    color: white;
+    font-size: 1.4em;
+    z-index: 9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 3vh;
+    
+}
+.categoriasOpen img{
+    border-style: none;
+    width: 4vh;
+    margin-left: 1em;
+    transform: rotate(90deg);
+    transition: .3s;
+}
+.categoriasOpen img:hover{
+    transform: rotate(450deg);
+}
+.categoryDiv-desplegable a{
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: #FF2C29;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    text-align: center;
+}
+.categoryDiv-desplegable img{
+    width: 11vh;
+    height: 8vh;
+    bottom: 71%;
+    object-fit: contain;
+}
+.dosCategorias-despegable{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btnsMenuDesp{
+    width: 100%;
+    margin-top: 5%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btndesp{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: .2s;
+}
+.btndesp img{
+    width: 4vh;
+}
+.btndesp h3{
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    text-align: center;
+    background-color: white;
+    color: #FF2C29;
+    width: 100%;
+}
 /* ------------------------------------------------------------ MAKEFS BODY RECIPE */
 
 #principal-recipes{
@@ -184,13 +293,13 @@ section{
     font-size: 2em;
     margin-bottom: 1em;
     margin-left: 1.5%;
-    border-bottom: 2px black solid;
+    border-bottom: 2px #FF2C29 solid;
 }
 
 .general-recipes-container{
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 8vh;
@@ -230,8 +339,6 @@ section{
     align-items: center;
     opacity: 100%;
     transition: .3s;
-}
-.subcategories-down{
     display: none;
     opacity: 0;
 }
@@ -249,7 +356,6 @@ section{
     cursor: pointer;
     border: 1px solid #FF2C29;
     overflow: hidden;
-
 }
 .categoryDiv a{
     width: 100%;
@@ -271,7 +377,7 @@ section{
 }
 .recipe-template{
     margin: 1.5%;
-    width: 25%;
+    width: 30%;
     height: 40vh;
     min-height: 200px;
     max-height: 400px;

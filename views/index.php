@@ -140,5 +140,6 @@
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/categoriesmenu.js"></script>
+    <script src="./js/menuDesplegable.js"></script>
 </body>
 </html>
