@@ -193,3 +193,358 @@ body{
     text-decoration: none;
     color: var(--color5);
 }
+/*-----responsive-----*/
+.responsive-header{
+    display: none;
+    position: absolute;
+    width: 66%;
+    text-align: center;
+    text-transform: uppercase;
+    top: 15.5vh;
+    left: 17%;
+    background-color: var(--color5);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+    color: white;
+ }
+ @media (max-width: 1840px){
+    .aregister{
+        margin-top: 0;
+    }
+}
+ @media (max-width: 1320px){
+     .aback{
+         left: 55%;
+     }
+}
+@media (max-height: 800px){
+    .aback{
+        top: -6vh;
+        left: 5%;
+    }
+}
+ @media (width: 1024px) and (height: 600px){
+     .aback{
+         top: -2vh !important;
+         left: 46% !important;
+     }
+     .aback img{
+         filter: invert(0) !important;
+     }
+ }
+ @media (width: 1024px) and (height: 1366px){
+     .aback{
+         left: 17% !important;
+     }
+     .formcont{
+         width: 85%;
+     }
+     .form-done h5{
+         font-size: 2em;
+     }
+     .submitbtn{
+         font-size: 2.5em;
+     }
+     .aregister p{
+         font-size: 1.8em;
+     }
+     .aregister a{
+         font-size: 1.8em;
+     }
+ }
+ @media (max-width: 1290px){
+     .viewlogo{
+         display: none;
+     }
+     .formcont{
+         margin-right: 0;
+     }
+     .aback{
+         left: 31%;
+     }
+ 
+ }
+ @media (max-width: 980px){
+     .formcont{
+         width: 70%;
+     }
+     .aback{
+         left: 23%;
+     }
+     .form-done h1{
+         margin-top: 7%;
+     }
+ 
+ }
+ @media (max-width: 790px){
+     .aback{
+         left: 22%;
+         top: 5vh;
+     }
+     .aback img{
+         height: 2vh;
+     }
+     .aback h6{
+         font-size: 1.2em;
+     }
+     .logocont{
+         display: none;
+     }
+     .titlecont{
+         display: none;
+     }
+     .responsive-header{
+         left: 15%;
+         top: 88%;
+         width: 70%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+     .aregister{
+         margin-top: 1%;
+     }
+ 
+ }
+ @media (max-width: 680px){
+     .aback{
+         left: 21%;
+         top: -5vh;
+         color: white;
+     }
+     .aback img{
+         filter: invert(1);
+         margin: 10%;
+     }
+ 
+ }
+ @media (max-width: 530px){
+     .aback{
+         left:12%;
+     }
+     .formcont{
+         width: 90%;
+     }
+     .responsive-header{
+         width: 85.4%;
+         left: 7.3%;
+     }
+ 
+ }
+ @media (max-width: 360px){
+     .aback{
+         top: -10vh;
+         left: 37%;
+         filter: invert(1);
+     }
+     .aback h6{
+         font-size: 1.5em;
+     }
+     .aback img{
+         height: 2.5vh;
+     }
+     .formcont{
+         width: 95%;
+         height: 80vh;
+     }
+     .responsive-header{
+         top: 12vh;
+         width: 95%;
+         left: 2.5%;
+     }
+ 
+ }
+ 
+ @media (max-height: 830px){
+     .responsive-header{
+         top: 8.5vh;
+         width: 90%;
+         left: 5%;
+     }
+     .form-done{
+        overflow: scroll;
+    }
+ }
+ @media (max-height: 740px){
+     .info-form{
+         height: 80%;
+     }
+     .aback{
+         top: -15%;
+         left: 35%;
+     }
+     .aback img{
+         filter: invert(1);
+     }
+     .aback h6{
+         font-size: 1.5em;
+     }
+     .responsive-header{
+         top: 13vh;
+     }
+     .form-done{
+        overflow: scroll;
+    }
+ }
+ @media (max-height: 736px){
+    .aback{
+        top: -2%;
+        left: 9%;
+    }
+    .responsive-header{
+        top: 12vh;
+    }
+}
+ @media (max-height: 731px){
+    .aback{
+        top: -2%;
+        left: 9%;
+    }
+    .responsive-header{
+        top: 12vh;
+    }
+}
+@media (max-height: 653px){
+    .aback{
+        top: -12%;
+        left: 32%;
+    }
+    .responsive-header{
+        top: 13vh;
+        left: 3%;
+        width: 94%;
+    }
+}
+ @media (max-height: 640px){
+    .info-form{
+        height: 80%;
+    }
+    .aback{
+        top: -12%;
+        left: 36%;
+    }
+    .aback img{
+        filter: invert(1);
+    }
+    .aback h6{
+        font-size: 1.5em;
+    }
+    .responsive-header{
+        top: 13vh;
+        left: 3%;
+        width: 94%;
+    }
+    .form-done{
+       overflow: scroll;
+   }
+}
+ @media (height: 720px) and (width: 540px){
+     .aback{
+            top: -2%;
+            left: 20%;
+     }
+    .responsive-header{
+        top: 11vh;
+        width: 70%;
+        left: 15%;
+}
+@media (height: 653px) and (width: 280px){
+    .aback{
+           top: -2%;
+           left: 20%;
+    }
+   .responsive-header{
+       top: 11vh;
+       width: 70%;
+       left: 15%;
+}
+ @media (max-height: 655px){
+     .info-form{
+         height: 95%;
+     }
+     .aback{
+         left: 5%;
+         top: -20vh;
+     }
+     .aback img{
+         height: 4vh;
+     }
+     .aback h6{
+         font-size: 1.5em;
+     }
+     .responsive-header{
+         top: 7vh;
+     }
+     .form-done{
+        overflow: scroll;
+    }
+ 
+ }
+ @media (max-height: 640px){
+     .info-form{
+         height: 100%;
+     }
+     .aback{
+         left: 7%;
+         top: -8vh
+     }
+     .aback img{
+         height: 3vh;
+     }
+     .aback h6{
+         font-size: 1.2em;
+     }
+     .responsive-header{
+         top: 5vh;
+     }
+     .form-done{
+         overflow: scroll;
+     }
+ 
+ }
+ @media (max-height: 600px){
+     .info-form{
+         height: 95%;
+     }
+     .aback{
+         left: 9%;
+         top: -6.5vh;
+     }
+     .aback img{
+         height: 2.5vh;
+ 
+     }
+     .aback h6{
+         font-size: 1em;
+ 
+     }
+     .responsive-header{
+         top: 5vh;
+     }
+     .form-done{
+        overflow: scroll;
+    }
+ 
+ }
+ @media (max-height: 560px){
+     .info-form{
+         height: 100%;
+     }
+     .aback{
+         top: 9vh;
+     }
+     .aback img{
+         height: 4vh;
+     }
+     .aback h6{
+         font-size: 1.5em;
+     }
+     .form-done{
+        overflow: scroll;
+    }
+    .responsive-header{
+        top: -5vh;
+    }
+}
+}
+}
