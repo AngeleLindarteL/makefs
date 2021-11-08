@@ -1,54 +1,137 @@
-let btnLAT2 = document.getElementById("latamCate2");
-let btnASI2 = document.getElementById("asiaCate2");
-let btnNA2 = document.getElementById("norteamericaCate2");
-let btnEUW2 = document.getElementById("europaCate2");
-let btnAF2 = document.getElementById("africaCate2");
-let btnOC2 = document.getElementById("oceaniaCate2");
+let btnLAT2 = document.getElementById("soup");
+let btnASI2 = document.getElementById("veg");
+let btnNA2 = document.getElementById("gourmet");
+let btnEUW2 = document.getElementById("postre");
+let btnAF2 = document.getElementById("casero");
+let btnOC2 = document.getElementById("tipico");
 
-let btnClose2 = document.querySelectorAll(".returnBtn-despegable");
-let submenus2 = document.querySelectorAll(".subcategories-down-desplegable");
+let imgSubcategories = ["./img/sopaCat.png","./img/vegetarianCat.png",
+"./img/gourmetCat.png","./img/postresCat.png",
+"./img/caseroCat.png"];
 
-let menuCATE2 = document.getElementById("menuCATE-despegable");
-let menuLAT2 = document.getElementById("latinoamerica2");
-let menuASI2 = document.getElementById("asia2");
-let menuNA2 = document.getElementById("norteamerica2");
-let menuEUW2 = document.getElementById("europa2");
-let menuAF2 = document.getElementById("africa2");
-let menuOC2 = document.getElementById("oceania2");
+let imgTipica = ["./img/latamTipica.png","./img/asiaTipica.png",
+"./img/norteamericaTipica.png","./img/europaTipica.png","./img/africaTipica.png",
+"./img/oceaniaTipica.png"];
 
-function changeSubcategory(btn,submenu,menu) {
-    btn.addEventListener("click",(e)=>{
+let imgCategorias = ["./img/latamCat.png","./img/asiaCat.png",
+"./img/norteamericaCat.png","./img/europaCat.png","./img/africaCat.png",
+"./img/oceaniaCat.png"];
 
-        menu.style.opacity="0";
-        setTimeout(()=>{
-            menu.style.display="none";
-        },300);
-    
-        submenu.style.display="flex";
-        setTimeout(()=>{
-            submenu.style.opacity="100%"
-        },300);
-    })
+let txtCategorias = ["Latinoamerica","Asia","Norteamerica","Europa","Africa","Oceania"]
+
+let txtSubcategorias = ["Sopas","Vegetariana","Gourmet","Postres","Casero","Tipicas"];
+
+let hrefsSub1 = ["#","#","#","#","#","#"];
+let hrefsSub2 = ["#","#","#","#","#","#"];
+let hrefsSub3 = ["#","#","#","#","#","#"];
+let hrefsSub4 = ["#","#","#","#","#","#"];
+let hrefsSub5 = ["#","#","#","#","#","#"];
+let hrefsSub6 = ["#","#","#","#","#","#"];
+let hrefsVacios = ["#","#","#","#","#","#"];
+
+let btnClose1 = document.getElementById("returnBtnDesp");
+
+
+
+function changeSubcategory(imgComida,div,arrayDeTexto,arrayHrefs,enteroDelArrayImg,enteroDelArrayTXT) {
+    div.children[0].setAttribute("href",arrayHrefs[enteroDelArrayTXT]);
+    div.children[0].children[0].setAttribute("src",imgComida[enteroDelArrayImg]);
+    div.children[0].children[1].textContent = arrayDeTexto[enteroDelArrayTXT];
 }
 
-changeSubcategory(btnLAT2,menuLAT2,menuCATE2);
-changeSubcategory(btnASI2,menuASI2,menuCATE2);
-changeSubcategory(btnNA2,menuNA2,menuCATE2);
-changeSubcategory(btnEUW2,menuEUW2,menuCATE2); 
-changeSubcategory(btnAF2,menuAF2,menuCATE2);
-changeSubcategory(btnOC2,menuOC2,menuCATE2);
+btnClose1.addEventListener("click",()=>{
+    changeSubcategory(imgCategorias,btnLAT2,txtCategorias,hrefsVacios,0,0);
+    changeSubcategory(imgCategorias,btnASI2,txtCategorias,hrefsVacios,1,1);
+    changeSubcategory(imgCategorias,btnNA2,txtCategorias,hrefsVacios,2,2);
+    changeSubcategory(imgCategorias,btnEUW2,txtCategorias,hrefsVacios,3,3);
+    changeSubcategory(imgCategorias,btnAF2,txtCategorias,hrefsVacios,4,4);
+    changeSubcategory(imgCategorias,btnOC2,txtCategorias,hrefsVacios,5,5);
+    btnClose1.style.display="none";
+    btnClose1.innerHTML=``;
+})
 
-for(let i=0;i<btnClose2.length;i++){
-    btnTemp= btnClose2[i];
-    btnTemp.addEventListener("click",()=>{
-        submenus2.item(i).style.opacity="0";
-        setTimeout(()=>{
-            submenus2.item(i).style.display="none";
-        },300);
-    
-        menuCATE2.style.display="flex";
-        setTimeout(()=>{
-            menuCATE2.style.opacity="100%";
-        },300);
-    })
-}
+btnLAT2.addEventListener("click",()=>{
+    changeSubcategory(imgSubcategories,btnLAT2,txtSubcategorias,hrefsSub1,0,0);
+    changeSubcategory(imgSubcategories,btnASI2,txtSubcategorias,hrefsSub1,1,1);
+    changeSubcategory(imgSubcategories,btnNA2,txtSubcategorias,hrefsSub1,2,2);
+    changeSubcategory(imgSubcategories,btnEUW2,txtSubcategorias,hrefsSub1,3,3);
+    changeSubcategory(imgSubcategories,btnAF2,txtSubcategorias,hrefsSub1,4,4);
+    changeSubcategory(imgTipica,btnOC2,txtSubcategorias,hrefsSub1,0,5);
+    btnClose1.style.display="flex";
+    btnClose1.innerHTML=`
+    <a href='#'>
+    <h2><<</h2>
+    </a>
+    `;
+})
+btnASI2.addEventListener("click",()=>{
+    changeSubcategory(imgSubcategories,btnLAT2,txtSubcategorias,hrefsSub2,0,0);
+    changeSubcategory(imgSubcategories,btnASI2,txtSubcategorias,hrefsSub2,1,1);
+    changeSubcategory(imgSubcategories,btnNA2,txtSubcategorias,hrefsSub2,2,2);
+    changeSubcategory(imgSubcategories,btnEUW2,txtSubcategorias,hrefsSub2,3,3);
+    changeSubcategory(imgSubcategories,btnAF2,txtSubcategorias,hrefsSub2,4,4);
+    changeSubcategory(imgTipica,btnOC2,txtSubcategorias,hrefsSub2,1,5);
+    btnClose1.style.display="flex";
+    btnClose1.innerHTML=`
+    <a href='#'>
+    <h2><<</h2>
+    </a>
+    `;
+})
+btnNA2.addEventListener("click",()=>{
+    changeSubcategory(imgSubcategories,btnLAT2,txtSubcategorias,hrefsSub3,0,0);
+    changeSubcategory(imgSubcategories,btnASI2,txtSubcategorias,hrefsSub3,1,1);
+    changeSubcategory(imgSubcategories,btnNA2,txtSubcategorias,hrefsSub3,2,2);
+    changeSubcategory(imgSubcategories,btnEUW2,txtSubcategorias,hrefsSub3,3,3);
+    changeSubcategory(imgSubcategories,btnAF2,txtSubcategorias,hrefsSub3,4,4);
+    changeSubcategory(imgTipica,btnOC2,txtSubcategorias,hrefsSub3,2,5);
+    btnClose1.style.display="flex";
+    btnClose1.innerHTML=`
+    <a href='#'>
+    <h2><<</h2>
+    </a>
+    `;
+})
+btnEUW2.addEventListener("click",()=>{
+    changeSubcategory(imgSubcategories,btnLAT2,txtSubcategorias,hrefsSub4,0,0);
+    changeSubcategory(imgSubcategories,btnASI2,txtSubcategorias,hrefsSub4,1,1);
+    changeSubcategory(imgSubcategories,btnNA2,txtSubcategorias,hrefsSub4,2,2);
+    changeSubcategory(imgSubcategories,btnEUW2,txtSubcategorias,hrefsSub4,3,3);
+    changeSubcategory(imgSubcategories,btnAF2,txtSubcategorias,hrefsSub4,4,4);
+    changeSubcategory(imgTipica,btnOC2,txtSubcategorias,hrefsSub4,3,5);
+    btnClose1.style.display="flex";
+    btnClose1.innerHTML=`
+    <a href='#'>
+    <h2><<</h2>
+    </a>
+    `;
+})
+btnAF2.addEventListener("click",()=>{
+    changeSubcategory(imgSubcategories,btnLAT2,txtSubcategorias,hrefsSub5,0,0);
+    changeSubcategory(imgSubcategories,btnASI2,txtSubcategorias,hrefsSub5,1,1);
+    changeSubcategory(imgSubcategories,btnNA2,txtSubcategorias,hrefsSub5,2,2);
+    changeSubcategory(imgSubcategories,btnEUW2,txtSubcategorias,hrefsSub5,3,3);
+    changeSubcategory(imgSubcategories,btnAF2,txtSubcategorias,hrefsSub5,4,4);
+    changeSubcategory(imgTipica,btnOC2,txtSubcategorias,hrefsSub5,4,5);
+    btnClose1.style.display="flex";
+    btnClose1.innerHTML=`
+    <a href='#'>
+    <h2><<</h2>
+    </a>
+    `;
+})
+btnOC2.addEventListener("click",()=>{
+    changeSubcategory(imgSubcategories,btnLAT2,txtSubcategorias,hrefsSub6,0,0);
+    changeSubcategory(imgSubcategories,btnASI2,txtSubcategorias,hrefsSub6,1,1);
+    changeSubcategory(imgSubcategories,btnNA2,txtSubcategorias,hrefsSub6,2,2);
+    changeSubcategory(imgSubcategories,btnEUW2,txtSubcategorias,hrefsSub6,3,3);
+    changeSubcategory(imgSubcategories,btnAF2,txtSubcategorias,hrefsSub6,4,4);
+    changeSubcategory(imgTipica,btnOC2,txtSubcategorias,hrefsSub6,5,5);
+    btnClose1.style.display="flex";
+    btnClose1.innerHTML=`
+    <a href='#'>
+    <h2><<</h2>
+    </a>
+    `;
+})
+
