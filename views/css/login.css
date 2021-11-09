@@ -1,7 +1,3 @@
-/*------------------------Header---------------------*/
-body{
-    background-color: rgb(230, 243, 243);
-}
 :root{
     --color1: #FFBE26;
     --color2: #E08C1D;
@@ -9,788 +5,423 @@ body{
     --color4: #E03D14;
     --color5: #FF2C29;
 }
-
+/*-----header edits-----*/
 body{
-    font-family: sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
-
-section{
-    margin: auto;
-    max-width: none;
-}
-
-.makefsContainer{
-    padding: 0;
-    height: 100%;
+#header{
+    position: absolute;
+    display: flex;
+    top: 0;
     width: 100%;
-    max-width: 1700px;
-    margin: auto;
-}
-
-header{
-    position: fixed;
-    width: 100%;
-    background-color: var(--color5);
     height: 10vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999999;
-    max-height: 80px;
 }
-
-.headerContainer{
-    display: flex;
-    color: white;
+.logocont{
+    width: 50%;
+    height: 8vh;
 }
-.headerContainer div{
-    width: 33%;
-    height: 100%;
-}
-
-/* FIRST HEADER DIV - BUTTON ICONS */
-
-.header_icons{
-    display: flex;
-    align-items: center;
-}
-
-.headicons_ico{
-    width: 35px;
-    height: 35px;
-    overflow: hidden;
-    margin: 3%;
-}
-
-.headicons_ico:first-child{
-    margin-right: 10%;
-}
-.headicons_ico img{
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-}
-
-/* SECOND HEADER DIV - CENTRAL LOGO*/
-
-.header_logo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header_logo article{
-    margin: 0 2%;
+.logocont h1{
+    margin: 5% 8%;
     padding: 0;
+    font-size: 3.1em;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: var(--color5);
 }
-.header_logo article h1{
+.titlecont{
+    width: 50%;
+    height: 8vh;
+    margin-top: 5%;
+}
+.titlecont img{
+    position: absolute;
+    height: 8vh;
+    border-radius: 50%;
+    top: 3.2vh;
+    right: 6%;
+}
+/*-----logo mid edits-----*/
+#continfo{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 86vh;
+    top: 12vh;
+}
+.viewlogo{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5% 3%;
+    margin-right: 0;
+    margin-left: 25vh;
+    width: 47%;
+    height: 75%;
+    border-radius: 15px;
+    background-color: var(--color5);
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+    
+}
+.viewlogo h6{
+    position: absolute;
+    text-transform: lowercase;
+    margin: 0;
+    bottom: 4%;
+    right: 4%;
     font-size: 2em;
-    margin: 0;
-    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+    letter-spacing: 1px;
 }
-.header_logo article h2{
-    font-size: .92em;
-    margin: 0;
-    padding: 0;
-}
-
-.header_logo img{
-    width: 15%;
-    height: 95%;
-    object-fit: cover;
+.viewlogo img{
+    height: 70%;
     border-radius: 50%;
 }
-
-/* THIRD HEADER DIV - REGISTER AND LOGIN BUTTONS */
-
-
-.header_logreg{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-}
-
-#user_selection{
-    background-color: var(--color5);
-    position: absolute;
-    top: 110%;
-    width: 45%;
-    padding: 0;
-    margin: 5px;
-    border-radius: 30px;
+/*----form edits-----*/
+.formcont{
     align-items: center;
     justify-content: center;
+    display: flex;
     flex-direction: column;
-    height: 100px;
-    padding: 10px;
-    transition: .2s;
-    display: flex;
-}
-
-#user_selection::before{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: -7%;
-    right: 10%;
-    content: '';
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    background-color: var(--color5);
-}
-
-.userSelectClose{
-    opacity: 0;
-    right: -100%;
-}
-
-.userSelectOpen{
-    opacity: 100%;
-    right: 0;
-}
-
-.headlog_btn{
-    margin: 1%;
-    display: flex;
     align-items: center;
-    justify-content: space-around;
-    border: 2px solid white;
-    border-radius: 20px;
-    width: 95%;
-    text-decoration: none;
-    height: 50%;
-}
-
-.headlog_btn p{
-    color: white;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-}
-.headlog_btn img{
-    margin: 0;
-    height: 90%;
-    width: 15%;
-    object-fit: contain;
-}
-
-#userlog{
-    width: 15%;
-    height: 80%;
-    border-radius: 50%;
-}
-
-#userlog img{
-    object-fit: contain;
-    width: 100%;
+    margin-right: 11%;
+    width: 50% ;
     height: 100%;
 }
-/*---------------------------Registrador caja------------------*/
-.registerM{
-    background-color: #fdfafa;
-    border: 2px black solid;
-    width: 25%;
-    height: 450px;
+.info-form{
+    border-radius: 10px;
+    height: 75%;
+    width: 95%;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+    background-color: rgb(255, 255, 255);
+}
+.form-done{
+    width: 100%;
+    height: 100%;
     display: flex;
-    margin: 0 auto;
-    box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    font-family: 'Ubuntu', sans-serif;
-    justify-content: flex-start;
-    text-align: center;
     flex-direction: column;
     align-items: center;
 }
-.container_r{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.registerM{
-    border-radius: 1%;
-    padding: 20px;
-    margin-top: 8%;
-}
-/*---------------------------Regresar------------------*/
-.backM{
-    top: 8em;
+.aback{
     position: absolute;
     display: flex;
-    flex-direction: row;
-    margin: 1%;
-    justify-content: center;
     align-items: center;
-    padding: 5px 15px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-family: 'Ubuntu', sans-serif;
+    margin: 1vh 0 0 0;
+    padding: 0;
+    left: 53%;
+    height: 10%;
+    width: 7%;
+    text-decoration: none;
+    color: black;
+    transition: .2s;
+}
+.aback:hover{
+    transform: translateX(-8%);
+}
+.aback img{
+    height: 3vh;
+    width: 5vh;
+    margin-right: 2%;
+}
+.aback h6{
+    font-size: 2.5vh;
+    margin: 0;
+}
+.form-done h1{
+    margin-top: 13%;
+    margin-bottom: 0;
+    font-size: 2.5em;
     letter-spacing: 1px;
-    background-color: #FF2C29;
-    transition: .5s;
-    overflow: hidden;
-    cursor: pointer;
-    box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
 }
-.backM img{
-    top: -100px;
-    width: 45px;
-    height: 45px;
-    filter: invert(1);
-    position: absolute;
-    left: 2%;
-    transition: .5s;
+.form-done h5{
+    font-size: 1.3em;
+    width: 81%;
 }
-.backM h1{
-    color: white;
-    text-align: end;
-}
-/*---------------------------Hovers Regresar------------------*/
-.backM:hover{
-    padding: 5px 45px;
-}
-.backM:hover img{
-    top: 21px;
-    transition: .5s;
-    position: absolute;
-
-}
-.backM:hover h1{
-    margin-left: 25px;
-    transition: 1s;
-}
-/*-------------------------Register interno-------------------*/
-.registerM h1{
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-weight: 20px;
-}
-.registerM input{
-    text-align: center;
+.inputtxt{
     width: 80%;
-    height: 35px;
-    margin-top: 30px;
-    border-radius: 10px;
-    border: 2px solid rgb(6, 7, 7);
-}
-.checkR{
-    display:flex;
-    width: 100%;
-    align-items: center;
-    margin: 20px 0;
-    text-align: start;
-    font-size: 1.2em
-}
-.checkR input{
-    width: 10%;
-    margin: 2% 0 0 40px;
-}
-.checkR p{
+    height: 5vh;
+    border-radius: 4px;
     margin: 0;
     padding: 0;
+    transition: .2s;
+    font-size: 1.4em;
+}
+.inputtxt:hover{
+    box-shadow: 0px 1px 10px 0px rgba(199, 90, 90, 0.38);
+}
+.submitbtn{
     width: 80%;
-    margin-left: 10px;
+    margin-top: 6%;
+    height: 7vh;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--color5);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.4em;
+    border-radius: 4px;
+    transition: .2s;
+    border: 2px solid var(--color5);
 }
-.checkR:last-child{
-    margin: 0px;
+.submitbtn:hover{
+    background-color: var(--color5);
+    color: white;
+    cursor: pointer;
 }
-/*-----------------------Enviar-------------------------*/
-.submit_r{
-    position: relative;
+#aregister{
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    border: rgb(255, 240, 240) 2px solid;
-    padding: 10px 10px;
-    border-radius: 50px;
-    color: white;
-    background-color: #FF2C29;
-    transition: .3s linear;
-    overflow: hidden;
+    width: 20%;
+    top: 12vh;
 }
-.submit_r img{
-    height: 50px;
-    filter: invert(1);
+.aregister{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.submit_r h1{
-    visibility: hidden;
-    right: -100%;
-    left: 100%;
-    position: absolute;
-    word-break: keep-all;
-    width: 300%;
+.aregister p{
+    margin-right: 1%;
 }
-/*---------hovers submit---------*/
-.submit_r:hover{
-    padding-right: 80%;
-    cursor:pointer;
+.aregister a{
+    text-decoration: none;
+    color: var(--color5);
 }
-.submit_r:hover h1{
-    visibility: visible;
-    right: 0;
-    transition: .3s;
-    left: 10%;
-    width: 90%;
+/*-----responsive-----*/
+.responsive-header{
+   display: none;
+   position: absolute;
+   width: 66%;
+   text-align: center;
+   text-transform: uppercase;
+   top: 15.5vh;
+   left: 17%;
+   background-color: var(--color5);
+   border-radius: 15px;
+   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+   color: white;
 }
-/*---------Responsive---------*/
+@media (width: 1024px) and (height: 600px){
+    .aback{
+        top: 3vh !important;
+        left: 28% !important;
+    }
+}
+@media (width: 1024px) and (height: 1366px){
+    .aback{
+        left: 17% !important;
+    }
+    .formcont{
+        width: 85%;
+    }
+    .form-done h5{
+        font-size: 2em;
+    }
+    .submitbtn{
+        font-size: 2.5em;
+    }
+    .aregister p{
+        font-size: 1.8em;
+    }
+    .aregister a{
+        font-size: 1.8em;
+    }
+}
+@media (max-width: 1290px){
+    .viewlogo{
+        display: none;
+    }
+    .formcont{
+        margin-right: 0;
+    }
+    .aback{
+        left: 31%;
+    }
 
-@media (max-width:1100px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 60%;
-        height: 450px;
-        display: flex;
-        margin: 0 auto;
-        font-size: 1em;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-    }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 15%;
-    }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 15px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
 }
-@media (max-width:1000px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 60%;
-        height: 450px;
-        display: flex;
-        margin: 0 auto;
-        font-size: 1em;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 980px){
+    .formcont{
+        width: 70%;
     }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 15%;
+    .aback{
+        left: 23%;
     }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 15px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    .form-done h1{
+        margin-top: 7%;
     }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
+
 }
-@media (max-width:880px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 60%;
-        height: 450px;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 790px){
+    .aback{
+        left: 22%;
+        top: 12vh;
     }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 25%;
+    .aback img{
+        height: 2vh;
     }
-    .backM{
-        top: 10%;
-        position: absolute;
+    .aback h6{
+        font-size: 1.2em;
+    }
+    .logocont{
+        display: none;
+    }
+    .titlecont{
+        display: none;
+    }
+    .responsive-header{
         display: flex;
-        flex-direction: row;
-        margin: 1%;
         justify-content: center;
         align-items: center;
-        padding: 0px 15px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
     }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
+
 }
-@media (max-width:768px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 80%;
-        height: vh;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        font-size: 1em;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 680px){
+    .aback{
+        left: 21%;
+        top: 2.4vh;
+        color: white;
     }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 18%;
+    .aback img{
+        filter: invert(1);
+        margin: 10%;
     }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 15px;
-        width:60%;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
-    .submit_r{
-        margin-top: 5%;
-    }
+
 }
-@media (max-width:414px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 80%;
-        height: 450px;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        font-size: 1em;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 530px){
+    .aback{
+        left:12%;
     }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 38%;
+    .formcont{
+        width: 90%;
     }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 15px;
-        width:60%;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    .responsive-header{
+        width: 85.4%;
+        left: 7.3%;
     }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
+
 }
-@media (max-width:380px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 80%;
-        height: 450px;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        font-size: 1em;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
+@media (max-width: 360px){
+    .aback{
+        top: -4vh;
+        left: 37%;
+        filter: invert(1);
     }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 38%;
+    .aback h6{
+        font-size: 1.5em;
     }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 15px;
-        width:60%;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
+    .aback img{
+        height: 2.5vh;
     }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
+    .formcont{
+        width: 95%;
+        height: 80vh;
     }
-}
-@media (max-width:360px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 80%;
-        height: 60vh;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-        font-size: 0.8em;
+    .responsive-header{
+        top: 17.2vh;
+        width: 90%;
+        left: 5%;
     }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 40%;
-    }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        width: 60%;
-        padding: 0px 15px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
-}
-@media (max-width:320px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 80%;
-        height: 70vh;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-        font-size: 0.8em;
-    }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 37%;
-    }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        justify-content: center;
-        align-items: center;
-        height: 10vh;
-        width: 60%;
-        padding: 0px 15px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
-}
-@media (max-width:280px) {
-    .registerM{
-        background-color: #fdfafa;
-        border: 2px black solid;
-        width: 80%;
-        height: 60vh;
-        display: flex;
-        margin: 0 auto;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-        font-family: 'Ubuntu', sans-serif;
-        justify-content: flex-start;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-        font-size: 0.8em;
-    }
-    .registerM{
-        border-radius: 1%;
-        padding: 20px;
-        margin-top: 40%;
-    }
-    .backM{
-        top: 10%;
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        margin: 1%;
-        height: 5vh;
-        width: 60%;
-        justify-content: center;
-        align-items: center;
-        padding: 25px 15px;
-        border-radius: 30px;
-        text-transform: uppercase;
-        font-family: 'Ubuntu', sans-serif;
-        letter-spacing: 1px;
-        background-color: #FF2C29;
-        transition: .5s;
-        overflow: hidden;
-        cursor: pointer;
-        box-shadow: 1px 0px 20px 5px rgba(0, 0, 0, 0.288);
-    }
-    .checkR{
-        display:flex;
-        width: 100%;
-        align-items: center;
-        margin: 8px 0;
-        text-align: start;
-        font-size: 1.2em
-    }
-    .submit_r{
-        width: 25%;
-    }
-    .checkR input{
-        width: 10%;
-        margin: 2% 0 0 15px;
-    }
+
 }
 
+@media (max-height: 830px){
+    .responsive-header{
+        top: 15vh;
+    }
+}
+@media (max-height: 740px){
+    .info-form{
+        height: 80%;
+    }
+    .aback{
+        top: -3.5%;
+    }
+    .aback img{
+        filter: invert(1);
+    }
+    .aback h6{
+        font-size: 1.5em;
+    }
+    .responsive-header{
+        top: 9vh;
+    }
+}
+@media (max-height: 655px){
+    .info-form{
+        height: 95%;
+    }
+    .aback{
+        left: 5%;
+        top: -13.5vh
+    }
+    .aback img{
+        height: 4vh;
+    }
+    .aback h6{
+        font-size: 1.5em;
+    }
+    .responsive-header{
+        top: 7vh;
+    }
+
+}
+@media (max-height: 640px){
+    .info-form{
+        height: 100%;
+    }
+    .aback{
+        left: 37%;
+        top: 72vh
+    }
+    .aback img{
+        height: 3vh;
+    }
+    .aback h6{
+        font-size: 1.2em;
+    }
+    .responsive-header{
+        top: 5vh;
+    }
+
+}
+@media (max-height: 600px){
+    .info-form{
+        height: 95%;
+    }
+    .aback{
+        left: 9%;
+        top: 2vh;
+    }
+    .aback img{
+        height: 2.5vh;
+
+    }
+    .aback h6{
+        font-size: 1em;
+
+    }
+    .responsive-header{
+        top: 5vh;
+    }
+
+}
+@media (max-height: 560px){
+    .info-form{
+        height: 100%;
+    }
+    .aback{
+        top: 9vh
+    }
+    .aback img{
+        height: 4vh;
+    }
+    .aback h6{
+        font-size: 1.5em;
+    }
+
+}

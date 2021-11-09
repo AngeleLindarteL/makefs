@@ -8,252 +8,215 @@
   --color5: #ff2c29;
 }
 
-/*----------------------------Pasos--------------------*/
-.receta_container {
-  margin-top: 10vh;
-  display: flex;
-  flex-direction: row;
+#recipe_section{
   width: 100%;
-  overflow: hidden;
-  height: 100vh;
-  height: 90vh;
-  overflow: hidden;
-}
-.container_list {
-  height: 100%;
-  width: 40%;
-  position: relative;
 }
 
-.container_list ul {
-  width: 100%;
-  height: fit-content;
+.recipe_container {
+  margin: auto;
+  margin-top: 8vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  max-width: 2200px;
+}
+.makefs-media-player{
+  margin: .8% 2.5%;
+  width: 95%;
   justify-content: center;
-  align-items: flex-start;
-  padding: 0;
+  align-items: center;
+  height: 80vh;
+  max-height: 1500px;
+  background-color: rgb(22, 22, 22);
+  background-image: url(../img/food-pattern-white.png);
+  background-attachment: fixed;
+  background-size: 30%;
+  position: relative;
+}
+.makefs-media-player video{
+  width: 100%;
+  height: 100%;
+}
+
+.makefs-video-controls{
+  width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  transition: .4s;
-}
-.container_list ul li {
-  border: var(--color5) solid 2px;
-  border-radius: 30px;
-  list-style: none;
-  padding: 2% 1%;
-  margin: .7% 0;
-  width: 95%;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-y: hidden;
-  transition: 0.2s;
-  color: var(--color5);
-}
-
-.step-num {
-  width: 8vh;
-  height: 8vh;
-  text-align: center;
-  line-height: 2em;
-  border-radius: 50%;
-  background: rgb(255, 255, 255);
-  border: var(--color5) solid 3px;
-  display: flex;
-  position: relative;
-  font-family: sans-serif;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  color: var(--color5);
-  font-weight: bold;
-  transition: 0.2s;
-  font-size: 1.5em;
-}
-.step-text {
-  height: 100%;
-  overflow: hidden;
-  width: 80%;
-  margin: 0;
-  margin: 1%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  transition: 0.2s;
-  font-size: 1.2em;
-  color: inherit;
-}
-.container_list li:hover {
-  background-color: var(--color5);
-  border: var(--color5) solid 2px;
-  cursor: pointer;
-  border-radius: 30px;
-  height: 10vh;
-  color: white;
-}
-
-.focus-step-on{
-  transition: .2s;
-  height: max-content!important;
-  background-color: var(--color5);
-  color: white;
-  border-radius: 30px;
-  transform: scale(1.01);
-}
-
-.focus-step-on .step-text{
-  color: white;
-}
-
-.container_list .active {
-  background: dodgerblue;
-}
-
-.container_list .active ~ li {
-  background: lightblue;
-}
-
-.container_list .active ~ li::before {
-  background: lightblue;
-}
-
-.head_videos {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  /* margin: 0 0 0 2%; */
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-  /* margin-top: 10vh; */
-}
-.head_videos img {
-  filter: invert(1);
-  transition: 0.2s;
-  margin: 0 5px;
-}
-
-
-.put_video {
-  display: flex;
-  flex-direction: column;
-  border: #ff2c29 2px dotted;
-  background-color: #e98168;
-  width: 95%;
-}
-
-.put_video{
-  height: 59%;
-}
-.put_video video{
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-.put_video:last-child{
-  height: 40%;
-  margin: 1%;
-  background-color: white;
-  overflow: scroll;
-}
-
-.titlesv {
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-bottom: 1%;
-  background-color: var(--color5);
-  color: white;
-}
-.titlesv h1{
-  margin: 0;
-  padding: 0;
-  width: 60%;
-  text-align: left;
-  font-size: 1.5em;
-  padding: 2%;
-}
-.titlesv a{
-  width: 5%;
-  height: 100%;
-  margin: .5%;
-}
-.titlesv a img{
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
-  filter: invert(0);
-}
-.titlesv h2 {
-  border: 1px solid white;
-  width: 20%;
-  text-align: center;
-  margin-right: 10px;
-  padding: 5px;
-}
-.put_video h3 {
-  color: var(--color5);
-  margin: 1%;
-  padding: 0;
-  font-size: 1.4em;
-  text-transform: uppercase;
-}
-.ingredient{
-  height: fill;
-}
-.ingredient-list{
-  width: 100%;
+  bottom: 0;
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  padding-bottom: 10vh;
+  z-index: 10;
 }
-.ingredient-list li{
-  list-style: none;
-  margin: .5%;
-  padding: 1%;
-  border: 2px solid var(--color5);
-  color: var(--color5);
-  border-radius: 20px;
+.in-panel-video{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.makefs-video-in-panel-video{
+  width: 25%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.247);
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+.makefs-video-in-panel-video:nth-child(2){
+  width: 50%;
+}
+.makefs-video-in-panel-video::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: .3s;
+  opacity: 70%;
+}
+.makefs-video-in-panel-video:first-child:after{
+  transform: rotate(180deg);
+}
+.makefs-video-in-panel-played::after{
+  background-image: url(../img/rvico-play.png);
+  animation: play-pause-animation .5s infinite;
+}
+.makefs-video-in-panel-paused::after{
+  background-image: url(../img/rvico-pause.png);
+  animation: play-pause-animation .5s infinite;
+}
+
+
+.makefs-video-in-panel-action::after{
+  animation: animate-play-button .5s infinite;
+  animation-duration: infinite;
+  background-image: url(../img/rvico-arrow.png);
+}
+
+.makefs-video-progress{
+  width: 98%;
+  margin: 0 1%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: .5vh;
   transition: .2s;
 }
-.ingredient-list li:hover{
+.makefs-video-progress progress{
+  width: 100%;
+  border-radius: 0;
+  height: 100%;
+}
+/* Range styles */
+input[type='range'], input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+input[type=range]::-webkit-slider-thumb{
   background-color: var(--color5);
-  color: white;
+  width: 1vh;
+  height: 1vh;
+  border-radius: 50%;
 }
-.put_video img {
-  width: 150px;
-  height: 150px;
-  margin: auto auto;
-  transition: 0.2s;
+input[type=range]::-moz-range-thumb{
+  background-color: violet;
+  width: 2vh;
+  height: 2vh;
+  color: rebeccapurple;
+}
+input[type=range]::-ms-thumb{
+  background-color: violet;
+  width: 2vh;
+  height: 2vh;
+  color: rebeccapurple;
+}
+input[type=range]::-webkit-slider-runnable-track{
+  background: rgb(255, 255, 255);
+  backdrop-filter: blur(2px);
+  height: 1vh;
+}
+input[type='range']:focus {
+  outline : none;
+  background-color: var(--color5);
+}
+input[type=range]:focus::-webkit-slider-runnable-track{
+  outline: none;
+  background-color: var(--color5);
+}input[type=range]::-ms-fill-lower{
+  outline: none;
+  background-color: var(--color5);
+}
+input[type=range]::-ms-fill-upper{
+  outline: none;
+  background-color: var(--color5);
+}
+input[type=range]{
+  opacity: 0;
+  transition: .05s
+}
+input[type=range]:hover{
+  opacity: 1;
+}
+input[type=range]::-moz-range-track{
+  background-color: transparent;
+}
+input[type=range]::-ms-track{
+  background-color: transparent;
 }
 
+/*  */
+.makefs-video-progress progress{
+  transition: .2s;
+}
+#mkfs_video_progress_select{
+  width: 100%;
+  border-radius: 0;
+  height: .5vh;
+  position: absolute;
+}
+.makefs-video-progress progress::-webkit-progress-bar {
+  background: rgba(255, 255, 255, 0.61);
+  backdrop-filter: blur(2px);
+}
+.makefs-video-progress progress::-webkit-progress-value {
+  background: var(--color5);
+}
+.makefs-video-control-button{
+  width: 3vh;
+  height: 3vh;
+  background-color: white;
+  border-radius: 50%;
+  margin: .2% 1%;
+  border: none;
+}
 
-@media (max-width: 830px) {
-  .receta_container{
-    flex-wrap: wrap;
-    overflow: scroll;
-  }
-  .head_videos{
-    width: 100%;
-  }
-  .container_list{
-    width: 100%;
-    overflow: hidden;
-  }
-  .container_list ul{
-    align-items: center;
-  }
+/* Video Animations */
 
+@keyframes animate-play-button{
+  0%{
+    background-size: 20%;
+  }
+  50%{
+    background-size: 40%;
+  }
+  100%{
+    background-size: 20%;
+  }
+}
+@keyframes play-pause-animation{
+  0%{
+    background-size: 30%;
+  }
+  /* 50%{
+    background-size: 32%;
+  } */
+  100%{
+    background-size: 20%;
+  }
 }
