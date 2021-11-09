@@ -1,5 +1,5 @@
 <?php 
-    include('datosDB.php');
+    include('./datosDB.php');
     class Conexion{
         function Conectar(){
             try{

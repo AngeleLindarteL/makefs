@@ -30,7 +30,7 @@
         </div>
         <div class="formcont">
             <div class="info-form">
-                <div class="form-done">
+                <form action="../controllers/register.php" method="POST" class="form-done">
                     <a class="aback" href=""><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
                     <h1>Registrate!</h1>
                     <h5 class="mainsubtitle">Nombre</h5>
@@ -43,9 +43,9 @@
                     <input class="inputtxt" type="password" name="pw">
                     <h5>Fecha de nacimiento</h5>
                     <input class="inputtxt" type="date" name="date">
-                    <input type="submit" value="Registrarse" class="submitbtn">
+                    <input type="submit" value="Registrarse" name="register" class="submitbtn">
                     <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href=""> inicia sesion!</a></span></h4>
-                </div>
+                </form>
             </div>
         </div>
     </section>
