@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,115 +8,44 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
     <title>Receta</title>
 </head>
+
 <body>
     <?php
-        include('./header.php');
-        include_once('./menudesplegable.php');
+    include('./header.php');
+    include_once('./menudesplegable.php');
     ?>
-    <section class="receta_container">
-
-        <div class="head_videos">
-            <div class="put_video">
-                <video src="./test-imgs/xdr.wmv" controls></video>
-            </div>
-            <div class="put_video">
-                <div class="titlesv">
-                    <h1>Pollo Triste porque me dejaste</h1>
-                    <h2>TIPO</h2>
-                    <a><img src="./img/rhico-like.png"></a>
-                    <a><img src="./img/hico-favorites.png"></a>
-                    <a><img src="./img/chef-flag.png"></a>
+    <section id="recipe_section">
+        <div class="recipe_container">
+            <div class="makefs-media-player">
+                <video poster="./test-imgs/elBhicho.jfif" id="source_video">
+                    <source src="./test-imgs/videoPrueba.mp4" type="video/mp4" />
+                    El navegador no soporta este video lol
+                </video>
+                <div class="in-panel-video" id="mkfv_controlls_big_panel">
+                    <figure class="makefs-video-in-panel-video" id="mkfv_controlls_backTo"></figure>
+                    <figure class="makefs-video-in-panel-video" id="mkfv_controlls_big_play"></figure>
+                    <figure class="makefs-video-in-panel-video" id="mkfv_controlls_afterTo"></figure>
                 </div>
-                <div class="ingredients">
-                    <h3>Ingredientes</h5>
-                    <ul class="ingredient-list">
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                        <li>Pelao con botzo</li>
-                    </ul>
+                <div class="makefs-video-controls">
+                    <div class="makefs-video-progress">
+                        <progress id="mkfs_video_progress_bar" min="0">
+                            <span id="progress-bar"></span>
+                        </progress>
+                        <input type="range" id="mkfs_video_progress_select" min="0" value="0">
+                    </div>
+                    <button id="mkfv_controlls_play" class="makefs-video-control-button"></button>
+                    <button id="mkfv_controlls_mute" class="makefs-video-control-button"></button>
+                    <input type="range" name="volume-range" id="mkfv_controlls_volume" min="0" max="100">
                 </div>
             </div>
-        </div>
-        <div class="container_list">
-            <ul id="step-container">
-                <li class="step-li"><p class="step-num">1</p><p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere minima dicta omnis at ea in pariatur, error beatae excepturi tempora voluptatum eos deserunt quas perspiciatis quod velit corrupti commodi doloribus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, et facilis ut error distinctio soluta, in aut repudiandae reiciendis eaque suscipit itaque vitae, quia numquam dicta hic veniam tenetur totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus perferendis atque quidem alias? Id velit animi sapiente voluptates officia dignissimos amet perspiciatis et quia. Harum totam at minima iusto dolores. lorem*10</p></li>
-                <li class="step-li"><p class="step-num">2</p><p class="step-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat odio, harum perspiciatis quaerat voluptatem expedita velit. Molestias atque repudiandae, iusto officiis fuga iste nisi accusamus saepe minima, dicta earum deserunt.</p></li>
-                <li class="step-li"><p class="step-num">3</p><p class="step-text">asdioojhasihoasdhuioasdhuasdhuasd</p></li>
-                <li class="step-li"><p class="step-num">4</p><p class="step-text">asdioojhasihoasdhuioasdhuasdhuasd</p></li>
-                <li class="step-li"><p class="step-num">5</p><p class="step-text">asdioojhasihoasdhuioasdhuasdhuasd</p></li>
-                <li class="step-li"><p class="step-num">6</p><p class="step-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia sint harum est nulla libero delectus eveniet, aut, illo voluptas deleniti repellat, provident quis voluptates beatae cupiditate dicta maxime inventore sed?</p></li>
-                <li class="step-li"><p class="step-num">7</p><p class="step-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero placeat beatae minima aut minus eum animi iure quisquam. Asperiores quo maiores odio ea maxime! Dignissimos obcaecati quasi vel totam architecto.
-                Optio eligendi mollitia repellendus! Sunt quos corporis porro aliquam veritatis hic sed ab sit ratione, nostrum animi voluptatum illum voluptate consequatur amet nesciunt facilis. Vel rem expedita totam. Aliquid, illo.</p></li>
-            </ul>
         </div>
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/ddr.js"></script>
 </body>
+
 </html>
