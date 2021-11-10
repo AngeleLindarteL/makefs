@@ -8,11 +8,6 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/chef-index.css">
-    <link rel="stylesheet" href="./css/chef-index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
 </head>
 <body>
@@ -20,24 +15,6 @@
         include('./header.php');
         include('./menudesplegable.php');
     ?>
-    <div class="makefsContainer">
-        <nav class="nav-bar-hidden" id="nav-bar">
-            <div class="searchNav">
-                <input class="text" placeholder="Buscar">
-                <button></button>
-            </div>
-            <h3>Categorias</h3>
-            <ul>
-                <li><a>Comida Mexicana</a></li>
-                <li><a>Comida Tipica</a></li>
-                <li><a>Comida Santandereana</a></li>
-                <li><a>Comida Paisa</a></li>
-                <li><a>Comida Tolimense</a></li>
-                <li><a>Comida Italiana</a></li>
-                <li><a>Comida Vegetariana</a></li>
-            </ul>
-        </nav>
-    </div>
     <h1 class="tittle">NUEVA RECETA</h1>
     <h2 class="subtittle">LLena los campos y agrega tu receta!</h2>
     <section id="section-info">
@@ -88,6 +65,6 @@
     </section>
 
 </body>
-    <script type="text/javascript" src="./js/index.js"></script>
-    <script type="text/javascript" src="./js/menuDesplegable.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/menuDesplegable.js"></script>
 </html>

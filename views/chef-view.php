@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
     <title>Chef view</title>
 </head>
 <body>
