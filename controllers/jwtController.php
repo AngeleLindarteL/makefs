@@ -22,52 +22,45 @@
         "exp" => $exp,
     );
 
-    function generateToken($request){
+    function generateToken($username, $password){
         $key = $GLOBALS["key"];
         $payload = $GLOBALS["payload"];
-        $sql = "SELECT * FROM users WHERE username = :username AND passwordm = :password";
+        $sql = "SELECT * FROM userm WHERE username = :username AND passwordm = :password";
         $error = "";
-        $conexion = new Conexion();
+        $conexion = new Conexion;
         try{
             $conexion = $conexion->Conectar();
             $request = $conexion->prepare($sql);
-            $nombre = $request["username"];
-            $password = $request["password"];
             $conexion->beginTransaction();
-            $request->execute(array(":nombre" => $nombre, ":password" => $password));
+            $request->execute(array(":username" =>  $username, ":password" => $password));
             $conexion->commit();
             $data = $request->fetch(PDO::FETCH_ASSOC);
         }catch(Exception $e){
             $conexion->rollBack();
-            $error = $e->getMessage();
+            $error = "error noob: ".$e->getMessage();
         }
         if(!empty($error)){
             return json_encode(array("error" => "Invalid Query", "info" => $error));
         }
-        if(!($authData = mysqli_fetch_array($data))){
-            return http_response_code(404);
-        }
-        if($request["status"] != true){
-            return http_response_code(401);
+        if(empty($data)){
+            return json_encode(array("error" => "Invalid Query", "info" => "Invalid username or password"));
         }
         // Agregar data al payload para descifrarla
         $userData = array(
-            "id" => $authData["userid"],
-            "name" => $authData["namem"],
-            "username"=> $authData["username"],
-            "email" => $authData["email"],
-            "pic" => $authData["pic"],
+            "id" => $data["userid"],
+            "username"=> $data["username"],
+            "email" => $data["email"],
         );
         $payload["userData"] = $userData;
         $jwtToken = JWT::encode($payload, $key);
-        $returnedAuthData = array(
+        $returneddata = array(
             "access_token" => $jwtToken,
             "time" => date("d M Y H:i:s",time()),
             "status" => http_response_code(200),
             "message" => "Successfully logged in"
         );
         http_response_code(200);
-        return json_encode($returnedAuthData);
+        return json_encode($returneddata);
     }
     function validateToken($token){
         $decodedInfo = [];

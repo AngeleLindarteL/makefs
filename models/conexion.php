@@ -16,7 +16,7 @@ class Conexion{
     function Conectar(){
         try{
 
-            $dns = "pgsql:host=".$this->HOST.";port".$this->PORT.";dbname=".$this->BDNAME;
+            $dns = "pgsql:host=".$this->HOST.";port=".$this->PORT.";dbname=".$this->BDNAME;
             $conexion = new PDO($dns,$this->USER,$this->PASSWORD);
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conexion;

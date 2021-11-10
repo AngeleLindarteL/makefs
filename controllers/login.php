@@ -51,13 +51,8 @@ include("../models/conexion.php");
                     $nacimiento=$user[5];
                     $_SESSION['nacimiento'] = $nacimiento;
 
-                    $userData = array(
-                        "id"=> $_SESSION['id'],
-                        "name" => $_SESSION['nombre'],
-                        "username" => $_SESSION['username'],
-                        "email" => $_SESSION['email'],
-                        "password" => $user[4]
-                    );
+                    $password = $user[4];
+                    generateToken($_SESSION["username"], $password);
                 }else{
                     echo "Contraseña incorrecta";
                 }
