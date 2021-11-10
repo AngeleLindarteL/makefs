@@ -9,6 +9,13 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <title>Inicio Makef's</title>
+    <?php
+        session_start();
+        if(isset($_SESSION["token"])){
+            echo "<script>window.localStorage.setItem('token',$_SESSION[token].access_token);</script>";
+        }
+        
+    ?>
 </head>
 <body>
     <?php

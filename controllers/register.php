@@ -1,5 +1,5 @@
 <?php
-include("./models/conexion.php");
+include("../models/conexion.php");
  if(isset($_POST['register'])){
 
     if(isset($_POST['realname']) && isset($_POST['username']) &&
@@ -13,7 +13,7 @@ include("./models/conexion.php");
 
         $pass_cifrada = password_hash($pass,PASSWORD_DEFAULT);
 
-        $connObj = new Conexion();
+        $connObj = new Conexion;
         $conexion= $connObj->Conectar();
         if($conexion){
             $sql = "INSERT INTO userm(namem,username,email,passwordm,birthdate) VALUES(:nombre,:username,:email,:pass,:birthdate)";
@@ -24,7 +24,7 @@ include("./models/conexion.php");
                 $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date));
                 $conexion->commit();
                 echo "registro exitoso";
-                header("location: login.html");
+                header("location: ../views/login.html");
             }catch(Exception $e){
                 $conexion->rollBack();
                 echo "Failed: " . $e->getMessage();

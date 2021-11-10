@@ -1,5 +1,5 @@
 <?php
-include("../models/conexion.php");
+include("./jwtController.php");
 
     if(isset($_POST['cerrar_sesion'])){
         include_once './cerrar.php';
@@ -22,37 +22,46 @@ include("../models/conexion.php");
                 $conexion->beginTransaction();
                 $userLog->execute();
                 $conexion->commit(); 
-                $user = $userLog->fetch(PDO::FETCH_NUM);
-                header("location: index.php");
+                $user = $userLog->fetch(PDO::FETCH_ASSOC);
+                
             }catch(Exception $e){
                 $conexion->rollBack();
                 echo "Failed: " . $e->getMessage();
             }
+            
+            $contraIngresada = $_POST['pw'];
+            $user["passwordm"];
+            echo $contraIngresada;
+            echo $user["passwordm"];
 
             if($user){
-                if(password_verify($user[4],$_POST['pw'])){
-                    $auth=$user[0];
+                if(password_verify($contraIngresada,$user["passwordm"])){
+                    session_start();
+                    $auth=$user["userid"];
                     $_SESSION['auth']=$auth;
-                    if($auth){
-                        header("Location: index.php");      
-                    }
-                    $id=$user[0];
+                    
+                    $id=$user["userid"];
                     $_SESSION['id'] = $id;
 
-                    $nombre=$user[1];
+                    $nombre=$user["namem"];
                     $_SESSION['nombre'] = $nombre;
 
-                    $username=$user[2];
+                    $username=$user["username"];
                     $_SESSION['username'] = $username;
 
-                    $email=$user[3];
+                    $email=$user["email"];
                     $_SESSION['email'] = $email;
 
-                    $nacimiento=$user[5];
+                    $nacimiento=$user["birthdate"];
                     $_SESSION['nacimiento'] = $nacimiento;
 
-                    $password = $user[4];
-                    generateToken($_SESSION["username"], $password);
+                    $password = $user["passwordm"];
+                    $token = generateToken($_SESSION["username"], $password);
+                    $_SESSION["token"] = $token;
+                    header("location: ../views/index.php");
+                    
+                    
+                    
                 }else{
                     echo "Contraseña incorrecta";
                 }
