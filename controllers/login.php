@@ -15,7 +15,7 @@ include("../models/conexion.php");
 
             $objConn = new Conexion;
             $conexion = $objConn->Conectar();
-            $sql = "SELECT * FROM userm WHERE username='$_POST[pw]'";
+            $sql = "SELECT * FROM userm WHERE username='$_POST[username]'";
 
             $userLog = $conexion->prepare($sql);
             try{
@@ -50,6 +50,13 @@ include("../models/conexion.php");
 
                     $nacimiento=$user[5];
                     $_SESSION['nacimiento'] = $nacimiento;
+
+                    $userData = array(
+                        "id"=> $_SESSION['id'],
+                        "name" => $_SESSION['nombre'],
+                        "username" => $_SESSION['username'],
+                        "email" => $_SESSION['email']
+                    );
                 }else{
                     echo "Contraseña incorrecta";
                 }
