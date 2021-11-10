@@ -1,23 +1,33 @@
 <?php 
-    include('./datosDB.php');
-    class Conexion{
-        function Conectar(){
-            try{
-                $conexion = new PDO("pgsql:host=".HOST.
-                ";port".PORT.
-                ";dbname=".DBNAME,
-                USER,
-                PASSWORD);
+class Conexion{
+    private $HOST;
+    private $BDNAME;
+    private $USER;
+    private $PORT;
+    private $PASSWORD;
 
-                $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                return $conexion;
-            }catch(PDOException $error){
-                die("Error en conexion: ".$error->getMessage()."<br>");
-            }
-            //para cerrar una conexion se debe asignar null a la variable conexion,
-            //el php termina la conexion automaticamente cuando se acaba el script
-        }
+    public function __construct(){
+        $this->HOST = 'ec2-100-24-169-249.compute-1.amazonaws.com';
+        $this->BDNAME = 'd6qvq3h799t3qq';
+        $this->USER = 'xzqstwxysiszit';
+        $this->PORT = '5432';
+        $this->PASSWORD = '3ec60a29b046d847cce68130a91d745cc81f48d6aafba57bf514877cd1d0d205';
     }
+    function Conectar(){
+        try{
+
+            $dns = "pgsql:host=".$this->HOST.";port".$this->PORT.";dbname=".$this->BDNAME;
+            $conexion = new PDO($dns,$this->USER,$this->PASSWORD);
+            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conexion;
+
+        }catch(PDOException $error){
+            die("Error en conexion: ".$error->getMessage()."<br>");
+        }
+        //para cerrar una conexion se debe asignar null a la variable conexion,
+        //el php termina la conexion automaticamente cuando se acaba el script
+    }
+}
     /* La forma recomendable de ejecutar querys es la siguiente,
         ya que postgre soporta transacciones se pueden ejecutar de la siguiente manera
         para que sean más seguras y rapidas
