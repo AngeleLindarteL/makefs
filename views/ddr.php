@@ -35,7 +35,6 @@
                         <progress id="mkfs_video_progress_bar" min="0">
                             <span id="progress-bar"></span>
                         </progress>
-                        <input type="range" id="mkfs_video_progress_select" min="0" value="0">
                     </div>
                     <button id="mkfv_controlls_play" class="makefs-video-control-button"></button>
                     <button id="mkfv_controlls_mute" class="makefs-video-control-button"></button>

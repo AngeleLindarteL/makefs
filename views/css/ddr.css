@@ -100,77 +100,22 @@
 .makefs-video-progress{
   width: 98%;
   margin: 0 1%;
+  margin-bottom: 2%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: .5vh;
-  transition: .2s;
+}
+.makefs-video-progress:hover{
+  height: 1vh;
+  margin-bottom: calc(2% - 0.25vh);
 }
 .makefs-video-progress progress{
   width: 100%;
   border-radius: 0;
   height: 100%;
 }
-/* Range styles */
-input[type='range'], input[type='range']::-webkit-slider-runnable-track, input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border-radius: 0;
-  background-color: transparent;
-}
-input[type=range]::-webkit-slider-thumb{
-  background-color: var(--color5);
-  width: 1vh;
-  height: 1vh;
-  border-radius: 50%;
-}
-input[type=range]::-moz-range-thumb{
-  background-color: violet;
-  width: 2vh;
-  height: 2vh;
-  color: rebeccapurple;
-}
-input[type=range]::-ms-thumb{
-  background-color: violet;
-  width: 2vh;
-  height: 2vh;
-  color: rebeccapurple;
-}
-input[type=range]::-webkit-slider-runnable-track{
-  background: rgb(255, 255, 255);
-  backdrop-filter: blur(2px);
-  height: 1vh;
-}
-input[type='range']:focus {
-  outline : none;
-  background-color: var(--color5);
-}
-input[type=range]:focus::-webkit-slider-runnable-track{
-  outline: none;
-  background-color: var(--color5);
-}input[type=range]::-ms-fill-lower{
-  outline: none;
-  background-color: var(--color5);
-}
-input[type=range]::-ms-fill-upper{
-  outline: none;
-  background-color: var(--color5);
-}
-input[type=range]{
-  opacity: 0;
-  transition: .05s
-}
-input[type=range]:hover{
-  opacity: 1;
-}
-input[type=range]::-moz-range-track{
-  background-color: transparent;
-}
-input[type=range]::-ms-track{
-  background-color: transparent;
-}
-
-/*  */
 .makefs-video-progress progress{
   transition: .2s;
 }

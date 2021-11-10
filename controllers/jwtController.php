@@ -1,5 +1,6 @@
 <?php
     include("../vendor/autoload.php");
+    include("../models/conexion.php");
     use Firebase\JWT\JWT;
 
     // This it's the key and the algorithm used to encrypt the data of JWT
@@ -24,13 +25,24 @@
     function generateToken($request){
         $key = $GLOBALS["key"];
         $payload = $GLOBALS["payload"];
-        include("./conexion.php");
-        $conn = mysqli_connect($host,$user,$password,$database);
-        $query = "SELECT * FROM users WHERE username = '$request[user]' AND passwordm = '$request[password]'";
+        $sql = "SELECT * FROM users WHERE username = :username AND passwordm = :password";
         $error = "";
-        $data = mysqli_query($conn, $query) or die ($error = "Invalid Query, details: ".mysqli_info($conn)." error: ".mysqli_error($conn));
+        $conexion = new Conexion();
+        try{
+            $conexion = $conexion->Conectar();
+            $request = $conexion->prepare($sql);
+            $nombre = $request["username"];
+            $password = $request["password"];
+            $conexion->beginTransaction();
+            $request->execute(array(":nombre" => $nombre, ":password" => $password));
+            $conexion->commit();
+            $data = $request->fetch(PDO::FETCH_ASSOC);
+        }catch(Exception $e){
+            $conexion->rollBack();
+            $error = $e->getMessage();
+        }
         if(!empty($error)){
-            return json_encode(array("error" => "Invalid Query", "info" => mysqli_info($conn), "errordetails" => mysqli_error($conn)));
+            return json_encode(array("error" => "Invalid Query", "info" => $error));
         }
         if(!($authData = mysqli_fetch_array($data))){
             return http_response_code(404);
@@ -78,4 +90,25 @@
         $userData = $decodedInfo->userData;
         return json_encode($userData);
     }
+    function compareUserData($token, $userData){
+        $tokenInfo = json_decode(validateToken($token));
+        validateToken($token);
+        if($tokenInfo->isValid != true){
+            return json_encode(array("Error" => "invalid token"));
+        }
+        if ($tokenInfo->username != $userData["username"] || $tokenInfo->email != $userData["email"]) {
+            return http_response_code(401);
+        }
+        return ["response" => "200 OK", "Verified" => true];
+    }
+    /*
+        DOCUMENTACIÓN JWTController
+
+        El JWT funciona codificando la informacion del usuario en el Body y firmandolo en el head.
+        Las funciones que aquí se encuentran se encargan de la creación y validación de un token, además se encarga de
+        validar si no se ha vencido y si la firma es correcta. Adicionalmente, se encarga de decodificar la información
+        del body que tiene un token (Si este es valido).
+
+        
+    */
 ?>

@@ -16,8 +16,6 @@ const bigPanel = document.querySelector("#mkfv_controlls_big_panel");
 const centralPanel = document.querySelector("#mkfv_controlls_big_play");
 const afterPanel = document.querySelector("#mkfv_controlls_afterTo");
 const progresBar = document.querySelector("#mkfs_video_progress_bar");
-const progresSelect = document.querySelector("#mkfs_video_progress_select");
-
 
 // Action functions -----------------------------------------------------
 
@@ -26,14 +24,15 @@ let interval = {
     intervalState: undefined,
 }
 
-let videPlayerProperties = {
-    isFocused: true
+let videoPlayerProperties = {
+    isFocused: true,
+    watchedTime: 0,
 }
 
 const progresBar_startInterval = () => {
     let interval = setInterval(() => {
         progresBar.setAttribute("value", video.currentTime)
-        progresSelect.setAttribute("value", video.currentTime)
+        videoPlayerProperties.watchedTime = video.currentTime;
     }, 200)
     return interval
 }
@@ -43,7 +42,6 @@ const playAction = () => {
         video.play();
         centralPanel.classList.add("makefs-video-in-panel-played");
         progresBar.setAttribute("max",video.duration);
-        progresSelect.setAttribute("max",video.duration);
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-played")
         },500);
@@ -66,7 +64,6 @@ const backToAction = () => {
     setTimeout(() => {
         backPanel.classList.remove("makefs-video-in-panel-action")
     },500);
-    progresSelect.setAttribute("value", video.currentTime)
 }
 const afterToAction = () => {
     video.currentTime = video.currentTime + 10;
@@ -75,7 +72,6 @@ const afterToAction = () => {
         afterPanel.classList.remove("makefs-video-in-panel-action")
     },500);
     progresBar.setAttribute("value", video.currentTime)
-    progresSelect.setAttribute("value", video.currentTime)
 }
 
 const muteAction = () => {
@@ -116,3 +112,23 @@ window.addEventListener("keydown", (e) => {
 play.addEventListener("click", () => {playAction()});
 bigPanel.addEventListener("click", () => {playAction()});
 mute.addEventListener("click", () => {muteAction()});
+progresBar.addEventListener("mousemove", (e) => {
+    if (interval.isActive == true) {
+        clearInterval(interval.intervalState);
+        interval.isActive = false;
+    }
+    const spx = video.duration / progresBar.offsetWidth;
+    progresBar.value = e.offsetX * spx;
+    console.log("Seeking")
+})
+progresBar.addEventListener("mousedown", (e) => {
+    console.log("info: ", e)
+    const spx = video.duration / progresBar.offsetWidth;
+    video.currentTime = e.offsetX * spx
+})
+progresBar.addEventListener("mouseleave", (e) => {
+    progresBar.value = videoPlayerProperties.watchedTime;
+    interval.isActive = true;
+    interval.intervalState = progresBar_startInterval();
+    console.log("mouseOut")
+})

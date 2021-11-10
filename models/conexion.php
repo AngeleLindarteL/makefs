@@ -34,7 +34,7 @@
             echo "Failed: " . $e->getMessage();
             }
         */
-
+ 
     /*UTILIZACION DE PREPARE STATEMENTS
     Estos prepare statements funcionan para optimizar el tiempo de ejecucion
     de las Querys a las bases de datos, estas son formas de 'reutilizar' Querys
