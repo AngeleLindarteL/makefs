@@ -284,3 +284,72 @@ header{
     height: 8vh;
     margin: 0 0 0 5%;
 }
+
+/*------Responsive------*/
+@media (max-width:1571px){
+    #user_selection{
+        width: 55%;
+    }
+}
+@media (max-width:1269px){
+    #user_selection{
+        width: 65%;
+    }
+}
+@media (max-width:1071px){
+    #user_selection{
+        width: 65%;
+    }
+}
+@media (width:1024px) and (height:1366px){
+    #user_selection{
+            width: 115%;
+    }
+    .infoUser{
+        font-size:2em;
+    }
+    .headlog_btn p{
+        font-size:1.5em;
+    }
+}
+@media (width:1024px) and (height:600px){
+    #user_selection{
+        width: 85%;
+    }
+    header{
+        height:11vh;
+    }
+}
+@media (max-width:720px){
+    #user_selection{
+        width: 75%;
+    }
+}
+@media (max-width:620px){
+    #user_selection{
+        width: 90%;
+    }
+}
+@media (max-width:510px){
+    #user_selection{
+        width: 142%;
+    }
+}
+@media (max-width:402px){
+    #user_selection{
+        width: 160%;
+    }
+}
+@media (max-width:370px){
+    #user_selection{
+        width: 200%;
+    }
+}
+@media (max-width:285px){
+    #user_selection{
+        width: 325%;
+    }
+}
+
+
+
