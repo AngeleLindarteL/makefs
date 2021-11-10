@@ -284,12 +284,23 @@ header{
     height: 8vh;
     margin: 0 0 0 5%;
 }
-
-<<<<<<< HEAD
 /*------Responsive------*/
 @media (max-width:1571px){
     #user_selection{
         width: 55%;
+    }
+    #userlog{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    #userlog img{
+        height: 7vh;
+        width: 89%;
+        position: absolute;
+        right: 0;
     }
 }
 @media (max-width:1269px){
@@ -312,6 +323,10 @@ header{
     .headlog_btn p{
         font-size:1.5em;
     }
+    #userlog img{
+        width: 139%;
+        right: 20px;
+    }
 }
 @media (width:1024px) and (height:600px){
     #user_selection{
@@ -319,6 +334,11 @@ header{
     }
     header{
         height:11vh;
+    }
+}
+@media (max-width:780px){
+    #userlog img{
+        height: 6vh;
     }
 }
 @media (max-width:720px){
@@ -330,31 +350,62 @@ header{
     #user_selection{
         width: 90%;
     }
+    #userlog{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    #userlog img{
+        height: 7vh;
+        width: 106%;
+    }
 }
 @media (max-width:510px){
     #user_selection{
         width: 142%;
+    }
+    #userlog img{
+        width: 143%;
+        right: 15px;
     }
 }
 @media (max-width:402px){
     #user_selection{
         width: 160%;
     }
+    #userlog img{
+        width: 215%;
+        right: 11px;
+    }
 }
 @media (max-width:370px){
     #user_selection{
         width: 200%;
     }
+    #userlog img{
+        width: 313%;
+        right: 6px;
+    }
 }
 @media (max-width:285px){
     #user_selection{
-        width: 325%;
+        width: 327%;
+    }
+    #userlog img{
+        width: 328%;
+        right: 6px;
+    }
+    #user_selection::before{
+        right: 6%;
     }
 }
 
+    
 
 
-=======
+
 /* ----------------------------------------------------------------------------------  NAV-BAR || SEARCH BAR   */
 
 
@@ -601,4 +652,3 @@ header{
     color: #FF2C29;
     width: 100%;
 }
->>>>>>> 863c25818f9d38b493ffc19c62375ad9771f9bf2
