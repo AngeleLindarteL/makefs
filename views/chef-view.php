@@ -8,6 +8,7 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
+    <link href="./css/header.css" rel="stylesheet">
     <title>Chef view</title>
 </head>
 <body>
