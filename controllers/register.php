@@ -21,7 +21,7 @@ include("./models/conexion.php");
 
             try{
                 $conexion->beginTransaction();
-                $stmt->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date));
+                $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date));
                 $conexion->commit();
                 echo "registro exitoso";
                 header("location: login.html");
