@@ -7,49 +7,19 @@
     <title>New Recipe!</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/chef-index.css">
+    <link rel="stylesheet" href="./css/chef-index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
 </head>
 <body>
-    <header>
-        <div class="makefsContainer headerContainer">
-            <div class="header_icons">
-                <a class="headicons_ico" id="nav-menu-btn">
-                    <figure class="nav-btn-bar"></figure>
-                    <figure class="nav-btn-bar"></figure>
-                    <figure class="nav-btn-bar"></figure>
-                </a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-translate.png" alt="Translate Button"></a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-light.png" alt="Theme Menu"></a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-home.png" alt="Home Menu"></a>
-                <a class="headicons_ico" href="#"><img src="./img/hico-favorites.png" alt="Saved Menu"></a>
-            </div>
-            <div class="header_logo">
-                <article class="headlogo_text">
-                    <h1>Makefs</h1>
-                    <h2>Making Chef's</h2>
-                </article>
-                <img class="headlogo_logo" src="./img/makefs-logo.png">
-            </div>
-            <div class="header_logreg">
-                <a id="userlog">
-                    <img src="./img/hico-user.png">
-                </a>
-                <ul id="user_selection" class="userSelectClose">
-                    <a class="headlog_btn" href="">
-                        <p>Ingresa y Enseña</p>
-                        <img class="headlog_ico" src="./img/hico-login.png">
-                    </a>
-                    <a class="headlog_btn" href="">
-                        <p>Unete y Aprende</p>
-                        <img class="headlog_ico" src="./img/hico-register.png">
-                    </a>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <?php
+        include('./header.php');
+        include('./menudesplegable.php');
+    ?>
     <div class="makefsContainer">
         <nav class="nav-bar-hidden" id="nav-bar">
             <div class="searchNav">
@@ -118,5 +88,6 @@
     </section>
 
 </body>
-    <script type="text/javascript" src="/index.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script type="text/javascript" src="./js/menuDesplegable.js"></script>
 </html>
