@@ -30,15 +30,16 @@
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_big_play"></figure>
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_afterTo"></figure>
                 </div>
+                <span id="progress-bar-time-read">0:00</span>
                 <div class="makefs-video-controls">
                     <div class="makefs-video-progress">
                         <progress id="mkfs_video_progress_bar" min="0">
-                            <span id="progress-bar"></span>
                         </progress>
                     </div>
                     <button id="mkfv_controlls_play" class="makefs-video-control-button"></button>
                     <button id="mkfv_controlls_mute" class="makefs-video-control-button"></button>
-                    <input type="range" name="volume-range" id="mkfv_controlls_volume" min="0" max="100">
+                    <button id="mkfv_controlls_fullscreen" class="makefs-video-control-button"></button>
+                    <input type="range" name="volume-range" id="mkfv_controlls_volume" min="0" max="1" step="0.05">
                 </div>
             </div>
         </div>

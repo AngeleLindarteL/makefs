@@ -76,18 +76,17 @@
   background-position: center;
   background-repeat: no-repeat;
   transition: .3s;
-  opacity: 70%;
 }
 .makefs-video-in-panel-video:first-child:after{
   transform: rotate(180deg);
 }
 .makefs-video-in-panel-played::after{
   background-image: url(../img/rvico-play.png);
-  animation: play-pause-animation .5s infinite;
+  animation: play-pause-animation .18s infinite alternate-reverse;
 }
 .makefs-video-in-panel-paused::after{
   background-image: url(../img/rvico-pause.png);
-  animation: play-pause-animation .5s infinite;
+  animation: play-pause-animation .18s infinite alternate-reverse;
 }
 
 
@@ -110,14 +109,14 @@
 .makefs-video-progress:hover{
   height: 1vh;
   margin-bottom: calc(2% - 0.25vh);
+  cursor: pointer;
 }
 .makefs-video-progress progress{
   width: 100%;
   border-radius: 0;
   height: 100%;
-}
-.makefs-video-progress progress{
   transition: .2s;
+  position: relative;
 }
 #mkfs_video_progress_select{
   width: 100%;
@@ -131,6 +130,17 @@
 }
 .makefs-video-progress progress::-webkit-progress-value {
   background: var(--color5);
+}
+#progress-bar-time-read{
+  display: none;
+  opacity: 0%;
+  position: absolute;
+  top: 0%;
+  padding: .38%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.658);
+  color:white;
+  transition: .5s ;
 }
 .makefs-video-control-button{
   width: 3vh;
@@ -156,12 +166,14 @@
 }
 @keyframes play-pause-animation{
   0%{
-    background-size: 30%;
+    background-size: 20%;
+    opacity: 100%;
   }
   /* 50%{
     background-size: 32%;
   } */
   100%{
-    background-size: 20%;
+    background-size: 30%;
+    opacity: 20%;
   }
 }

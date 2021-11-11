@@ -15,7 +15,11 @@ const backPanel = document.querySelector("#mkfv_controlls_backTo");
 const bigPanel = document.querySelector("#mkfv_controlls_big_panel");
 const centralPanel = document.querySelector("#mkfv_controlls_big_play");
 const afterPanel = document.querySelector("#mkfv_controlls_afterTo");
-const progresBar = document.querySelector("#mkfs_video_progress_bar");
+const progressBar = document.querySelector("#mkfs_video_progress_bar");
+const time_read = document.querySelector("#progress-bar-time-read");
+const fullscreen = document.querySelector("#mkfv_controlls_fullscreen");
+const volume_slider = document.querySelector("#mkfv_controlls_volume");
+
 
 // Action functions -----------------------------------------------------
 
@@ -27,11 +31,16 @@ let interval = {
 let videoPlayerProperties = {
     isFocused: true,
     watchedTime: 0,
+    seeking: false,
+    isFullscreen: false,
 }
 
-const progresBar_startInterval = () => {
+const progressBar_startInterval = () => {
     let interval = setInterval(() => {
-        progresBar.setAttribute("value", video.currentTime)
+        if (videoPlayerProperties.seeking == true) {
+            clearInterval(interval)
+        }
+        progressBar.setAttribute("value", video.currentTime)
         videoPlayerProperties.watchedTime = video.currentTime;
     }, 200)
     return interval
@@ -41,20 +50,21 @@ const playAction = () => {
     if(video.paused){
         video.play();
         centralPanel.classList.add("makefs-video-in-panel-played");
-        progresBar.setAttribute("max",video.duration);
+        progressBar.setAttribute("max",video.duration);
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-played")
-        },500);
+        },200);
         interval.isActive = true;
-        interval.intervalState = progresBar_startInterval()
+        interval.intervalState = progressBar_startInterval()
     }else{
         video.pause();
         centralPanel.classList.add("makefs-video-in-panel-paused");
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-paused")
-        },500);
+        },200);
         interval.isActive = false;
         clearInterval(interval.intervalState)
+        interval.intervalState = undefined;
     }
 }
 
@@ -71,39 +81,78 @@ const afterToAction = () => {
     setTimeout(() => {
         afterPanel.classList.remove("makefs-video-in-panel-action")
     },500);
-    progresBar.setAttribute("value", video.currentTime)
+    progressBar.setAttribute("value", video.currentTime)
+}
+
+const changeTime = (time) =>{
+
 }
 
 const muteAction = () => {
     if(video.muted){
         video.muted = false;
+        localStorage.setItem("muted", false)
     }else{
         video.muted = true;
+        localStorage.setItem("muted", true)
+    }
+}
+
+const changeVolume = (vol) => {
+    if (vol < 0){
+        video.volume = 0;
+    }
+    if (vol > 1){
+        video.volume = 1;
+    }
+    video.muted = false;
+    localStorage.setItem("muted", false)
+    video.volume = vol;
+    window.localStorage.setItem("common_volume", video.volume)
+    volume_slider.value = video.volume;
+}
+
+const toggleFullscreen = () => {
+    if (videoPlayerProperties.isFullscreen){
+        document.exitFullscreen();
+        videoPlayerProperties.isFullscreen = false;
+    }else{
+        mediaPlayer.requestFullscreen().catch(err => console.log(err))
+        videoPlayerProperties.isFullscreen = true;
     }
 }
 
 // Action association ----------------------------------------------------
 
-window.addEventListener("keypress", (e) => {
-});
 window.addEventListener("keydown", (e) => {
     console.log(e);
     let keyPressed = e.key;
     switch (keyPressed) {
         case "ArrowUp":
-            
+            if (video.volume < 0.96) {
+                changeVolume(video.volume + 0.05);
+            }else{
+                changeVolume(1);
+            }
             break;
         case "ArrowDown":
-            
+            if (video.volume > 0.04) {
+                changeVolume(video.volume - 0.05);
+            }else{
+                changeVolume(0);
+            }
             break;
         case "ArrowRight":
-            afterToAction()
+            afterToAction();
             break;
         case "ArrowLeft":
-            backToAction()
+            backToAction();
             break;
         case " ":
-            playAction()
+            playAction();
+            break;
+        case "f":
+            toggleFullscreen();
             break;
         default:
             break;
@@ -112,23 +161,68 @@ window.addEventListener("keydown", (e) => {
 play.addEventListener("click", () => {playAction()});
 bigPanel.addEventListener("click", () => {playAction()});
 mute.addEventListener("click", () => {muteAction()});
-progresBar.addEventListener("mousemove", (e) => {
-    if (interval.isActive == true) {
-        clearInterval(interval.intervalState);
-        interval.isActive = false;
-    }
-    const spx = video.duration / progresBar.offsetWidth;
-    progresBar.value = e.offsetX * spx;
+fullscreen.addEventListener("click", () => {toggleFullscreen()});
+volume_slider.addEventListener("input", () => {changeVolume(volume_slider.value)})
+
+progressBar.addEventListener("mouseenter", (e) => {
+    videoPlayerProperties.seeking = true;
+    interval.isActive = false;
+    interval.intervalState = undefined;
+    clearInterval(interval.intervalState);
+    console.log("mouseIn");
+    time_read.style.display = "flex";
+    setTimeout(() => {
+        time_read.style.opacity = "100%";
+    },10)
+})
+progressBar.addEventListener("mouseover", (e) => {
+    const spx = video.duration / progressBar.offsetWidth;
+    progressBar.value = e.offsetX * spx;
+    console.log("mouseover");
+    
+})
+progressBar.addEventListener("mousemove", (e) => {
+    const spx = video.duration / progressBar.offsetWidth;
+    progressBar.value = e.offsetX * spx;
     console.log("Seeking")
 })
-progresBar.addEventListener("mousedown", (e) => {
+progressBar.addEventListener("click", (e) => {
     console.log("info: ", e)
-    const spx = video.duration / progresBar.offsetWidth;
-    video.currentTime = e.offsetX * spx
+    const spx = video.duration / progressBar.offsetWidth;
+    video.currentTime = e.offsetX * spx;
+    progressBar.setAttribute("value",e.offsetX * spx)
 })
-progresBar.addEventListener("mouseleave", (e) => {
-    progresBar.value = videoPlayerProperties.watchedTime;
+progressBar.addEventListener("mouseleave", (e) => {
+    progressBar.value = videoPlayerProperties.watchedTime;
+    videoPlayerProperties.seeking = false;
     interval.isActive = true;
-    interval.intervalState = progresBar_startInterval();
+    interval.intervalState = progressBar_startInterval();
+    time_read.style.opacity = "0%";
+    setTimeout(() => {
+        time_read.style.display = "none";
+    },200)
     console.log("mouseOut")
+}) 
+
+video.addEventListener("focus", () => {
+    console.log("video focusing");
+})
+video.addEventListener("focusout", () => {
+    console.log("Video focusout");
+})
+
+// Presets para video
+
+if (window.localStorage.getItem("common_volume")) {
+    changeVolume(localStorage.getItem("common_volume"));
+}else{
+    changeVolume(1);
+}
+if (window.localStorage.getItem("muted")) {
+    video.muted = localStorage.getItem("muted");
+}else{
+    video.muted = false;
+}
+video.addEventListener('load', ()=>{
+    console.log(video.duration)
 })
