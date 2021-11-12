@@ -28,8 +28,8 @@
                         <p>-email</p>
                     </div>
                 </div>
-                <a class="headlog_btn" href="">
-                    <img class="headlog_ico first" src="./iconos/config.png">
+                <a class="headlog_btn" href="" >
+                    <img id="profileImg" class="headlog_ico first" src="./img/rhico-chef-white.png">
                     <p>Tu cuenta</p>
                 </a>
                 <a class="headlog_btn" href="">
