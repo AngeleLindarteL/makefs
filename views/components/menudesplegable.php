@@ -67,13 +67,13 @@ echo <<<EOT
         <div class="btnsMenuDesp"> 
             <div class="btndesp">
                 <a href="#">
-                    <img src="./img/home.png" alt="Hamburguesa">
+                    <img src="./img/home.png" alt="Hamburguesa" id="homered">
                     <h3>Home</h3>
                 </a>
             </div>
             <div class="btndesp">
                 <a href="#">
-                    <img src="./img/saveds.png" alt="Hamburguesa">
+                    <img src="./img/saveds.png" id="savered" alt="Hamburguesa">
                     <h3>Guardados</h3>
                 </a>
             </div> 

@@ -370,15 +370,23 @@ header{
 @media (max-width:510px){
     #user_selection{
         width: 142%;
+        right: 5.2%;
     }
     #userlog img{
         width: 143%;
         right: 15px;
     }
 }
+@media (max-width:415px){
+    #user_selection{
+        width: 200%;
+        right: 8px;
+    }
+}
 @media (max-width:402px){
     #user_selection{
         width: 160%;
+        right: 17.2%;
     }
     #userlog img{
         width: 215%;
@@ -388,10 +396,20 @@ header{
 @media (max-width:370px){
     #user_selection{
         width: 200%;
+        right: 0;
     }
     #userlog img{
         width: 313%;
-        right: 6px;
+        right: -46%;
+    }
+}
+@media (max-width:335px){
+    #user_selection{
+        width: 284%;
+    }
+    #userlog img{
+        width: 313%;
+        right: -34px;
     }
 }
 @media (max-width:285px){
@@ -400,7 +418,7 @@ header{
     }
     #userlog img{
         width: 328%;
-        right: 6px;
+        right: -38px;
     }
     #user_selection::before{
         right: 6%;
@@ -412,7 +430,20 @@ header{
 
 
 /* ----------------------------------------------------------------------------------  NAV-BAR || SEARCH BAR   */
-
+.savewhite{
+    display:none;
+    position:relative;
+    top: 0.5vh;
+    left: 8vh;
+    height: 4.5vh;
+}
+.homewhite{
+    display:none;
+    position:relative;
+    top: 0vh;
+    left: -22vh;
+    height: 4.5vh;
+}
 
 .searchNav{
     width: 100%;
@@ -665,6 +696,32 @@ header{
 }
 
 @media (max-width: 970px) {
+    .categoriasOpen{
+        position: relative;
+        top: -10vh;
+    }
+    .homewhite{
+        display:flex;
+    }
+    .categoriasOpen{
+        position: relative;
+        top: -15vh;
+    }
+    .btndesp a{
+        display:none;
+    }
+    .savewhite{
+        display:flex;
+    }
+    #savered{
+        display:none;
+    }
+    .btnsMenuDesp{
+        margin: -21%;
+    }
+    .btnsMenuDesp h3{
+        color:white;
+    }
     .action-btn{
         width: 8vh;
         height: 8vh;
@@ -849,6 +906,8 @@ header{
     }
     #nav-menu-btn{
         margin: 3%;
+        position: relative;
+        left: 3vh;
     }.nav-bar-container{
         width: 100%;
     }.next-text-recipe img{
@@ -856,7 +915,16 @@ header{
         height: 6vh;
     }
 }
+@media (max-width: 930px) {
+    .btnsMenuDesp{
+        margin: -21%;
+    }
+}
+
 @media (max-width: 690px) {
+    .homewhite{
+        left: -21vh;
+    }
     .right-chef-view-menu{
         height: fit-content;
         min-width: 120px!important;
@@ -899,6 +967,11 @@ header{
         flex-direction: column;
     }
 }
+@media (max-width: 550px){
+    .homewhite{
+        left: -19vh;
+    }
+}
 @media (max-width: 472px){
     .text-template{
         font-size: .90rem;
@@ -915,6 +988,9 @@ header{
     }
     .chef-social-media a img{
         object-fit: contain;
+    }
+    .homewhite{
+        left: -17vh;
     }
 }
 @media (max-height: 783px){
@@ -1018,5 +1094,10 @@ header{
         background-color: white;
         border-radius: 30px;
         padding: 1% 4%;
+    }
+}
+@media (max-width:360px){
+    .homewhite{
+        left: -20vh;
     }
 }
