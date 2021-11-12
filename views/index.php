@@ -146,7 +146,7 @@
                     </div>
                 </div>
                 <?php
-                    include('./categoriesMenu.php');
+                    include('./components/categoriesMenu.php');
                 ?>
             </div>
             
