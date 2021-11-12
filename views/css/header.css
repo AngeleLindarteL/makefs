@@ -339,6 +339,11 @@ header{
         height:11vh;
     }
 }
+@media (max-width:970px){
+    #menuCATE-DESP{
+        top: -8%;
+    }
+}
 @media (max-width:780px){
     #userlog img{
         height: 6vh;
@@ -553,7 +558,6 @@ header{
 
 #returnBtnDesp{
     display: none;
-    background-image: url(../img/chef-back.png);
 }
 
 .categoryDiv-desplegable{

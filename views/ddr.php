@@ -23,7 +23,7 @@
     ?>
     <section id="recipe_section">
         <div class="recipe_container">
-            <div class="makefs-media-player">
+            <div class="makefs-media-player focusable">
                 <video poster="./test-imgs/elBhicho.jfif" id="source_video">
                     <source src="./test-imgs/videoPrueba.mp4" type="video/mp4" />
                     El navegador no soporta este video lol
@@ -33,11 +33,13 @@
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_big_play"></figure>
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_afterTo"></figure>
                 </div>
-                <span id="progress-bar-time-read">0:00</span>
+                <span id="progress-bar-time-read">00:00</span>
                 <div class="makefs-video-controls">
                     <div class="makefs-video-progress">
                         <progress id="mkfs_video_progress_bar" min="0">
                         </progress>
+                        <figure class="mkfs_video_dragable_ball" draggable="true"></figure>
+                        <figure class="mkfs_video_dragable_representation"></figure>
                     </div>
                     <button id="mkfv_controlls_play" class="makefs-video-control-button"></button>
                     <button id="mkfv_controlls_mute" class="makefs-video-control-button"></button>

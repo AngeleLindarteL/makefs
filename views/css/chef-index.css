@@ -568,8 +568,13 @@ section{
     background-image: url(../img/chef-edit-red.png);
     cursor: pointer;
     background-color: white;
-    transform: rotate(360deg);
-    
+    transform: rotate(360deg); 
+}
+.categoriasOpen{
+    margin-top:8vh;
+}
+#categorias{
+    display:none;
 }
 
 /* ................... Responsive .............. */
@@ -583,6 +588,15 @@ section{
 }
 
 @media (max-width: 970px) {
+    #categorias{
+        display:flex;
+        padding: 6px 3vh;
+        position:relative;
+        top:-10vh;
+    }
+    .categorias-down-desplegable{
+        top: -2%;
+    }
     .action-btn{
         width: 8vh;
         height: 8vh;
@@ -772,6 +786,8 @@ section{
     }.next-text-recipe img{
         width: 6vh;
         height: 6vh;
+    }.categories-down{
+        visibility:hidden;
     }
 }
 @media (max-width: 690px) {
