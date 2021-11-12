@@ -34,7 +34,6 @@ navButton.addEventListener('click', () => {
 mostrarCategoriasBtn.addEventListener('click',()=>{
     if(mostrandoCategorias){
         categoriasDesp.style.opacity="0";
-        categoriasDesp.style.top="-2%";
         setTimeout(()=>{
             categoriasDesp.style.display="none";
         },300);
@@ -42,7 +41,6 @@ mostrarCategoriasBtn.addEventListener('click',()=>{
     }else{
         categoriasDesp.style.display="flex";
         setTimeout(()=>{
-            categoriasDesp.style.top="1%";
             categoriasDesp.style.opacity="100%";
         },300);
         mostrandoCategorias=true;
