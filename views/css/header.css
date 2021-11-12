@@ -261,6 +261,9 @@ header{
     width: 100%;
     height: 100%;
 }
+#profileImg{
+    filter:invert(0);
+}
 
 /* INSIDE HEADER */
 .userMiniInfo{

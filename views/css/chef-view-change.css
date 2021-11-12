@@ -1,0 +1,337 @@
+/*  ----------------------------------------------------------------------------------------------------- PRECONFIGS */
+
+:root{
+    --color1: #FFBE26;
+    --color2: #E08C1D;
+    --color3: #F56A14;
+    --color4: #E03D14;
+    --color5: #FF2C29;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+section{
+    margin: auto;
+    max-width: none;
+}
+
+
+/*----------------------------------------------Section Chef-view*/
+
+.chefsContainer{
+    height: 100vh;
+    width: 100%;
+    max-height: 2500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.226);
+} 
+
+/*------------------------------------------------------------------------Contenedor User*/
+#chefContainer{
+    width: 70%;
+    height: 70vh;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8vh;
+    border-radius: 10px ;
+    box-shadow: 2px 2px 20px #ff2d292f;
+    z-index: 99;
+}
+.profile-pic-chef {
+    position: relative;
+    width: 15vh;
+    height: 15vh;
+    object-fit: cover;
+    margin: 0;
+    padding: 2%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 0px rgb(0 0 0 / 27%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-width: 247px;
+    min-height: 252px;
+}
+.verified-chef {
+    position: absolute;
+    width: 6vh;
+    height: 6vh;
+    display: flex;
+    top: 5%;
+    right: 5%;
+}
+.profile-pic-img-chef {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+.divChef-view{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#firstdiv-chef{
+    width: 40%;
+    height: 100%;
+    justify-content: space-evenly;
+    border-right: 2px solid #FF2C29;
+}
+
+.profile-chars-chef {
+    width: 100%;
+    height: fit-content;
+    color: var(--color5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+#chef-name {
+    color: var(--color5);
+    font-size: 2.5em;
+    margin: 0%;
+
+}
+.description-chef{
+    padding-top: 2vh;
+    font-size: 1em;
+    border-top: var(--color5) 2px solid;
+}
+.importantDataChef{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+#socialMediaChef{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.socialmediadiv-chef{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.socialmediadiv-chef img{
+    height: 6vh;
+}
+.socialmediadiv-chef input{
+    width: 70%;
+    overflow: visible;
+    border: none;
+    background: #FF2C29;
+    padding: 1.5vh;
+    border-radius: 0 10px 10px;
+    color: white;
+}
+.socialmediadiv-chef input:focus{
+    outline: none;
+}
+.socialmediadiv-chef input::placeholder{
+    color: rgb(255, 255, 255);
+}
+
+#infoData-chef{
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divInfoData-chef{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#input-info-chef{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infodelchef{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3%;
+}
+.infodelchef label{
+    border: 2px solid #FF2C29;
+    border-right: none;
+    padding: 1.5vh;
+}
+#input-info-chef input{
+    width: 90%;
+    overflow: visible;
+    border: none;
+    background: white;
+    padding: 1.5vh;
+    border: 2px solid #FF2C29;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+    color: #FF2C29;
+    font-weight: bolder;
+}
+#input-info-chef input:focus{
+    outline: none;
+}
+#tittle-info-chef{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#tittle-info-chef h2{
+    padding-right: 20%;
+    font-size: 2em;
+    margin-bottom: 4vh;
+    color: #FF2C29;
+    border-bottom: 2px solid #FF2C29;
+    
+}
+#pass-change{
+    width: 80%;
+    overflow: visible;
+    border: none;
+    background: #FF2C29;
+    padding: 1.5vh;
+    border-radius: 10px;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+#profile-edit-chef {
+    cursor: pointer;
+    border: none;
+    width: 4vh;
+    height: 4vh;
+    background-image: url(../img/chef-edit.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 24%);
+}
+#pass-change:hover{
+    background: white;
+    color: var(--color5);
+    font-weight: bolder;
+    outline: 2px solid #FF2C29;
+    border-radius: 10px;
+}
+#updateInfo input{
+    width: 90%;
+    overflow: visible;
+    border: none;
+    background: white;
+    padding: 1.5vh;
+    margin-top: 2vh;
+    border-radius:10px;
+    color: #FF2C29;
+    outline: 2px solid #FF2C29;
+    cursor: pointer;
+    display: none;
+}
+#updateInfo input:hover{
+    background: #FF2C29;
+    color: white;
+    font-weight: bolder;
+    outline: none;
+    border-radius: 10px;
+}
+#profile-edit-photo{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    bottom: 5%;
+    right: 5%;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/photoChange.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
+}
+#profile-edit-close{
+    position: relative;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 3%;
+    left: 44%;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
+}
+.updatephotoInput::-webkit-file-upload-button {
+    display: none;
+}
+
+.updatephotoInput{
+    width: 90%;
+    border: 2px solid #FF2C29;
+    border-radius: 10px;
+}
+.updatephotoInput::before {
+    content: 'Selecciona la foto';
+    display: inline-block;
+    background: #FF2C29;
+    color: white;
+    border-right: 2px solid #FF2C29;
+    padding: 15px 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: .5s;
+}
+#submitphoto{
+    margin-top: 10%;
+    width: 50%;
+    overflow: visible;
+    border: none;
+    background: #FF2C29;
+    padding: 1.5vh;
+    border-radius:10px;
+    color: white;
+    cursor: pointer;
+}
+#cambiarphoto{
+    width: 20%;
+    display: none;
+}
