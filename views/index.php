@@ -11,16 +11,23 @@
     <title>Inicio Makef's</title>
     <?php
         session_start();
-        if(isset($_SESSION["token"])){
-            echo "<script>window.localStorage.setItem('token',$_SESSION[token].access_token);</script>";
-        }
+        if(isset($_SESSION['token'])) {
+            $id=$_SESSION['id'];
+
+            $nombre=$_SESSION['nombre'];
         
+            $username=$_SESSION['username'];
+        
+            $email=$_SESSION['email'];
+        
+            $nacimiento=$_SESSION['nacimiento'];
+        }
     ?>
 </head>
 <body>
     <?php
-        include('./header.php');
-        include('./menudesplegable.php');
+        include('./components/header.php');
+        include('./components/menudesplegable.php');
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
