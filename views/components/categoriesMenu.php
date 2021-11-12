@@ -4,7 +4,7 @@
             <div class="categoryDiv" >
                 <a id="latamCate">
                     <img src="./img/latamCat.png" alt="Colombian">
-                    <h2>Latinoamerica</h2>
+                    <h2 >Latam</h2>
                 </a>
             </div>
             <div class="categoryDiv">
@@ -16,7 +16,7 @@
             <div class="categoryDiv">
                 <a id="norteamericaCate">
                     <img src="./img/norteamericaCat.png" alt="Mexican">
-                    <h2>Norteamerica</h2>
+                    <h2>Norte.A</h2>
                 </a>
             </div>
             <div class="categoryDiv">

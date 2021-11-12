@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-    <link href="./css/register.css" rel="stylesheet">
+    <link href="./css/login.css" rel="stylesheet">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
 
-    <title>Register - Makefs</title>
+    <title>Login - Makefs</title>
+    <?php
+        include('./components/sessionControlUnloged.php');
+    ?>
 </head>
 <body>
     <header id="header">
@@ -30,21 +33,15 @@
         </div>
         <div class="formcont">
             <div class="info-form">
-                <form action="../controllers/register.php" method="POST" class="form-done">
+                <form action="../controllers/loginC.php" method="POST" class="form-done">
                     <a class="aback" href=""><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
-                    <h1>Registrate!</h1>
-                    <h5 class="mainsubtitle">Nombre</h5>
-                    <input class="inputtxt" type="text" name="realname">
+                    <h1>Inicia sesión</h1>
                     <h5 class="mainsubtitle">Nombre de usuario</h5>
                     <input class="inputtxt" type="text" name="username">
-                    <h5 class="mainsubtitle">Email</h5>
-                    <input class="inputtxt" type="email" name="email">
                     <h5>Contraseña</h5>
                     <input class="inputtxt" type="password" name="pw">
-                    <h5>Fecha de nacimiento</h5>
-                    <input class="inputtxt" type="date" name="date">
-                    <input type="submit" value="Registrarse" name="register" class="submitbtn">
-                    <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href=""> inicia sesion!</a></span></h4>
+                    <input type="submit" name="logeo" value="Ingresar" class="submitbtn">
+                    <h4 class="aregister"><p>No tienes una cuenta?</p><span><a href=""> registrate!</a></span></h4>
                 </form>
             </div>
         </div>

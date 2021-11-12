@@ -37,9 +37,7 @@ include("./jwtController.php");
             if($user){
                 if(password_verify($contraIngresada,$user["passwordm"])){
                     session_start();
-                    $auth=$user["userid"];
-                    $_SESSION['auth']=$auth;
-                    
+                                 
                     $id=$user["userid"];
                     $_SESSION['id'] = $id;
 
@@ -58,10 +56,9 @@ include("./jwtController.php");
                     $password = $user["passwordm"];
                     $token = generateToken($_SESSION["username"], $password);
                     $_SESSION["token"] = $token;
+                    echo "<script>window.localStorage.setItem('token',$_SESSION[token].access_token);</script>";
                     header("location: ../views/index.php");
-                    
-                    
-                    
+
                 }else{
                     echo "Contraseña incorrecta";
                 }

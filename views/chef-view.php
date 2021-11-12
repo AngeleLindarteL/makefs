@@ -10,11 +10,14 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <title>Chef view</title>
+    <?php
+        include('./components/sessionControl.php');
+    ?>
 </head>
 <body>
     <?php
-        include('./header.php');
-        include_once('./menudesplegable.php');
+        include('./components/header.php');
+        include('./components/menudesplegable.php');
     ?>
     <section id="chef-view">
         <div class="makefsContainer chef-view-container">
@@ -146,5 +149,6 @@
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
+    <script src="./js/menuDesplegable.js"></script>
 </body>
 </html>

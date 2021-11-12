@@ -9,11 +9,14 @@
     <link rel="stylesheet" href="./css/newRecipeCss.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <?php
+        include('./components/sessionControl.php');
+    ?>
 </head>
 <body>
     <?php
-        include('./header.php');
-        include('./menudesplegable.php');
+        include('./components/header.php');
+        include('./components/menudesplegable.php');
     ?>
     <h1 class="tittle">NUEVA RECETA</h1>
     <h2 class="subtittle">LLena los campos y agrega tu receta!</h2>

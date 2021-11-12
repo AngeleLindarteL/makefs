@@ -11,12 +11,15 @@
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
     <title>Receta</title>
+    <?php
+        include('./components/sessionControl.php');
+    ?>
 </head>
 
 <body>
     <?php
-    include('./header.php');
-    include_once('./menudesplegable.php');
+    include('./components/header.php');
+    include('./components/menudesplegable.php');
     ?>
     <section id="recipe_section">
         <div class="recipe_container">
