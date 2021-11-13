@@ -40,6 +40,7 @@ let videoPlayerProperties = {
     dragleft: 0,
     idleTimeout: null,
     dffbtwn: null,
+    firsPlayed: false,
 }
 
 const hideControls = () => {
@@ -149,7 +150,8 @@ const progressBar_startInterval = () => {
 
 firstPlayButton.addEventListener("click", () => {
     playAction();
-    makefsControlsContainer.classList.replace("controls-hidden","controls-showing")
+    makefsControlsContainer.classList.replace("controls-hidden","controls-showing");
+    makefsControlsContainer.classList.remove("first-play");
     firstPlayButton.opacity = "20%";
     firstPlayButton.transform = "scale(0.8)";
     makefsControlsContainer.style.display = "flex";
@@ -159,12 +161,25 @@ firstPlayButton.addEventListener("click", () => {
         videoPlayerProperties.dffbtwn = parseFloat(window.getComputedStyle(draggable_visual).getPropertyValue("left").replace("px","")) / progressBar.value;
         console.log(videoPlayerProperties.dffbtwn)
     },200)
+    videoPlayerProperties.firsPlayed = true;
 })
 
 // Action association ----------------------------------------------------
 
+window.addEventListener("resize", () => {
+    if(videoPlayerProperties.firsPlayed === false){
+        return;
+    }
+    console.log("e")
+    updateProgressTime()
+    videoPlayerProperties.dffbtwn = parseFloat(window.getComputedStyle(draggable_visual).getPropertyValue("left").replace("px","")) / progressBar.value;
+    console.log(videoPlayerProperties.dffbtwn)
+})
+
 window.addEventListener("keydown", (e) => {
-    console.log(e);
+    if (videoPlayerProperties.firsPlayed === false) {
+        return;
+    }
     let keyPressed = e.key;
     switch (keyPressed) {
         case "ArrowUp":
@@ -235,7 +250,6 @@ progressBar.addEventListener("mousemove", (e) => {
     time_read.style.left = e.offsetX - (time_read.clientWidth / 4) + "px";
 })
 progressBar.addEventListener("click", (e) => {
-    console.log("info: ", e)
     const spx = video.duration / progressBar.offsetWidth;
     video.currentTime = e.offsetX * spx;
     updateProgressTime()

@@ -64,22 +64,21 @@
 }
 #first-play-btn{
   position: absolute;
-  top: auto;
-  height: auto;
-  width: 30vh;
-  height: 30vh;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   background-image: url(../img/rvico-play.png);
-  background-size: 100%;
-  background-repeat: none;
+  background-size: 30%;
+  background-repeat: no-repeat;
   background-position: center;
   z-index: 10;
   border: none;
-  opacity: 80%;
-  transition: transform .2s;
+  opacity: 100%;
+  transition: background-size .2s;
+  background-color: #000000b0;
 }
 #first-play-btn:hover{
-  transform: scale(1.1);
+  cursor: pointer;
+  background-size: 35%;
 }
 .in-panel-video{
   position: absolute;

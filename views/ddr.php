@@ -25,7 +25,7 @@
         <div class="recipe_container">
             <div class="makefs-media-player">
                 <button id="first-play-btn"></button>
-                <video poster="./test-imgs/elBhicho.jfif" id="source_video">
+                <video id="source_video">
                     <source src="./test-imgs/videoPrueba.mp4" type="video/mp4" />
                     El navegador no soporta este video lol
                 </video>
