@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link href="./css/normalize.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/chef-view-change.css" rel="stylesheet">
     <title>Chef view</title>
     <?php
         include('./components/sessionControl.php');
@@ -145,6 +145,74 @@
                 </div>
             </div>
             
+        </div>
+    </section>
+    <section class="chefsContainer">
+        <button id="profile-edit-close"></button>
+        <div id="chefContainer">
+            <div class="divChef-view" id="firstdiv-chef">
+                <figure class="profile-pic-chef">
+                        <img class="profile-pic-img-chef" src="./test-imgs/xd.jpg">
+                        <img class="verified-chef" src="./img/chef-verified.png">
+                        <button id="profile-edit-photo"></button>
+                </figure>
+                <!-- <section class="divChef-view" id="cambiarphoto">
+                        <form action="" id="photoChange" method="POST">
+                            <label for="profilepic"></label>
+                            <input type="file" class="updatephotoInput" name="profilepic">
+                            <input type="submit" name="changeFoto" id="submitphoto" value="cambiar foto">
+                        </form>
+                </section> --->
+                <article class="profile-chars-chef">
+                    <h2 id="chef-name">Angel Lindarte</h2>
+                    <p class="description-chef">17 Años <br> Chef y Software Engineer <br> Contacto: angel@angel.com</p>
+                    <button id="pass-change">Cambiar Contraseña</button>
+                </article>
+            </div>
+            <form class="divChef-view importantDataChef" action="" method="POST"> 
+                    <div id="infoData-chef">
+                        <div class="divInfoData-chef" id="tittle-info-chef">
+                            <h2>Tu informacion.</h2>
+                            <button id="profile-edit-chef"></button>
+                        </div>
+                        <div class="divInfoData-chef" id="input-info-chef">
+                            <div class="infodelchef">
+                                <label for="name">Nombre:</label>
+                                <input type="text" name="name" >
+                            </div>
+                            <div class="infodelchef">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" >
+                            </div>
+                            <div class="infodelchef">
+                                <label for="email">Email:</label>
+                                <input type="text" name="email" >
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div id="socialMediaChef">
+                        <div class="socialmediadiv-chef">
+                            <img src="./img/user-facebook.png" alt="">
+                            <input type="text" placeholder="Facebook/yourUser/">
+                        </div>
+                        <div class="socialmediadiv-chef">
+                            <img src="./img/user-instagram.png" alt="">
+                            <input type="text" placeholder="Instagram/yourUser/">
+                        </div>
+                        <div class="socialmediadiv-chef">
+                            <img src="./img/user-twitter.png" alt="">
+                            <input type="text" placeholder="Twitter/yourUser/">
+                        </div>
+                        <div class="socialmediadiv-chef">
+                            <img src="./img/user-youtube.png" alt="">
+                            <input type="text" placeholder="Youtube/yourUser/">
+                        </div>
+                        <div class="socialmediadiv-chef" id="updateInfo">
+                                <input type="submit" value="Actualizar" name="actualizar redes">
+                        </div>
+                </div>    
+                </form>
         </div>
     </section>
     <script src="./js/index.js"></script>
