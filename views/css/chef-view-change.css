@@ -30,12 +30,18 @@ section{
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.226);
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: none;
+    opacity: 0;
+    transition: .3s;
 } 
 
 /*------------------------------------------------------------------------Contenedor User*/
 #chefContainer{
     width: 70%;
-    height: 70vh;
+    height: 80vh;
     background-color: white;
     display: flex;
     justify-content: space-around;
@@ -43,7 +49,7 @@ section{
     margin-top: 8vh;
     border-radius: 10px ;
     box-shadow: 2px 2px 20px #ff2d292f;
-    z-index: 99;
+    
 }
 .profile-pic-chef {
     position: relative;
@@ -106,6 +112,7 @@ section{
 
 }
 .description-chef{
+    width: 80%;
     padding-top: 2vh;
     font-size: 1em;
     border-top: var(--color5) 2px solid;
@@ -281,13 +288,13 @@ section{
     cursor: pointer;
 }
 #profile-edit-close{
-    position: relative;
+    position: absolute;
     background-color: transparent;
     border: none;
     width: 6vh;
     height: 6vh;
-    top: 3%;
-    left: 44%;
+    top: 12vh;
+    right: 5vh;
     margin: 0%;
     transition: .2s;
     background-image: url(../img/closeUpdateInfo.png);

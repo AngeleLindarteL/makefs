@@ -23,7 +23,7 @@
             <div id="userNoChefContainer">
                 <div class="divUser-view" id="firstdiv">
                     <figure class="profile-pic-user">
-                            <img class="profile-pic-img-user" src="./test-imgs/xd.jpg">
+                            <img class="profile-pic-img-user" src="../mediaDB/usersImg/makefsUser.png">
                             <img class="verified-user" src="./img/chef-verified.png">
                             <button id="profile-edit"></button>
                     </figure>
@@ -35,8 +35,8 @@
                         </form>
                     </section>
                     <article class="profile-chars-user">
-                        <h2 id="user-name">Angel Lindarte</h2>
-                        <p class="description-user">17 Años <br> Chef y Software Engineer <br> Contacto: angel@angel.com</p>
+                        <h2 id="user-name"><?php echo $_SESSION["username"]?></h2>
+                        <p class="description-user"><?php echo $_SESSION["description"]?><br> Contacto: <?php echo $_SESSION["email"]?></p>
                         <button id="do-chef">Cambiar Contraseña</button>
                         <button id="do-chef">Conviertete en chef!</button>
                     </article>
@@ -45,19 +45,19 @@
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
                             <img src="./img/user-facebook.png" alt="">
-                            <input type="text" placeholder="Facebook/yourUser/">
+                            <input type="text" class="inputsToEnable" placeholder="Facebook/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <img src="./img/user-instagram.png" alt="">
-                            <input type="text" placeholder="Instagram/yourUser/">
+                            <input type="text" class="inputsToEnable" placeholder="Instagram/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <img src="./img/user-twitter.png" alt="">
-                            <input type="text" placeholder="Twitter/yourUser/">
+                            <input type="text" class="inputsToEnable" placeholder="Twitter/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <img src="./img/user-youtube.png" alt="">
-                            <input type="text" placeholder="Youtube/yourUser/">
+                            <input type="text" class="inputsToEnable" placeholder="Youtube/yourUser/" disabled>
                         </div>
                         
                     </div>
@@ -69,18 +69,22 @@
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
                                 <label for="name">Nombre:</label>
-                                <input type="text" name="name" >
+                                <input type="text" class="inputsToEnable" name="name" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="username">Username:</label>
-                                <input type="text" name="username" >
+                                <input type="text" class="inputsToEnable" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="email">Email:</label>
-                                <input type="text" name="email" >
+                                <input type="text" class="inputsToEnable" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
+                            </div>
+                            <div class="infodelusuario">
+                                <label for="desc">Description:</label>
+                                <input type="text" class="inputsToEnable" name="desc" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
                             <div class="infodelusuario" id="updateInfo">
-                                <input type="submit" value="Actualizar" name="actualizar redes">
+                                <input type="submit" value="Actualizar" name="updateSocialMedia" id="updateSocial">
                             </div>
                         </div>
                         
@@ -92,5 +96,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
+    <script src="./js/chageInfoUser.js"></script>
 </body>
 </html>

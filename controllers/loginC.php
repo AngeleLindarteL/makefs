@@ -1,12 +1,15 @@
 <?php
+session_start();
 include("./jwtController.php");
 
     if(isset($_POST['cerrar_sesion'])){
-        include_once './cerrar.php';
+        echo "<script>localStorage.removeItem('token');</script>";
+        include('./cerrar.php');
+        header("Location: ../views/login.php");
     }
 
     if(isset($_SESSION['auth'])){
-        header("Location: index.php");      
+        header("Location: ../views/index.php");      
     }
 
     if(isset($_POST['logeo'])){
@@ -52,9 +55,14 @@ include("./jwtController.php");
 
                     $nacimiento=$user["birthdate"];
                     $_SESSION['nacimiento'] = $nacimiento;
+                    
+                    $description = $user["description"];
+                    $_SESSION['description'] = $description;
 
                     $password = $user["passwordm"];
                     $token = generateToken($_SESSION["username"], $password);
+
+                    
                     $_SESSION["token"] = $token;
                     echo "<script>window.localStorage.setItem('token',$_SESSION[token].access_token);</script>";
                     header("location: ../views/index.php");
