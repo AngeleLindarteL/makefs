@@ -33,6 +33,7 @@
   background-attachment: fixed;
   background-size: 30%;
   position: relative;
+  display: flex;
 }
 .makefs-media-player video{
   width: 100%;
@@ -46,6 +47,39 @@
   display: flex;
   flex-wrap: wrap;
   z-index: 10;
+  transition: .3s;
+}
+.makefs-video-controls:hover{
+  opacity: 100%;
+}
+.controls-hidden{
+  opacity: 0;
+}
+.controls-showing{
+  opacity: 100%;
+}
+.first-play{
+  display: none;
+  opacity: 0;
+}
+#first-play-btn{
+  position: absolute;
+  top: auto;
+  height: auto;
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  background-image: url(../img/rvico-play.png);
+  background-size: 100%;
+  background-repeat: none;
+  background-position: center;
+  z-index: 10;
+  border: none;
+  opacity: 80%;
+  transition: transform .2s;
+}
+#first-play-btn:hover{
+  transform: scale(1.1);
 }
 .in-panel-video{
   position: absolute;
@@ -59,7 +93,6 @@
 .makefs-video-in-panel-video{
   width: 25%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.247);
   padding: 0;
   margin: 0;
   position: relative;
@@ -147,12 +180,18 @@
 }
 .mkfs_video_dragable_representation{
   z-index: 1;
-  opacity: 0;
   transition: opacity .2s;
+}
+.mkfs_ball_static{
+  opacity: 0;
+}
+.mkfs_ball_dragging{
+  opacity: 1;
 }
 .mkfs_video_dragable_ball{
   opacity: 0;
   z-index: 2;
+  cursor: move;
 }
 .makefs-video-progress:hover .mkfs_video_dragable_representation{
   opacity: 1;
