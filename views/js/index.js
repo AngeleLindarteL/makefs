@@ -6,6 +6,7 @@ const navButton = document.querySelector("#nav-menu-btn")
 const mostrarCategoriasBtn = document.getElementById("categorias");
 const categoriasDesp = document.getElementById("menuCATE-DESP");
 let mostrandoCategorias = false;
+let suscripciones = document.getElementById("suscripcion");
 
 userLog.addEventListener('click', () => {
     if(userSelection.className == "userSelectClose"){
@@ -36,12 +37,14 @@ mostrarCategoriasBtn.addEventListener('click',()=>{
         categoriasDesp.style.opacity="0";
         setTimeout(()=>{
             categoriasDesp.style.display="none";
+            suscripcion.style.display="flex";
         },300);
         mostrandoCategorias=false;
     }else{
         categoriasDesp.style.display="flex";
         setTimeout(()=>{
             categoriasDesp.style.opacity="100%";
+            suscripcion.style.display="none";
         },300);
         mostrandoCategorias=true;
         

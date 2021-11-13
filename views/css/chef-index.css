@@ -597,6 +597,9 @@ section{
     .categorias-down-desplegable{
         top: -2%;
     }
+    .subcategories-down{
+        display:none;
+    }
     .action-btn{
         width: 8vh;
         height: 8vh;

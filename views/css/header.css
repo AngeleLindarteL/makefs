@@ -342,6 +342,7 @@ header{
 @media (max-width:970px){
     #menuCATE-DESP{
         top: -8%;
+        display:none;
     }
 }
 @media (max-width:780px){
@@ -373,15 +374,23 @@ header{
 @media (max-width:510px){
     #user_selection{
         width: 142%;
+        right: 5.2%;
     }
     #userlog img{
         width: 143%;
         right: 15px;
     }
 }
+@media (max-width:415px){
+    #user_selection{
+        width: 200%;
+        right: 8px;
+    }
+}
 @media (max-width:402px){
     #user_selection{
         width: 160%;
+        right: 17.2%;
     }
     #userlog img{
         width: 215%;
@@ -391,10 +400,20 @@ header{
 @media (max-width:370px){
     #user_selection{
         width: 200%;
+        right: 0;
     }
     #userlog img{
         width: 313%;
-        right: 6px;
+        right: -46%;
+    }
+}
+@media (max-width:335px){
+    #user_selection{
+        width: 284%;
+    }
+    #userlog img{
+        width: 313%;
+        right: -34px;
     }
 }
 @media (max-width:285px){
@@ -403,7 +422,7 @@ header{
     }
     #userlog img{
         width: 328%;
-        right: 6px;
+        right: -38px;
     }
     #user_selection::before{
         right: 6%;
@@ -415,7 +434,20 @@ header{
 
 
 /* ----------------------------------------------------------------------------------  NAV-BAR || SEARCH BAR   */
-
+.savewhite{
+    display:none;
+    position:relative;
+    top: 0.5vh;
+    left: 8vh;
+    height: 4.5vh;
+}
+.homewhite{
+    display:none;
+    position:relative;
+    top: 0vh;
+    left: -22vh;
+    height: 4.5vh;
+}
 
 .searchNav{
     width: 100%;
@@ -573,6 +605,9 @@ header{
     cursor: pointer;
     border: 1px solid #FF2C29;   
 }
+#menuCate-DESP{
+    display:none;
+}
 .categoriasOpen{
     cursor: pointer;
     height: 6vh;
@@ -668,6 +703,28 @@ header{
 }
 
 @media (max-width: 970px) {
+    .categoriasOpen{
+        position: relative;
+        top: -16vh;
+    }
+    .homewhite{
+        display:flex;
+    }
+    .btndesp a{
+        display:none;
+    }
+    .savewhite{
+        display:flex;
+    }
+    #savered{
+        display:none;
+    }
+    .btnsMenuDesp{
+        margin: -21%;
+    }
+    .btnsMenuDesp h3{
+        color:white;
+    }
     .action-btn{
         width: 8vh;
         height: 8vh;
@@ -852,6 +909,8 @@ header{
     }
     #nav-menu-btn{
         margin: 3%;
+        position: relative;
+        left: 3vh;
     }.nav-bar-container{
         width: 100%;
     }.next-text-recipe img{
@@ -859,7 +918,16 @@ header{
         height: 6vh;
     }
 }
+@media (max-width: 930px) {
+    .btnsMenuDesp{
+        margin: -21%;
+    }
+}
+
 @media (max-width: 690px) {
+    .homewhite{
+        left: -21vh;
+    }
     .right-chef-view-menu{
         height: fit-content;
         min-width: 120px!important;
@@ -902,6 +970,11 @@ header{
         flex-direction: column;
     }
 }
+@media (max-width: 550px){
+    .homewhite{
+        left: -19vh;
+    }
+}
 @media (max-width: 472px){
     .text-template{
         font-size: .90rem;
@@ -918,6 +991,9 @@ header{
     }
     .chef-social-media a img{
         object-fit: contain;
+    }
+    .homewhite{
+        left: -17vh;
     }
 }
 @media (max-height: 783px){
@@ -1023,3 +1099,53 @@ header{
         padding: 1% 4%;
     }
 }
+@media (max-width:380px){
+    #categorias{
+        top: -8vh;
+    }
+}
+@media (max-width:380px){
+    .homewhite{
+        left: -440%;
+    }
+}
+@media (max-width:360px){
+    .homewhite{
+        left: -360%;
+    }
+    #menuCATE-DESP{
+        top: -3vh;
+    }
+}
+@media (width:360px) and (height:640px){
+    .homewhite{
+        left: -436%;
+    }
+}
+@media (max-width: 320px){
+    .homewhite{
+        left: -448%;
+    }
+}
+@media (max-width:280px){
+    .homewhite{
+        left: -415%;
+    }
+}
+/*Responsive height*/
+@media (max-height:820px){
+    #menuCATE-DESP{
+        top: -2vh;
+    }
+}
+@media (max-height:760px){
+    #menuCATE-DESP{
+        top: -3vh;
+    }
+}
+@media (max-height:660px){
+    #menuCATE-DESP{
+        top: -1vh;
+    }
+}
+

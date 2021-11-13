@@ -18,7 +18,7 @@ echo <<<EOT
                     <div class="categoryDiv-desplegable" id="soup">
                         <a href="#" id="latamCate2">
                             <img src="./img/latamCat.png" alt="Colombian">
-                            <h2>Latinoamerica</h2>
+                            <h2>Latam</h2>
                         </a>
                     </div>
                     <div class="categoryDiv-desplegable" id="veg">
@@ -33,7 +33,7 @@ echo <<<EOT
                     <div class="categoryDiv-desplegable" id="gourmet">
                         <a href="#" id="norteamericaCate2">
                             <img src="./img/norteamericaCat.png" alt="Mexican">
-                            <h2>Norteamerica</h2>
+                            <h2>Norte.A</h2>
                         </a>
                     </div>
                     <div class="categoryDiv-desplegable" id="postre">
@@ -60,20 +60,20 @@ echo <<<EOT
                 </div> 
         </div>
 
-        <button class="categoriasOpen">
+        <button class="categoriasOpen" id="suscripcion">
             Suscripciones
             <img src='./img/suscription.png' alt="TusSus">
         </button>
         <div class="btnsMenuDesp"> 
             <div class="btndesp">
                 <a href="#">
-                    <img src="./img/home.png" alt="Hamburguesa">
+                    <img src="./img/home.png" alt="Hamburguesa" id="homered">
                     <h3>Home</h3>
                 </a>
             </div>
             <div class="btndesp">
                 <a href="#">
-                    <img src="./img/saveds.png" alt="Hamburguesa">
+                    <img src="./img/saveds.png" id="savered" alt="Hamburguesa">
                     <h3>Guardados</h3>
                 </a>
             </div> 

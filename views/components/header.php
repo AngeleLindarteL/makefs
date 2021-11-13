@@ -54,4 +54,5 @@
     </div>
     </header>
     EOT;
+    echo "<script src='./js/homesave.js'></script>";
 ?>

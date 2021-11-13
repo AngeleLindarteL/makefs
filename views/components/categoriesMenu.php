@@ -53,7 +53,7 @@
             <div class="categoryDiv">
                 <a href="#">
                     <img src="./img/vegetarianCat.png" alt="Italian">
-                    <h2>Vegetariana</h2>
+                    <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv">
@@ -97,7 +97,7 @@
             <div class="categoryDiv">
                 <a href="#">
                     <img src="./img/vegetarianCat.png" alt="Italian">
-                    <h2>Vegetariana</h2>
+                    <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv">
@@ -141,7 +141,7 @@
             <div class="categoryDiv">
                 <a href="#">
                     <img src="./img/vegetarianCat.png" alt="Italian">
-                    <h2>Vegetariana</h2>
+                    <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv">
@@ -185,7 +185,7 @@
             <div class="categoryDiv">
                 <a href="#">
                     <img src="./img/vegetarianCat.png" alt="Italian">
-                    <h2>Vegetariana</h2>
+                    <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv">
@@ -229,7 +229,7 @@
             <div class="categoryDiv">
                 <a href="#">
                     <img src="./img/vegetarianCat.png" alt="Italian">
-                    <h2>Vegetariana</h2>
+                    <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv">
@@ -273,7 +273,7 @@
             <div class="categoryDiv">
                 <a href="#">
                     <img src="./img/vegetarianCat.png" alt="Italian">
-                    <h2>Vegetariana</h2>
+                    <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv">
