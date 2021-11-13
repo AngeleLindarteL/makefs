@@ -42,4 +42,39 @@ btnActivateInputsChef.addEventListener("click",(e)=>{
     
 })
 
+let btnChangeFotoChef = document.querySelector("#profile-edit-photo");
+let sectionChangeFotoChef = document.querySelector("#cambiarFoto-chef");
+let closeChangeFotoChef = document.querySelector("#profile-edit-close-chef2");
+
+btnChangeFotoChef.addEventListener("click",()=>{
+        sectionChangeFotoChef.style.display="flex";
+        setTimeout(()=>{
+            sectionChangeFotoChef.style.opacity="100%";
+        },300);   
+})
+
+closeChangeFotoChef.addEventListener("click",()=>{
+    sectionChangeFotoChef.style.opacity="0";
+    setTimeout(()=>{
+        sectionChangeFotoChef.style.display="none";
+    },300);
+})
+
+let btnChangePassChef = document.querySelector("#pass-change");
+let sectionChangePassChef = document.querySelector("#cambiarPass-chef");
+let closeChangePassChef = document.querySelector("#profile-close-passChange-chef");
+
+btnChangePassChef.addEventListener("click",()=>{
+        sectionChangePassChef.style.display="flex";
+        setTimeout(()=>{
+            sectionChangePassChef.style.opacity="100%";
+        },300);   
+})
+
+closeChangePassChef.addEventListener("click",()=>{
+    sectionChangePassChef.style.opacity="0";
+    setTimeout(()=>{
+        sectionChangePassChef.style.display="none";
+    },300);
+})
 

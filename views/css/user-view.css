@@ -217,7 +217,7 @@ section{
     border-bottom: 2px solid #FF2C29;
     
 }
-#do-chef{
+.do-chef{
     width: 90%;
     overflow: visible;
     border: none;
@@ -243,7 +243,7 @@ section{
     z-index: 2;
     box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 24%);
 }
-#do-chef:hover{
+.do-chef:hover{
     background: white;
     color: var(--color5);
     font-weight: bolder;
@@ -290,6 +290,35 @@ section{
     cursor: pointer;
 }
 
+/*----------------------------------------CHANGE FOTO*/
+
+#cambiarFoto{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.335);
+    display: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+#fotoChange{
+    background-color: white;
+    width: 30%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.377);
+}
+
 .updateFotoInput::-webkit-file-upload-button {
     display: none;
 }
@@ -321,7 +350,101 @@ section{
     color: white;
     cursor: pointer;
 }
-#cambiarFoto{
-    width: 20%;
+#profile-edit-close-chef{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 12vh;
+    right: 5vh;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
+}
+/*--------------------------------------------------------------------Change pass*/
+
+#cambiarPass{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.335);
+    color: var(--color5);
     display: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+#passChange{
+    background-color: white;
+    width: 40%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.377);
+}
+#passChange h2{
+    width: 100%;
+    background-color: #FF2C29;
+    color: white;
+    font-size: 2em;
+    padding: 4% 0;
+}
+
+.passInput{
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #FF2C29;
+    background-color: white;
+    margin-bottom: 2vh;
+    border-radius: 10px;
+    color: #FF2C29;
+    cursor: pointer;
+}
+#changePassSend:hover{
+    background-color: #FF2C29;
+    color: white;
+    font-weight: bolder;
+}
+
+.passInput input:focus{
+    outline: none;
+}
+
+
+#profile-close-passChange{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 12vh;
+    right: 5vh;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
 }

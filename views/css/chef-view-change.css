@@ -307,16 +307,46 @@ section{
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
     cursor: pointer;
 }
-.updatephotoInput::-webkit-file-upload-button {
+/*-----------------------------------------CHANGE FOTO*/
+
+#cambiarFoto-chef{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.335);
+    display: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+#fotoChange-chef{
+    background-color: white;
+    width: 30%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.377);
+}
+
+.updateFotoInput-chef::-webkit-file-upload-button {
     display: none;
 }
 
-.updatephotoInput{
+.updateFotoInput-chef{
     width: 90%;
     border: 2px solid #FF2C29;
     border-radius: 10px;
 }
-.updatephotoInput::before {
+.updateFotoInput-chef::before {
     content: 'Selecciona la foto';
     display: inline-block;
     background: #FF2C29;
@@ -327,7 +357,7 @@ section{
     font-size: 1.2em;
     transition: .5s;
 }
-#submitphoto{
+#submitFoto-chef{
     margin-top: 10%;
     width: 50%;
     overflow: visible;
@@ -338,7 +368,102 @@ section{
     color: white;
     cursor: pointer;
 }
-#cambiarphoto{
-    width: 20%;
+#profile-edit-close-chef2{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 12vh;
+    right: 5vh;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
+}
+/*--------------------------------------------------------------------Change pass*/
+
+#cambiarPass-chef{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.335);
+    color: var(--color5);
     display: none;
+    opacity: 0;
+    transition: .3s;
+}
+
+#passChange-chef{
+    background-color: white;
+    width: 40%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.377);
+}
+#passChange-chef h2{
+    width: 100%;
+    background-color: #FF2C29;
+    color: white;
+    font-size: 2em;
+    padding: 4% 0;
+}
+
+.passInput-chef{
+    width: 80%;
+    padding: 10px;
+    border: 2px solid #FF2C29;
+    background-color: white;
+    margin-bottom: 2vh;
+    border-radius: 10px;
+    color: #FF2C29;
+    cursor: pointer;
+}
+#changePassSend-chef:hover{
+    background-color: #FF2C29;
+    color: white;
+    font-weight: bolder;
+}
+
+.passInput-chef input:focus{
+    outline: none;
+}
+
+
+#profile-close-passChange-chef{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 12vh;
+    right: 5vh;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
 }

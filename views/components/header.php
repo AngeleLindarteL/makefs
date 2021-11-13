@@ -1,4 +1,9 @@
 <?php
+    if(isset($_SESSION["chefid"])){
+        $userhome = "../views/chef-view.php";
+    }else{
+        $userhome = "../views/user-view.php";
+    }
     echo <<<EOT
     <header>
     <div class="makefsContainer headerContainer">
@@ -18,17 +23,17 @@
         </div>
         <div class="header_logreg">
             <a id="userlog">
-                <img src="./img/hico-user.png">
+                <img src="$_SESSION[pic]">
             </a>
             <ul id="user_selection" class="userSelectClose">
                 <div class="userMiniInfo">
-                    <img src="./img/hico-user.png">
+                    <img src="$_SESSION[pic]">
                     <div class="infoUser">
-                        <h6>-nombre</h6>
-                        <p>-email</p>
+                        <h6>$_SESSION[username]</h6>
+                        <p>$_SESSION[email]</p>
                     </div>
                 </div>
-                <a class="headlog_btn" href="" >
+                <a class="headlog_btn" href="$userhome" >
                     <img id="profileImg" class="headlog_ico first" src="./img/rhico-chef-white.png">
                     <p>Tu cuenta</p>
                 </a>

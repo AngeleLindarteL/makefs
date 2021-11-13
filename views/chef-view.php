@@ -25,7 +25,7 @@
                 <div class="chef-char">
                     <div class="char-template">
                         <figure class="profile-pic">
-                            <img class="profile-pic-img" src="../mediaDB/usersImg/makefsUser.png">
+                            <img class="profile-pic-img" src="<?php echo $_SESSION['pic']; ?>">
                             <a id="profile-edit"></a>
                             <img class="verified" src="./img/chef-verified.png">
                             <div class="followers"><img src="./img/hico-followers.png"><p>10M</p></div>
@@ -155,20 +155,29 @@
         <div id="chefContainer">
             <div class="divChef-view" id="firstdiv-chef">
                 <figure class="profile-pic-chef">
-                        <img class="profile-pic-img-chef" src="../mediaDB/usersImg/makefsUser.png">
+                        <img class="profile-pic-img-chef" src="<?php echo $_SESSION['pic']; ?>">
                         <img class="verified-chef" src="./img/chef-verified.png">
                         <button id="profile-edit-photo"></button>
                 </figure>
-                <!-- <section class="divChef-view" id="cambiarphoto">
-                        <form action="" id="photoChange" method="POST">
-                            <label for="profilepic"></label>
-                            <input type="file" class="updatephotoInput" name="profilepic">
-                            <input type="submit" name="changeFoto" id="submitphoto" value="cambiar foto">
-                        </form>
-                </section> --->
+                <section class="divChef-view" id="cambiarFoto-chef">
+                    <button id="profile-edit-close-chef2"></button>
+                    <form action="" id="fotoChange-chef" method="POST">
+                        <input type="file" class="updateFotoInput-chef" name="profilepic">
+                        <input type="submit" name="changeFoto" id="submitFoto-chef" value="Cambiar foto">
+                    </form>
+                </section>
+                <section class="divUser-view" id="cambiarPass-chef">
+                    <button id="profile-close-passChange-chef"></button>
+                    <form action="" id="passChange-chef" method="POST">
+                        <h2>CAMBIAR CONTRASEÑA</h2>
+                        <input type="text" class="passInput-chef" placeholder="Tu contraseña Antigua">
+                        <input type="text" class="passInput-chef" placeholder="Contraseña Nueva">
+                        <input type="submit" class="passInput-chef" id="changePassSend-chef" name="changePass" value="Actualizar Contraseña">
+                    </form>
+                </section>
                 <article class="profile-chars-chef">
                     <h2 id="chef-name"><?php echo $_SESSION["username"]?></h2>
-                    <p class="description-chef">17 Años <br> <?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
+                    <p class="description-chef"><?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
                     <button id="pass-change">Cambiar Contraseña</button>
                 </article>
             </div>

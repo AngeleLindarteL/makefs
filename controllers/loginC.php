@@ -59,6 +59,12 @@ include("./jwtController.php");
                     $description = $user["description"];
                     $_SESSION['description'] = $description;
 
+                    $pic = $user["pic"];
+                    $_SESSION["pic"] = "../mediaDB/usersImg/".$pic;
+
+                    $chefid = $user["chefid"];
+                    $_SESSION["chefid"]= $chefid;
+
                     $password = $user["passwordm"];
                     $token = generateToken($_SESSION["username"], $password);
 

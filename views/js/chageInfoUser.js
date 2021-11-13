@@ -23,3 +23,39 @@ btnActivateInputs.addEventListener("click",(e)=>{
     }
     
 })
+
+let btnChangeFoto = document.querySelector("#profile-edit");
+let sectionChangeFoto = document.querySelector("#cambiarFoto");
+let closeChangeFoto = document.querySelector("#profile-edit-close-chef");
+
+btnChangeFoto.addEventListener("click",()=>{
+        sectionChangeFoto.style.display="flex";
+        setTimeout(()=>{
+            sectionChangeFoto.style.opacity="100%";
+        },300);   
+})
+
+closeChangeFoto.addEventListener("click",()=>{
+    sectionChangeFoto.style.opacity="0";
+    setTimeout(()=>{
+        sectionChangeFoto.style.display="none";
+    },300);
+})
+
+let btnChangePass = document.querySelector("#btnChangePass");
+let sectionChangePass = document.querySelector("#cambiarPass");
+let closeChangePass = document.querySelector("#profile-close-passChange");
+
+btnChangePass.addEventListener("click",()=>{
+    sectionChangePass.style.display="flex";
+    setTimeout(()=>{
+        sectionChangePass.style.opacity="100%";
+    },300);   
+})
+
+closeChangePass.addEventListener("click",()=>{
+sectionChangePass.style.opacity="0";
+setTimeout(()=>{
+    sectionChangePass.style.display="none";
+},300);
+})
