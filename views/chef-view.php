@@ -25,18 +25,21 @@
                 <div class="chef-char">
                     <div class="char-template">
                         <figure class="profile-pic">
-                            <img class="profile-pic-img" src="./test-imgs/xd.jpg">
+                            <img class="profile-pic-img" src="../mediaDB/usersImg/makefsUser.png">
                             <a id="profile-edit"></a>
                             <img class="verified" src="./img/chef-verified.png">
                             <div class="followers"><img src="./img/hico-followers.png"><p>10M</p></div>
                         </figure>
                         <article class="profile-chars">
-                            <h2 id="chef-name">Angel Lindarte</h2>
+                            <h2 id="chef-name"><?php echo $_SESSION["username"]?></h2>
                             <div class="summary-info">
                                 <article><span></span><p>5.0 Valoración</p></article>
                                 <article><span></span><p>11 Recetas</p></article>
+                                <form action="../controllers/loginC.php" method="POST">
+                                    <input type="submit" name="cerrar_sesion"/>
+                                </form>
                             </div>
-                            <p class="description">17 Años <br> Chef y Software Engineer <br> Contacto: angel@angel.com</p>
+                            <p class="description"><?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
                             <ul class="chef-social-media">
                                 <a href="https://facebook.com" target="__blank"><img src="./img/user-facebook.png"></a>
                                 <a href="https://instagram.com" target="__blank"><img src="./img/user-instagram.png"></a>
@@ -147,12 +150,12 @@
             
         </div>
     </section>
-    <section class="chefsContainer">
+    <section class="chefsContainer" id="changeInfoChef">
         <button id="profile-edit-close"></button>
         <div id="chefContainer">
             <div class="divChef-view" id="firstdiv-chef">
                 <figure class="profile-pic-chef">
-                        <img class="profile-pic-img-chef" src="./test-imgs/xd.jpg">
+                        <img class="profile-pic-img-chef" src="../mediaDB/usersImg/makefsUser.png">
                         <img class="verified-chef" src="./img/chef-verified.png">
                         <button id="profile-edit-photo"></button>
                 </figure>
@@ -164,8 +167,8 @@
                         </form>
                 </section> --->
                 <article class="profile-chars-chef">
-                    <h2 id="chef-name">Angel Lindarte</h2>
-                    <p class="description-chef">17 Años <br> Chef y Software Engineer <br> Contacto: angel@angel.com</p>
+                    <h2 id="chef-name"><?php echo $_SESSION["username"]?></h2>
+                    <p class="description-chef">17 Años <br> <?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
                     <button id="pass-change">Cambiar Contraseña</button>
                 </article>
             </div>
@@ -178,15 +181,19 @@
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">
                                 <label for="name">Nombre:</label>
-                                <input type="text" name="name" >
+                                <input type="text" class="infoInputsChef" name="name" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="username">Username:</label>
-                                <input type="text" name="username" >
+                                <input type="text" class="infoInputsChef" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="email">Email:</label>
-                                <input type="text" name="email" >
+                                <input type="text" class="infoInputsChef" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
+                            </div>
+                            <div class="infodelchef">
+                                <label for="desc">Description:</label>
+                                <input type="text" class="infoInputsChef" name="desc" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
                             
                         </div>
@@ -194,22 +201,22 @@
                     <div id="socialMediaChef">
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-facebook.png" alt="">
-                            <input type="text" placeholder="Facebook/yourUser/">
+                            <input type="text" class="infoInputsChef" placeholder="Facebook/yourUser/">
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-instagram.png" alt="">
-                            <input type="text" placeholder="Instagram/yourUser/">
+                            <input type="text" class="infoInputsChef" placeholder="Instagram/yourUser/">
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-twitter.png" alt="">
-                            <input type="text" placeholder="Twitter/yourUser/">
+                            <input type="text" class="infoInputsChef" placeholder="Twitter/yourUser/">
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-youtube.png" alt="">
-                            <input type="text" placeholder="Youtube/yourUser/">
+                            <input type="text" class="infoInputsChef" placeholder="Youtube/yourUser/">
                         </div>
                         <div class="socialmediadiv-chef" id="updateInfo">
-                                <input type="submit" value="Actualizar" name="actualizar redes">
+                                <input type="submit" value="Actualizar" name="updateSocialChef" id="socialUpdateChef">
                         </div>
                 </div>    
                 </form>
@@ -218,5 +225,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
+    <script src="./js/chageInfoUserChef.js"></script>
 </body>
 </html>

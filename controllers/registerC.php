@@ -24,7 +24,7 @@ include("../models/conexion.php");
                 $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date));
                 $conexion->commit();
                 echo "registro exitoso";
-                header("location: ../views/login.html");
+                header("location: ../views/login.php");
             }catch(Exception $e){
                 $conexion->rollBack();
                 echo "Failed: " . $e->getMessage();
