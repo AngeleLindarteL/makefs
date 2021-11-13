@@ -17,9 +17,9 @@ let imgCategorias = ["./img/latamCat.png","./img/asiaCat.png",
 "./img/norteamericaCat.png","./img/europaCat.png","./img/africaCat.png",
 "./img/oceaniaCat.png"];
 
-let txtCategorias = ["Latinoamerica","Asia","Norteamerica","Europa","Africa","Oceania"]
+let txtCategorias = ["Latam","Asia","Norte.A","Europa","Africa","Oceania"]
 
-let txtSubcategorias = ["Sopas","Vegetariana","Gourmet","Postres","Casero","Tipicas"];
+let txtSubcategorias = ["Sopas","Vegana","Gourmet","Postres","Casero","Tipicas"];
 
 let hrefsSub1 = ["#","#","#","#","#","#"];
 let hrefsSub2 = ["#","#","#","#","#","#"];

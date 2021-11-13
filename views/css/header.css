@@ -342,6 +342,7 @@ header{
 @media (max-width:970px){
     #menuCATE-DESP{
         top: -8%;
+        display:none;
     }
 }
 @media (max-width:780px){
@@ -604,6 +605,9 @@ header{
     cursor: pointer;
     border: 1px solid #FF2C29;   
 }
+#menuCate-DESP{
+    display:none;
+}
 .categoriasOpen{
     cursor: pointer;
     height: 6vh;
@@ -701,14 +705,10 @@ header{
 @media (max-width: 970px) {
     .categoriasOpen{
         position: relative;
-        top: -10vh;
+        top: -16vh;
     }
     .homewhite{
         display:flex;
-    }
-    .categoriasOpen{
-        position: relative;
-        top: -15vh;
     }
     .btndesp a{
         display:none;
@@ -1099,8 +1099,53 @@ header{
         padding: 1% 4%;
     }
 }
-@media (max-width:360px){
-    .homewhite{
-        left: -20vh;
+@media (max-width:380px){
+    #categorias{
+        top: -8vh;
     }
 }
+@media (max-width:380px){
+    .homewhite{
+        left: -440%;
+    }
+}
+@media (max-width:360px){
+    .homewhite{
+        left: -360%;
+    }
+    #menuCATE-DESP{
+        top: -3vh;
+    }
+}
+@media (width:360px) and (height:640px){
+    .homewhite{
+        left: -436%;
+    }
+}
+@media (max-width: 320px){
+    .homewhite{
+        left: -448%;
+    }
+}
+@media (max-width:280px){
+    .homewhite{
+        left: -415%;
+    }
+}
+/*Responsive height*/
+@media (max-height:820px){
+    #menuCATE-DESP{
+        top: -2vh;
+    }
+}
+@media (max-height:760px){
+    #menuCATE-DESP{
+        top: -3vh;
+    }
+}
+@media (max-height:660px){
+    #menuCATE-DESP{
+        top: -1vh;
+    }
+}
+
