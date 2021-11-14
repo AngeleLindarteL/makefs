@@ -45,10 +45,12 @@
                     <img class="headlog_ico first" src="./iconos/theme.png">
                     <p>Cambiar tema</p>
                 </a>
-                <a class="headlog_btn" href="">
+                <form action="../controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">
+                <a>
                     <img class="headlog_ico first" src="./iconos/logout.png">
-                    <p>Cerrar sesion</p>
+                    <input type="submit" name="cerrar_sesion" value="Cerrar sesion"/>
                 </a>
+                </form>
             </ul>
         </div>
     </div>

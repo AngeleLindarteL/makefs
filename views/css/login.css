@@ -66,6 +66,12 @@ body{
     box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
     
 }
+.viewlogo a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+}
 .viewlogo h6{
     position: absolute;
     text-transform: lowercase;
@@ -177,10 +183,12 @@ body{
     justify-content: center;
     align-items: center;
     width: 20%;
+    height:0vh;
     top: 12vh;
 }
 .aregister{
     width: 80%;
+    height:0vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,6 +200,10 @@ body{
     text-decoration: none;
     color: var(--color5);
 }
+.forgetpsw{
+    font-size:0.93em;
+}
+
 /*-----responsive-----*/
 .responsive-header{
    display: none;

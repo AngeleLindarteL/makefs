@@ -35,9 +35,6 @@
                             <div class="summary-info">
                                 <article><span></span><p>5.0 Valoración</p></article>
                                 <article><span></span><p>11 Recetas</p></article>
-                                <form action="../controllers/loginC.php" method="POST">
-                                    <input type="submit" name="cerrar_sesion"/>
-                                </form>
                             </div>
                             <p class="description"><?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
                             <ul class="chef-social-media">

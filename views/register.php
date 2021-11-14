@@ -28,26 +28,29 @@
     </header>
     <section id="continfo">
         <div class="viewlogo">
-            <img src="./img/makefsinvert.jpg" alt="img">
+            <a href="./index.php"><img src="./img/makefsinvert.jpg" alt="img"></a>
             <h6>makef's</h6>
         </div>
         <div class="formcont">
             <div class="info-form">
                 <form action="../controllers/registerC.php" method="POST" class="form-done">
-                    <a class="aback" href=""><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
+                    <a class="aback" href="./index.php"><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
                     <h1>Registrate!</h1>
                     <h5 class="mainsubtitle">Nombre</h5>
-                    <input class="inputtxt" type="text" name="realname">
+                    <input class="inputtxt" type="text" name="realname" required>
                     <h5 class="mainsubtitle">Nombre de usuario</h5>
-                    <input class="inputtxt" type="text" name="username">
+                    <input class="inputtxt" type="text" name="username" required>
                     <h5 class="mainsubtitle">Email</h5>
-                    <input class="inputtxt" type="email" name="email">
+                    <input class="inputtxt" type="email" name="email" required>
                     <h5>Contraseña</h5>
-                    <input class="inputtxt" type="password" name="pw">
+                    <div class="confrpsw">
+                        <input class="inputtxt" type="password" name="pw" required>
+                        <input class="inputtxt" type="password" name="pw" placeholder="Confirmar contraseña" required>
+                    </div>
                     <h5>Fecha de nacimiento</h5>
-                    <input class="inputtxt" type="date" name="date">
+                    <input class="inputtxt" type="date" name="date" required>
                     <input type="submit" value="Registrarse" name="register" class="submitbtn">
-                    <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href=""> inicia sesion!</a></span></h4>
+                    <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> inicia sesion!</a></span></h4>
                 </form>
             </div>
         </div>
