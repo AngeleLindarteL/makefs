@@ -26,7 +26,7 @@
             <div class="makefs-media-player">
                 <button id="first-play-btn"></button>
                 <video id="source_video">
-                    <source src="./test-imgs/videoPrueba.mp4" type="video/mp4" />
+                    <source src="./test.php" type="video/mp4" />
                     El navegador no soporta este video lol
                 </video>
                 <div class="in-panel-video" id="mkfv_controlls_big_panel">
