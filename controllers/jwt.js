@@ -1,11 +1,13 @@
 const sendBtn = document.querySelector("#send");
 const appUrl = "localhost/makefs/"
+
 const axiosAuth = axios.create({
     baseURL: appUrl,
     timeout: 1000,
 })
+
 if(localStorage.getItem["sessionToken"]){
-    axiosAuth.defaults.headers.common['Authorizartion'] = localStorage.getItem["sessionToken"];
+    axiosAuth.defaults.headers.common['Authorization'] = localStorage.getItem["token"];
 }
 
 sendBtn.addEventListener("click", async () =>{
