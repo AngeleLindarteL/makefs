@@ -20,7 +20,9 @@
             <h1>Makef's</h1>
         </div>
         <div class="titlecont">
-            <img src="./img/makefs-logo.png" alt="logo makefs">
+            <a href="./index.php">
+                <img src="./img/makefs-logo.png" alt="logo makefs">
+            </a>
         </div>
         <div class="responsive-header">
             <h1>Makef's</h1>
