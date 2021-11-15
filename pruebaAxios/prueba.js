@@ -12,7 +12,6 @@ sendButton.addEventListener("click", ()=>{
         axios.post("./modificar.php",info).then(
             res => {
                 console.log(res);
-                updateStatus.textContent = res.data;
             }
         )
     }catch(e){

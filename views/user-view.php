@@ -8,6 +8,7 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/user-view.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Perfil</title>
     <?php
         include('./components/sessionControl.php');
@@ -59,7 +60,7 @@
                         <button class="do-chef">Conviertete en chef!</button>
                     </article>
                 </div>
-                <form class="divUser-view importantDataUser" action="" method="POST"> 
+                <form class="divUser-view importantDataUser" action="../controllers/updateDataUsers/updateSinAxios.php" method="POST"> 
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
                             <img src="./img/user-facebook.png" alt="">
@@ -87,24 +88,25 @@
                         </div>
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
-                                <label for="name">Nombre:</label>
-                                <input type="text" class="inputsToEnable" name="name" value="<?php echo $_SESSION["nombre"]?>" disabled>
+                                <label for="namem">Nombre:</label>
+                                <input type="text" class="inputsToEnable" id="namem" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="username">Username:</label>
-                                <input type="text" class="inputsToEnable" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="username" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="email">Email:</label>
-                                <input type="text" class="inputsToEnable" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="email" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="inputsToEnable" name="desc" value="<?php echo $_SESSION["description"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="descript" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
                             <div class="infodelusuario" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="updateSocial">
                             </div>
+                            <p id="status"></p>
                         </div>
                         
                     </div>

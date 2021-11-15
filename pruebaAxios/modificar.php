@@ -1,6 +1,6 @@
 <?php
 
-include("./models/conexion.php");
+include("../models/conexion.php");
 $req_info = json_decode(file_get_contents("php://input",TRUE));
 try{
     $query = "UPDATE userm SET namem = :nombre WHERE userid = :id";

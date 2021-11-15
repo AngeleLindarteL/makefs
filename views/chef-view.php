@@ -187,7 +187,7 @@
                     <button id="pass-change">Cambiar Contraseña</button>
                 </article>
             </div>
-            <form class="divChef-view importantDataChef" action="" method="POST"> 
+            <form class="divChef-view importantDataChef" action="../controllers/updateDataUsers/updateSinAxios.php" method="POST"> 
                     <div id="infoData-chef">
                         <div class="divInfoData-chef" id="tittle-info-chef">
                             <h2>Tu informacion.</h2>
@@ -197,7 +197,7 @@
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">
                                 <label for="name">Nombre:</label>
-                                <input type="text" class="infoInputsChef" name="name" value="<?php echo $_SESSION["nombre"]?>" disabled>
+                                <input type="text" class="infoInputsChef" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="username">Username:</label>
@@ -209,7 +209,7 @@
                             </div>
                             <div class="infodelchef">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="infoInputsChef" name="desc" value="<?php echo $_SESSION["description"]?>" disabled>
+                                <input type="text" class="infoInputsChef" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
                             
                         </div>
@@ -232,7 +232,7 @@
                             <input type="text" class="infoInputsChef" placeholder="Youtube/yourUser/">
                         </div>
                         <div class="socialmediadiv-chef" id="updateInfo">
-                                <input type="submit" value="Actualizar" name="updateSocialChef" id="socialUpdateChef">
+                                <input type="submit" value="Actualizar" name="updateSocialMedia" id="socialUpdateChef">
                         </div>
                 </div>    
                 </form>

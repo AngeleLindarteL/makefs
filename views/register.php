@@ -47,7 +47,7 @@
                     <h5>Contraseña</h5>
                     <div class="confrpsw">
                         <input class="inputtxt" type="password" name="pw" required>
-                        <input class="inputtxt" type="password" name="pw" placeholder="Confirmar contraseña" required>
+                        <input class="inputtxt" type="password" name="pwconfirm" placeholder="Confirmar contraseña" required>
                     </div>
                     <h5>Fecha de nacimiento</h5>
                     <input class="inputtxt" type="date" name="date" required>

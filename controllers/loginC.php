@@ -56,8 +56,8 @@ include("./jwtController.php");
                     $nacimiento=$user["birthdate"];
                     $_SESSION['nacimiento'] = $nacimiento;
                     
-                    $description = $user["description"];
-                    $_SESSION['description'] = $description;
+                    $descript = $user["descript"];
+                    $_SESSION['description'] = $descript;
 
                     $pic = $user["pic"];
                     $_SESSION["pic"] = "../mediaDB/usersImg/".$pic;

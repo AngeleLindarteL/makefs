@@ -70,11 +70,11 @@
                 </a>
                 <ul id="user_selection" class="userSelectClose">
                     <a class="headlog_btn" href="../views/register.php">
-                        <img class="headlog_ico first" src="./iconos/theme.png">
+                        <img class="headlog_ico first" src="./img/registerIcon.png">
                         <p>Registrarse</p>
                     </a>
                     <a class="headlog_btn" href="../views/login.php">
-                        <img class="headlog_ico first" src="./iconos/upload.png">
+                        <img class="headlog_ico first" src="./img/loginIcon.png">
                         <p>Iniciar Sesión</p>
                     </a>
                 </ul>
