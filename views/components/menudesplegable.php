@@ -1,4 +1,9 @@
 <?php
+if(isset($_SESSION['token'])){
+    $isloged = true;
+}else{
+    $isloged = false;
+}
 echo <<<EOT
     <div class="makefsContainer nav-bar-container nav-bar-hidden" id="nav-bar-ct">
         <nav id="nav-bar">
@@ -59,26 +64,37 @@ echo <<<EOT
                     </div>
                 </div> 
         </div>
-
-        <button class="categoriasOpen" id="suscripcion">
-            Suscripciones
-            <img src='./img/suscription.png' alt="TusSus">
-        </button>
+EOT;
+        if($isloged){
+            echo <<<EOT
+                <button class="categoriasOpen" id="suscripcion">
+                    Suscripciones
+                    <img src='./img/suscription.png' alt="TusSus">
+                </button>
+            EOT;
+        }
+        echo <<<EOT
         <div class="btnsMenuDesp"> 
-            <div class="btndesp">
-                <a href="#">
-                    <img src="./img/home.png" alt="Hamburguesa" id="homered">
-                    <h3>Home</h3>
-                </a>
-            </div>
+        <div class="btndesp">
+            <a href="#">
+                <img src="./img/home.png" alt="Hamburguesa" id="homered">
+                <h3>Home</h3>
+            </a>
+        </div>
+        EOT;
+        if($isloged){
+            echo <<<EOT
             <div class="btndesp">
                 <a href="#">
                     <img src="./img/saveds.png" id="savered" alt="Hamburguesa">
                     <h3>Guardados</h3>
                 </a>
             </div> 
+            EOT;
+        }
+echo <<<EOT
         </div>
         </nav>
     </div>
-    EOT;
+EOT;
 ?>

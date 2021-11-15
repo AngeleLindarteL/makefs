@@ -4,6 +4,11 @@
     }else{
         $userhome = "../views/user-view.php";
     }
+    if(isset($_SESSION['token'])){
+        $isloged = true;
+    }else{
+        $isloged = false;
+    }
     echo <<<EOT
     <header>
     <div class="makefsContainer headerContainer">
@@ -21,40 +26,65 @@
             </article>
             <img class="headlogo_logo" src="./img/makefs-logo.png">
         </div>
-        <div class="header_logreg">
-            <a id="userlog">
-                <img src="$_SESSION[pic]">
-            </a>
-            <ul id="user_selection" class="userSelectClose">
-                <div class="userMiniInfo">
-                    <img src="$_SESSION[pic]">
-                    <div class="infoUser">
-                        <h6>$_SESSION[username]</h6>
-                        <p>$_SESSION[email]</p>
-                    </div>
-                </div>
-                <a class="headlog_btn" href="$userhome" >
-                    <img id="profileImg" class="headlog_ico first" src="./img/rhico-chef-white.png">
-                    <p>Tu cuenta</p>
-                </a>
-                <a class="headlog_btn" href="">
-                    <img class="headlog_ico first" src="./iconos/upload.png">
-                    <p>subir contenido</p>
-                </a>
-                <a class="headlog_btn" href="">
-                    <img class="headlog_ico first" src="./iconos/theme.png">
-                    <p>Cambiar tema</p>
-                </a>
-                <form action="../controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">
-                <a>
-                    <img class="headlog_ico first" src="./iconos/logout.png">
-                    <input type="submit" name="cerrar_sesion" value="Cerrar sesion"/>
-                </a>
-                </form>
-            </ul>
-        </div>
-    </div>
-    </header>
     EOT;
-    echo "<script src='./js/homesave.js'></script>";
+        if($isloged){
+            echo <<<EOT
+                <div class="header_logreg">
+                    <a id="userlog">
+                        <img src="$_SESSION[pic]">
+                    </a>
+                    <ul id="user_selection" class="userSelectClose">
+                        <div class="userMiniInfo">
+                            <img src="$_SESSION[pic]">
+                            <div class="infoUser">
+                                <h6>$_SESSION[username]</h6>
+                                <p>$_SESSION[email]</p>
+                            </div>
+                        </div>
+                        <a class="headlog_btn" href="$userhome" >
+                            <img id="profileImg" class="headlog_ico first" src="./img/rhico-chef-white.png">
+                            <p>Tu cuenta</p>
+                        </a>
+                        <a class="headlog_btn" href="">
+                            <img class="headlog_ico first" src="./iconos/upload.png">
+                            <p>subir contenido</p>
+                        </a>
+                        <a class="headlog_btn" href="">
+                            <img class="headlog_ico first" src="./iconos/theme.png">
+                            <p>Cambiar tema</p>
+                        </a>
+                        <form action="../controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">
+                        <a>
+                            <img class="headlog_ico first" src="./iconos/logout.png">
+                            <input type="submit" name="cerrar_sesion" value="Cerrar sesion"/>
+                        </a>
+                        </form>
+                    </ul>
+                </div>
+            EOT;
+        }else{
+            echo <<<EOT
+            <div class="header_logreg">
+                <a id="userlog">
+                    <img src="../views/img/hico-user.png">
+                </a>
+                <ul id="user_selection" class="userSelectClose">
+                    <a class="headlog_btn" href="../views/register.php">
+                        <img class="headlog_ico first" src="./iconos/theme.png">
+                        <p>Registrarse</p>
+                    </a>
+                    <a class="headlog_btn" href="../views/login.php">
+                        <img class="headlog_ico first" src="./iconos/upload.png">
+                        <p>Iniciar Sesión</p>
+                    </a>
+                </ul>
+            </div>
+            EOT;
+        }
+    echo <<<EOT
+        </div>
+        </header>
+        <script src='./js/homesave.js'></script>
+    EOT;
+    
 ?>
