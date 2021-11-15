@@ -59,3 +59,23 @@ setTimeout(()=>{
     sectionChangePass.style.display="none";
 },300);
 })
+
+let btnDeleteAccount = document.querySelector("#profile-delete-account");
+let sectionDeleteAccount = document.querySelector("#deleteAccountContainer");
+let closeDeleteAccount = document.querySelector("#profile-close-deleteAccount");
+
+btnDeleteAccount.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionDeleteAccount.style.display="flex";
+    setTimeout(()=>{
+        sectionDeleteAccount.style.opacity="100%";
+    },300);   
+})
+
+closeDeleteAccount.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionDeleteAccount.style.opacity="0";
+setTimeout(()=>{
+    sectionDeleteAccount.style.display="none";
+},300);
+})

@@ -78,3 +78,22 @@ closeChangePassChef.addEventListener("click",()=>{
     },300);
 })
 
+let btnDeleteAccount = document.querySelector("#profile-delete-account-chef");
+let sectionDeleteAccount = document.querySelector("#deleteAccountContainer-chef");
+let closeDeleteAccount = document.querySelector("#profile-close-deleteAccount-chef");
+
+btnDeleteAccount.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionDeleteAccount.style.display="flex";
+    setTimeout(()=>{
+        sectionDeleteAccount.style.opacity="100%";
+    },300);   
+})
+
+closeDeleteAccount.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionDeleteAccount.style.opacity="0";
+setTimeout(()=>{
+    sectionDeleteAccount.style.display="none";
+},300);
+})

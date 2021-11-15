@@ -172,6 +172,15 @@
                         <input type="submit" class="passInput-chef" id="changePassSend-chef" name="changePass" value="Actualizar Contraseña">
                     </form>
                 </section>
+                <section class="divUser-view" id="deleteAccountContainer-chef">
+                    <button id="profile-close-deleteAccount-chef"></button>
+                    <form action="" id="deleteAccount-chef" method="POST">
+                        <h2>BORRAR CUENTA</h2>
+                        <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
+                        <input type="text" class="passInput-chef" placeholder="Contraseña">
+                        <input type="submit" class="passInput-chef" id="deleteAccountbtn-chef" name="changePass" value="Borrar cuenta">
+                    </form>
+                </section>
                 <article class="profile-chars-chef">
                     <h2 id="chef-name"><?php echo $_SESSION["username"]?></h2>
                     <p class="description-chef"><?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
@@ -183,6 +192,7 @@
                         <div class="divInfoData-chef" id="tittle-info-chef">
                             <h2>Tu informacion.</h2>
                             <button id="profile-edit-chef"></button>
+                            <button id="profile-delete-account-chef"></button>
                         </div>
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">

@@ -43,6 +43,15 @@
                             <input type="submit" class="passInput" id="changePassSend" name="changePass" value="Actualizar Contraseña">
                         </form>
                     </section>
+                    <section class="divUser-view" id="deleteAccountContainer">
+                        <button id="profile-close-deleteAccount"></button>
+                        <form action="" id="deleteAccount" method="POST">
+                            <h2>BORRAR CUENTA</h2>
+                            <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
+                            <input type="text" class="passInput" placeholder="Contraseña">
+                            <input type="submit" class="passInput" id="deleteAccountbtn" name="changePass" value="Borrar cuenta">
+                        </form>
+                    </section>
                     <article class="profile-chars-user">
                         <h2 id="user-name"><?php echo $_SESSION["username"]?></h2>
                         <p class="description-user"><?php echo $_SESSION["description"]?><br> Contacto: <?php echo $_SESSION["email"]?></p>
@@ -74,6 +83,7 @@
                         <div class="divInfoData-user" id="tittle-info">
                             <h2>Tu informacion.</h2>
                             <button id="profile-edit-user"></button>
+                            <button id="profile-delete-account"></button>
                         </div>
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
