@@ -1,5 +1,5 @@
 <?php
-    if (session_status() === PHP_SESSION_NONE) {
+    if (!isset($_SESSION["token"])) {
         echo <<<EOT
             <script>
                 if(window.localStorage.getItem("token")){
@@ -8,11 +8,16 @@
             </script>
         EOT;
     }else{
-        session_start();
-        echo <<<EOT
-            <script>
-                window.localStorage.setItem("token", $_SESSION[token]);
-            </script>
-        EOT;
+        
+        if(isset($_SESSION["token"])){
+            echo <<<EOT
+                <script>
+                if(!window.localStorage.getItem("token")){
+                    window.localStorage.setItem("token", $_SESSION[token].access_token);
+                }
+                </script>
+            EOT;
+        }
+        
     }
 ?>
