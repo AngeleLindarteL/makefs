@@ -89,8 +89,10 @@
                     <div id="infoData-User">
                         <div class="divInfoData-user" id="tittle-info">
                             <h2>Tu informacion.</h2>
-                            <button id="profile-edit-user"></button>
-                            <button id="profile-delete-account"></button>
+                            <div class="editbtninfo">
+                                <button id="profile-edit-user"></button>
+                                <button id="profile-delete-account"></button>
+                            </div>
                         </div>
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
