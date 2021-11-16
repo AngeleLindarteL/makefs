@@ -43,18 +43,18 @@
                         <button id="profile-close-passChange"></button>
                         <form action="" id="passChange" method="POST">
                             <h2>CAMBIAR CONTRASEÑA</h2>
-                            <input type="text" class="passInput" placeholder="Tu contraseña Antigua">
-                            <input type="text" class="passInput" placeholder="Contraseña Nueva">
+                            <input type="text" class="passInput" id="passAntigua" placeholder="Tu contraseña Antigua">
+                            <input type="text" class="passInput" id="passNew" placeholder="Contraseña Nueva">
                             <input type="submit" class="passInput" id="changePassSend" name="changePass" value="Actualizar Contraseña">
                         </form>
                     </section>
                     <section class="divUser-view" id="deleteAccountContainer">
                         <button id="profile-close-deleteAccount"></button>
-                        <form action="" id="deleteAccount" method="POST">
+                        <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount" method="POST">
                             <h2>BORRAR CUENTA</h2>
                             <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
-                            <input type="text" class="passInput" placeholder="Contraseña">
-                            <input type="submit" class="passInput" id="deleteAccountbtn" name="changePass" value="Borrar cuenta">
+                            <input type="text" class="passInput" placeholder="Contraseña" name="deleteUserPass">
+                            <input type="submit" class="passInput" id="deleteAccountbtn" name="deleteUser" value="Borrar cuenta">
                         </form>
                     </section>
                     <article class="profile-chars-user">
@@ -66,7 +66,7 @@
                         <button class="do-chef">Conviertete en chef!</button>
                     </article>
                 </div>
-                <form class="divUser-view importantDataUser" action="../controllers/updateDataUsers/updateSinAxios.php" method="POST"> 
+                <form class="divUser-view importantDataUser" action="" method="POST"> 
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
                             <img src="./img/user-facebook.png" alt="">
