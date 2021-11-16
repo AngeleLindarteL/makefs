@@ -12,17 +12,6 @@
     <title>Inicio Makef's</title>
     <?php
         session_start();
-        if(isset($_SESSION['token'])) {
-            $id=$_SESSION['id'];
-
-            $nombre=$_SESSION['nombre'];
-        
-            $username=$_SESSION['username'];
-        
-            $email=$_SESSION['email'];
-        
-            $nacimiento=$_SESSION['nacimiento'];
-        }
     ?>
     <?php include("./components/tokenControl.php") ?>
 </head>

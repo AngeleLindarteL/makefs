@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <?php include("./components/tokenControl.php") ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +11,10 @@
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
     <title>Receta</title>
-    <?php
-        // include('./components/sessionControl.php');
-    ?>
+
+    <?php 
+    session_start();
+    include("./components/tokenControl.php") ?>
 </head>
 
 <body>
