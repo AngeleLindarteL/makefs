@@ -2,7 +2,6 @@ let timeDivisions = "01:52 - 02:50/2:51 - 8:54/08:55 - 9:20";
 timeDivisions = timeDivisions.split("/")
 console.log(timeDivisions)
 
-
 // Reproductor de video -------------------------------------------------
 
 // Variables xd
