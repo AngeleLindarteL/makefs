@@ -47,3 +47,28 @@ updateUser.addEventListener("click", (e)=>{
         updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
     }
 })
+
+/*-------------------------------------------------------Update Pass*/
+let updatePassBtn = document.querySelector("#changePassSend-chef");
+let passAntigua = document.querySelector("#passAntiguaChef");
+let passNew = document.querySelector("#passNewChef");
+
+updatePassBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let infoPass = {
+        "passAntigua" : passAntigua.value,
+        "passNew" : passNew.value,
+    }
+    infoPass = JSON.stringify(infoPass);
+    try{
+        axios.post("../controllers/updateDataUsers/updatePass.php",infoPass).then(
+            res=> {
+                console.log(res);
+                window.location.href="../views/login.php";
+            }
+        )
+        
+    }catch(e){
+        updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
+    }
+})

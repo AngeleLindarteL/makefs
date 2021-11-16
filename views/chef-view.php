@@ -174,18 +174,18 @@
                     <button id="profile-close-passChange-chef"></button>
                     <form action="" id="passChange-chef" method="POST">
                         <h2>CAMBIAR CONTRASEÑA</h2>
-                        <input type="text" class="passInput-chef" placeholder="Tu contraseña Antigua">
-                        <input type="text" class="passInput-chef" placeholder="Contraseña Nueva">
+                        <input type="text" class="passInput-chef" id="passAntiguaChef" placeholder="Tu contraseña Antigua">
+                        <input type="text" class="passInput-chef" id="passNewChef" placeholder="Contraseña Nueva">
                         <input type="submit" class="passInput-chef" id="changePassSend-chef" name="changePass" value="Actualizar Contraseña">
                     </form>
                 </section>
                 <section class="divUser-view" id="deleteAccountContainer-chef">
                     <button id="profile-close-deleteAccount-chef"></button>
-                    <form action="" id="deleteAccount-chef" method="POST">
+                    <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount-chef" method="POST">
                         <h2>BORRAR CUENTA</h2>
                         <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
-                        <input type="text" class="passInput-chef" placeholder="Contraseña">
-                        <input type="submit" class="passInput-chef" id="deleteAccountbtn-chef" name="changePass" value="Borrar cuenta">
+                        <input type="text" class="passInput-chef" placeholder="Contraseña" name="deleteUserPass">
+                        <input type="submit" class="passInput-chef" id="deleteAccountbtn-chef" name="deleteUser" value="Borrar cuenta">
                     </form>
                 </section>
                 <article class="profile-chars-chef">

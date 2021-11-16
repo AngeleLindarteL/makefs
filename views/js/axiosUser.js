@@ -1,3 +1,5 @@
+/*--------------------------------Update data*/
+
 let updateUser = document.querySelector("#updateSocial");
 let namem = document.querySelector("#namem");
 let username = document.querySelector("#username");
@@ -26,7 +28,6 @@ updateUser.addEventListener("click", (e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                    console.log("viva el porno"+namem.value)
                     nameTxt.textContent=namem.value;
                     descriptTxt.textContent=descript.value;
                     contactTxt.textContent="Contacto:"+email.value;
@@ -34,6 +35,31 @@ updateUser.addEventListener("click", (e)=>{
                 }
             }
         )
+    }catch(e){
+        updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
+    }
+})
+
+/*-------------------------------------------------------Update Pass*/
+let updatePassBtn = document.querySelector("#changePassSend");
+let passAntigua = document.querySelector("#passAntigua");
+let passNew = document.querySelector("#passNew");
+
+updatePassBtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let infoPass = {
+        "passAntigua" : passAntigua.value,
+        "passNew" : passNew.value,
+    }
+    infoPass = JSON.stringify(infoPass);
+    try{
+        axios.post("../controllers/updateDataUsers/updatePass.php",infoPass).then(
+            res=> {
+                console.log(res);
+                window.location.href="../views/login.php";
+            }
+        )
+        
     }catch(e){
         updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
     }
