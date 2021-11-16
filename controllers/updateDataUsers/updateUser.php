@@ -1,4 +1,5 @@
 <?php
+session_start();
     include("../../models/conexion.php");
     $req_info = json_decode(file_get_contents("php://input",TRUE));
 
@@ -25,8 +26,12 @@
             $conn->commit();
 
             echo "Informacion actualizada del Usuario $req_info->username";
+            $_SESSION['nombre'] = $req_info->nombre ;
+            $_SESSION['username'] = $req_info->username;
+            $_SESSION['email'] = $req_info->email;
+            $_SESSION['description'] =$req_info->descript ;
         }catch(Exception $e){
             $conn->rollBack();
-            echo "salio mal";
+            echo http_response_code(400);
         }
 ?>

@@ -42,6 +42,15 @@ btnActivateInputsChef.addEventListener("click",(e)=>{
     
 })
 
+btnSendActualizationChef.addEventListener("click",(e)=>{
+    e.preventDefault();
+    for(i=0;i<inputsToEnableChef.length;i++){
+        inputsToEnableChef[i].setAttribute("disabled","true");
+    }
+    btnSendActualizationChef.style.display="none";
+    isEnabledInputChef = false;
+})
+
 let btnChangeFotoChef = document.querySelector("#profile-edit-photo");
 let sectionChangeFotoChef = document.querySelector("#cambiarFoto-chef");
 let closeChangeFotoChef = document.querySelector("#profile-edit-close-chef2");

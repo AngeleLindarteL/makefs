@@ -24,6 +24,15 @@ btnActivateInputs.addEventListener("click",(e)=>{
     
 })
 
+btnSendActualization.addEventListener("click",(e)=>{
+    e.preventDefault();
+    for(i=0;i<inputsToEnable.length;i++){
+        inputsToEnable[i].setAttribute("disabled","true");
+    }
+    btnSendActualization.style.display="none";
+    isEnabledInput = false;
+})
+
 let btnChangeFoto = document.querySelector("#profile-edit");
 let sectionChangeFoto = document.querySelector("#cambiarFoto");
 let closeChangeFoto = document.querySelector("#profile-edit-close-chef");

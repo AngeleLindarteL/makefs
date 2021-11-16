@@ -117,9 +117,14 @@ section{
 
 }
 .description-user{
-    padding-top: 2vh;
+    padding-top: 1vh;
     font-size: 1.2em;
     border-top: var(--color5) 2px solid;
+    width: 100%;
+    margin-bottom: 0;
+}
+#username-space{
+    margin: 0;
 }
 .importantDataUser{
     height: 45vh;
