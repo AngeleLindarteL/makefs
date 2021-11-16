@@ -50,6 +50,7 @@
             "id" => $data["userid"],
             "username"=> $data["username"],
             "email" => $data["email"],
+            "IP_ACCESS" => $_SERVER[""],
         );
         $payload["userData"] = $userData;
         $jwtToken = JWT::encode($payload, $key);

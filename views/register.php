@@ -13,6 +13,7 @@
     <?php
         include('./components/sessionControlUnloged.php');
     ?>
+    <?php include("./components/tokenControl.php") ?>
 </head>
 <body>
     <header id="header">
