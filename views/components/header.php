@@ -56,7 +56,7 @@
                         <form action="../controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">
                         <a>
                             <img class="headlog_ico first" src="./iconos/logout.png">
-                            <input type="submit" name="cerrar_sesion" value="Cerrar sesion"/>
+                            <input type="submit" name="cerrar_sesion" id="close_session" value="Cerrar sesion"/>
                         </a>
                         </form>
                     </ul>

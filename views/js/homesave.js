@@ -15,3 +15,14 @@ imgdos.classList.add("savewhite");
 ados.setAttribute("href", "./index.php");
 ados.appendChild(imgdos);
 container.appendChild(ados);
+
+let dispatchBtn = document.querySelector("#cerrarstyle");
+let sendBtn = document.querySelector("#close_session");
+let sendEvent = new MouseEvent("click",{
+    bubbles: false,
+    cancelable: false,
+});
+
+dispatchBtn.addEventListener("click", () => {
+    sendBtn.dispatchEvent(sendEvent);
+})

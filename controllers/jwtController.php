@@ -50,7 +50,7 @@
             "id" => $data["userid"],
             "username"=> $data["username"],
             "email" => $data["email"],
-            "IP_ACCESS" => $_SERVER[""],
+            "IP_ACCESS" => $_SERVER["REMOTE_ADDR"],
         );
         $payload["userData"] = $userData;
         $jwtToken = JWT::encode($payload, $key);
@@ -69,9 +69,15 @@
             $decodedInfo = JWT::decode($token, $GLOBALS["key"], $GLOBALS["algorithm"]);
         } catch (Exception $th){
             return json_encode(array("Error"=>"Signature Failed", "isValid"=>false));
+            exit;
         }
         if (time() > $decodedInfo->exp) {
             return json_encode(array("Error" => "Este token ya ha expirado", "isValid" => false));
+            exit;
+        }
+        if ($_SERVER["REMOTE_ADDR"] != $decodedInfo->IP_ACCESS) {
+            return http_response_code(401);
+            exit;
         }
         return json_encode(array("isValid"=>true));
     }
