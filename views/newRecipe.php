@@ -12,6 +12,7 @@
     <?php
         include('./components/sessionControl.php');
     ?>
+    <?php include("./components/tokenControl.php") ?>
 </head>
 <body>
     <?php

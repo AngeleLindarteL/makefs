@@ -8,11 +8,12 @@
     <link href="./css/login.css" rel="stylesheet">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
-
+    
     <title>Login - Makefs</title>
     <?php
         include('./components/sessionControlUnloged.php');
     ?>
+    <?php include("./components/tokenControl.php") ?>
 </head>
 <body>
     <header id="header">

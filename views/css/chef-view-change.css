@@ -111,6 +111,12 @@ section{
     margin: 0%;
 
 }
+#chef-name-changing {
+    color: var(--color5);
+    font-size: 2.5em;
+    margin: 0%;
+
+}
 .description-chef{
     width: 80%;
     padding-top: 2vh;

@@ -11,9 +11,10 @@
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
     <title>Receta</title>
-    <?php
-        // include('./components/sessionControl.php');
-    ?>
+
+    <?php 
+    session_start();
+    include("./components/tokenControl.php") ?>
 </head>
 
 <body>
@@ -26,8 +27,9 @@
             <div class="makefs-media-player">
                 <button id="first-play-btn"></button>
                 <video id="source_video">
-                    <source src="./test.php" type="video/mp4" />
-                    El navegador no soporta este video lol
+                    <source src="../controllers/video_streaming/startStream.php?video_id=1" type="video/mp4"/>
+                    <source src="../controllers/video_streaming/startStream.php?video_id=1" type="video/webm"/>
+                    El navegador no soporta este formato de video
                 </video>
                 <div class="in-panel-video" id="mkfv_controlls_big_panel">
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_backTo"></figure>

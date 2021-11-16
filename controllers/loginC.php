@@ -3,7 +3,6 @@ session_start();
 include("./jwtController.php");
 
     if(isset($_POST['cerrar_sesion'])){
-        echo "<script>localStorage.removeItem('token');</script>";
         include('./cerrar.php');
         header("Location: ../views/login.php");
     }
@@ -70,7 +69,6 @@ include("./jwtController.php");
 
                     
                     $_SESSION["token"] = $token;
-                    echo "<script>window.localStorage.setItem('token',$_SESSION[token].access_token);</script>";
                     header("location: ../views/index.php");
 
                 }else{

@@ -13,6 +13,10 @@
     <?php
         include('./components/sessionControl.php');
     ?>
+    <script>
+        <?php echo "const id =".$_SESSION['id'] ?>
+    </script>
+    <?php include("./components/tokenControl.php") ?>
 </head>
 <body>
     <?php
@@ -54,8 +58,10 @@
                         </form>
                     </section>
                     <article class="profile-chars-user">
-                        <h2 id="user-name"><?php echo $_SESSION["username"]?></h2>
-                        <p class="description-user"><?php echo $_SESSION["description"]?><br> Contacto: <?php echo $_SESSION["email"]?></p>
+                        <h2 id="user-name"><?php echo $_SESSION["nombre"]?></h2>
+                        <p id="username-space">@<?php echo $_SESSION["username"]?></p>
+                        <p class="description-user" id="descript-space"><?php echo $_SESSION["description"]?></p>
+                        <p id="contact-space">Contacto: <?php echo $_SESSION["email"]?></p>
                         <button class="do-chef" id="btnChangePass">Cambiar Contraseña</button>
                         <button class="do-chef">Conviertete en chef!</button>
                     </article>
@@ -118,5 +124,6 @@
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/chageInfoUser.js"></script>
+    <script src="./js/axiosUser.js"></script>
 </body>
 </html>

@@ -9,10 +9,15 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/chef-view-change.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
         include('./components/sessionControl.php');
     ?>
+    <script>
+        <?php echo "const id =".$_SESSION['id'] ?>
+    </script>
+    <?php include("./components/tokenControl.php") ?>
 </head>
 <body>
     <?php
@@ -31,12 +36,14 @@
                             <div class="followers"><img src="./img/hico-followers.png"><p>10M</p></div>
                         </figure>
                         <article class="profile-chars">
-                            <h2 id="chef-name"><?php echo $_SESSION["username"]?></h2>
+                            <h2 id="chef-name"><?php echo $_SESSION["nombre"]?></h2>
+                            <p id="username-space-chef" >@<?php echo $_SESSION["username"]?></p>
                             <div class="summary-info">
                                 <article><span></span><p>5.0 Valoración</p></article>
                                 <article><span></span><p>11 Recetas</p></article>
                             </div>
-                            <p class="description"><?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
+                            <p class="description" id="description-space-chef"><?php echo $_SESSION["description"]?></p>
+                            <p id="contact-space-chef">Contacto: <?php echo $_SESSION["email"]?></p>
                             <ul class="chef-social-media">
                                 <a href="https://facebook.com" target="__blank"><img src="./img/user-facebook.png"></a>
                                 <a href="https://instagram.com" target="__blank"><img src="./img/user-instagram.png"></a>
@@ -182,12 +189,14 @@
                     </form>
                 </section>
                 <article class="profile-chars-chef">
-                    <h2 id="chef-name"><?php echo $_SESSION["username"]?></h2>
-                    <p class="description-chef"><?php echo $_SESSION["description"]?> <br> Contacto: <?php echo $_SESSION["email"]?></p>
+                    <h2 id="chef-name-changing"><?php echo $_SESSION["nombre"]?></h2>
+                    <p id="username-space-chef-changing" >@<?php echo $_SESSION["username"]?></p>
+                    <p class="description" id="description-space-chef-changing"><?php echo $_SESSION["description"]?></p>
+                    <p id="contact-space-chef-changing">Contacto: <?php echo $_SESSION["email"]?></p>
                     <button id="pass-change">Cambiar Contraseña</button>
                 </article>
             </div>
-            <form class="divChef-view importantDataChef" action="../controllers/updateDataUsers/updateSinAxios.php" method="POST"> 
+            <form class="divChef-view importantDataChef" action="" method="POST"> 
                     <div id="infoData-chef">
                         <div class="divInfoData-chef" id="tittle-info-chef">
                             <h2>Tu informacion.</h2>
@@ -197,20 +206,21 @@
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">
                                 <label for="name">Nombre:</label>
-                                <input type="text" class="infoInputsChef" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
+                                <input type="text" class="infoInputsChef" id="name-chef" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="username">Username:</label>
-                                <input type="text" class="infoInputsChef" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
+                                <input type="text" class="infoInputsChef" id="username-chef" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="email">Email:</label>
-                                <input type="text" class="infoInputsChef" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
+                                <input type="text" class="infoInputsChef" id="email-chef" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="infoInputsChef" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
+                                <input type="text" class="infoInputsChef" id="descript-chef" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
+                            
                             
                         </div>
                     </div>
@@ -236,11 +246,13 @@
                         </div>
                 </div>    
                 </form>
+                <p id="status-chef"></p>
         </div>
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/chageInfoUserChef.js"></script>
+    <script src="./js/axiosChef.js"></script>
 </body>
 </html>
