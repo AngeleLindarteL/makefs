@@ -177,6 +177,7 @@ header{
     border: 2px solid var(--color5);
 }
 
+
 #user_selection::before{
     width: 20px;
     height: 10px;
@@ -187,7 +188,6 @@ header{
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     background-color: var(--color5);
 }
-
 .userSelectClose{
     opacity: 0;
     right: 0%;
