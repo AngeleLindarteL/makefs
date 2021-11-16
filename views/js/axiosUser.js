@@ -8,7 +8,7 @@ let updateStatus = document.querySelector("#status");
 updateUser.addEventListener("click", (e)=>{
     e.preventDefault();
     let info = {
-        "id": 15,
+        "id": 14,
         "nombre": namem.value,
         "username": username.value,
         "email": email.value,
@@ -16,7 +16,7 @@ updateUser.addEventListener("click", (e)=>{
     }
     info = JSON.stringify(info);
     try{
-        axios.post("../../controllers/updateDataUsers/updateUser.php",info).then(
+        axios.post("../controllers/updateDataUsers/updateUser.php",info).then(
             res => {
                 console.log(res);
             }

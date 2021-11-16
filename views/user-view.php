@@ -118,5 +118,6 @@
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/chageInfoUser.js"></script>
+    <script src="./js/axiosUser.js"></script>
 </body>
 </html>
