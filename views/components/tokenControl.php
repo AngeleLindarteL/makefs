@@ -1,5 +1,5 @@
 <?php
-    if (!isset($_SESSION["token"])) {
+    /*if (!isset($_SESSION["token"])) {
         echo <<<EOT
             <script>
                 if(window.localStorage.getItem("token")){
@@ -22,5 +22,5 @@
         $validatingToken = validateToken(json_encode($token));
         echo "<p>".print_r($_SERVER)."</p>";
         echo $validatingToken;
-    }
+    }*/
 ?>

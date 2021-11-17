@@ -200,8 +200,10 @@
                     <div id="infoData-chef">
                         <div class="divInfoData-chef" id="tittle-info-chef">
                             <h2>Tu informacion.</h2>
-                            <button id="profile-edit-chef"></button>
-                            <button id="profile-delete-account-chef"></button>
+                            <div class="editbtninfo">
+                                <button id="profile-edit-chef"></button>
+                                <button id="profile-delete-account-chef"></button>
+                            </div>
                         </div>
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">
