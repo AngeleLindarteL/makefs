@@ -72,7 +72,9 @@ include("./jwtController.php");
                     $_SESSION["youtube"]= $youtube;
 
                     $password = $user["passwordm"];
-                    $token = generateToken($_SESSION["username"], $password);
+                    $token = generateToken($_SESSION["username"], $password,$_SERVER["REMOTE_ADDR"]);
+                    $token = json_decode($token);
+                    $token = $token->access_token;
 
                     
                     $_SESSION["token"] = $token;
