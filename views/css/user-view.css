@@ -574,6 +574,10 @@ section{
         height: 122vh;
         top: -28vh;
     }
+    #cambiarFoto{
+        height: 122vh;
+        top: -28vh;
+    }
 }
 @media (max-width:800px){
     #infoData-User{
@@ -599,6 +603,13 @@ section{
     #passChange{
         width: 80%;
     }
+    #cambiarFoto{
+        height: 150vh;
+    }
+    #fotoChange{
+        width: 80%;
+    }
+
 }
 @media (max-width:505px){
     #firstdiv{
@@ -624,6 +635,12 @@ section{
     #profile-delete-account{
         margin: 0 6%;
     }
+    #cambiarPass{
+        height: 166vh;
+    }
+    #cambiarFoto{
+        height: 166vh;
+    }
 }
 @media (max-width:372px){
     .divUser-view{
@@ -639,6 +656,20 @@ section{
     #infoData-User{
         width: 100%;
         margin: 23vh 0 3vh 0;
+    }
+}
+@media (max-width:300px){
+    #cambiarPass{
+        width: 107%;
+    }
+    #passChange{
+        width: 93%;
+    }
+    #cambiarFoto{
+        width: 107%;
+    }
+    #fotoChange{
+        width: 93%;
     }
 }
 /*-----Responsive height-----*/
@@ -660,6 +691,32 @@ section{
     }
     .divUser-view{
         margin-top: 60vh;
+    }
+}
+@media (max-height:780px){
+    #cambiarPass{
+        top: -45vh;
+        height: 187vh;
+    }
+    #passChange{
+        height: 48vh;
+    }
+    #cambiarFoto{
+        top: -45vh;
+        height: 187vh;
+    }
+    #fotoChange{
+        height: 48vh;
+    }
+}
+@media (max-height:680px){
+    #cambiarPass{
+        top: -62vh;
+        height: 220vh;
+    }
+    #cambiarFoto{
+        top: -62vh;
+        height: 220vh;
     }
 }
 @media (max-height:640px){
