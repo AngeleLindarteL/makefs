@@ -43,18 +43,18 @@
                         <button id="profile-close-passChange"></button>
                         <form action="" id="passChange" method="POST">
                             <h2>CAMBIAR CONTRASEÑA</h2>
-                            <input type="text" class="passInput" placeholder="Tu contraseña Antigua">
-                            <input type="text" class="passInput" placeholder="Contraseña Nueva">
+                            <input type="text" class="passInput" id="passAntigua" placeholder="Tu contraseña Antigua">
+                            <input type="text" class="passInput" id="passNew" placeholder="Contraseña Nueva">
                             <input type="submit" class="passInput" id="changePassSend" name="changePass" value="Actualizar Contraseña">
                         </form>
                     </section>
                     <section class="divUser-view" id="deleteAccountContainer">
                         <button id="profile-close-deleteAccount"></button>
-                        <form action="" id="deleteAccount" method="POST">
+                        <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount" method="POST">
                             <h2>BORRAR CUENTA</h2>
                             <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
-                            <input type="text" class="passInput" placeholder="Contraseña">
-                            <input type="submit" class="passInput" id="deleteAccountbtn" name="changePass" value="Borrar cuenta">
+                            <input type="text" class="passInput" placeholder="Contraseña" name="deleteUserPass">
+                            <input type="submit" class="passInput" id="deleteAccountbtn" name="deleteUser" value="Borrar cuenta">
                         </form>
                     </section>
                     <article class="profile-chars-user">
@@ -66,31 +66,33 @@
                         <button class="do-chef">Conviertete en chef!</button>
                     </article>
                 </div>
-                <form class="divUser-view importantDataUser" action="../controllers/updateDataUsers/updateSinAxios.php" method="POST"> 
+                <form class="divUser-view importantDataUser" action="" method="POST"> 
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
-                            <img src="./img/user-facebook.png" alt="">
-                            <input type="text" class="inputsToEnable" placeholder="Facebook/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT-user" target="__blank"><img src="./img/user-facebook.png"></a>
+                            <input type="text" class="inputsToEnable" id="fbinput" value="<?php echo $_SESSION["facebook"]?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <img src="./img/user-instagram.png" alt="">
-                            <input type="text" class="inputsToEnable" placeholder="Instagram/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT-user" target="__blank"><img src="./img/user-instagram.png"></a>
+                            <input type="text" class="inputsToEnable" id="iginput" value="<?php echo $_SESSION["instagram"]?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <img src="./img/user-twitter.png" alt="">
+                            <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
                             <input type="text" class="inputsToEnable" placeholder="Twitter/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <img src="./img/user-youtube.png" alt="">
-                            <input type="text" class="inputsToEnable" placeholder="Youtube/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>
+                            <input type="text" class="inputsToEnable" id="ytinput" value="<?php echo $_SESSION["youtube"]?>" disabled>
                         </div>
                         
                     </div>
                     <div id="infoData-User">
                         <div class="divInfoData-user" id="tittle-info">
                             <h2>Tu informacion.</h2>
-                            <button id="profile-edit-user"></button>
-                            <button id="profile-delete-account"></button>
+                            <div class="editbtninfo">
+                                <button id="profile-edit-user"></button>
+                                <button id="profile-delete-account"></button>
+                            </div>
                         </div>
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">

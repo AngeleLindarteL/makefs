@@ -45,10 +45,10 @@
                             <p class="description" id="description-space-chef"><?php echo $_SESSION["description"]?></p>
                             <p id="contact-space-chef">Contacto: <?php echo $_SESSION["email"]?></p>
                             <ul class="chef-social-media">
-                                <a href="https://facebook.com" target="__blank"><img src="./img/user-facebook.png"></a>
-                                <a href="https://instagram.com" target="__blank"><img src="./img/user-instagram.png"></a>
+                                <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png"></a>
+                                <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png"></a>
                                 <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
-                                <a href="https://youtube.com" target="__blank"><img src="./img/user-youtube.png"></a>
+                                <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
                             </ul>
                         </article>
                     </div>
@@ -174,18 +174,18 @@
                     <button id="profile-close-passChange-chef"></button>
                     <form action="" id="passChange-chef" method="POST">
                         <h2>CAMBIAR CONTRASEÑA</h2>
-                        <input type="text" class="passInput-chef" placeholder="Tu contraseña Antigua">
-                        <input type="text" class="passInput-chef" placeholder="Contraseña Nueva">
+                        <input type="text" class="passInput-chef" id="passAntiguaChef" placeholder="Tu contraseña Antigua">
+                        <input type="text" class="passInput-chef" id="passNewChef" placeholder="Contraseña Nueva">
                         <input type="submit" class="passInput-chef" id="changePassSend-chef" name="changePass" value="Actualizar Contraseña">
                     </form>
                 </section>
                 <section class="divUser-view" id="deleteAccountContainer-chef">
                     <button id="profile-close-deleteAccount-chef"></button>
-                    <form action="" id="deleteAccount-chef" method="POST">
+                    <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount-chef" method="POST">
                         <h2>BORRAR CUENTA</h2>
                         <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
-                        <input type="text" class="passInput-chef" placeholder="Contraseña">
-                        <input type="submit" class="passInput-chef" id="deleteAccountbtn-chef" name="changePass" value="Borrar cuenta">
+                        <input type="text" class="passInput-chef" placeholder="Contraseña" name="deleteUserPass">
+                        <input type="submit" class="passInput-chef" id="deleteAccountbtn-chef" name="deleteUser" value="Borrar cuenta">
                     </form>
                 </section>
                 <article class="profile-chars-chef">
@@ -227,19 +227,19 @@
                     <div id="socialMediaChef">
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-facebook.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Facebook/yourUser/">
+                            <input type="text" class="infoInputsChef" id="fbinput-Chef" value="<?php echo $_SESSION["facebook"]?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-instagram.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Instagram/yourUser/">
+                            <input type="text" class="infoInputsChef" id="iginput-Chef" value="<?php echo $_SESSION["instagram"]?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-twitter.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Twitter/yourUser/">
+                            <input type="text" class="infoInputsChef" placeholder="Twitter/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-youtube.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Youtube/yourUser/">
+                            <input type="text" class="infoInputsChef" id="ytinput-Chef" value="<?php echo $_SESSION["youtube"]?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="socialUpdateChef">

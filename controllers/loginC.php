@@ -64,6 +64,13 @@ include("./jwtController.php");
                     $chefid = $user["chefid"];
                     $_SESSION["chefid"]= $chefid;
 
+                    $facebook = $user["facebook"];
+                    $_SESSION["facebook"]= $facebook;
+                    $instagram = $user["instagram"];
+                    $_SESSION["instagram"]= $instagram;
+                    $youtube = $user["youtube"];
+                    $_SESSION["youtube"]= $youtube;
+
                     $password = $user["passwordm"];
                     $token = generateToken($_SESSION["username"], $password,$_SERVER["REMOTE_ADDR"]);
                     $token = json_decode($token);
