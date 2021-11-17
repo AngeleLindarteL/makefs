@@ -736,6 +736,15 @@ header{
         position: relative;
         top: -16vh;
     }
+    .header_logreg{
+        width:20% !important;
+    }
+    .header_logo{
+        width:80% !important;
+    }
+    .header_logo article h1{
+        font-size: 1.2em;
+    }
     .homewhite{
         display:flex;
     }
