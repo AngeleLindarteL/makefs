@@ -45,10 +45,10 @@
                             <p class="description" id="description-space-chef"><?php echo $_SESSION["description"]?></p>
                             <p id="contact-space-chef">Contacto: <?php echo $_SESSION["email"]?></p>
                             <ul class="chef-social-media">
-                                <a href="https://facebook.com" target="__blank"><img src="./img/user-facebook.png"></a>
-                                <a href="https://instagram.com" target="__blank"><img src="./img/user-instagram.png"></a>
+                                <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png"></a>
+                                <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png"></a>
                                 <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
-                                <a href="https://youtube.com" target="__blank"><img src="./img/user-youtube.png"></a>
+                                <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
                             </ul>
                         </article>
                     </div>
@@ -227,19 +227,19 @@
                     <div id="socialMediaChef">
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-facebook.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Facebook/yourUser/">
+                            <input type="text" class="infoInputsChef" id="fbinput-Chef" value="<?php echo $_SESSION["facebook"]?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-instagram.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Instagram/yourUser/">
+                            <input type="text" class="infoInputsChef" id="iginput-Chef" value="<?php echo $_SESSION["instagram"]?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-twitter.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Twitter/yourUser/">
+                            <input type="text" class="infoInputsChef" placeholder="Twitter/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-youtube.png" alt="">
-                            <input type="text" class="infoInputsChef" placeholder="Youtube/yourUser/">
+                            <input type="text" class="infoInputsChef" id="ytinput-Chef" value="<?php echo $_SESSION["youtube"]?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="socialUpdateChef">

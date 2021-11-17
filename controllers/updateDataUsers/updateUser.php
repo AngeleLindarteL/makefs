@@ -7,6 +7,9 @@ session_start();
         namem = :nombre,
         username = :username,
         email = :email,
+        facebook = :facebook,
+        instagram = :instagram,
+        youtube = :youtube,
         descript = :descript WHERE userid = :id";
 
         $connObj = new Conexion();
@@ -19,6 +22,9 @@ session_start();
                 ":nombre" => $req_info->nombre,
                 ":username" => $req_info->username,
                 ":email" => $req_info->email,
+                ":facebook" => $req_info->facebook,
+                ":instagram" => $req_info->instagram,
+                ":youtube" => $req_info->youtube,
                 ":descript" => $req_info->descript,
                 ":id" => $req_info->id,
                 )
@@ -30,6 +36,9 @@ session_start();
             $_SESSION['username'] = $req_info->username;
             $_SESSION['email'] = $req_info->email;
             $_SESSION['description'] =$req_info->descript ;
+            $_SESSION['facebook'] =$req_info->facebook ;
+            $_SESSION['instagram'] =$req_info->instagram ;
+            $_SESSION['youtube'] =$req_info->youtube ;
         }catch(Exception $e){
             $conn->rollBack();
             echo http_response_code(400);
