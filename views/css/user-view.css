@@ -593,6 +593,12 @@ section{
     #firstdiv{
         margin-top: 48vh;
     }
+    #cambiarPass{
+        height: 150vh;
+    }
+    #passChange{
+        width: 80%;
+    }
 }
 @media (max-width:505px){
     #firstdiv{
@@ -646,6 +652,14 @@ section{
     }
     #firstdiv{
         margin-top: 83vh;
+    }
+}
+@media (max-height:680px){
+    #firstdiv{
+        margin-top: 122vh;
+    }
+    .divUser-view{
+        margin-top: 60vh;
     }
 }
 @media (max-height:640px){
