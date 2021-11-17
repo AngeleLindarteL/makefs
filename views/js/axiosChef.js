@@ -2,6 +2,9 @@ let updateUser = document.querySelector("#socialUpdateChef");
 let namem = document.querySelector("#name-chef");
 let username = document.querySelector("#username-chef");
 let email = document.querySelector("#email-chef");
+let facebook = document.querySelector("#fbinput-Chef");
+let instagram = document.querySelector("#iginput-Chef");
+let youtube = document.querySelector("#ytinput-Chef");
 let descript = document.querySelector("#descript-chef");
 let updateStatus = document.querySelector("#status-chef");
 
@@ -9,6 +12,9 @@ let nameTxt = document.querySelector("#chef-name");
 let descriptTxt = document.querySelector("#description-space-chef");
 let contactTxt = document.querySelector("#contact-space-chef");
 let usernameTxt = document.querySelector("#username-space-chef");
+let fbTxt = document.querySelector("#fbTxT");
+let igTxT = document.querySelector("#igTxT");
+let ytTxT = document.querySelector("#ytTxT");
 
 let nameTxt2 = document.querySelector("#chef-name-changing");
 let usernameTxt2 = document.querySelector("#username-space-chef-changing");
@@ -23,6 +29,9 @@ updateUser.addEventListener("click", (e)=>{
         "username": username.value,
         "email": email.value,
         "descript": descript.value,
+        "facebook": facebook.value,
+        "instagram": instagram.value,
+        "youtube": youtube.value,
     }
     info = JSON.stringify(info);
     try{
@@ -40,6 +49,9 @@ updateUser.addEventListener("click", (e)=>{
                     descriptTxt2.textContent=descript.value;
                     contactTxt2.textContent="Contacto:"+email.value;
                     usernameTxt2.textContent="@"+username.value;
+                    fbTxT.setAttribute("href",facebook.value);
+                    igTxT.setAttribute("href",instagram.value);
+                    ytTxT.setAttribute("href",youtube.value);
                 }
             }
         )

@@ -69,20 +69,20 @@
                 <form class="divUser-view importantDataUser" action="" method="POST"> 
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
-                            <img src="./img/user-facebook.png" alt="">
-                            <input type="text" class="inputsToEnable" placeholder="Facebook/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT-user" target="__blank"><img src="./img/user-facebook.png"></a>
+                            <input type="text" class="inputsToEnable" id="fbinput" value="<?php echo $_SESSION["facebook"]?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <img src="./img/user-instagram.png" alt="">
-                            <input type="text" class="inputsToEnable" placeholder="Instagram/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT-user" target="__blank"><img src="./img/user-instagram.png"></a>
+                            <input type="text" class="inputsToEnable" id="iginput" value="<?php echo $_SESSION["instagram"]?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <img src="./img/user-twitter.png" alt="">
+                            <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
                             <input type="text" class="inputsToEnable" placeholder="Twitter/yourUser/" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <img src="./img/user-youtube.png" alt="">
-                            <input type="text" class="inputsToEnable" placeholder="Youtube/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>
+                            <input type="text" class="inputsToEnable" id="ytinput" value="<?php echo $_SESSION["youtube"]?>" disabled>
                         </div>
                         
                     </div>
