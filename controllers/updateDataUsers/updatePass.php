@@ -13,7 +13,7 @@
         $conn->commit();
         $passwordm = $password->fetch(PDO::FETCH_ASSOC);
     }catch(Exception $e){
-        $conexion->rollBack();
+        $conn->rollBack();
         echo "Failed: " . $e->getMessage();
     }
     
@@ -37,7 +37,7 @@
             $conn->commit();
             include('../cerrar.php');
         }catch(Exception $e){
-            $conexion->rollBack();
+            $conn->rollBack();
             echo "Failed: " . $e->getMessage();
         }
     }else{

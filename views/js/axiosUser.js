@@ -76,3 +76,25 @@ updatePassBtn.addEventListener("click",(e)=>{
         updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
     }
 })
+
+/*--------------------------------------------------------Be Chef*/
+let beChefbtn = document.querySelector("#wantBeChefBtn");
+
+beChefbtn.addEventListener("click",(e)=>{
+    e.preventDefault();
+    let infoBeChef = {
+        "btnChef" : true,
+    }
+    infoPass = JSON.stringify(infoBeChef);
+    try{
+        axios.post("../controllers/updateDataUsers/beChefController.php",infoBeChef).then(
+            res=> {
+                console.log(res);
+                window.location.href="../views/chef-view.php";
+            }
+        )
+        
+    }catch(e){
+        updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
+    }
+})

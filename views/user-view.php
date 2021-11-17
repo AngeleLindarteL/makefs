@@ -57,13 +57,40 @@
                             <input type="submit" class="passInput" id="deleteAccountbtn" name="deleteUser" value="Borrar cuenta">
                         </form>
                     </section>
+                    <section id="beaChef">
+                        <button id="profile-close-bechef"></button>
+                        <div id="beChefContainer">
+                            <div id="tittleBeChef">
+                                <h1>Conviertete en Chef!</h1>
+                            </div>
+                            <div id="subtittleBeChef">
+                                <h3>Para poder ser un Chef tendrás que aceptar
+                                    los mandamientos culinarios Makefianos...
+                                </h3>
+                            </div>
+                            <div id="makefsContract">
+                                <p>
+                                1- No subir contenido a la plataforma que no tenga relacion con la preparacion de recetas. <br>
+                                2- Se respetuoso con la comunidad. <br>
+                                3- Sube tus recetas siguiendo la forma determinada para que su subida sea la correcta en el modelo Makef's.
+                                </p>
+                            </div>
+                            <div id="msgVidContract">
+                                <p>Los videos que no estén acorde a la plataforma o que contengan contenido para adultos será eliminado.</p>
+                            </div>
+                            <div id="divBtnBeChef">
+                                <button id="wantBeChefBtn"><h4>Acepto, ¡A Cocinar!</h4><img src="./img/chefHatRed.png" alt=""></button>
+                            </div>
+                        </div>
+                            
+                    </section>
                     <article class="profile-chars-user">
                         <h2 id="user-name"><?php echo $_SESSION["nombre"]?></h2>
                         <p id="username-space">@<?php echo $_SESSION["username"]?></p>
                         <p class="description-user" id="descript-space"><?php echo $_SESSION["description"]?></p>
                         <p id="contact-space">Contacto: <?php echo $_SESSION["email"]?></p>
                         <button class="do-chef" id="btnChangePass">Cambiar Contraseña</button>
-                        <button class="do-chef">Conviertete en chef!</button>
+                        <button class="do-chef" id="beChefOpenBtn">Conviertete en chef!</button>
                     </article>
                 </div>
                 <form class="divUser-view importantDataUser" action="" method="POST"> 

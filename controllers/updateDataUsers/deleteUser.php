@@ -14,7 +14,7 @@ include("../../models/conexion.php");
             $conn->commit();
             $passwordm = $password->fetch(PDO::FETCH_ASSOC);
         }catch(Exception $e){
-            $conexion->rollBack();
+            $conn->rollBack();
             echo "Failed: " . $e->getMessage();
         }
         
@@ -28,7 +28,7 @@ include("../../models/conexion.php");
                 include('../cerrar.php');
                 header("location: ../../views/login.php");
             }catch(Exception $e){
-                $conexion->rollBack();
+                $conn->rollBack();
                 echo "Failed: " . $e->getMessage();
             }
         }else{

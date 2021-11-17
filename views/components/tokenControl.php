@@ -20,7 +20,7 @@
         }
         $token = array("token" => $_SESSION["token"]);
         $validatingToken = validateToken(json_encode($token));
-        echo "<p>".print_r($_SERVER)."</p>";
-        echo $validatingToken;
+        /*echo "<p>".print_r($_SERVER)."</p>";
+        echo $validatingToken;*/
     }
 ?>
