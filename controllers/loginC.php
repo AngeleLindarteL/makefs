@@ -3,10 +3,10 @@ session_start();
 include("./jwtController.php");
 
     if(isset($_POST['cerrar_sesion'])){
+        destroyToken($_SESSION["token"]);
         include('./cerrar.php');
         header("Location: ../views/login.php");
     }
-
     if(isset($_SESSION['auth'])){
         header("Location: ../views/index.php");      
     }
@@ -15,17 +15,20 @@ include("./jwtController.php");
         
         if(isset($_POST['username']) && isset($_POST['pw'])){
 
+            $actualDate = date("Y-m-d H:i:s", time());
             $objConn = new Conexion;
             $conexion = $objConn->Conectar();
             $sql = "SELECT * FROM userm WHERE username='$_POST[username]'";
+            $cleanBlackTokens = "DELETE FROM jwt_tokens_blacklist WHERE expires < '$actualDate'";
 
             $userLog = $conexion->prepare($sql);
+            $cleanBLJWT = $conexion->prepare($cleanBlackTokens);
             try{
                 $conexion->beginTransaction();
+                $cleanBLJWT->execute();
                 $userLog->execute();
                 $conexion->commit(); 
                 $user = $userLog->fetch(PDO::FETCH_ASSOC);
-                
             }catch(Exception $e){
                 $conexion->rollBack();
                 echo "Failed: " . $e->getMessage();
@@ -72,7 +75,7 @@ include("./jwtController.php");
                     $_SESSION["youtube"]= $youtube;
 
                     $password = $user["passwordm"];
-                    $token = generateToken($_SESSION["username"], $password,$_SERVER["REMOTE_ADDR"]);
+                    $token = generateToken($_SESSION["username"], $password);
                     $token = json_decode($token);
                     $token = $token->access_token;
 

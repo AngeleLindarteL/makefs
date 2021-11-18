@@ -11,9 +11,8 @@
     <title>Inicio Makef's</title>
     <?php
         session_start();
+        include("./components/tokenControl.php");
     ?>
-    <?php 
-    include("./components/tokenControl.php") ?>
 </head>
 <body>
     <?php

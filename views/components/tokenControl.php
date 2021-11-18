@@ -1,4 +1,5 @@
 <?php
+    include("../controllers/jwtController.php");
     if (!isset($_SESSION["token"])) {
         echo <<<EOT
             <script>
@@ -8,7 +9,6 @@
             </script>
         EOT;
     }else{
-        include("../controllers/jwtController.php");
         if(isset($_SESSION["token"])){
             echo <<<EOT
                 <script>
@@ -18,9 +18,13 @@
                 </script>
             EOT;
         }
-        $token = array("token" => $_SESSION["token"]);
-        $validatingToken = validateToken(json_encode($token));
-        echo "<p>".print_r($_SERVER)."</p>";
-        echo $validatingToken;
+        $token = $_SESSION["token"];
+        try{
+            $validatingToken = validateToken($token);
+        }catch(Exception $e){
+            destroyToken($token);
+            include('../controllers/cerrar.php');
+            header("Location: ../views/login.php");
+        }
     }
 ?>
