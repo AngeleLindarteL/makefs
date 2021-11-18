@@ -556,7 +556,7 @@ section{
 #beaChef{
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -663,6 +663,15 @@ section{
 }
 
 /*-----Responsive-----*/
+@media (max-width:1300px){
+    #beChefContainer{
+        width: 78%;
+    }
+    #msgVidContract{
+        height: 5%;
+        margin-top: 3vh;
+    }
+}
 @media (max-width:1050px){
     #tittle-info h2{
         width: 82%;
@@ -688,6 +697,15 @@ section{
     #cambiarFoto{
         height: 122vh;
         top: -28vh;
+    }
+}
+@media (max-width:822px){
+    #beChefContainer{
+        width: 100%;
+    }
+    #profile-close-bechef{
+        right: 1%;
+        top: 9vh;
     }
 }
 @media (max-width:800px){
@@ -722,6 +740,20 @@ section{
     }
 
 }
+@media (max-width:640px){
+    #makefsContract{
+        width: 90%;
+    }
+    #makefsContract p{
+        font-size: 0.7em;
+    }
+    #subtittleBeChef{
+        width: 90%;
+    }
+    #msgVidContract{
+        width: 100%;
+    }
+}
 @media (max-width:505px){
     #firstdiv{
         margin-top: 55vh;
@@ -752,6 +784,9 @@ section{
     #cambiarFoto{
         height: 166vh;
     }
+    #makefsContract{
+        overflow: scroll;
+    }
 }
 @media (max-width:372px){
     .divUser-view{
@@ -767,6 +802,18 @@ section{
     #infoData-User{
         width: 100%;
         margin: 23vh 0 3vh 0;
+    }
+    #msgVidContract{
+        width: 100%;
+    }
+    #tittleBeChef h1{
+        font-size: 1.5em;
+    }
+    .warningh3{
+        font-size: 1em !important;
+    }
+    #divBtnBeChef{
+        width: 100%;
     }
 }
 @media (max-width:300px){
@@ -794,6 +841,9 @@ section{
     }
     #firstdiv{
         margin-top: 83vh;
+    }
+    #divBtnBeChef button{
+        font-size: 1em;
     }
 }
 @media (max-height:680px){
@@ -828,6 +878,9 @@ section{
     #cambiarFoto{
         top: -62vh;
         height: 220vh;
+    }
+    .warningh3{
+        margin-top: 0.5vh;
     }
 }
 @media (max-height:640px){

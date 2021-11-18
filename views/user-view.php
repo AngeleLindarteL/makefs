@@ -16,7 +16,7 @@
     <script>
         <?php echo "const id =".$_SESSION['id'] ?>
     </script>
-    <?php include("./components/tokenControl.php") ?>
+    <?php /*include("./components/tokenControl.php")*/ ?>
 </head>
 <body>
     <?php
@@ -64,8 +64,8 @@
                                 <h1>Conviertete en Chef!</h1>
                             </div>
                             <div id="subtittleBeChef">
-                                <h3>Para poder ser un Chef tendrás que aceptar
-                                    los mandamientos culinarios Makefianos...
+                                <h3 class="warningh3">Lee detenidamente las condiciones que debes aceptar
+                                    para volverte chef!
                                 </h3>
                             </div>
                             <div id="makefsContract">
