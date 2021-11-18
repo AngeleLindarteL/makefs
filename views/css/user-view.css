@@ -750,6 +750,9 @@ section{
     #subtittleBeChef{
         width: 90%;
     }
+    #msgVidContract{
+        width: 100%;
+    }
 }
 @media (max-width:505px){
     #firstdiv{
@@ -806,8 +809,8 @@ section{
     #tittleBeChef h1{
         font-size: 1.5em;
     }
-    #subtittleBeChef h3{
-        font-size: 1em;
+    .warningh3{
+        font-size: 1em !important;
     }
     #divBtnBeChef{
         width: 100%;
@@ -838,6 +841,9 @@ section{
     }
     #firstdiv{
         margin-top: 83vh;
+    }
+    #divBtnBeChef button{
+        font-size: 1em;
     }
 }
 @media (max-height:680px){
@@ -872,6 +878,9 @@ section{
     #cambiarFoto{
         top: -62vh;
         height: 220vh;
+    }
+    .warningh3{
+        margin-top: 0.5vh;
     }
 }
 @media (max-height:640px){
