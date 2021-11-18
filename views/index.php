@@ -11,9 +11,13 @@
     <title>Inicio Makef's</title>
     <?php
         session_start();
+        include("./components/tokenControl.php");
     ?>
+<<<<<<< HEAD
     <?php 
     /*include("./components/tokenControl.php") */?>
+=======
+>>>>>>> 5397f2b6de3f56407790f14c2b9aad9ce0f33603
 </head>
 <body>
     <?php
