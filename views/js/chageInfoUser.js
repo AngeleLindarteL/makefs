@@ -88,3 +88,25 @@ setTimeout(()=>{
     sectionDeleteAccount.style.display="none";
 },300);
 })
+
+/*-----------------------------------------------------------Become a Chef*/
+
+let btnBeChef = document.querySelector("#beChefOpenBtn");
+let sectionBeChef = document.querySelector("#beaChef");
+let btnCloseBeChef = document.querySelector("#profile-close-bechef");
+
+btnBeChef.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionBeChef.style.display="flex";
+    setTimeout(()=>{
+        sectionBeChef.style.opacity="100%";
+    },300);   
+})
+
+btnCloseBeChef.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionBeChef.style.opacity="0";
+setTimeout(()=>{
+    sectionBeChef.style.display="none";
+},300);
+})

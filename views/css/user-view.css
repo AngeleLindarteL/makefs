@@ -551,6 +551,117 @@ section{
     display: flex;
     flex-direction: row;
 }
+/*-----------------------------------------------------------------Begin a Chef*/
+
+#beaChef{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.281);
+    z-index: 10;
+    top: 0;
+    left: 0;
+    color: white;
+    display: none;
+    opacity: 0;
+    transition: .3s;
+}
+#beaChef p{
+    margin: 0 ;
+}
+#profile-close-bechef{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 12vh;
+    right: 5vh;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
+}
+#beChefContainer{
+    width: 55%;
+    height: 75vh;
+    background-color: var(--color5);
+    border-radius: 15px;
+    box-shadow: white 2px 2px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#tittleBeChef{
+    width: 100%;
+    height: 16%;
+    margin-top: 2%;
+    background-color: white;
+    color: var(--color5);
+    font-variant: bolder;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#subtittleBeChef{
+    width: 70%;
+    height: 12%;
+    border-bottom: 2px solid white;
+}
+#makefsContract{
+    margin-top: 2%;
+    width: 70%;
+    height: 38%;
+    text-align: left; 
+    font-size: 1.4em;
+    line-height: 2em;  
+}
+#divBtnBeChef{
+    width: 70%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#msgVidContract{
+    width: 50%;
+    height: 10%;
+    font-size: 0.7em;
+}
+
+#divBtnBeChef button{
+    width: 50%;
+    height: 90%;
+    font-size: 1.2em;
+    border: 2px solid white;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.235);
+    transition: .3s;
+    cursor: pointer;
+}
+#divBtnBeChef button:hover{
+    padding-left: 3%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.589)
+}
+#divBtnBeChef button img{
+    width: 4vh;
+}
+
 /*-----Responsive-----*/
 @media (max-width:1050px){
     #tittle-info h2{
@@ -574,6 +685,10 @@ section{
         height: 122vh;
         top: -28vh;
     }
+    #cambiarFoto{
+        height: 122vh;
+        top: -28vh;
+    }
 }
 @media (max-width:800px){
     #infoData-User{
@@ -593,6 +708,19 @@ section{
     #firstdiv{
         margin-top: 48vh;
     }
+    #cambiarPass{
+        height: 150vh;
+    }
+    #passChange{
+        width: 80%;
+    }
+    #cambiarFoto{
+        height: 150vh;
+    }
+    #fotoChange{
+        width: 80%;
+    }
+
 }
 @media (max-width:505px){
     #firstdiv{
@@ -618,6 +746,12 @@ section{
     #profile-delete-account{
         margin: 0 6%;
     }
+    #cambiarPass{
+        height: 166vh;
+    }
+    #cambiarFoto{
+        height: 166vh;
+    }
 }
 @media (max-width:372px){
     .divUser-view{
@@ -635,6 +769,20 @@ section{
         margin: 23vh 0 3vh 0;
     }
 }
+@media (max-width:300px){
+    #cambiarPass{
+        width: 107%;
+    }
+    #passChange{
+        width: 93%;
+    }
+    #cambiarFoto{
+        width: 107%;
+    }
+    #fotoChange{
+        width: 93%;
+    }
+}
 /*-----Responsive height-----*/
 @media (max-height:800px){
     #socialMediaUser{
@@ -646,6 +794,40 @@ section{
     }
     #firstdiv{
         margin-top: 83vh;
+    }
+}
+@media (max-height:680px){
+    #firstdiv{
+        margin-top: 122vh;
+    }
+    .divUser-view{
+        margin-top: 60vh;
+    }
+}
+@media (max-height:780px){
+    #cambiarPass{
+        top: -45vh;
+        height: 187vh;
+    }
+    #passChange{
+        height: 48vh;
+    }
+    #cambiarFoto{
+        top: -45vh;
+        height: 187vh;
+    }
+    #fotoChange{
+        height: 48vh;
+    }
+}
+@media (max-height:680px){
+    #cambiarPass{
+        top: -62vh;
+        height: 220vh;
+    }
+    #cambiarFoto{
+        top: -62vh;
+        height: 220vh;
     }
 }
 @media (max-height:640px){

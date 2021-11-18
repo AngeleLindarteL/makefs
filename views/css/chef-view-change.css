@@ -174,6 +174,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 #input-info-chef{
     display: flex;
@@ -209,6 +210,7 @@ section{
 }
 #tittle-info-chef{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
@@ -566,4 +568,153 @@ section{
     z-index: 2;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
     cursor: pointer;
+}
+#profile-edit-chef {
+    cursor: pointer;
+    border: none;
+    width: 5vh;
+    height: 5vh;
+    background-image: url(../img/chef-edit.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 24%);
+}
+#profile-delete-account-chef{
+    cursor: pointer;
+    border: none;
+    width: 5vh;
+    height: 5vh;
+    background-image: url(../img/deleteAccount.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgb(0 0 0 / 24%);
+}
+/*------Responsive------*/
+@media (max-width:940px){
+    .chefsContainer{
+        position: fixed;
+    }
+    #chefContainer{
+        flex-direction: column;
+        overflow: scroll;
+        margin-top: 2vh;
+    }
+    #firstdiv-chef{
+        border: none;
+        margin-top: 66vh;
+        width: 84%;
+    }
+    .importantDataChef{
+        width: 90%;
+        border-top: 2px solid #FF2C29; 
+    }
+    #infoData-chef{
+        margin-top: 5vh;
+    }
+    #socialMediaChef{
+        padding-top: 6vh;
+    }
+    .description{
+        text-align: center;
+    }
+    #passChange-chef{
+        width: 80%;
+    }
+    #fotoChange-chef{
+        width: 80%;
+    }
+}
+@media (max-width:500px){
+    #profile-delete-account-chef{
+        margin: 0 7%;
+    }
+    .editbtninfo{
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 2vh;
+        width: 40%;
+    }
+    #tittle-info-chef{
+        flex-direction: column;
+    }
+    
+}
+@media (max-width:430px){
+    #chefContainer{
+        width: 100%;
+    }
+    #profile-edit-close{
+        width: 5vh;
+        height: 5vh;
+        top: 8vh;
+        right: 1%;
+    }
+    #fotoChange-chef{
+        width: 100%;
+    }
+}
+/*------Responsive height------*/
+@media (max-height:815px){
+    #firstdiv-chef{
+        margin-top: 78vh;
+    }
+    #passChange-chef{
+        height: 46vh;
+    }
+    #fotoChange-chef{
+        height: 46vh;
+    }
+}
+@media (max-height:720px){
+    #firstdiv-chef{
+        margin-top: 95vh;
+    }
+    .socialmediadiv-chef input{
+        margin: 2% 0;
+    }
+}
+@media (max-height:665px){
+    .importantDataChef{
+        margin-top: 10vh;
+    }
+    #firstdiv-chef{
+        margin-top: 100vh;
+    }
+    #socialMediaChef{
+        padding-top: 10vh;
+    }
+}
+@media (max-height:610px){
+    #passChange-chef{
+        height: 62vh;
+    }
+    #fotoChange-chef{
+        height: 62vh;
+    }
+}
+@media (max-height:570px){
+    #socialMediaChef{
+        padding-top: 16vh;
+    }
+    #firstdiv-chef{
+        margin-top: 115vh;
+    }
+}
+@media (width:1280px) and (max-height:800px){
+    #firstdiv-chef{
+        margin-top: 0vh;
+    }
+}
+@media (width:1024px) and (max-height:600px){
+    #firstdiv-chef{
+        margin-top: 0vh;
+    }
 }
