@@ -16,7 +16,7 @@
     <script>
         <?php echo "const id =".$_SESSION['id'] ?>
     </script>
-    <?php include("./components/tokenControl.php") ?>
+    <?php /*include("./components/tokenControl.php")*/ ?>
 </head>
 <body>
     <?php

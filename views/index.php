@@ -13,7 +13,7 @@
         session_start();
     ?>
     <?php 
-    include("./components/tokenControl.php") ?>
+    /*include("./components/tokenControl.php") */?>
 </head>
 <body>
     <?php
