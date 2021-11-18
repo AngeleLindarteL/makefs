@@ -175,7 +175,7 @@
                     <form action="" id="passChange-chef" method="POST">
                         <h2>CAMBIAR CONTRASEÑA</h2>
                         <input type="text" class="passInput-chef" id="passAntiguaChef" placeholder="Tu contraseña Antigua">
-                        <input type="text" class="passInput-chef" id="passNewChef" placeholder="Contraseña Nueva">
+                        <input type="text" class="passInput-chef" id="passNewChef" maxlength="150" placeholder="Contraseña Nueva">
                         <input type="submit" class="passInput-chef" id="changePassSend-chef" name="changePass" value="Actualizar Contraseña">
                     </form>
                 </section>
@@ -208,19 +208,19 @@
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">
                                 <label for="name">Nombre:</label>
-                                <input type="text" class="infoInputsChef" id="name-chef" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="59" id="name-chef" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="username">Username:</label>
-                                <input type="text" class="infoInputsChef" id="username-chef" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="59" id="username-chef" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="email">Email:</label>
-                                <input type="text" class="infoInputsChef" id="email-chef" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="69" id="email-chef" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="infoInputsChef" id="descript-chef" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="99" id="descript-chef" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
                             
                             

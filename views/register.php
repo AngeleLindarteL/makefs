@@ -40,14 +40,14 @@
                     <a class="aback" href="./index.php"><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
                     <h1>Registrate!</h1>
                     <h5 class="mainsubtitle">Nombre</h5>
-                    <input class="inputtxt" type="text" name="realname" required>
+                    <input class="inputtxt" type="text" name="realname" maxlength="59" required>
                     <h5 class="mainsubtitle">Nombre de usuario</h5>
-                    <input class="inputtxt" type="text" name="username" required>
+                    <input class="inputtxt" type="text" name="username" maxlength="59" required>
                     <h5 class="mainsubtitle">Email</h5>
-                    <input class="inputtxt" type="email" name="email" required>
+                    <input class="inputtxt" type="email" name="email" maxlength="69" required>
                     <h5>Contraseña</h5>
                     <div class="confrpsw">
-                        <input class="inputtxt" type="password" name="pw" required>
+                        <input class="inputtxt" type="password" name="pw" maxlength="200" required>
                         <input class="inputtxt" type="password" name="pwconfirm" placeholder="Confirmar contraseña" required>
                     </div>
                     <h5>Fecha de nacimiento</h5>

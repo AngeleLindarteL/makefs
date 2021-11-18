@@ -44,7 +44,7 @@
                         <form action="" id="passChange" method="POST">
                             <h2>CAMBIAR CONTRASEÑA</h2>
                             <input type="text" class="passInput" id="passAntigua" placeholder="Tu contraseña Antigua">
-                            <input type="text" class="passInput" id="passNew" placeholder="Contraseña Nueva">
+                            <input type="text" class="passInput" id="passNew" maxlength="150" placeholder="Contraseña Nueva">
                             <input type="submit" class="passInput" id="changePassSend" name="changePass" value="Actualizar Contraseña">
                         </form>
                     </section>
@@ -124,19 +124,19 @@
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
                                 <label for="namem">Nombre:</label>
-                                <input type="text" class="inputsToEnable" id="namem" name="namem" value="<?php echo $_SESSION["nombre"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="namem" name="namem" maxlength="59" value="<?php echo $_SESSION["nombre"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="username">Username:</label>
-                                <input type="text" class="inputsToEnable" id="username" name="username" value="<?php echo $_SESSION["username"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="username" name="username" maxlength="59" value="<?php echo $_SESSION["username"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="email">Email:</label>
-                                <input type="text" class="inputsToEnable" id="email" name="email" value="<?php echo $_SESSION["email"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="email" name="email" maxlength="69" value="<?php echo $_SESSION["email"]?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="inputsToEnable" id="descript" name="descript" value="<?php echo $_SESSION["description"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="descript" name="descript" maxlength="99" value="<?php echo $_SESSION["description"]?>" disabled>
                             </div>
                             <div class="infodelusuario" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="updateSocial">
