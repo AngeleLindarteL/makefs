@@ -60,33 +60,66 @@
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <div>
-                            <img src="./img/camera.png" alt="">
-                            <input type="file" name="recipeVideo" accept="mp4" required> 
+                <div id="sectionNewRecipeMultimedia">
+                    <div id="multimediaNewRecipe">
+                        <div class="divMultimedia">
+                            <label for="recipeVideo">
+                                <img src="./img/addVideoRecipe.png" alt="">
+                            </label>
+                            <h4>Inserta tu video Preparacion</h4>
+                            <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="mp4" required> 
                         </div>
-                        <div>
-                            <img src="./img/imagen.png" alt="">
-                            <input type="file" name="recipeImg" accept=".jpg, .png" required> 
+                        <div class="divMultimedia">
+                            <label for="recipeImg">
+                                <img src="./img/imagen.png" alt="">
+                            </label>
+                            <h4>Inserta la imagen de tu receta</h4>
+                            <input type="file" id="recipeImg" class="inputfileNewRecipe" name="recipeImg" accept=".jpg, .png" required> 
                         </div>
                     </div>
-                    <div>
-                        <div>
+                    <div id="stepsNewRecipe">
+                        <div id="tittlePasos">
                             <img src="./img/chefHatRed.png" alt="">
                             <h2>Pasos</h2>
                         </div>
-                        <div>
-                            <div>
-                                <input type="text" placeholder="Paso">
-                                <input type="text" placeholder="minInicio">
-                                <input type="text" placeholder="minFinalizacion">
+                        <div id="inputsSteps">
+                            <div class="oneStepNewRecipe">
+                                <input type="text" class="stepTxtInput" placeholder="Paso">
+                                <input type="text" class="minInicioInput" placeholder="minInicio">
+                                <input type="text" class="minFinInput" placeholder="minFin">
+                            </div>
+                            <div class="oneStepNewRecipe">
+                                <input type="text" class="stepTxtInput" placeholder="Paso">
+                                <input type="text" class="minInicioInput" placeholder="minInicio">
+                                <input type="text" class="minFinInput" placeholder="minFin">
+                            </div>
+                            <div class="oneStepNewRecipe">
+                                <input type="text" class="stepTxtInput" placeholder="Paso">
+                                <input type="text" class="minInicioInput" placeholder="minInicio">
+                                <input type="text" class="minFinInput" placeholder="minFin">
+                            </div>
+                            <div class="oneStepNewRecipe">
+                                <input type="text" class="stepTxtInput" placeholder="Paso">
+                                <input type="text" class="minInicioInput" placeholder="minInicio">
+                                <input type="text" class="minFinInput" placeholder="minFin">
+                            </div>
+                            <div class="oneStepNewRecipe">
+                                <input type="text" class="stepTxtInput" placeholder="Paso">
+                                <input type="text" class="minInicioInput" placeholder="minInicio">
+                                <input type="text" class="minFinInput" placeholder="minFin">
+                            </div>
+                            <div class="oneStepNewRecipe">
+                                <input type="text" class="stepTxtInput" placeholder="Paso">
+                                <input type="text" class="minInicioInput" placeholder="minInicio">
+                                <input type="text" class="minFinInput" placeholder="minFin">
                             </div>
                         </div>
                     </div>
                     
                 </div>
-                <button id="profile-delete-account"></button>
+                <div>
+
+                </div>
             </div>
         </div>
     </section>

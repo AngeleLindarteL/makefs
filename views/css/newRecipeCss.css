@@ -62,15 +62,13 @@ section{
 #recipetittlediv input:focus{
     outline: none;
 }
-.containerNewRecipe img{
-    width: 2vh;
-}
+
 #recipebodydiv{
     width: 100%;
     height: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 #barraLateralNewRecipe{
     width: 25%;
@@ -87,13 +85,13 @@ section{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid black;
+    box-shadow: 0px 0px 20px 1px #c1070425;
+    border-radius: 20px;
 }
 #menuIngredientesNewRecipe h2{
     width: 80%;
     height: 10%;
     padding: 5px;
-    border-top: #FF2C29 2px solid;
     text-align: center;
 }
 .inputsLateralesNewRecipe{
@@ -121,9 +119,11 @@ section{
 .inputsLateralesNewRecipe::-webkit-scrollbar{
     background-color: rgb(209, 209, 209);
     width: 5px;
+    border-radius: 20px;
 }
 .inputsLateralesNewRecipe::-webkit-scrollbar-thumb{
     background-color: var(--color5);
+    border-radius: 20px;
 }
 #etiquetasNewRecipe{
     margin-top: 5%;
@@ -133,7 +133,8 @@ section{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid black;
+    box-shadow: 0px 0px 20px 1px #c1070425;
+    border-radius: 20px;
 }
 #selectsEtiquetasNewRecipe{
     width: 90%;
@@ -154,7 +155,7 @@ section{
     font-size: 1.2em;
     text-align: center;
     width: 75%;
-    border-bottom: 2px #FF2C29 solid;
+    border-left: 2px #FF2C29 solid;
 }
 #eRegiones{
     margin:8% 0;
@@ -163,7 +164,104 @@ section{
 #selectsEtiquetasNewRecipe::-webkit-scrollbar{
     background-color: rgb(209, 209, 209);
     width: 5px;
+    border-radius: 20px;
 }
 #selectsEtiquetasNewRecipe::-webkit-scrollbar-thumb{
+    background-color: var(--color5);
+    border-radius: 20px;
+}
+
+#sectionNewRecipeMultimedia{
+    width: 60%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#multimediaNewRecipe{
+    width:100%;
+    height: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#multimediaNewRecipe img{
+    width: 9vh;
+}
+.divMultimedia{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divMultimedia label{
+    cursor: pointer;
+}
+#stepsNewRecipe{
+    margin-top: 5%;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.inputfileNewRecipe{
+    opacity: 0;
+}
+#tittlePasos{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid black;
+}
+#tittlePasos img{
+    width: 4vh;
+    margin-right: 4%;
+}
+#inputsSteps{
+    margin-top: 5%;
+    width: 100%;
+    height: 75%;
+    overflow: auto;
+}
+.oneStepNewRecipe{
+    width: 100%;
+    height: 10%;
+    margin-bottom: 5%;
+}
+.oneStepNewRecipe input{
+    padding: 5px;
+    border:none;
+    border-bottom: 2px solid #FF2C29;
+}
+.oneStepNewRecipe input:focus{
+    outline: #FF2C29;
+}
+.stepTxtInput{
+    width: 50%;
+    margin-right: 5%;
+   
+}
+.minInicioInput{
+    width: 15%;
+    margin-right: 5%;
+    text-align: center;
+}
+.minFinInput{
+    width: 15%;
+    text-align: center;
+}
+
+#inputsSteps::-webkit-scrollbar{
+    background-color: rgb(209, 209, 209);
+    width: 5px;
+}
+#inputsSteps::-webkit-scrollbar-thumb{
     background-color: var(--color5);
 }
