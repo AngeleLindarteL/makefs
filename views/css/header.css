@@ -342,7 +342,7 @@ header{
 }
 @media (max-width:1071px){
     #user_selection{
-        width: 65%;
+        width: 30vw;
     }
 }
 @media (width:1024px) and (height:1366px){
@@ -378,15 +378,18 @@ header{
     #userlog img{
         height: 6vh;
     }
+    #user_selection{
+        width: 50vw;
+    }
 }
 @media (max-width:720px){
     #user_selection{
-        width: 75%;
+        width: 50vw;
     }
 }
 @media (max-width:620px){
     #user_selection{
-        width: 90%;
+        width: 50vw;
     }
     #userlog{
         position: absolute;
@@ -400,9 +403,14 @@ header{
         width: 106%;
     }
 }
+@media (max-width:530px){
+    #user_selection{
+        width: 55vw;
+    }
+}
 @media (max-width:510px){
     #user_selection{
-        width: 142%;
+        width: 50vw;
         right: 5.2%;
     }
     #userlog img{
@@ -412,13 +420,13 @@ header{
 }
 @media (max-width:415px){
     #user_selection{
-        width: 200%;
+        width: 88vw;
         right: 8px;
     }
 }
 @media (max-width:402px){
     #user_selection{
-        width: 160%;
+        width: 88vw;
         right: 17.2%;
     }
     #userlog img{
@@ -428,7 +436,7 @@ header{
 }
 @media (max-width:370px){
     #user_selection{
-        width: 200%;
+        width: 88vw;
         right: 0;
     }
     #userlog img{
@@ -438,7 +446,7 @@ header{
 }
 @media (max-width:335px){
     #user_selection{
-        width: 284%;
+        width: 88vw;
     }
     #userlog img{
         width: 313%;
@@ -447,7 +455,7 @@ header{
 }
 @media (max-width:285px){
     #user_selection{
-        width: 327%;
+        width: 88vw;
     }
     #userlog img{
         width: 328%;
