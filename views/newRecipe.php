@@ -23,23 +23,15 @@
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv">
                 <input type="text" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
+                <button id="uploadBtn"><h2>Subir Receta</h2></button>
             </div>
             <div id="recipebodydiv">
                 <div id="barraLateralNewRecipe">
                     <div id="menuIngredientesNewRecipe">
-                        <h2>INGREDIENTES<button>+</button></h2>
-                        <div class="inputsLateralesNewRecipe">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            <input type="text" name="ingredients" placeholder="Ingrediente">
-                            </div>
+                        <h2 id="ingredientsTittle">INGREDIENTES<button class="lessInputBtn" id="lessIngrediens"></button><button id="addIngredientBtn"></button></h2>
+                        <div id="inputsLateralesNewRecipe">
+                            <input type="text" class="ingredient" name="ingredients" placeholder="Ingrediente">
+                        </div>
                     </div>
                     <div id="etiquetasNewRecipe">
                         <div>
@@ -48,14 +40,15 @@
                         <div id="selectsEtiquetasNewRecipe">
                             <label for="eRegiones">Region</label>
                             <select name="eRegiones" id="eRegiones">
-                                <option value="">Latam</option>
-                                <option value="">Asia</option>
-                                <option value="">Norte.A</option>
-                                <option value="">Europa</option>
-                                <option value="">Africa</option>
-                                <option value="">Oceania</option>
+                                <option value="" hidden selected>Region</option>
+                                <option value="latam">Latam</option>
+                                <option value="asia">Asia</option>
+                                <option value="norteA">Norte.A</option>
+                                <option value="europa">Europa</option>
+                                <option value="africa">Africa</option>
+                                <option value="oceania">Oceania</option>
                             </select>
-                            <label for="eTipo">Tipo Comida<button>+</button></label>
+                            <label for="eTipo">Tipo Comida<button class="lessInputBtn" id="lessEtiquetas"></button><button id="addEtiquetaBtn"></button></label>
                             
                         </div>
                     </div>
@@ -79,8 +72,15 @@
                     </div>
                     <div id="stepsNewRecipe">
                         <div id="tittlePasos">
-                            <img src="./img/chefHatRed.png" alt="">
-                            <h2>Pasos</h2>
+                            <div id="hatPasosyTxt">
+                                <img src="./img/chefHatRed.png" alt="">
+                                <h2>Pasos</h2>
+                            </div>
+                            <div id="btnsSteps">
+                                <button class="lessInputBtn" id="lessSteps"></button>
+                                <button id="addStepBtn"></button>
+                            </div>
+                            
                         </div>
                         <div id="inputsSteps">
                             <div class="oneStepNewRecipe">
@@ -88,31 +88,7 @@
                                 <input type="text" class="minInicioInput" placeholder="minInicio">
                                 <input type="text" class="minFinInput" placeholder="minFin">
                             </div>
-                            <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput" placeholder="Paso">
-                                <input type="text" class="minInicioInput" placeholder="minInicio">
-                                <input type="text" class="minFinInput" placeholder="minFin">
-                            </div>
-                            <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput" placeholder="Paso">
-                                <input type="text" class="minInicioInput" placeholder="minInicio">
-                                <input type="text" class="minFinInput" placeholder="minFin">
-                            </div>
-                            <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput" placeholder="Paso">
-                                <input type="text" class="minInicioInput" placeholder="minInicio">
-                                <input type="text" class="minFinInput" placeholder="minFin">
-                            </div>
-                            <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput" placeholder="Paso">
-                                <input type="text" class="minInicioInput" placeholder="minInicio">
-                                <input type="text" class="minFinInput" placeholder="minFin">
-                            </div>
-                            <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput" placeholder="Paso">
-                                <input type="text" class="minInicioInput" placeholder="minInicio">
-                                <input type="text" class="minFinInput" placeholder="minFin">
-                            </div>
+                            
                         </div>
                     </div>
                     
@@ -125,5 +101,6 @@
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/menuDesplegable.js"></script>
+    <script src="./js/newRecipe.js"></script>
 </body>
 </html>

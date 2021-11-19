@@ -46,11 +46,45 @@ section{
     height: 5%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+}
+#uploadBtn{
+    cursor: pointer;
+    border: none;
+    width: 15%;
+    height: 6vh;
+    background-image: url(../img/uploadRecipe.png);
+    background-size: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color5);
+    transition: .3s;
+    padding: 0;
+    
+}
+#uploadBtn h2{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.472);
+    color: white;
+    margin: 0;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    transition: .3s;
+    opacity: 0;
+}
+
+#uploadBtn h2:hover{
+    opacity: 100%;
+}
+
+#uploadBtn:hover{
+    box-shadow: 0px 0px 10px 1px var(--color5);
 }
 #recipetittlediv input{
     font-size: 1.5em;
-    width: 60%;
+    width:80%;
     height: 100%;
     border:none;
     text-align: center;
@@ -71,12 +105,22 @@ section{
     justify-content: space-between;
 }
 #barraLateralNewRecipe{
-    width: 25%;
+    width: 30%;
     height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+}
+#barraLateralNewRecipe label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#ingredientsTittle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 #menuIngredientesNewRecipe{
     height: 50%;
@@ -93,8 +137,12 @@ section{
     height: 10%;
     padding: 5px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.inputsLateralesNewRecipe{
+
+#inputsLateralesNewRecipe{
     width: 90%;
     height: 80%;
     overflow: auto;
@@ -104,7 +152,7 @@ section{
     align-items: center;
     margin-bottom: 7%;
 }
-.inputsLateralesNewRecipe input{
+#inputsLateralesNewRecipe input{
     margin-bottom: 7%;
     width: 75%;
     padding: 5px;
@@ -112,16 +160,16 @@ section{
     border-left: 2px #FF2C29 solid;
 }
 
-.inputsLateralesNewRecipe input:focus{
+#inputsLateralesNewRecipe input:focus{
     outline: none;
     border-bottom: 2px #FF2C29 solid;
 }
-.inputsLateralesNewRecipe::-webkit-scrollbar{
+#inputsLateralesNewRecipe::-webkit-scrollbar{
     background-color: rgb(209, 209, 209);
     width: 5px;
     border-radius: 20px;
 }
-.inputsLateralesNewRecipe::-webkit-scrollbar-thumb{
+#inputsLateralesNewRecipe::-webkit-scrollbar-thumb{
     background-color: var(--color5);
     border-radius: 20px;
 }
@@ -150,7 +198,12 @@ section{
     width: 75%;
     padding: 5px;
     margin-top: 5%;
+    border: 1px solid #FF2C29;
 }
+#selectsEtiquetasNewRecipe select:focus{
+    outline: none;
+}
+
 #selectsEtiquetasNewRecipe label{
     font-size: 1.2em;
     text-align: center;
@@ -190,12 +243,16 @@ section{
     width: 9vh;
 }
 .divMultimedia{
-    width: 50%;
+    width: 48%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 1px #c1070425;
+    border: 2px dashed #ff2c297a;
+    text-align: center;
 }
 .divMultimedia label{
     cursor: pointer;
@@ -216,13 +273,21 @@ section{
     width: 100%;
     height: 20%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid black;
 }
-#tittlePasos img{
+#hatPasosyTxt{
+    width: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#hatPasosyTxt img{
     width: 4vh;
-    margin-right: 4%;
+}
+#hatPasosyTxt h2{
+    margin-left: 20%;
 }
 #inputsSteps{
     margin-top: 5%;
@@ -264,4 +329,65 @@ section{
 }
 #inputsSteps::-webkit-scrollbar-thumb{
     background-color: var(--color5);
+}
+
+#addIngredientBtn{
+    cursor: pointer;
+    border: none;
+    width: 3.5vh;
+    height: 3.5vh;
+    background-image: url(../img/btnAddNewRecipeInput.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+}
+#addEtiquetaBtn{
+    cursor: pointer;
+    border: none;
+    width: 3.5vh;
+    height: 3.5vh;
+    background-image: url(../img/btnAddNewRecipeInput.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+}
+#addStepBtn{
+    margin-left: 5%;
+    cursor: pointer;
+    border: none;
+    width: 3.5vh;
+    height: 3.5vh;
+    background-image: url(../img/btnAddNewRecipeInput.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: black;
+}
+.lessInputBtn{
+    margin-left: 5%;
+    cursor: pointer;
+    border: none;
+    width: 3.5vh;
+    height: 3.5vh;
+    background-image: url(../img/lessBtn.png);
+    background-size: 55%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: #FF2C29;
+    display: none;
+}
+#lessSteps{
+    background-color: black;
+}
+#btnsSteps{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
