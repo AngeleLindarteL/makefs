@@ -6,7 +6,7 @@
 class VideoStream{
     private $path = ""; // La ruta del video al que le vamos a hacer stream 
     private $stream = ""; // Esta va a ser la variable que va a hacer de objeto stream
-    private $buffer = 102400; // Este es el peso en Bytes que vamos a leer y a otorgar al cliente (102.4 KBS por Lectura)
+    private $buffer = 150000; // Este es el peso en Bytes que vamos a leer y a otorgar al cliente (150 KBS por Lectura)
     private $start = -1; // Este es el inicio de nuestro video
     private $end = -1; // El final de nuestro video
     private $size = 0; // Este es el tamaño de nuestro video

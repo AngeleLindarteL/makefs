@@ -302,7 +302,7 @@ header{
     margin: 0;
     height: fit-content !important;
     border-bottom: white 2px solid;
-    padding: 10% 0;
+    padding: 5% 0!important;
 }
 .infoUser h6{
     font-size: 1em;

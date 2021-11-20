@@ -22,6 +22,8 @@ const draggable_visual = document.querySelector(".mkfs_video_dragable_representa
 const time_read = document.querySelector("#progress-bar-time-read");
 const fullscreen = document.querySelector("#mkfv_controlls_fullscreen");
 const volume_slider = document.querySelector("#mkfv_controlls_volume");
+const loading_obj = document.querySelector(".loading-obj");
+const timeCounter = document.querySelector("#time_counter");
 
 // Action functions -----------------------------------------------------
 
@@ -39,7 +41,15 @@ let videoPlayerProperties = {
     dragleft: 0,
     idleTimeout: null,
     dffbtwn: null,
-    firsPlayed: false,
+    firstPlayed: false,
+}
+const formatSeconds = (secs) => {
+    let generalSeconds = ((secs / 60).toFixed(2).toString()).split(".");
+    generalSeconds[1] = "0." + generalSeconds[1];
+    generalSeconds = [parseInt(generalSeconds[0]),parseInt(generalSeconds[1] * 60)];
+    generalSeconds[0] < 10 ? generalSeconds[0] =  "0" + (generalSeconds[0].toString()) : generalSeconds;
+    generalSeconds[1] < 10 ? generalSeconds[1] =  "0" + (generalSeconds[1].toString()) : generalSeconds;
+    return generalSeconds;
 }
 
 const hideControls = () => {
@@ -55,7 +65,8 @@ const playAction = () => {
     if(video.paused){
         video.play();
         centralPanel.classList.add("makefs-video-in-panel-played");
-        progressBar.setAttribute("max",video.duration);
+        play.style.backgroundImage = "url(./img/video-controls/pause.png)";
+        progressBar.setAttribute("max",duration);
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-played")
         },180);
@@ -65,6 +76,7 @@ const playAction = () => {
     }else{
         video.pause();
         centralPanel.classList.add("makefs-video-in-panel-paused");
+        play.style.backgroundImage = "url(./img/video-controls/play.png)";
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-paused")
         },180);
@@ -92,18 +104,24 @@ const afterToAction = () => {
 }
 
 const updateProgressTime = () =>{
-    let spx_pg = progressBar.clientWidth / video.duration;
+    let spx_pg = progressBar.clientWidth / duration;
+    let formatedTime = formatSeconds(video.currentTime);
     progressBar.setAttribute("value", video.currentTime)
     videoPlayerProperties.watchedTime = video.currentTime;
     draggable_visual.style.left = spx_pg * video.currentTime + "px";
     draggable_progress.style.left = spx_pg * video.currentTime + "px";
+    timeCounter.textContent = ` ${formatedTime[0]}:${formatedTime[1]} / ${formatSeconds(duration)[0]}:${formatSeconds(duration)[1]}`;
 }
 
 const muteAction = () => {
     if(video.muted){
         video.muted = false;
+        localStorage.setItem("muted", false);
+        mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
     }else{
         video.muted = true;
+        localStorage.setItem("muted", true);
+        mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)";
     }
 }
 
@@ -114,20 +132,13 @@ const changeVolume = (vol) => {
     if (vol > 1){
         video.volume = 1;
     }
+    mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
     video.muted = false;
-    localStorage.setItem("muted", false)
     video.volume = vol;
     window.localStorage.setItem("common_volume", video.volume)
     volume_slider.value = video.volume;
 }
-const formatSeconds = (secs) => {
-    let generalSeconds = ((secs / 60).toFixed(2).toString()).split(".");
-    generalSeconds[1] = "0." + generalSeconds[1];
-    generalSeconds = [parseInt(generalSeconds[0]),parseInt(generalSeconds[1] * 60)];
-    generalSeconds[0] < 10 ? generalSeconds[0] =  "0" + (generalSeconds[0].toString()) : generalSeconds;
-    generalSeconds[1] < 10 ? generalSeconds[1] =  "0" + (generalSeconds[1].toString()) : generalSeconds;
-    return generalSeconds;
-}
+
 const toggleFullscreen = () => {
     if (videoPlayerProperties.isFullscreen){
         document.exitFullscreen();
@@ -149,6 +160,7 @@ const progressBar_startInterval = () => {
 
 firstPlayButton.addEventListener("click", () => {
     playAction();
+    timeCounter.textContent = `00:00 / ${formatSeconds(duration)}`;
     makefsControlsContainer.classList.replace("controls-hidden","controls-showing");
     makefsControlsContainer.classList.remove("first-play");
     firstPlayButton.opacity = "20%";
@@ -156,27 +168,32 @@ firstPlayButton.addEventListener("click", () => {
     makefsControlsContainer.style.display = "flex";
     setTimeout(() => {
         mediaPlayer.removeChild(firstPlayButton);
-        updateProgressTime();
         videoPlayerProperties.dffbtwn = parseFloat(window.getComputedStyle(draggable_visual).getPropertyValue("left").replace("px","")) / progressBar.value;
-        console.log(videoPlayerProperties.dffbtwn)
+        updateProgressTime();
     },200)
-    videoPlayerProperties.firsPlayed = true;
+    videoPlayerProperties.firstPlayed = true;
 })
 
 // Action association ----------------------------------------------------
 
+video.addEventListener("waiting", () => {
+    loading_obj.style.display = "flex";
+})
+video.addEventListener("playing", () => {
+    loading_obj.style.display = "none";
+})
+
+
 window.addEventListener("resize", () => {
-    if(videoPlayerProperties.firsPlayed === false){
+    if(videoPlayerProperties.firstPlayed === false){
         return;
     }
-    console.log("e")
     updateProgressTime()
     videoPlayerProperties.dffbtwn = parseFloat(window.getComputedStyle(draggable_visual).getPropertyValue("left").replace("px","")) / progressBar.value;
-    console.log(videoPlayerProperties.dffbtwn)
 })
 
 window.addEventListener("keydown", (e) => {
-    if (videoPlayerProperties.firsPlayed === false) {
+    if (videoPlayerProperties.firstPlayed === false) {
         return;
     }
     let keyPressed = e.key;
@@ -240,7 +257,7 @@ progressBar.addEventListener("mouseenter", (e) => {
     time_read.style.opacity = "100%";
 })
 progressBar.addEventListener("mousemove", (e) => {
-    const spx = video.duration / progressBar.offsetWidth;
+    const spx = duration / progressBar.offsetWidth;
     let setVal = e.offsetX * spx;
     setVal = formatSeconds(setVal);
     time_read.textContent = `${setVal[0]}:${setVal[1]}`
@@ -249,7 +266,7 @@ progressBar.addEventListener("mousemove", (e) => {
     time_read.style.left = e.offsetX - (time_read.clientWidth / 4) + "px";
 })
 progressBar.addEventListener("click", (e) => {
-    const spx = video.duration / progressBar.offsetWidth;
+    const spx = duration / progressBar.offsetWidth;
     video.currentTime = e.offsetX * spx;
     updateProgressTime()
 })
@@ -264,24 +281,22 @@ progressBar.addEventListener("mouseleave", (e) => {
         time_read.style.display = "none";
     },200)
 })
-progressBar.addEventListener("mousedown", (e) => {
-    console.log("mousedown")
-})
-progressBar.addEventListener("mouseup", (e) => {
-    console.log("mouseup")
-})
 draggable_progress.addEventListener("dragstart", (e)=>{
     interval.isActive = false;
     clearInterval(interval.intervalState)
     interval.intervalState = null;
     videoPlayerProperties.dragging = true;
 })
+let flag = false;
 draggable_progress.addEventListener("drag", (e)=>{
+    if(!flag){
+        videoPlayerProperties.dffbtwn = parseFloat(window.getComputedStyle(draggable_visual).getPropertyValue("left").replace("px","")) / progressBar.value;
+        flag = true;
+    }
     let positions = progressBar.getBoundingClientRect();
     document.querySelector("html").style.cursor = "move";
     draggable_visual.classList.replace("mkfs_ball_static","mkfs_ball_dragging");
     if (e.pageX > positions.left && e.pageX < positions.right) {
-        console.log("Dentro del progress bar")
         videoPlayerProperties.dragleft = e.pageX - positions.left; 
         draggable_visual.style.left = videoPlayerProperties.dragleft + "px";
         progressBar.value = (videoPlayerProperties.dragleft) / videoPlayerProperties.dffbtwn;
@@ -294,8 +309,8 @@ draggable_progress.addEventListener("drag", (e)=>{
         video.currentTime = 0;
     }else if (positions.right < e.pageX) {
         draggable_visual.style.left = "100%";
-        progressBar.setAttribute("value",video.duration)
-        video.currentTime = video.duration;
+        progressBar.setAttribute("value",duration)
+        video.currentTime = duration;
     }
 })
 draggable_progress.addEventListener("dragend", (e)=>{
@@ -316,4 +331,10 @@ if (window.localStorage.getItem("common_volume")) {
     changeVolume(1);
 }
 
-localStorage.getItem("muted") === "false" ? console.log(false): console.log(true);
+if(localStorage.getItem("muted") === "false"){
+    video.mute = false;
+    mute.style.backgroundImage = "url(./img/video-controls/volume.png)"
+}else{
+    video.muted = true;
+    mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)"
+}

@@ -48,6 +48,7 @@
   flex-wrap: wrap;
   z-index: 10;
   transition: .3s;
+  justify-content: space-between;
 }
 .makefs-video-controls:hover{
   opacity: 100%;
@@ -67,7 +68,7 @@
   width: 100%;
   height: 100%;
   background-image: url(../img/rvico-play.png);
-  background-size: 30%;
+  background-size: 20vh;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 10;
@@ -78,7 +79,7 @@
 }
 #first-play-btn:hover{
   cursor: pointer;
-  background-size: 35%;
+  background-size: 25vh;
 }
 .in-panel-video{
   position: absolute;
@@ -134,7 +135,6 @@
 .makefs-video-progress{
   width: 99%;
   margin: 0 1%;
-  margin-bottom: 2%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -199,8 +199,8 @@
   display: none;
   opacity: 0%;
   position: absolute;
-  padding: .38%;
-  border-radius: 20px;
+  padding: 1%;
+  border-radius: 30px;
   background-color: var(--color5);
   box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.13);
   color:white;
@@ -208,13 +208,149 @@
 .makefs-video-control-button{
   width: 3vh;
   height: 3vh;
-  background-color: white;
-  border-radius: 50%;
   margin: .2% 1%;
   border: none;
+  background-color: transparent;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: .2s;
+  filter: brightness(95%);
+}
+.makefs-video-control-button:hover{
+  cursor: pointer;
+  filter: brightness(110%);
 }
 
+.loading-obj{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: auto;
+  left: auto;
+  width: 13vh;
+  height: 13vh;
+  z-index: 10;
+  border-radius: 50%;
+  border: 1.5vh solid rgb(0 0 0 / 68%);
+  box-shadow: 0px 0px 20px 0px #00000061;
+  background: #00000036;
+  transition: .2s;
+  border-right-color: white;
+  animation: .97s loading-animation infinite;
+}
+
+.loading-obj::after{
+  content: '';
+  background-image: url(../img/rhico-chef-white.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+
+.first-controls, .last-controls{
+  display: flex;
+  align-items: center;
+  width: 49%;
+}
+.first-controls{
+  margin-left: 1%;
+}
+.last-controls{
+  justify-content: flex-end;
+  color: white;
+  margin-right: 1%;
+}
+#time-counter{
+  font-size: 1.4em;
+  margin: 2% 1%;
+}
+
+/* Config styles */
+
+.config-options{
+  background: #000000bd;
+  backdrop-filter: blur(3px);
+  width: 30%;
+  position: absolute;
+  height: fit-content;
+  top: calc(-131.86px);
+}
+.makefs-video-config-menu{
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+.makefs-video-config-menu button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8em;
+  height: 4vh;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 1px solid #ffffff14;
+}
+.makefs-video-config-menu button:last-child{
+  border-bottom: none;
+}
+.makefs-video-config-menu button p{
+  width: fit-content;
+}
+#speedrate p:last-child{
+  font-weight: bold;
+}
+.config-controllers-slidable{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 13%;
+  height: 1.2vh;
+  border-radius: 30px;
+  background: #ffffffbf;
+  backdrop-filter: blur(3px);
+  padding: 0;
+  margin: 0;
+}
+.config-controllers-slidable::after{
+  content: "";
+  position: absolute;
+  left: -1.5%;
+  width: 1.6vh;
+  height: 1.6vh;
+  border-radius: 50%;
+  background: var(--color5);
+}
+
+/* Background - icons */
+#mkfv_controlls_play{
+  background-image: url(../img/video-controls/pause.png);
+}
+#mkfv_controlls_mute{
+  background-image: url(../img/video-controls/volume.png);
+}
+#mkfv_controlls_config{
+  background-image: url(../img/video-controls/config.png);
+}
+#mkfv_controlls_fullscreen{
+  background-image: url(../img/video-controls/full-screen.png);
+}
 /* Video Animations */
+@keyframes loading-animation {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+    transform: rotate(360deg);
+  }
+}
+
 
 @keyframes animate-play-button{
   0%{
@@ -233,13 +369,13 @@
 @keyframes play-pause-animation{
   0%{
     background-size: 20%;
-    opacity: 80%;
+    opacity: 100%;
   }
   /* 50%{
     background-size: 32%;
   } */
   100%{
     background-size: 30%;
-    opacity: 5%;
+    opacity: 30%;
   }
 }
