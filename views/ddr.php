@@ -35,7 +35,6 @@
     echo <<<EOT
         <script>
             const duration = $res[duration];
-            console.log(duration)
         </script>
     EOT;
     ?>
@@ -78,9 +77,20 @@
                         <p id="time_counter">00:00-00:00</p>
                         <div class="config-options">
                             <div class="makefs-video-config-menu main-config-options">
-                                <button><p>Pasos</p><figure class="config-controllers-slidable"></figure></button>
-                                <button><p>Bucle</p><figure class="config-controllers-slidable"></figure></button>
-                                <button id="speedrate"><p>Velocidad de reproduccion</p><p>auto</p></button>
+                                <button id="makefs-video-controls-steps"><p>Pasos</p><figure class="config-controllers-slidable"><span class="slidable-switch" id="config-controllers-slidable-steps"></span></figure></button>
+                                <button id="makefs-video-controls-bucle"><p>Bucle</p><figure class="config-controllers-slidable"><span class="slidable-switch" id="config-controllers-slidable-bucle"></span></figure></button>
+                                <button id="makefs-video-controls-speedrate"><p>Velocidad de reproduccion</p><p id="actual-speed-rate">Normal</p></button>
+                            </div>
+                            <div class="makefs-video-config-menu" id="speedrate-options">
+                                <button id="makefs-video-controls-speedrate-back">Volver</button>
+                                <button class="makefs-video-controls-speedrate" setRate="0.25">0.25</button>
+                                <button class="makefs-video-controls-speedrate" setRate="0.50">0.50</button>
+                                <button class="makefs-video-controls-speedrate" setRate="0.75">0.75</button>
+                                <button class="makefs-video-controls-speedrate" setRate="1">Normal</button>
+                                <button class="makefs-video-controls-speedrate" setRate="1.25">1.25</button>
+                                <button class="makefs-video-controls-speedrate" setRate="1.50">1.50</button>
+                                <button class="makefs-video-controls-speedrate" setRate="1.75">1.75</button>
+                                <button class="makefs-video-controls-speedrate" setRate="2">2</button>
                             </div>
                         </div>
                         <button id="mkfv_controlls_config" class="makefs-video-control-button"></button>

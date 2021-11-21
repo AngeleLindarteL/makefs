@@ -164,7 +164,7 @@ use function PHPSTORM_META\type;
         }
         $isBlacklisted = $blacklist->fetch(PDO::FETCH_NUM);
         if (!empty($isBlacklisted)){
-            throw new Exception("Quiero SEXOOOOOOOOOO", 1);
+            return;
             exit;
         }
         try{

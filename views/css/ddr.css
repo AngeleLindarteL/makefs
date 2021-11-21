@@ -41,6 +41,7 @@
 }
 
 .makefs-video-controls{
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 2%, rgb(0 0 0 / 69%) 95%);
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -49,6 +50,7 @@
   z-index: 10;
   transition: .3s;
   justify-content: space-between;
+  padding-top: .2%;
 }
 .makefs-video-controls:hover{
   opacity: 100%;
@@ -199,7 +201,7 @@
   display: none;
   opacity: 0%;
   position: absolute;
-  padding: 1%;
+  padding: 1vh;
   border-radius: 30px;
   background-color: var(--color5);
   box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.13);
@@ -273,17 +275,18 @@
 /* Config styles */
 
 .config-options{
+  display: none;
   background: #000000bd;
   backdrop-filter: blur(3px);
   width: 30%;
   position: absolute;
   height: fit-content;
-  top: calc(-131.86px);
+  max-width: 330px;
 }
 .makefs-video-config-menu{
   display: flex;
   flex-direction: column;
-  padding: 2%;
+  padding: 2% 0;
 }
 .makefs-video-config-menu button{
   display: flex;
@@ -295,7 +298,17 @@
   background-color: transparent;
   color: white;
   border: none;
+  padding: 0% 4%;
   border-bottom: 1px solid #ffffff14;
+  padding-left: 4vh;
+  background-size: 2.2vh;
+  background-repeat: no-repeat;
+  background-position-x: 3%;
+  background-position-y: center;
+  transition: .2s;
+}
+.makefs-video-config-menu button:hover{
+  cursor: pointer;
 }
 .makefs-video-config-menu button:last-child{
   border-bottom: none;
@@ -319,14 +332,41 @@
   padding: 0;
   margin: 0;
 }
-.config-controllers-slidable::after{
-  content: "";
+.slidable-switch{
   position: absolute;
   left: -1.5%;
   width: 1.6vh;
   height: 1.6vh;
   border-radius: 50%;
   background: var(--color5);
+  transition: .2s;
+}
+
+#speedrate-options button{
+  padding: 0;
+  justify-content: center;
+}
+#makefs-video-controls-speedrate-back{
+  background-image: url(../img/video-controls/back.png);
+}
+
+#config-controllers-slidable-steps{
+  left: calc(100% - 1.6vh);
+}
+/* Config controls icons */
+#makefs-video-controls-steps{
+  background-image: url(../img/video-controls/steps.png);
+}
+#makefs-video-controls-bucle{
+  background-image: url(../img/video-controls/bucle.png);
+}
+#makefs-video-controls-speedrate{
+  background-image: url(../img/video-controls/speedrate.png);
+}
+
+/* Speedrate menu */
+#speedrate-options{
+  display: none;
 }
 
 /* Background - icons */
@@ -342,6 +382,42 @@
 #mkfv_controlls_fullscreen{
   background-image: url(../img/video-controls/full-screen.png);
 }
+
+/* Styling RANGE INPUT */
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+#mkfv_controlls_volume::-webkit-slider-thumb,
+#mkfv_controlls_volume::-moz-range-thumb,
+#mkfv_controlls_volume::-ms-thumb{
+  border-radius: 50%;
+  height: 2vh;
+  background-color: red;
+}
+#mkfv_controlls_volume::-webkit-slider-thumb{
+  margin-top: -9px;
+}
+
+#mkfv_controlls_volume::-webkit-slider-runnable-track,
+#mkfv_controlls_volume::-moz-range-track,
+#mkfv_controlls_volume::-ms-track{
+  width: 100%;
+  height: 1.2vh;
+  background-color: white;
+}
+
+#mkfv_controlls_volume:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+
 /* Video Animations */
 @keyframes loading-animation {
   0%{
@@ -377,5 +453,14 @@
   100%{
     background-size: 30%;
     opacity: 30%;
+  }
+}
+
+@keyframes config-button {
+  0%{
+    background-color: #ffffff45;
+  }
+  100%{
+    background-color: transparent;
   }
 }

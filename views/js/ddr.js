@@ -6,26 +6,39 @@ console.log(timeDivisions)
 
 // Variables xd
 
-const mediaPlayer = document.querySelector(".makefs-media-player")
+const mediaPlayer = document.querySelector(".makefs-media-player");
 const video = document.querySelector("#source_video");
-const makefsControlsContainer = document.querySelector(".makefs-video-controls");
-const play = document.querySelector("#mkfv_controlls_play");
 const firstPlayButton = document.querySelector("#first-play-btn");
-const mute = document.querySelector("#mkfv_controlls_mute");
 const backPanel = document.querySelector("#mkfv_controlls_backTo");
 const bigPanel = document.querySelector("#mkfv_controlls_big_panel");
 const centralPanel = document.querySelector("#mkfv_controlls_big_play");
 const afterPanel = document.querySelector("#mkfv_controlls_afterTo");
+const makefsControlsContainer = document.querySelector(".makefs-video-controls");
 const progressBar = document.querySelector("#mkfs_video_progress_bar");
 const draggable_progress = document.querySelector(".mkfs_video_dragable_ball");
 const draggable_visual = document.querySelector(".mkfs_video_dragable_representation");
 const time_read = document.querySelector("#progress-bar-time-read");
-const fullscreen = document.querySelector("#mkfv_controlls_fullscreen");
+const play = document.querySelector("#mkfv_controlls_play");
+const mute = document.querySelector("#mkfv_controlls_mute");
 const volume_slider = document.querySelector("#mkfv_controlls_volume");
-const loading_obj = document.querySelector(".loading-obj");
 const timeCounter = document.querySelector("#time_counter");
+const fullscreen = document.querySelector("#mkfv_controlls_fullscreen");
+const config = document.querySelector("#mkfv_controlls_config");
+const configPanel = document.querySelector(".config-options"); 
+const configOptionsPanel = document.querySelector(".main-config-options"); 
+const speedRateOptions = document.querySelector("#speedrate-options"); 
+const config_steps = document.querySelector("#makefs-video-controls-steps");
+const config_steps_slidable = document.querySelector("#config-controllers-slidable-steps");
+const config_bucle = document.querySelector("#makefs-video-controls-bucle");
+const config_bucle_slidable = document.querySelector("#config-controllers-slidable-bucle");
+const config_speedrate = document.querySelector("#makefs-video-controls-speedrate");
+const loading_obj = document.querySelector(".loading-obj");
+const speedrateback = document.querySelector("#makefs-video-controls-speedrate-back");
+const speedrategroup = document.querySelectorAll(".makefs-video-controls-speedrate");
+const actualSpeedRate = document.querySelector("#actual-speed-rate");
 
 // Action functions -----------------------------------------------------
+
 
 let interval = {
     isActive: false,
@@ -42,6 +55,12 @@ let videoPlayerProperties = {
     idleTimeout: null,
     dffbtwn: null,
     firstPlayed: false,
+    isInConfig: false,
+    isBucleActive: false,
+}
+
+let stepsProperties = {
+    isActive: true,
 }
 const formatSeconds = (secs) => {
     let generalSeconds = ((secs / 60).toFixed(2).toString()).split(".");
@@ -101,6 +120,52 @@ const afterToAction = () => {
         afterPanel.classList.remove("makefs-video-in-panel-action")
     },500);
     progressBar.setAttribute("value", video.currentTime)
+}
+
+console.log(configPanel.clientHeight)
+
+const relocateConfigPanel = () => {
+    let height = configPanel.clientHeight;
+    configPanel.style.top = "-"+`${height}px`;
+}
+
+
+const changeStepState = () => {
+    if(stepsProperties.isActive){
+        config_steps_slidable.style.left = "-1.5%";
+        stepsProperties.isActive = false;
+    }else{
+        config_steps_slidable.style.left = "calc(100% - 1.6vh)";
+        stepsProperties.isActive = true;
+    }
+}
+
+const changeBucleState = () => {
+    if(videoPlayerProperties.isBucleActive){
+        config_bucle_slidable.style.left = "-1.5%";
+        videoPlayerProperties.isBucleActive = false;
+        video.loop = false;
+    }else{
+        config_bucle_slidable.style.left = "calc(100% - 1.6vh)";
+        videoPlayerProperties.isBucleActive = true;
+        video.loop = true;
+    }
+}
+
+const changeConfigPanelState = () => {
+    if (videoPlayerProperties.isInConfig === true){
+        configPanel.style.display = "none";
+        config.style.transform = "rotate(0deg)";
+        videoPlayerProperties.isInConfig = false;
+        makefsControlsContainer.removeAttribute("style")
+        configOptionsPanel.style.display = "flex";
+        speedRateOptions.style.display = "none";
+    }else{
+        configPanel.style.display = "block";
+        config.style.transform = "rotate(60deg)";
+        videoPlayerProperties.isInConfig = true;
+        makefsControlsContainer.style.opacity = "100%";
+    }
 }
 
 const updateProgressTime = () =>{
@@ -173,9 +238,22 @@ firstPlayButton.addEventListener("click", () => {
     },200)
     videoPlayerProperties.firstPlayed = true;
 })
+// Config for speedRates
+
+speedrategroup.forEach(element => {
+    let speedrate = element.getAttribute("setRate");
+    element.addEventListener("click", () =>{
+        video.playbackRate = parseFloat(speedrate);
+        element.style.animation = "config-button ease-out 1 .8s";
+        setTimeout(() => {
+            element.style.animation = "none";
+        },800)
+        
+        actualSpeedRate.textContent = speedrate == 1 ? "Normal" :"X" + speedrate;
+    })
+});
 
 // Action association ----------------------------------------------------
-
 video.addEventListener("waiting", () => {
     loading_obj.style.display = "flex";
 })
@@ -190,6 +268,7 @@ window.addEventListener("resize", () => {
     }
     updateProgressTime()
     videoPlayerProperties.dffbtwn = parseFloat(window.getComputedStyle(draggable_visual).getPropertyValue("left").replace("px","")) / progressBar.value;
+    relocateConfigPanel();
 })
 
 window.addEventListener("keydown", (e) => {
@@ -323,6 +402,43 @@ draggable_progress.addEventListener("dragend", (e)=>{
     interval.isActive = true;
     interval.intervalState = progressBar_startInterval();
 })
+
+video.addEventListener("ended", () => {
+    play.style.backgroundImage = "url(./img/video-controls/play.png)";
+})
+
+config.addEventListener("click", () => {
+    changeConfigPanelState();
+    relocateConfigPanel();
+});
+
+config_steps.addEventListener("click", () => {
+    changeStepState();
+    config_steps.style.animation = "config-button ease-out 1 .8s";
+    setTimeout(() => {
+        config_steps.removeAttribute("style");
+    },800)
+})
+config_bucle.addEventListener("click", () => {
+    changeBucleState();
+    config_bucle.style.animation = "config-button ease-out 1 .8s";
+    setTimeout(() => {
+        config_bucle.removeAttribute("style");
+    },800)
+})
+
+speedrateback.addEventListener("click", () => {
+    speedRateOptions.style.display = "none";
+    configOptionsPanel.style.display = "flex";
+    relocateConfigPanel();
+})
+
+config_speedrate.addEventListener("click", () => {
+    configOptionsPanel.style.display = "none";
+    speedRateOptions.style.display = "flex";
+    relocateConfigPanel();
+})
+
 // Presets para video
 
 if (window.localStorage.getItem("common_volume")) {
