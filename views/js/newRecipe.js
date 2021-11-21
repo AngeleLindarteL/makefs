@@ -45,14 +45,17 @@ addStep.addEventListener("click",()=>{
 
     inputTxt.type="text";
     inputTxt.className="stepTxtInput";
+    inputTxt.className="steps";
     inputTxt.placeholder="Paso"
 
     inputMinInicio.type="text";
     inputMinInicio.className="minInicioInput";
+    inputMinInicio.className="steps";
     inputMinInicio.placeholder="minInicio"
 
     inputMinFin.type="text";
     inputMinFin.className="minFinInput";
+    inputMinFin.className="steps";
     inputMinFin.placeholder="minFin"
 
     steps.appendChild(inputTxt);

@@ -13,6 +13,9 @@
         include('./components/sessionControl.php');
     ?>
     <?php include("./components/tokenControl.php") ?>
+    <script>
+        <?php echo "const chefid =".$_SESSION['chefid'] ?>
+    </script>
 </head>
 <body>
     <?php
@@ -22,7 +25,7 @@
     <section id="newRecipeSection">
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv">
-                <input type="text" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
+                <input type="text" id="recipeTittle" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
                 <button id="uploadBtn"><h2>Subir Receta</h2></button>
             </div>
             <div id="recipebodydiv">
@@ -84,9 +87,9 @@
                         </div>
                         <div id="inputsSteps">
                             <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput" placeholder="Paso">
-                                <input type="text" class="minInicioInput" placeholder="minInicio">
-                                <input type="text" class="minFinInput" placeholder="minFin">
+                                <input type="text" class="stepTxtInput steps" placeholder="Paso">
+                                <input type="text" class="minInicioInput steps" placeholder="minInicio">
+                                <input type="text" class="minFinInput steps" placeholder="minFin">
                             </div>
                             
                         </div>
@@ -102,5 +105,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/newRecipe.js"></script>
+    <script src="./js/axiosNewRecipe.js"></script>
 </body>
 </html>

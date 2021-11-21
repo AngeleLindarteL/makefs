@@ -1,8 +1,10 @@
 <?php
     if(isset($_SESSION["chefid"])){
+        $ischef = true;
         $userhome = "../views/chef-view.php";
     }else{
         $userhome = "../views/user-view.php";
+        $ischef = false;
     }
     if(isset($_SESSION['token'])){
         $isloged = true;
@@ -45,10 +47,16 @@
                             <img id="profileImg" class="headlog_ico first" src="./img/rhico-chef-white.png">
                             <p>Tu cuenta</p>
                         </a>
-                        <a class="headlog_btn" href="">
-                            <img class="headlog_ico first" src="./iconos/upload.png">
-                            <p>Subir contenido</p>
-                        </a>
+            EOT;
+                        if($ischef){
+                            echo <<<EOT
+                                <a class="headlog_btn" href="./newRecipe.php">
+                                    <img class="headlog_ico first" src="./iconos/upload.png">
+                                    <p>Subir contenido</p>
+                                </a>
+                            EOT;
+                        }
+            echo <<<EOT
                         <a class="headlog_btn" href="">
                             <img class="headlog_ico first" src="./iconos/theme.png">
                             <p>Cambiar tema</p>
