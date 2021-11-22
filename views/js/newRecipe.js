@@ -16,19 +16,42 @@ const btnLessSteps = document.querySelector("#lessSteps");
 
 
 btnLessSteps.addEventListener("click",()=>{
-    let ultimoStep = document.querySelector(".oneStepNewRecipe:last-child");
-    stepsSpace.removeChild(ultimoStep);
+    let countStepsDivs = stepsSpace.childElementCount;
+    if(countStepsDivs==2){
+        let ultimoStep = document.querySelector(".oneStepNewRecipe:last-child");
+        stepsSpace.removeChild(ultimoStep);
+        btnLessSteps.style.display="none";
+    }else{
+        let ultimoStep = document.querySelector(".oneStepNewRecipe:last-child");
+        stepsSpace.removeChild(ultimoStep);
+    }
+    
 })
 
 btnLessEtiquetas.addEventListener("click",()=>{
-    let ultimaEtiqueta = document.querySelector(".etiFood:last-child");
-    etiquetasSpace.removeChild(ultimaEtiqueta);
-    contador--;
+    let countEtiquetasSpace = etiquetasSpace.childElementCount;
+    if(countEtiquetasSpace==5){
+        let ultimaEtiqueta = document.querySelector(".etiFood:last-child");
+        etiquetasSpace.removeChild(ultimaEtiqueta);
+        contador--;
+        btnLessEtiquetas.style.display="none";
+    }else{
+        let ultimaEtiqueta = document.querySelector(".etiFood:last-child");
+        etiquetasSpace.removeChild(ultimaEtiqueta);
+        contador--;
+    }
 })
 
 btnLessIngredients.addEventListener("click",()=>{
-    let ultimoIngrediente = document.querySelector(".ingredient:last-child");
-    ingredientsSpace.removeChild(ultimoIngrediente);
+    let countIngredientsSpace = ingredientsSpace.childElementCount;
+    if(countIngredientsSpace==2){
+        let ultimoIngrediente = document.querySelector(".ingredient:last-child");
+        ingredientsSpace.removeChild(ultimoIngrediente);
+        btnLessIngredients.style.display="none";
+    }else{
+        let ultimoIngrediente = document.querySelector(".ingredient:last-child");
+        ingredientsSpace.removeChild(ultimoIngrediente);
+    }
 })
 
 
@@ -44,18 +67,15 @@ addStep.addEventListener("click",()=>{
     steps.className="oneStepNewRecipe";
 
     inputTxt.type="text";
-    inputTxt.className="stepTxtInput";
-    inputTxt.className="steps";
+    inputTxt.classList.add("stepTxtInput","steps");
     inputTxt.placeholder="Paso"
 
     inputMinInicio.type="text";
-    inputMinInicio.className="minInicioInput";
-    inputMinInicio.className="steps";
+    inputMinInicio.classList.add("minInicioInput","steps");
     inputMinInicio.placeholder="minInicio"
 
     inputMinFin.type="text";
-    inputMinFin.className="minFinInput";
-    inputMinFin.className="steps";
+    inputMinFin.classList.add("minFinInput","steps");
     inputMinFin.placeholder="minFin"
 
     steps.appendChild(inputTxt);
@@ -66,6 +86,7 @@ addStep.addEventListener("click",()=>{
 })
 
 addIngredient.addEventListener("click",()=>{
+
     btnLessIngredients.style.display="inline-block";
     let inputIngredient = document.createElement("input");
     inputIngredient.type="text";
