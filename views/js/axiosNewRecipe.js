@@ -40,22 +40,23 @@ uploadRecipe.addEventListener("click", (e)=>{
         "namer" : recipleTittle.value,
         "ingredients" : arrayIngredients,
         "steps" : steps,
-        "video" : video.value,
-        "imagen" : imagen.value,
+        "videoName" : video.files[0].name,
+        "imagenName" : imagen.files[0].name,
+        "videoTmp" : video.value,
+        "imagenTmp" : imagen.value,
         "tags" : arrayEtiquetas,
         "regionTag" : regionComida.value,
     };
     infoRecipe = JSON.stringify(infoRecipe);
     try{
-        axios.post("../../controllers/recipeCreation/recipeCreation.php",infoRecipe).then(
+        axios.post("../controllers/recipeCreation/recipeCreation.php",infoRecipe).then(
             res => {
                 console.log(res);
                 if(res.status==200){
-                   window.location("/views/chef-view.php")
+                   alert("subida con exito");
                 }
             }
         )
-
     }catch(e){
         console.log("Error al subir la receta datos, Detalles " + e);
     }

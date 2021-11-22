@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
         include('./components/sessionControl.php');
