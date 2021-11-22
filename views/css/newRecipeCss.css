@@ -48,6 +48,9 @@ section{
     align-items: center;
     justify-content: space-between;
 }
+.btnplus{
+    width: 21%;
+}
 #uploadBtn{
     cursor: pointer;
     border: none;
@@ -330,7 +333,9 @@ section{
 #inputsSteps::-webkit-scrollbar-thumb{
     background-color: var(--color5);
 }
-
+#recipeImg{
+    display: none;
+}
 #addIngredientBtn{
     cursor: pointer;
     border: none;
@@ -390,4 +395,94 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+/*--Responsive--*/
+@media (max-width:1450px){
+    #ingredientsTittle{
+        flex-direction: column;
+    }
+    .btnplus{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .lessInputBtn{
+        margin-right: 1%;
+    }
+}
+@media (max-width:1450px){
+    #foodsTittle{
+        flex-direction: column;
+    }
+    .btnplus{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .lessInputBtn{
+        margin-right: 1%;
+    }
+}
+@media (max-width:690px){
+    #recipebodydiv{
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 35vh 0 0 0;
+    }
+    #barraLateralNewRecipe{
+        padding: 0 0 10vh 0;
+    }
+    #sectionNewRecipeMultimedia{
+        width: 97%;
+        height: 85%;
+    }
+    #multimediaNewRecipe{
+        width:100%;
+        height: 80%;
+    }
+    #barraLateralNewRecipe{
+        width: 90%;
+    }
+    #stepsNewRecipe{
+        height: 18vh;
+    }
+    #menuIngredientesNewRecipe{
+        height: 23vh;
+    }
+    #etiquetasNewRecipe{
+        height: 30vh;
+    }
+    .minInicioInput{
+        width: 8%;
+    }
+    .minFinInput{
+        width: 8%;
+    }
+}
+@media (max-width:400px){
+    #tittlePasos{
+        padding-bottom: 2vh;
+    }
+    #recipetittlediv{
+        flex-direction: column;
+    }
+    #uploadBtn{
+        width: 48%;
+        margin-top: 1vh;
+    }
+}
+@media(max-height:690px){
+    #recipebodydiv{
+        margin: 43vh 0 0 0;
+    }
+}
+@media (width:1024px) and (height:600px){
+    #recipebodydiv{
+        margin: 7vh 0 0 0;
+    }
+    #recipetittlediv{
+        margin-top: 2vh;
+    }
 }

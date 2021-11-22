@@ -31,7 +31,11 @@
             <div id="recipebodydiv">
                 <div id="barraLateralNewRecipe">
                     <div id="menuIngredientesNewRecipe">
-                        <h2 id="ingredientsTittle">INGREDIENTES<button class="lessInputBtn" id="lessIngrediens"></button><button id="addIngredientBtn"></button></h2>
+                        <h2 id="ingredientsTittle">INGREDIENTES
+                            <div class="btnplus">
+                                <button class="lessInputBtn" id="lessIngrediens"></button><button id="addIngredientBtn"></button>
+                            </div>
+                            </h2>
                         <div id="inputsLateralesNewRecipe">
                             <input type="text" class="ingredient" name="ingredients" placeholder="Ingrediente">
                         </div>
@@ -51,7 +55,13 @@
                                 <option value="africa">Africa</option>
                                 <option value="oceania">Oceania</option>
                             </select>
-                            <label for="eTipo">Tipo Comida<button class="lessInputBtn" id="lessEtiquetas"></button><button id="addEtiquetaBtn"></button></label>
+                            <label for="eTipo" id="foodsTittle">Tipo Comida
+                                <div class="btnplus">
+
+                                    <button class="lessInputBtn" id="lessEtiquetas"></button>
+                                    <button id="addEtiquetaBtn"></button>
+                                </div>
+                            </label>
                             
                         </div>
                     </div>
