@@ -60,6 +60,18 @@
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_big_play"></figure>
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_afterTo"></figure>
                 </div>
+                <button id="makefs-steps-info-button"></button>
+                <ul class="makefs-steps-info-container">
+                    <p>Pasos</p>
+                    <li class="makefs-steps-info-template">
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                </ul>
+                <div></div>
                 <span id="progress-bar-time-read">00:00</span>
                 <div class="makefs-video-controls controls-hidden first-play">
                     <div class="makefs-video-progress">
