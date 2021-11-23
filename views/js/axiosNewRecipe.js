@@ -51,14 +51,12 @@ uploadRecipe.addEventListener("click", (e)=>{
         let formData = new FormData();
         formData.append("videoR",video.files[0]);
         console.log(formData);
-        fetch("../controllers/recipeCreation/subirVideo.php",{
-            method: 'POST',
-            body: formData,    
+        axios.post("../controllers/recipeCreation/subirVideo.php", formData, {
+            "Content-Type": "multipart/form-data"
         })
-            .then(respuesta=>respuesta.text())
-            .then(decodificado=>{
-                console.log(decodificado);
-            });
+        .then(res=>{
+            console.log(res);
+        });
     }else{
         alert("selecciona un video");
     }
