@@ -36,9 +36,12 @@ const loading_obj = document.querySelector(".loading-obj");
 const speedrateback = document.querySelector("#makefs-video-controls-speedrate-back");
 const speedrategroup = document.querySelectorAll(".makefs-video-controls-speedrate");
 const actualSpeedRate = document.querySelector("#actual-speed-rate");
+const anotationStep = document.querySelector(".step-anotation");
+const anotationStepClose = document.querySelector("#steps-close-annotation");
+const anotationStepMinuteRange = document.querySelector("#steps-close-minutes");
+const anotationStepDetail = document.querySelector("#steps-close-detail");
 
 // Action functions -----------------------------------------------------
-
 
 let interval = {
     isActive: false,
@@ -57,10 +60,12 @@ let videoPlayerProperties = {
     firstPlayed: false,
     isInConfig: false,
     isBucleActive: false,
+    isInStepsPanel: false,
 }
 
 let stepsProperties = {
     isActive: true,
+    isShowing: false,
 }
 const formatSeconds = (secs) => {
     let generalSeconds = ((secs / 60).toFixed(2).toString()).split(".");
@@ -303,6 +308,15 @@ window.addEventListener("keydown", (e) => {
         case "f":
             toggleFullscreen();
             break;
+        case "F":
+            toggleFullscreen();
+            break;
+        case "m":
+            muteAction();
+            break;
+        case "M":
+            muteAction();
+            break;
         default:
             break;
     }       
@@ -453,4 +467,72 @@ if(localStorage.getItem("muted") === "false"){
 }else{
     video.muted = true;
     mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)"
+}
+
+// In video Steps Section
+
+const stepsButton = document.querySelector("#makefs-steps-info-button");
+const stepsContainer = document.querySelector(".makefs-steps-info-container");
+const stepsGroup = document.querySelectorAll(".makefs-steps-info-template");
+let stepsState = {};
+
+
+stepsButton.addEventListener("click", () => {
+    if (videoPlayerProperties.isInStepsPanel){
+        videoPlayerProperties.isInStepsPanel = false;
+        stepsContainer.style.right = "-100%";
+        if (!stepsButton.getAttribute("style") != null) {
+            stepsButton.removeAttribute("style");
+        }
+    }else{
+        videoPlayerProperties.isInStepsPanel = true;
+        stepsContainer.style.right = "0px";
+        stepsButton.style.backgroundImage = "url(./img/video-controls/steps-close.png)";
+        stepsButton.style.transform = "rotate(360deg)";
+        stepsButton.style.opacity = "100%";
+    }
+})
+
+let count = 0;
+if (stepsGroup){
+    stepsGroup.forEach((el) => {
+        stepsState[count] = {
+            isUsable: true,
+            isOpened: false,
+        };
+        let actualStep = stepsState[count];
+        if (el.clientHeight > el.children[2].clientHeight) {
+            el.removeChild(el.children[0]);
+        }else{
+            let actualCount = count+1;
+            el.addEventListener("click", () => {
+                if (actualStep.isUsable){
+                    let indicator = el.children[0];
+                    let article = el.children[2];
+                    if (actualStep.isOpened) {
+                        el.style.paddingBottom = "0px";
+                        indicator.style.transform = "rotate(0deg)";
+                        actualStep.isOpened = false;
+                        actualStep.isUsable = false;
+                        setTimeout(() => {
+                            actualStep.isUsable = true;
+                        },300)
+                    }else{
+                        el.style.paddingBottom = `${article.clientHeight - el.clientHeight}px`;
+                        indicator.style.transform = "rotate(180deg)";
+                        actualStep.isOpened = true;
+                        actualStep.isUsable = false;
+                        setTimeout(() => {
+                            if (stepsGroup.length == actualCount){
+                                stepsContainer.scrollTo(0,stepsContainer.clientHeight);
+                                console.log("JIOJIJAS")
+                            }
+                            actualStep.isUsable = true;
+                        },300)
+                    }
+                }
+            });
+        }
+        count++
+    })
 }

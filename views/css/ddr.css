@@ -34,6 +34,8 @@
   background-size: 30%;
   position: relative;
   display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 4px 3px rgb(0 0 0 / 14%);
 }
 .makefs-media-player video{
   width: 100%;
@@ -455,38 +457,78 @@
   width: 3vh;
   height: 3vh;
   border-radius: 50%;
-  background-color: transparent;
-  background-image: url("../img/video-controls/steps.png");
+  background-image: url(../img/video-controls/steps.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
   position: absolute;
-  top: 1%;
+  top: 2.6%;
   right: 1%;
+  z-index: 12;
+  border: none;
+  background-color: #00000024;
+  box-shadow: 0 0 6px 0px #00000038;
+  opacity: 50%;
+  transition: .1s;
+}
+#makefs-steps-info-button:hover{
+  cursor: pointer;
+  opacity: 100%;
 }
 
 .makefs-steps-info-container{
-  width: 20%;
+  scroll-behavior: smooth;
+  width: 30%;
   height: 100%;
   position: absolute;
-  left: 0;
+  right: -100%;
   backdrop-filter: blur(3px);
-  background-color: rgb(0 0 0 / 61%);
+  background-color: rgb(0 0 0 / 87%);
   display: flex;
   flex-direction: column;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
   color: white;
-  padding: 0;
   margin: 0;
   z-index: 11;
+  transition: .2s;
+  padding: 0 0 2% 0;
+  top: 0;
+}
+.makefs-steps-info-container::-webkit-scrollbar{
+  width: .3vw;
+  border-radius: 20px;
+  background-color: rgb(43, 43, 43);
+}
+.makefs-steps-info-container::-webkit-scrollbar-track{
+  width: 3px;
+  border-radius: 20px;
+  background-color: rgb(43, 43, 43);
+}
+.makefs-steps-info-container::-webkit-scrollbar-thumb{
+  background-color: rgb(87, 87, 87);
+  border-radius: 20px;
+}
+.makefs-steps-info-container h2{
+  border-bottom: white 1px solid;
+  width: 81%;
+  padding: 5% 8%;
+  margin: 0 1% 1% 1%;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .makefs-steps-info-template{
   display: flex;
   width: 100%;
-  border-bottom: 1px solid rgb(46, 46, 46);
   margin: 0;
   padding: 0;
+  min-height: 15.2%;
+  overflow: hidden;
+  position: relative;
+  transition: .3s;
+}
+.makefs-steps-info-template:hover{
+  cursor: pointer;
 }
 .makefs-steps-info-template h3{
   width: 15%;
@@ -494,17 +536,103 @@
   text-align: center;
   margin: 0;
   border-right: 1px solid rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.makefs-steps-info-display-details{
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid white;
+  top: 0;
+  right: 3%;
+  margin: 4% 0 0 0;
+  width: 2vh;
+  height: 2vh;
+  display: flex;
+  font-size: 1em;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+  transform: rotate(0deg);
 }
 .makefs-steps-info-template article{
   width: 85%;
   display: block;
   padding: 0 3%;
+  height: fit-content;
 }
 .makefs-steps-info-template article h4{
-  margin: .5% 0;
+  margin: 5% 0 0 0;
   font-size: .8em;
 }
+.makefs-steps-info-template article p{
+  margin: 2% 0;
+}
 
+/* In video Anotation */
+
+.step-anotation{
+  display: none;
+  position: absolute;
+  top: 2%;
+  right: 1%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.699);
+  backdrop-filter: blur(3px);
+  color: white;
+  display: flex;
+  z-index: 13;
+  transition: .2s;
+  transition: .2s;
+  overflow: hidden;
+  min-height: 10%;
+  max-height: 18%;
+}
+#steps-close-annotation{
+  position: absolute;
+  top: .5%;
+  right: .5%;
+  font-size: 1.2em;
+  border: none;
+  background-color: transparent;
+  color: white;
+}
+#steps-close-annotation:hover{
+  cursor: pointer;
+}
+#step-number{
+  width: 25%;
+  font-size: 5em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid white;
+  align-items: center;
+  margin: 1% 0px;
+}
+.step-anotation article{
+  padding: 1%;
+  height: fit-content;
+}
+#step-annotation-minutes{
+  font-size: .8em;
+}
+#step-annotation-detail{
+  margin: 1% 0;
+}
+#step-annotation-show-more{
+  display: none;
+  position: absolute;
+  color: white;
+  border: none;
+  background-color: transparent;
+  right: .5%;
+  bottom: .5%;
+}
+#step-annotation-show-more:hover{
+  cursor: pointer;
+}
 /* Video Animations */
 @keyframes loading-animation {
   0%{

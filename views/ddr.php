@@ -61,9 +61,91 @@
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_afterTo"></figure>
                 </div>
                 <button id="makefs-steps-info-button"></button>
+                <div class="step-anotation">
+                    <button id="steps-close-annotation">x</button>
+                    <h2 id="step-number">1</h2>
+                    <article>
+                        <b id="step-annotation-minutes">00:00 - 02:42</b>
+                        <p id="step-annotation-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis obcaecati, perspiciatis minima consequatur nulla impedit suscipit hic nostrum repellendus, dolore quo ea. Nemo fugiat voluptas dolore culpa natus! Exercitationem, doloribus?</p>
+                    </article>
+                    <button id="step-annotation-show-more">ver más</button>
+                </div>
                 <ul class="makefs-steps-info-container">
-                    <p>Pasos</p>
+                    <h2>Pasos</h2>
                     <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, ad</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
+                        <h3>1</h3>
+                        <article>
+                            <h4>00:00 - 05:25</h4>
+                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
+                        </article>
+                    </li>
+                    <li class="makefs-steps-info-template">
+                        <a class="makefs-steps-info-display-details">v</a>
                         <h3>1</h3>
                         <article>
                             <h4>00:00 - 05:25</h4>
