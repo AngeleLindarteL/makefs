@@ -1,10 +1,8 @@
 <?php
 
+$resourceDir = "../../mediaDB/recipeVideos/";
+$videoInfo = $_GET["video"];
+
+$_GET["video_path"] = $resourceDir.$videoInfo;
 include("./videoStream.php");
-
-$videoInfo = $_GET["video_path"];
-$resourceDir = "../../mediaDB/";
-
-$stream = new VideoStream($resourceDir.$videoPath);
-$stream->start();
 ?>

@@ -32,9 +32,18 @@
         header("location: ./error.html");
         exit;
     }
+    $step_times_json = base64_decode($res["steps"]);
+    $timesDecoded = json_decode($step_times_json,true);
+    print_r($timesDecoded);
+    $times = "";
+    foreach ($timesDecoded as $timeArray){
+        $times = $times . $timeArray[1] ."//";
+    }
     echo <<<EOT
         <script>
-            const duration = $res[duration];
+        const duration = $res[duration];
+        const times = "$times";
+        console.log(times)
         </script>
     EOT;
     ?>
@@ -50,8 +59,8 @@
             <div class="makefs-media-player">
                 <button id="first-play-btn"></button>
                 <video id="source_video">
-                    <source src="../controllers/video_streaming/startStream.php?video_path="<?php echo $res["video"];?> type="video/mp4"/>
-                    <source src="../controllers/video_streaming/startStream.php?video_path="<?php echo $res["video"];?> type="video/webm"/>
+                    <source src="../controllers/video_streaming/startStream.php?video=<?php echo $res["video"];?>" type="video/mp4"/>
+                    <source src="../controllers/video_streaming/startStream.php?video=<?php echo $res["video"];?>" type="video/webm"/>
                     El navegador no soporta este formato de video
                 </video>
                 <div class="loading-obj"></div>

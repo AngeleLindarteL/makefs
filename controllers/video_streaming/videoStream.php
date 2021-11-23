@@ -1,5 +1,4 @@
 <?php
-
 // Script basado en el Script del programador Rana, Github: https://gist.github.com/ranacseruet
 // Script traducido y explicado al español por Angel Lindarte, Github: https://github.com/AngeleLindarteL
 // adaptado y mejorado para formatos WebM y MP4
@@ -143,7 +142,7 @@ class VideoStream{
         $this->end();
     }
 }
-$testingAssert = new VideoStream("C:/xampp/htdocs/makefs/mediaDB/recipeVideos/videoPrueba.mp4");
+$testingAssert = new VideoStream($_GET["video_path"]);
 $testingAssert->start();
 
 ?>
