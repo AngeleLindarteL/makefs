@@ -74,7 +74,7 @@
                                 <img src="./img/addVideoRecipe.png" alt="">
                             </label>
                             <h4>Inserta tu video Preparacion</h4>
-                            <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="mp4" required> 
+                            <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="video/mp4, video/webm" required> 
                         </div>
                         <div class="divMultimedia">
                             <label for="recipeImg">

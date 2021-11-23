@@ -58,7 +58,21 @@ uploadRecipe.addEventListener("click", (e)=>{
             console.log(res);
         });
     }else{
-        alert("selecciona un video");
+        alert("selecciona un Video");
+    }
+
+    if(imagen.files.length>0){
+        let formData = new FormData();
+        formData.append("imagenR",imagen.files[0]);
+        console.log(formData);
+        axios.post("../controllers/recipeCreation/subirImagen.php", formData, {
+            "Content-Type": "multipart/form-data"
+        })
+        .then(res=>{
+            console.log(res);
+        });
+    }else{
+        alert("selecciona una Imagen");
     }
 
     try{
@@ -67,6 +81,7 @@ uploadRecipe.addEventListener("click", (e)=>{
                 console.log(res);
                 if(res.status==200){
                    alert("subida con exito");
+                   //window.location.href="../views/chef-view.php";
                 }
             }
         )
