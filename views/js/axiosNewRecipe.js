@@ -39,15 +39,30 @@ uploadRecipe.addEventListener("click", (e)=>{
         "chefid": chefid,
         "namer" : recipleTittle.value,
         "ingredients" : arrayIngredients,
+        "video" : video.files[0].name,
+        "imagen": imagen.files[0].name,
         "steps" : steps,
-        "videoName" : video.files[0].name,
-        "imagenName" : imagen.files[0].name,
-        "videoTmp" : video.value,
-        "imagenTmp" : imagen.value,
         "tags" : arrayEtiquetas,
         "regionTag" : regionComida.value,
     };
     infoRecipe = JSON.stringify(infoRecipe);
+
+    if(video.files.length>0){
+        let formData = new FormData();
+        formData.append("videoR",video.files[0]);
+        console.log(formData);
+        fetch("../controllers/recipeCreation/subirVideo.php",{
+            method: 'POST',
+            body: formData,    
+        })
+            .then(respuesta=>respuesta.text())
+            .then(decodificado=>{
+                console.log(decodificado);
+            });
+    }else{
+        alert("selecciona un video");
+    }
+
     try{
         axios.post("../controllers/recipeCreation/recipeCreation.php",infoRecipe).then(
             res => {
