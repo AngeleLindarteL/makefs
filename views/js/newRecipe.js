@@ -126,22 +126,22 @@ addEtiqueta.addEventListener("click",()=>{
 
         etiqueta.className="etiFood"
     
-        opcion.value=values[1];
+        opcion.value=values[0];
         opcion.text="Sopas";
     
-        opcion2.value=values[2];
+        opcion2.value=values[1];
         opcion2.text="Vegana";
     
-        opcion3.value=values[3];
+        opcion3.value=values[2];
         opcion3.text="Gourmet";
     
-        opcion4.value=values[4];
+        opcion4.value=values[3];
         opcion4.text="Postres";
     
-        opcion5.value=values[5];
+        opcion5.value=values[4];
         opcion5.text="Casero";
     
-        opcion6.value=values[6];
+        opcion6.value=values[5];
         opcion6.text="Tipicas";
     
         etiqueta.add(opcion,null);
