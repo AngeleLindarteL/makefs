@@ -23,7 +23,7 @@
     $videoId = $_GET["video"];
     $conn = new Conexion();
     $conn = $conn->Conectar();
-    $query = "SELECT * FROM recipe WHERE recipeid = :ID";
+    $query = "SELECT * FROM recipe INNER JOIN userm ON recipe.chefid = userm.chefid WHERE recipeid = :ID";
     try{
         $res = $conn->prepare($query);
         $res->execute(array(":ID"=>$videoId));
@@ -32,18 +32,31 @@
         header("location: ./error.html");
         exit;
     }
+    if($res == false || empty($res)){
+        header("location: ./error.html");
+        exit;
+    }
     $step_times_json = base64_decode($res["steps"]);
     $timesDecoded = json_decode($step_times_json,true);
-    print_r($timesDecoded);
     $times = "";
     foreach ($timesDecoded as $timeArray){
         $times = $times . $timeArray[1] ."//";
+        $timesFormatObject .= "~^^~$timeArray[1]~^^~$timeArray[2]~^^~$timeArray[0][-|-]";
     }
+    $timesFormatObject = rtrim($timesFormatObject, '[-|-]');
     echo <<<EOT
         <script>
         const duration = $res[duration];
         const times = "$times";
-        console.log(times)
+        const timesObj = {}
+        const timesArr = "$timesFormatObject".split("[-|-]");
+        for(let i = 0; i < timesArr.length; i++){
+            timesArr[i] = timesArr[i].split("~^^~");
+            timesArr[i].shift();
+            timesArr[i].push(true);
+            timesObj[timesArr[i][0]] = timesArr[i];
+            timesArr[i] = timesArr[i][0];
+        }
         </script>
     EOT;
     ?>
@@ -58,7 +71,7 @@
         <div class="recipe_container">
             <div class="makefs-media-player">
                 <button id="first-play-btn"></button>
-                <video id="source_video">
+                <video id="source_video" poster="../mediaDB/recipeImages/<?php echo $res["imagen"];?>">
                     <source src="../controllers/video_streaming/startStream.php?video=<?php echo $res["video"];?>" type="video/mp4"/>
                     <source src="../controllers/video_streaming/startStream.php?video=<?php echo $res["video"];?>" type="video/webm"/>
                     El navegador no soporta este formato de video
@@ -70,97 +83,36 @@
                     <figure class="makefs-video-in-panel-video" id="mkfv_controlls_afterTo"></figure>
                 </div>
                 <button id="makefs-steps-info-button"></button>
-                <div class="step-anotation">
-                    <button id="steps-close-annotation">x</button>
-                    <h2 id="step-number">1</h2>
+                <div class="step-anotation" ocNotif="1">
+                    <button id="step-annotation-close">x</button>
+                    <h2 id="step-annotation-number">1</h2>
                     <article>
                         <b id="step-annotation-minutes">00:00 - 02:42</b>
                         <p id="step-annotation-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis obcaecati, perspiciatis minima consequatur nulla impedit suscipit hic nostrum repellendus, dolore quo ea. Nemo fugiat voluptas dolore culpa natus! Exercitationem, doloribus?</p>
                     </article>
-                    <button id="step-annotation-show-more">ver más</button>
+                    <button id="step-annotation-show-more" ocPanelEl="1">ver más</button>
+                    <span id="step-annotation-show-more-gradient"></span>
                 </div>
                 <ul class="makefs-steps-info-container">
                     <h2>Pasos</h2>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, ad</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
-                    <li class="makefs-steps-info-template">
-                        <a class="makefs-steps-info-display-details">v</a>
-                        <h3>1</h3>
-                        <article>
-                            <h4>00:00 - 05:25</h4>
-                            <p>Esta es la información del paso jijijajijiajiajiajijasij bombardear china Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci, accusantium modi eius perspiciatis illum voluptates odit voluptatibus consequatur vel tempora voluptate commodi sit cum, aut labore ab? Quas, ducimus deserunt!</p>
-                        </article>
-                    </li>
+
+                    <?php
+                        $counter = 1;
+                        foreach ($timesDecoded as $key => $stepRenderInfo){
+                            echo <<<EOT
+                                <li class="makefs-steps-info-template" ocMinute="$stepRenderInfo[1]">
+                                    <a class="makefs-steps-info-display-details">v</a>
+                                    <h3>$counter</h3>
+                                    <article>
+                                        <h4>$stepRenderInfo[1] - $stepRenderInfo[2]</h4>
+                                        <p>$stepRenderInfo[0]</p>
+                                    </article>
+                                </li>
+                            EOT;
+                            $counter++;
+                        }
+
+                    ?>
                 </ul>
                 <div></div>
                 <span id="progress-bar-time-read">00:00</span>
@@ -200,6 +152,20 @@
                         <button id="mkfv_controlls_fullscreen" class="makefs-video-control-button"></button>
                     </div>
                 </div>
+            </div>
+            <div class="ddr-bottom-panels">
+                <div class="makefs-video-info-panels">
+                    <h1></h1>
+                    <div class="makefs-video-info-title"><?php echo $res["namer"]?></div>
+                    <a class="makefs-video-info-chef">
+                        <img src="../mediaDB/usersImg/<?PHP echo $res["pic"]?>">
+                        <article>
+                            <p> <?php echo $res["username"] ?></p>
+                            <p> ??? Seguidores</p>
+                        </article>
+                    </a>
+                </div>
+                <div class="makefs-recomendateds-panels"></div>
             </div>
         </div>
     </section>

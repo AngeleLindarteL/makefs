@@ -523,9 +523,11 @@
   margin: 0;
   padding: 0;
   min-height: 15.2%;
+  max-height: 18%;
   overflow: hidden;
   position: relative;
   transition: .3s;
+  margin-bottom: 5%;
 }
 .makefs-steps-info-template:hover{
   cursor: pointer;
@@ -538,7 +540,8 @@
   border-right: 1px solid rgb(255, 255, 255);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding-top: 2.1%;
 }
 .makefs-steps-info-display-details{
   position: absolute;
@@ -546,7 +549,7 @@
   border: 1px solid white;
   top: 0;
   right: 3%;
-  margin: 4% 0 0 0;
+  margin: 2% 0 0 0;
   width: 2vh;
   height: 2vh;
   display: flex;
@@ -576,7 +579,7 @@
   position: absolute;
   top: 2%;
   right: 1%;
-  width: 50%;
+  width: 0%;
   background-color: rgba(0, 0, 0, 0.699);
   backdrop-filter: blur(3px);
   color: white;
@@ -588,7 +591,7 @@
   min-height: 10%;
   max-height: 18%;
 }
-#steps-close-annotation{
+#step-annotation-close{
   position: absolute;
   top: .5%;
   right: .5%;
@@ -597,11 +600,11 @@
   background-color: transparent;
   color: white;
 }
-#steps-close-annotation:hover{
+#step-annotation-close:hover{
   cursor: pointer;
 }
-#step-number{
-  width: 25%;
+#step-annotation-number{
+  width: 15%;
   font-size: 5em;
   margin: 0;
   display: flex;
@@ -611,8 +614,12 @@
   margin: 1% 0px;
 }
 .step-anotation article{
+  display: none;
+  opacity: 0%;
   padding: 1%;
   height: fit-content;
+  transition: .5s;
+  width: 83%;
 }
 #step-annotation-minutes{
   font-size: .8em;
@@ -623,14 +630,30 @@
 #step-annotation-show-more{
   display: none;
   position: absolute;
-  color: white;
+  color: black;
   border: none;
-  background-color: transparent;
-  right: .5%;
-  bottom: .5%;
+  background-color: #ffffff;
+  right: 1.5%;
+  bottom: 5.5%;
+  box-shadow: 0 0 25px 11px black;
+  border-radius: 20px;
+  padding: 1%;
+  font-size: 1.2em;
+  z-index: 1;
 }
 #step-annotation-show-more:hover{
   cursor: pointer;
+}
+#step-annotation-show-more-gradient{
+  display: none;
+  position: absolute;
+  width: 85%;
+  height: 19%;
+  background: black;
+  right: 0;
+  bottom: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 90%) 72%);
 }
 /* Video Animations */
 @keyframes loading-animation {

@@ -3,7 +3,6 @@ timeDivisions = timeDivisions.split("/")
 console.log(timeDivisions)
 
 // Reproductor de video -------------------------------------------------
-
 // Variables xd
 
 const mediaPlayer = document.querySelector(".makefs-media-player");
@@ -37,9 +36,12 @@ const speedrateback = document.querySelector("#makefs-video-controls-speedrate-b
 const speedrategroup = document.querySelectorAll(".makefs-video-controls-speedrate");
 const actualSpeedRate = document.querySelector("#actual-speed-rate");
 const anotationStep = document.querySelector(".step-anotation");
-const anotationStepClose = document.querySelector("#steps-close-annotation");
-const anotationStepMinuteRange = document.querySelector("#steps-close-minutes");
-const anotationStepDetail = document.querySelector("#steps-close-detail");
+const anotationStepClose = document.querySelector("#step-annotation-close");
+const anotationStepMinuteRange = document.querySelector("#step-annotation-minutes");
+const anotationStepNum = document.querySelector("#step-annotation-number");
+const anotationStepDetail = document.querySelector("#step-annotation-detail");
+const anotationStepShowMore = document.querySelector("#step-annotation-show-more");
+const anotationStepShowMoreGradient = document.querySelector("#step-annotation-show-more-gradient");
 
 // Action functions -----------------------------------------------------
 
@@ -66,7 +68,10 @@ let videoPlayerProperties = {
 let stepsProperties = {
     isActive: true,
     isShowing: false,
+    actualStepTimeOut: null,
+    actualStepShowingInitMin: "0",
 }
+
 const formatSeconds = (secs) => {
     let generalSeconds = ((secs / 60).toFixed(2).toString()).split(".");
     generalSeconds[1] = "0." + generalSeconds[1];
@@ -127,13 +132,50 @@ const afterToAction = () => {
     progressBar.setAttribute("value", video.currentTime)
 }
 
-console.log(configPanel.clientHeight)
+const showStepAnotation = (minutesRange,stepNum,stepText) => {
+
+    if (stepsProperties.actualStepTimeOut != null){
+        timesObj[stepsProperties.actualStepShowingInitMin][3] = true;
+        clearTimeout(stepsProperties.actualStepTimeOut);
+        stepsProperties.actualStepTimeOut = null;
+    }
+
+    stepsProperties.actualStepShowingInitMin = timesArr[timesArr.indexOf(minutesRange.split("-")[0].trim())];
+    console.log(stepsProperties.actualStepShowingInitMin);
+    timesObj[stepsProperties.actualStepShowingInitMin][3] = false;
+    anotationStepMinuteRange.textContent = minutesRange;
+    anotationStepNum.textContent = stepNum;
+    anotationStepDetail.textContent = stepText;
+    
+    anotationStepShowMoreGradient.style.display = "none";
+    anotationStepShowMore.style.display = "none";
+    anotationStep.children[2].style.opacity = "0%";
+    anotationStep.children[2].style.display = "block";
+    anotationStep.style.width = "50%";
+    setTimeout(() => {
+        anotationStep.children[2].style.opacity = "100%";
+        if (anotationStep.clientHeight < anotationStep.children[2].clientHeight) {
+            anotationStepShowMoreGradient.style.display = "flex";
+            anotationStepShowMore.style.display = "flex";
+            anotationStepShowMore.setAttribute("ocPanelEl",stepNum);
+        }
+    },300)
+    stepsProperties.actualStepTimeOut = setTimeout(() => {
+        anotationStep.children[2].style.opacity = "0%";
+        setTimeout(() => {
+            anotationStep.children[2].style.display = "none";
+            anotationStep.style.width = "0%";
+            timesObj[stepsProperties.actualStepShowingInitMin][3] = true;
+            stepsProperties.actualStepShowingInitMin = "0";
+            stepsProperties.actualStepTimeOut = null;
+        },500)
+    },5500)
+}
 
 const relocateConfigPanel = () => {
     let height = configPanel.clientHeight;
     configPanel.style.top = "-"+`${height}px`;
 }
-
 
 const changeStepState = () => {
     if(stepsProperties.isActive){
@@ -180,7 +222,15 @@ const updateProgressTime = () =>{
     videoPlayerProperties.watchedTime = video.currentTime;
     draggable_visual.style.left = spx_pg * video.currentTime + "px";
     draggable_progress.style.left = spx_pg * video.currentTime + "px";
-    timeCounter.textContent = ` ${formatedTime[0]}:${formatedTime[1]} / ${formatSeconds(duration)[0]}:${formatSeconds(duration)[1]}`;
+    let actualTime = `${formatedTime[0]}:${formatedTime[1]}`;
+    timeCounter.textContent = ` ${actualTime} / ${formatSeconds(duration)[0]}:${formatSeconds(duration)[1]}`;
+    if (times.includes(actualTime) && stepsProperties.isActive) {
+        let actualTimeObj = timesObj[actualTime];
+        if (!actualTimeObj[3]) {
+            return;
+        }
+        showStepAnotation(`${actualTimeObj[0]} - ${actualTimeObj[1]}`, timesArr.indexOf(actualTime)+1,actualTimeObj[2])
+    }
 }
 
 const muteAction = () => {
@@ -257,6 +307,21 @@ speedrategroup.forEach(element => {
         actualSpeedRate.textContent = speedrate == 1 ? "Normal" :"X" + speedrate;
     })
 });
+
+// Step closing config
+
+anotationStepClose.addEventListener("click", () => {
+    let actualMinute = stepsProperties.actualStepShowingInitMin;
+    anotationStep.children[2].style.display = "none";
+    anotationStep.style.width = "0%";
+    clearTimeout(stepsProperties.actualStepTimeOut);
+    stepsProperties.actualStepTimeOut = null;
+    timesObj[actualMinute][3] = false;
+    setTimeout(() => {
+        timesObj[actualMinute][3] = true;
+    },1000)
+})
+
 
 // Action association ----------------------------------------------------
 video.addEventListener("waiting", () => {
@@ -476,8 +541,7 @@ const stepsContainer = document.querySelector(".makefs-steps-info-container");
 const stepsGroup = document.querySelectorAll(".makefs-steps-info-template");
 let stepsState = {};
 
-
-stepsButton.addEventListener("click", () => {
+const changeStepPanelState = () =>{
     if (videoPlayerProperties.isInStepsPanel){
         videoPlayerProperties.isInStepsPanel = false;
         stepsContainer.style.right = "-100%";
@@ -491,6 +555,10 @@ stepsButton.addEventListener("click", () => {
         stepsButton.style.transform = "rotate(360deg)";
         stepsButton.style.opacity = "100%";
     }
+}
+
+stepsButton.addEventListener("click", () => {
+    changeStepPanelState();
 })
 
 let count = 0;
@@ -533,6 +601,35 @@ if (stepsGroup){
                 }
             });
         }
+        el.addEventListener("dblclick", () => {
+            let goToMin = el.getAttribute("ocMinute").split(":");
+            goToMin = parseInt(goToMin[0]) * 60 + parseInt(goToMin[1]);
+            video.currentTime = goToMin;
+            changeStepPanelState();
+            updateProgressTime();
+        });
         count++
     })
 }
+anotationStepShowMore.addEventListener("click", () => {
+    let clickEv = new MouseEvent("click", {
+        bubbles: true,
+        cancelable: false
+    })
+    changeStepPanelState();
+    let children = parseInt(anotationStepShowMore.getAttribute("ocPanelEl")) - 1;
+    let toBeEmulatedEl = stepsGroup[children];
+
+    setTimeout(() => {
+        toBeEmulatedEl.dispatchEvent(clickEv);
+        let actualMinute = stepsProperties.actualStepShowingInitMin;
+        anotationStep.children[2].style.display = "none";
+        anotationStep.style.width = "0%";
+        clearTimeout(stepsProperties.actualStepTimeOut);
+        stepsProperties.actualStepTimeOut = null;
+        timesObj[actualMinute][3] = false;
+        setTimeout(() => {
+            timesObj[actualMinute][3] = true;
+        },1000)
+    },300)
+})
