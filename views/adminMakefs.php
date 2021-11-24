@@ -12,7 +12,10 @@
     <title>Admin Panel</title>
     <?php
         include('./components/sessionControl.php');
-        include("./components/tokenControl.php")
+        include("./components/tokenControl.php");
+        if($_SESSION["rol"]!="administrador"){
+            header("location ./error.html");
+        }
     ?>
     <script>
         <?php echo "const id =".$_SESSION['id'] ?>
@@ -22,9 +25,6 @@
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
-        if($_SESSION["rol"]!="administrador"){
-            header("location ./error.html");
-        }
     ?>
     <section id="admin-panel">
         <div class="makefsContainer adminpanel">
