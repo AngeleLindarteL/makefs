@@ -27,6 +27,6 @@
         $conn->commit();
     }catch(Exception $e){
         $conn->rollBack();
-        echo "Failed: " . $e->getMessage();
+        echo http_response_code(400);
     }
 ?>

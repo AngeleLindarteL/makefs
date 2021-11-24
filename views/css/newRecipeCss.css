@@ -452,7 +452,135 @@ section{
 #uploadBtn2:hover{
     box-shadow: 0px 0px 10px 1px var(--color5);
 }
+#deleteRecipeBtn{
+    cursor: pointer;
+    border: none;
+    width: 15%;
+    height: 6vh;
+    background-image: url(../img/deleteAccount.png);
+    background-size: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color5);
+    transition: .3s;
+    padding: 0;  
+}
+#deleteRecipeBtn h2{
+    font-size: 1.3em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.472);
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    opacity: 0;
+}
 
+#deleteRecipeBtn h2:hover{
+    opacity: 100%;
+}
+
+#deleteRecipeBtn:hover{
+    box-shadow: 0px 0px 10px 1px var(--color5);
+}
+
+#recipetittlediv2{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#recipetittlediv2 input{
+    font-size: 1.5em;
+    width:60%;
+    height: 100%;
+    border:none;
+    text-align: center;
+    border-bottom: var(--color5) 3px solid;
+}
+#recipetittlediv2 input::placeholder{
+    text-align: center;
+}
+#recipetittlediv2 input:focus{
+    outline: none;
+}
+
+#deleteRecipeConfirm{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.363);
+    display: none;
+    opacity: 0;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transition: .3s;
+    text-align: center;
+}
+#menuDeleteRecipe{
+    width: 50%;
+    height: 30vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+#menuDeleteRecipe h2{
+    width: 100%;
+    height: 30%;
+    margin: 2% 0;
+    color: white;
+    background-color: #FF2C29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#close-deleteRecipe{
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 6vh;
+    height: 6vh;
+    top: 12vh;
+    right: 5vh;
+    margin: 0%;
+    transition: .2s;
+    background-image: url(../img/closeUpdateInfo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    background-color: var(--color5);
+    z-index: 2;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+    cursor: pointer;
+}
+#deleteRecipe{
+    background-color: #FF2C29;
+    color: white;
+    border: none;
+    font-size: 1.3em;
+    width: 50%;
+    height: 5vh;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s;
+}
+#deleteRecipe:hover{
+    box-shadow: 0px 0px 10px 1px var(--color5);
+}
 /*--Responsive--*/
 @media (max-width:1450px){
     #ingredientsTittle{

@@ -12,26 +12,33 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
         include('./components/sessionControl.php');
-    ?>
-    <?php include("./components/tokenControl.php") ?>
-    <script>
-        <?php echo "const chefid =".$_SESSION['chefid'] ?>
-    </script>
-    <?php
-        
-        $idRecipe = 27;
+        include("./components/tokenControl.php");
+        if (!isset($_GET["receta"]) || empty($_GET["receta"])){
+            header("location: ./error.html");
+            exit;
+        }
+        $idRecipe = $_GET["receta"];
         $conn = new Conexion;
         $conn = $conn->Conectar();
         $consulta = "SELECT * FROM recipe WHERE recipeid = :ID";
         $data = $conn->prepare($consulta);
         $data->execute(array(":ID"=>$idRecipe));
         $data = $data->fetch(PDO::FETCH_ASSOC);
+        if($_SESSION["chefid"]!=$data["chefid"]){
+            header("location: ./error.html");
+        }
         
         $nombreRecipe = $data["namer"];
         $region = $data["region"];
         $ingredients = json_decode(base64_decode($data["ingredients"]));
         $etiquetas = json_decode(base64_decode($data["tags"]));
         $steps = json_decode(base64_decode($data["steps"]));
+        echo <<<EOT
+            <script>
+                const chefid =$_SESSION[chefid]; 
+                const recipeid =$idRecipe;
+            </script>
+        EOT;
 
     ?>
 </head>
@@ -42,11 +49,20 @@
     ?>
     <section id="newRecipeSection">
         <div class="makefsContainer containerNewRecipe">
-            <div id="recipetittlediv">
+            <div id="recipetittlediv2">
                 <?php
                     echo "<input type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>";
                 ?>
                 <button id="uploadBtn2"><h2>Editar Receta</h2></button>
+                <button id="deleteRecipeBtn"><h2>Eliminar Receta</h2></button>
+            </div>
+            <div id="deleteRecipeConfirm">
+                <button id="close-deleteRecipe"></button>
+                <div id="menuDeleteRecipe">
+                    <h2>BORRAR RECETA</h2>
+                    <h3>Seguro que quieres Borrar <?php echo $nombreRecipe?>?</h3>
+                    <input type="submit" class="passInput" id="deleteRecipe" name="deleteRecipe" value="Borrar receta">
+                </div>
             </div>
             <div id="recipebodydiv">
                 <div id="barraLateralNewRecipe">
@@ -72,7 +88,7 @@
                         </div>
                         <div id="selectsEtiquetasNewRecipe">
                             <label for="eRegiones">Region</label>
-                            <select name="eRegiones" id="eRegiones" disabled>
+                            <select  id="eRegiones" disabled>
                                 <option value="<?php echo $region;?>" selected><?php echo $region;?></option>
                                 <option value="latam">Latam</option>
                                 <option value="asia">Asia</option>
@@ -91,7 +107,7 @@
                                 foreach($etiquetas as $etiqueta){
                                     if($region=="latam"){
                                         echo <<<EOT
-                                        <select name="eRegiones" id="eRegiones">
+                                        <select  class="etiFood">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="latamSopa">Sopa</option>
                                             <option value="latamVegana">Vegana</option>
@@ -103,7 +119,7 @@
                                         EOT; 
                                     }elseif ($region=="asia") {
                                         echo <<<EOT
-                                        <select name="eRegiones" id="eRegiones">
+                                        <select  class="etiFood">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="asiaSopa">Sopa</option>
                                             <option value="asiaVegana">Vegana</option>
@@ -115,7 +131,7 @@
                                         EOT; 
                                     }elseif ($region=="norteA") {
                                         echo <<<EOT
-                                        <select name="eRegiones" id="eRegiones">
+                                        <select  class="etiFood">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="norteSopa">Sopa</option>
                                             <option value="norteVegana">Vegana</option>
@@ -127,7 +143,7 @@
                                         EOT; 
                                     }elseif ($region=="europa") {
                                         echo <<<EOT
-                                        <select name="eRegiones" id="eRegiones">
+                                        <select  class="etiFood">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="europaSopa">Sopa</option>
                                             <option value="europaVegana">Vegana</option>
@@ -139,7 +155,7 @@
                                         EOT; 
                                     }elseif ($region=="africa") {
                                         echo <<<EOT
-                                        <select name="eRegiones" id="eRegiones">
+                                        <select  class="etiFood">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="africaSopa">Sopa</option>
                                             <option value="africaVegana">Vegana</option>
@@ -151,7 +167,7 @@
                                         EOT; 
                                     }elseif ($region=="oceania") {
                                         echo <<<EOT
-                                        <select name="eRegiones" id="eRegiones">
+                                        <select  class="etiFood">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="oceaniaSopa">Sopa</option>
                                             <option value="oceaniaVegana">Vegana</option>
@@ -206,5 +222,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/newRecipe.js"></script>
+    <script src="./js/axiosEditRecipe.js"></script>
 </body>
 </html>
