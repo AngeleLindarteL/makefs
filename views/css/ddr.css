@@ -10,11 +10,11 @@
 
 #recipe_section{
   width: 100%;
+  margin-top: 4vh;
 }
 
 .recipe_container {
   margin: auto;
-  margin-top: 8vh;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -22,8 +22,8 @@
   max-width: 2200px;
 }
 .makefs-media-player{
-  margin: .8% 2.5%;
-  width: 95%;
+  margin: 0%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   height: 80vh;
@@ -564,6 +564,7 @@
   display: block;
   padding: 0 3%;
   height: fit-content;
+  word-break: break-all;
 }
 .makefs-steps-info-template article h4{
   margin: 5% 0 0 0;
@@ -654,6 +655,179 @@
   bottom: 0;
   background: rgb(0,0,0);
   background: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 90%) 72%);
+}
+
+/* Makefs video panels styles */
+
+.ddr-bottom-panels{
+  margin: 1%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.makefs-video-info-panels{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: fit-content;
+}
+.makefs-video-info-title{
+  border-bottom: 1px solid var(--color5);
+  width: 98%;
+  font-size: 1.6em;
+  height: fit-content;
+  margin: 0%;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+}
+.makefs-video-info-chef{
+  height: 10vh;
+  width: 50%;
+  display: flex;
+}
+.makefs-video-info-chef img{
+  width: 10vh;
+  height: 10vh;
+  margin-right: 3%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px 0px #0000005c;
+}
+.makefs-video-info-chef article{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.makefs-video-info-chef article p{
+  margin: 3% 0;
+}
+.makefs-video-info-chef article p:first-child{
+  font-weight: bold;
+  margin: 0%;
+}
+#follow-button{
+  border: none;
+  border-radius: 0px;
+  color: white;
+  background-color: var(--color5);
+  width: 6.2vw;
+  transition: .2s;
+  height: 3vh;
+}
+#follow-button:hover{
+  cursor: pointer;
+}
+
+.makefs-video-interactions{
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  align-items: flex-end;
+  padding-right: 2%;
+}
+
+.makefs-video-interactions p{
+  text-align: end;
+  margin: .5% 1.5%;
+  font-size: 1.3em;
+}
+.makefs-video-star-valoration{
+  padding: 0;
+  width: 100%;
+  display: flex;
+  margin: 0%;
+  justify-content: flex-end;
+}
+.makefs-video-star-valoration li{
+  width: 3vh;
+  height: 3vh;
+  background: transparent;
+  background-image: url(../img/video-controls/star-empty.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  list-style: none;
+  padding: 0;
+  margin: .5%;
+  display: flex;
+  border-radius: 50%;
+}
+.makefs-video-star-valoration li button{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.makefs-video-report-save{
+  width: fit-content;
+  display: flex;
+  height: 4vh;
+}
+.makefs-video-report-save button{
+  width: 10vh;
+  margin: .5%;
+  border: 2px solid var(--color5);
+  color: var(--color5);
+  background: transparent;
+  transition: .2s;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 0.8em;
+}
+.makefs-video-report-save button:hover{
+  color: white;
+  background: var(--color5);
+  cursor: pointer;
+}
+
+/* makefs-recommended-panels styles*/
+.makefs-recommended-panels{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.in-recipe-recommended-container{
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 8vh;
+}
+.in-video-template{
+  height: 28vh;
+}
+.recomended-title{
+  color: var(--color5);
+  text-transform: uppercase;
+  text-align: start;
+  margin: 1%;
+  width: 100%;
+}
+/* Tags  Style*/
+.makes-recipe-tags-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.makes-recipe-tags-wrapper .makefs-recipe-tag{
+  font-size: 0.8em;
+  padding: 0% 1.8%;
+  margin: .5% .2%;
+  color: white;
+  background-color: var(--color5);
+  border-radius: 20px;
+  height: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* Video Animations */
 @keyframes loading-animation {

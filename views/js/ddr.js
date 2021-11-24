@@ -633,3 +633,65 @@ anotationStepShowMore.addEventListener("click", () => {
         },1000)
     },300)
 })
+
+
+// DDR JS ------------------------------------------------------------------------------------------------------------
+
+let allStarsContainer = document.querySelectorAll(".makefs-selection-star-container");
+let starTimeOut = null;
+const starImages = {
+    "empty": "./img/video-controls/star-empty.png",
+    "mid": "./img/video-controls/star-mid-rate.png",
+    "full": "./img/video-controls/star-full-rate.png",
+}
+
+const changeToEmptyAllStars = () => {
+    allStarsContainer[0].style.backgroundImage = `url(${starImages.empty})`;
+    allStarsContainer[1].style.backgroundImage = `url(${starImages.empty})`;
+    allStarsContainer[2].style.backgroundImage = `url(${starImages.empty})`;
+    allStarsContainer[3].style.backgroundImage = `url(${starImages.empty})`;
+    allStarsContainer[4].style.backgroundImage = `url(${starImages.empty})`;
+}
+
+const overOnStar = (el,containerNum) => {
+    let starVal = el.getAttribute("starValue");
+    let bc =  starVal.split(".")[1] == "5"? starImages.mid: starImages.full;
+    changeToEmptyAllStars();
+    if (starTimeOut != null) {
+        clearTimeout(starTimeOut);
+        starTimeOut = null;
+    }
+    if (containerNum < 1) {
+        allStarsContainer[containerNum].style.backgroundImage = `url(${bc})`
+        return;
+    }else{
+        for (let i = 0; i < containerNum; i++) {
+            allStarsContainer[i].style.backgroundImage = `url(${starImages.full})`;
+        }
+        allStarsContainer[containerNum].style.backgroundImage = `url(${bc})`
+    }
+}
+
+const setDefaultStar = () => {
+    if (starTimeOut != null) {
+        clearTimeout(starTimeOut);
+        starTimeOut = null;
+    }
+    starTimeOut = setTimeout(() => {
+        changeToEmptyAllStars();
+    },200)
+}
+
+let actualContainerPos = 0;
+allStarsContainer.forEach((starCont) => {
+    let actualPos = actualContainerPos;
+    let firstStar = starCont.children[0];
+    let secondStar = starCont.children[1];
+    firstStar.addEventListener("click", () => {})
+    firstStar.addEventListener("mouseover", () => {overOnStar(firstStar,actualPos)})
+    firstStar.addEventListener("mouseout", () => {setDefaultStar()})
+    secondStar.addEventListener("click", () => {})
+    secondStar.addEventListener("mouseover", () => {overOnStar(secondStar,actualPos)})
+    secondStar.addEventListener("mouseout", () => {setDefaultStar()})
+    actualContainerPos++;
+})
