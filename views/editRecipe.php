@@ -24,6 +24,11 @@
         $data = $conn->prepare($consulta);
         $data->execute(array(":ID"=>$idRecipe));
         $data = $data->fetch(PDO::FETCH_ASSOC);
+
+        if(empty($_SESSION["chefid"])){
+            header("location: ./error.html");
+        }
+
         if($_SESSION["chefid"]!=$data["chefid"]){
             header("location: ./error.html");
         }
