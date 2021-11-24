@@ -1193,5 +1193,11 @@ header{
     #menuCATE-DESP{
         top: -1vh;
     }
+    .header_logo article h1{
+        font-size: 1.5em;
+    }
+    .header_logo article h2{
+        font-size: .80em;
+    }
 }
 

@@ -251,10 +251,12 @@
                 <p id="status-chef"></p>
         </div>
     </section>
+    
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/chageInfoUserChef.js"></script>
     <script src="./js/axiosChef.js"></script>
+    <script src="./js/darkMode.js"></script>
 </body>
 </html>

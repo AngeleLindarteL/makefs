@@ -57,8 +57,8 @@
                             EOT;
                         }
             echo <<<EOT
-                        <a class="headlog_btn" href="">
-                            <img class="headlog_ico first" src="./iconos/theme.png">
+                        <a class="headlog_btn" id="tb" href="">
+                            <img class="headlog_ico first" id="imgtb"  src="./iconos/moon.svg">
                             <p>Cambiar tema</p>
                         </a>
                         <form action="../controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">

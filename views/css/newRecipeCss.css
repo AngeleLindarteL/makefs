@@ -652,15 +652,11 @@ section{
     }
     #recipetittlediv{
         flex-direction: column;
+        margin-bottom: 8vh;
     }
     #uploadBtn{
         width: 48%;
         margin-top: 1vh;
-    }
-}
-@media(max-height:690px){
-    #recipebodydiv{
-        margin: 43vh 0 0 0;
     }
 }
 @media (width:1024px) and (height:600px){
