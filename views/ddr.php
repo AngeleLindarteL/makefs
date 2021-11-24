@@ -155,17 +155,113 @@
             </div>
             <div class="ddr-bottom-panels">
                 <div class="makefs-video-info-panels">
-                    <h1></h1>
-                    <div class="makefs-video-info-title"><?php echo $res["namer"]?></div>
+                    <h1 class="makefs-video-info-title"><?php echo $res["namer"]?></h1>
                     <a class="makefs-video-info-chef">
                         <img src="../mediaDB/usersImg/<?PHP echo $res["pic"]?>">
                         <article>
                             <p> <?php echo $res["username"] ?></p>
-                            <p> ??? Seguidores</p>
+                            <p> <b>1,2K</b> Seguidores</p>  
+                            <button id="follow-button">seguir</button>
                         </article>
                     </a>
+                    <div class="makefs-video-interactions">
+                        <p><b>1,000,520</b> Visualizaciones</p>
+                        <div class="makes-recipe-tags-wrapper">
+                            <?php
+                                $tagsBase64 = base64_decode($res["tags"]);
+                                $tagsDecoded = json_decode($tagsBase64,true);
+                                foreach ($tagsDecoded as $key => $value){
+                                    echo "<p class='makefs-recipe-tag'>$value</p>";
+                                }
+                            ?>
+                        </div>
+                        <div class="makefs-video-report-save">
+                            <button id="save-actual-recipe">Guardar</button>
+                            <button id="report-actual-recipe">Reportar</button>
+                        </div>
+                        <ul class="makefs-video-star-valoration">
+                            <li class="makefs-selection-star-container">
+                                <button starValue="0.5"></button>
+                                <button starValue="1.0"></button>
+                            </li>
+                            <li class="makefs-selection-star-container">
+                                <button starValue="1.5"></button>
+                                <button starValue="2.0"></button>
+                            </li>
+                            <li class="makefs-selection-star-container">
+                                <button starValue="2.5"></button>
+                                <button starValue="3.0"></button>
+                            </li>
+                            <li class="makefs-selection-star-container">
+                                <button starValue="3.5"></button>
+                                <button starValue="4.0"></button>
+                            </li>
+                            <li class="makefs-selection-star-container">
+                                <button starValue="4.5"></button>
+                                <button starValue="5.0"></button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="makefs-recomendateds-panels"></div>
+                <div class="makefs-recommended-panels">
+                    <div class="in-recipe-recommended-container">
+                        <h3 class="recomended-title">recomendados</h3>
+                        <div class="recipe-template in-video-template">
+                            <a class="image-template" href="https://google.com" target="__blank">
+                                <img src="./test-imgs/pollo.jpeg">
+                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                            </a>
+                            <div class="next-text-recipe">
+                                <img src="./test-imgs/xd.jpg">
+                                <a href="https://google.com" target="__blank">
+                                    <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                                    <p>Angel Lindarte</p>
+                                    <p>10M Vistas</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="recipe-template in-video-template">
+                            <a class="image-template" href="https://google.com" target="__blank">
+                                <img src="./test-imgs/pollo.jpeg">
+                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                            </a>
+                            <div class="next-text-recipe">
+                                <img src="./test-imgs/xd.jpg">
+                                <a href="https://google.com" target="__blank">
+                                    <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                                    <p>Angel Lindarte</p>
+                                    <p>10M Vistas</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="recipe-template in-video-template">
+                            <a class="image-template" href="https://google.com" target="__blank">
+                                <img src="./test-imgs/pollo.jpeg">
+                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                            </a>
+                            <div class="next-text-recipe">
+                                <img src="./test-imgs/xd.jpg">
+                                <a href="https://google.com" target="__blank">
+                                    <h3 class="text-template">Pollo broaster Makefsiano</h3>
+                                    <p>Angel Lindarte</p>
+                                    <p>10M Vistas</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="makefs-video-ingredients-ad-wrapper">
+                        <h3>Ingredientes</h3>
+                        <ul class="ingredients">
+                        <?php
+                            $ingredientsBase64 = base64_decode($res["ingredients"]);
+                            $ingredientsDecoded = json_decode($ingredientsBase64,true);
+                            foreach ($ingredientsDecoded as $key => $value){
+                                echo "<p class='makefs-ingredient'>$value</p>";
+                            }
+                        ?>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

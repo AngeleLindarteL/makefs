@@ -67,6 +67,9 @@ include("./jwtController.php");
                     $chefid = $user["chefid"];
                     $_SESSION["chefid"]= $chefid;
 
+                    $rol = $user["rol"];
+                    $_SESSION["rol"]=$rol;
+
                     $facebook = $user["facebook"];
                     $_SESSION["facebook"]= $facebook;
                     $instagram = $user["instagram"];

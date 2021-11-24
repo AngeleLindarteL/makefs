@@ -13,7 +13,7 @@
     <?php
         include('./components/sessionControl.php');
     ?>
-    <?php include("./components/tokenControl.php") ?>
+    <?php include("./components/tokenControl.php");?>
     <script>
         <?php echo "const chefid =".$_SESSION['chefid'] ?>
     </script>

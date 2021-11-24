@@ -56,6 +56,14 @@
                                 </a>
                             EOT;
                         }
+                        if($_SESSION["rol"]=="administrador"){
+                            echo <<<EOT
+                                <a class="headlog_btn" href="./adminMakefs.php">
+                                    <img class="headlog_ico first" src="./img/adminPanel.png">
+                                    <p>Admin Panel</p>
+                                </a>
+                            EOT;
+                        }
             echo <<<EOT
                         <a class="headlog_btn" id="tb" href="">
                             <img class="headlog_ico first" id="imgtb"  src="./iconos/moon.svg">
