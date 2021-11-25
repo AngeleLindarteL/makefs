@@ -253,8 +253,8 @@
                         </div>
                     </div>
                     <div class="makefs-video-ingredients-ad-wrapper">
-                        <h3>Ingredientes</h3>
-                        <ul class="ingredients">
+                        <h3 class="makefs-ingredients-tittle">Ingredientes</h3>
+                        <ul class="makefs-ingredients-wrapper">
                         <?php
                             $ingredientsBase64 = base64_decode($res["ingredients"]);
                             $ingredientsDecoded = json_decode($ingredientsBase64,true);

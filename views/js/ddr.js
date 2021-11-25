@@ -5,6 +5,7 @@ console.log(timeDivisions)
 // Reproductor de video -------------------------------------------------
 // Variables xd
 
+const stepsButton = document.querySelector("#makefs-steps-info-button");
 const mediaPlayer = document.querySelector(".makefs-media-player");
 const video = document.querySelector("#source_video");
 const firstPlayButton = document.querySelector("#first-play-btn");
@@ -303,6 +304,7 @@ firstPlayButton.addEventListener("click", () => {
         updateProgressTime();
     },200)
     videoPlayerProperties.firstPlayed = true;
+    stepsButton.style.display = "flex";
 })
 // Config for speedRates
 
@@ -394,6 +396,9 @@ window.addEventListener("keydown", (e) => {
         case "M":
             muteAction();
             break;
+        case "F5":
+            location.reload();
+            break;
         default:
             break;
     }       
@@ -422,7 +427,7 @@ makefsControlsContainer.addEventListener("mouseleave", () => {
 
 progressBar.addEventListener("mouseenter", (e) => {
     videoPlayerProperties.seeking = true;
-    time_read.style.top = mediaPlayer.clientHeight - makefsControlsContainer.clientHeight - progressBar.clientHeight - 33 + "px";
+    time_read.style.top = mediaPlayer.clientHeight - makefsControlsContainer.clientHeight - progressBar.clientHeight - 22 + "px";
     time_read.style.display = "flex";
     time_read.style.opacity = "100%";
 })
@@ -548,7 +553,6 @@ if(localStorage.getItem("muted") === "false"){
 
 // In video Steps Section
 
-const stepsButton = document.querySelector("#makefs-steps-info-button");
 const stepsContainer = document.querySelector(".makefs-steps-info-container");
 const stepsGroup = document.querySelectorAll(".makefs-steps-info-template");
 let stepsState = {};
@@ -707,3 +711,11 @@ allStarsContainer.forEach((starCont) => {
     secondStar.addEventListener("mouseout", () => {setDefaultStar()})
     actualContainerPos++;
 })
+
+// Instructions preconfig
+
+const stepListAll = document.querySelectorAll(".makefs-ingredient");
+
+if (stepListAll.length % 2 == 1) {
+    stepListAll[stepListAll.length - 1].style.width = "92%";
+}

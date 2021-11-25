@@ -143,7 +143,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: .5vh;
+  height: .8vh;
   transition: .1s;
 }
 .makefs-video-progress:hover{
@@ -203,11 +203,10 @@
   display: none;
   opacity: 0%;
   position: absolute;
-  padding: 1vh;
-  border-radius: 30px;
-  background-color: var(--color5);
-  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.13);
-  color:white;
+  padding: 0.5vh;
+  background-color: #000000c2;
+  box-shadow: 0px 0px 20px 2px rgb(0 0 0 / 13%);
+  color: white;
 }
 .makefs-video-control-button{
   width: 3vh;
@@ -529,6 +528,7 @@
   box-shadow: 0 0 6px 0px #00000038;
   opacity: 50%;
   transition: .1s;
+  display: none;
 }
 #makefs-steps-info-button:hover{
   cursor: pointer;
@@ -729,6 +729,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   height: fit-content;
+  position: relative;
+  padding-top: 1.2%;
 }
 .makefs-video-info-title{
   border-bottom: 1px solid var(--color5);
@@ -848,6 +850,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin: 3% 0;
 }
 
 .in-recipe-recommended-container{
@@ -857,6 +860,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 8vh;
+  height: fit-content;
 }
 .in-video-template{
   height: 28vh;
@@ -866,26 +870,69 @@
   text-transform: uppercase;
   text-align: start;
   margin: 1%;
-  width: 100%;
+  width: 95.5%;
+  margin-left: 2%;
+  border-bottom: 1px solid;
+  padding-bottom: 1%;
 }
 /* Tags  Style*/
 .makes-recipe-tags-wrapper{
-  width: 100%;
+  width: 98%;
   display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  justify-content: flex-start;
+  top: -7%;
 }
 
 .makes-recipe-tags-wrapper .makefs-recipe-tag{
-  font-size: 0.8em;
-  padding: 0% 1.8%;
+  font-size: 0.7em;
+  padding: 0% 1.2%;
   margin: .5% .2%;
   color: white;
   background-color: var(--color5);
   border-radius: 20px;
-  height: 3vh;
+  height: 2vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Ingredients Tags */
+.makefs-video-ingredients-ad-wrapper{
+  width: 30%;
+  box-shadow: 0 0 20px 0px #ff2c296b;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  margin-top: 2.8%;
+}
+.makefs-ingredients-tittle{
+  color: var(--color5);
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  width: 88%;
+  padding-bottom: 2%;
+  margin: 6% 0 0 0;
+}
+.makefs-ingredients-wrapper{
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.makefs-ingredient{
+  width: 45%;
+  margin: 1%;
+  height: 4vh;
+  border: 1px solid;
+  color: var(--color5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
 }
 /* Video Animations */
 @keyframes loading-animation {
