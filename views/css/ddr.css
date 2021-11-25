@@ -924,7 +924,7 @@
   justify-content: center;
 }
 .makefs-ingredient{
-  width: 45%;
+  width: 41%;
   margin: 1%;
   height: 4vh;
   border: 1px solid;
@@ -933,6 +933,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  padding: 0 1%;
+  text-align: center;
 }
 /* Video Animations */
 @keyframes loading-animation {
