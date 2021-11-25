@@ -11,6 +11,7 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Receta</title>
 
     <?php 
@@ -57,9 +58,40 @@
             timesObj[timesArr[i][0]] = timesArr[i];
             timesArr[i] = timesArr[i][0];
         }
+        const followerid = $_SESSION[id];
+        const chefid = $res[chefid];
         </script>
     EOT;
+    $query = "SELECT * FROM follows WHERE chefid = :chefid AND followerid = :followerid";
+    try{
+        $follow = $conn->prepare($query);
+        $follow->execute(array(
+            ":chefid"=>$res['chefid'],
+            ":followerid"=>$_SESSION['id']
+        ));
+        $follow = $follow->fetch(PDO::FETCH_ASSOC);
+        if(isset($follow["idfollow"])){
+            $followid = $follow["idfollow"];
+        }else{
+            $followid = null;
+        }
+    }catch(Exception $e){
+        header("location: ./error.html");
+        exit;
+    }
+    $query = "SELECT COUNT(*) FROM follows WHERE chefid = :chefid";
+    try{
+        $seguidores = $conn->prepare($query);
+        $seguidores->execute(array(
+            ":chefid"=>$res['chefid'],
+        ));
+        $seguidores = $seguidores->fetchColumn();
+    }catch(Exception $e){
+        header("location: ./error.html");
+        exit;
+    }
     ?>
+
 </head>
 
 <body>
@@ -159,12 +191,18 @@
             <div class="ddr-bottom-panels">
                 <div class="makefs-video-info-panels">
                     <h1 class="makefs-video-info-title"><?php echo $res["namer"]?></h1>
-                    <a class="makefs-video-info-chef">
+                    <a class="makefs-video-info-chef" href="./chef-view.php?chef=<?php echo $res['chefid']; ?>">
                         <img src="../mediaDB/usersImg/<?PHP echo $res["pic"]?>">
                         <article>
                             <p> <?php echo $res["username"] ?></p>
-                            <p> <b>1,2K</b> Seguidores</p>  
-                            <button id="follow-button">seguir</button>
+                            <p> <b id="followersSection"><?php echo $seguidores ?></b> Seguidores</p>
+                            <?php
+                                if(isset($followid)){
+                                    echo "<button id='follow-button'>siguiendo</button>";
+                                }else{
+                                    echo "<button id='follow-button'>seguir</button>";
+                                }
+                            ?>  
                         </article>
                     </a>
                     <div class="makefs-video-interactions">
@@ -270,6 +308,7 @@
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/ddr.js"></script>
+    <script src='./js/axiosFollow.js'></script>
 </body>
 
 </html>

@@ -262,6 +262,9 @@ section{
     margin: 0;
     height: 20%;
 }
+.action-buttons-container a{
+    text-decoration: none;
+}
 
 .action-btn{
     width: 70%;

@@ -745,6 +745,11 @@
   height: 10vh;
   width: 50%;
   display: flex;
+  text-decoration: none;
+}
+.makefs-video-info-chef article p{
+  text-decoration: none;
+  color: black;
 }
 .makefs-video-info-chef img{
   width: 10vh;

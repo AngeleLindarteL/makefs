@@ -12,6 +12,9 @@
     <title>Perfil</title>
     <?php
         include('./components/sessionControl.php');
+        if(isset($_SESSION["chefid"])){
+            header("location: ./chef-view.php");
+        }
     ?>
     <script>
         <?php echo "const id =".$_SESSION['id'] ?>

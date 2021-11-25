@@ -11,15 +11,13 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Admin Panel</title>
     <?php
+        
         include('./components/sessionControl.php');
-        include("./components/tokenControl.php");
         if($_SESSION["rol"]!="administrador"){
-            header("location ./error.html");
+            header("location: ./error.html");
         }
+        include("./components/tokenControl.php");
     ?>
-    <script>
-        <?php echo "const id =".$_SESSION['id'] ?>
-    </script>
 </head>
 <body>
     <?php
@@ -48,7 +46,6 @@
             <div id="tablasData">
                 <div class="tablasDiv" id="tablaUsuarios">
                     <?php
-                        
                         $conn = new Conexion;
                         $conn = $conn->Conectar();
                         $sql = "SELECT * FROM userm WHERE chefid is null order by userid";
@@ -85,10 +82,10 @@
                                         <td>$userdata[namem]</td>
                                         <td>$userdata[username]</td>
                                         <td>$userdata[email]</td>
-                                        <td>$userdata[pic]</td>
+                                        <td>$userdata[midpic]</td>
                                         <td>$userdata[rol]</td>
-                                        <td><img src="./img/deleteUserAdmin.png" alt=""></td>
-                                        <td><img src="./img/editUserAdmin.png" alt=""></td>
+                                        <td><a href="adminMakefs.php? delete=$userdata[userid]"><img src="./img/deleteUserAdmin.png" alt=""></a></td>
+                                        <td><a href="adminMakefs.php? editar=$userdata[userid]"><img id'updateBtn' src="./img/editUserAdmin.png" alt=""></a></td>
                                     </tr>
                                 EOT;
                             }
@@ -96,9 +93,29 @@
                                 </tbody>
                             </table>
                         EOT;
+
+                        /*if(isset($_GET['editar'])){
+                            $editar_id = $_GET['editar'];
+                            $consultaUpdate = "SELECT * FROM userm WHERE userid = :ID";
+                            $dataChange = $conn->prepare($consultaUpdate);
+                            try{
+                                $conn->beginTransaction();
+                                $dataChange->execute(array(":ID"=>$editar_id));
+                                $conn->commit();
+                                $dataChange = $dataChange->fetch(PDO::FETCH_ASSOC);
+                            }catch(Exception $e){
+                                $conn->rollBack();
+                                echo "Error de consulta";
+                            }
+                            echo <<<EOT
+                                <script>
+                                    let userid = $editar_id;
+                                </script>
+                                
+                            EOT;
+                        }*/
                     ?>
                 </div>
-                
                 <div class="tablasDiv" id="tablaChefs">
                     <?php
                         $conn = new Conexion;
@@ -138,11 +155,11 @@
                                         <td>$userdata[namem]</td>
                                         <td>$userdata[username]</td>
                                         <td>$userdata[email]</td>
-                                        <td>$userdata[pic]</td>
+                                        <td>$userdata[midpic]</td>
                                         <td>$userdata[rol]</td>
-                                        <td><img src="./img/deleteUserAdmin.png" alt=""></td>
-                                        <td><img src="./img/editUserAdmin.png" alt=""></td>
-                                        <td><img src="./img/seeRecipesAdmin.png" alt=""></td>
+                                        <td><a href="adminMakefs.php? delete=$userdata[userid]"><img src="./img/deleteUserAdmin.png" alt=""></a></td>
+                                        <td><a href="adminMakefs.php? editar=$userdata[userid]"><img src="./img/editUserAdmin.png" alt=""></a></td>
+                                        <td><a href="adminMakefs.php? see=$userdata[userid]"><img src="./img/seeRecipesAdmin.png" alt=""></a></td>
                                     </tr>
                                 EOT;
                             }
@@ -158,5 +175,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/adminMakefs.js"></script>
+    <script src="./js/axiosAdminMakefs.js"></script>
 </body>
 </html>

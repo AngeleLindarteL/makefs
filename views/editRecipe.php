@@ -226,7 +226,7 @@
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/newRecipe.js"></script>
+    <script src="./js/editRecipe.js"></script>
     <script src="./js/axiosEditRecipe.js"></script>
 </body>
 </html>

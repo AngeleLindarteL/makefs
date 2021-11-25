@@ -24,7 +24,7 @@ let contactTxt2 = document.querySelector("#contact-space-chef-changing");
 updateUser.addEventListener("click", (e)=>{
     e.preventDefault();
     let info = {
-        "id": id,
+        "id": chefid,
         "nombre": namem.value,
         "username": username.value,
         "email": email.value,
@@ -40,7 +40,6 @@ updateUser.addEventListener("click", (e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                    console.log("viva el porno"+namem.value)
                     nameTxt.textContent=namem.value;
                     descriptTxt.textContent=descript.value;
                     contactTxt.textContent="Contacto:"+email.value;
