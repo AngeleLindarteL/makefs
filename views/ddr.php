@@ -126,7 +126,10 @@
                     <div class="first-controls">
                         <button id="mkfv_controlls_play" class="makefs-video-control-button"></button>
                         <button id="mkfv_controlls_mute" class="makefs-video-control-button"></button>
-                        <input type="range" name="volume-range" id="mkfv_controlls_volume" min="0" max="1" step="0.05">
+                        <div class="volume-containers">
+                            <input type="range" name="volume-range" id="mkfv_controlls_volume_rep" min="0" max="1" step="0.05">
+                            <input type="range" name="volume-range" id="mkfv_controlls_volume" min="0" max="1" step="0.05">
+                        </div>
                     </div>
                     <div class="last-controls">
                         <p id="time_counter">00:00-00:00</p>

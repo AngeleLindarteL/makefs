@@ -20,6 +20,7 @@ const time_read = document.querySelector("#progress-bar-time-read");
 const play = document.querySelector("#mkfv_controlls_play");
 const mute = document.querySelector("#mkfv_controlls_mute");
 const volume_slider = document.querySelector("#mkfv_controlls_volume");
+const volume_slider_rep = document.querySelector("#mkfv_controlls_volume_rep");
 const timeCounter = document.querySelector("#time_counter");
 const fullscreen = document.querySelector("#mkfv_controlls_fullscreen");
 const config = document.querySelector("#mkfv_controlls_config");
@@ -235,6 +236,9 @@ const updateProgressTime = () =>{
 
 const muteAction = () => {
     if(video.muted){
+        if (localStorage["common_volume"] == 0) {
+            return;
+        }
         video.muted = false;
         localStorage.setItem("muted", false);
         mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
@@ -246,17 +250,24 @@ const muteAction = () => {
 }
 
 const changeVolume = (vol) => {
-    if (vol < 0){
+    if (vol <= 0){
         video.volume = 0;
+        video.muted = true;
+        localStorage.setItem("muted", true);
+        mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)";
     }
     if (vol > 1){
         video.volume = 1;
     }
-    mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
-    video.muted = false;
+    if (vol > 0) {
+        video.muted = false;
+        localStorage.setItem("muted", false);
+        mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
+    }
     video.volume = vol;
     window.localStorage.setItem("common_volume", video.volume)
     volume_slider.value = video.volume;
+    volume_slider_rep.value = video.volume;
 }
 
 const toggleFullscreen = () => {
@@ -345,6 +356,7 @@ window.addEventListener("keydown", (e) => {
     if (videoPlayerProperties.firstPlayed === false) {
         return;
     }
+    e.preventDefault();
     let keyPressed = e.key;
     switch (keyPressed) {
         case "ArrowUp":
