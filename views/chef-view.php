@@ -54,6 +54,11 @@
             $isTheChef = false;
         }
 
+        if($res['verify']=="yes"){
+            $isVerify = true;
+        }else{
+            $isVerify = false;
+        }
     ?>
 </head>
 <body>
@@ -69,7 +74,7 @@
                         <figure class="profile-pic">
                             <img class="profile-pic-img" src="<?php echo $res['midpic']; ?>">
                             <?php if($isTheChef){ echo "<a id='profile-edit'></a>";} ?>
-                            <img class="verified" src="./img/chef-verified.png">
+                            <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png'>";} ?>
                             <div class="followers"><img src="./img/hico-followers.png"><p><?php echo $seguidores ?> subs</p></div>
                         </figure>
                         <article class="profile-chars">

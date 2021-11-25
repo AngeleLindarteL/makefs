@@ -334,6 +334,7 @@ section{
     margin-top: 10vh;
     max-width: 404px;
     min-width: 404px;
+    justify-content: center;
 }
 
 .chef-char{

@@ -85,6 +85,7 @@
   cursor: pointer;
   background-size: 25vh;
 }
+
 .in-panel-video{
   position: absolute;
   width: 100%;
@@ -940,6 +941,16 @@
   border-radius: 20px;
   padding: 0 1%;
   text-align: center;
+}
+.verified2{
+  position: relative !important;
+  width: 3.5vh !important;
+  height: 3.5vh !important;
+  top: -110% !important;
+  left: -1% !important;
+}
+#foto-chef-ddr{
+  width: 10vh;
 }
 /* Video Animations */
 @keyframes loading-animation {

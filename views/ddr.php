@@ -90,7 +90,24 @@
         header("location: ./error.html");
         exit;
     }
+    $query = "SELECT verify FROM chef WHERE chefid = :chefid";
+    try{
+        $verify = $conn->prepare($query);
+        $verify->execute(array(
+            ":chefid"=>$res['chefid'],
+        ));
+        $verify = $verify->fetchColumn();
+    }catch(Exception $e){
+        header("location: ./error.html");
+        exit;
+    }
+    if($verify=="yes"){
+        $isVerify = true;
+    }else{
+        $isVerify = false;
+    }
     ?>
+    
 
 </head>
 
@@ -192,7 +209,11 @@
                 <div class="makefs-video-info-panels">
                     <h1 class="makefs-video-info-title"><?php echo $res["namer"]?></h1>
                     <a class="makefs-video-info-chef" href="./chef-view.php?chef=<?php echo $res['chefid']; ?>">
-                        <img src="../mediaDB/usersImg/<?PHP echo $res["pic"]?>">
+                        <div id="foto-chef-ddr">
+                            <img src="../mediaDB/usersImg/<?PHP echo $res["minpic"]?>">
+                            <?php if($isVerify){ echo "<img class='verified2' src='./img/chef-verified.png'>";} ?>
+                        </div>
+                        
                         <article>
                             <p> <?php echo $res["username"] ?></p>
                             <p> <b id="followersSection"><?php echo $seguidores ?></b> Seguidores</p>

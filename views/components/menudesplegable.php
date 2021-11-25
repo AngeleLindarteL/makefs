@@ -76,7 +76,7 @@ EOT;
         echo <<<EOT
         <div class="btnsMenuDesp"> 
         <div class="btndesp">
-            <a href="#">
+            <a href="./index.php">
                 <img src="./img/home.png" alt="Hamburguesa" id="homered">
                 <h3>Home</h3>
             </a>
