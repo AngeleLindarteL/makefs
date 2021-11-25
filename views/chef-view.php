@@ -9,6 +9,7 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/chef-view-change.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
@@ -238,6 +239,9 @@
                 <p id="status-chef"></p>
         </div>
     </section>
+    <?php
+        include('./components/footer.php');
+    ?>
     
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>

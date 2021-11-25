@@ -11,6 +11,7 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Receta</title>
 
@@ -327,9 +328,15 @@
             </div>
         </div>
     </section>
+    <?php
+        include('./components/footer.php');
+    ?>
+    
     <script src="./js/index.js"></script>
     <script src="./js/ddr.js"></script>
     <script src='./js/axiosFollow.js'></script>
+    <script src="./js/darkMode.js"></script>
+
 </body>
 
 </html>
