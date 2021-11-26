@@ -140,7 +140,7 @@
 
 .makefs-video-progress{
   width: 99%;
-  margin: 1% 1%;
+  margin: .5% 1%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -745,7 +745,7 @@
 }
 .makefs-video-info-chef{
   height: 10vh;
-  width: 50%;
+  width: 20%;
   display: flex;
   text-decoration: none;
 }

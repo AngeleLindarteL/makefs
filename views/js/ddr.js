@@ -74,6 +74,7 @@ let stepsProperties = {
     isShowing: false,
     actualStepTimeOut: null,
     actualStepShowingInitMin: "0",
+    stepPaused : false,
 }
 
 const formatSeconds = (secs) => {
@@ -105,6 +106,7 @@ const playAction = () => {
         },180);
         interval.isActive = true;
         interval.intervalState = progressBar_startInterval()
+        stepsProperties.stepPaused = false;
         hideControls();
     }else{
         video.pause();
@@ -116,6 +118,7 @@ const playAction = () => {
         interval.isActive = false;
         clearInterval(interval.intervalState)
         interval.intervalState = undefined;
+        stepsProperties.stepPaused = true;
         showControls();
     }
 }
@@ -228,11 +231,12 @@ const updateProgressTime = () =>{
     draggable_progress.style.left = spx_pg * video.currentTime + "px";
     let actualTime = `${formatedTime[0]}:${formatedTime[1]}`;
     timeCounter.textContent = ` ${actualTime} / ${formatSeconds(duration)[0]}:${formatSeconds(duration)[1]}`;
-    if (times.includes(actualTime) && stepsProperties.isActive) {
+    if (times.includes(actualTime) && stepsProperties.isActive && stepsProperties.stepPaused == false){
         let actualTimeObj = timesObj[actualTime];
         if (!actualTimeObj[3]) {
             return;
         }
+        stepsProperties.stepPaused
         showStepAnotation(`${actualTimeObj[0]} - ${actualTimeObj[1]}`, timesArr.indexOf(actualTime)+1,actualTimeObj[2])
     }
 }
