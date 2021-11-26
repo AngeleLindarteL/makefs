@@ -25,7 +25,7 @@
                 ":steps"=>$steps,
                 ":video"=>'chef-'.$infoRecipe->chefid.$infoRecipe->video,
                 ":imagen"=>'chef-'.$infoRecipe->chefid.$infoRecipe->imagen,
-                ":duration"=>1222,//no se como verga sacar la duracion del video
+                ":duration"=>$infoRecipe->duration,//no se como verga sacar la duracion del video
                 ":tags"=>$etiquetas,
                 ":regionTag"=>$infoRecipe->regionTag,
             ));

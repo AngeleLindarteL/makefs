@@ -85,7 +85,7 @@
                             <img class="profile-pic-img" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
                             <?php if($isTheChef){ echo "<a id='profile-edit'></a>";} ?>
                             <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png'>";} ?>
-                            <div class="followers"><img src="./img/hico-followers.png"><p><?php echo $seguidores ?> subs</p></div>
+                            <div class="followers"><img src="./img/hico-followers.png"><p><?php echo $seguidores ?></p></div>
                         </figure>
                         <article class="profile-chars">
                             <h2 id="chef-name"><?php echo $res["namem"]?></h2>
@@ -143,10 +143,28 @@
                                     </a>
                                 </div>
                         EOT;
-                            if($isTheChef){ echo "<a class='edit-template'></a>";}
+                            if($isTheChef){ echo "<a class='edit-template' href='./editRecipe.php?receta=$dataRecipes[recipeid]' ></a>";}
                         echo "</div>";
                         
                     }
+                    if($dataRecipes == ''){
+                        if($isTheChef){
+                            echo <<<EOT
+                                <div id="notFoundRecipes">
+                                    <img src="./img/notFoundRecipes.png">
+                                    <h3>No tienes recetas aún! Empieza a subir contenido!</h3>
+                                </div>
+                            EOT;
+                        }else{
+                            echo <<<EOT
+                                <div id="notFoundRecipes">
+                                    <img src="./img/notFoundRecipes.png">
+                                    <h3>Este chef no tiene recetas!</h3>
+                                </div>
+                            EOT;
+                        }
+                    }
+                   
                 ?>
             </div>
         </div>

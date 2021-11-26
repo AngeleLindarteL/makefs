@@ -21,7 +21,7 @@ deleteRecipe.addEventListener("click",(e)=>{
                 console.log(res);
                 if(res.status==200){
                    alert("Receta Eliminada");
-                   window.location.href="../views/chef-view.php";
+                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
                 }
             }
         )
@@ -73,7 +73,7 @@ uploadRecipe.addEventListener("click", (e)=>{
                 console.log(res);
                 if(res.status==200){
                    alert("Actualizacion de receta exitosa");
-                   window.location.href="../views/chef-view.php";
+                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
                 }
             }
         )

@@ -90,7 +90,7 @@ beChefbtn.addEventListener("click",(e)=>{
         axios.post("../controllers/updateDataUsers/beChefController.php",infoBeChef).then(
             res=> {
                 console.log(res);
-                window.location.href="../views/chef-view.php";
+                window.location.href=`../views/chef-view.php?chef=${res.data}`;
             }
         )
         

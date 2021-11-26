@@ -41,7 +41,7 @@
         $steps = json_decode(base64_decode($data["steps"]));
         echo <<<EOT
             <script>
-                const chefid =$_SESSION[chefid]; 
+                const chefid =$data[chefid]; 
                 const recipeid =$idRecipe;
             </script>
         EOT;
