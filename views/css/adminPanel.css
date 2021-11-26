@@ -250,4 +250,9 @@ thead tr{
 }
 td img{
     width: 4vh;
+    cursor: pointer;
+}
+td a{
+    width: 100%;
+    height: 100%;
 }

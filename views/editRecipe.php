@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
@@ -224,9 +225,13 @@
             </div>
         </div>
     </section>
+    <?php
+        include('./components/footer.php');
+    ?>
     <script src="./js/index.js"></script>
     <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/newRecipe.js"></script>
+    <script src="./js/editRecipe.js"></script>
     <script src="./js/axiosEditRecipe.js"></script>
+    <script src="./js/darkMode.js"></script>
 </body>
 </html>

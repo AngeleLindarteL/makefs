@@ -1,5 +1,4 @@
 /*  ----------------------------------------------------------------------------------------------------- PRECONFIGS */
-
 :root{
     --color1: #FFBE26;
     --color2: #E08C1D;
@@ -262,6 +261,9 @@ section{
     margin: 0;
     height: 20%;
 }
+.action-buttons-container a{
+    text-decoration: none;
+}
 
 .action-btn{
     width: 70%;
@@ -331,6 +333,7 @@ section{
     margin-top: 10vh;
     max-width: 404px;
     min-width: 404px;
+    justify-content: center;
 }
 
 .chef-char{

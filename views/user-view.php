@@ -8,10 +8,14 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/user-view.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Perfil</title>
     <?php
         include('./components/sessionControl.php');
+        if(isset($_SESSION["chefid"])){
+            header("location: ./chef-view.php");
+        }
     ?>
     <script>
         <?php echo "const id =".$_SESSION['id'] ?>
@@ -153,11 +157,15 @@
             </div>
         </div>
     </section>
+    <?php
+        include('./components/footer.php');
+    ?>
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/chageInfoUser.js"></script>
     <script src="./js/axiosUser.js"></script>
     <script src="./js/upload_pic_user_view.js"></script>
+    <script src="./js/darkMode.js"></script>
 </body>
 </html>

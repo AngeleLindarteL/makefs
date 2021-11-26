@@ -13,6 +13,26 @@ const btnLessIngredients = document.querySelector("#lessIngrediens");
 const btnLessEtiquetas = document.querySelector("#lessEtiquetas");
 const btnLessSteps = document.querySelector("#lessSteps");
 
+let menuDelete = document.querySelector("#deleteRecipeBtn");
+let closeDeleteMenu = document.querySelector("#close-deleteRecipe");
+let sectionDeleteRecipe = document.querySelector("#deleteRecipeConfirm");
+
+menuDelete.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionDeleteRecipe.style.display="flex";
+    setTimeout(()=>{
+        sectionDeleteRecipe.style.opacity="100%";
+    },300)
+})
+
+closeDeleteMenu.addEventListener("click",(e)=>{
+    e.preventDefault();
+    sectionDeleteRecipe.style.opacity="0";
+    setTimeout(()=>{
+        sectionDeleteRecipe.style.display="none";
+    },300)
+})
+
 
 btnLessSteps.addEventListener("click",()=>{
     let countStepsDivs = stepsSpace.childElementCount;

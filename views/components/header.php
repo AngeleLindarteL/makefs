@@ -1,7 +1,7 @@
 <?php
     if(isset($_SESSION["chefid"])){
         $ischef = true;
-        $userhome = "../views/chef-view.php";
+        $userhome = "../views/chef-view.php?chef=$_SESSION[chefid]";
     }else{
         $userhome = "../views/user-view.php";
         $ischef = false;

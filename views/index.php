@@ -8,6 +8,7 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/footer.css">
     <title>Inicio Makef's</title>
     <?php
         session_start();
@@ -142,8 +143,12 @@
             
         </div>
     </section>
+    <?php
+        include('./components/footer.php');
+    ?>
     <script src="./js/index.js"></script>
     <script src="./js/categoriesmenu.js"></script>
     <script src="./js/menuDesplegable.js"></script>
+    <script src="./js/darkMode.js"></script>
 </body>
 </html>
