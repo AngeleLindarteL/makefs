@@ -37,7 +37,6 @@
                 <div class="divUser-view" id="firstdiv">
                     <figure class="profile-pic-user">
                         <img class="profile-pic-img-user" src="<?php echo $_SESSION['midpic']; ?>">
-                        <img class="verified-user" src="./img/chef-verified.png">
                         <button id="profile-edit"></button>
                     </figure>
                     <section class="divUser-view" id="cambiarFoto">
@@ -60,7 +59,7 @@
                         <button id="profile-close-deleteAccount"></button>
                         <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount" method="POST">
                             <h2>BORRAR CUENTA</h2>
-                            <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
+                            <h3>Esta decisión es permanente, ingresa tu contraseña para probar que eres tu.</h3>
                             <input type="text" class="passInput" placeholder="Contraseña" name="deleteUserPass">
                             <input type="submit" class="passInput" id="deleteAccountbtn" name="deleteUser" value="Borrar cuenta">
                         </form>

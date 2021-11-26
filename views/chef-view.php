@@ -73,7 +73,7 @@
                 <div class="chef-char">
                     <div class="char-template">
                         <figure class="profile-pic">
-                            <img class="profile-pic-img" src="<?php echo $res['midpic']; ?>">
+                            <img class="profile-pic-img" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
                             <?php if($isTheChef){ echo "<a id='profile-edit'></a>";} ?>
                             <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png'>";} ?>
                             <div class="followers"><img src="./img/hico-followers.png"><p><?php echo $seguidores ?> subs</p></div>
@@ -147,7 +147,7 @@
         <div id="chefContainer">
             <div class="divChef-view" id="firstdiv-chef">
                 <figure class="profile-pic-chef">
-                        <img class="profile-pic-img-chef" src="<?php echo $res['midpic']; ?>">
+                        <img class="profile-pic-img-chef" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
                         <img class="verified-chef" src="./img/chef-verified.png">
                         <button id="profile-edit-photo"></button>
                 </figure>
@@ -249,5 +249,6 @@
     <script src="./js/chageInfoUserChef.js"></script>
     <script src="./js/axiosChef.js"></script>
     <script src="./js/darkMode.js"></script>
+    <script src="./js/upload_pic_chef.js"></script>
 </body>
 </html>
