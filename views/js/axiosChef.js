@@ -24,7 +24,7 @@ let contactTxt2 = document.querySelector("#contact-space-chef-changing");
 updateUser.addEventListener("click", (e)=>{
     e.preventDefault();
     let info = {
-        "id": chefid,
+        "id": id,
         "nombre": namem.value,
         "username": username.value,
         "email": email.value,
