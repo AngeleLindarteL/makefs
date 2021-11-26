@@ -27,6 +27,7 @@ $originalName = $_FILES["photo"]["name"];
 $_FILES["photo"]["name"] = "temp-id-$userData->id-".$_FILES["photo"]["name"];
 $uploaded_file = $directory.basename($_FILES["photo"]["name"]);
 
+
 if ($_FILES["photo"]["type"] === "image/gif") {
     echo "error_unsuported_type";
     exit;
@@ -38,6 +39,18 @@ if (getimagesize($_FILES["photo"]["tmp_name"]) == false){
 }
 if ($_FILES["photo"]["size"] > 3000000){
     echo "error_too_large";
+    exit;
+}
+
+// Deleting old images
+try{
+    if ($_SESSION["midpic"] != "../mediaDB/usersImg/makefsUser.png" && $_SESSION["midpic"] != "../mediaDB/usersImg/makefsUser.png"
+    ){
+        unlink($_SESSION["midpic"]);
+        unlink($_SESSION["minpic"]);
+    }
+}catch(Exception $e){
+    echo "error_server";
     exit;
 }
 
@@ -104,19 +117,7 @@ try{
     echo "error_server";
     exit;
 }
-try{
-    if (isset($_SESSION["midpic"]) && $_SESSION["midpic"] != "makefsUser.png" && 
-        isset($_SESSION["minpic"]) && $_SESSION["midpic"] != "makefsUser.png" &&
-        isset($_SESSION["minpic"]) != $minImageName && $_SESSION["midpic"] != $midImageName
-    ){
-        unlink($directory.$_SESSION["midpic"]);
-        unlink($directory.$_SESSION["minpic"]);
-    }
-    unlink($uploaded_file);
-}catch(Exception $e){
-    echo "error_server";
-    exit;
-}
+unlink($uploaded_file);
 $query = "UPDATE userm SET midpic = :midpic, minpic = :minpic WHERE userid = :id";
 try{
     $conn = new Conexion();
