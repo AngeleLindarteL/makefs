@@ -1002,3 +1002,97 @@
     background-color: transparent;
   }
 }
+/*----Responsive----*/
+@media (max-width:970px){
+  .makefs-steps-info-container{
+    width: 80%;
+  }
+  .makes-recipe-tags-wrapper .makefs-recipe-tag{
+    margin: 5% .2%;
+  }
+  .makefs-video-info.chef{
+    margin-top: 2vh;
+  }
+  .makefs-video-interactions{
+    margin-top: 2vh;
+  }
+  .makefs-recommended-panels{
+    width: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .makefs-video-ingredients-ad-wrapper{
+    width: 100%;
+  }
+  .in-video-template{
+    height: 35vh;
+  }
+  #follow-button{
+    width: 24vw;
+  }
+  .makefs-video-info-title{
+    margin-top: 6vh;
+  }
+  .in-recipe-recommended-container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:450px){
+  .makes-recipe-tags-wrapper .makefs-recipe-tag{
+    width: 26%;
+    right: 0;
+    margin: 7% .2%; 
+  }
+  .makefs-steps-info-container{
+    width: 100%;
+  }
+  .makefs-media-player{
+    height: 35vh;
+  }
+  .makefs-video-info-chef{
+    width: 100%;
+  }
+  .makefs-video-info-title{
+    margin-top: 3vh;
+  }
+  .makefs-video-star-valoration{
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .makefs-video-interactions{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .makefs-video-into-chef{
+    width: 100%;
+  }
+  #follow-button{
+    width: 50vw;
+  }
+}
+@media (max-height:810px){
+  .makes-recipe-tags-wrapper .makefs-recipe-tag{
+    height: 3vh;
+    width: 10%;
+    width: 27%;
+  }
+  .makefs-video-report-save button{
+    width: 60%;
+  }
+  #follow-button{
+    height: 5vh;
+  }
+  
+}
+@media (max-height:670px){
+  .makes-recipe-tags-wrapper .makefs-recipe-tag{
+    margin: 4% .2%;
+  }
+  
+}

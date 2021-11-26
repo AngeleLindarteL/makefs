@@ -16,8 +16,12 @@
     <title>Receta</title>
 
     <?php 
+    include("../models/conexion.php");
     session_start();
-    include("./components/tokenControl.php");
+    if(empty($_SESSION['id'])){
+        $_SESSION['id']=0;
+        $_SESSION['chefid']=0;
+    }
     if (!isset($_GET["video"]) || empty($_GET["video"])){
         header("location: ./error.html");
         exit;

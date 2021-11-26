@@ -7,9 +7,11 @@
     if($tipo == 'image/jpeg' || $tipo == 'image/png'){
         $resultado = move_uploaded_file($imagen["tmp_name"], $folderImg.'/chef-'.$_SESSION["chefid"].$imagen["name"]);
         if ($resultado) {
-            echo "Subido con éxito $tipo";
+            http_response_code(200);
+            $jsonEcho = json_encode(array("msg"=>"success_200"));
+            echo $jsonEcho;
         } else {
-            echo "Error al subir archivo";
+            echo json_encode(array("msg"=>"error_upload"));
         }
     }
 ?>

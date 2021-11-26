@@ -13,11 +13,15 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
-        include('./components/sessionControl.php');
-        include("./components/tokenControl.php");
+        include("../models/conexion.php");
+        session_start();
         if (!isset($_GET["chef"]) || empty($_GET["chef"])){
             header("location: ./error.html");
             exit;
+        }
+        if(empty($_SESSION['id'])){
+            $_SESSION['id']=0;
+            $_SESSION['chefid']=0;
         }
         $chefId = $_GET["chef"];
         $conn = new Conexion();
@@ -47,7 +51,6 @@
             header("location: ./error.html");
             exit;
         }
-        
 
         if($_SESSION["chefid"]==$res["chefid"]){
             $isTheChef = true;
@@ -74,7 +77,7 @@
                 $followid = null;
             }
         }catch(Exception $e){
-            header("location: ./error.html");
+            $followid = null;
             exit;
         }
         echo <<<EOT

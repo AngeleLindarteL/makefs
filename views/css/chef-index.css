@@ -520,10 +520,11 @@ section{
     display: flex;
     flex-wrap: wrap;
     place-content: flex-start;
-    justify-content: flex-start;
+    justify-content: center;
     height: 92vh;
     overflow-y: scroll;
     background-size: contain;
+    
 }
 .edit-recipe-container::-webkit-scrollbar {
     width: .6em;
