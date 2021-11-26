@@ -37,7 +37,7 @@
             <div id="userNoChefContainer">
                 <div class="divUser-view" id="firstdiv">
                     <figure class="profile-pic-user">
-                        <img class="profile-pic-img-user" src="<?php echo $_SESSION['midpic']; ?>">
+                        <img class="profile-pic-img-user" src="../mediaDB/usersImg/<?php echo $_SESSION['midpic']; ?>">
                         <button id="profile-edit"></button>
                     </figure>
                     <section class="divUser-view" id="cambiarFoto">

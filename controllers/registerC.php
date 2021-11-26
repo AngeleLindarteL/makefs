@@ -17,12 +17,12 @@ include("../models/conexion.php");
             $connObj = new Conexion;
             $conexion= $connObj->Conectar();
             if($conexion){
-                $sql = "INSERT INTO userm(namem,username,email,passwordm,birthdate) VALUES(:nombre,:username,:email,:pass,:birthdate)";
+                $sql = "INSERT INTO userm(namem,username,email,passwordm,birthdate,midpic,minpic) VALUES(:nombre,:username,:email,:pass,:birthdate,:midpic,:minpic)";
                 $resultado = $conexion->prepare($sql);
 
                 try{
                     $conexion->beginTransaction();
-                    $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date));
+                    $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date,"midpic" => "makefsUser.png","minpic" => "makefsUser.png"));
                     $conexion->commit();
                     echo "registro exitoso";
                     header("location: ../views/login.php");

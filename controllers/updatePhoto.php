@@ -44,10 +44,10 @@ if ($_FILES["photo"]["size"] > 3000000){
 
 // Deleting old images
 try{
-    if ($_SESSION["midpic"] != "../mediaDB/usersImg/makefsUser.png" && $_SESSION["midpic"] != "../mediaDB/usersImg/makefsUser.png"
+    if ($_SESSION["midpic"] != "makefsUser.png" && $_SESSION["midpic"] != "makefsUser.png"
     ){
-        unlink($_SESSION["midpic"]);
-        unlink($_SESSION["minpic"]);
+        unlink("../mediaDB/usersImg/".$_SESSION["midpic"]);
+        unlink("../mediaDB/usersImg/".$_SESSION["minpic"]);
     }
 }catch(Exception $e){
     echo json_encode(array("msg"=>"error_server"));
@@ -134,6 +134,6 @@ try{
 $_SESSION["minpic"] = "user-$userData->id-min-$originalName";
 $_SESSION["midpic"] = "user-$userData->id-mid-$originalName";
 http_response_code(200);
-$jsonEcho = json_encode(array("msg"=>"success_200","newMidImg"=>$_SESSION["midpic"],"newMinImg"=>$_SESSION["minpic"]));
+$jsonEcho = json_encode(array("msg"=>"success_200","newMidImg"=>"../mediaDB/usersImg/".$_SESSION["midpic"],"newMinImg"=>"../mediaDB/usersImg/".$_SESSION["minpic"]));
 echo $jsonEcho;
 ?>

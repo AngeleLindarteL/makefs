@@ -40,6 +40,7 @@ const upload = (inputTypeFile) => {
     imageFormated.append("photo",image);
     axiosImage.post("../controllers/updatePhoto.php", imageFormated)
     .then(res =>{
+        console.log(res)
         if (res.data.msg == "success_200") {
             notification_container.classList.replace("loading","success");
             notification_msg.textContent = notifiactionStates.updated_photo;
