@@ -47,12 +47,7 @@
             header("location: ./error.html");
             exit;
         }
-        echo <<<EOT
-        <script>
-            const chefid = $res[chefid];
-            const id = $res[userid];
-        </script>
-        EOT;
+        
 
         if($_SESSION["chefid"]==$res["chefid"]){
             $isTheChef = true;
@@ -65,6 +60,30 @@
         }else{
             $isVerify = false;
         }
+        $query = "SELECT * FROM follows WHERE chefid = :chefid AND followerid = :followerid";
+        try{
+            $follow = $conn->prepare($query);
+            $follow->execute(array(
+                ":chefid"=>$res['chefid'],
+                ":followerid"=>$_SESSION['id']
+            ));
+            $follow = $follow->fetch(PDO::FETCH_ASSOC);
+            if(isset($follow["idfollow"])){
+                $followid = $follow["idfollow"];
+            }else{
+                $followid = null;
+            }
+        }catch(Exception $e){
+            header("location: ./error.html");
+            exit;
+        }
+        echo <<<EOT
+        <script>
+            const chefid = $res[chefid];
+            const id = $res[userid];
+            const followerid = $_SESSION[id];
+        </script>
+        EOT;
     ?>
 </head>
 <body>
@@ -85,10 +104,10 @@
                             <img class="profile-pic-img" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
                             <?php if($isTheChef){ echo "<a id='profile-edit'></a>";} ?>
                             <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png'>";} ?>
-                            <div class="followers"><img src="./img/hico-followers.png"><p><?php echo $seguidores ?></p></div>
+                            <div class="followers" ><img src="./img/hico-followers.png"><p id="followersSection" ><?php echo $seguidores ?></p></div>
                         </figure>
                         <article class="profile-chars">
-                            <h2 id="chef-name"><?php echo $res["namem"]?></h2>
+                            <h2 id="chef-name"><?php echo $res["namem"];?></h2>
                             <p id="username-space-chef" >@<?php echo $res["username"]?></p>
                             <div class="summary-info">
                                 <article><span></span><p>5.0 Valoración</p></article>
@@ -102,6 +121,15 @@
                                 <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
                                 <a href="<?php echo $res["youtube"] ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
                             </ul>
+                            <?php
+                                if(!$isTheChef){
+                                    if(isset($followid)){
+                                        echo "<button id='follow-button'>siguiendo</button>";
+                                    }else{
+                                        echo "<button id='follow-button'>seguir</button>";
+                                    }
+                                }
+                            ?>  
                         </article>
                     </div>
                 </div>
@@ -127,6 +155,7 @@
                         echo "error video $e";
                         exit;
                     }
+                    
                     while($dataRecipes = $recipesSQL->fetch(PDO::FETCH_ASSOC)){
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
@@ -145,9 +174,9 @@
                         EOT;
                             if($isTheChef){ echo "<a class='edit-template' href='./editRecipe.php?receta=$dataRecipes[recipeid]' ></a>";}
                         echo "</div>";
-                        
+                        $recipe = true;
                     }
-                    if($dataRecipes == ''){
+                    if(empty($dataRecipes["recipeid"]) && empty($recipe)){
                         if($isTheChef){
                             echo <<<EOT
                                 <div id="notFoundRecipes">
@@ -274,5 +303,6 @@
     <script src="./js/axiosChef.js"></script>
     <script src="./js/darkMode.js"></script>
     <script src="./js/upload_pic_chef.js"></script>
+    <script src="./js/axiosFollow.js"></script>
 </body>
 </html>
