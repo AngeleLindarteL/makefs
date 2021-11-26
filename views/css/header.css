@@ -436,7 +436,7 @@ header{
         right: 0;
     }
     #userlog img{
-        right: -46%;
+        right: 0%;
     }
 }
 @media (max-width:335px){
@@ -444,8 +444,8 @@ header{
         width: 88vw;
     }
     #userlog img{
-        width: 313%;
-        right: -34px;
+        width: 100%;
+        right: 0px;
     }
 }
 @media (max-width:285px){
@@ -453,7 +453,7 @@ header{
         width: 88vw;
     }
     #userlog img{
-        right: -38px;
+        right: 0px;
     }
     #user_selection::before{
         right: 6%;
