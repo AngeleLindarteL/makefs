@@ -1,0 +1,59 @@
+.makefs-notification{
+    box-shadow: 0 0 10px 0px #00000096;
+    position: fixed;
+    justify-content: left;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    height: 10vh;
+    padding: 1%;
+    width: 35%;
+    margin: 1%;
+    top: 8vh;
+    right: 0;
+    transition: .2s;
+}
+.makefs-notification-rep{
+    width: 8vh;
+    height: 8vh;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0;
+    margin: 0 2%;
+    margin-right: 3%;
+}
+.loading{
+    background-color: royalblue;
+    color: white;
+}
+.loading .makefs-notification-rep{
+    background-image: url(../iconos/loading.png);
+    animation: rotateDeg .5s infinite;
+}
+.success{
+    background-color: rgb(122, 216, 113);
+    color: white;
+}
+.success .makefs-notification-rep{
+    background-image: url(../iconos/success.png);
+}
+.error{
+    background-color: rgb(233, 94, 94);
+    color: white;
+}
+.error .makefs-notification-rep{
+    background-image: url(../iconos/error.png);
+}
+.notification-title{
+    text-transform: uppercase;
+}
+
+@keyframes rotateDeg {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}

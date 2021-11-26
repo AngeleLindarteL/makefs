@@ -41,6 +41,7 @@
     $step_times_json = base64_decode($res["steps"]);
     $timesDecoded = json_decode($step_times_json,true);
     $times = "";
+    $timesFormatObject = "";
     foreach ($timesDecoded as $timeArray){
         $times = $times . $timeArray[1] ."//";
         $timesFormatObject .= "~^^~$timeArray[1]~^^~$timeArray[2]~^^~$timeArray[0][-|-]";
