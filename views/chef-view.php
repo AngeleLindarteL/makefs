@@ -31,6 +31,10 @@
             header("location: ./error.html");
             exit;
         }
+        
+        if(empty($res) || !isset($res)){
+            header("location: ./error.html");
+        }
 
         $query = "SELECT COUNT(*) FROM follows WHERE chefid = :chefid";
         try{
