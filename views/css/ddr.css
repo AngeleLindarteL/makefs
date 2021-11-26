@@ -53,6 +53,7 @@
   transition: .3s;
   justify-content: space-between;
   padding-top: .2%;
+  padding-bottom: 1%;
 }
 .makefs-video-controls:hover{
   opacity: 100%;
@@ -139,7 +140,7 @@
 
 .makefs-video-progress{
   width: 99%;
-  margin: 0 1%;
+  margin: 1% 1%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -401,7 +402,7 @@
   z-index: 1;
 }
 #mkfv_controlls_volume{
-  height: 80%;
+  height: 70%;
   opacity: 0;
 }
 #mkfv_controlls_volume:hover{
@@ -513,26 +514,23 @@
 /* Steps-symbolic info styles */
 
 #makefs-steps-info-button{
-  margin-top: 4%;
-  width: 90%;
-  overflow: visible;
-  border: none;
-  background: #FF2C29;
-  padding: 1.5vh;
-  border-radius: 10px;
-  color: white;
-  cursor: pointer;
-  background-image: url(./iconos/cloud-upload.png);
-  padding: 5% 0;
+  width: 3vh;
+  height: 3vh;
+  border-radius: 50%;
+  background-image: url(../img/video-controls/steps.png);
   background-repeat: no-repeat;
-  background-size: 12%;
-  background-position-y: center;
-  background-position-x: 96%;
-  text-align: left;
-  padding-left: 2%;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.2em;
+  background-position: center;
+  background-size: 100%;
+  position: absolute;
+  top: 2.6%;
+  right: 1%;
+  z-index: 12;
+  border: none;
+  background-color: #00000024;
+  box-shadow: 0 0 6px 0px #00000038;
+  opacity: 50%;
+  transition: .1s;
+  display: flex;
 }
 #makefs-steps-info-button:hover{
   cursor: pointer;
@@ -764,6 +762,7 @@
   box-shadow: 0 0 10px 0px #0000005c;
 }
 .makefs-video-info-chef article{
+  margin-left: 2%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -931,6 +930,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 6%;
 }
 .makefs-ingredient{
   width: 41%;

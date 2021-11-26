@@ -429,7 +429,7 @@ makefsControlsContainer.addEventListener("mouseleave", () => {
 
 progressBar.addEventListener("mouseenter", (e) => {
     videoPlayerProperties.seeking = true;
-    time_read.style.top = mediaPlayer.clientHeight - makefsControlsContainer.clientHeight - progressBar.clientHeight - 22 + "px";
+    time_read.style.top = mediaPlayer.clientHeight - makefsControlsContainer.clientHeight - progressBar.clientHeight - 10 + "px";
     time_read.style.display = "flex";
     time_read.style.opacity = "100%";
 })
@@ -719,5 +719,5 @@ allStarsContainer.forEach((starCont) => {
 const stepListAll = document.querySelectorAll(".makefs-ingredient");
 
 if (stepListAll.length % 2 == 1) {
-    stepListAll[stepListAll.length - 1].style.width = "92%";
+    stepListAll[stepListAll.length - 1].style.width = "82%";
 }
