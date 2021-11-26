@@ -33,11 +33,11 @@
             echo <<<EOT
                 <div class="header_logreg">
                     <a id="userlog">
-                        <img src="$_SESSION[pic]">
+                        <img src="$_SESSION[minpic]">
                     </a>
                     <ul id="user_selection" class="userSelectClose">
                         <div class="userMiniInfo">
-                            <img src="$_SESSION[pic]">
+                            <img src="$_SESSION[minpic]">
                             <div class="infoUser">
                                 <h6>$_SESSION[username]</h6>
                                 <p>$_SESSION[email]</p>

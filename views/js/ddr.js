@@ -45,6 +45,8 @@ const anotationStepDetail = document.querySelector("#step-annotation-detail");
 const anotationStepShowMore = document.querySelector("#step-annotation-show-more");
 const anotationStepShowMoreGradient = document.querySelector("#step-annotation-show-more-gradient");
 
+//  Preconfig antiBug for steps button
+stepsButton.style.display = "none";
 // Action functions -----------------------------------------------------
 
 let interval = {

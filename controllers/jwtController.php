@@ -1,6 +1,7 @@
 <?php
-    include("../vendor/autoload.php");
-    include("../models/conexion.php");
+
+    include_once "../vendor/autoload.php";
+    include_once "../models/conexion.php";
     use Firebase\JWT\JWT;
     use Firebase\JWT\ExpiredException;
     use Firebase\JWT\SignatureInvalidException;

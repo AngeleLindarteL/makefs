@@ -512,23 +512,26 @@
 /* Steps-symbolic info styles */
 
 #makefs-steps-info-button{
-  width: 3vh;
-  height: 3vh;
-  border-radius: 50%;
-  background-image: url(../img/video-controls/steps.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  position: absolute;
-  top: 2.6%;
-  right: 1%;
-  z-index: 12;
+  margin-top: 4%;
+  width: 90%;
+  overflow: visible;
   border: none;
-  background-color: #00000024;
-  box-shadow: 0 0 6px 0px #00000038;
-  opacity: 50%;
-  transition: .1s;
-  display: none;
+  background: #FF2C29;
+  padding: 1.5vh;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  background-image: url(./iconos/cloud-upload.png);
+  padding: 5% 0;
+  background-repeat: no-repeat;
+  background-size: 12%;
+  background-position-y: center;
+  background-position-x: 96%;
+  text-align: left;
+  padding-left: 2%;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 #makefs-steps-info-button:hover{
   cursor: pointer;
@@ -926,11 +929,12 @@
 .makefs-ingredient{
   width: 41%;
   margin: 1%;
-  height: 4vh;
+  min-height: 4vh;
   border: 1px solid;
   color: var(--color5);
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   border-radius: 20px;
   padding: 0 1%;

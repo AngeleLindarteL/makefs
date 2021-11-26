@@ -61,8 +61,11 @@ include("./jwtController.php");
                     $descript = $user["descript"];
                     $_SESSION['description'] = $descript;
 
-                    $pic = $user["pic"];
-                    $_SESSION["pic"] = "../mediaDB/usersImg/".$pic;
+                    $pic = $user["midpic"];
+                    $_SESSION["midpic"] = "../../mediaDB/usersImg/".$pic;
+
+                    $pic = $user["minpic"];
+                    $_SESSION["minpic"] = "../../mediaDB/usersImg/".$pic;
 
                     $chefid = $user["chefid"];
                     $_SESSION["chefid"]= $chefid;

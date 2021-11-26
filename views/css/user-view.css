@@ -36,7 +36,7 @@ section{
 }
 
 #chef-view{
-    height: 100vh;
+    height: 98vh;
     width: 100%;
     max-height: 2500px;
     text-align: center;
@@ -51,7 +51,7 @@ section{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 .profile-pic-user {
     position: relative;
@@ -90,8 +90,8 @@ section{
     align-items: center;
 }
 #firstdiv{
-    height: 20vh;
-    justify-content: space-evenly;
+    height: fit-content;
+    justify-content: space-between;
 }
 #importantInfoUser{
     width: 100%;
@@ -101,14 +101,13 @@ section{
     align-items: center;
 }
 .profile-chars-user {
-    width: 100%;
+    width: 62%;
     height: fit-content;
     color: var(--color5);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    max-width: 500px;
 }
 #user-name {
     color: var(--color5);
@@ -127,7 +126,7 @@ section{
     margin: 0;
 }
 .importantDataUser{
-    height: 45vh;
+    height: fit-content;
     align-items: flex-start;
 }
 #socialMediaUser{
@@ -310,6 +309,8 @@ section{
     display: none;
     opacity: 0;
     transition: .3s;
+    left: 0;
+    top: 0;
 }
 
 #fotoChange{
@@ -329,31 +330,54 @@ section{
 }
 
 .updateFotoInput{
-    width: 90%;
+    width: 70%;
     border: 2px solid #FF2C29;
     border-radius: 10px;
+    padding: 2.5vh 0 2.5vh 20%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;   
 }
 .updateFotoInput::before {
-    content: 'Selecciona la foto';
+    content: '';
     display: inline-block;
     background: #FF2C29;
     color: white;
     border-right: 2px solid #FF2C29;
-    padding: 15px 8px;
     cursor: pointer;
     font-size: 1.2em;
     transition: .5s;
+    height: 100%;
+    width: 17%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    background-image: url(../iconos/camera.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
 }
 #submitFoto{
-    margin-top: 10%;
-    width: 50%;
+    margin-top: 4%;
+    width: 90%;
     overflow: visible;
     border: none;
     background: #FF2C29;
-    padding: 1.5vh;
-    border-radius:10px;
+    border-radius: 10px;
     color: white;
     cursor: pointer;
+    padding: 2.5vh 0;
+    padding-left: 2%;
+    background-position-y: center;
+    background-position-x: 95%;
+    background-repeat: no-repeat;
+    background-image: url(../iconos/cloud-upload.png);
+    background-size: 10%;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 #profile-edit-close-chef{
     position: absolute;
@@ -485,6 +509,7 @@ section{
     display: none;
     opacity: 0;
     transition: .3s;
+    left: 0;
 }
 #deleteAccount{
     background-color: white;

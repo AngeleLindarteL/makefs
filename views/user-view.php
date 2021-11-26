@@ -23,19 +23,23 @@
         include('./components/header.php');
         include('./components/menudesplegable.php');
     ?>
+    <div class="makefs-notification loading">
+        <figure class="makefs-notification-rep"></figure>
+        <p class="makefs-notification-info"></p>
+    </div>
     <section id="chef-view">
         <div class="makefsContainer userContainer">
             <div id="userNoChefContainer">
                 <div class="divUser-view" id="firstdiv">
                     <figure class="profile-pic-user">
-                            <img class="profile-pic-img-user" src="<?php echo $_SESSION['pic']; ?>">
-                            <img class="verified-user" src="./img/chef-verified.png">
-                            <button id="profile-edit"></button>
+                        <img class="profile-pic-img-user" src="<?php echo $_SESSION['midpic']; ?>">
+                        <img class="verified-user" src="./img/chef-verified.png">
+                        <button id="profile-edit"></button>
                     </figure>
                     <section class="divUser-view" id="cambiarFoto">
                         <button id="profile-edit-close-chef"></button>
-                        <form action="" id="fotoChange" method="POST">
-                            <input type="file" class="updateFotoInput" name="profilepic">
+                        <form id="fotoChange" method="POST">
+                            <input type="file" class="updateFotoInput" name="photo" accept="image/png, image/jpeg image/jfif image/jpg" />
                             <input type="submit" name="changeFoto" id="submitFoto" value="Cambiar foto">
                         </form>
                     </section>
@@ -154,5 +158,6 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/chageInfoUser.js"></script>
     <script src="./js/axiosUser.js"></script>
+    <script src="./js/upload_pic_user_view.js"></script>
 </body>
 </html>
