@@ -82,3 +82,8 @@
   align-items: center;
   text-align: center;
 }
+@media (max-width:690px){
+  .footer{
+      margin-top: 32vh;
+  }
+}
