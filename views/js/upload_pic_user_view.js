@@ -3,7 +3,7 @@ const photoInput= document.querySelector(".updateFotoInput");
 const notifiactionStates = {
     loading_photo: "Se esta actualizando tu foto, espera un momento porfavor",
     updated_photo: "¡Esta Hecho! Tu foto se actualizo con éxito.",
-    error_photo_size: "La imagen que subiste es muy pesada, intenta con otra más ligera (limite: 2MB)",
+    error_photo_size: "La imagen que subiste es muy pesada, intenta con otra más ligera (limite: 3MB)",
     error_photo_unsupported: "El archivo que subiste esta dañado o el tipo de archivo que subiste no esta soportado",
     error_photo_aspect_ratio: "La imagen que subiste tiene una gran desporporcion, porfavor intenta con otra",
     error_photo_server_error: "El servidor ha tenido problemas para actualizar tu imagen, intentalo de nuevo más tarde",

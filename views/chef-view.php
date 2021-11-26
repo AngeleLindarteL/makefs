@@ -9,6 +9,7 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/chef-view-change.css" rel="stylesheet">
+    <link href="./css/notifications.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
@@ -67,6 +68,10 @@
         include('./components/header.php');
         include('./components/menudesplegable.php');
     ?>
+    <div class="makefs-notification">
+        <figure class="makefs-notification-rep"></figure>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Mui bien eres bueno ya seaktualiso tufoto</p></article>
+    </div>
     <section id="chef-view">
         <div class="makefsContainer chef-view-container">
             <div class="right-chef-view-menu">

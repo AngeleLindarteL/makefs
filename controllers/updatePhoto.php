@@ -131,8 +131,8 @@ try{
     echo json_encode(array("msg"=>"error_server"));
     exit;
 }
-$_SESSION["minpic"] = "../mediaDB/usersImg/user-$userData->id-min-$originalName";
-$_SESSION["midpic"] = "../mediaDB/usersImg/user-$userData->id-mid-$originalName";
+$_SESSION["minpic"] = "user-$userData->id-min-$originalName";
+$_SESSION["midpic"] = "user-$userData->id-mid-$originalName";
 http_response_code(200);
 $jsonEcho = json_encode(array("msg"=>"success_200","newMidImg"=>$_SESSION["midpic"],"newMinImg"=>$_SESSION["minpic"]));
 echo $jsonEcho;

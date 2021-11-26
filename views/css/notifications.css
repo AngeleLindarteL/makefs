@@ -12,6 +12,7 @@
     top: 8vh;
     right: 0;
     transition: .2s;
+    z-index: 12;
 }
 .makefs-notification-rep{
     width: 8vh;
