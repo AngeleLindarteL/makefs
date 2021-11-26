@@ -29,16 +29,16 @@ $uploaded_file = $directory.basename($_FILES["photo"]["name"]);
 
 
 if ($_FILES["photo"]["type"] === "image/gif") {
-    echo "error_unsuported_type";
+    echo json_encode(array("msg"=>"error_unsuported_type"));
     exit;
 }
 
 if (getimagesize($_FILES["photo"]["tmp_name"]) == false){
-    echo "error_unsuported_type";
+    echo json_encode(array("msg"=>"error_unsuported_type"));
     exit;
 }
 if ($_FILES["photo"]["size"] > 3000000){
-    echo "error_too_large";
+    echo json_encode(array("msg"=>"error_too_large"));
     exit;
 }
 
@@ -50,20 +50,20 @@ try{
         unlink($_SESSION["minpic"]);
     }
 }catch(Exception $e){
-    echo "error_server";
+    echo json_encode(array("msg"=>"error_server"));
     exit;
 }
 
 // Move a temp img to workit
 if(!move_uploaded_file($_FILES["photo"]["tmp_name"],$uploaded_file)){
-    echo "error_server";
+    echo json_encode(array("msg"=>"error_server"));
     exit;
 }
 // Compress y gen mid y min images
 try{
     list( $width,$height ) = getimagesize($directory.$_FILES["photo"]["name"]);
     if (($height / $width) < 0.4){
-        echo "unsuported_ratio";
+        echo json_encode(array("msg"=>"error_unsuported_ratio"));
         exit;
     }
     
@@ -110,11 +110,11 @@ try{
             imagepng($midThumb,$midImageName);
             break;
         default:
-        echo "error_server";
+        echo json_encode(array("msg"=>"error_server"));
         break;
     }
 }catch(Exception $e){
-    echo "error_server";
+    echo json_encode(array("msg"=>"error_server"));
     exit;
 }
 unlink($uploaded_file);
@@ -128,11 +128,12 @@ try{
     $conn->commit();
 }catch(Exception $e){
     $conn->rollBack();
-    echo "error_server";
+    echo json_encode(array("msg"=>"error_server"));
     exit;
 }
-$_SESSION["minpic"] = "../mediaDB/usersImg/user-$userData->id-min-$originalName";
-$_SESSION["midpic"] = "../mediaDB/usersImg/user-$userData->id-mid-$originalName";
+$_SESSION["minpic"] = "user-$userData->id-min-$originalName";
+$_SESSION["midpic"] = "user-$userData->id-mid-$originalName";
 http_response_code(200);
-echo "success_200";
+$jsonEcho = json_encode(array("msg"=>"success_200","newMidImg"=>$_SESSION["midpic"],"newMinImg"=>$_SESSION["minpic"]));
+echo $jsonEcho;
 ?>

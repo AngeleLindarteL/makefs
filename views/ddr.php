@@ -10,8 +10,8 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Receta</title>
 
@@ -41,6 +41,7 @@
     $step_times_json = base64_decode($res["steps"]);
     $timesDecoded = json_decode($step_times_json,true);
     $times = "";
+    $timesFormatObject = "";
     foreach ($timesDecoded as $timeArray){
         $times = $times . $timeArray[1] ."//";
         $timesFormatObject .= "~^^~$timeArray[1]~^^~$timeArray[2]~^^~$timeArray[0][-|-]";

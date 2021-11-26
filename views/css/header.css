@@ -267,12 +267,12 @@ header{
 }
 
 #userlog img{
-    height: 6vh;
+    border-radius: 50%;
     width: 6vh;
+    height: 6vh;
+    object-fit: cover;
     position: absolute;
     right: 0;
-    border-radius: 50%;
-    object-fit: cover;
     margin-right: 11%;
     box-shadow: 0 0 10px 0px #00000069;
 }
@@ -318,8 +318,10 @@ header{
     margin: 0;
 }
 .userMiniInfo img{
-    height: 8vh;
-    margin: 0 0 0 5%;
+    border-radius: 50%;
+    width: 6vh;
+    height: 6vh;
+    object-fit: cover;
 }
 /*------Responsive------*/
 @media (max-width:1571px){

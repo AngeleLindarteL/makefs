@@ -520,7 +520,7 @@ section{
     display: flex;
     flex-wrap: wrap;
     place-content: flex-start;
-    justify-content: center;
+    justify-content: flex-start;
     height: 92vh;
     overflow-y: scroll;
     background-size: contain;

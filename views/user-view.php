@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
     <link href="./css/user-view.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link href="./css/notifications.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Perfil</title>
     <?php
@@ -27,9 +28,9 @@
         include('./components/header.php');
         include('./components/menudesplegable.php');
     ?>
-    <div class="makefs-notification loading">
+    <div class="makefs-notification">
         <figure class="makefs-notification-rep"></figure>
-        <p class="makefs-notification-info"></p>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Mui bien eres bueno ya seaktualiso tufoto</p></article>
     </div>
     <section id="chef-view">
         <div class="makefsContainer userContainer">
@@ -42,7 +43,7 @@
                     <section class="divUser-view" id="cambiarFoto">
                         <button id="profile-edit-close-chef"></button>
                         <form id="fotoChange" method="POST">
-                            <input type="file" class="updateFotoInput" name="photo" accept="image/png, image/jpeg image/jfif image/jpg" />
+                            <input type="file" class="updateFotoInput" name="photo" accept="image/png, image/jpeg, image/jfif, image/jpg" />
                             <input type="submit" name="changeFoto" id="submitFoto" value="Cambiar foto">
                         </form>
                     </section>
