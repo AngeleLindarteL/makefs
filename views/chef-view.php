@@ -46,6 +46,7 @@
         echo <<<EOT
         <script>
             const chefid = $res[chefid];
+            const id = $res[userid];
         </script>
         EOT;
 
