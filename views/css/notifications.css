@@ -61,3 +61,13 @@
         transform: rotate(360deg);
     }
 }
+@media(max-width:680px){
+    .makefs-notification{
+        width: 95%;
+    }
+}
+@media (max-height:760px){
+    .makefs-notification{
+        height: 16vh !important;
+    }
+}

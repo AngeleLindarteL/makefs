@@ -11,7 +11,7 @@
 		</div>
 		<ul class="list">
 			<li>
-				<a href="#">Inicio</a>
+				<a href="./index.php">Inicio</a>
 			</li>
 			<li>
 				<a href="#">Servicios</a>
@@ -26,6 +26,6 @@
 				<a href="#">Politicas de privacidad</a>
 			</li>
 		</ul>
-		<p class="copyright">Copyright © 2021. Todos los derechos reservados. Kodaster</p>
+		<p class="copyright">Copyright © 2021. Todos los derechos reservados. Kodastr</p>
 
 	</footer>
