@@ -77,14 +77,16 @@ let stepsProperties = {
 
 const registerView = () => {
     const data = {
-        userId: followerid,
         videoId: videoID
     }
     axios.post("../controllers/registerView.php",JSON.stringify(data))
     .then(res => {
-        if (res.data.msg = "View Registrada"){
+        if (res.data.msg = "View Totalmente Registrada"){
             videoInteractionsViews.textContent = parseInt(videoInteractionsViews.textContent) + 1;
         }
+        console.log(res)
+    }).catch(err => {
+        console.log("Visita duplicada");
     })
 }
 
@@ -257,13 +259,12 @@ const updateProgressTime = () =>{
             ){
                 cookieStore.addEventListener("change", () => {
                     if (!document.cookie.includes(videoID)){
-                        document.cookie = `${videoID}=true; max-age=1800`;
+                        document.cookie = `${videoID}=true; max-age=10800`;
                     }
                 })
                 sessionStorage.clear();
-                document.cookie = `${videoID}=true; max-age=1800`;
-                sessionStorage.setItem(videoID,new Date().getTime())
-                console.log("view registrada");
+                document.cookie = `${videoID}=true; max-age=10800`;
+                sessionStorage.setItem(videoID,new Date().getTime() + 1080000)
                 registerView();
             }
         }
@@ -277,13 +278,12 @@ const updateProgressTime = () =>{
             ){
                 cookieStore.addEventListener("change", () => {
                     if (!document.cookie.includes(videoID)){
-                        document.cookie = `${videoID}=true; max-age=1800`;
+                        document.cookie = `${videoID}=true; max-age=10800`;
                     }
                 })
                 sessionStorage.clear();
-                document.cookie = `${videoID}=true; max-age=1800`;
-                sessionStorage.setItem(videoID,new Date().getTime())
-                console.log("view registrada");
+                document.cookie = `${videoID}=true; max-age=10800`;
+                sessionStorage.setItem(videoID,new Date().getTime() + 1080000)
                 registerView();
             }
         }        

@@ -84,6 +84,7 @@ include("./jwtController.php");
                     $token = generateToken($_SESSION["username"], $password);
                     $token = json_decode($token);
                     $token = $token->access_token;
+                    $_SESSION["watched_in_session_list"] = array();
 
                     
                     $_SESSION["token"] = $token;

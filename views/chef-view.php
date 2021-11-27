@@ -171,7 +171,7 @@
                                     <a href="./chef-view.php?chef=$res[chefid]" target="__blank">
                                         <h3 class="text-template">$dataRecipes[namer]</h3>
                                         <p>$res[username]</p>
-                                        <p>10M Vistas</p>
+                                        <p>$dataRecipes[views] Views</p>
                                     </a>
                                 </div>
                         EOT;

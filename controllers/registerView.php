@@ -5,12 +5,13 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $data = json_decode(file_get_contents("php://input",true));
-$user = $data->userId;
 $video = $data->videoId;
+$video_session_variable = "_".$video."_";
 $timeNow = time();
 
-if (isset($_SESSION[$video])){
-    if ($_SESSION[$video] > $timeNow) {
+if(isset($_SESSION[$video_session_variable])){
+    if ($_SESSION[$video_session_variable] > $timeNow) {
+        http_response_code(400);
         echo json_encode(array("msg"=>"View ya registrada"));
         exit;
     }
@@ -30,11 +31,13 @@ try{
 
     $conn->commit();
 
-    $_SESSION[$video] = time()+1800;
+    $_SESSION[$video_session_variable] = time()+1080000;
+    array_push($_SESSION["watched_in_session_list"], $video_session_variable);
 }catch(Exception $e){
     $conn->rollBack();
     echo json_encode(array("msg"=>"Error al registrar la view en la base de datos", "error", $e));
     exit;
 }
-echo json_encode(array("msg"=>"View Registrada", "checkthis" => $_SESSION[$video], "actualTime" => $timeNow));
+echo json_encode(array("msg"=>"View Totalmente Registrada", "checkthis" => $_SESSION[$video_session_variable], "actualTime" => $timeNow, "bruh" => $_SESSION["watched_in_session_list"]));
+$_
 ?>
