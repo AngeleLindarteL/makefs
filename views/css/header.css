@@ -42,6 +42,9 @@ header{
     display: flex;
     color: white;
 }
+.header_logo:hover{
+    cursor:pointer;
+}
 .headerContainer div{
     width: 100%;
     height: 100%;
@@ -616,10 +619,10 @@ header{
     align-items: center;
     position: relative;
     top: -2%;
-    display: flex;
     opacity: 0;
     transition: .3s;
     padding-bottom: 2vh;
+    display: none;
 }
 
 #returnBtnDesp{

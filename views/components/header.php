@@ -21,13 +21,13 @@
                 <figure class="nav-btn-bar"></figure>
             </a>
         </div>
-        <div class="header_logo">
-            <article class="headlogo_text">
-                <h1>Makefs</h1>
-                <h2>Making Chef's</h2>
-            </article>
-            <img class="headlogo_logo" src="./img/makefs-logo.png">
-        </div>
+            <div class="header_logo">
+                <article class="headlogo_text">
+                    <h1>Makefs</h1>
+                    <h2>Making Chef's</h2>
+                </article>
+                <img class="headlogo_logo" src="./img/makefs-logo.png">
+            </div>
     EOT;
         if($isloged){
             echo <<<EOT
@@ -101,6 +101,7 @@
         </div>
         </header>
         <script src='./js/homesave.js'></script>
+        <script src='./js/headerindex.js'></script>
     EOT;
     
 ?>

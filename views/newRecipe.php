@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Recipe!</title>
     <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link href="./css/notifications.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
@@ -24,6 +25,14 @@
         include('./components/header.php');
         include('./components/menudesplegable.php');
     ?>
+    <div class="makefs-notification">
+        <figure class="makefs-notification-rep"></figure>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Mui bien eres bueno ya seaktualiso tufoto</p></article>
+    </div>
+    <div class="makefs-notification video-notifi">
+        <figure class="makefs-notification-rep "></figure>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg-video">Mui bien eres bueno ya seaktualiso tufoto</p></article>
+    </div>
     <section id="newRecipeSection">
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv">
@@ -70,15 +79,15 @@
                 </div>
                 <div id="sectionNewRecipeMultimedia">
                     <div id="multimediaNewRecipe">
-                        <div class="divMultimedia">
-                            <label for="recipeVideo">
+                        <div class="divMultimedia" id="divUploadVideo">
+                            <label for="recipeVideo" id="btnVideoUpload">
                                 <img src="./img/addVideoRecipe.png" alt="">
                             </label>
                             <h4>Inserta tu video Preparacion</h4>
                             <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="video/mp4, video/webm" required> 
                         </div>
-                        <div class="divMultimedia">
-                            <label for="recipeImg">
+                        <div class="divMultimedia" id="divUploadImg">
+                            <label for="recipeImg" id="btnImgUpload">
                                 <img src="./img/imagen.png" alt="">
                             </label>
                             <h4>Inserta la imagen de tu receta</h4>

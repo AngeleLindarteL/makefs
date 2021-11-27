@@ -25,6 +25,9 @@
     margin: 0 2%;
     margin-right: 3%;
 }
+.video-notifi{
+    top: 24vh !important;
+}
 .loading{
     background-color: royalblue;
     color: white;

@@ -9,7 +9,43 @@ let arrayEtiquetas = [];
 let steps = [];
 let duration;
 
-uploadRecipe.addEventListener("click", (e)=>{
+/*--------------------------------Update data*/
+/*-----------------------------Notification */
+
+const uploadFoto = document.querySelector("#btnImgUpload");
+const uploadVid = document.querySelector("#btnVideoUpload");
+const divUploadVid = document.querySelector("#divUploadVideo");
+const divUploadImg = document.querySelector("#divUploadImg");
+const notification_msg = document.querySelector("#notification-msg");
+const notification_container = document.querySelector(".makefs-notification");
+const notification_container_video = document.querySelector(".video-notifi");
+const notification_msg_video = document.querySelector("#notification-msg-video")
+const notifiactionStates = {
+    loading_photo: "Se esta subiendo tu foto, espera un momento porfavor",
+    updated_photo: "¡Esta Hecho! Tu foto se subio con éxito.",
+    error_upload: "La imagen que subiste es no está en el formato apropiado o es muy grande.",
+}
+const notifiactionStatesVid = {
+    loading_photo: "Se esta subiendo tu video, espera un momento porfavor",
+    updated_photo: "¡Esta Hecho! Tu video se subio con éxito.",
+    error_upload: "El video que subiste es no está en el formato apropiado o es muy grande.",
+}
+
+/*-----------------------------Notification */
+
+uploadFoto.addEventListener("click", async (e) => {
+    imagen.addEventListener("change",()=>{
+        divUploadImg.style.background="#FFB5B5";
+    })
+})
+
+uploadVid.addEventListener("click", async (e) => {
+    video.addEventListener("change",()=>{
+        divUploadVid.style.background="#FFB5B5";
+    })
+})
+
+uploadRecipe.addEventListener("click", async (e)=>{
     e.preventDefault();
 
     if(duration==''){
@@ -53,28 +89,99 @@ uploadRecipe.addEventListener("click", (e)=>{
     infoRecipe = JSON.stringify(infoRecipe);
 
     if(video.files.length>0){
+        notification_container_video.style.display = "flex";
+        notification_msg_video.textContent = notifiactionStatesVid.loading_photo;
+        setTimeout(() => {
+            notification_container_video.style.opacity = "100%";
+        }, 10);
+        notification_container_video.classList.add("loading");
         let formData = new FormData();
         formData.append("videoR",video.files[0]);
         console.log(formData);
-        axios.post("../controllers/recipeCreation/subirVideo.php", formData, {
+        await axios.post("../controllers/recipeCreation/subirVideo.php", formData, {
             "Content-Type": "multipart/form-data"
         })
         .then(res=>{
-            console.log(res);
+            if (res.data.msg == "success_200") {
+                notification_container_video.classList.replace("loading","success");
+                notification_msg_video.textContent = notifiactionStatesVid.updated_photo;
+                setTimeout(() => {
+                    notification_container_video.style.opacity = "0";
+                    notification_container_video.style.top = "11vh";
+                    setTimeout(() => {
+                        notification_container_video.style.display = "none";
+                        notification_container_video.classList.replace("success","loading");
+                        notification_container_video.style.top = "8vh";
+                    }, 100);
+                }, 3000);
+            }else{
+                notification_container_video.classList.replace("loading","error");
+                setTimeout(() => {
+                    notification_container_video.style.opacity = "0";
+                    notification_container_video.style.top = "11vh";
+                    setTimeout(() => {
+                        notification_container_video.style.display = "none";
+                        notification_container_video.classList.replace("error","loading");
+                        notification_container_video.style.top = "8vh";
+                    }, 100);
+                }, 3000);
+                switch (res.data.msg) {
+                    case "error_upload":
+                        notification_msg_video.textContent = notifiactionStatesVid.error_upload;
+                        break;
+                }
+            }
         });
     }else{
         alert("selecciona un Video");
     }
-
+    
     if(imagen.files.length>0){
+
+
+        notification_container.style.display = "flex";
+        notification_msg.textContent = notifiactionStates.loading_photo;
+        setTimeout(() => {
+            notification_container.style.opacity = "100%";
+        }, 10);
+        notification_container.classList.add("loading");
+        
         let formData = new FormData();
         formData.append("imagenR",imagen.files[0]);
         console.log(formData);
-        axios.post("../controllers/recipeCreation/subirImagen.php", formData, {
+        await axios.post("../controllers/recipeCreation/subirImagen.php", formData, {
             "Content-Type": "multipart/form-data"
         })
         .then(res=>{
-            console.log(res);
+            if (res.data.msg == "success_200") {
+                notification_container.classList.replace("loading","success");
+                notification_msg.textContent = notifiactionStates.updated_photo;
+                setTimeout(() => {
+                    notification_container.style.opacity = "0";
+                    notification_container.style.top = "11vh";
+                    setTimeout(() => {
+                        notification_container.style.display = "none";
+                        notification_container.classList.replace("success","loading");
+                        notification_container.style.top = "8vh";
+                    }, 100);
+                }, 3000);
+            }else{
+                notification_container.classList.replace("loading","error");
+                setTimeout(() => {
+                    notification_container.style.opacity = "0";
+                    notification_container.style.top = "11vh";
+                    setTimeout(() => {
+                        notification_container.style.display = "none";
+                        notification_container.classList.replace("error","loading");
+                        notification_container.style.top = "8vh";
+                    }, 100);
+                }, 3000);
+                switch (res.data.msg) {
+                    case "error_upload":
+                        notification_msg.textContent = notifiactionStates.error_upload;
+                        break;
+                }
+            }
         });
     }else{
         alert("selecciona una Imagen");
@@ -85,8 +192,7 @@ uploadRecipe.addEventListener("click", (e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                   alert("subida con exito");
-                   //window.location.href="../views/chef-view.php";
+                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
                 }
             }
         )
@@ -117,3 +223,4 @@ const validateFile = (file) => {
 video.addEventListener("change", ()=>{
     validateFile(video.files[0]);
 })
+

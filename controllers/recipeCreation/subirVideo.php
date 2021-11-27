@@ -7,9 +7,11 @@
     if($tipo == 'video/mp4' || $tipo == 'video/webm'){
         $resultado = move_uploaded_file($video["tmp_name"], $folderVideos.'/chef-'.$_SESSION["chefid"].$video["name"]);
         if ($resultado) {
-            echo "Subido con éxito";
+            http_response_code(200);
+            $jsonEcho = json_encode(array("msg"=>"success_200"));
+            echo $jsonEcho;
         } else {
-            echo "Error al subir archivo";
+            echo json_encode(array("msg"=>"error_upload"));
         }
     }
 ?>
