@@ -708,6 +708,7 @@ anotationStepShowMore.addEventListener("click", () => {
 
 // DDR JS ------------------------------------------------------------------------------------------------------------
 
+const loading_animation = document.querySelector(".loading-rate-action");
 let allStarsContainer = document.querySelectorAll(".makefs-selection-star-container");
 let starTimeOut = null;
 const starImages = {
@@ -715,6 +716,7 @@ const starImages = {
     "mid": "./img/video-controls/star-mid-rate.png",
     "full": "./img/video-controls/star-full-rate.png",
 }
+
 
 const changeToEmptyAllStars = () => {
     allStarsContainer[0].style.backgroundImage = `url(${starImages.empty})`;
@@ -743,25 +745,71 @@ const overOnStar = (el,containerNum) => {
     }
 }
 
+const setStarToValue = (starVal) => {
+    if (starVal.split(".").length == 1){
+        starVal = `${starVal}.0`;
+    }
+    containerNum = parseInt(starVal.split(".")[0] - 1);
+    if (starVal.split(".")[1] == "5") {
+        containerNum = parseInt(starVal.split(".")[0]);
+    }
+    let bc =  starVal.split(".")[1] == "5"? starImages.mid: starImages.full;
+    changeToEmptyAllStars();
+    if (starTimeOut != null) {
+        clearTimeout(starTimeOut);
+        starTimeOut = null;
+    }
+    if (containerNum < 1) {
+        allStarsContainer[containerNum].style.backgroundImage = `url(${bc})`
+        return;
+    }else{
+        for (let i = 0; i < containerNum; i++) {
+            allStarsContainer[i].style.backgroundImage = `url(${starImages.full})`;
+        }
+        allStarsContainer[containerNum].style.backgroundImage = `url(${bc})`
+    }
+}
+
+const rateRecipe = (rate) => {
+    loading_animation.style.display = "flex";
+    data = {
+        recipe: videoID,
+        userId: followerid,
+        rate: rate
+    }
+    axios.post("../controllers/rateRecipe.php",JSON.stringify(data))
+    .then(res => {
+        setStarToValue(rate);
+        loading_animation.style.display = "none";
+        lastRate = rate;
+    })
+}
+
 const setDefaultStar = () => {
     if (starTimeOut != null) {
         clearTimeout(starTimeOut);
         starTimeOut = null;
     }
+    if(lastRate != null){
+        starTimeOut = setTimeout(() => {
+            setStarToValue(lastRate);
+        },200)
+        return;
+    }
     starTimeOut = setTimeout(() => {
         changeToEmptyAllStars();
     },200)
 }
-
+setStarToValue(lastRate);
 let actualContainerPos = 0;
 allStarsContainer.forEach((starCont) => {
     let actualPos = actualContainerPos;
     let firstStar = starCont.children[0];
     let secondStar = starCont.children[1];
-    firstStar.addEventListener("click", () => {})
+    firstStar.addEventListener("click", () => {rateRecipe(firstStar.getAttribute("starvalue"))})
     firstStar.addEventListener("mouseover", () => {overOnStar(firstStar,actualPos)})
     firstStar.addEventListener("mouseout", () => {setDefaultStar()})
-    secondStar.addEventListener("click", () => {})
+    secondStar.addEventListener("click", () => {rateRecipe(secondStar.getAttribute("starvalue"))})
     secondStar.addEventListener("mouseover", () => {overOnStar(secondStar,actualPos)})
     secondStar.addEventListener("mouseout", () => {setDefaultStar()})
     actualContainerPos++;

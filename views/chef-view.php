@@ -51,7 +51,6 @@
             header("location: ./error.html");
             exit;
         }
-
         if($_SESSION["chefid"]==$res["chefid"]){
             $isTheChef = true;
         }else{
@@ -158,13 +157,24 @@
                         echo "error video $e";
                         exit;
                     }
-                    
                     while($dataRecipes = $recipesSQL->fetch(PDO::FETCH_ASSOC)){
+                        $query = "SELECT AVG(star) FROM stars WHERE recipeid = $dataRecipes[recipeid]";
+                        try{
+                            $average = $conn->prepare($query);
+                            $average->execute();
+                            $average = $average->fetchColumn();
+                            if(sizeof(explode(".",$average)) == 1){
+                                $average = $average.".0";
+                            }
+                        }catch(Exception $e){
+                            print_r($e);
+                            exit;
+                        }
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
                                 <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]" target="__blank">
                                     <img src="../mediaDB/recipeImages/$dataRecipes[imagen]">
-                                    <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                                    <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
                                 </a>
                                 <div class="next-text-recipe">
                                     <img src="../mediaDB/usersImg/$res[midpic]">

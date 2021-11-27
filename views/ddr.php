@@ -113,6 +113,23 @@
     }else{
         $isVerify = false;
     }
+    $query = "SELECT star FROM stars WHERE recipeid = :recipeid AND userid = :userid";
+    try{
+        $stars = $conn->prepare($query);
+        $stars->execute(array(
+            ":recipeid"=>$_GET["video"],
+            ":userid"=>$_SESSION["id"]
+        ));
+        $stars = $stars->fetchColumn();
+        if (!empty($stars)) {
+            echo "<script>let lastRate = '$stars' </script>";
+        }else{
+            echo "<script>let lastRate = null</script>";
+        }
+    }catch(Exception $e){
+        header("location: ./error.html");
+        exit;
+    }
     ?>
     
 
@@ -249,6 +266,7 @@
                             <button id="report-actual-recipe">Reportar</button>
                         </div>
                         <ul class="makefs-video-star-valoration">
+                            <span class="loading-rate-action"></span>
                             <li class="makefs-selection-star-container">
                                 <button starValue="0.5"></button>
                                 <button starValue="1.0"></button>

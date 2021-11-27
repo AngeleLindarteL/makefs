@@ -807,6 +807,7 @@
   display: flex;
   margin: 0%;
   justify-content: flex-end;
+  align-items: center;
 }
 .makefs-video-star-valoration li{
   width: 3.5vh;
@@ -956,6 +957,35 @@
 #foto-chef-ddr{
   width: 10vh;
 }
+
+.loading-rate-action{
+  width: calc(3.5vh * 5);
+  height: 3.5vh;
+  position: absolute;
+  top: auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.loading-rate-action::after{
+  content: "";
+  position: absolute;
+  top: auto;
+  left: auto;
+  background: url(../iconos/loading.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 90%;
+  width: 2.5vh;
+  height: 2.5vh;
+  background-color: #ff2c29;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px #ff3d3a;
+  animation: loading-animation infinite .5s;
+}
+
 /* Video Animations */
 @keyframes loading-animation {
   0%{
