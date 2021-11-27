@@ -38,6 +38,5 @@ try{
     echo json_encode(array("msg"=>"Error al registrar la view en la base de datos", "error", $e));
     exit;
 }
-echo json_encode(array("msg"=>"View Totalmente Registrada", "checkthis" => $_SESSION[$video_session_variable], "actualTime" => $timeNow, "bruh" => $_SESSION["watched_in_session_list"]));
-$_
+echo json_encode(array("msg"=>"View Totalmente Registrada", "actualTime" => $timeNow));
 ?>

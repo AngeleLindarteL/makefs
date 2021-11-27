@@ -86,7 +86,7 @@ const registerView = () => {
         }
         console.log(res)
     }).catch(err => {
-        console.log("Visita duplicada");
+        return;
     })
 }
 
