@@ -157,8 +157,7 @@
                         echo "error video $e";
                         exit;
                     }
-                    $dataRecipes = $recipesSQL->fetch(PDO::FETCH_ASSOC);
-                    do{
+                    while($dataRecipes = $recipesSQL->fetch(PDO::FETCH_ASSOC)){
                         $query = "SELECT AVG(star) FROM stars WHERE recipeid = $dataRecipes[recipeid]";
                         try{
                             $average = $conn->prepare($query);
@@ -192,7 +191,7 @@
                             if($isTheChef){ echo "<a class='edit-template' href='./editRecipe.php?receta=$dataRecipes[recipeid]' ></a>";}
                         echo "</div>";
                         $recipe = true;
-                    }while($dataRecipes = $recipesSQL->fetch(PDO::FETCH_ASSOC));
+                    }
                     if(empty($dataRecipes["recipeid"]) && empty($recipe)){
                         if($isTheChef){
                             echo <<<EOT
