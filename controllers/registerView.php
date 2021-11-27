@@ -31,7 +31,7 @@ try{
 
     $conn->commit();
 
-    $_SESSION[$video_session_variable] = time()+1080000;
+    $_SESSION[$video_session_variable] = time()+108000;
     array_push($_SESSION["watched_in_session_list"], $video_session_variable);
 }catch(Exception $e){
     $conn->rollBack();

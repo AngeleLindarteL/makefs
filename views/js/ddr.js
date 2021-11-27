@@ -254,7 +254,7 @@ const updateProgressTime = () =>{
     if (duration > 6) {
         if (videoPlayerProperties.realWatchedSeconds < 11) {
             videoPlayerProperties.realWatchedSeconds++
-            if (videoPlayerProperties.realWatchedSeconds == 5 && !document.cookie.includes(videoID+"=true")
+            if (videoPlayerProperties.realWatchedSeconds == 5 && !document.cookie.includes(videoID+"=true") &&
                 (sessionStorage.getItem(videoID) === null || parseInt(sessionStorage.getItem(videoID)) > new Date().getTime())            
             ){
                 cookieStore.addEventListener("change", () => {
@@ -800,7 +800,9 @@ const setDefaultStar = () => {
         changeToEmptyAllStars();
     },200)
 }
-setStarToValue(lastRate);
+if (lastRate != null) {
+    setStarToValue(lastRate);   
+}
 let actualContainerPos = 0;
 allStarsContainer.forEach((starCont) => {
     let actualPos = actualContainerPos;
@@ -820,5 +822,5 @@ allStarsContainer.forEach((starCont) => {
 const stepListAll = document.querySelectorAll(".makefs-ingredient");
 
 if (stepListAll.length % 2 == 1) {
-    stepListAll[stepListAll.length - 1].style.width = "82%";
+    stepListAll[stepListAll.length - 1].style.width = "88%";
 }

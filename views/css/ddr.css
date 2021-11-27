@@ -941,11 +941,11 @@
   color: var(--color5);
   display: flex;
   justify-content: center;
-  text-align: center;
   align-items: center;
   border-radius: 20px;
-  padding: 0 1%;
+  padding: 1% 2%;
   text-align: center;
+  word-break: break-all;
 }
 .verified2{
   position: relative !important;

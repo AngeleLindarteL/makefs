@@ -546,9 +546,9 @@ section{
     margin: 1%;
 }
 
-.editable-recipe:hover{
+/* .editable-recipe:hover{
     transform: scale(1.05);
-}
+} */
 
 .edit-template{
     width: 20px;
@@ -558,6 +558,7 @@ section{
     background-size: 50%;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #ff2d29;
     margin: 5px;
     padding: 10px;
     position: absolute;
