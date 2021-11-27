@@ -44,7 +44,7 @@ const anotationStepNum = document.querySelector("#step-annotation-number");
 const anotationStepDetail = document.querySelector("#step-annotation-detail");
 const anotationStepShowMore = document.querySelector("#step-annotation-show-more");
 const anotationStepShowMoreGradient = document.querySelector("#step-annotation-show-more-gradient");
-
+const vidCookie = document.cookie.replace(new RegExp(`(?:(?:^|.*;\s*)${videoID}\s*\=\s*([^;]*).*$)|^.*$`), "$1");
 //  Preconfig antiBug for steps button
 stepsButton.style.display = "none";
 // Action functions -----------------------------------------------------
@@ -67,6 +67,7 @@ let videoPlayerProperties = {
     isInConfig: false,
     isBucleActive: false,
     isInStepsPanel: false,
+    realWatchedSeconds: 0,
 }
 
 let stepsProperties = {
@@ -236,8 +237,14 @@ const updateProgressTime = () =>{
         if (!actualTimeObj[3]) {
             return;
         }
-        stepsProperties.stepPaused
         showStepAnotation(`${actualTimeObj[0]} - ${actualTimeObj[1]}`, timesArr.indexOf(actualTime)+1,actualTimeObj[2])
+    }
+    if (videoPlayerProperties.realWatchedSeconds < 6) {
+        videoPlayerProperties.realWatchedSeconds++
+        if (videoPlayerProperties.realWatchedSeconds == 5 && vidCookie == ""){
+            document.cookie = `${videoID}=true; max-age: 15`;
+            console.log("view registrada");
+        }
     }
 }
 

@@ -50,6 +50,7 @@
     echo <<<EOT
         <script>
         const duration = $res[duration];
+        const videoID = $_GET[video];
         const times = "$times";
         const timesObj = {}
         const timesArr = "$timesFormatObject".split("[-|-]");
