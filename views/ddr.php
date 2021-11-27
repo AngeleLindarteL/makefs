@@ -143,8 +143,8 @@
                     <button id="step-annotation-close">x</button>
                     <h2 id="step-annotation-number">1</h2>
                     <article>
-                        <b id="step-annotation-minutes">00:00 - 02:42</b>
-                        <p id="step-annotation-detail">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis obcaecati, perspiciatis minima consequatur nulla impedit suscipit hic nostrum repellendus, dolore quo ea. Nemo fugiat voluptas dolore culpa natus! Exercitationem, doloribus?</p>
+                        <b id="step-annotation-minutes">00:00 - 00:00</b>
+                        <p id="step-annotation-detail">Video Notification / Step not setted yet</p>
                     </article>
                     <button id="step-annotation-show-more" ocPanelEl="1">ver más</button>
                     <span id="step-annotation-show-more-gradient"></span>
@@ -234,7 +234,7 @@
                         </article>
                     </a>
                     <div class="makefs-video-interactions">
-                        <p><b>1,000,520</b> Visualizaciones</p>
+                        <p><b id="makefs-video-views"><?php echo $res["views"] ?></b> Visualizaciones</p>
                         <div class="makes-recipe-tags-wrapper">
                             <?php
                                 $tagsBase64 = base64_decode($res["tags"]);

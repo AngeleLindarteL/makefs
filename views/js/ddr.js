@@ -1,7 +1,3 @@
-let timeDivisions = "01:52 - 02:50/2:51 - 8:54/08:55 - 9:20";
-timeDivisions = timeDivisions.split("/")
-console.log(timeDivisions)
-
 // Reproductor de video -------------------------------------------------
 // Variables xd
 
@@ -44,7 +40,8 @@ const anotationStepNum = document.querySelector("#step-annotation-number");
 const anotationStepDetail = document.querySelector("#step-annotation-detail");
 const anotationStepShowMore = document.querySelector("#step-annotation-show-more");
 const anotationStepShowMoreGradient = document.querySelector("#step-annotation-show-more-gradient");
-const vidCookie = document.cookie.replace(new RegExp(`(?:(?:^|.*;\s*)${videoID}\s*\=\s*([^;]*).*$)|^.*$`), "$1");
+const videoInteractionsViews = document.querySelector("#makefs-video-views");
+
 //  Preconfig antiBug for steps button
 stepsButton.style.display = "none";
 // Action functions -----------------------------------------------------
@@ -76,6 +73,19 @@ let stepsProperties = {
     actualStepTimeOut: null,
     actualStepShowingInitMin: "0",
     stepPaused : false,
+}
+
+const registerView = () => {
+    const data = {
+        userId: followerid,
+        videoId: videoID
+    }
+    axios.post("../controllers/registerView.php",JSON.stringify(data))
+    .then(res => {
+        if (res.data.msg = "View Registrada"){
+            videoInteractionsViews.textContent = parseInt(videoInteractionsViews.textContent) + 1;
+        }
+    })
 }
 
 const formatSeconds = (secs) => {
@@ -239,12 +249,44 @@ const updateProgressTime = () =>{
         }
         showStepAnotation(`${actualTimeObj[0]} - ${actualTimeObj[1]}`, timesArr.indexOf(actualTime)+1,actualTimeObj[2])
     }
-    if (videoPlayerProperties.realWatchedSeconds < 6) {
-        videoPlayerProperties.realWatchedSeconds++
-        if (videoPlayerProperties.realWatchedSeconds == 5 && vidCookie == ""){
-            document.cookie = `${videoID}=true; max-age: 15`;
-            console.log("view registrada");
+    if (duration > 6) {
+        if (videoPlayerProperties.realWatchedSeconds < 11) {
+            videoPlayerProperties.realWatchedSeconds++
+            if (videoPlayerProperties.realWatchedSeconds == 5 && !document.cookie.includes(videoID+"=true")
+                (sessionStorage.getItem(videoID) === null || parseInt(sessionStorage.getItem(videoID)) > new Date().getTime())            
+            ){
+                cookieStore.addEventListener("change", () => {
+                    if (!document.cookie.includes(videoID)){
+                        document.cookie = `${videoID}=true; max-age=1800`;
+                    }
+                })
+                sessionStorage.clear();
+                document.cookie = `${videoID}=true; max-age=1800`;
+                sessionStorage.setItem(videoID,new Date().getTime())
+                console.log("view registrada");
+                registerView();
+            }
         }
+    }else{
+        if (videoPlayerProperties.realWatchedSeconds < (duration / 2) + .5) {
+            videoPlayerProperties.realWatchedSeconds++
+            if (videoPlayerProperties.realWatchedSeconds > duration / 2 && 
+                videoPlayerProperties.realWatchedSeconds > duration / 2 + .5 && 
+                !document.cookie.includes(videoID+"=true") && 
+                (sessionStorage.getItem(videoID) === null || parseInt(sessionStorage.getItem(videoID)) > new Date().getTime())
+            ){
+                cookieStore.addEventListener("change", () => {
+                    if (!document.cookie.includes(videoID)){
+                        document.cookie = `${videoID}=true; max-age=1800`;
+                    }
+                })
+                sessionStorage.clear();
+                document.cookie = `${videoID}=true; max-age=1800`;
+                sessionStorage.setItem(videoID,new Date().getTime())
+                console.log("view registrada");
+                registerView();
+            }
+        }        
     }
 }
 
