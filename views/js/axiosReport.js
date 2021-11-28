@@ -9,9 +9,33 @@ let statesNotification = {
     empty_detail: "El campo de detalle esta vacío",
     empty_reason: "Selecciona una razón valida para reportar porfavor",
     notificationActualTimeOut: null,
+    fadeTimeOut: null,
 }
 
+const setFormError = (text_error) => {
+    notification.classList.contains("error") ? notification.classList.replace("error","loading") : true;
+    clearTimeout(statesNotification.notificationActualTimeOut);
+
+    reportSection.style.display = "flex";
+    reportSection.style.opacity = "1";
+    notification.classList.replace("loading","error");
+    notificationmsg.textContent = text_error;
+
+    statesNotification.notificationActualTimeOut = setTimeout(() => {
+        notification.style.opacity = "0";
+        statesNotification.fadeTimeOut = setTimeout(() => {
+            notification.style.display = "none";
+            notification.classList.remove("error")
+        },200)
+    },4000)
+    return;
+}
+
+
 reportTrigger.addEventListener("click", (e) => {
+    notification.classList.contains("error") ? notification.classList.remove("error") : true;
+    notification.classList.contains("success") ? notification.classList.remove("success") : true;
+    notification.classList.contains("error") ? notification.classList.remove("error") : true;
     reportSection.style.display = "none";
     reportSection.style.opacity = "0";
     notificationmsg.textContent = statesNotification.loading_state;
@@ -25,32 +49,11 @@ reportTrigger.addEventListener("click", (e) => {
     let reasonReport = document.querySelector("#reasonSelect").value;
     let details = document.querySelector("#detailReport").value;
     if (reasonReport === 'Escoge la razón del reporte') {
-        reportSection.style.display = "flex";
-        reportSection.style.opacity = "1";
-        notification.classList.replace("loading","error");
-        notificationmsg.textContent = statesNotification.empty_reason;
-        statesNotification.notificationActualTimeOut = setTimeout(() => {
-            notification.style.opacity = "0";
-            setTimeout(() => {
-                notification.style.display = "none";
-                notification.classList.remove("error");
-            },200)
-        },4000)
+        setFormError(statesNotification.empty_reason);
         return;
     }
     if (details === '') {
-        reportSection.style.display = "flex";
-        reportSection.style.opacity = "1";
-        notification.classList.replace("loading","error");
-        notificationmsg.textContent = statesNotification.empty_detail;
-        statesNotification.notificationActualTimeOut = setTimeout(() => {
-            notification.style.opacity = "0";
-            setTimeout(() => {
-                notification.style.display = "none";
-                notification.classList.remove("error")
-            },200)
-        },4000)
-        console.log("Detalles vacios");
+        setFormError(statesNotification.empty_detail);
         return;
     }
     const data = {
@@ -61,13 +64,14 @@ reportTrigger.addEventListener("click", (e) => {
     }
     axios.post("../controllers/reportRecipe.php", JSON.stringify(data))
     .then(res => {
-        console.log(res);
         clearTimeout(statesNotification.notificationActualTimeOut);
+
         notification.classList.replace("loading","success");
         notificationmsg.textContent = statesNotification.success_state;
-        setTimeout(() => {
+        statesNotification.notificationActualTimeOut = setTimeout(() => {
             notification.style.opacity = "0";
-            setTimeout(() => {
+            statesNotification.fadeTimeOut = setTimeout(() => {
+                notification.classList.remove("success")
                 notification.style.display = "none";
             },200)
         },3000)
@@ -76,11 +80,11 @@ reportTrigger.addEventListener("click", (e) => {
         notification.classList.replace("loading","error");
         clearTimeout(statesNotification.notificationActualTimeOut);
         notificationmsg.textContent = statesNotification.error_state;
-        setTimeout(() => {
+        statesNotification.notificationActualTimeOut = setTimeout(() => {
             notification.style.opacity = "0";
-            setTimeout(() => {
-                notification.style.display = "none";
+            statesNotification.fadeTimeOut = setTimeout(() => {
                 notification.classList.remove("error")
+                notification.style.display = "none";
             },200)
         },3000)
     })
