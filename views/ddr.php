@@ -411,6 +411,7 @@
     <script src="./js/followUnloged.js"></script>
     <script src="./js/darkMode.js"></script>
     <script src="./js/report.js"></script>
+    <script src="./js/menuDesplegable.js"></script>
     >
 </body>
 
