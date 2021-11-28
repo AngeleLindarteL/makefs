@@ -61,11 +61,11 @@
         transform: rotate(360deg);
     }
 }
-<<<<<<< HEAD
 
 .ddr-in-notification{
     z-index: 200;
-=======
+}
+
 @media(max-width:680px){
     .makefs-notification{
         width: 95%;
@@ -75,5 +75,4 @@
     .makefs-notification{
         height: 16vh !important;
     }
->>>>>>> 66451f555e3177cf1fc84ed46e36854a6ab6b5d8
 }

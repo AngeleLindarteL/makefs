@@ -43,7 +43,7 @@ const upload = (inputTypeFile) => {
             userImg.src = res.data.newMidImg;
             headerUserImg.src = res.data.newMinImg;
             miniInfoImg.src = res.data.newMinImg;
-            userImgChef.src = res.data.newMinImg;
+            userImgChef.src = res.data.newMidImg;
             setTimeout(() => {
                 notification_container.style.opacity = "0";
                 notification_container.style.top = "11vh";

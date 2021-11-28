@@ -4,7 +4,7 @@ let notificationmsg = document.querySelector("#notification-msg");
 let reportSection = document.querySelector("#reportSection");
 let statesNotification = {
     loading_state: "Estamos subiendo tu reporte, espera un momento porfavor",
-    success_state: "Tu reporte se con éxito, el equipo de moderación atenderá tu reporte",
+    success_state: "Tu reporte se envió con éxito, el equipo de moderación atenderá tu reporte",
     error_state: "Hubo un error con el reporte, porfavor verifica que los campos esta bien o contacta con soporte",
     empty_detail: "El campo de detalle esta vacío",
     empty_reason: "Selecciona una razón valida para reportar porfavor",
@@ -63,6 +63,7 @@ reportTrigger.addEventListener("click", (e) => {
     .then(res => {
         console.log(res);
         clearTimeout(statesNotification.notificationActualTimeOut);
+        notification.classList.replace("loading","success");
         notificationmsg.textContent = statesNotification.success_state;
         setTimeout(() => {
             notification.style.opacity = "0";
