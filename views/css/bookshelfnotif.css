@@ -31,6 +31,7 @@
     padding-right: 23%;
 }
 .bookshelf-notification article p{
+    font-size: 0.9em;
     margin: 0;
 }
 .bookshelf-notification a{

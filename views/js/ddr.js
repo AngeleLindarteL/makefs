@@ -84,7 +84,6 @@ const registerView = () => {
         if (res.data.msg = "View Totalmente Registrada"){
             videoInteractionsViews.textContent = parseInt(videoInteractionsViews.textContent) + 1;
         }
-        console.log(res)
     }).catch(err => {
         return;
     })

@@ -25,6 +25,8 @@
     if(empty($_SESSION['id'])){
         $_SESSION['id']=0;
         $_SESSION['chefid']=0;
+    }else{
+        include("./components/tokenControl.php");
     }
     if (!isset($_GET["video"]) || empty($_GET["video"])){
         header("location: ./error.html");
@@ -167,7 +169,7 @@
     <div class="bookshelf-notification">
         <img id="bookshelf-icon" src="./iconos/book.png">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
-        <a target="_blank" href="./bookshelf?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
+        <a target="_blank" href="./bookshelf.php?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
     </div>
     <section id="recipe_section">
         <div class="recipe_container">
