@@ -9,9 +9,11 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
+    <link href="./css/report.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/footer.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
+    <link href="./css/notifications.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Receta</title>
 
@@ -139,7 +141,12 @@
     <?php
     include('./components/header.php');
     include('./components/menudesplegable.php');
+    include("./components/report.php");
     ?>
+    <div class="makefs-notification ddr-in-notification">
+        <figure class="makefs-notification-rep"></figure>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Mui bien eres bueno ya seaktualiso tufoto</p></article>
+    </div>
     <section id="recipe_section">
         <div class="recipe_container">
             <div class="makefs-media-player">
@@ -360,7 +367,8 @@
     <script src="./js/ddr.js"></script>
     <script src='./js/axiosFollow.js'></script>
     <script src="./js/darkMode.js"></script>
-
+    <script src="./js/report.js"></script>
+    <script src="./js/axiosReport.js"></script>
 </body>
 
 </html>

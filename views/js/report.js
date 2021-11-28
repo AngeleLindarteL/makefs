@@ -1,4 +1,4 @@
-let button = document.getElementById("boton");
+let button = document.querySelector("#report-actual-recipe");
 let report = document.getElementById("reportSection");
 let closeReport = document.getElementById("closereport");
 button.addEventListener('click',(e)=>{

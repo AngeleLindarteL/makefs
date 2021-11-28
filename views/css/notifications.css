@@ -61,3 +61,7 @@
         transform: rotate(360deg);
     }
 }
+
+.ddr-in-notification{
+    z-index: 200;
+}
