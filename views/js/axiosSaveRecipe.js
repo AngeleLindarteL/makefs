@@ -42,6 +42,11 @@ const showNotif = (msg, ico) => {
 }
 
 saveTrigger.addEventListener("click", () => {
+    if (followerid == 0) {
+        let advise = document.querySelector(".not-registered-advise");
+        advise.style.display = "flex";
+        return;
+    }
     let data = {
         userid: followerid,
         recipeid: videoID

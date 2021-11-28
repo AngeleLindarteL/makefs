@@ -221,13 +221,13 @@
                         }
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
-                                <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]" target="__blank">
+                                <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]">
                                     <img src="../mediaDB/recipeImages/$dataRecipes[imagen]">
                                     <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
                                 </a>
                                 <div class="next-text-recipe">
                                     <img src="../mediaDB/usersImg/$res[midpic]">
-                                    <a href="./chef-view.php?chef=$res[chefid]" target="__blank">
+                                    <a href="./chef-view.php?chef=$res[chefid]">
                                         <h3 class="text-template">$dataRecipes[namer]</h3>
                                         <p>$res[username]</p>
                                         <p>$dataRecipes[views] Views</p>

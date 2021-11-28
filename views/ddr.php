@@ -15,8 +15,8 @@
     <link href="./css/ddr.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
     <link href="./css/bookshelfnotif.css" rel="stylesheet">
+    <link href="./css/not-registered.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Receta</title>
 
     <?php 
     include("../models/conexion.php");
@@ -39,6 +39,7 @@
         $res = $conn->prepare($query);
         $res->execute(array(":ID"=>$videoId));
         $res = $res->fetch(PDO::FETCH_ASSOC);
+        echo "<title>$res[namer]</title>";
     }catch(Exception $e){
         header("location: ./error.html");
         exit;
@@ -308,6 +309,20 @@
                             <button id="save-actual-recipe">Guardar</button>
                             <button id="report-actual-recipe">Reportar</button>
                         </div>
+                        <?php 
+                            if ($_SESSION["id"] == 0) {
+                                echo <<<EOT
+                                <div class="not-registered-advise">
+                                    <img src="./iconos/makefslogo.jpg">
+                                    <button id="hide-not-register-notif">x</button>
+                                    <article>
+                                        <p>Para poder interactuar con este video debes estar registrado</p>
+                                        <a href="./register.php">¡Registrate!</a>
+                                    </article>
+                                </div>
+                                EOT;
+                            }
+                        ?>
                         <ul class="makefs-video-star-valoration">
                             <span class="loading-rate-action"></span>
                             <li class="makefs-selection-star-container">

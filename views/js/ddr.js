@@ -88,6 +88,17 @@ const registerView = () => {
         return;
     })
 }
+let showNotRegisteredAdvise = null;
+if (followerid == 0) {
+    let advise = document.querySelector(".not-registered-advise");
+    showNotRegisteredAdvise = () => {
+        advise.style.display = "flex";
+    }
+    let hideButon = document.querySelector("#hide-not-register-notif");
+    hideButon.addEventListener("click", () => {
+        advise.style.display = "none";
+    })
+}
 
 const formatSeconds = (secs) => {
     let generalSeconds = ((secs / 60).toFixed(2).toString()).split(".");
@@ -807,10 +818,15 @@ allStarsContainer.forEach((starCont) => {
     let actualPos = actualContainerPos;
     let firstStar = starCont.children[0];
     let secondStar = starCont.children[1];
-    firstStar.addEventListener("click", () => {rateRecipe(firstStar.getAttribute("starvalue"))})
+    if (followerid == 0) {
+        firstStar.addEventListener("click", () => {showNotRegisteredAdvise()})
+        secondStar.addEventListener("click", () => {showNotRegisteredAdvise()})
+    }else{
+        firstStar.addEventListener("click", () => {rateRecipe(firstStar.getAttribute("starvalue"))})
+        secondStar.addEventListener("click", () => {rateRecipe(secondStar.getAttribute("starvalue"))})
+    }
     firstStar.addEventListener("mouseover", () => {overOnStar(firstStar,actualPos)})
     firstStar.addEventListener("mouseout", () => {setDefaultStar()})
-    secondStar.addEventListener("click", () => {rateRecipe(secondStar.getAttribute("starvalue"))})
     secondStar.addEventListener("mouseover", () => {overOnStar(secondStar,actualPos)})
     secondStar.addEventListener("mouseout", () => {setDefaultStar()})
     actualContainerPos++;
