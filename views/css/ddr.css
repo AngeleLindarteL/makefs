@@ -1033,6 +1033,11 @@
   }
 }
 /*----Responsive----*/
+@media(max-width: 1510px){
+  #follow-button{
+    width: 10.2vw;
+  }
+}
 @media (max-width:970px){
   .makefs-steps-info-container{
     width: 80%;
@@ -1059,7 +1064,7 @@
     height: 35vh;
   }
   #follow-button{
-    width: 24vw;
+    width: 24vw !important;
   }
   .makefs-video-info-title{
     margin-top: 6vh;
@@ -1104,6 +1109,11 @@
   }
   #follow-button{
     width: 50vw;
+  }
+}
+@media(max-width: 400px){
+  #follow-button{
+    width: 20vh !important;
   }
 }
 @media (max-height:810px){

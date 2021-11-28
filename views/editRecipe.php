@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
+    <link rel="stylesheet" href="./css/newRecipeEdit.css">
     <link rel="stylesheet" href="./css/footer.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
@@ -59,8 +60,10 @@
                 <?php
                     echo "<input type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>";
                 ?>
-                <button id="uploadBtn2"><h2>Editar Receta</h2></button>
-                <button id="deleteRecipeBtn"><h2>Eliminar Receta</h2></button>
+                <div class="editbtndisplay">
+                    <button id="uploadBtn2"><h2>Editar Receta</h2></button>
+                    <button id="deleteRecipeBtn"><h2>Eliminar Receta</h2></button>
+                </div>
             </div>
             <div id="deleteRecipeConfirm">
                 <button id="close-deleteRecipe"></button>

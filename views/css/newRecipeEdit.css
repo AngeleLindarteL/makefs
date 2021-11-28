@@ -1,0 +1,43 @@
+#recipeTittle{
+    width: 80% !important;
+}
+.editbtndisplay{
+    width:20%;
+}
+#uploadBtn2{
+    width:35%;
+}
+#deleteRecipeBtn{
+    width:38%;
+}
+@media(max-width:690px){
+    #recipebodydiv{
+        margin: 17vh 0 0 0;
+    }
+    #tittlePasos{
+        padding-bottom: 1vh;
+    }
+    .editbtndisplay{
+        width:50%;
+        display:flex;
+        flex-direction: row;
+    }
+    #recipetittlediv2{
+        flex-direction:column;
+        justify-content:center;
+        align-items: center;
+    }
+    #uploadBtn2{
+        width:50%;
+    }
+    #deleteRecipeBtn{
+        width:50%;
+        margin: 0% 1.2%;
+    }
+    .editbtndisplay{
+        margin-top:1vh;
+    }
+    #recipetittlediv2{
+        margin-top:3vh;
+    }
+}
