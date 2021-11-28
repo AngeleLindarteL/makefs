@@ -417,7 +417,7 @@
             echo <<<EOT
                 <script src='./js/axiosFollow.js'></script>
                 <script src="./js/axiosReport.js"></script>
-                <script src="./js/axiosSaveRecipe.js"></script
+                <script src="./js/axiosSaveRecipe.js"></script>
             EOT;
         }
     ?>
@@ -427,7 +427,6 @@
     <script src="./js/darkMode.js"></script>
     <script src="./js/report.js"></script>
     <script src="./js/menuDesplegable.js"></script>
-    >
 </body>
 
 </html>
