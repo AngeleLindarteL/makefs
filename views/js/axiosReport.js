@@ -3,10 +3,10 @@ let notification = document.querySelector(".ddr-in-notification");
 let notificationmsg = document.querySelector("#notification-msg");
 let reportSection = document.querySelector("#reportSection");
 let statesNotification = {
-    loading_state: "Estamos subiendo tu reporte, espera un momento porfavor",
-    success_state: "Tu reporte se envió con éxito, el equipo de moderación atenderá tu reporte",
+    loading_state: "Estamos subiendo tú reporte, espera un momento porfavor",
+    success_state: "Tú reporte se envió con éxito, el equipo de moderación atenderá tu reporte",
     error_state: "Hubo un error con el reporte, porfavor verifica que los campos esta bien o contacta con soporte",
-    empty_detail: "El campo de detalle esta vacío",
+    empty_detail: "El campo de detalle esta vacío, llenalo porfavor",
     empty_reason: "Selecciona una razón valida para reportar porfavor",
     notificationActualTimeOut: null,
     fadeTimeOut: null,

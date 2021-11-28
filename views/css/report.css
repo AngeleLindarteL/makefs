@@ -78,7 +78,6 @@ section{
 }
 #closereport:hover{
     background-color: white;
-    
 }
 #closereport img:hover{
     filter: invert(1);

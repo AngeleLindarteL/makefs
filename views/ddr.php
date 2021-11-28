@@ -14,6 +14,7 @@
     <link href="./css/footer.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
+    <link href="./css/bookshelfnotif.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Receta</title>
 
@@ -69,6 +70,7 @@
         }
         const followerid = $_SESSION[id];
         const chefid = $res[chefid];
+        const chefName = "$res[username]";
         </script>
     EOT;
     $query = "SELECT * FROM follows WHERE chefid = :chefid AND followerid = :followerid";
@@ -132,11 +134,25 @@
         header("location: ./error.html");
         exit;
     }
+    $query = "SELECT * FROM saveds WHERE recipeid = :recipeid AND userid = :userid";
+    try{
+        $isSaved = $conn->prepare($query);
+        $isSaved->execute(array(
+            ":recipeid"=>$_GET["video"],
+            ":userid"=>$_SESSION["id"]
+        ));
+        $isSaved = $isSaved->fetch(PDO::FETCH_ASSOC);
+        if (!empty($isSaved)) {
+            echo "<script>const isSaved = true </script>";
+        }else{
+            echo "<script>const isSaved = false</script>";
+        }
+    }catch(Exception $e){
+        header("location: ./error.html");
+        exit;
+    }
     ?>
-    
-
 </head>
-
 <body>
     <?php
     include('./components/header.php');
@@ -145,7 +161,12 @@
     ?>
     <div class="makefs-notification ddr-in-notification">
         <figure class="makefs-notification-rep"></figure>
-        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Mui bien eres bueno ya seaktualiso tufoto</p></article>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">En espera</p></article>
+    </div>
+    <div class="bookshelf-notification">
+        <img id="bookshelf-icon" src="./iconos/book.png">
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
+        <a target="_blank" href="./bookshelf?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
     </div>
     <section id="recipe_section">
         <div class="recipe_container">
@@ -369,6 +390,7 @@
     <script src="./js/darkMode.js"></script>
     <script src="./js/report.js"></script>
     <script src="./js/axiosReport.js"></script>
+    <script src="./js/axiosSaveRecipe.js"></script>
 </body>
 
 </html>
