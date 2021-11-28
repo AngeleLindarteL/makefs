@@ -83,6 +83,32 @@
             $followid = null;
             exit;
         }
+
+        $query = "SELECT AVG(star) FROM stars INNER JOIN recipe ON stars.recipeid = recipe.recipeid WHERE chefid = :chefid";
+        try{
+            $averageGenn = $conn->prepare($query);
+            $averageGenn->execute(array(":chefid"=>$res['chefid']));
+            $averageGenn = $averageGenn->fetchColumn();
+            if (empty($averageGenn)){
+                $averageGenn = "0";
+            }
+            if(sizeof(explode(".",$averageGenn)) == 1){
+                $averageGenn = $averageGenn.".0";
+            }
+        }catch(Exception $e){
+            print_r($e);
+            exit;
+        }
+        $recipesCount = "SELECT COUNT(recipeid) FROM recipe WHERE chefid = :chefid";
+            try{
+                $recipesCount = $conn->prepare($recipesCount);
+                $recipesCount->execute(array(":chefid"=>$res['chefid']));
+                $recipesCount = $recipesCount->fetchColumn();
+            }catch(Exception $e){
+                echo "error video $e";
+                exit;
+            }
+
         echo <<<EOT
         <script>
             const chefid = $res[chefid];
@@ -90,6 +116,7 @@
             const followerid = $_SESSION[id];
         </script>
         EOT;
+
     ?>
 </head>
 <body>
@@ -113,11 +140,12 @@
                             <div class="followers" ><img src="./img/hico-followers.png"><p id="followersSection" ><?php echo $seguidores ?></p></div>
                         </figure>
                         <article class="profile-chars">
+                            
                             <h2 id="chef-name"><?php echo $res["namem"];?></h2>
                             <p id="username-space-chef" >@<?php echo $res["username"]?></p>
                             <div class="summary-info">
-                                <article><span></span><p>5.0 Valoración</p></article>
-                                <article><span></span><p>11 Recetas</p></article>
+                                <article><span></span><p><?php echo $averageGenn?> Valoración</p></article>
+                                <article><span></span><p><?php echo $recipesCount?> Recetas</p></article>
                             </div>
                             <p class="description" id="description-space-chef"><?php echo $res["descript"]?></p>
                             <p id="contact-space-chef">Contacto: <?php echo $res["email"]?></p>
@@ -128,14 +156,28 @@
                                 <a href="<?php echo $res["youtube"] ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
                             </ul>
                             <?php
-                                if(!$isTheChef){
-                                    if(isset($followid)){
-                                        echo "<button id='follow-button'>siguiendo</button>";
-                                    }else{
-                                        echo "<button id='follow-button'>seguir</button>";
+                                if($_SESSION['id']==0){
+                                    echo <<<EOT
+                                        <button id='followUnloged'>seguir</button>
+                                        <div id='unlogedFollowSect'>
+                                            <button id="close-UnlogedFollow"></button>
+                                            <div id='unlogedFollowDiv'>
+                                                <h4>Para seguir a un usuario debes estar logueado!</h4>
+                                                <button id="logRedirect">LogIn</button>
+                                            </div>
+                                        </div>
+                                    EOT;
+                                }else{
+                                    if(!$isTheChef){
+                                        if(isset($followid)){
+                                            echo "<button id='follow-button'>siguiendo</button>";
+                                        }else{
+                                            echo "<button id='follow-button'>seguir</button>";
+                                        }
                                     }
                                 }
-                            ?>  
+                            ?>
+                            
                         </article>
                     </div>
                 </div>
@@ -324,5 +366,6 @@
     <script src="./js/darkMode.js"></script>
     <script src="./js/upload_pic_chef.js"></script>
     <script src="./js/axiosFollow.js"></script>
+    <script src="./js/followUnloged.js"></script>
 </body>
 </html>

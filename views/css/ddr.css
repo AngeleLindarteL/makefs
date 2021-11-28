@@ -986,6 +986,86 @@
   animation: loading-animation infinite .5s;
 }
 
+#followUnloged{
+  border: none;
+  border-radius: 0px;
+  color: white;
+  background-color: var(--color5);
+  width: 6.2vw;
+  transition: .2s;
+  height: 3vh;
+  z-index: 5;
+  cursor: pointer;
+}
+#unlogedFollowSect{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.349);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  z-index: 10;
+  transition: .3s;
+}
+
+#unlogedFollowDiv{
+  width: 45%;
+  height: 25vh;
+  display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ background-color: white;
+ text-align: center;
+ border-radius: 15px;
+}
+
+#unlogedFollowDiv h4{
+  width: 100%;
+  padding: 2vh 0;
+  background-color: #FF2C29;
+  color: white;
+  font-size: 1.2em;
+}
+
+#logRedirect{
+  width: 60%;
+  height: 5vh;
+  border: none;
+  background: #ff2c29;
+  color: white;
+  font-size: 1.2em;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px 1px #ff2c295c;
+  cursor: pointer;
+}
+
+#close-UnlogedFollow{
+  position: fixed;
+  background-color: transparent;
+  border: none;
+  width: 6vh;
+  height: 6vh;
+  top: 12vh;
+  right: 5vh;
+  margin: 0%;
+  transition: .2s;
+  background-image: url(../img/closeUpdateInfo.png);
+  background-size: 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-color: var(--color5);
+  z-index: 2;
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
+  cursor: pointer;
+}
+
 /* Video Animations */
 @keyframes loading-animation {
   0%{

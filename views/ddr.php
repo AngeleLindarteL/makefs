@@ -272,14 +272,27 @@
                             <p> <?php echo $res["username"] ?></p>
                             <p> <b id="followersSection"><?php echo $seguidores ?></b> Seguidores</p>
                             <?php
-                                if(isset($followid)){
-                                    echo "<button id='follow-button'>siguiendo</button>";
+                                if($_SESSION['id']==0){
+                                    echo <<<EOT
+                                        <button id='followUnloged'>seguir</button>
+                                        <div id='unlogedFollowSect'>
+                                        <button id="close-UnlogedFollow"></button>
+                                            <div id='unlogedFollowDiv'>
+                                                <h4>Para seguir a un usuario debes estar logueado!</h4>
+                                                <button id="logRedirect">LogIn</button>
+                                            </div>
+                                        </div>
+                                    EOT;
                                 }else{
-                                    echo "<button id='follow-button'>seguir</button>";
+                                    if(isset($followid)){
+                                        echo "<button id='follow-button'>siguiendo</button>";
+                                    }else{
+                                        echo "<button id='follow-button'>seguir</button>";
+                                    }
                                 }
                             ?>  
                         </article>
-                    </a>
+                        </a>
                     <div class="makefs-video-interactions">
                         <p><b id="makefs-video-views"><?php echo $res["views"] ?></b> Visualizaciones</p>
                         <div class="makes-recipe-tags-wrapper">
@@ -393,6 +406,7 @@
     <script src="./js/report.js"></script>
     <script src="./js/axiosReport.js"></script>
     <script src="./js/axiosSaveRecipe.js"></script>
+    <script src="./js/followUnloged.js"></script>
 </body>
 
 </html>
