@@ -1065,6 +1065,10 @@
   box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.235);
   cursor: pointer;
 }
+#save-actual-recipe{
+  width: 13vh;
+  height: 4.5vh;
+}
 
 /* Video Animations */
 @keyframes loading-animation {
@@ -1115,7 +1119,10 @@
 /*----Responsive----*/
 @media(max-width: 1510px){
   #follow-button{
-    width: 10.2vw;
+    width: 12.2vw;
+  }
+  #followUnloged{
+    width: 12.2vw ;
   }
 }
 @media (max-width:970px){
@@ -1144,6 +1151,9 @@
     height: 35vh;
   }
   #follow-button{
+    width: 24vw !important;
+  }
+  #followUnloged{
     width: 24vw !important;
   }
   .makefs-video-info-title{
@@ -1190,7 +1200,11 @@
   #follow-button{
     width: 50vw;
   }
+  #followUnloged{
+    width: 50vw ;
+  }
 }
+
 @media(max-width: 400px){
   #follow-button{
     width: 20vh !important;
@@ -1198,9 +1212,8 @@
 }
 @media (max-height:810px){
   .makes-recipe-tags-wrapper .makefs-recipe-tag{
-    height: 3vh;
-    width: 10%;
-    width: 27%;
+    height: 2.5vh;
+    width: 18%;
   }
   .makefs-video-report-save button{
     width: 60%;
@@ -1208,11 +1221,22 @@
   #follow-button{
     height: 5vh;
   }
-  
-}
-@media (max-height:670px){
-  .makes-recipe-tags-wrapper .makefs-recipe-tag{
-    margin: 4% .2%;
+  #followUnloged{
+    height: 5vh ;
   }
   
 }
+@media (max-height:810px){
+  .makes-recipe-tags-wrapper .makefs-recipe-tag{
+    height: 2.5vh;
+    width: 27%;
+  }
+}
+@media (max-height:484px){
+  .makes-recipe-tags-wrapper .makefs-recipe-tag{
+    height: 3vh;
+    width: 16%;
+  }
+
+}
+  

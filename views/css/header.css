@@ -442,7 +442,7 @@ header{
         right: 0;
     }
     #userlog img{
-        right: 0%;
+        right: 30%;
     }
 }
 @media (max-width:335px){
