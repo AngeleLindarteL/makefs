@@ -136,61 +136,70 @@
                     
                 </div>
             </div>
-            <div class="saved-recipes-all">
-                <h2>Todas tus recetas guardadas</h2>
-                <div class="general-recipes-container lastest-saved-container">
-                <?php
-                    
-                    for ( $i=0 ; $i < sizeof($dataAll); $i++ ) { 
-                        $recipeid = $dataAll[$i]['recipeid'];
-                        $views = $dataAll[$i]['views'];
-                        $imagen = $dataAll[$i]['imagen'];
-                        $midpic = $dataAll[$i]['minpic'];
-                        $chefid = $dataAll[$i]['chefid'];
-                        $recetaname = test_input($dataAll[$i]['namer']);
-                        $username = test_input($dataAll[$i]['username']);
-                        if($i<=2){
-                            continue;
-                        }
-                        $query = "SELECT AVG(star) FROM stars WHERE recipeid = $recipeid";
-                        try{
-                            $average = $conn->prepare($query);
-                            $average->execute();
-                            $average = $average->fetchColumn();
-                            if (empty($average)){
-                                $average = "0";
+            <?php
+                if(sizeof($dataAll)>3){
+            ?>
+
+                <div class="saved-recipes-all">
+                    <h2>Todas tus recetas guardadas</h2>
+                    <div class="general-recipes-container lastest-saved-container">
+                    <?php
+                        
+                        for ( $i=0 ; $i < sizeof($dataAll); $i++ ) { 
+                            $recipeid = $dataAll[$i]['recipeid'];
+                            $views = $dataAll[$i]['views'];
+                            $imagen = $dataAll[$i]['imagen'];
+                            $midpic = $dataAll[$i]['minpic'];
+                            $chefid = $dataAll[$i]['chefid'];
+                            $recetaname = test_input($dataAll[$i]['namer']);
+                            $username = test_input($dataAll[$i]['username']);
+                            if($i<=2){
+                                continue;
                             }
-                            if(sizeof(explode(".",$average)) == 1){
-                                $average = $average.".0";
+                            $query = "SELECT AVG(star) FROM stars WHERE recipeid = $recipeid";
+                            try{
+                                $average = $conn->prepare($query);
+                                $average->execute();
+                                $average = $average->fetchColumn();
+                                if (empty($average)){
+                                    $average = "0";
+                                }
+                                if(sizeof(explode(".",$average)) == 1){
+                                    $average = $average.".0";
+                                }
+                            }catch(Exception $e){
+                                print_r($e);
+                                exit;
                             }
-                        }catch(Exception $e){
-                            print_r($e);
-                            exit;
-                        }
-                        echo <<< EOT
-                        <div class="recipe-template">
-                            <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
-                                <img src="../mediaDB/recipeImages/$imagen">
-                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
-                            </a>
-                            <div class="next-text-recipe">
-                                <img src="../mediaDB/usersImg/$midpic">
-                                <a href="./chef-view.php?chef=$chefid" target="__blank">
-                        EOT;
-                                    echo "<h3 class='text-template'>$recetaname</h3>";
-                                    echo "<p>$username</p>";
-                        echo <<<EOT
-                                        <p>$views Views</p>
-                                    </a>
+                            echo <<< EOT
+                            <div class="recipe-template">
+                                <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
+                                    <img src="../mediaDB/recipeImages/$imagen">
+                                    <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                </a>
+                                <div class="next-text-recipe">
+                                    <img src="../mediaDB/usersImg/$midpic">
+                                    <a href="./chef-view.php?chef=$chefid" target="__blank">
+                            EOT;
+                                        echo "<h3 class='text-template'>$recetaname</h3>";
+                                        echo "<p>$username</p>";
+                            echo <<<EOT
+                                            <p>$views Views</p>
+                                        </a>
+                                </div>
+                                </a>
+                                
                             </div>
-                            </a>
-                            
-                        </div>
-                        EOT;
-                    }
-                ?>
+                            EOT;
+                            $recipe = true;
+                        }
+                        
+                    ?>
+                    </div>
                 </div>
-            </div>
+            <?php
+                }
+            ?>
         </div>
     </section>
     <script src="./js/index.js"></script>
