@@ -24,6 +24,8 @@
     if(empty($_SESSION['id'])){
         $_SESSION['id']=0;
         $_SESSION['chefid']=0;
+    }else{
+        include("./components/tokenControl.php");
     }
     if (!isset($_GET["video"]) || empty($_GET["video"])){
         header("location: ./error.html");
