@@ -211,8 +211,8 @@
                                     echo <<<EOT
                                     <div class="oneStepNewRecipe">
                                         <input type="text" class="stepTxtInput steps" value="$step[0]">
-                                        <input type="text" class="minInicioInput steps" value="$step[1]">
-                                        <input type="text" class="minFinInput steps" value="$step[2]">
+                                        <input type="number" class="minInicioInput steps" value="$step[1]">
+                                        <input type="number" class="minFinInput steps" value="$step[2]">
                                     </div>
                                     EOT;
                                 }

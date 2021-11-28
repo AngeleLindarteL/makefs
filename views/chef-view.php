@@ -14,11 +14,13 @@
     <title>Chef view</title>
     <?php
         include("../models/conexion.php");
+        include("./components/test_inputs.php");
         session_start();
         if (!isset($_GET["chef"]) || empty($_GET["chef"])){
             header("location: ./error.html");
             exit;
         }
+
         if(empty($_SESSION['id'])){
             $_SESSION['id']=0;
             $_SESSION['chefid']=0;
@@ -141,19 +143,19 @@
                         </figure>
                         <article class="profile-chars">
                             
-                            <h2 id="chef-name"><?php echo $res["namem"];?></h2>
-                            <p id="username-space-chef" >@<?php echo $res["username"]?></p>
+                            <h2 id="chef-name"><?php echo test_input($res["namem"]);?></h2>
+                            <p id="username-space-chef" >@<?php echo test_input($res["username"])?></p>
                             <div class="summary-info">
                                 <article><span></span><p><?php echo $averageGenn?> Valoración</p></article>
                                 <article><span></span><p><?php echo $recipesCount?> Recetas</p></article>
                             </div>
-                            <p class="description" id="description-space-chef"><?php echo $res["descript"]?></p>
-                            <p id="contact-space-chef">Contacto: <?php echo $res["email"]?></p>
+                            <p class="description" id="description-space-chef"><?php echo test_input($res["descript"])?></p>
+                            <p id="contact-space-chef">Contacto: <?php echo  test_input($res["email"])?></p>
                             <ul class="chef-social-media">
-                                <a href="<?php echo $res["facebook"] ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png"></a>
-                                <a href="<?php echo $res["instagram"] ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png"></a>
+                                <a href="<?php echo test_input($res["facebook"]) ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png"></a>
+                                <a href="<?php echo test_input($res["instagram"]) ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png"></a>
                                 <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
-                                <a href="<?php echo $res["youtube"] ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
+                                <a href="<?php echo test_input($res["youtube"]) ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
                             </ul>
                             <?php
                                 if($_SESSION['id']==0){
@@ -228,8 +230,10 @@
                                 <div class="next-text-recipe">
                                     <img src="../mediaDB/usersImg/$res[midpic]">
                                     <a href="./chef-view.php?chef=$res[chefid]">
-                                        <h3 class="text-template">$dataRecipes[namer]</h3>
-                                        <p>$res[username]</p>
+                            EOT;
+                                        echo "<h3 class='text-template'>".test_input($dataRecipes['namer'])."</h3>";
+                                        echo "<p>".test_input($res['username'])."</p>";
+                        echo <<<EOT
                                         <p>$dataRecipes[views] Views</p>
                                     </a>
                             </div>
@@ -295,10 +299,10 @@
                     </form>
                 </section>
                 <article class="profile-chars-chef">
-                    <h2 id="chef-name-changing"><?php echo $res["namem"]?></h2>
-                    <p id="username-space-chef-changing" >@<?php echo $res["username"]?></p>
-                    <p class="description" id="description-space-chef-changing"><?php echo $res["descript"]?></p>
-                    <p id="contact-space-chef-changing">Contacto: <?php echo $res["email"]?></p>
+                    <h2 id="chef-name-changing"><?php echo test_input($res["namem"])?></h2>
+                    <p id="username-space-chef-changing" >@<?php echo test_input($res["username"])?></p>
+                    <p class="description" id="description-space-chef-changing"><?php echo test_input($res["descript"])?></p>
+                    <p id="contact-space-chef-changing">Contacto: <?php echo test_input($res["email"])?></p>
                     <button id="pass-change">Cambiar Contraseña</button>
                 </article>
             </div>
@@ -314,19 +318,19 @@
                         <div class="divInfoData-chef" id="input-info-chef">
                             <div class="infodelchef">
                                 <label for="name">Nombre:</label>
-                                <input type="text" class="infoInputsChef" maxlength="59" id="name-chef" name="namem" value="<?php echo $res["namem"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="59" id="name-chef" name="namem" value="<?php echo test_input($res["namem"])?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="username">Username:</label>
-                                <input type="text" class="infoInputsChef" maxlength="59" id="username-chef" name="username" value="<?php echo $res["username"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="59" id="username-chef" name="username" value="<?php echo test_input($res["username"])?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="email">Email:</label>
-                                <input type="text" class="infoInputsChef" maxlength="69" id="email-chef" name="email" value="<?php echo $res["email"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="69" id="email-chef" name="email" value="<?php echo test_input($res["email"])?>" disabled>
                             </div>
                             <div class="infodelchef">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="infoInputsChef" maxlength="99" id="descript-chef" name="descript" value="<?php echo $res["descript"]?>" disabled>
+                                <input type="text" class="infoInputsChef" maxlength="99" id="descript-chef" name="descript" value="<?php echo test_input($res["descript"])?>" disabled>
                             </div>
                             
                             
@@ -335,11 +339,11 @@
                     <div id="socialMediaChef">
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-facebook.png" alt="">
-                            <input type="text" class="infoInputsChef" id="fbinput-Chef" value="<?php echo $res["facebook"]?>" disabled>
+                            <input type="text" class="infoInputsChef" id="fbinput-Chef" value="<?php echo test_input($res["facebook"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-instagram.png" alt="">
-                            <input type="text" class="infoInputsChef" id="iginput-Chef" value="<?php echo $res["instagram"]?>" disabled>
+                            <input type="text" class="infoInputsChef" id="iginput-Chef" value="<?php echo test_input($res["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-twitter.png" alt="">
@@ -347,7 +351,7 @@
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-youtube.png" alt="">
-                            <input type="text" class="infoInputsChef" id="ytinput-Chef" value="<?php echo $res["youtube"]?>" disabled>
+                            <input type="text" class="infoInputsChef" id="ytinput-Chef" value="<?php echo test_input($res["youtube"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="socialUpdateChef">
@@ -357,15 +361,23 @@
                 <p id="status-chef"></p>
         </div>
     </section>
+
+    <?php
+        if($_SESSION['id']!=0){
+            echo <<<EOT
+                <script src="./js/chageInfoUserChef.js"></script>
+                <script src="./js/upload_pic_chef.js"></script>
+                <script src="./js/axiosFollow.js"></script>
+                <script src="./js/axiosChef.js"></script>
+            EOT;
+        }
+    ?>
     
     <script src="./js/index.js"></script>
     <script src="./js/chef-view.js"></script>
     <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/chageInfoUserChef.js"></script>
-    <script src="./js/axiosChef.js"></script>
-    <script src="./js/darkMode.js"></script>
-    <script src="./js/upload_pic_chef.js"></script>
-    <script src="./js/axiosFollow.js"></script>
     <script src="./js/followUnloged.js"></script>
+    <script src="./js/darkMode.js"></script>
+    
 </body>
 </html>
