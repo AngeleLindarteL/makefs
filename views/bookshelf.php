@@ -16,6 +16,15 @@
     <?php
         include("./components/sessionControl.php");
         include("./components/tokenControl.php");
+        $ToCompareUserId = json_decode(decodeUserData($_SESSION["token"]));
+        if (
+            $ToCompareUserId->id != $_SESSION["id"] ||
+            $ToCompareUserId->id != $_GET["user"] ||
+            $_SESSION["id"] != $_GET["user"] ||
+            empty($_GET["user"])
+        ) {
+            header("Location: ./error.html");
+        }
     ?>
 </head>
 <body>
