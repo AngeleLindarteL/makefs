@@ -27,6 +27,7 @@
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
+        include("./components/test_inputs.php");
     ?>
     <div class="makefs-notification">
         <figure class="makefs-notification-rep"></figure>
@@ -93,10 +94,10 @@
                             
                     </section>
                     <article class="profile-chars-user">
-                        <h2 id="user-name"><?php echo $_SESSION["nombre"]?></h2>
-                        <p id="username-space">@<?php echo $_SESSION["username"]?></p>
-                        <p class="description-user" id="descript-space"><?php echo $_SESSION["description"]?></p>
-                        <p id="contact-space">Contacto: <?php echo $_SESSION["email"]?></p>
+                        <h2 id="user-name"><?php echo test_input($_SESSION["nombre"])?></h2>
+                        <p id="username-space">@<?php echo test_input($_SESSION["username"])?></p>
+                        <p class="description-user" id="descript-space"><?php echo test_input($_SESSION["description"])?></p>
+                        <p id="contact-space">Contacto: <?php echo test_input($_SESSION["email"])?></p>
                         <button class="do-chef" id="btnChangePass">Cambiar Contraseña</button>
                         <button class="do-chef" id="beChefOpenBtn">Conviertete en chef!</button>
                     </article>
@@ -105,11 +106,11 @@
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
                             <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT-user" target="__blank"><img src="./img/user-facebook.png"></a>
-                            <input type="text" class="inputsToEnable" id="fbinput" value="<?php echo $_SESSION["facebook"]?>" disabled>
+                            <input type="text" class="inputsToEnable" id="fbinput" value="<?php echo test_input($_SESSION["facebook"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT-user" target="__blank"><img src="./img/user-instagram.png"></a>
-                            <input type="text" class="inputsToEnable" id="iginput" value="<?php echo $_SESSION["instagram"]?>" disabled>
+                            <input type="text" class="inputsToEnable" id="iginput" value="<?php echo test_input($_SESSION["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
@@ -117,7 +118,7 @@
                         </div>
                         <div class="socialmediadiv">
                             <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>
-                            <input type="text" class="inputsToEnable" id="ytinput" value="<?php echo $_SESSION["youtube"]?>" disabled>
+                            <input type="text" class="inputsToEnable" id="ytinput" value="<?php echo test_input($_SESSION["youtube"])?>" disabled>
                         </div>
                         
                     </div>
@@ -132,19 +133,19 @@
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
                                 <label for="namem">Nombre:</label>
-                                <input type="text" class="inputsToEnable" id="namem" name="namem" maxlength="59" value="<?php echo $_SESSION["nombre"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="namem" name="namem" maxlength="59" value="<?php echo test_input($_SESSION["nombre"])?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="username">Username:</label>
-                                <input type="text" class="inputsToEnable" id="username" name="username" maxlength="59" value="<?php echo $_SESSION["username"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="username" name="username" maxlength="59" value="<?php echo test_input($_SESSION["username"])?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="email">Email:</label>
-                                <input type="text" class="inputsToEnable" id="email" name="email" maxlength="69" value="<?php echo $_SESSION["email"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="email" name="email" maxlength="69" value="<?php echo test_input($_SESSION["email"])?>" disabled>
                             </div>
                             <div class="infodelusuario">
                                 <label for="desc">Description:</label>
-                                <input type="text" class="inputsToEnable" id="descript" name="descript" maxlength="99" value="<?php echo $_SESSION["description"]?>" disabled>
+                                <input type="text" class="inputsToEnable" id="descript" name="descript" maxlength="99" value="<?php echo test_input($_SESSION["description"])?>" disabled>
                             </div>
                             <div class="infodelusuario" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="updateSocial">

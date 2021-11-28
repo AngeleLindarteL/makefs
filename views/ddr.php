@@ -20,6 +20,7 @@
 
     <?php 
     include("../models/conexion.php");
+    include("./components/test_inputs.php");
     session_start();
     if(empty($_SESSION['id'])){
         $_SESSION['id']=0;
@@ -205,11 +206,11 @@
                                     <a class="makefs-steps-info-display-details">v</a>
                                     <h3>$counter</h3>
                                     <article>
-                                        <h4>$stepRenderInfo[1] - $stepRenderInfo[2]</h4>
-                                        <p>$stepRenderInfo[0]</p>
-                                    </article>
-                                </li>
+                                        <h4> $stepRenderInfo[1] - $stepRenderInfo[2]</h4>
                             EOT;
+                                    echo "<p>".test_input($stepRenderInfo[0])."</p>";
+                                echo "</article>
+                                </li>";
                             $counter++;
                         }
 
@@ -259,7 +260,7 @@
             </div>
             <div class="ddr-bottom-panels">
                 <div class="makefs-video-info-panels">
-                    <h1 class="makefs-video-info-title"><?php echo $res["namer"]?></h1>
+                    <h1 class="makefs-video-info-title"><?php echo test_input($res["namer"])?></h1>
                     <a class="makefs-video-info-chef" href="./chef-view.php?chef=<?php echo $res['chefid']; ?>">
                         <div id="foto-chef-ddr">
                             <img src="../mediaDB/usersImg/<?PHP echo $res["minpic"]?>">
@@ -298,7 +299,7 @@
                                 $tagsBase64 = base64_decode($res["tags"]);
                                 $tagsDecoded = json_decode($tagsBase64,true);
                                 foreach ($tagsDecoded as $key => $value){
-                                    echo "<p class='makefs-recipe-tag'>$value</p>";
+                                    echo "<p class='makefs-recipe-tag'>".test_input($value)."</p>";
                                 }
                             ?>
                         </div>
@@ -384,7 +385,7 @@
                             $ingredientsBase64 = base64_decode($res["ingredients"]);
                             $ingredientsDecoded = json_decode($ingredientsBase64,true);
                             foreach ($ingredientsDecoded as $key => $value){
-                                echo "<p class='makefs-ingredient'>$value</p>";
+                                echo "<p class='makefs-ingredient'>".test_input($value)."</p>";
                             }
                         ?>
                         </ul>
@@ -395,16 +396,20 @@
     </section>
     <?php
         include('./components/footer.php');
+        if($_SESSION['id']!=0){
+            echo <<<EOT
+                <script src='./js/axiosFollow.js'></script>
+                <script src="./js/axiosReport.js"></script>
+                <script src="./js/axiosSaveRecipe.js"></script
+            EOT;
+        }
     ?>
-    
     <script src="./js/index.js"></script>
     <script src="./js/ddr.js"></script>
-    <script src='./js/axiosFollow.js'></script>
+    <script src="./js/followUnloged.js"></script>
     <script src="./js/darkMode.js"></script>
     <script src="./js/report.js"></script>
-    <script src="./js/axiosReport.js"></script>
-    <script src="./js/axiosSaveRecipe.js"></script>
-    <script src="./js/followUnloged.js"></script>
+    >
 </body>
 
 </html>

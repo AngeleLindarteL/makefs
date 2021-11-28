@@ -109,8 +109,8 @@
                         <div id="inputsSteps">
                             <div class="oneStepNewRecipe">
                                 <input type="text" class="stepTxtInput steps" placeholder="Paso">
-                                <input type="text" class="minInicioInput steps" placeholder="minInicio">
-                                <input type="text" class="minFinInput steps" placeholder="minFin">
+                                <input type="number" class="minInicioInput steps" placeholder="minInicio">
+                                <input type="number" class="minFinInput steps" placeholder="minFin">
                             </div>
                             
                         </div>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("./jwtController.php");
-
+include("../views/components/test_inputs.php");
     if(isset($_POST['cerrar_sesion'])){
         destroyToken($_SESSION["token"]);
         include('./cerrar.php');
@@ -47,19 +47,19 @@ include("./jwtController.php");
                     $_SESSION['id'] = $id;
 
                     $nombre=$user["namem"];
-                    $_SESSION['nombre'] = $nombre;
+                    $_SESSION['nombre'] = test_input($nombre);
 
                     $username=$user["username"];
-                    $_SESSION['username'] = $username;
+                    $_SESSION['username'] = test_input($username);
 
                     $email=$user["email"];
-                    $_SESSION['email'] = $email;
+                    $_SESSION['email'] = test_input($email);
 
                     $nacimiento=$user["birthdate"];
                     $_SESSION['nacimiento'] = $nacimiento;
                     
                     $descript = $user["descript"];
-                    $_SESSION['description'] = $descript;
+                    $_SESSION['description'] = test_input($descript);
 
                     $pic = $user["midpic"];
                     $_SESSION["midpic"] = $pic;
@@ -74,11 +74,11 @@ include("./jwtController.php");
                     $_SESSION["rol"]=$rol;
 
                     $facebook = $user["facebook"];
-                    $_SESSION["facebook"]= $facebook;
+                    $_SESSION["facebook"]= test_input($facebook);
                     $instagram = $user["instagram"];
-                    $_SESSION["instagram"]= $instagram;
+                    $_SESSION["instagram"]= test_input($instagram);
                     $youtube = $user["youtube"];
-                    $_SESSION["youtube"]= $youtube;
+                    $_SESSION["youtube"]= test_input($youtube);
 
                     $password = $user["passwordm"];
                     $token = generateToken($_SESSION["username"], $password);
