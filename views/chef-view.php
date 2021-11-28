@@ -57,6 +57,10 @@
             $isTheChef = false;
         }
 
+        if($isTheChef){
+            include("./components/tokenControl.php");
+        }
+
         if($res['verify']=="yes"){
             $isVerify = true;
         }else{
@@ -95,7 +99,7 @@
     ?>
     <div class="makefs-notification">
         <figure class="makefs-notification-rep"></figure>
-        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Mui bien eres bueno ya seaktualiso tufoto</p></article>
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Notificacion en espera...</p></article>
     </div>
     <section id="chef-view">
         <div class="makefsContainer chef-view-container">
@@ -186,7 +190,7 @@
                                         <p>$res[username]</p>
                                         <p>$dataRecipes[views] Views</p>
                                     </a>
-                                </div>
+                            </div>
                         EOT;
                             if($isTheChef){ echo "<a class='edit-template' href='./editRecipe.php?receta=$dataRecipes[recipeid]' ></a>";}
                         echo "</div>";

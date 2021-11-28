@@ -16,10 +16,6 @@ const userImgChef = document.querySelector(".profile-pic-img-chef");
 const headerUserImg = document.querySelector("#userlog").children[0];
 const miniInfoImg = document.querySelector(".userMiniInfo").children[0];
 
-if (localStorage.getItem("token") === null){
-    location.reload();    
-}
-
 const axiosImage = axios.create({
     headers: {
         "Content-Type":"multipart/form-data",
