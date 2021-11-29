@@ -83,6 +83,11 @@
   text-align: center;
   margin-bottom: 0;
 }
+@media (max-width:970px){
+  .footer{
+      margin-bottom: 7vh;
+  }
+}
 @media (max-width:690px){
   .footer{
       margin-top: 32vh;

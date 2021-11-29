@@ -8,7 +8,7 @@
     box-shadow: 0 0 10px 0 black;
     color: white;
     backdrop-filter: blur(4px);
-    bottom: 0;
+    bottom: 10vh;
     right: 0;
     margin: .5%;
     padding: 1%;
@@ -51,4 +51,20 @@
     background: white;
     color: black;
     cursor: pointer;
+}
+@media (max-width:1000px){
+    .bookshelf-notification{
+        width: 80%;
+    }
+}
+@media (max-width:375px){
+    .bookshelf-notification{
+        width: 96%;
+        font-size: 0.88em;
+    }
+}
+@media (max-width:300px){
+    .bookshelf-notification{
+        width: 95%;
+    }
 }

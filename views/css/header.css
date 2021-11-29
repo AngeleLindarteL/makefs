@@ -324,6 +324,7 @@ header{
     border-radius: 50%;
     width: 6vh;
     height: 6vh;
+    min-width: 6vh;
     object-fit: cover;
     margin-left:3%;
 }
