@@ -93,7 +93,14 @@
                         EOT;
                         $recipe = true;
                      }
-                
+                     if(empty($dataAll["recipeid"]) && empty($recipe)){
+                        echo <<<EOT
+                            <div id="notFoundRecipes">
+                                <img src="./img/notrecipesSearch.png">
+                                <h3>No se han encontrado recetas con tu búsqueda.</h3>
+                            </div>
+                        EOT;
+                    }
                     include('./components/categoriesMenu.php');
                 ?>
             </div>
