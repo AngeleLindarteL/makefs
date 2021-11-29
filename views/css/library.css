@@ -1,0 +1,208 @@
+.bookshelf-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.saved-recipes-user-portrait{
+    margin-top: 8vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    position: relative;
+    background-image: url(../img/makef-large-banner.jpeg);
+    background-size: 100%;
+    background-position: center;
+    background-position-y: 20%;
+}
+.saved-recipes-user-portrait::before{
+    content: "";
+    top: 0;
+    left: auto;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.664);
+    backdrop-filter: blur(2px);
+}
+.saved-recipes-user-img{
+    z-index: 2;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    padding: .4%;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.199);
+    position: absolute;
+    bottom: -10vh;
+    background-color: white;
+}
+.saved-recipes-user-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.saved-recipes-main-text{
+    width: 100%;
+    text-align: center;
+    margin-top: 10vh;
+}
+.saved-recipes-main-text h1{
+    text-transform: uppercase;
+    margin: 1% 0;
+    margin-bottom: 0;
+}
+.saved-recipes-main-text p{
+    font-size: 1.2em;
+    margin: .2%;
+}
+.lastest-saved-container{
+    margin-bottom: 0;
+}
+.saved-recipes-lastest, .saved-recipes-all{
+    padding-top: 1%;    
+    margin-top: 2%;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px -2px var(--color5);
+    align-items: center;
+    border-radius: 20px;
+}
+.saved-recipes-all{
+    box-shadow: none;
+    margin-top: 1%;
+}
+.saved-recipes-lastest h2, .saved-recipes-all h2{
+    text-transform: uppercase;
+    font-size: 2em;
+    margin: 0;
+    color: var(--color5);
+    text-align: center;
+}
+.del-bookshelf{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2%;
+    width: 4vh;
+    height: 4vh;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0px #ff2c29b8;
+    border: 1px solid var(--color5);
+    background: var(--color5);
+    background-image: url(../iconos/remove-book.png);
+    background-size: 70%;
+    background-position: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+#confirm-section{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.623);
+    backdrop-filter: blur(5px);
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: .2s;
+}
+
+.confirmation-notification{
+    overflow: hidden;
+    width: 70%;
+    background: white;
+    height: 30vh;
+    position: relative;
+    display: flex;
+}
+.confirmation-notification img{
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 2px 0px 15px 0 #000000a8;
+}
+.confirmation-notification article{
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+.confirmation-notification article h3{
+    font-size: 1.7em;
+    margin: 1% 0 0 0;
+}
+.confirmation-notification article p{
+    font-size: 1.3em;
+    margin: 1% 0;
+}
+.confirmation-triggers{
+    position: absolute;
+    width: 68%;
+    bottom: 0;
+    margin: 1% 0;
+    display: flex;
+}
+
+.confirmation-triggers button{
+    width: 45%;
+    height: 6vh;
+    border: none;
+    font-weight: bold;
+    color: var(--color5);
+    background: transparent;
+    border: 2px solid var(--color5);
+    transition: .2s;
+    margin: 0 1%;
+    cursor: pointer;
+}
+.confirmation-triggers button:hover{
+    background-color: var(--color5);
+    color: white;
+}
+
+.pile-waiting{
+    background-color: #000000d9;
+    color: white;
+    backdrop-filter: blur(2px);
+    width: 40%;
+    display: none;
+    align-items: center;
+    position: fixed;
+    bottom: 12vh;
+    right: 0;
+    z-index: 40;
+    margin: .5%;
+    padding: 0% 1%;
+}
+.pile-waiting button{
+    padding: 0.5% 2%;
+    height: fit-content;
+    margin: 0 1.2%;
+    outline: 1px solid white;
+    border-radius: 20px;
+    border: none;
+    background: transparent;
+    color: white;
+    transition: .2s;
+}
+.pile-waiting button:hover{
+    cursor: pointer;
+    color: black;
+    background-color: white;
+}
+
+@keyframes onloadNotif {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    } 
+}

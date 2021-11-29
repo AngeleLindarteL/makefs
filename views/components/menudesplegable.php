@@ -85,7 +85,7 @@ EOT;
         if($isloged){
             echo <<<EOT
             <div class="btndesp">
-                <a href="./bookshelf.php?user=$_SESSION[id]">
+                <a href="./library.php?user=$_SESSION[id]">
                     <img src="./img/saveds.png" id="savered" alt="Hamburguesa">
                     <h3>Guardados</h3>
                 </a>

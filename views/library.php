@@ -10,9 +10,10 @@
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/footer.css" rel="stylesheet">
-    <link href="./css/bookshelf.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
-    <link href="./css/bookshelfnotif.css" rel="stylesheet">
+    <link href="./css/libraryNotif.css" rel="stylesheet">
+    <link href="./css/libraryNotif.css" rel="stylesheet">
+    <link href="./css/library.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <?php
         include("../models/conexion.php");
@@ -52,8 +53,8 @@
         }catch(Exception $e){
             echo $e;
         }
-   
         $dataAll = $saveds -> fetchAll(PDO::FETCH_ASSOC);
+        echo "<script>const uid = $_GET[user]</script>";
     ?>
 </head>
 <body>
@@ -61,6 +62,27 @@
     include('./components/header.php');
     include('./components/menudesplegable.php');
     ?>
+    <div class="pile-waiting">
+        <p>En pila</p>
+    </div>
+    <div class="bookshelf-notification">
+        <img id="bookshelf-icon" src="./iconos/book.png">
+        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
+        <a target="_blank" id="cancel-elimination" to_cancel="0">Deshacer</a>
+    </div>
+    <section id="confirm-section">
+        <div class="confirmation-notification">
+            <img id="confirm-recipe-img" src="../mediaDB/recipeImages/chef-10248165283_1190438111445388_6261601133517822199_n.jpg">
+            <article>
+                <h3>¿Deseas Eliminar el video de <span id="confirmation-chef-name">$user</span> de tu biblioteca?</h3>
+                <p><b id="confirmation-recipe-title">$nombre</b> se eliminará de tu biblioteca, podrás recuperarlo con la notificación que aparecera en pantalla o guardandolo nuevamente</p>
+                <div class="confirmation-triggers">
+                    <button id="trigger-confirm" recipeDelId="0" recipePos="none">Si, lo quiero eliminar</button>
+                    <button id="trigger-cancel">No, llevame de vuelta</button>
+                </div>
+            </article>
+        </div>
+    </section>
     <section id="bookshelf">
         <div class="makefsContainer bookshelf-container">
             <div class="saved-recipes-user-portrait">
@@ -118,6 +140,7 @@
                                         <p>$views Views</p>
                                     </a>
                             </div>
+                            <button class="del-bookshelf" library_id="$recipeid" chefName="$username" recipeTitle="$recetaname" picDir="../mediaDB/recipeImages/$imagen" position_in_library="$i"></button>
                             </a>
                             
                         </div>
@@ -187,7 +210,8 @@
                                             <p>$views Views</p>
                                         </a>
                                 </div>
-                                </a>
+                                <button class="del-bookshelf" library_id="$recipeid" chefName="$username" recipeTitle="$recetaname" picDir="../mediaDB/recipeImages/$imagen" position_in_library="$i"></button>
+                                </a>    
                                 
                             </div>
                             EOT;
@@ -204,7 +228,7 @@
     </section>
     <script src="./js/index.js"></script>
     <script src="./js/darkMode.js"></script>
-    <script src="./js/axiosSaveRecipe.js"></script>
+    <script src="./js/library.js"></script>
     <?php
         include("./components/footer.php");
     ?>

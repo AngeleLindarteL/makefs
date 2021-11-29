@@ -14,7 +14,7 @@
     <link href="./css/footer.css" rel="stylesheet">
     <link href="./css/ddr.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
-    <link href="./css/bookshelfnotif.css" rel="stylesheet">
+    <link href="./css/libraryNotif.css" rel="stylesheet">
     <link href="./css/not-registered.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -170,7 +170,7 @@
     <div class="bookshelf-notification">
         <img id="bookshelf-icon" src="./iconos/book.png">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
-        <a target="_blank" href="./bookshelf.php?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
+        <a target="_blank" href="./library.php?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
     </div>
     <section id="recipe_section">
         <div class="recipe_container">
