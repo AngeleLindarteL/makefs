@@ -2,6 +2,7 @@
 let uploadRecipe = document.querySelector("#uploadBtn2");
 let regionComida = document.querySelector("#eRegiones");
 let recipleTittle = document.querySelector("#recipeTittle");
+let privateData = document.querySelector("#madePrivateBtn");
 let arrayIngredients = [];
 let arrayEtiquetas = [];
 let steps = [];
@@ -20,7 +21,7 @@ deleteRecipe.addEventListener("click",(e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
+                   //window.location.href=`../views/chef-view.php?chef=${chefid}`;
                 }
             }
         )
@@ -31,6 +32,11 @@ deleteRecipe.addEventListener("click",(e)=>{
 
 uploadRecipe.addEventListener("click", (e)=>{
     e.preventDefault();
+    if(privateData.checked){
+        privateData = true;
+    }else{
+        privateData = 'false';
+    }
 
     let contenedorSteps = document.querySelectorAll(".oneStepNewRecipe");
 
@@ -63,6 +69,7 @@ uploadRecipe.addEventListener("click", (e)=>{
         "steps" : steps,
         "tags" : arrayEtiquetas,
         "regionTag" : regionComida.value,
+        "privater" : privateData,
     };
     infoRecipeEdit = JSON.stringify(infoRecipeEdit);
 

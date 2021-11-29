@@ -225,6 +225,11 @@
                             print_r($e);
                             exit;
                         }
+                        if($dataRecipes["privater"]){
+                            $isPrivate = true;
+                        }else{
+                            $isPrivate = false;
+                        }
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
                                 <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]">
@@ -243,6 +248,7 @@
                             </div>
                         EOT;
                             if($isTheChef){ echo "<a class='edit-template' href='./editRecipe.php?receta=$dataRecipes[recipeid]' ></a>";}
+                            if($isPrivate){ echo "<a class='private-template'></a>";}
                         echo "</div>";
                         $recipe = true;
                     }

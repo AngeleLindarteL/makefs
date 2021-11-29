@@ -15,6 +15,7 @@
     <?php
         include('./components/sessionControl.php');
         include("./components/tokenControl.php");
+        include("./components/test_inputs.php");
         if (!isset($_GET["receta"]) || empty($_GET["receta"])){
             header("location: ./error.html");
             exit;
@@ -40,6 +41,11 @@
         $ingredients = json_decode(base64_decode($data["ingredients"]));
         $etiquetas = json_decode(base64_decode($data["tags"]));
         $steps = json_decode(base64_decode($data["steps"]));
+        if($data["privater"]){
+            $isPrivate = true;
+        }else{
+            $isPrivate = false;
+        }
         echo <<<EOT
             <script>
                 const chefid =$data[chefid]; 
@@ -58,8 +64,22 @@
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv2">
                 <?php
-                    echo "<input type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>";
+                    echo <<<EOT
+                        <input type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>
+                        <div id="madePrivate">
+                    EOT;
+                        if($isPrivate){
+                            echo "<input type='checkbox' checked id='madePrivateBtn' value='true' name='madePrivateBtn'>";
+                        }else{
+                            echo "<input type='checkbox' id='madePrivateBtn' value='true' name='madePrivateBtn'>";
+                        }
+                            
+                    echo <<<EOT
+                            <h3>Privado</h3>
+                        </div>
+                    EOT;
                 ?>
+                
                 <div class="editbtndisplay">
                     <button id="uploadBtn2"><h2>Editar Receta</h2></button>
                     <button id="deleteRecipeBtn"><h2>Eliminar Receta</h2></button>
@@ -69,7 +89,7 @@
                 <button id="close-deleteRecipe"></button>
                 <div id="menuDeleteRecipe">
                     <h2>BORRAR RECETA</h2>
-                    <h3>Seguro que quieres Borrar <?php echo $nombreRecipe?>?</h3>
+                    <h3>Seguro que quieres Borrar <?php echo test_input($nombreRecipe)?>?</h3>
                     <input type="submit" class="passInput" id="deleteRecipe" name="deleteRecipe" value="Borrar receta">
                 </div>
             </div>

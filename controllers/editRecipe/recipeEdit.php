@@ -5,7 +5,7 @@
     $connObj = new Conexion;
     $conn = $connObj -> Conectar();
     $consulta = "UPDATE recipe SET namer=:namer, 
-    ingredients=:ingredients,steps=:steps,tags=:tags,region=:region
+    ingredients=:ingredients,steps=:steps,tags=:tags,region=:region, privater=:privater
     WHERE recipeid = :recipeid";
     
     $ingredientes = json_encode($infoEditRecipe->ingredients);
@@ -26,6 +26,7 @@
                 ":steps"=>$steps,
                 ":tags"=>$etiquetas,
                 ":region"=>$infoEditRecipe->regionTag,
+                ":privater"=>$infoEditRecipe->privater,
             ));
         $conn->commit();
     }catch(Exception $e){

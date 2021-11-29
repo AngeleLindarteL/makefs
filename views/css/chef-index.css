@@ -568,6 +568,24 @@ section{
     z-index: 3;
     transition: .2s;
 }
+.private-template{
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    background-image: url(../img/privateRecipe.png);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    margin: 5px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 22%;
+    border-radius: 50%;
+    z-index: 3;
+    transition: .2s;
+}
 
 .edit-template:hover{
     background-image: url(../img/chef-edit-red.png);

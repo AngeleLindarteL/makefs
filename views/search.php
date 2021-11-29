@@ -26,7 +26,7 @@
         $conn = $conn->Conectar();
         $consulta = "SELECT * FROM recipe INNER JOIN userm ON recipe.chefid = userm.chefid 
         INNER JOIN stars ON recipe.recipeid = stars.recipeid 
-        WHERE (upper(recipe.namer) || upper(userm.username)) LIKE upper('%$txtBusqueda%') AND (recipe.privater='false')  ORDER BY recipe.views DESC  ,stars.star DESC";
+        WHERE (upper(recipe.namer) || upper(userm.username)) LIKE upper('%$txtBusqueda%') AND (recipe.privater='FALSE')  ORDER BY recipe.views DESC  ,stars.star DESC";
         try{
             $recetas = $conn->prepare($consulta);
             $recetas->execute();
