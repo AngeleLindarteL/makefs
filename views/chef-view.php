@@ -197,7 +197,11 @@
             </div>
             <div class="edit-recipe-container">
                 <?php
-                    $recipesSQL = "SELECT * FROM recipe WHERE chefid = :chefid";
+                    if(!$isTheChef){
+                        $recipesSQL = "SELECT * FROM recipe WHERE chefid = :chefid AND privater = 'FALSE'";
+                    }else{
+                        $recipesSQL = "SELECT * FROM recipe WHERE chefid = :chefid";
+                    }
                     try{
                         $recipesSQL = $conn->prepare($recipesSQL);
                         $recipesSQL->execute(array(":chefid"=>$res['chefid']));

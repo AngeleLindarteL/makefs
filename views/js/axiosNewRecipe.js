@@ -4,6 +4,7 @@ let regionComida = document.querySelector("#eRegiones");
 let recipleTittle = document.querySelector("#recipeTittle");
 let video = document.querySelector("#recipeVideo");
 let imagen = document.querySelector("#recipeImg");
+let privateData = document.querySelector("#madePrivateBtn");
 let arrayIngredients = [];
 let arrayEtiquetas = [];
 let steps = [];
@@ -47,6 +48,11 @@ uploadVid.addEventListener("click", async (e) => {
 
 uploadRecipe.addEventListener("click", async (e)=>{
     e.preventDefault();
+    if(privateData.checked){
+        privateData = true;
+    }else{
+        privateData = 'false';
+    }
 
     if(duration==''){
         return;
@@ -85,6 +91,7 @@ uploadRecipe.addEventListener("click", async (e)=>{
         "duration" : duration,
         "tags" : arrayEtiquetas,
         "regionTag" : regionComida.value,
+        "privater" : privateData
     };
     infoRecipe = JSON.stringify(infoRecipe);
 

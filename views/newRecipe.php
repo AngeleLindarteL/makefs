@@ -37,6 +37,10 @@
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv">
                 <input type="text" id="recipeTittle" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
+                <div id="madePrivate">
+                    <input type="checkbox" id="madePrivateBtn" value="true" name="madePrivateBtn"> 
+                    <h3>Privado</h3>
+                </div>
                 <button id="uploadBtn"><h2>Subir Receta</h2></button>
             </div>
             <div id="recipebodydiv">
