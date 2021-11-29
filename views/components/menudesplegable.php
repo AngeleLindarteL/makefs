@@ -8,8 +8,8 @@ echo <<<EOT
     <div class="makefsContainer nav-bar-container nav-bar-hidden" id="nav-bar-ct">
         <nav id="nav-bar">
             <div class="searchNav">
-                <input class="text" placeholder="Buscar">
-                <button></button>
+                <input class="text" id="busqueda" placeholder="Buscar">
+                <button id="sendBusqueda"></button>
             </div>
             <button class="categoriasOpen" id="categorias">
                 Categorias

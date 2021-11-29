@@ -133,10 +133,8 @@
                             <div class="next-text-recipe">
                                 <img src="../mediaDB/usersImg/$midpic">
                                 <a href="./chef-view.php?chef=$chefid" target="__blank">
-                        EOT;
-                                    echo "<h3 class='text-template'>$recetaname</h3>";
-                                    echo "<p>$username</p>";
-                        echo <<<EOT
+                                     <h3 class='text-template'>$recetaname</h3>
+                                     <p>$username</p>
                                         <p>$views Views</p>
                                     </a>
                             </div>

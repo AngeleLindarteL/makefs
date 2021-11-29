@@ -8,6 +8,23 @@ const categoriasDesp = document.getElementById("menuCATE-DESP");
 let mostrandoCategorias = false;
 let suscripciones = document.getElementById("suscripcion");
 
+let busqueda = document.querySelector("#busqueda");
+let btnBusqueda = document.querySelector("#sendBusqueda");
+
+busqueda.addEventListener("keydown",(e)=>{
+    if(e.key=="Enter"){
+        busqueda = busqueda.value;
+        window.location.href=`../views/search.php?search=${busqueda}`;
+    }
+})
+
+btnBusqueda.addEventListener("click",(e)=>{
+    e.preventDefault();
+    busqueda = busqueda.value;
+    window.location.href=`../views/search.php?search=${busqueda}`;
+})
+
+
 userLog.addEventListener('click', () => {
     if(userSelection.className == "userSelectClose"){
         userSelection.style.display = "flex";
