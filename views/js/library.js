@@ -27,6 +27,7 @@ const asyncHandler = {
     pileIds: [],
     nextInPile: [],
     fetchedEls: 0,
+    pileNextHandler: null
 }
 
 const cancelPosTimeOut = () => {
@@ -55,6 +56,7 @@ const hideNotification = () => {
         notification.style.opacity = "0";
         setTimeout(() => {
             notification.removeAttribute("style");
+            pileContainer.style.display = "none";
         },200)
     },5000)
 }
@@ -75,14 +77,14 @@ const setNotificationState = ({img="./iconos/book.png",msg="Bookshlef Notificati
     if (isLoad) {
         notificationImg.style.animation = "onloadNotif .8s infinite";
     }else{
-        notificationImg.removeAttribute("style");
+        notificationImg.style.animation = "none";
     }
     notificationImg.src = img;
     notificationMsg.textContent = msg;
 }
 
 const hideConfirmationScreen = () => {
-    confirmSection.style.opacity = "1";
+    confirmSection.style.opacity = "0";
     setTimeout(() =>{
         confirmSection.removeAttribute("style");
     }, 200)
@@ -104,8 +106,9 @@ const axiosToLib = (libVideoId,videoTitle,recipePos) => {
         console.log(res);
         if (res.data == "removed"){
             let msg = responseStates.deleted + videoTitle;
-            setNotificationState({img:"./iconos/remove-book.png",msg:msg,isLoad:true,hideButton:false,recipeCancelId:libVideoId,recipeTitle:videoTitle,containerPos:recipePos});
+            setNotificationState({img:"./iconos/remove-book.png",msg:msg,isLoad:false,hideButton:false,recipeCancelId:libVideoId,recipeTitle:videoTitle,containerPos:recipePos});
             allRecipes[parseInt(recipePos)].style.width = "0";
+            allRecipes[parseInt(recipePos)].style.margin = "0";
         }else if(res.data == "saved"){
             let msg = responseStates.canceled + videoTitle;
             setNotificationState({img:"./iconos/book.png",msg:msg,isLoad:false})
@@ -114,11 +117,12 @@ const axiosToLib = (libVideoId,videoTitle,recipePos) => {
             setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.error,isLoad:true})
         }
         if (asyncHandler.nextInPile.length > 0) {
-            setTimeout(() => {
+            asyncHandler.pileNextHandler = setTimeout(() => {
                 let el = asyncHandler.nextInPile[0];
                 axiosToLib(el[0],el[1],el[2]);
                 asyncHandler.nextInPile.shift();
                 asyncHandler.pileIds.shift();
+                setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.loading,isLoad:true})
                 pileContainer.removeChild(document.querySelectorAll(".waiting-pile")[0]);
                 if (asyncHandler.nextInPile.length == 0){
                     pileContainer.removeAttribute("style");
@@ -183,5 +187,10 @@ notificationCancelBtn.addEventListener("click", () => {
     let recipeid = notificationCancelBtn.getAttribute("recipeid");
     let recipeTitle = notificationCancelBtn.getAttribute("title");
     let containerPos = notificationCancelBtn.getAttribute("pos");
+    setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.loading,isLoad:true})
+    if (asyncHandler.pileNextHandler != null){
+        clearTimeout(asyncHandler.pileNextHandler);
+        asyncHandler.pileNextHandler = null;
+    }
     axiosToLib(recipeid,recipeTitle,containerPos);
 })
