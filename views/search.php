@@ -24,9 +24,9 @@
         $txtBusqueda = $_GET["search"];
         $conn = new Conexion;
         $conn = $conn->Conectar();
-        $consulta = "SELECT * FROM recipe INNER JOIN userm ON recipe.chefid = userm.chefid 
-        INNER JOIN stars ON recipe.recipeid = stars.recipeid 
-        WHERE (upper(recipe.namer) || upper(userm.username)) LIKE upper('%$txtBusqueda%') AND (recipe.privater='FALSE')  ORDER BY recipe.views DESC  ,stars.star DESC";
+        $consulta = "SELECT * FROM recipe INNER JOIN userm ON recipe.chefid= userm.chefid WHERE recipe_with_weights @@ to_tsquery('$txtBusqueda:*') 
+        ORDER BY ts_rank(recipe_with_weights, to_tsquery('$txtBusqueda:*')) desc, views desc";
+
         try{
             $recetas = $conn->prepare($consulta);
             $recetas->execute();

@@ -4,8 +4,8 @@
     $infoRecipe = json_decode(file_get_contents("php://input",true));
     $connObj = new Conexion;
     $conn = $connObj -> Conectar();
-    $consulta = "INSERT INTO recipe(chefid,namer,ingredients,steps,video,imagen,duration,tags,region,privater)
-    VALUES (:chefid,:namer,:ingredients,:steps,:video,:imagen,:duration,:tags,:regionTag,:privater)";
+    $consulta = "INSERT INTO recipe(chefid,namer,ingredients,steps,video,imagen,duration,tags,region,privater,chefname)
+    VALUES (:chefid,:namer,:ingredients,:steps,:video,:imagen,:duration,:tags,:regionTag,:privater,:chefname)";
     
     $ingredientes = json_encode($infoRecipe->ingredients);
     $etiquetas = json_encode($infoRecipe->tags);
@@ -29,6 +29,7 @@
                 ":tags"=>$etiquetas,
                 ":regionTag"=>$infoRecipe->regionTag,
                 ":privater"=>$infoRecipe->privater,
+                ":chefname"=>$infoRecipe->chefname,
             ));
         $conn->commit();
     }catch(Exception $e){

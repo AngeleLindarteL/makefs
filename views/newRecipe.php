@@ -17,7 +17,10 @@
     ?>
     <?php include("./components/tokenControl.php");?>
     <script>
-        <?php echo "const chefid =".$_SESSION['chefid'] ?>
+        <?php
+        echo "const chefid =".$_SESSION['chefid'];
+        echo "const chefname =".$_SESSION["username"]; 
+        ?>
     </script>
 </head>
 <body>

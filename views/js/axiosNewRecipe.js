@@ -91,7 +91,8 @@ uploadRecipe.addEventListener("click", async (e)=>{
         "duration" : duration,
         "tags" : arrayEtiquetas,
         "regionTag" : regionComida.value,
-        "privater" : privateData
+        "privater" : privateData,
+        "chefname": chefname,
     };
     infoRecipe = JSON.stringify(infoRecipe);
 
