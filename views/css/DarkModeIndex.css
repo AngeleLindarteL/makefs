@@ -1,0 +1,32 @@
+/*----Dark mode----*/
+.DarkModeBody{
+    background-color: #100f0f;
+}
+.DarkModeP{
+    color: white;
+}
+.DarkModeCategories{
+    background-color: rgba(0, 0, 0, 0);
+}
+.DarkModesubCategories{
+    background-color: rgba(0, 0, 0, 0);
+}
+.DarkStar{
+    background-color: #100f0f;
+}
+/*----White mode-----*/
+.White{
+    background-color:white;
+}
+.WhiteModeP{
+    color: black;
+}
+.WhiteModeCategories{
+    background-color: rgb(255, 255, 255);
+}
+.WhiteStar{
+    background-color: white;
+}
+.WhiteModesubCategories{
+    background-color: rgb(255, 255, 255);
+}

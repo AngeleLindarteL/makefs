@@ -1,0 +1,57 @@
+/*----Dark mode----*/
+.DarkModeBody{
+    background-color: #100f0f;
+}
+.DarkModeP{
+    color:white;
+}
+.DarkStar{
+    background-color: #100f0f;
+}
+.DarkChefCont{
+    background-color:#100f0f;
+}
+.darkTitleInput{
+    color: white;
+}
+.DarkDelete{
+    background:#302f2f;
+}
+.DarkPhoto{
+    background:#302f2f;
+}
+.DarkInputPhoto{
+    color:white;
+}
+.DarkBannerNone{
+    filter:brightness(0.2);
+}
+/*----White mode-----*/
+.White{
+    background-color:white;
+}
+.WhiteStar{
+    background-color: white;
+}
+.WhiteModeP{
+    color:#100f0f;
+}
+.WhiteChefCont{
+    background:white;
+}
+.whiteTitleInput{
+    color: black;
+}
+.WhiteDelete{
+    background:white;
+}
+.WhitePhoto{
+    background:white;
+}
+.WhiteInputPhoto{
+    color:#FF2C29;
+}
+.WhiteBannerNone{
+    filter:brightness(0.);
+}
+

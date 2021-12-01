@@ -42,7 +42,6 @@ section{
 #chefContainer{
     width: 70%;
     height: 80vh;
-    background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -192,6 +191,7 @@ section{
     border: 2px solid #FF2C29;
     border-right: none;
     padding: 1.5vh;
+    color: inherit;
 }
 #input-info-chef input{
     width: 90%;
@@ -259,11 +259,10 @@ section{
     width: 90%;
     overflow: visible;
     border: none;
-    background: white;
     padding: 1.5vh;
     margin-top: 2vh;
     border-radius:10px;
-    color: #FF2C29;
+    color: white;
     outline: 2px solid #FF2C29;
     cursor: pointer;
     display: none;
@@ -334,7 +333,6 @@ section{
 }
 
 #fotoChange-chef{
-    background-color: white;
     width: 30%;
     height: 30vh;
     display: flex;
@@ -509,7 +507,6 @@ section{
     transition: .3s;
 }
 #deleteAccount-chef{
-    background-color: white;
     width: 40%;
     height: 35vh;
     display: flex;

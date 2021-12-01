@@ -10,6 +10,7 @@
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/chef-view-change.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
+    <link href="./css/DarkModecss.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
@@ -121,7 +122,7 @@
 
     ?>
 </head>
-<body>
+<body class="White">
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
@@ -234,9 +235,9 @@
                             <div class="recipe-template editable-recipe">
                                 <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]">
                                     <img src="../mediaDB/recipeImages/$dataRecipes[imagen]">
-                                    <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
                                 </a>
-                                <div class="next-text-recipe">
+                                <div class="next-text-recipe WhiteModeP">
                                     <img src="../mediaDB/usersImg/$res[midpic]">
                                     <a href="./chef-view.php?chef=$res[chefid]">
                             EOT;
@@ -255,7 +256,7 @@
                     if(empty($dataRecipes["recipeid"]) && empty($recipe)){
                         if($isTheChef){
                             echo <<<EOT
-                                <div id="notFoundRecipes">
+                                <div id="notFoundRecipes" class="WhiteBannerNone">
                                     <img src="./img/notFoundRecipes.png">
                                     <h3>No tienes recetas aún! Empieza a subir contenido!</h3>
                                 </div>
@@ -276,7 +277,7 @@
     </section>
     <section class="chefsContainer" id="changeInfoChef">
         <button id="profile-edit-close"></button>
-        <div id="chefContainer">
+        <div id="chefContainer" class="WhiteChefCont">
             <div class="divChef-view" id="firstdiv-chef">
                 <figure class="profile-pic-chef">
                         <img class="profile-pic-img-chef" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
@@ -285,8 +286,8 @@
                 </figure>
                 <section class="divChef-view" id="cambiarFoto-chef">
                     <button id="profile-edit-close-chef2"></button>
-                    <form action="" id="fotoChange-chef" method="POST">
-                        <input type="file" class="updateFotoInput-chef" name="profilepic">
+                    <form action="" id="fotoChange-chef" class="WhitePhoto" method="POST">
+                        <input type="file" class="updateFotoInput-chef WhiteInputPhoto" name="profilepic">
                         <input type="submit" name="changeFoto" id="submitFoto-chef" value="Cambiar foto">
                     </form>
                 </section>
@@ -301,7 +302,7 @@
                 </section>
                 <section class="divUser-view" id="deleteAccountContainer-chef">
                     <button id="profile-close-deleteAccount-chef"></button>
-                    <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount-chef" method="POST">
+                    <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount-chef" class="WhiteDelete" method="POST">
                         <h2>BORRAR CUENTA</h2>
                         <h3>Para eliminar tu cuenta verifica que eres tu, pon tu contraseña en el campo.</h3>
                         <input type="text" class="passInput-chef" placeholder="Contraseña" name="deleteUserPass">
@@ -326,19 +327,19 @@
                             </div>
                         </div>
                         <div class="divInfoData-chef" id="input-info-chef">
-                            <div class="infodelchef">
+                            <div class="infodelchef whiteTitleInput">
                                 <label for="name">Nombre:</label>
                                 <input type="text" class="infoInputsChef" maxlength="59" id="name-chef" name="namem" value="<?php echo test_input($res["namem"])?>" disabled>
                             </div>
-                            <div class="infodelchef">
+                            <div class="infodelchef whiteTitleInput">
                                 <label for="username">Username:</label>
                                 <input type="text" class="infoInputsChef" maxlength="59" id="username-chef" name="username" value="<?php echo test_input($res["username"])?>" disabled>
                             </div>
-                            <div class="infodelchef">
+                            <div class="infodelchef whiteTitleInput">
                                 <label for="email">Email:</label>
                                 <input type="text" class="infoInputsChef" maxlength="69" id="email-chef" name="email" value="<?php echo test_input($res["email"])?>" disabled>
                             </div>
-                            <div class="infodelchef">
+                            <div class="infodelchef whiteTitleInput">
                                 <label for="desc">Description:</label>
                                 <input type="text" class="infoInputsChef" maxlength="99" id="descript-chef" name="descript" value="<?php echo test_input($res["descript"])?>" disabled>
                             </div>

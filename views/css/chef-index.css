@@ -78,7 +78,6 @@ section{
     height: 9vh;
     bottom: 0.5%;
     left: 8.5%;
-    background-color: rgb(255, 255, 255);
     backdrop-filter: blur(15px);
     box-shadow: 0px 0px 10px 2px #0000003d;
     border-radius: 20px ;
@@ -168,11 +167,12 @@ section{
     padding-left: 2%;
     text-decoration: none;
     max-width: 80%;
+    color:inherit;
 }
 .next-text-recipe a p{
     text-decoration: none;
     margin: 0;
-    color: black;
+    color:inherit;
 }
 .star-template{
     display: flex;

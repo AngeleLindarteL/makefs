@@ -8,13 +8,14 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/DarkModeIndex.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Inicio Makef's</title>
     <?php
         session_start();
     ?>
 </head>
-<body>
+<body class="White">
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
@@ -26,9 +27,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/pollo.jpeg">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/xd.jpg">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -40,9 +41,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/pollo.jpeg">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/xd.jpg">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -54,9 +55,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/pitsa.jpg">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/cangreGOD.jfif">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -68,9 +69,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/XD.jfif">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/elBhicho.jfif">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -82,9 +83,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/pollo.jpeg">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/xd.jpg">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -96,9 +97,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/pollo.jpeg">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/xd.jpg">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -110,9 +111,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/pitsa.jpg">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/cangreGOD.jfif">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -124,9 +125,9 @@
                 <div class="recipe-template">
                     <a class="image-template" href="https://google.com" target="__blank">
                         <img src="./test-imgs/XD.jfif">
-                        <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                     </a>
-                    <div class="next-text-recipe">
+                    <div class="next-text-recipe WhiteModeP">
                         <img src="./test-imgs/elBhicho.jfif">
                         <a href="https://google.com" target="__blank">
                             <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -148,6 +149,6 @@
     <script src="./js/index.js"></script>
     <script src="./js/categoriesmenu.js"></script>
     <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/darkMode.js"></script>
+    <script src="./js/darkModeIndex.js"></script>
 </body>
 </html>

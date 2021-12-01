@@ -1,6 +1,6 @@
 <?php
     echo <<<EOT
-        <div class="categories-down" id="menuCATE">
+        <div class="categories-down WhiteModeCategories" id="menuCATE">
             <div class="categoryDiv" >
                 <a id="latamCate">
                     <img src="./img/latamCat.png" alt="Colombian">
@@ -38,7 +38,7 @@
                 </a>
             </div>
         </div>
-        <div class="subcategories-down" id="latinoamerica">
+        <div class="subcategories-down WhiteModesubCategories" id="latinoamerica">
             <div class="categoryDiv returnBtn">
                 <a href="#">
                     <h2><<</h2>
@@ -82,7 +82,7 @@
             </div>
             
         </div>
-        <div class="subcategories-down" id="asia">
+        <div class="subcategories-down WhiteModesubCategories" id="asia">
             <div class="categoryDiv returnBtn">
                 <a href="#">
                     <h2><<</h2>
@@ -126,7 +126,7 @@
             </div>
             
         </div>
-        <div class="subcategories-down" id="norteamerica">
+        <div class="subcategories-down WhiteModesubCategories" id="norteamerica">
             <div class="categoryDiv returnBtn">
                 <a href="#">
                     <h2><<</h2>
@@ -170,7 +170,7 @@
             </div>
             
         </div>
-        <div class="subcategories-down" id="europa">
+        <div class="subcategories-down WhiteModesubCategories" id="europa">
             <div class="categoryDiv returnBtn">
                 <a href="#">
                     <h2><<</h2>
@@ -214,7 +214,7 @@
             </div>
             
         </div>
-        <div class="subcategories-down" id="africa">
+        <div class="subcategories-down WhiteModesubCategories" id="africa">
             <div class="categoryDiv returnBtn">
                 <a href="#">
                     <h2><<</h2>
@@ -258,7 +258,7 @@
             </div>
             
         </div>
-        <div class="subcategories-down" id="oceania">
+        <div class="subcategories-down WhiteModesubCategories" id="oceania">
             <div class="categoryDiv returnBtn">
                 <a href="#">
                     <h2><<</h2>
