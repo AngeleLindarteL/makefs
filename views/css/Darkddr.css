@@ -1,0 +1,62 @@
+/*--Dark--*/
+.DarkModeBody{
+    background-color:#100f0f;
+}
+.DarkModeP{
+    color:white;
+}
+.Darktitlevideo{
+    color:white;
+}
+.Darkusername{
+    color:white;
+}
+.Darkfollow{
+    color:white;
+}
+.Darkview{
+    color:white;
+}
+.darkpseg{
+    color:white;
+}
+.Darkviewp{
+    color:white;
+}
+.DarkStar{
+    background-color:#100f0f;
+}
+.DarkNotif{
+    filter:invert(1);
+}
+/*--White--*/
+.White{
+    background-color:white;
+}
+.WhiteModeP{
+    color:black;
+}
+.Whitetitlevideo{
+    color:black;
+}
+.Whiteusername{
+    color:black;
+}
+.Whitefollow{
+    color:black;
+}
+.Whiteview{
+    color:black;
+}
+.whitepseg{
+    color:black;
+}
+.Whiteviewp{
+    color:black;
+}
+.WhiteStar{
+    background-color:white;
+}
+.WhiteNotif{
+    filter:invert(0);
+}

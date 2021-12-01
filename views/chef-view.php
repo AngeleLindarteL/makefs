@@ -11,6 +11,7 @@
     <link href="./css/chef-view-change.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
     <link href="./css/DarkModecss.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/DarkMenu.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
@@ -389,6 +390,7 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/followUnloged.js"></script>
     <script src="./js/darkMode.js"></script>
+    <script src="./js/DarkModeMenu.js"></script>
     
 </body>
 </html>

@@ -6,10 +6,10 @@ if(isset($_SESSION['token'])){
 }
 echo <<<EOT
     <div class="makefsContainer nav-bar-container nav-bar-hidden" id="nav-bar-ct">
-        <nav id="nav-bar">
+        <nav id="nav-bar" class="WhiteMenu">
             <div class="searchNav">
-                <input class="text" id="busqueda" placeholder="Buscar">
-                <button id="sendBusqueda"></button>
+                <input class="text WhiteInput" id="busqueda" placeholder="Buscar">
+                <button id="sendBusqueda" class="WhiteInput"></button>
             </div>
             <button class="categoriasOpen" id="categorias">
                 Categorias
@@ -75,7 +75,7 @@ EOT;
         }
         echo <<<EOT
         <div class="btnsMenuDesp"> 
-        <div class="btndesp">
+        <div class="btndesp WhiteDesp">
             <a href="./index.php">
                 <img src="./img/home.png" alt="Hamburguesa" id="homered">
                 <h3>Home</h3>
@@ -84,7 +84,7 @@ EOT;
         EOT;
         if($isloged){
             echo <<<EOT
-            <div class="btndesp">
+            <div class="btndesp WhiteDesp">
                 <a href="./library.php?user=$_SESSION[id]">
                     <img src="./img/saveds.png" id="savered" alt="Hamburguesa">
                     <h3>Guardados</h3>

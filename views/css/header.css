@@ -494,7 +494,6 @@ header{
     display: flex;
     justify-content: center;
     padding: 5% 0;
-    background-color: white;
 }
 
 .searchNav input{
@@ -522,7 +521,6 @@ header{
 }
 
 .searchNav button{
-    background-color: white;
     transition: .2s;
     width: 40px;
     height: 40px;
@@ -563,7 +561,6 @@ header{
     justify-content: flex-start;
     height: 100%;
     width: 100%;
-    background-color: rgb(255, 255, 255);
     box-shadow: 3px 0 20px 20px rgb(0 0 0 / 8%);
     z-index: 20;
 }
@@ -728,7 +725,6 @@ header{
     padding: 0;
     text-transform: none;
     text-align: center;
-    background-color: white;
     color: #FF2C29;
     width: 100%;
 }

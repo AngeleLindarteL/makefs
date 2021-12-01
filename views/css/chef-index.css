@@ -108,7 +108,7 @@ section{
     width: 100%;
     text-decoration: none;
     display: flex;
-    color: #FF2C29;
+    color: inherit;
     justify-content: center;
     align-items: center;
 }
@@ -186,7 +186,6 @@ section{
     border-radius: 15px;
     box-shadow: 0 0 10px 0px #00000075;
     z-index: 3;
-    background-color: white;
 }
 .star-template img{
     object-fit: contain;

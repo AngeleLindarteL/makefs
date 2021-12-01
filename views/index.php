@@ -10,6 +10,7 @@
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/DarkModeIndex.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/DarkMenu.css">
     <title>Inicio Makef's</title>
     <?php
         session_start();
@@ -150,5 +151,6 @@
     <script src="./js/categoriesmenu.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/darkModeIndex.js"></script>
-</body>
+    <script src="./js/DarkModeMenu.js"></script>
+    </body>
 </html>

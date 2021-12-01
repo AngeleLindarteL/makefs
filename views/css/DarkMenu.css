@@ -1,0 +1,26 @@
+/*--Dark mode--*/
+.DarkMenu{
+    background-color: #100f0f;
+}
+.DarkSearch{
+    background-color: #100f0f;
+}
+.DarkDesp{
+    background-color: #100f0f;
+}
+.DarkInput{
+    background-color: #100f0f; 
+}
+/*--White mode--*/
+.WhiteMenu{
+    background-color: white;
+}
+.WhiteSearch{
+    background-color: white;
+}
+.WhiteDesp{
+    background-color: white;
+}
+.WhiteInput{
+    background-color: white;
+}

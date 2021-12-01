@@ -14,9 +14,14 @@
 .DarkStar{
     background-color: #100f0f;
 }
+.Darkindice{
+    background-color: #100f0f;
+    border: 1px solid #ffffff;
+    color:white;
+}
 /*----White mode-----*/
 .White{
-    background-color:white;
+    background-color: white;
 }
 .WhiteModeP{
     color: black;
@@ -29,4 +34,9 @@
 }
 .WhiteModesubCategories{
     background-color: rgb(255, 255, 255);
+}
+.Whiteindice{
+    background-color: white;
+    border: 1px solid #FF2C29;
+    color: #FF2C29;
 }

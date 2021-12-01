@@ -141,3 +141,21 @@ section{
 .inputsReport input:focus-visible{
     outline: none;
 }
+@media(max-height:730px){
+    .reasonReport{
+        height: 30%;
+    }
+    #report{
+        height: 40%;
+    }
+}
+@media (max-height:450px){
+    .inputsReport{
+        height: 35%;
+    }
+}
+@media (max-width:800px){
+    #report{
+        width: 95%;
+    }
+}

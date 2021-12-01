@@ -16,6 +16,8 @@
     <link href="./css/notifications.css" rel="stylesheet">
     <link href="./css/libraryNotif.css" rel="stylesheet">
     <link href="./css/not-registered.css" rel="stylesheet">
+    <link href="./css/Darkddr.css" rel="stylesheet">
+    <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <?php 
@@ -157,7 +159,7 @@
     }
     ?>
 </head>
-<body>
+<body class="White">
     <?php
     include('./components/header.php');
     include('./components/menudesplegable.php');
@@ -167,7 +169,7 @@
         <figure class="makefs-notification-rep"></figure>
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">En espera</p></article>
     </div>
-    <div class="bookshelf-notification">
+    <div class="bookshelf-notification WhiteNotif">
         <img id="bookshelf-icon" src="./iconos/book.png">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
         <a target="_blank" href="./library.php?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
@@ -263,7 +265,7 @@
             </div>
             <div class="ddr-bottom-panels">
                 <div class="makefs-video-info-panels">
-                    <h1 class="makefs-video-info-title"><?php echo test_input($res["namer"])?></h1>
+                    <h1 class="makefs-video-info-title Whitetitlevideo"><?php echo test_input($res["namer"])?></h1>
                     <a class="makefs-video-info-chef" href="./chef-view.php?chef=<?php echo $res['chefid']; ?>">
                         <div id="foto-chef-ddr">
                             <img src="../mediaDB/usersImg/<?PHP echo $res["minpic"]?>">
@@ -271,8 +273,8 @@
                         </div>
                         
                         <article>
-                            <p> <?php echo $res["username"] ?></p>
-                            <p> <b id="followersSection"><?php echo $seguidores ?></b> Seguidores</p>
+                            <p id="usernameSection" class="Whiteusername"> <?php echo  $res["username"] ?></p>
+                            <p class="seguidoresp whitepseg"> <b id="followersSection" class="Whitefollow"><?php echo $seguidores ?></b> Seguidores</p>
                             <?php
                                 if($_SESSION['id']==0){
                                     echo <<<EOT
@@ -296,7 +298,7 @@
                         </article>
                         </a>
                     <div class="makefs-video-interactions">
-                        <p><b id="makefs-video-views"><?php echo $res["views"] ?></b> Visualizaciones</p>
+                        <p class="viewp Whiteviewp"><b id="makefs-video-views" class="Whiteview" ><?php echo $res["views"] ?></b> Visualizaciones</p>
                         <div class="makes-recipe-tags-wrapper">
                             <?php
                                 $tagsBase64 = base64_decode($res["tags"]);
@@ -355,9 +357,9 @@
                         <div class="recipe-template in-video-template">
                             <a class="image-template" href="https://google.com" target="__blank">
                                 <img src="./test-imgs/pollo.jpeg">
-                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                             </a>
-                            <div class="next-text-recipe">
+                            <div class="next-text-recipe WhiteModeP">
                                 <img src="./test-imgs/xd.jpg">
                                 <a href="https://google.com" target="__blank">
                                     <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -369,9 +371,9 @@
                         <div class="recipe-template in-video-template">
                             <a class="image-template" href="https://google.com" target="__blank">
                                 <img src="./test-imgs/pollo.jpeg">
-                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                                <figure class="star-template bookshelf-notification"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                             </a>
-                            <div class="next-text-recipe">
+                            <div class="next-text-recipe WhiteModeP">
                                 <img src="./test-imgs/xd.jpg">
                                 <a href="https://google.com" target="__blank">
                                     <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -383,9 +385,9 @@
                         <div class="recipe-template in-video-template">
                             <a class="image-template" href="https://google.com" target="__blank">
                                 <img src="./test-imgs/pollo.jpeg">
-                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">5.0</b></figure>
                             </a>
-                            <div class="next-text-recipe">
+                            <div class="next-text-recipe WhiteModeP">
                                 <img src="./test-imgs/xd.jpg">
                                 <a href="https://google.com" target="__blank">
                                     <h3 class="text-template">Pollo broaster Makefsiano</h3>
@@ -424,9 +426,10 @@
     <script src="./js/index.js"></script>
     <script src="./js/ddr.js"></script>
     <script src="./js/followUnloged.js"></script>
-    <script src="./js/darkMode.js"></script>
     <script src="./js/report.js"></script>
     <script src="./js/menuDesplegable.js"></script>
+    <script src="./js/DarkModeddr.js"></script>
+    <script src="./js/DarkModeMenu.js"></script>
 </body>
 
 </html>

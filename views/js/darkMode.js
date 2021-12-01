@@ -20,7 +20,9 @@ if (localStorage.getItem("Theme") == null){
         deleteForm.classList.replace('WhiteDelete','DarkDelete');
         PhotoForm.classList.replace('WhitePhoto','DarkPhoto');
         InputPhotoForm.classList.replace('WhiteInputPhoto','DarkInputPhoto');
-        logomachefs.classList.replace('WhiteBannerNone','DarkBannerNone');
+        if (logomachefs){
+            logomachefs.classList.replace('WhiteBannerNone','DarkBannerNone');
+        }
         star.forEach(fondoStar =>{
             fondoStar.classList.replace('WhiteStar','DarkStar');
         })
