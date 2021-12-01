@@ -1,0 +1,57 @@
+.makefs-notification{
+    box-shadow: 0 0 10px 0px #00000096;
+    position: fixed;
+    justify-content: left;
+    align-items: center;
+    height: 10vh;
+    padding: 1%;
+    width: 35%;
+    margin: 1%;
+    top: 1vh;
+    right: 0;
+    right: -100%;
+    z-index: 12;
+    background-color: #ff2c29;
+    color: white;
+    display: flex;
+    transition: .4s;
+}
+
+.makefs-notification-rep{
+    width: 8vh;
+    height: 8vh;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0;
+    margin: 0 2%;
+    margin-right: 3%;
+    background-image: url(../iconos/error.png);
+}
+.notification-title{
+    text-transform: uppercase;
+}
+
+@keyframes rotateDeg {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+
+.ddr-in-notification{
+    z-index: 200;
+}
+
+@media(max-width:680px){
+    .makefs-notification{
+        width: 95%;
+    }
+}
+@media (max-height:760px){
+    .makefs-notification{
+        height: 16vh !important;
+    }
+}

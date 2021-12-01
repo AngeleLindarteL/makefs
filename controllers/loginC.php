@@ -36,8 +36,6 @@ include("../views/components/test_inputs.php");
             
             $contraIngresada = $_POST['pw'];
             $user["passwordm"];
-            echo $contraIngresada;
-            echo $user["passwordm"];
 
             if($user){
                 if(password_verify($contraIngresada,$user["passwordm"])){
@@ -79,6 +77,8 @@ include("../views/components/test_inputs.php");
                     $_SESSION["instagram"]= test_input($instagram);
                     $youtube = $user["youtube"];
                     $_SESSION["youtube"]= test_input($youtube);
+                    $twitter = $user["twitter"];
+                    $_SESSION["twitter"]= test_input($twitter);
 
                     $password = $user["passwordm"];
                     $token = generateToken($_SESSION["username"], $password);
@@ -86,16 +86,22 @@ include("../views/components/test_inputs.php");
                     $token = $token->access_token;
                     $_SESSION["watched_in_session_list"] = array();
 
+                    if(isset($_SESSION["errorLog"])){
+                        unset($_SESSION["errorLog"]);
+                    }
                     
                     $_SESSION["token"] = $token;
                     header("location: ../views/index.php");
+                    
 
                 }else{
-                    echo "Contraseña incorrecta";
+                    $_SESSION["errorLog"] = "contrasena";
+                    header("location: ../views/login.php");
                 }
                 
             }else{
-                echo "Usuario Incorrecto";
+                $_SESSION["errorLog"] = "user";
+                header("location: ../views/login.php");
             }
             
         }

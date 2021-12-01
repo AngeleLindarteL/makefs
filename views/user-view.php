@@ -14,6 +14,7 @@
     <title>Perfil</title>
     <?php
         include('./components/sessionControl.php');
+        include("./components/tokenControl.php");
         if(isset($_SESSION["chefid"])){
             header("location: ./chef-view.php");
         }
@@ -21,7 +22,6 @@
     <script>
         <?php echo "const id =".$_SESSION['id'] ?>
     </script>
-    <?php /*include("./components/tokenControl.php")*/ ?>
 </head>
 <body>
     <?php
@@ -113,8 +113,8 @@
                             <input type="text" class="inputsToEnable" id="iginput" value="<?php echo test_input($_SESSION["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <a href="https://twitter.com" target="__blank"><img src="./img/user-twitter.png"></a>
-                            <input type="text" class="inputsToEnable" placeholder="Twitter/yourUser/" disabled>
+                            <a href="<?php echo $_SESSION["twitter"] ?>" target="__blank"><img src="./img/user-twitter.png"></a>
+                            <input type="text" class="inputsToEnable" value="<?php echo test_input($_SESSION["twitter"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>

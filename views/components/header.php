@@ -93,6 +93,10 @@
                         <img class="headlog_ico first" src="./img/loginIcon.png">
                         <p>Iniciar Sesión</p>
                     </a>
+                    <a class="headlog_btn" id="tb" href="">
+                        <img class="headlog_ico first" id="imgtb"  src="./iconos/moon.svg">
+                        <p>Cambiar tema</p>
+                    </a>
                 </ul>
             </div>
             EOT;
