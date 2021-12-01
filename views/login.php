@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/notificationsLog.css">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
     
@@ -44,12 +45,32 @@
                     <h5>Contraseña</h5>
                     <input class="inputtxt" type="password" name="pw" required>
                     <input type="submit" name="logeo" value="Ingresar" class="submitbtn">
-                    <h4 class="aregister"><p>No tienes una cuenta?</p><span><a href="./register.php"> registrate!</a></span></h4>
+                    <h4 class="aregister"><p>No tienes una cuenta?</p><span><a href="./register.php"> Registrate!</a></span></h4>
                     <h4 class="aregister forgetpsw"><p>Perdiste tu contraseña?</p><span><a href=""> Recuperala!</a></span></h4>
 
                 </form>
             </div>
         </div>
     </section>
+    <?php
+        if(isset($_SESSION["errorLog"])){
+            if($_SESSION["errorLog"] == 'user'){
+                echo <<<EOT
+                    <div class="makefs-notification">
+                        <figure class="makefs-notification-rep"></figure>
+                        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Usuario inexistente o equivocado</p></article>
+                    </div>
+                EOT;
+            }elseif($_SESSION["errorLog"] == 'contrasena'){
+                echo <<<EOT
+                    <div class="makefs-notification">
+                        <figure class="makefs-notification-rep "></figure>
+                        <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">Contraseña equivocada</p></article>
+                    </div>
+                EOT;
+            }
+        }
+    ?>
+    <script src="./js/logNotifications.js"></script>
 </body>
 </html>

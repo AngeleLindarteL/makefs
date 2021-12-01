@@ -14,14 +14,17 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
         include('./components/sessionControl.php');
+        include("./components/tokenControl.php");
+        if(empty($_SESSION['chefid'])){
+            header("location: ./error.html");
+        }
+        echo <<<EOT
+            <script>
+                const chefid =$_SESSION[chefid];
+                const chefname = '$_SESSION[username]'; 
+            </script>
+        EOT;
     ?>
-    <?php include("./components/tokenControl.php");?>
-    <script>
-        <?php
-        echo "const chefid =".$_SESSION['chefid'];
-        echo "const chefname =".$_SESSION["username"]; 
-        ?>
-    </script>
 </head>
 <body>
     <?php

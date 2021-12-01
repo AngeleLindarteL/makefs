@@ -22,11 +22,21 @@
         }
 
         $txtBusqueda = $_GET["search"];
+        $busqueda = explode(" ",$txtBusqueda);
+        $busquedatxt = "";
+        for ($i=0; $i < sizeof($busqueda) ; $i++) {
+            if(sizeof($busqueda)-1 == $i){
+                $busquedatxt .= $busqueda[$i];
+            }else{
+                $busquedatxt .= $busqueda[$i].' & ' ;
+            }
+        }
+        
         $conn = new Conexion;
         $conn = $conn->Conectar();
         $consulta = "SELECT * FROM recipe INNER JOIN userm ON recipe.chefid= userm.chefid
-         WHERE recipe_with_weights @@ to_tsquery('$txtBusqueda:*') AND recipe.privater = false
-        ORDER BY ts_rank(recipe_with_weights, to_tsquery('$txtBusqueda:*')) desc, views desc";
+         WHERE recipe_with_weights @@ to_tsquery('$busquedatxt:*') AND recipe.privater = false
+        ORDER BY ts_rank(recipe_with_weights, to_tsquery('$busquedatxt:*')) desc, views desc limit 15";
 
         try{
             $recetas = $conn->prepare($consulta);

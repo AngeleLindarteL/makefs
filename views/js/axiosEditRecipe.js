@@ -21,7 +21,7 @@ deleteRecipe.addEventListener("click",(e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                   //window.location.href=`../views/chef-view.php?chef=${chefid}`;
+                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
                 }
             }
         )

@@ -53,7 +53,7 @@
                     <h5>Fecha de nacimiento</h5>
                     <input class="inputtxt" type="date" name="date" required>
                     <input type="submit" value="Registrarse" name="register" class="submitbtn">
-                    <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> inicia sesion!</a></span></h4>
+                    <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> Inicia sesion!</a></span></h4>
                 </form>
             </div>
         </div>
