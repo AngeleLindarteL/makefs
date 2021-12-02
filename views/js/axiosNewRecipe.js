@@ -24,12 +24,15 @@ const notification_msg_video = document.querySelector("#notification-msg-video")
 const notifiactionStates = {
     loading_photo: "Se esta subiendo tu foto, espera un momento porfavor",
     updated_photo: "¡Esta Hecho! Tu foto se subio con éxito.",
-    error_upload: "La imagen que subiste es no está en el formato apropiado o es muy grande.",
+    error_upload: "Fallo inesperado en la subida de la foto.",
+    error_too_large: "Imagen muy pesada.",
+    error_unsuported_type: "Tipo de archivo no soportado",
 }
 const notifiactionStatesVid = {
     loading_photo: "Se esta subiendo tu video, espera un momento porfavor",
     updated_photo: "¡Esta Hecho! Tu video se subio con éxito.",
     error_upload: "El video que subiste es no está en el formato apropiado o es muy grande.",
+    error_unsuported_type: "Tipo de archivo no soportado",
 }
 
 /*-----------------------------Notification */
@@ -137,6 +140,9 @@ uploadRecipe.addEventListener("click", async (e)=>{
                     case "error_upload":
                         notification_msg_video.textContent = notifiactionStatesVid.error_upload;
                         break;
+                    case "error_unsuported_type":
+                        notification_msg_video.textContent = notifiactionStatesVid.error_unsuported_type;
+                        break;
                 }
             }
         });
@@ -188,6 +194,13 @@ uploadRecipe.addEventListener("click", async (e)=>{
                     case "error_upload":
                         notification_msg.textContent = notifiactionStates.error_upload;
                         break;
+                    case "error_too_large":
+                        notification_msg.textContent = notifiactionStates.error_too_large;
+                        break;
+                    case "error_unsuported_type":
+                        notification_msg.textContent = notifiactionStates.error_unsuported_type;
+                        break;
+                        
                 }
             }
         });

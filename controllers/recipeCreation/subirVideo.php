@@ -4,6 +4,12 @@
 
     $video = $_FILES["videoR"];
     $tipo = $_FILES["videoR"]["type"];
+
+    if($tipo !='video/mp4' ||  'video/webm'){
+        echo json_encode(array("msg"=>"error_unsuported_type"));
+        exit;
+    }
+
     if($tipo == 'video/mp4' || $tipo == 'video/webm'){
         $resultado = move_uploaded_file($video["tmp_name"], $folderVideos.'/chef-'.$_SESSION["chefid"].$video["name"]);
         if ($resultado) {
