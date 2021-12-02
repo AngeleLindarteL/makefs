@@ -46,7 +46,9 @@ modoOscuro.addEventListener("click", (e)  =>{
         deleteForm.classList.replace('WhiteDelete','DarkDelete');
         PhotoForm.classList.replace('WhitePhoto','DarkPhoto');
         InputPhotoForm.classList.replace('WhiteInputPhoto','DarkInputPhoto');
-        logomachefs.classList.replace('WhiteBannerNone','DarkBannerNone');
+        if (logomachefs){
+            logomachefs.classList.replace('WhiteBannerNone','DarkBannerNone');
+        }
         inputTitle.forEach(colorinput => {
             colorinput.classList.replace('whiteTitleInput', 'darkTitleInput');     
         })
@@ -65,7 +67,9 @@ modoOscuro.addEventListener("click", (e)  =>{
         deleteForm.classList.replace('DarkDelete','WhiteDelete');
         PhotoForm.classList.replace('DarkPhoto','WhitePhoto');
         InputPhotoForm.classList.replace('DarkInputPhoto','WhiteInputPhoto');
-        logomachefs.classList.replace('DarkBannerNone','WhiteBannerNone');
+        if (logomachefs){
+            logomachefs.classList.replace('DarkBannerNone','WhiteBannerNone');
+        }
         inputTitle.forEach(colorinput => {
             colorinput.classList.replace('darkTitleInput','whiteTitleInput');
             

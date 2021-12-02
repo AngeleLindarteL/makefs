@@ -1,0 +1,38 @@
+/*--Dark mode--*/
+.DarkModeBody{
+    background-color: #100f0f;
+}
+.DarkWellib{
+    color:white;
+}
+.DarkRecipelib{
+    color:white;
+}
+.Darkvidsav{
+    color:white;
+}
+.DarkStar{
+    background-color: #100f0f;
+}
+.darkrecipet{
+    color:white;
+}
+/*--White mode--*/
+.White{
+    background-color: white;
+}
+.WhiteWellib{
+    color:black;
+}
+.WhiteRecipelib{
+    color:black;
+}
+.Whitevidsav{
+    color:black;
+}
+.WhiteStar{
+    background-color: white;
+}
+.whiterecipet{
+    color:black;
+}
