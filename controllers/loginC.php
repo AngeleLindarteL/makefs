@@ -89,6 +89,10 @@ include("../views/components/test_inputs.php");
                     if(isset($_SESSION["errorLog"])){
                         unset($_SESSION["errorLog"]);
                     }
+
+                    if(isset($_SESSION["errorRegister"])){
+                        unset($_SESSION["errorRegister"]);
+                    }
                     
                     $_SESSION["token"] = $token;
                     header("location: ../views/index.php");

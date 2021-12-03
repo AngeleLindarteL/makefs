@@ -14,6 +14,13 @@
     <title>Inicio Makef's</title>
     <?php
         session_start();
+        if(isset($_SESSION["errorRegister"])){
+            unset($_SESSION["errorRegister"]);
+        }
+
+        if(isset($_SESSION["errorLog"])){
+            unset($_SESSION["errorLog"]);
+        }
     ?>
 </head>
 <body class="White">

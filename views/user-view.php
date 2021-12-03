@@ -113,8 +113,8 @@
                             <input type="text" class="inputsToEnable" id="iginput" value="<?php echo test_input($_SESSION["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <a href="<?php echo $_SESSION["twitter"] ?>" target="__blank"><img src="./img/user-twitter.png"></a>
-                            <input type="text" class="inputsToEnable" value="<?php echo test_input($_SESSION["twitter"])?>" disabled>
+                            <a href="<?php echo $_SESSION["twitter"] ?>" id="twTxt-user" target="__blank"><img src="./img/user-twitter.png"></a>
+                            <input type="text" class="inputsToEnable" id="twinput" value="<?php echo test_input($_SESSION["twitter"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>

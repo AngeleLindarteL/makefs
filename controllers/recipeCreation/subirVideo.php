@@ -5,7 +5,7 @@
     $video = $_FILES["videoR"];
     $tipo = $_FILES["videoR"]["type"];
 
-    if($tipo !='video/mp4' ||  'video/webm'){
+    if($tipo =='image/png' || $tipo =='image/jpeg' || $tipo =='video/avi' || $tipo =='video/flv'){
         echo json_encode(array("msg"=>"error_unsuported_type"));
         exit;
     }
@@ -19,5 +19,8 @@
         } else {
             echo json_encode(array("msg"=>"error_upload"));
         }
+    }else{
+        echo json_encode(array("msg"=>"error_unsuported_type"));
+        exit;
     }
 ?>

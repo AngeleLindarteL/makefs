@@ -42,9 +42,9 @@
     <section id="newRecipeSection">
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv">
-                <input type="text" id="recipeTittle" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
+                <input required type="text" id="recipeTittle" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
                 <div id="madePrivate">
-                    <input type="checkbox" id="madePrivateBtn" value="true" name="madePrivateBtn"> 
+                    <input required type="checkbox" id="madePrivateBtn" value="true" name="madePrivateBtn"> 
                     <h3>Privado</h3>
                 </div>
                 <button id="uploadBtn"><h2>Subir Receta</h2></button>
@@ -58,7 +58,7 @@
                             </div>
                             </h2>
                         <div id="inputsLateralesNewRecipe">
-                            <input type="text" class="ingredient" name="ingredients" placeholder="Ingrediente">
+                            <input required type="text" class="ingredient" name="ingredients" placeholder="Ingrediente">
                         </div>
                     </div>
                     <div id="etiquetasNewRecipe">
@@ -118,9 +118,9 @@
                         </div>
                         <div id="inputsSteps">
                             <div class="oneStepNewRecipe">
-                                <input type="text" class="stepTxtInput steps" placeholder="Paso">
-                                <input type="number" class="minInicioInput steps" placeholder="minInicio">
-                                <input type="number" class="minFinInput steps" placeholder="minFin">
+                                <input required type="text" class="stepTxtInput steps" placeholder="Paso">
+                                <input required type="number" class="minInicioInput steps" placeholder="minInicio">
+                                <input required type="number" class="minFinInput steps" placeholder="minFin">
                             </div>
                             
                         </div>

@@ -26,14 +26,14 @@ const notifiactionStates = {
     updated_photo: "¡Esta Hecho! Tu foto se subio con éxito.",
     error_upload: "Fallo inesperado en la subida de la foto.",
     error_too_large: "Imagen muy pesada.",
-    error_unsuported_type: "Tipo de archivo no soportado",
+    error_unsuported_type: "Tipo de archivo no soportado para la imagen",
 }
 const notifiactionStatesVid = {
     loading_photo: "Se esta subiendo tu video, espera un momento porfavor",
     updated_photo: "¡Esta Hecho! Tu video se subio con éxito.",
     error_upload: "El video que subiste es no está en el formato apropiado o es muy grande.",
-    error_unsuported_type: "Tipo de archivo no soportado",
-}
+    error_unsuported_type: "Tipo de archivo no soportado para tu video",
+} 
 
 /*-----------------------------Notification */
 
@@ -50,6 +50,10 @@ uploadVid.addEventListener("click", async (e) => {
 })
 
 uploadRecipe.addEventListener("click", async (e)=>{
+    let arrayIngredients = [];
+    let arrayEtiquetas = [];
+    let steps = [];
+    
     e.preventDefault();
     if(privateData.checked){
         privateData = true;
@@ -124,7 +128,7 @@ uploadRecipe.addEventListener("click", async (e)=>{
                         notification_container_video.classList.replace("success","loading");
                         notification_container_video.style.top = "8vh";
                     }, 100);
-                }, 3000);
+                }, 5000);
             }else{
                 notification_container_video.classList.replace("loading","error");
                 setTimeout(() => {
@@ -135,7 +139,8 @@ uploadRecipe.addEventListener("click", async (e)=>{
                         notification_container_video.classList.replace("error","loading");
                         notification_container_video.style.top = "8vh";
                     }, 100);
-                }, 3000);
+                }, 5000);
+                console.log(res.data);
                 switch (res.data.msg) {
                     case "error_upload":
                         notification_msg_video.textContent = notifiactionStatesVid.error_upload;
@@ -144,6 +149,7 @@ uploadRecipe.addEventListener("click", async (e)=>{
                         notification_msg_video.textContent = notifiactionStatesVid.error_unsuported_type;
                         break;
                 }
+                exit();
             }
         });
     }else{
@@ -178,7 +184,7 @@ uploadRecipe.addEventListener("click", async (e)=>{
                         notification_container.classList.replace("success","loading");
                         notification_container.style.top = "8vh";
                     }, 100);
-                }, 3000);
+                }, 5000);
             }else{
                 notification_container.classList.replace("loading","error");
                 setTimeout(() => {
@@ -189,7 +195,8 @@ uploadRecipe.addEventListener("click", async (e)=>{
                         notification_container.classList.replace("error","loading");
                         notification_container.style.top = "8vh";
                     }, 100);
-                }, 3000);
+                }, 5000);
+                console.log(res.data);
                 switch (res.data.msg) {
                     case "error_upload":
                         notification_msg.textContent = notifiactionStates.error_upload;
@@ -200,8 +207,8 @@ uploadRecipe.addEventListener("click", async (e)=>{
                     case "error_unsuported_type":
                         notification_msg.textContent = notifiactionStates.error_unsuported_type;
                         break;
-                        
                 }
+                exit();
             }
         });
     }else{

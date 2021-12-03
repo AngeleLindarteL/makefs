@@ -5,11 +5,11 @@
     $imagen = $_FILES["imagenR"];
     $tipo = $_FILES["imagenR"]["type"];
 
-    if($tipo !='image/jpeg' ||  'image/png'){
+    if($tipo =='image/gif' || $tipo =='video/mp4' || $tipo =='video/webm' || $tipo =='video/flv'){
         echo json_encode(array("msg"=>"error_unsuported_type"));
         exit;
     }
-
+    
     if ($_FILES["imagenR"]["size"] > 3000000){
         echo json_encode(array("msg"=>"error_too_large"));
         exit;
@@ -24,5 +24,8 @@
         } else {
             echo json_encode(array("msg"=>"error_upload"));
         }
+    }else{
+        echo json_encode(array("msg"=>"error_unsuported_type"));
+        exit;
     }
 ?>

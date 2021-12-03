@@ -65,7 +65,7 @@
             <div id="recipetittlediv2">
                 <?php
                     echo <<<EOT
-                        <input type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>
+                        <input required type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>
                         <div id="madePrivate">
                     EOT;
                         if($isPrivate){
@@ -90,7 +90,7 @@
                 <div id="menuDeleteRecipe">
                     <h2>BORRAR RECETA</h2>
                     <h3>Seguro que quieres Borrar <?php echo test_input($nombreRecipe)?>?</h3>
-                    <input type="submit" class="passInput" id="deleteRecipe" name="deleteRecipe" value="Borrar receta">
+                    <input required type="submit" class="passInput" id="deleteRecipe" name="deleteRecipe" value="Borrar receta">
                 </div>
             </div>
             <div id="recipebodydiv">
@@ -105,7 +105,7 @@
                             <?php
                                 foreach($ingredients as $ingredient){
                                     echo <<<EOT
-                                        <input type="text" class="ingredient" name="ingredients" value="$ingredient">
+                                        <input required type="text" class="ingredient" name="ingredients" value="$ingredient">
                                     EOT;
                                 }
                             ?>
@@ -230,9 +230,9 @@
                                 foreach($steps as $step){
                                     echo <<<EOT
                                     <div class="oneStepNewRecipe">
-                                        <input type="text" class="stepTxtInput steps" value="$step[0]">
-                                        <input type="number" class="minInicioInput steps" value="$step[1]">
-                                        <input type="number" class="minFinInput steps" value="$step[2]">
+                                        <input required type="text" class="stepTxtInput steps" value="$step[0]">
+                                        <input required type="number" class="minInicioInput steps" value="$step[1]">
+                                        <input required type="number" class="minFinInput steps" value="$step[2]">
                                     </div>
                                     EOT;
                                 }
