@@ -8,6 +8,9 @@
 .Darkrecipe{
     color: white;
 }
+.Darkcookie{
+    filter: brightness(0.3);
+}
 /*--White mode--*/
 .White{
     background-color: white;
@@ -17,4 +20,7 @@
 }
 .Whiterecipe{
     color: black;
+}
+.Whitecookie{
+    filter: brightness(1);
 }

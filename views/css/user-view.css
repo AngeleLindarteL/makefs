@@ -46,7 +46,6 @@ section{
 #userNoChefContainer{
     width: 80%;
     height: 100vh;
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -196,7 +195,6 @@ section{
     width: 90%;
     overflow: visible;
     border: none;
-    background: white;
     padding: 1.5vh;
     border: 2px solid #FF2C29;
     border-radius: 0 10px 10px 0;
@@ -314,7 +312,6 @@ section{
 }
 
 #fotoChange{
-    background-color: white;
     width: 30%;
     height: 30vh;
     display: flex;
@@ -330,7 +327,7 @@ section{
 }
 
 .updateFotoInput{
-    width: 90%;
+    width: 65%;
     border: 2px solid #FF2C29;
     border-radius: 10px;
     padding: 2.5vh 0 2.5vh 20%;
@@ -433,7 +430,6 @@ section{
 }
 
 #passChange{
-    background-color: white;
     width: 40%;
     height: 35vh;
     display: flex;
@@ -455,7 +451,6 @@ section{
     width: 80%;
     padding: 10px;
     border: 2px solid #FF2C29;
-    background-color: white;
     margin-bottom: 2vh;
     border-radius: 10px;
     color: #FF2C29;
