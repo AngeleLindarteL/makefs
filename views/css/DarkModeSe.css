@@ -1,0 +1,20 @@
+/*--Dark mode--*/
+.DarkModeBody{
+    background-color: #100f0f;
+}
+.DarkStar{
+    background-color: #100f0f;
+}
+.Darkrecipe{
+    color: white;
+}
+/*--White mode--*/
+.White{
+    background-color: white;
+}
+.WhiteStar{
+    background-color: white;
+}
+.Whiterecipe{
+    color: black;
+}

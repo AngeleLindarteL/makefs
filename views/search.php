@@ -8,6 +8,8 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
+    <link href="./css/DarkModeSe.css" rel="stylesheet">
+    <link href="./css/DarkMenu.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
     <title>Inicio Makef's</title>
     <?php
@@ -49,7 +51,7 @@
 
     ?>
 </head>
-<body>
+<body class="White">
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
@@ -88,9 +90,9 @@
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
                                 <img src="../mediaDB/recipeImages/$imagen">
-                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
                             </a>
-                            <div class="next-text-recipe">
+                            <div class="next-text-recipe Whiterecipe">
                                 <img src="../mediaDB/usersImg/$minpic">
                                 <a href="./chef-view.php?chef=$chefid" target="__blank">
                                     <h3 class='text-template'>$recetaname</h3>
@@ -123,6 +125,7 @@
     <script src="./js/index.js"></script>
     <script src="./js/categoriesmenu.js"></script>
     <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/darkMode.js"></script>
+    <script src="./js/darkModeSe.js"></script>
+    <script src="./js/darkModeMenu.js"></script>
 </body>
 </html>
