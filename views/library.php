@@ -14,6 +14,8 @@
     <link href="./css/libraryNotif.css" rel="stylesheet">
     <link href="./css/libraryNotif.css" rel="stylesheet">
     <link href="./css/library.css" rel="stylesheet">
+    <link href="./css/Darklibrary.css" rel="stylesheet">
+    <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <?php
         include("../models/conexion.php");
@@ -57,7 +59,7 @@
         echo "<script>const uid = $_GET[user]</script>";
     ?>
 </head>
-<body>
+<body class="White">
     <?php
     include('./components/header.php');
     include('./components/menudesplegable.php');
@@ -89,8 +91,8 @@
                 <a class="saved-recipes-user-img"><img src="../mediaDB/usersImg/<?php  echo $_SESSION["midpic"] ?>" id="saved-user-img"></a>
             </div>
             <article class="saved-recipes-main-text">
-                <h1>Bienvenido a tu biblioteca <?php echo $_SESSION["username"] ?></h1>
-                <p>Recetas guardadas: <b><?php echo $countSaveds?></b></p>
+                <h1 class="WhiteWellib">Bienvenido a tu biblioteca <?php echo $_SESSION["username"] ?></h1>
+                <p class="WhiteRecipelib">Recetas guardadas: <b class="Whitevidsav"><?php echo $countSaveds?></b></p>
             </article>
             <div class="saved-recipes-lastest">
                 <h2>Tus ultimas recetas guardadas</h2>
@@ -128,9 +130,9 @@
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
                                 <img src="../mediaDB/recipeImages/$imagen">
-                                <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
                             </a>
-                            <div class="next-text-recipe">
+                            <div class="next-text-recipe whiterecipet">
                                 <img src="../mediaDB/usersImg/$midpic">
                                 <a href="./chef-view.php?chef=$chefid" target="__blank">
                                      <h3 class='text-template'>$recetaname</h3>
@@ -196,9 +198,9 @@
                             <div class="recipe-template">
                                 <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
                                     <img src="../mediaDB/recipeImages/$imagen">
-                                    <figure class="star-template"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
                                 </a>
-                                <div class="next-text-recipe">
+                                <div class="next-text-recipe whiterecipet">
                                     <img src="../mediaDB/usersImg/$midpic">
                                     <a href="./chef-view.php?chef=$chefid" target="__blank">
                             EOT;
@@ -225,8 +227,9 @@
         </div>
     </section>
     <script src="./js/index.js"></script>
-    <script src="./js/darkMode.js"></script>
     <script src="./js/library.js"></script>
+    <script src="./js/DarkModeLibrary.js"></script>
+    <script src="./js/DarkModeMenu.js"></script>
     <?php
         include("./components/footer.php");
     ?>
