@@ -11,7 +11,7 @@
     <link href="./css/DarkModeSe.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
-    <title>Inicio Makef's</title>
+    
     <?php
         include("../models/conexion.php");
         include("./components/test_inputs.php");
@@ -50,6 +50,7 @@
         $recetas = $recetas->fetchAll(PDO::FETCH_ASSOC);
 
     ?>
+    <title>Makefs: <?php echo $txtBusqueda ?></title>
 </head>
 <body class="White">
     <?php
@@ -58,7 +59,7 @@
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
-            <h2 id="title-ctc">Resultados</h2>
+            <h2 id="title-ctc">Resultados: <?php echo $txtBusqueda; ?></h2>
             <div class="general-recipes-container">
                 <?php
                

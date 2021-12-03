@@ -1,5 +1,7 @@
 <?php
+    
     echo <<<EOT
+        <figure id="btnCategoriesShow"></figure>
         <div class="categories-down WhiteModeCategories" id="menuCATE">
             <div class="categoryDiv Whiteindice" >
                 <a id="latamCate">
