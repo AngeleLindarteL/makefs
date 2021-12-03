@@ -108,7 +108,7 @@
                      }
                      if(empty($dataAll["recipeid"]) && empty($recipe)){
                         echo <<<EOT
-                            <div id="notFoundRecipes">
+                            <div id="notFoundRecipes" class="Whitecookie">
                                 <img src="./img/notrecipesSearch.png">
                                 <h3>No se han encontrado recetas con tu búsqueda.</h3>
                             </div>

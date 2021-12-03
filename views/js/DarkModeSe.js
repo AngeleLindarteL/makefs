@@ -4,6 +4,7 @@ let modoOscuro = document.querySelector('#tb');
 let imagentb = document.querySelector('#imgtb');
 let star = document.querySelectorAll('.star-template');
 let titlevideo = document.querySelectorAll('.next-text-recipe');
+let cookie = document.querySelector('#notFoundRecipes');
 /*--Code--*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -18,6 +19,7 @@ if (localStorage.getItem("Theme") == null){
             ttl.classList.replace('Whiterecipe', 'Darkrecipe');
             
         })
+        cookie.classList.replace('Whitecookie','Darkcookie');
     }
     
 }
@@ -35,6 +37,7 @@ modoOscuro.addEventListener("click", (e)  =>{
             ttl.classList.replace('Whiterecipe', 'Darkrecipe');
             
         })
+        cookie.classList.replace('Whitecookie','Darkcookie');
     }else{
         localStorage.setItem("Theme", "claro");
         imagentb.src="./iconos/moon.svg";
@@ -47,5 +50,6 @@ modoOscuro.addEventListener("click", (e)  =>{
             ttl.classList.replace('Darkrecipe','Whiterecipe');
             
         })
+        cookie.classList.replace('Darkcookie','Whitecookie');
     }
 })
