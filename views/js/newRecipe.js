@@ -91,8 +91,8 @@ addIngredient.addEventListener("click",()=>{
     inputIngredient.type="text";
     inputIngredient.name="ingredients";
     inputIngredient.placeholder="Ingrediente";
-    inputIngredient.className="ingredient";
-
+    inputIngredient.classList.add("ingredient");
+    inputIngredient.classList.add("WhiteRecipetit");
     ingredientsSpace.appendChild(inputIngredient);
 })
 

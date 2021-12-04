@@ -39,13 +39,13 @@ const notifiactionStatesVid = {
 
 uploadFoto.addEventListener("click", async (e) => {
     imagen.addEventListener("change",()=>{
-        divUploadImg.style.background="#FFB5B5";
+        divUploadImg.style.background="#ff2c29";
     })
 })
 
 uploadVid.addEventListener("click", async (e) => {
     video.addEventListener("change",()=>{
-        divUploadVid.style.background="#FFB5B5";
+        divUploadVid.style.background="#ff2c29";
     })
 })
 

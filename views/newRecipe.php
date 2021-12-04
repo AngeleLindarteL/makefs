@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/header.css">
     <link href="./css/notifications.css" rel="stylesheet">
+    <link href="./css/DarkRecipe.css" rel="stylesheet">
+    <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
@@ -26,7 +28,7 @@
         EOT;
     ?>
 </head>
-<body>
+<body class="White">
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
@@ -39,10 +41,10 @@
         <figure class="makefs-notification-rep "></figure>
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg-video">Mui bien eres bueno ya seaktualiso tufoto</p></article>
     </div>
-    <section id="newRecipeSection">
+    <section id="newRecipeSection" class="WhiteSection">
         <div class="makefsContainer containerNewRecipe">
             <div id="recipetittlediv">
-                <input required type="text" id="recipeTittle" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
+                <input required type="text" id="recipeTittle" class="Whiterecipetit" maxlength="60" name="recipeTittle" placeholder="Titulo de Tu Receta">
                 <div id="madePrivate">
                     <input required type="checkbox" id="madePrivateBtn" value="true" name="madePrivateBtn"> 
                     <h3>Privado</h3>
@@ -52,22 +54,22 @@
             <div id="recipebodydiv">
                 <div id="barraLateralNewRecipe">
                     <div id="menuIngredientesNewRecipe">
-                        <h2 id="ingredientsTittle">INGREDIENTES
+                        <h2 id="ingredientsTittle" class="Whitemaintt">INGREDIENTES
                             <div class="btnplus">
                                 <button class="lessInputBtn" id="lessIngrediens"></button><button id="addIngredientBtn"></button>
                             </div>
                             </h2>
                         <div id="inputsLateralesNewRecipe">
-                            <input required type="text" class="ingredient" name="ingredients" placeholder="Ingrediente">
+                            <input required type="text" class="ingredient Whiterecipetit" name="ingredients" placeholder="Ingrediente">
                         </div>
                     </div>
-                    <div id="etiquetasNewRecipe">
+                    <div id="etiquetasNewRecipe" class="Whitemaintt">
                         <div>
                             <h2>ETIQUETAS</h2>
                         </div>
                         <div id="selectsEtiquetasNewRecipe">
                             <label for="eRegiones">Region</label>
-                            <select name="eRegiones" id="eRegiones">
+                            <select name="eRegiones" id="eRegiones" class="Whiterecipetit">
                                 <option value="" hidden selected>Region</option>
                                 <option value="latam">Latam</option>
                                 <option value="asia">Asia</option>
@@ -90,37 +92,37 @@
                 <div id="sectionNewRecipeMultimedia">
                     <div id="multimediaNewRecipe">
                         <div class="divMultimedia" id="divUploadVideo">
-                            <label for="recipeVideo" id="btnVideoUpload">
-                                <img src="./img/addVideoRecipe.png" alt="">
+                            <label for="recipeVideo"  id="btnVideoUpload">
+                                <img class="Whiteimgr" src="./img/addVideoRecipe.png" alt="">
                             </label>
-                            <h4>Inserta tu video Preparacion</h4>
+                            <h4 class="Whitemaintt">Inserta tu video Preparacion</h4>
                             <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="video/mp4, video/webm" required> 
                         </div>
                         <div class="divMultimedia" id="divUploadImg">
-                            <label for="recipeImg" id="btnImgUpload">
-                                <img src="./img/imagen.png" alt="">
+                            <label for="recipeImg"  id="btnImgUpload" class="Whiteimgr">
+                                <img  src="./img/imagen.png" alt="">
                             </label>
-                            <h4>Inserta la imagen de tu receta</h4>
+                            <h4 class="Whitemaintt">Inserta la imagen de tu receta</h4>
                             <input type="file" id="recipeImg" class="inputfileNewRecipe" name="recipeImg" accept=".jpg, .png" required> 
                         </div>
                     </div>
                     <div id="stepsNewRecipe">
-                        <div id="tittlePasos">
+                        <div id="tittlePasos" class="Whitemaintt Whiteline">
                             <div id="hatPasosyTxt">
                                 <img src="./img/chefHatRed.png" alt="">
                                 <h2>Pasos</h2>
                             </div>
                             <div id="btnsSteps">
                                 <button class="lessInputBtn" id="lessSteps"></button>
-                                <button id="addStepBtn"></button>
+                                <button id="addStepBtn" class="Whitebtn"></button>
                             </div>
                             
                         </div>
                         <div id="inputsSteps">
                             <div class="oneStepNewRecipe">
-                                <input required type="text" class="stepTxtInput steps" placeholder="Paso">
-                                <input required type="number" class="minInicioInput steps" placeholder="minInicio">
-                                <input required type="number" class="minFinInput steps" placeholder="minFin">
+                                <input required type="text" class="stepTxtInput steps Whiterecipetit" placeholder="Paso">
+                                <input required type="number" class="minInicioInput steps Whiterecipetit" placeholder="minInicio">
+                                <input required type="number" class="minFinInput steps Whiterecipetit" placeholder="minFin">
                             </div>
                             
                         </div>
@@ -140,6 +142,7 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/newRecipe.js"></script>
     <script src="./js/axiosNewRecipe.js"></script>
-    <script src="./js/darkMode.js"></script>
+    <script src="./js/DarkModeRecipe.js"></script>
+    <script src="./js/DarkModeMenu.js"></script>
 </body>
 </html>

@@ -1,0 +1,52 @@
+/*--Dark mode--*/
+.DarkModeBody{
+    background-color: #100f0f;
+}
+.DarkSection{
+    background-color: #100f0f;
+}
+.Darkrecipetit{
+    background-color: #100f0f;
+    color: white;
+}
+.Darkmaintt{
+    color:white;
+}
+.Darkimgr{
+    filter:invert(1);
+}
+.Darkbtn{
+    background-color: #ff2c29;
+}
+.Darkline{
+    border-bottom: 2px solid #ff2c29;
+}
+.DarkMult{
+    background-color: #ff2c29;
+}
+/*--White mode--*/
+.White{
+    background-color: white;
+}
+.WhiteSection{
+    background-color: white;
+}
+.Whiterecipetit{
+    background-color: white;
+    color: black;
+}
+.Whitemaintt{
+    color:black;
+}
+.Whiteimgr{
+    filter:invert(0);
+}
+.Whitebtn{
+    background-color: black;
+}
+.Whiteline{
+    border-bottom: 2px solid black;
+}
+.WhiteMult{
+    background-color: #ff2c29;
+}

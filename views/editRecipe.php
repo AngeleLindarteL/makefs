@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./css/newRecipeCss.css">
     <link rel="stylesheet" href="./css/newRecipeEdit.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/DarkEdit.css">
+    <link rel="stylesheet" href="./css/DarkMenu.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
@@ -255,6 +257,7 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/editRecipe.js"></script>
     <script src="./js/axiosEditRecipe.js"></script>
-    <script src="./js/darkMode.js"></script>
+    <script src="./js/DarkModeEdit.js"></script>
+    <script src="./js/DarkModeMenu.js"></script>
 </body>
 </html>
