@@ -56,7 +56,7 @@
                     <div id="menuIngredientesNewRecipe">
                         <h2 id="ingredientsTittle" class="Whitemaintt">INGREDIENTES
                             <div class="btnplus">
-                                <button class="lessInputBtn" id="lessIngrediens"></button><button id="addIngredientBtn"></button>
+                                <button class="lessInputBtn Whitemaintt" id="lessIngrediens"></button><button id="addIngredientBtn"></button>
                             </div>
                             </h2>
                         <div id="inputsLateralesNewRecipe">

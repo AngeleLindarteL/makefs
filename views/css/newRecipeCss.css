@@ -369,6 +369,7 @@ section{
     background-size: 55%;
     background-position: center;
     background-repeat: no-repeat;
+    background-color:  #ff2c29;
     border-radius: 50%;
 }
 .lessInputBtn{
@@ -384,9 +385,6 @@ section{
     border-radius: 50%;
     background-color: #FF2C29;
     display: none;
-}
-#lessSteps{
-    background-color: black;
 }
 #btnsSteps{
     width: 20%;

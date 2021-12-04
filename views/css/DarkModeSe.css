@@ -11,6 +11,20 @@
 .Darkcookie{
     filter: brightness(0.3);
 }
+.DarkBtnDown{
+    background-color: #100f0f;
+}
+.Darkindice{
+    background-color: #100f0f;
+    border: 1px solid #ffffff;
+    color:white;
+}
+.DarkModesubCategories{
+    background-color: rgba(0, 0, 0, 0);
+}
+.DarkModeCategories{
+    background-color: rgba(0, 0, 0, 0);
+}
 /*--White mode--*/
 .White{
     background-color: white;
@@ -23,4 +37,18 @@
 }
 .Whitecookie{
     filter: brightness(1);
+}
+.WhiteBtnDown{
+    background-color:white;
+}
+.WhiteModesubCategories{
+    background-color: rgb(255, 255, 255);
+}
+.Whiteindice{
+    background-color: white;
+    border: 1px solid #FF2C29;
+    color: #FF2C29;
+}
+.WhiteModeCategories{
+    background-color: rgb(255, 255, 255);
 }

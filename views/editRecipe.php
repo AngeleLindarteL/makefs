@@ -57,7 +57,7 @@
 
     ?>
 </head>
-<body>
+<body class="White">
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
@@ -67,7 +67,7 @@
             <div id="recipetittlediv2">
                 <?php
                     echo <<<EOT
-                        <input required type='text' id='recipeTittle' maxlength='60' name='recipeTittle' value='$nombreRecipe'>
+                        <input required type='text' id='recipeTittle' class='Whiterecipetit' maxlength='60' name='recipeTittle' value='$nombreRecipe'>
                         <div id="madePrivate">
                     EOT;
                         if($isPrivate){
@@ -98,7 +98,7 @@
             <div id="recipebodydiv">
                 <div id="barraLateralNewRecipe">
                     <div id="menuIngredientesNewRecipe">
-                        <h2 id="ingredientsTittle">INGREDIENTES
+                        <h2 id="ingredientsTittle" class="Whitemaintt">INGREDIENTES
                             <div class="btnplus">
                                 <button class="lessInputBtn" id="lessIngrediens"></button><button id="addIngredientBtn"></button>
                             </div>
@@ -107,19 +107,19 @@
                             <?php
                                 foreach($ingredients as $ingredient){
                                     echo <<<EOT
-                                        <input required type="text" class="ingredient" name="ingredients" value="$ingredient">
+                                        <input required type="text" class="ingredient Whiterecipetit" name="ingredients" value="$ingredient">
                                     EOT;
                                 }
                             ?>
                         </div>
                     </div>
-                    <div id="etiquetasNewRecipe">
+                    <div id="etiquetasNewRecipe" class="Whitemaintt">
                         <div>
                             <h2>ETIQUETAS</h2>
                         </div>
                         <div id="selectsEtiquetasNewRecipe">
-                            <label for="eRegiones">Region</label>
-                            <select  id="eRegiones" disabled>
+                            <label for="eRegiones" class="Whiterecipetit">Region</label>
+                            <select  id="eRegiones" class="Whiterecipetit" disabled>
                                 <option value="<?php echo $region;?>" selected><?php echo $region;?></option>
                                 <option value="latam">Latam</option>
                                 <option value="asia">Asia</option>
@@ -138,7 +138,7 @@
                                 foreach($etiquetas as $etiqueta){
                                     if($region=="latam"){
                                         echo <<<EOT
-                                        <select  class="etiFood">
+                                        <select  class="etiFood Whiterecipetit">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="latamSopa">Sopa</option>
                                             <option value="latamVegana">Vegana</option>
@@ -216,7 +216,7 @@
                 </div>
                 <div id="sectionEditRecipeMultimedia">
                     <div id="stepsEditRecipe">
-                        <div id="tittlePasos">
+                        <div id="tittlePasos" class="Whitemaintt">
                             <div id="hatPasosyTxt">
                                 <img src="./img/chefHatRed.png" alt="">
                                 <h2>Pasos</h2>
@@ -232,9 +232,9 @@
                                 foreach($steps as $step){
                                     echo <<<EOT
                                     <div class="oneStepNewRecipe">
-                                        <input required type="text" class="stepTxtInput steps" value="$step[0]">
-                                        <input required type="number" class="minInicioInput steps" value="$step[1]">
-                                        <input required type="number" class="minFinInput steps" value="$step[2]">
+                                        <input required type="text" class="stepTxtInput steps Whiterecipetit" value="$step[0]">
+                                        <input required type="number" class="minInicioInput steps Whiterecipetit" value="$step[1]">
+                                        <input required type="number" class="minFinInput steps Whiterecipetit" value="$step[2]">
                                     </div>
                                     EOT;
                                 }

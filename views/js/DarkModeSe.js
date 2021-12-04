@@ -5,6 +5,10 @@ let imagentb = document.querySelector('#imgtb');
 let star = document.querySelectorAll('.star-template');
 let titlevideo = document.querySelectorAll('.next-text-recipe');
 let cookie = document.querySelector('#notFoundRecipes');
+let btndisplay = document.querySelector('#btnCategoriesShow');
+let BannersubDown = document.querySelectorAll('.subcategories-down');
+let categoriesregion = document.querySelectorAll('.categoryDiv');
+let BannerDown = document.querySelector('.categories-down');
 /*--Code--*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -19,7 +23,17 @@ if (localStorage.getItem("Theme") == null){
             ttl.classList.replace('Whiterecipe', 'Darkrecipe');
             
         })
+        if(cookie){
         cookie.classList.replace('Whitecookie','Darkcookie');
+        }
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
+        BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
+        BannersubDown.forEach(subcategories=>{
+            subcategories.classList.replace('WhiteModesubCategories','DarkModesubCategories');
+        })
+        categoriesregion.forEach(subindice=>{
+            subindice.classList.replace('Whiteindice','Darkindice');
+        })
     }
     
 }
@@ -37,7 +51,17 @@ modoOscuro.addEventListener("click", (e)  =>{
             ttl.classList.replace('Whiterecipe', 'Darkrecipe');
             
         })
+        if (cookie){
         cookie.classList.replace('Whitecookie','Darkcookie');
+        }
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
+        BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
+        BannersubDown.forEach(subcategories=>{
+            subcategories.classList.replace('WhiteModesubCategories','DarkModesubCategories');
+        })
+        categoriesregion.forEach(subindice=>{
+            subindice.classList.replace('Whiteindice','Darkindice');
+        })
     }else{
         localStorage.setItem("Theme", "claro");
         imagentb.src="./iconos/moon.svg";
@@ -50,6 +74,16 @@ modoOscuro.addEventListener("click", (e)  =>{
             ttl.classList.replace('Darkrecipe','Whiterecipe');
             
         })
+        if(cookie){
         cookie.classList.replace('Darkcookie','Whitecookie');
+        }
+        btndisplay.classList.replace('DarkBtnDown','WhiteBtnDown');
+        BannerDown.classList.replace('DarkModeCategories','WhiteModeCategories');
+        BannersubDown.forEach(subcategories=>{
+            subcategories.classList.replace('DarkModesubCategories','WhiteModesubCategories');
+        })
+        categoriesregion.forEach(subindice=>{
+            subindice.classList.replace('Darkindice','Whiteindice');
+        })
     }
 })

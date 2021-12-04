@@ -7,6 +7,7 @@ let BannerDown = document.querySelector('.categories-down');
 let star = document.querySelectorAll('.star-template');
 let BannersubDown = document.querySelectorAll('.subcategories-down');
 let categoriesregion = document.querySelectorAll('.categoryDiv');
+let btndisplay = document.querySelector('#btnCategoriesShow');
 /*---Code---*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -26,6 +27,7 @@ if (localStorage.getItem("Theme") == null){
         categoriesregion.forEach(subindice=>{
             subindice.classList.replace('Whiteindice','Darkindice');
         })
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
     }
     
 }
@@ -48,6 +50,7 @@ modoOscuro.addEventListener("click", (e)  =>{
         categoriesregion.forEach(subindice=>{
             subindice.classList.replace('Whiteindice','Darkindice');
         })
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
     }else{
         localStorage.setItem("Theme", "claro");
         imagentb.src="./iconos/moon.svg";
@@ -65,5 +68,6 @@ modoOscuro.addEventListener("click", (e)  =>{
         categoriesregion.forEach(subindice=>{
             subindice.classList.replace('Darkindice','Whiteindice');
         })
+        btndisplay.classList.replace('DarkBtnDown','WhiteBtnDown');
     }
 })

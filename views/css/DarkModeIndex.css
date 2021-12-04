@@ -19,6 +19,9 @@
     border: 1px solid #ffffff;
     color:white;
 }
+.DarkBtnDown{
+    background-color: #100f0f;
+}
 /*----White mode-----*/
 .White{
     background-color: white;
@@ -39,4 +42,7 @@
     background-color: white;
     border: 1px solid #FF2C29;
     color: #FF2C29;
+}
+.WhiteBtnDown{
+    background-color: white;
 }
