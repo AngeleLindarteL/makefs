@@ -67,6 +67,34 @@ let videoPlayerProperties = {
     realWatchedSeconds: 0,
 }
 
+sendTimeBeacon = () => {
+    if (videoPlayerProperties.watchedTime > 5 || (duration < 5 && videoPlayerProperties.watchedTime > duration / 2)) {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Accept', 'application/json');
+        
+        headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
+        headers.append('Access-Control-Allow-Credentials', 'true');
+        
+        headers.append('GET', 'POST');
+        
+        // navigator.sendBeacon(`http://127.0.0.1:5000/user/${followerid}/vr`,request);
+        axios.post(`http://127.0.0.1:5000/user/${followerid}/vr`,{
+            "recipeID": videoID,
+            "viewedSeconds": videoPlayerProperties.watchedTime,
+            "videoDuration": duration
+        }).then(res => {
+            console.log(res)
+        })
+    }
+    console.log("se abandonó la página");
+}
+
+window.addEventListener("beforeunload", () => {
+    sendTimeBeacon();
+    return "xd"
+})
+
 let stepsProperties = {
     isActive: true,
     isShowing: false,

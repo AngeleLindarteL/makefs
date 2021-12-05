@@ -76,9 +76,10 @@
 
             $selectQuery = "SELECT 
             recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname,
-            CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate 
-            FROM recipe INNER JOIN stars ON stars.recipeid = recipe.recipeid 
-            WHERE recipe.recipeid NOT IN ($numsViewed) AND recipe.privater = FALSE GROUP BY (recipe.recipeid,recipe.namer,recipe.status, recipe.duration, recipe.tags, recipe.region, recipe.privater, recipe.chefname)";
+            CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate,
+            userm.minpic
+            FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
+            WHERE recipe.recipeid NOT IN ($numsViewed) AND recipe.privater = FALSE GROUP BY (recipe.recipeid,recipe.namer,recipe.status, recipe.duration, recipe.tags, recipe.region, recipe.privater, recipe.chefname, userm.minpic)";
 
             try {
                 $getR = $rConn->prepare($selectQuery);
@@ -101,8 +102,6 @@
                 if ($response->status == 200){
                     # code...
                 }
-                print_r($response);
-
             } catch (Exception $th) {
                 print_r($th);
             }
@@ -123,10 +122,13 @@
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
-            <h2 id="title-ctc"><?php echo "¡Bienvenido $_SESSION[nombre]! Tenemos Recomendaciones para tí - " ?>Makef's</h2>
+            <?php 
+                include("./components/test_inputs.php");
+                $name = explode(" ",test_input($_SESSION["nombre"]))[0]; 
+            ?>
+            <h2 id="title-ctc"><?php echo "¡Bienvenido $name! Tenemos Recomendaciones para ti" ?></h2>
             <div class="general-recipes-container">
                 <?php 
-                include("./components/test_inputs.php");
                 foreach ($response->recipes as $key => $recipe) {
                     $recipe->rate = number_format($recipe->rate, 1);
                     $title = test_input($recipe->namer);
@@ -138,7 +140,7 @@
                                 <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
                             </a>
                             <div class="next-text-recipe WhiteModeP">
-                                <img src="./test-imgs/xd.jpg">
+                                <img src="../mediaDB/usersImg/$recipe->chefpic">
                                 <a href="https://google.com" target="__blank">
                                     <h3 class="text-template">$title</h3>
                                     <p>$chefname</p>
