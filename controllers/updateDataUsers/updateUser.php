@@ -10,6 +10,7 @@ session_start();
         facebook = :facebook,
         instagram = :instagram,
         youtube = :youtube,
+        twitter = :twitter,
         descript = :descript WHERE userid = :id";
 
         $connObj = new Conexion();
@@ -25,6 +26,7 @@ session_start();
                 ":facebook" => $req_info->facebook,
                 ":instagram" => $req_info->instagram,
                 ":youtube" => $req_info->youtube,
+                ":twitter" => $req_info->twitter,
                 ":descript" => $req_info->descript,
                 ":id" => $req_info->id,
                 )
@@ -39,6 +41,7 @@ session_start();
             $_SESSION['facebook'] =$req_info->facebook ;
             $_SESSION['instagram'] =$req_info->instagram ;
             $_SESSION['youtube'] =$req_info->youtube ;
+            $_SESSION['twitter']=$req_info->twitter;
         }catch(Exception $e){
             $conn->rollBack();
             echo http_response_code(400);

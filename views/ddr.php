@@ -411,6 +411,9 @@
                     </div>
                 </div>
             </div>
+                <?php
+                    include('./components/categoriesMenu.php');
+                ?>
         </div>
     </section>
     <?php
@@ -430,6 +433,7 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/DarkModeddr.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
+    <script src="./js/categoriesmenu.js"></script>
 </body>
 
 </html>

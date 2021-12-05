@@ -1,0 +1,50 @@
+/*--Dark mode--*/
+.DarkModeBody{
+    background-color: #100f0f;
+}
+.DarkChefcont{
+    background-color: #100f0f;
+}
+.Darklabel{
+    color: white;
+}
+.Darkform{
+    background-color: #100f0f;
+}
+.Darkinput{
+    background-color: #100f0f;
+}
+.DarkPhoto{
+    background-color: #100f0f;
+}
+.DarkInPho{
+    color: white;
+}
+.DarkTexti{
+    background-color: #100f0f;
+}
+/*--White mode--*/
+.White{
+    background-color: white;
+}
+.WhiteChefcont{
+    background-color: white;
+}
+.Whitelabel{
+    color: black;
+}
+.Whiteform{
+    background-color: white;
+}
+.Whiteinput{
+    background-color: white;
+}
+.WhitePhoto{
+    background-color: white;
+}
+.WhiteInPho{
+    color: black;
+}
+.WhiteTexti{
+    background-color: white;
+}

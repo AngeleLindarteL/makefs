@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../models/conexion.php");
  if(isset($_POST['register'])){
 
@@ -24,17 +25,27 @@ include("../models/conexion.php");
                     $conexion->beginTransaction();
                     $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date,"midpic" => "makefsUser.png","minpic" => "makefsUser.png"));
                     $conexion->commit();
-                    echo "registro exitoso";
+
+                    if(isset($_SESSION["errorRegister"])){
+                        unset($_SESSION["errorRegister"]);
+                    }
+
+                    if(isset($_SESSION["errorLog"])){
+                        unset($_SESSION["errorLog"]);
+                    }
+
                     header("location: ../views/login.php");
-                }catch(Exception $e){
+                }catch(PDOException $e){
                     $conexion->rollBack();
-                    echo "Failed: " . $e->getMessage();
+                    $_SESSION["errorRegister"] = $e->getMessage();
+                    header("location: ../views/register.php");
                 }
             }else{
                 echo "Error en el registro de los datos";
             }
         }else{
-            echo "<script>alert('Las contraseñas no coinciden');";
+            $_SESSION["errorRegister"] = "contrasNoCoinciden";
+            header("location: ../views/register.php");
         }   
     }else{
         echo "Llena todos los campos";

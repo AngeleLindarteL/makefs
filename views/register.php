@@ -7,13 +7,14 @@
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/register.css" rel="stylesheet">
     <link href="./css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/notificationsLog.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
 
     <title>Register - Makefs</title>
     <?php
         include('./components/sessionControlUnloged.php');
+        include("./components/tokenControl.php");
     ?>
-    <?php include("./components/tokenControl.php") ?>
 </head>
 <body>
     <header id="header">
@@ -51,12 +52,24 @@
                         <input class="inputtxt" type="password" name="pwconfirm" placeholder="Confirmar contraseña" required>
                     </div>
                     <h5>Fecha de nacimiento</h5>
-                    <input class="inputtxt" type="date" name="date" required>
+                    <input class="inputtxt" min="1940-01-01" max="2006-12-30" type="date" name="date" required>
                     <input type="submit" value="Registrarse" name="register" class="submitbtn">
                     <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> Inicia sesion!</a></span></h4>
                 </form>
             </div>
         </div>
     </section>
+    <?php
+        if(isset($_SESSION["errorRegister"])){
+            echo <<<EOT
+                <script> const errorR = `$_SESSION[errorRegister]`</script>
+                <div class="makefs-notification">
+                    <figure class="makefs-notification-rep"></figure>
+                    <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg"></p></article>
+                </div>
+                <script src="./js/registerNotifications.js"></script>
+            EOT;
+        }
+    ?>
 </body>
 </html>

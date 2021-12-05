@@ -1,33 +1,39 @@
-/*---Elements---*/
-let imagentb = document.querySelector('#imgtb');
-let modoOscuro = document.querySelector('#tb');
+/*--Elements--*/
 let body = document.querySelector('body');
-let pselector = document.querySelectorAll('.next-text-recipe');
-let BannerDown = document.querySelector('.categories-down');
+let modoOscuro = document.querySelector('#tb');
+let imagentb = document.querySelector('#imgtb');
 let star = document.querySelectorAll('.star-template');
+let titlevideo = document.querySelectorAll('.next-text-recipe');
+let cookie = document.querySelector('#notFoundRecipes');
+let btndisplay = document.querySelector('#btnCategoriesShow');
 let BannersubDown = document.querySelectorAll('.subcategories-down');
 let categoriesregion = document.querySelectorAll('.categoryDiv');
-let btndisplay = document.querySelector('#btnCategoriesShow');
-/*---Code---*/
+let BannerDown = document.querySelector('.categories-down');
+/*--Code--*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
 }else{
     if(localStorage.getItem("Theme") == "oscuro"){
         body.classList.replace('White', 'DarkModeBody');
+        star.forEach(sta => {
+            sta.classList.replace('WhiteStar', 'DarkStar');
+            
+        })
+        titlevideo.forEach(ttl => {
+            ttl.classList.replace('Whiterecipe', 'Darkrecipe');
+            
+        })
+        if(cookie){
+        cookie.classList.replace('Whitecookie','Darkcookie');
+        }
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
         BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
         BannersubDown.forEach(subcategories=>{
             subcategories.classList.replace('WhiteModesubCategories','DarkModesubCategories');
         })
-        pselector.forEach(parrafo => {
-            parrafo.classList.replace('WhiteModeP', 'DarkModeP');
-        })
-        star.forEach(fondoStar =>{
-            fondoStar.classList.replace('WhiteStar','DarkStar');
-        })
         categoriesregion.forEach(subindice=>{
             subindice.classList.replace('Whiteindice','Darkindice');
         })
-        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
     }
     
 }
@@ -37,37 +43,47 @@ modoOscuro.addEventListener("click", (e)  =>{
         localStorage.setItem("Theme", "oscuro");
         imagentb.src="./iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
+        star.forEach(sta => {
+            sta.classList.replace('WhiteStar', 'DarkStar');
+            
+        })
+        titlevideo.forEach(ttl => {
+            ttl.classList.replace('Whiterecipe', 'Darkrecipe');
+            
+        })
+        if (cookie){
+        cookie.classList.replace('Whitecookie','Darkcookie');
+        }
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
         BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
         BannersubDown.forEach(subcategories=>{
             subcategories.classList.replace('WhiteModesubCategories','DarkModesubCategories');
         })
-        pselector.forEach(parrafo => {
-            parrafo.classList.replace('WhiteModeP', 'DarkModeP');
-        })
-        star.forEach(fondoStar =>{
-            fondoStar.classList.replace('WhiteStar','DarkStar');
-        })
         categoriesregion.forEach(subindice=>{
             subindice.classList.replace('Whiteindice','Darkindice');
         })
-        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
     }else{
         localStorage.setItem("Theme", "claro");
         imagentb.src="./iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');
+        star.forEach(sta => {
+            sta.classList.replace('DarkStar','WhiteStar');
+            
+        })
+        titlevideo.forEach(ttl => {
+            ttl.classList.replace('Darkrecipe','Whiterecipe');
+            
+        })
+        if(cookie){
+        cookie.classList.replace('Darkcookie','Whitecookie');
+        }
+        btndisplay.classList.replace('DarkBtnDown','WhiteBtnDown');
         BannerDown.classList.replace('DarkModeCategories','WhiteModeCategories');
         BannersubDown.forEach(subcategories=>{
             subcategories.classList.replace('DarkModesubCategories','WhiteModesubCategories');
         })
-        pselector.forEach(parrafo => {
-            parrafo.classList.replace('DarkModeP','WhiteModeP');
-        })
-        star.forEach(fondoStar =>{
-            fondoStar.classList.replace('DarkStar','WhiteStar');
-        })
         categoriesregion.forEach(subindice=>{
             subindice.classList.replace('Darkindice','Whiteindice');
         })
-        btndisplay.classList.replace('DarkBtnDown','WhiteBtnDown');
     }
 })

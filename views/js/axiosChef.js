@@ -5,6 +5,7 @@ let email = document.querySelector("#email-chef");
 let facebook = document.querySelector("#fbinput-Chef");
 let instagram = document.querySelector("#iginput-Chef");
 let youtube = document.querySelector("#ytinput-Chef");
+let twitter = document.querySelector("#twinput-chef");
 let descript = document.querySelector("#descript-chef");
 let updateStatus = document.querySelector("#status-chef");
 
@@ -15,6 +16,7 @@ let usernameTxt = document.querySelector("#username-space-chef");
 let fbTxt = document.querySelector("#fbTxT");
 let igTxT = document.querySelector("#igTxT");
 let ytTxT = document.querySelector("#ytTxT");
+let twTxt = document.querySelector("#twTxt");
 
 let nameTxt2 = document.querySelector("#chef-name-changing");
 let usernameTxt2 = document.querySelector("#username-space-chef-changing");
@@ -32,6 +34,7 @@ updateUser.addEventListener("click", (e)=>{
         "facebook": facebook.value,
         "instagram": instagram.value,
         "youtube": youtube.value,
+        "twitter": twitter.value
     }
     info = JSON.stringify(info);
     try{
@@ -51,6 +54,7 @@ updateUser.addEventListener("click", (e)=>{
                     fbTxT.setAttribute("href",facebook.value);
                     igTxT.setAttribute("href",instagram.value);
                     ytTxT.setAttribute("href",youtube.value);
+                    twTxt.setAttribute("href",twitter.value);
                 }
             }
         )

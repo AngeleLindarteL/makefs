@@ -9,6 +9,7 @@ let updateStatus = document.querySelector("#status");
 let facebook = document.querySelector("#fbinput");
 let instagram = document.querySelector("#iginput");
 let youtube = document.querySelector("#ytinput");
+let twitter = document.querySelector("#twinput");
 
 let nameTxt = document.querySelector("#user-name");
 let descriptTxt = document.querySelector("#descript-space");
@@ -17,6 +18,7 @@ let usernameTxt = document.querySelector("#username-space");
 let fbTxtUser = document.querySelector("#fbTxT-user");
 let igTxTUser = document.querySelector("#igTxT-user");
 let ytTxTUser = document.querySelector("#ytTxT-user");
+let twTxTUser = document.querySelector("#twTxt-user");
 
 updateUser.addEventListener("click", (e)=>{
     e.preventDefault();
@@ -29,6 +31,7 @@ updateUser.addEventListener("click", (e)=>{
         "facebook": facebook.value,
         "instagram": instagram.value,
         "youtube": youtube.value,
+        "twitter": twitter.value
     }
     info = JSON.stringify(info);
     try{
@@ -44,6 +47,7 @@ updateUser.addEventListener("click", (e)=>{
                     fbTxtUser.setAttribute("href",facebook.value);
                     igTxTUser.setAttribute("href",instagram.value);
                     ytTxTUser.setAttribute("href",youtube.value);
+                    twTxTUser.setAttribute("href",twitter.value)
                 }
             }
         )

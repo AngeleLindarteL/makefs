@@ -10,6 +10,8 @@
     <link href="./css/user-view.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link href="./css/notifications.css" rel="stylesheet">
+    <link href="./css/DarkUser.css" rel="stylesheet">
+    <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Perfil</title>
     <?php
@@ -23,7 +25,7 @@
         <?php echo "const id =".$_SESSION['id'] ?>
     </script>
 </head>
-<body>
+<body class="White">
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
@@ -35,7 +37,7 @@
     </div>
     <section id="chef-view">
         <div class="makefsContainer userContainer">
-            <div id="userNoChefContainer">
+            <div id="userNoChefContainer" class="WhiteChefcont">
                 <div class="divUser-view" id="firstdiv">
                     <figure class="profile-pic-user">
                         <img class="profile-pic-img-user" src="../mediaDB/usersImg/<?php echo $_SESSION['midpic']; ?>">
@@ -43,18 +45,18 @@
                     </figure>
                     <section class="divUser-view" id="cambiarFoto">
                         <button id="profile-edit-close-chef"></button>
-                        <form id="fotoChange" method="POST">
-                            <input type="file" class="updateFotoInput" name="photo" accept="image/png, image/jpeg, image/jfif, image/jpg" />
+                        <form id="fotoChange" class="WhitePhoto" method="POST">
+                            <input type="file" class="updateFotoInput WhiteInPho" name="photo" accept="image/png, image/jpeg, image/jfif, image/jpg" />
                             <input type="submit" name="changeFoto" id="submitFoto" value="Cambiar foto">
                         </form>
                     </section>
                     <section class="divUser-view" id="cambiarPass">
                         <button id="profile-close-passChange"></button>
-                        <form action="" id="passChange" method="POST">
+                        <form action="" id="passChange" class="Whiteform" method="POST">
                             <h2>CAMBIAR CONTRASEÑA</h2>
                             <input type="text" class="passInput" id="passAntigua" placeholder="Tu contraseña Antigua">
                             <input type="text" class="passInput" id="passNew" maxlength="150" placeholder="Contraseña Nueva">
-                            <input type="submit" class="passInput" id="changePassSend" name="changePass" value="Actualizar Contraseña">
+                            <input type="submit" class="passInput" id="changePassSend" class="Whiteinput" name="changePass" value="Actualizar Contraseña">
                         </form>
                     </section>
                     <section class="divUser-view" id="deleteAccountContainer">
@@ -113,8 +115,8 @@
                             <input type="text" class="inputsToEnable" id="iginput" value="<?php echo test_input($_SESSION["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <a href="<?php echo $_SESSION["twitter"] ?>" target="__blank"><img src="./img/user-twitter.png"></a>
-                            <input type="text" class="inputsToEnable" value="<?php echo test_input($_SESSION["twitter"])?>" disabled>
+                            <a href="<?php echo $_SESSION["twitter"] ?>" id="twTxt-user" target="__blank"><img src="./img/user-twitter.png"></a>
+                            <input type="text" class="inputsToEnable" id="twinput" value="<?php echo test_input($_SESSION["twitter"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
                             <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>
@@ -132,20 +134,20 @@
                         </div>
                         <div class="divInfoData-user" id="input-info">
                             <div class="infodelusuario">
-                                <label for="namem">Nombre:</label>
-                                <input type="text" class="inputsToEnable" id="namem" name="namem" maxlength="59" value="<?php echo test_input($_SESSION["nombre"])?>" disabled>
+                                <label for="namem" class="Whitelabel">Nombre:</label>
+                                <input type="text" class="inputsToEnable WhiteTexti" id="namem" name="namem" maxlength="59" value="<?php echo test_input($_SESSION["nombre"])?>" disabled>
                             </div>
                             <div class="infodelusuario">
-                                <label for="username">Username:</label>
-                                <input type="text" class="inputsToEnable" id="username" name="username" maxlength="59" value="<?php echo test_input($_SESSION["username"])?>" disabled>
+                                <label for="username" class="Whitelabel">Username:</label>
+                                <input type="text" class="inputsToEnable WhiteTexti" id="username" name="username" maxlength="59" value="<?php echo test_input($_SESSION["username"])?>" disabled>
                             </div>
                             <div class="infodelusuario">
-                                <label for="email">Email:</label>
-                                <input type="text" class="inputsToEnable" id="email" name="email" maxlength="69" value="<?php echo test_input($_SESSION["email"])?>" disabled>
+                                <label for="email" class="Whitelabel">Email:</label>
+                                <input type="text" class="inputsToEnable WhiteTexti" id="email" name="email" maxlength="69" value="<?php echo test_input($_SESSION["email"])?>" disabled>
                             </div>
                             <div class="infodelusuario">
-                                <label for="desc">Description:</label>
-                                <input type="text" class="inputsToEnable" id="descript" name="descript" maxlength="99" value="<?php echo test_input($_SESSION["description"])?>" disabled>
+                                <label for="desc" class="Whitelabel">Description:</label>
+                                <input type="text" class="inputsToEnable WhiteTexti" id="descript" name="descript" maxlength="99" value="<?php echo test_input($_SESSION["description"])?>" disabled>
                             </div>
                             <div class="infodelusuario" id="updateInfo">
                                 <input type="submit" value="Actualizar" name="updateSocialMedia" id="updateSocial">
@@ -167,6 +169,7 @@
     <script src="./js/chageInfoUser.js"></script>
     <script src="./js/axiosUser.js"></script>
     <script src="./js/upload_pic_user_view.js"></script>
-    <script src="./js/darkMode.js"></script>
+    <script src="./js/DarkModeUser.js"></script>
+    <script src="./js/DarkModeMenu.js"></script>
 </body>
 </html>

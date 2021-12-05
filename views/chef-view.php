@@ -156,7 +156,7 @@
                             <ul class="chef-social-media">
                                 <a href="<?php echo test_input($res["facebook"]) ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png"></a>
                                 <a href="<?php echo test_input($res["instagram"]) ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png"></a>
-                                <a href="<?php echo test_input($res["twitter"]) ?>" target="__blank"><img src="./img/user-twitter.png"></a>
+                                <a href="<?php echo test_input($res["twitter"]) ?>" id="twTxt" target="__blank"><img src="./img/user-twitter.png"></a>
                                 <a href="<?php echo test_input($res["youtube"]) ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
                             </ul>
                             <?php
@@ -359,7 +359,7 @@
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-twitter.png" alt="">
-                            <input type="text" class="infoInputsChef" value="<?php echo test_input($res["twitter"])?>" disabled>
+                            <input type="text" class="infoInputsChef" id="twinput-chef" value="<?php echo test_input($res["twitter"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
                             <img src="./img/user-youtube.png" alt="">
