@@ -16,6 +16,8 @@
     <link href="./css/library.css" rel="stylesheet">
     <link href="./css/Darklibrary.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Preloader.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <?php
         include("../models/conexion.php");
@@ -63,6 +65,7 @@
     <?php
     include('./components/header.php');
     include('./components/menudesplegable.php');
+    include('./components/preloader.php');
     ?>
     <div class="pile-waiting">
         <p>En pila</p>
@@ -234,5 +237,7 @@
     <script src="./js/DarkModeLibrary.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
     <script src="./js/footerHidden.js"></script>
+    <script src="./js/DarkLoader.js"></script>
+<script src="./js/preloader.js"></script>
 </body>
 </html>

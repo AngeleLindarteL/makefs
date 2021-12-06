@@ -11,6 +11,8 @@
         <link href="./css/DarkModeIndex.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/DarkMenu.css">
+        <link rel="stylesheet" href="./css/Preloader.css">
+
         <title>Inicio Makef's</title>
     <?php
         session_start();
@@ -153,6 +155,7 @@
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
+        include('./components/preloader.php');
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
@@ -205,5 +208,7 @@
     <script src="./js/darkModeIndex.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
     <script src="./js/footerHidden.js"></script>
+    <script src="./js/DarkLoader.js"></script>
+    <script src="./js/preloader.js"></script>
     </body>
 </html>

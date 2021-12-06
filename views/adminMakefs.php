@@ -9,6 +9,8 @@
     <link href="./css/adminPanel.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/Preloader.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Admin Panel</title>
     <?php
@@ -24,6 +26,7 @@
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
+        include('./components/preloader.php');
     ?>
     <section id="admin-panel">
         <div class="makefsContainer adminpanel">
@@ -182,6 +185,7 @@
     <script src="./js/axiosAdminMakefs.js"></script>
     <script src="./js/darkMode.js"></script>
     <script src="./js/footerHidden.js"></script>
-
+    <script src="./js/DarkLoader.js"></script>
+    <script src="./js/preloader.js"></script>
 </body>
 </html>
