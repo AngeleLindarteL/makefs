@@ -181,6 +181,7 @@
     <script src="./js/adminMakefs.js"></script>
     <script src="./js/axiosAdminMakefs.js"></script>
     <script src="./js/darkMode.js"></script>
+    <script src="./js/footerHidden.js"></script>
 
 </body>
 </html>

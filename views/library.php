@@ -226,12 +226,13 @@
             ?>
         </div>
     </section>
+    <?php
+        include("./components/footer.php");
+    ?>
     <script src="./js/index.js"></script>
     <script src="./js/library.js"></script>
     <script src="./js/DarkModeLibrary.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
-    <?php
-        include("./components/footer.php");
-    ?>
+    <script src="./js/footerHidden.js"></script>
 </body>
 </html>
