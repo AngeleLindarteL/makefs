@@ -204,5 +204,6 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/darkModeIndex.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
+    <script src="./js/footerHidden.js"></script>
     </body>
 </html>

@@ -171,5 +171,6 @@
     <script src="./js/upload_pic_user_view.js"></script>
     <script src="./js/DarkModeUser.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
+    <script src="./js/footerHidden.js"></script>
 </body>
 </html>

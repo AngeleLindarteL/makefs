@@ -129,5 +129,6 @@
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/darkModeSe.js"></script>
     <script src="./js/darkModeMenu.js"></script>
+    <script src="./js/footerHidden.js"></script>
 </body>
 </html>

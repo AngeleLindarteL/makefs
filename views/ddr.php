@@ -446,6 +446,7 @@
     <script src="./js/DarkModeddr.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
     <script src="./js/categoriesmenu.js"></script>
+    <script src="./js/footerHidden.js"></script>
 </body>
 
 </html>
