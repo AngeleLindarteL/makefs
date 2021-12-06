@@ -5,8 +5,8 @@
     $connObj = new Conexion;
     $conn = $connObj -> Conectar();
     $consulta = "INSERT INTO recipe(chefid,namer,ingredients,steps,video,imagen,duration,tags,region,recommendedt,privater,chefname)
-    VALUES (:chefid,:namer,:ingredients,:steps,:video,:imagen,:duration,:tags,:regionTag,0,:privater,:chefname)";
-    
+    VALUES (:chefid,:namer,:ingredients,:steps,:video,:imagen,:duration,:tags,:regionTag,0,:privater,:chefname) RETURNING recipeid";
+
     $ingredientes = json_encode($infoRecipe->ingredients);
     $etiquetas = json_encode($infoRecipe->tags);
     $steps = json_encode($infoRecipe->steps);
@@ -30,7 +30,11 @@
                 ":regionTag"=>$infoRecipe->regionTag,
                 ":privater"=>$infoRecipe->privater,
                 ":chefname"=>$infoRecipe->chefname,
-            ));
+        ));
+        $rbrecipeid = $password->fetchColumn();
+        $rbQuery = "INSERT INTO stars (recipeid,userid,star) VALUES (:rid,10,0)";
+        $rbExec = $conn->prepare($rbQuery);
+        $rbExec->execute(array("rid"=>$rbrecipeid));
         $conn->commit();
     }catch(Exception $e){
         $conn->rollBack();
