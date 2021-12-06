@@ -46,7 +46,7 @@
                     <section class="divUser-view" id="cambiarFoto">
                         <button id="profile-edit-close-chef"></button>
                         <form id="fotoChange" class="WhitePhoto" method="POST">
-                            <input type="file" class="updateFotoInput WhiteInPho" name="photo" accept="image/png, image/jpeg, image/jfif, image/jpg" />
+                            <input type="file" class="updateFotoInput WhiteInPho" name="photo" accept="image/png, image/jpeg,image/jpg" />
                             <input type="submit" name="changeFoto" id="submitFoto" value="Cambiar foto">
                         </form>
                     </section>

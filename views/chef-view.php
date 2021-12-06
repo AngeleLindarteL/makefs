@@ -232,6 +232,7 @@
                         }else{
                             $isPrivate = false;
                         }
+                        $average = number_format($average,1);
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
                                 <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]">
@@ -288,7 +289,7 @@
                 <section class="divChef-view" id="cambiarFoto-chef">
                     <button id="profile-edit-close-chef2"></button>
                     <form action="" id="fotoChange-chef" class="WhitePhoto" method="POST">
-                        <input type="file" class="updateFotoInput-chef WhiteInputPhoto" name="profilepic">
+                        <input type="file" accept="image/png, image/jpeg,image/jpg"class="updateFotoInput-chef WhiteInputPhoto" name="profilepic">
                         <input type="submit" name="changeFoto" id="submitFoto-chef" value="Cambiar foto">
                     </form>
                 </section>

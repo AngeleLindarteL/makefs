@@ -87,6 +87,7 @@
                             print_r($e);
                             exit;
                         }
+                        $average = number_format($average,1);
                         echo <<< EOT
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
