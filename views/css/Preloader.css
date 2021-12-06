@@ -1,0 +1,143 @@
+#ContImgLoader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.LogoCont{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.LogoCont img{
+    height: 75vh;
+}
+.PreloaderCont{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.ContTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.PreloaderCont h1{
+    color: #FF2C29;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 6em;
+    margin-bottom: 0;
+}
+.PreloaderCont h6{
+    color: #FFB5B5;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 10%;
+}
+.Preloader{
+    height: 25vh;
+    width: 25%;
+    border: 8px solid #FF2C29;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.527);
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Preloader img{
+    height: 16vh;
+    animation: loading 2s linear infinite;
+}
+.loading{
+    font-size: 1.5em;
+    color: #FFB5B5;
+    display: flex;
+}
+.dots::after{
+    animation: puntos 2s linear infinite;
+}
+.White{
+    background-color: white;
+}
+.Dark{
+    background-color: #100f0f;
+}
+@keyframes loading{
+    0%{
+        transform: scale(1) rotate(0deg);
+    }
+    50%{
+        transform: scale(1.2) rotate(180deg);
+    }
+    100%{
+        transform: scale(1) rotate(360deg);
+    }
+}
+@keyframes puntos {
+    0%{
+        content: ".";
+    }
+    50%{
+        content: "..";
+    }
+    100%{
+        content: "...";
+    }
+    
+}
+/*--Responsive height--*/
+@media (max-height:820px){
+    .Preloader{
+        height: 28vh;
+        width: 28vh;
+    }
+}
+@media (max-height:590px){
+    .Preloader{
+        height: 33vh;
+        width: 33vh;
+    }
+}
+@media (max-height:550px){
+    .Preloader{
+        width: 22vh;
+        height: 22vh;
+    }
+}
+/*--Responsive width--*/
+@media (max-width:1650px){
+    .Preloader{
+        width: 28vh;
+        height: 28vh;
+    }
+}
+@media (max-width:1200px){
+    .LogoCont img{
+        height: 50vh;
+    }
+}
+@media (max-width:790px){
+    .LogoCont{
+        display: none;
+    }
+    .PreloaderCont{
+        width: 100%;
+    }
+}
+@media (max-width:300px){
+    .PreloaderCont h1{
+        font-size: 4.5em;
+    }
+}
+@media (max-width:285px){
+    .loading{
+        flex-direction: column;
+    }
+}
