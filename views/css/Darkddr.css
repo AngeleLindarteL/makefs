@@ -29,6 +29,20 @@
 .DarkNotif{
     box-shadow: 0px 0px 20px 1px #ff2c295c;
 }
+.Darkindice{
+    background-color: #100f0f;
+    border: 1px solid #ffffff;
+    color:white;
+}
+.DarkModesubCategories{
+    background-color: rgba(0, 0, 0, 0);
+}
+.DarkModeCategories{
+    background-color: rgba(0, 0, 0, 0);
+}
+.DarkBtnDown{
+    background-color: #100f0f;
+}
 /*--White--*/
 .White{
     background-color:white;
@@ -59,4 +73,18 @@
 }
 .WhiteNotif{
     filter:invert(0);
+}
+.WhiteModesubCategories{
+    background-color: rgb(255, 255, 255);
+}
+.Whiteindice{
+    background-color: white;
+    border: 1px solid #FF2C29;
+    color: #FF2C29;
+}
+.WhiteModeCategories{
+    background-color: rgb(255, 255, 255);
+}
+.WhiteBtnDown{
+    background-color:white;
 }

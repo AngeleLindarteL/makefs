@@ -11,6 +11,10 @@ let whitep = document.querySelector('.viewp');
 let videoview = document.querySelector('#makefs-video-views');
 let star = document.querySelectorAll('.star-template');
 let notifdes = document.querySelector('.bookshelf-notification');
+let BannersubDown = document.querySelectorAll('.subcategories-down');
+let categoriesregion = document.querySelectorAll('.categoryDiv');
+let BannerDown = document.querySelector('.categories-down');
+let btndisplay = document.querySelector('#btnCategoriesShow');
 /*--Code--*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -30,6 +34,14 @@ if (localStorage.getItem("Theme") == null){
             calif.classList.replace('WhiteStar', 'DarkStar');
         })
         notifdes.classList.replace('WhiteNotif','DarkNotif');
+        BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
+        BannersubDown.forEach(subcategories=>{
+            subcategories.classList.replace('WhiteModesubCategories','DarkModesubCategories');
+        })
+        categoriesregion.forEach(subindice=>{
+            subindice.classList.replace('Whiteindice','Darkindice');
+        })
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
     }
     
 }
@@ -52,6 +64,14 @@ modoOscuro.addEventListener("click", (e)  =>{
             calif.classList.replace('WhiteStar', 'DarkStar');
         })
         notifdes.classList.replace('WhiteNotif','DarkNotif');
+        BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
+        BannersubDown.forEach(subcategories=>{
+            subcategories.classList.replace('WhiteModesubCategories','DarkModesubCategories');
+        })
+        categoriesregion.forEach(subindice=>{
+            subindice.classList.replace('Whiteindice','Darkindice');
+        })
+        btndisplay.classList.replace('WhiteBtnDown','DarkBtnDown');
 
     }else{
         localStorage.setItem("Theme", "claro");
@@ -70,5 +90,13 @@ modoOscuro.addEventListener("click", (e)  =>{
             calif.classList.replace('DarkStar','WhiteStar');
         })
         notifdes.classList.replace('DarkNotif','WhiteNotif');
+        BannerDown.classList.replace('DarkModeCategories','WhiteModeCategories');
+        BannersubDown.forEach(subcategories=>{
+            subcategories.classList.replace('DarkModesubCategories','WhiteModesubCategories');
+        })
+        categoriesregion.forEach(subindice=>{
+            subindice.classList.replace('Darkindice','Whiteindice');
+        })
+        btndisplay.classList.replace('DarkBtnDown','WhiteBtnDown');
     }
 })
