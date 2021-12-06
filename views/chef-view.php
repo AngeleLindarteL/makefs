@@ -12,6 +12,8 @@
     <link href="./css/notifications.css" rel="stylesheet">
     <link href="./css/DarkModecss.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/DarkMenu.css">
+    <link rel="stylesheet" href="./css/Preloader.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Chef view</title>
     <?php
@@ -127,6 +129,7 @@
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
+        include('./components/preloader.php');
     ?>
     <div class="makefs-notification">
         <figure class="makefs-notification-rep"></figure>
@@ -392,6 +395,7 @@
     <script src="./js/followUnloged.js"></script>
     <script src="./js/darkMode.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
-    
+    <script src="./js/DarkLoader.js"></script>
+<script src="./js/preloader.js"></script>
 </body>
 </html>

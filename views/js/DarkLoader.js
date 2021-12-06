@@ -1,5 +1,5 @@
 /*--Elements--*/
-let body = document.querySelector('body');
+let body = document.querySelector('#ContImgLoader');
 /*--Code--*/
 if (localStorage.getItem("Theme") == "claro"){
     body.classList.add("White");

@@ -18,6 +18,8 @@
     <link href="./css/not-registered.css" rel="stylesheet">
     <link href="./css/Darkddr.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/Preloader.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         let recipeProperties = {
@@ -305,6 +307,7 @@
     include('./components/header.php');
     include('./components/menudesplegable.php');
     include("./components/report.php");
+    include('./components/preloader.php');
     ?>
     <div class="makefs-notification ddr-in-notification">
         <figure class="makefs-notification-rep"></figure>
@@ -560,6 +563,8 @@
     <script src="./js/DarkModeMenu.js"></script>
     <script src="./js/categoriesmenu.js"></script>
     <script src="./js/footerHidden.js"></script>
+    <script src="./js/DarkLoader.js"></script>
+<script src="./js/preloader.js"></script>
 </body>
 
 </html>

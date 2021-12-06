@@ -11,6 +11,8 @@
     <link href="./css/DarkModeSe.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/Preloader.css">
+
     
     <?php
         include("../models/conexion.php");
@@ -56,6 +58,7 @@
     <?php
         include('./components/header.php');
         include('./components/menudesplegable.php');
+        include('./components/preloader.php');
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
@@ -130,5 +133,7 @@
     <script src="./js/darkModeSe.js"></script>
     <script src="./js/darkModeMenu.js"></script>
     <script src="./js/footerHidden.js"></script>
+    <script src="./js/DarkLoader.js"></script>
+    <script src="./js/preloader.js"></script>
 </body>
 </html>

@@ -2,7 +2,19 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    clip-path: circle(141.2% at 100% 0);
+    transition: clip-path 1s ease-in-out;
 }
+
+.loaderOut{
+    clip-path: circle(0% at 98% 4%) !important;
+    display: none;
+}
+
 .LogoCont{
     width: 50%;
     height: 100vh;
