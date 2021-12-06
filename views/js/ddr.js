@@ -46,6 +46,20 @@ const videoInteractionsViews = document.querySelector("#makefs-video-views");
 stepsButton.style.display = "none";
 // Action functions -----------------------------------------------------
 
+url = null;
+newChef = null;
+
+axios.get(`https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`)
+.then(res =>{
+    if (res.data.data.isReported == false){
+        url = `https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`;
+        newChef = false;
+    }else if(res.data.data == false){
+        url = `https://makefsapi.herokuapp.com/user/${followerid}/chefs`;
+        newChef = true;
+    }
+})
+
 let interval = {
     isActive: false,
     intervalState: undefined,
@@ -69,23 +83,29 @@ let videoPlayerProperties = {
 
 sendTimeBeacon = () => {
     if (videoPlayerProperties.watchedTime > 5 || (duration < 5 && videoPlayerProperties.watchedTime > duration / 2)) {
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
-        
-        headers.append('Access-Control-Allow-Origin', 'http://localhost:5000');
-        headers.append('Access-Control-Allow-Credentials', 'true');
-        
-        headers.append('GET', 'POST');
-        
-        // navigator.sendBeacon(`http://127.0.0.1:5000/user/${followerid}/vr`,request);
-        axios.post(`http://127.0.0.1:5000/user/${followerid}/vr`,{
+        axios.post(`https://makefsapi.herokuapp.com/user/${followerid}/vr`,{
             "recipeID": videoID,
             "viewedSeconds": videoPlayerProperties.watchedTime,
             "videoDuration": duration
         }).then(res => {
             console.log(res)
         })
+        axios.post(url,{
+            "chefID": newChef === true ? chefid : null,
+            "viewedTime": videoPlayerProperties.watchedTime,
+            "rate": recipeProperties.rate,
+            "savedRecipes": recipeProperties.savedrecipes,
+            "isReported": recipeProperties.reported
+        }).then(res => {
+            console.log(res)
+        })
+        axios.post(`https://makefsapi.herokuapp.com/user/${followerid}/cats`,{
+            "region": recipeProperties.region,
+            "tags": recipeProperties.tags
+        }).then(res => {
+            console.log(res)
+        })
+        
     }
     console.log("se abandonó la página");
 }
@@ -451,6 +471,9 @@ window.addEventListener("keydown", (e) => {
     if (videoPlayerProperties.firstPlayed === false) {
         return;
     }
+    if (interactingOutVideo) {
+        return;
+    }
     e.preventDefault();
     let keyPressed = e.key;
     switch (keyPressed) {
@@ -503,12 +526,16 @@ fullscreen.addEventListener("click", () => {toggleFullscreen()});
 volume_slider.addEventListener("input", () => {changeVolume(volume_slider.value)})
 
 mediaPlayer.addEventListener("mousemove", () => {
+    interactingOutVideo = false;
     showControls();
     clearTimeout(videoPlayerProperties.idleTimeout);
     videoPlayerProperties.idleTimeout = null;
     videoPlayerProperties.idleTimeout = setTimeout(() => {
         hideControls();
     },1500);
+})
+mediaPlayer.addEventListener("mouseout", () => {
+    interactingOutVideo = true;
 })
 
 makefsControlsContainer.addEventListener("mouseenter", () => {
@@ -867,3 +894,17 @@ const stepListAll = document.querySelectorAll(".makefs-ingredient");
 if (stepListAll.length % 2 == 1) {
     stepListAll[stepListAll.length - 1].style.width = "88%";
 }
+
+// Config for save advise when not registered:
+
+try {
+    const saveTrigger = document.querySelector("#save-actual-recipe");
+} catch (error) {
+    console.log("xd");
+}
+
+saveTrigger.addEventListener("click", () => {
+    if (followerid == 0) {
+        showNotRegisteredAdvise();
+    }
+})

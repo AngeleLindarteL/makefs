@@ -21,40 +21,74 @@
                 $rConn = $rConn->Conectar();
                 $rConn->beginTransaction();
 
-                $query = "SELECT * FROM recipe ORDER BY views ASC, recommendedt DESC LIMIT 20";
+                $query = "SELECT 
+                    recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname,
+                    CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate,
+                    userm.minpic
+                    FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
+                    WHERE recipe.privater = FALSE GROUP BY (recipe.recipeid,recipe.namer,recipe.status, recipe.duration, recipe.tags, recipe.region, recipe.privater, recipe.chefname, userm.minpic)
+                    LIMIT 50
+                ";
                 $exec = $rConn->prepare($query);
                 $exec->execute();
                 $exec = $exec->fetchAll(PDO::FETCH_ASSOC);
-
-                $orderQuery = "SELECT AVG(star) FROM stars WHERE recipeid = :rid";
-                $updateQuery = "UPDATE recipe SET recommendedt = recommendedt + 1 WHERE recipeid = :rid";
                 
                 $finalOrdering = array();
 
-                foreach ($exec as $key => $val){
-                    $ordering = $rConn->prepare($orderQuery);
-                    $updating = $rConn->prepare($updateQuery);
-                    $ordering->execute(array("rid"=>$val["recipeid"]));
-                    $updating->execute(array("rid"=>$val["recipeid"]));
-                    $ordering = $ordering->fetchColumn();
-                    if (empty($ordering)){
-                        $ordering = 0;
+                function ordering($rate,$views){
+                    $viewRanges = [
+                        [0,20],
+                        [20,50],
+                        [50,100],
+                        [100,500],
+                        [500,1000],
+                        [1000,10000],
+                        [10000, 20000],
+                        [20000, 50000],
+                        [50000, 100000],
+                        [100000,1000000]
+                    ];
+                    $vscore = 0;
+                    $vrate = 0;
+                    for($i = 0; $i < sizeof($viewRanges); $i++){
+                        if ($viewRanges[$i][0] <= $views && $viewRanges[$i][1] >= $views){
+                            $vscore = ($i+1) * 100;
+                            break;
+                        }
                     }
-                    array_push($finalOrdering,["id"=>$val["recipeid"],"stars"=>round($ordering,2)]);
+                    try{
+                        $vrate = (number_format($rate,2) / 0.5) * 100;
+                    }catch (DivisionByZeroError $e){
+                        $vrate = 100;
+                    }
+                    return $vrate + $vscore;
+                }
+
+                foreach ($exec as $key => $val){
+                    array_push($finalOrdering,[
+                        "recipeid"=>$val["recipeid"],
+                        "chefid"=>$val["chefid"],
+                        "namer"=>$val["namer"],
+                        "rate"=>$val["rate"],
+                        "views"=>$val["views"],
+                        "chefname"=>$val["chefname"],
+                        "imagen"=>$val["imagen"],
+                        "chefpic"=>$val["minpic"],
+                        "fscore"=> ordering($val["rate"], $val["views"])
+                    ]);
                 }
 
                 usort($finalOrdering, function ($item1, $item2) {
-                    return $item2['stars'] <=> $item1['stars'];
+                    return $item2['fscore'] <=> $item1['fscore'];
                 });
-
-                print_r($finalOrdering);
+                $response = json_decode(json_encode(["recipes"=>$finalOrdering]));
             } catch (Exception $e) {
                 print_r($e);
                 $rConn->rollBack();
             }
         }else{
             include("./components/tokenControl.php");
-            $url = "http://127.0.0.1:5000/user/$_SESSION[id]/vr";
+            $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]/vr";
 
             $ch = curl_init($url);
             curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -86,7 +120,7 @@
                 $getR->execute();
                 $res = $getR->fetchAll(PDO::FETCH_ASSOC);
                 $data = json_encode($res);
-                $url = "http://127.0.0.1:5000/user/$_SESSION[id]";
+                $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]";
     
                 $ch = curl_init($url);
                 curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
@@ -124,9 +158,13 @@
         <div class="makefsContainer recipe-body">
             <?php 
                 include("./components/test_inputs.php");
-                $name = explode(" ",test_input($_SESSION["nombre"]))[0]; 
+                if (isset($_SESSION["id"])) {
+                    $name = explode(" ",test_input($_SESSION["nombre"]))[0]; 
+                    echo "<h2 id='title-ctc'>¡Hola $name! Tenemos Recomendaciones para ti</h2>";
+                }else{
+                    echo "<h2 id='title-ctc'>Lo mejor de Makefs</h2>";
+                }
             ?>
-            <h2 id="title-ctc"><?php echo "¡Bienvenido $name! Tenemos Recomendaciones para ti" ?></h2>
             <div class="general-recipes-container">
                 <?php 
                 foreach ($response->recipes as $key => $recipe) {
@@ -135,13 +173,13 @@
                     $chefname = test_input($recipe->chefname);
                     echo <<<EOT
                         <div class="recipe-template">
-                            <a class="image-template" href="./ddr.php?video=$recipe->recipeid" target="__blank">
+                            <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
                                 <img src="../mediaDB/recipeImages/$recipe->imagen">
                                 <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
                             </a>
                             <div class="next-text-recipe WhiteModeP">
                                 <img src="../mediaDB/usersImg/$recipe->chefpic">
-                                <a href="https://google.com" target="__blank">
+                                <a href="./chef-view.php?chef=$recipe->chefid">
                                     <h3 class="text-template">$title</h3>
                                     <p>$chefname</p>
                                     <p>$recipe->views Views</p>

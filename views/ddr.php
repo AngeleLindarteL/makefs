@@ -19,7 +19,13 @@
     <link href="./css/Darkddr.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <script>
+        let recipeProperties = {
+            reported: false,
+            rate: 0.0,
+            savedrecipes: 0
+        }
+    </script>
     <?php 
     include("../models/conexion.php");
     include("./components/test_inputs.php");
@@ -60,11 +66,14 @@
         $timesFormatObject .= "~^^~$timeArray[1]~^^~$timeArray[2]~^^~$timeArray[0][-|-]";
     }
     $timesFormatObject = rtrim($timesFormatObject, '[-|-]');
+    $region = $res["region"];
     echo <<<EOT
         <script>
+        let interactingOutVideo = true;
         const duration = $res[duration];
         const videoID = $_GET[video];
         const times = "$times";
+        recipeProperties.region = "$res[region]";
         const timesObj = {}
         const timesArr = "$timesFormatObject".split("[-|-]");
         for(let i = 0; i < timesArr.length; i++){
@@ -303,9 +312,12 @@
                             <?php
                                 $tagsBase64 = base64_decode($res["tags"]);
                                 $tagsDecoded = json_decode($tagsBase64,true);
+                                $tagsforjs = "[";
                                 foreach ($tagsDecoded as $key => $value){
                                     echo "<p class='makefs-recipe-tag'>".test_input($value)."</p>";
+                                    $tagsforjs .= '"'.str_replace($region,"",$value).'",';
                                 }
+                                echo "<script>recipeProperties.tags = $tagsforjs]</script>";
                             ?>
                         </div>
                         <div class="makefs-video-report-save">

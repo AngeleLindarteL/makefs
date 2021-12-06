@@ -1068,7 +1068,7 @@ section{
         margin-bottom: 0;
     }
 }
-@media (max-height: 638px){
+@media (max-height: 672px){
     #chef-config{
         bottom: 0;
         display: flex;
@@ -1112,5 +1112,48 @@ section{
         background-color: white;
         border-radius: 30px;
         padding: 1% 4%;
+    }
+}
+@media (max-width:2000px) and (max-height:672px){
+    #chef-config{
+        width: 60vh;
+        border-radius: 20px;
+        background-size: 10%;
+        background-position-x: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .showing-action-container .action-btn:hover{
+        width: inherit;
+        background-size: 70%;
+        border-radius: 50%;
+    }
+    .showing-action-container .action-btn:hover img{
+        width: 60%;
+        height: 60%;
+    }
+    .showing-action-container .action-btn:hover p{
+        display: none;
+    }
+    .showing-action-container #chef-config{
+        width: inherit;
+        border-radius: 50%;    
+        background-size: 70%;
+        background-position-x: center;
+        transform: none!important;
+    }
+    .showing-action-container #chef-config::after{
+        content: "";
+    }
+    #chef-config::after{
+        content: "Configuración";
+        position: absolute;
+        top: auto;
+        left: auto;
+        color: var(--color5);
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.2em;
     }
 }

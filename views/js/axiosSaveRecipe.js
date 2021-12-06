@@ -16,9 +16,11 @@ const setButtonState = (isAcSaved) => {
         saveTrigger.style.width = "12vh";
         saveTrigger.style.color = "white";
         saveTrigger.textContent = "Guardado ✔";
+        recipeProperties.savedrecipes = 1;
     }else{
         saveTrigger.removeAttribute("style");
         saveTrigger.textContent = "Guardar";
+        recipeProperties.savedrecipes = 0;
     }
 }
 setButtonState(isSaved);

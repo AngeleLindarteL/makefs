@@ -26,14 +26,6 @@ const axiosImage = axios.create({
 const upload = (inputTypeFile) => {
     let image = inputTypeFile.files[0];
     let imageFormated = new FormData();
-    if (inputTypeFile.files.length > 1) {
-        console.log("Hay más de un archivo, bruh")
-        return;
-    }
-    if(!image.type.match(/image.*/)) {
-        console.log("El archivo elegido no es una imagen ._.")
-        return;
-    }
     imageFormated.append("photo",image);
     axiosImage.post("../controllers/updatePhoto.php", imageFormated)
     .then(res =>{

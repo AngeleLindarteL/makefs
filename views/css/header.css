@@ -1096,7 +1096,7 @@ header{
         margin-bottom: 0;
     }
 }
-@media (max-height: 638px){
+@media (max-height: 640px){
     #chef-config{
         bottom: 0;
         display: flex;
@@ -1117,6 +1117,7 @@ header{
         border: none;
     }
     .showing-action-container{
+        margin-bottom: 1.1vh;
         bottom: 12vh;
         height: 20vh;
     }

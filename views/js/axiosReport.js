@@ -33,6 +33,7 @@ const setFormError = (text_error) => {
 
 
 reportTrigger.addEventListener("click", (e) => {
+    interactingOutVideo = true;
     notification.classList.contains("error") ? notification.classList.remove("error") : true;
     notification.classList.contains("success") ? notification.classList.remove("success") : true;
     notification.classList.contains("error") ? notification.classList.remove("error") : true;
@@ -65,7 +66,7 @@ reportTrigger.addEventListener("click", (e) => {
     axios.post("../controllers/reportRecipe.php", JSON.stringify(data))
     .then(res => {
         clearTimeout(statesNotification.notificationActualTimeOut);
-
+        recipeProperties.reported = true;
         notification.classList.replace("loading","success");
         notificationmsg.textContent = statesNotification.success_state;
         statesNotification.notificationActualTimeOut = setTimeout(() => {

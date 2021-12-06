@@ -148,7 +148,7 @@
                             <h2 id="chef-name"><?php echo test_input($res["namem"]);?></h2>
                             <p id="username-space-chef" >@<?php echo test_input($res["username"])?></p>
                             <div class="summary-info">
-                                <article><span></span><p><?php echo $averageGenn?> Valoración</p></article>
+                                <article><span></span><p><?php echo number_format($averageGenn,1)?> Valoración</p></article>
                                 <article><span></span><p><?php echo $recipesCount?> Recetas</p></article>
                             </div>
                             <p class="description" id="description-space-chef"><?php echo test_input($res["descript"])?></p>
@@ -280,7 +280,7 @@
         <button id="profile-edit-close"></button>
         <div id="chefContainer" class="WhiteChefCont">
             <div class="divChef-view" id="firstdiv-chef">
-                <figure class="profile-pic-chef">
+                <figure class="profile-pic-chef" id="change-chef-info-pic">
                         <img class="profile-pic-img-chef" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
                         <img class="verified-chef" src="./img/chef-verified.png">
                         <button id="profile-edit-photo"></button>

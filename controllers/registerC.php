@@ -24,21 +24,37 @@ include("../models/conexion.php");
                 try{
                     $conexion->beginTransaction();
                     $resultado->execute(array(":nombre"=>$nombre,":username"=>$username,":email"=>$email,":pass"=>$pass_cifrada,":birthdate"=>$date,"midpic" => "makefsUser.png","minpic" => "makefsUser.png"));
-                    $conexion->commit();
+                    
+                    $nq = "SELECT userid FROM userm WHERE namem = '$nombre' AND username = '$username' AND email = '$email'";
+                    $id = $conexion->prepare($nq);
+                    $id->execute();
+                    $id = $id->fetchColumn();
 
                     if(isset($_SESSION["errorRegister"])){
                         unset($_SESSION["errorRegister"]);
                     }
-
+                    
                     if(isset($_SESSION["errorLog"])){
                         unset($_SESSION["errorLog"]);
                     }
 
                     header("location: ../views/login.php");
+                    
+                    $url = "https://makefsapi.herokuapp.com/user/$id";
+                    
+                    $ch = curl_init($url);
+                    curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+                    
+                    $response = json_decode(curl_exec($ch));
+                    curl_close($ch);
+                    $conexion->commit();
                 }catch(PDOException $e){
                     $conexion->rollBack();
                     $_SESSION["errorRegister"] = $e->getMessage();
                     header("location: ../views/register.php");
+                }catch(Exception $e){
+                    $conexion->rollBack();
+                    $_SESSION["errorRegister"] = $e;
                 }
             }else{
                 echo "Error en el registro de los datos";
