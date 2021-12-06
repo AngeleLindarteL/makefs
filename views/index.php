@@ -14,7 +14,7 @@
         <title>Inicio Makef's</title>
     <?php
         session_start();
-        if (!isset($_SESSION["id"])){
+        if (!isset($_SESSION["id"]) || $_SESSION["id"] == 0){
             include_once("../models/conexion.php");
             $rConn = new Conexion();
             try {
