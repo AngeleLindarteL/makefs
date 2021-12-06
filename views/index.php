@@ -158,7 +158,7 @@
         <div class="makefsContainer recipe-body">
             <?php 
                 include("./components/test_inputs.php");
-                if (isset($_SESSION["id"])) {
+                if (isset($_SESSION["id"]) || $_SESSION["id"] == 0){
                     $name = explode(" ",test_input($_SESSION["nombre"]))[0]; 
                     echo "<h2 id='title-ctc'>¡Hola $name! Tenemos Recomendaciones para ti</h2>";
                 }else{
