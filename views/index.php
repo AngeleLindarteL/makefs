@@ -27,7 +27,6 @@
                 userm.minpic
                 FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
                 WHERE recipe.privater = FALSE GROUP BY (recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname, userm.minpic) LIMIT 20";
-                print_r($query);
                 $exec = $rConn->prepare($query);
                 $exec->execute();
                 $exec = $exec->fetchAll(PDO::FETCH_ASSOC);
@@ -113,7 +112,6 @@
             userm.minpic
             FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
             WHERE recipe.recipeid NOT IN ($numsViewed) AND recipe.privater = FALSE GROUP BY (recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname, userm.minpic) LIMIT 20";
-            print_r($selectQuery);
 
             try {
                 $getR = $rConn->prepare($selectQuery);

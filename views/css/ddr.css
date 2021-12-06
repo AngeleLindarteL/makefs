@@ -864,7 +864,7 @@
 .in-recipe-recommended-container{
   width: 70%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 8vh;
@@ -1067,6 +1067,10 @@
 #save-actual-recipe{
   width: fit-content;
   height: 4vh;
+}
+
+.ddr-recipe{
+  width: 47%;
 }
 
 /* Video Animations */
