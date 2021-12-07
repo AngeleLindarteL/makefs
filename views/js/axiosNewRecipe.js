@@ -235,10 +235,14 @@ const validateFile = (file) => {
     video2.preload = 'metadata';
 
     video2.onloadedmetadata = () => {
-        window.URL.revokeObjectURL(video2.src);
+        let vid = document.createElement("video");
+        vid.className = "mini-reproductor"
+        vid.setAttribute("controls","true")
+        vid.src = video2.src;
+        document.querySelector("body").appendChild(vid)
+        // window.URL.revokeObjectURL(video2.src);
 
         if (video2.duration < 1) {
-
             console.log("Invalid Video! video is less than 1 second");
             return;
         }

@@ -1096,9 +1096,8 @@ header{
         margin-bottom: 0;
     }
 }
-@media (max-height: 640px){
+@media (max-width: 970px) and (max-height: 950px){
     #chef-config{
-        bottom: 0;
         display: flex;
         box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.26);
     }
@@ -1108,17 +1107,15 @@ header{
         right: 2%;
         height: 0%;
         width: 8vh;
-        bottom: calc(10vh + 3%);
+        bottom: calc(13vh + 3.2%);
         /* overflow: hidden; */
         transition: .2s;
-        bottom: 10vh;
         z-index: 5;
         background: none;
         border: none;
     }
     .showing-action-container{
         margin-bottom: 1.1vh;
-        bottom: 12vh;
         height: 20vh;
     }
     .showing-action-container #chef-config{

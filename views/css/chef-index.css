@@ -384,7 +384,7 @@ section{
     height: fit-content;
     width: fit-content;
     position: fixed;
-    bottom: 8vh;
+    bottom: 7vh;
     right: 0;
     margin: 2%;
     border-radius: 50%;
@@ -1124,7 +1124,7 @@ section{
         margin-bottom: 0;
     }
 }
-@media (max-height: 672px){
+@media (min-width:971px) and (max-height:672px){
     #chef-config{
         bottom: 0;
         display: flex;
@@ -1169,8 +1169,6 @@ section{
         border-radius: 30px;
         padding: 1% 4%;
     }
-}
-@media (max-width:2000px) and (max-height:672px){
     #chef-config{
         width: 60vh;
         border-radius: 20px;
