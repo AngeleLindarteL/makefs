@@ -485,7 +485,7 @@ section{
 
 #recipetittlediv2{
     width: 100%;
-    height: 5%;
+    height: 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -597,7 +597,7 @@ section{
     -webkit-appearance:none;
     -o-appearance:none;
     cursor: pointer;
-    width: 2.5vh;
+    width: 4.5vh;
     height: 3vh;
 }
 #madePrivate input:not(:checked){
@@ -682,10 +682,17 @@ section{
     #recipetittlediv{
         flex-direction: column;
         margin-bottom: 8vh;
+        height:10%;
     }
     #uploadBtn{
         width: 48%;
         margin-top: 1vh;
+    }
+    #sectionEditRecipeMultimedia{
+        width:90%;
+    }
+    #madePrivate{
+        margin-top:3%;
     }
 }
 @media (width:1024px) and (height:600px){
