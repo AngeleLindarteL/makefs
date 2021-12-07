@@ -1,10 +1,10 @@
 /*--Elements--*/
-let body = document.querySelector('#ContImgLoader');
+let sectionloader = document.querySelector('#ContImgLoader');
 /*--Code--*/
 if (localStorage.getItem("Theme") == "claro"){
-    body.classList.add("White");
+    sectionloader.classList.add("White");
 }else{
     if (localStorage.getItem("Theme") == "oscuro"){
-        body.classList.replace('White','Dark');
+        sectionloader.classList.replace('White','Dark');
     }
 }
