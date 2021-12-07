@@ -255,6 +255,62 @@ section{
     z-index: 10;
     right: 50%;
 }
+#followedsContainer{
+    margin-top: 2vh;
+    width: 95%;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 2vh;
+}
+#followedDiv{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: 7vh;
+    border-left: 2px solid #ff2c29;
+    margin: 1vh 0;
+}
+#followedDiv a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    cursor: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+#followedImg{
+    width: 10vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#followedImg img{
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+#followedName{
+    font-size: 1em;
+    color: black;
+    cursor: pointer;
+}
+#followedsContainer::-webkit-scrollbar{
+    background-color: rgb(209, 209, 209);
+    width: 5px;
+}
+#followedsContainer::-webkit-scrollbar-thumb{
+    background-color: var(--color5);
+}
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 /* -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ */
 /* /////////////////////////////////////////////  Chef Styles ////////////////////////////////////////////////////////// */
@@ -615,7 +671,7 @@ section{
     transform: rotate(360deg); 
 }
 .categoriasOpen{
-    margin-top:8vh;
+    margin-top:2vh;
 }
 #categorias{
     display:none;

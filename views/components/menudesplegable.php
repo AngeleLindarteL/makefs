@@ -71,7 +71,33 @@ EOT;
                     Suscripciones
                     <img src='./img/suscription.png' alt="TusSus">
                 </button>
+                <div id="followedsContainer">
             EOT;
+                    $conexion = new Conexion();
+                    $conexion = $conexion->Conectar();
+                    $consulta  = "SELECT userm.username, userm.minpic, userm.chefid FROM follows INNER JOIN userm ON follows.chefid = userm.chefid
+                    WHERE followerid = :id";
+                    try{
+                        $subs = $conexion -> prepare($consulta);
+                        $subs ->execute(array(":id"=>$_SESSION['id']));
+                    }catch (Exception $e){
+                        echo "Error en traer las suscripciones: ".$e;
+                    }
+                    while($followeds = $subs->fetch(PDO::FETCH_ASSOC)){
+                        echo <<<EOT
+                            <div id="followedDiv">
+                                <a href="./chef-view.php?chef=$followeds[chefid]">
+                                    <div id="followedImg">
+                                        <img src='../mediaDB/usersImg/$followeds[minpic]' alt="TusSus">
+                                    </div>
+                                    <div id="followedName">
+                                        <h3>$followeds[username]</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        EOT;
+                    }
+                echo "</div>";
         }
         echo <<<EOT
         <div class="btnsMenuDesp"> 
