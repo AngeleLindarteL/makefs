@@ -104,6 +104,7 @@
     echo <<<EOT
         </div>
         </header>
+        <script>const idusuarioLibary = $_SESSION[id]</script>
         <script src='./js/homesave.js'></script>
         <script src='./js/headerindex.js'></script>
     EOT;
