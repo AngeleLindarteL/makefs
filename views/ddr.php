@@ -28,15 +28,138 @@
             savedrecipes: 0
         }
     </script>
-    <?php 
+    <?php
     include("../models/conexion.php");
     include("./components/test_inputs.php");
     session_start();
-    if(empty($_SESSION['id'])){
-        $_SESSION['id']=0;
-        $_SESSION['chefid']=0;
+    if (!isset($_SESSION["id"]) || $_SESSION["id"] == 0){
+        $rConn = new Conexion();
+        try {
+            $rConn = $rConn->Conectar();
+            $rConn->beginTransaction();
+
+            $query = "SELECT 
+            recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname,
+            CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate,
+            userm.minpic
+            FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
+            WHERE recipe.recipeid NOT IN ($_GET[video]) AND recipe.privater = FALSE GROUP BY (recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname, userm.minpic) LIMIT 6";
+            $exec = $rConn->prepare($query);
+            $exec->execute();
+            $exec = $exec->fetchAll(PDO::FETCH_ASSOC);
+            
+            $finalOrdering = array();
+
+            function ordering($rate,$views){
+                $viewRanges = [
+                    [0,20],
+                    [20,50],
+                    [50,100],
+                    [100,500],
+                    [500,1000],
+                    [1000,10000],
+                    [10000, 20000],
+                    [20000, 50000],
+                    [50000, 100000],
+                    [100000,1000000]
+                ];
+                $vscore = 0;
+                $vrate = 0;
+                for($i = 0; $i < sizeof($viewRanges); $i++){
+                    if ($viewRanges[$i][0] <= $views && $viewRanges[$i][1] >= $views){
+                        $vscore = ($i+1) * 100;
+                        break;
+                    }
+                }
+                try{
+                    $vrate = (number_format($rate,2) / 0.5) * 100;
+                }catch (DivisionByZeroError $e){
+                    $vrate = 100;
+                }
+                return $vrate + $vscore;
+            }
+
+            foreach ($exec as $key => $val){
+                array_push($finalOrdering,[
+                    "recipeid"=>$val["recipeid"],
+                    "chefid"=>$val["chefid"],
+                    "namer"=>$val["namer"],
+                    "rate"=>$val["rate"],
+                    "views"=>$val["views"],
+                    "chefname"=>$val["chefname"],
+                    "imagen"=>$val["imagen"],
+                    "chefpic"=>$val["minpic"],
+                    "fscore"=> ordering($val["rate"], $val["views"])
+                ]);
+            }
+
+            usort($finalOrdering, function ($item1, $item2) {
+                return $item2['fscore'] <=> $item1['fscore'];
+            });
+            $response = json_decode(json_encode(["recipes"=>$finalOrdering]));
+        } catch (Exception $e) {
+            print_r($e);
+            $rConn->rollBack();
+        }
     }else{
-        include("./components/tokenControl.php");
+        if(empty($_SESSION['id'])){
+            $_SESSION['id']=0;
+            $_SESSION['chefid']=0;
+        }else{
+            include("./components/tokenControl.php");
+        }
+        $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]/vr";
+
+        $ch = curl_init($url);
+        curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+
+        $viewed = curl_exec($ch);
+        curl_close($ch);
+
+        $rConn = new Conexion();
+        $rConn = $rConn->Conectar();
+        
+        $viewed = json_decode($viewed)->ids;
+        
+        array_push($viewed,$_GET["video"]);
+        $numsViewed = array_map('intval',$viewed);
+        $numsViewed = implode(",",$numsViewed);
+
+        if(empty($numsViewed)){
+            $numsViewed = 0;
+        }
+
+        $selectQuery = "SELECT 
+        recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname,
+        CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate,
+        userm.minpic
+        FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
+        WHERE recipe.recipeid NOT IN ($numsViewed) AND recipe.privater = FALSE GROUP BY (recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname, userm.minpic) LIMIT 6";
+
+        try {
+            $getR = $rConn->prepare($selectQuery);
+            $getR->execute();
+            $res = $getR->fetchAll(PDO::FETCH_ASSOC);
+            $data = json_encode($res);
+            $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]";
+
+            $ch = curl_init($url);
+            curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+            curl_setopt($ch,CURLOPT_POST,true);
+            curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                "Content-type: application/json"
+            ]);
+
+            $response = json_decode(curl_exec($ch));
+            curl_close($ch);
+
+            if ($response->status == 200){
+                # code...
+            }
+        } catch (Exception $th) {
+            print_r($th);
+        }
     }
     if (!isset($_GET["video"]) || empty($_GET["video"])){
         header("location: ./error.html");
@@ -167,130 +290,6 @@
     }catch(Exception $e){
         header("location: ./error.html");
         exit;
-    }
-    if (!isset($_SESSION["id"]) || $_SESSION["id"] == 0){
-        $rConn = new Conexion();
-        try {
-            $rConn = $rConn->Conectar();
-            $rConn->beginTransaction();
-
-            $query = "SELECT 
-            recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname,
-            CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate,
-            userm.minpic
-            FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
-            WHERE recipe.recipeid NOT IN ($_GET[video]) AND recipe.privater = FALSE GROUP BY (recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname, userm.minpic) LIMIT 6";
-            $exec = $rConn->prepare($query);
-            $exec->execute();
-            $exec = $exec->fetchAll(PDO::FETCH_ASSOC);
-            
-            $finalOrdering = array();
-
-            function ordering($rate,$views){
-                $viewRanges = [
-                    [0,20],
-                    [20,50],
-                    [50,100],
-                    [100,500],
-                    [500,1000],
-                    [1000,10000],
-                    [10000, 20000],
-                    [20000, 50000],
-                    [50000, 100000],
-                    [100000,1000000]
-                ];
-                $vscore = 0;
-                $vrate = 0;
-                for($i = 0; $i < sizeof($viewRanges); $i++){
-                    if ($viewRanges[$i][0] <= $views && $viewRanges[$i][1] >= $views){
-                        $vscore = ($i+1) * 100;
-                        break;
-                    }
-                }
-                try{
-                    $vrate = (number_format($rate,2) / 0.5) * 100;
-                }catch (DivisionByZeroError $e){
-                    $vrate = 100;
-                }
-                return $vrate + $vscore;
-            }
-
-            foreach ($exec as $key => $val){
-                array_push($finalOrdering,[
-                    "recipeid"=>$val["recipeid"],
-                    "chefid"=>$val["chefid"],
-                    "namer"=>$val["namer"],
-                    "rate"=>$val["rate"],
-                    "views"=>$val["views"],
-                    "chefname"=>$val["chefname"],
-                    "imagen"=>$val["imagen"],
-                    "chefpic"=>$val["minpic"],
-                    "fscore"=> ordering($val["rate"], $val["views"])
-                ]);
-            }
-
-            usort($finalOrdering, function ($item1, $item2) {
-                return $item2['fscore'] <=> $item1['fscore'];
-            });
-            $response = json_decode(json_encode(["recipes"=>$finalOrdering]));
-        } catch (Exception $e) {
-            print_r($e);
-            $rConn->rollBack();
-        }
-    }else{
-        include("./components/tokenControl.php");
-        $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]/vr";
-
-        $ch = curl_init($url);
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-
-        $viewed = curl_exec($ch);
-        curl_close($ch);
-
-        $rConn = new Conexion();
-        $rConn = $rConn->Conectar();
-        
-        $viewed = json_decode($viewed)->ids;
-        
-        array_push($viewed,$_GET["video"]);
-        $numsViewed = array_map('intval',$viewed);
-        $numsViewed = implode(",",$numsViewed);
-
-        if(empty($numsViewed)){
-            $numsViewed = 0;
-        }
-
-        $selectQuery = "SELECT 
-        recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname,
-        CAST(AVG(stars.star) AS DECIMAL(10,2)) AS rate,
-        userm.minpic
-        FROM recipe INNER JOIN userm ON userm.chefid = recipe.chefid INNER JOIN stars ON stars.recipeid = recipe.recipeid 
-        WHERE recipe.recipeid NOT IN ($numsViewed) AND recipe.privater = FALSE GROUP BY (recipe.recipeid, recipe.chefid,recipe.namer, recipe.status,recipe.imagen, recipe.duration, recipe.tags, recipe.region, recipe.views,recipe.privater, recipe.chefname, userm.minpic) LIMIT 6";
-
-        try {
-            $getR = $rConn->prepare($selectQuery);
-            $getR->execute();
-            $res = $getR->fetchAll(PDO::FETCH_ASSOC);
-            $data = json_encode($res);
-            $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]";
-
-            $ch = curl_init($url);
-            curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
-            curl_setopt($ch,CURLOPT_POST,true);
-            curl_setopt($ch,CURLOPT_POSTFIELDS,$data);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                "Content-type: application/json"
-            ]);
-
-            $response = json_decode(curl_exec($ch));
-            curl_close($ch);
-
-            if ($response->status == 200){
-                # code...
-            }
-        } catch (Exception $th) {
-            print_r($th);
-        }
     }
     if(isset($_SESSION["errorRegister"])){
         unset($_SESSION["errorRegister"]);
