@@ -32,6 +32,11 @@ if (localStorage.getItem("Theme") == null){
 modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
+
+        let manyinputs = document.querySelectorAll('.Whiterecipetit');
+        let maintt = document.querySelectorAll('.Whitemaintt');
+        let wimg = document.querySelectorAll('.Whiteimgr');
+
         localStorage.setItem("Theme", "oscuro");
         imagentb.src="./iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
@@ -49,6 +54,11 @@ modoOscuro.addEventListener("click", (e)  =>{
         line.classList.replace('Whiteline','Darkline');
 
     }else{
+
+        let manyinputs = document.querySelectorAll('.Darkrecipetit');
+        let maintt = document.querySelectorAll('.Darkmaintt');
+        let wimg = document.querySelectorAll('.Darkimgr');
+
         localStorage.setItem("Theme", "claro");
         imagentb.src="./iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');

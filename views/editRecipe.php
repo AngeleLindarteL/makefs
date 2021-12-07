@@ -151,7 +151,7 @@
                                         EOT; 
                                     }elseif ($region=="asia") {
                                         echo <<<EOT
-                                        <select  class="etiFood">
+                                        <select  class="etiFood Whiterecipetit">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="asiaSopa">Sopa</option>
                                             <option value="asiaVegana">Vegana</option>
@@ -163,7 +163,7 @@
                                         EOT; 
                                     }elseif ($region=="norteA") {
                                         echo <<<EOT
-                                        <select  class="etiFood">
+                                        <select  class="etiFood Whiterecipetit">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="norteSopa">Sopa</option>
                                             <option value="norteVegana">Vegana</option>
@@ -175,7 +175,7 @@
                                         EOT; 
                                     }elseif ($region=="europa") {
                                         echo <<<EOT
-                                        <select  class="etiFood">
+                                        <select  class="etiFood Whiterecipetit">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="europaSopa">Sopa</option>
                                             <option value="europaVegana">Vegana</option>
@@ -187,7 +187,7 @@
                                         EOT; 
                                     }elseif ($region=="africa") {
                                         echo <<<EOT
-                                        <select  class="etiFood">
+                                        <select  class="etiFood Whiterecipetit">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="africaSopa">Sopa</option>
                                             <option value="africaVegana">Vegana</option>
@@ -199,7 +199,7 @@
                                         EOT; 
                                     }elseif ($region=="oceania") {
                                         echo <<<EOT
-                                        <select  class="etiFood">
+                                        <select  class="etiFood Whiterecipetit">
                                             <option value="$etiqueta" hidden selected>$etiqueta</option>
                                             <option value="oceaniaSopa">Sopa</option>
                                             <option value="oceaniaVegana">Vegana</option>
