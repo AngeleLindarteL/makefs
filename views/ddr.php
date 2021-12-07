@@ -169,7 +169,6 @@
         exit;
     }
     if (!isset($_SESSION["id"]) || $_SESSION["id"] == 0){
-        include_once("../models/conexion.php");
         $rConn = new Conexion();
         try {
             $rConn = $rConn->Conectar();

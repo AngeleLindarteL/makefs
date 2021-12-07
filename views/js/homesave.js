@@ -12,7 +12,7 @@ let ados = document.createElement("A");
 let imgdos = document.createElement("IMG");
 imgdos.setAttribute("src", "./iconos/save6.png");
 imgdos.classList.add("savewhite");
-ados.setAttribute("href", "./index.php");
+ados.setAttribute("href", `././library.php?user=${idusuarioLibary}`);
 ados.appendChild(imgdos);
 container.appendChild(ados);
 

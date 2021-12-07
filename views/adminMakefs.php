@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <link href="./css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/chef-index.css">
     <link href="./css/adminPanel.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/footer.css">
