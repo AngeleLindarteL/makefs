@@ -8,6 +8,7 @@
     <link href="./css/register.css" rel="stylesheet">
     <link href="./css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/notificationsLog.css">
+    <link rel="stylesheet" href="./css/DarkRegister.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
 
     <title>Register - Makefs</title>
@@ -16,7 +17,7 @@
         include("./components/tokenControl.php");
     ?>
 </head>
-<body>
+<body class="White">
     <header id="header">
         <div class="logocont">
             <h1>Makef's</h1>
@@ -37,24 +38,24 @@
         </div>
         <div class="formcont">
             <div class="info-form">
-                <form action="../controllers/registerC.php" method="POST" class="form-done">
-                    <a class="aback" href="./index.php"><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
-                    <h1>Registrate!</h1>
-                    <h5 class="mainsubtitle">Nombre</h5>
-                    <input class="inputtxt" type="text" name="realname" maxlength="59" required>
-                    <h5 class="mainsubtitle">Nombre de usuario</h5>
-                    <input class="inputtxt" type="text" name="username" maxlength="59" required>
-                    <h5 class="mainsubtitle">Email</h5>
-                    <input class="inputtxt" type="email" name="email" maxlength="69" required>
-                    <h5>Contraseña</h5>
+                <form action="../controllers/registerC.php" method="POST" class="form-done WhiteForm">
+                    <a class="aback" href="./index.php"><img class="Whiteimg"src="./iconos/second-back.svg" alt="backbtn"><h6 class="Whiteback">Volver</h6></a>
+                    <h1 class="Whiteform">Registrate!</h1>
+                    <h5 class="mainsubtitle Whiteform">Nombre</h5>
+                    <input class="inputtxt Whiteinp" type="text" name="realname" maxlength="59" required>
+                    <h5 class="mainsubtitle Whiteform">Nombre de usuario</h5>
+                    <input class="inputtxt Whiteinp" type="text" name="username" maxlength="59" required>
+                    <h5 class="mainsubtitle Whiteform">Email</h5>
+                    <input class="inputtxt Whiteinp" type="email" name="email" maxlength="69" required>
+                    <h5 class="Whiteform">Contraseña</h5>
                     <div class="confrpsw">
-                        <input class="inputtxt" type="password" name="pw" maxlength="200" required>
-                        <input class="inputtxt" type="password" name="pwconfirm" placeholder="Confirmar contraseña" required>
+                        <input class="inputtxt Whiteinp" type="password" name="pw" maxlength="200" required>
+                        <input class="inputtxt Whiteinp" type="password" name="pwconfirm" placeholder="Confirmar contraseña" required>
                     </div>
-                    <h5>Fecha de nacimiento</h5>
-                    <input class="inputtxt" min="1940-01-01" max="2006-12-30" type="date" name="date" required>
+                    <h5 class="Whiteform">Fecha de nacimiento</h5>
+                    <input class="inputtxt Whiteinp" min="1940-01-01" max="2006-12-30" type="date" name="date" required>
                     <input type="submit" value="Registrarse" name="register" class="submitbtn">
-                    <h4 class="aregister"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> Inicia sesion!</a></span></h4>
+                    <h4 class="aregister Whiteform"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> Inicia sesion!</a></span></h4>
                 </form>
             </div>
         </div>
@@ -71,5 +72,6 @@
             EOT;
         }
     ?>
+    <script src="./js/DarkRegister.js"></script>
 </body>
 </html>

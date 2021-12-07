@@ -1,0 +1,40 @@
+/*--Dark mode--*/
+.Dark{
+    background-color: #100f0f;
+}
+.DarkForm{
+    background-color: #100f0f;
+}
+.Darkimg{
+    filter: invert(1);
+}
+.Darkback{
+    color: white;
+}
+.Darkform{
+    color: white;
+}   
+.Darkinp{
+    background-color: #100f0f;
+    color: #FF2C29;
+}
+/*--White mode--*/
+.White{
+    background-color: white;
+}
+.WhiteForm{
+    background-color: white;
+}
+.Whiteimg{
+    filter: invert(0);
+}
+.Whiteback{
+    color: black;
+}
+.Whiteform{
+    color: black;
+}
+.Whiteinp{
+    background-color: white;
+    color: black;
+}
