@@ -11,6 +11,9 @@
 .DarkInput{
     background-color: #100f0f; 
 }
+.Darkname{
+    color: white;
+}
 /*--White mode--*/
 .WhiteMenu{
     background-color: white;
@@ -23,4 +26,7 @@
 }
 .WhiteInput{
     background-color: white;
+}
+.Whitename{
+    color: black;
 }

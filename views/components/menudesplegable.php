@@ -90,7 +90,7 @@ EOT;
                                     <div id="followedImg">
                                         <img src='../mediaDB/usersImg/$followeds[minpic]' alt="TusSus">
                                     </div>
-                                    <div id="followedName">
+                                    <div id="followedName" class="Whitename">
                                         <h3>$followeds[username]</h3>
                                     </div>
                                 </a>

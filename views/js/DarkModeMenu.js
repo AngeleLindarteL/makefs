@@ -7,6 +7,7 @@ let submitinputs = document.querySelector('#sendBusqueda');
 if (modoOscuro === undefined){
     let modoOscuro = document.querySelector('#tb');
 }
+let Name = document.querySelectorAll('#followedName');
 /*--Code--*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -19,6 +20,9 @@ if (localStorage.getItem("Theme") == null){
         })
         textinputs.classList.replace('WhiteInput','DarkInput');
         submitinputs.classList.replace('WhiteInput','DarkInput');
+        Name.forEach(suscri =>{
+            suscri.classList.replace('Whitename','Darkname');
+        })
     }
     
 }
@@ -32,6 +36,9 @@ modoOscuro.addEventListener("click", ()  =>{
         })
         textinputs.classList.replace('WhiteInput','DarkInput');
         submitinputs.classList.replace('WhiteInput','DarkInput');
+        Name.forEach(suscri =>{
+            suscri.classList.replace('Whitename','Darkname');
+        })
         
     }else{
         imagentb.src="./iconos/moon.svg";
@@ -42,6 +49,9 @@ modoOscuro.addEventListener("click", ()  =>{
         })
         textinputs.classList.replace('DarkInput','WhiteInput');
         submitinputs.classList.replace('DarkInput','WhiteInput');
+        Name.forEach(suscri =>{
+            suscri.classList.replace('Darkname','Whitename');
+        })
 
         
 
