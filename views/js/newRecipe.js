@@ -13,6 +13,13 @@ const btnLessIngredients = document.querySelector("#lessIngrediens");
 const btnLessEtiquetas = document.querySelector("#lessEtiquetas");
 const btnLessSteps = document.querySelector("#lessSteps");
 
+let isDark;
+
+if(localStorage.getItem("Theme")=="claro"){
+    isDark = false;
+}else{
+    isDark = true;
+}
 
 btnLessSteps.addEventListener("click",()=>{
     let countStepsDivs = stepsSpace.childElementCount;
@@ -67,14 +74,30 @@ addStep.addEventListener("click",()=>{
 
     inputTxt.type="text";
     inputTxt.classList.add("stepTxtInput","steps");
+    if(isDark){
+        inputTxt.classList.add("Darkrecipetit");
+    }else{
+        inputTxt.classList.add("Whiterecipetit");
+    }
+
     inputTxt.placeholder="Paso"
 
     inputMinInicio.type="text";
     inputMinInicio.classList.add("minInicioInput","steps");
+    if(isDark){
+        inputMinInicio.classList.add("Darkrecipetit");
+    }else{
+        inputMinInicio.classList.add("Whiterecipetit");
+    }
     inputMinInicio.placeholder="minInicio"
 
     inputMinFin.type="text";
     inputMinFin.classList.add("minFinInput","steps");
+    if(isDark){
+        inputMinFin.classList.add("Darkrecipetit");
+    }else{
+        inputMinFin.classList.add("Whiterecipetit");
+    }
     inputMinFin.placeholder="minFin"
 
     steps.appendChild(inputTxt);
@@ -92,7 +115,11 @@ addIngredient.addEventListener("click",()=>{
     inputIngredient.name="ingredients";
     inputIngredient.placeholder="Ingrediente";
     inputIngredient.classList.add("ingredient");
-    inputIngredient.classList.add("WhiteRecipetit");
+    if(isDark){
+        inputIngredient.classList.add("Darkrecipetit");
+    }else{
+        inputIngredient.classList.add("Whiterecipetit");
+    }
     ingredientsSpace.appendChild(inputIngredient);
 })
 
@@ -123,7 +150,12 @@ addEtiqueta.addEventListener("click",()=>{
         let opcion5 = document.createElement("option");
         let opcion6 = document.createElement("option");
 
-        etiqueta.className="etiFood"
+        etiqueta.classList.add("etiFood")
+        if(isDark){
+            etiqueta.classList.add("Darkrecipetit");
+        }else{
+            etiqueta.classList.add("Whiterecipetit");
+        }
     
         opcion.value=values[0];
         opcion.text="Sopas";

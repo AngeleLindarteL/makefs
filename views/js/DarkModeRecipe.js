@@ -32,7 +32,18 @@ if (localStorage.getItem("Theme") == null){
 modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
+
+        let body = document.querySelector('body');
+        let imagentb = document.querySelector('#imgtb');
+        let seccion = document.querySelector('#newRecipeSection');
+        let manyinputs = document.querySelectorAll('.Whiterecipetit');
+        let maintt = document.querySelectorAll('.Whitemaintt');
+        let wimg = document.querySelectorAll('.Whiteimgr');
+        let btn = document.querySelector('#addStepBtn');
+        let line = document.querySelector('#tittlePasos');
+
         localStorage.setItem("Theme", "oscuro");
+        isDark = true;
         imagentb.src="./iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         seccion.classList.replace('WhiteSection','DarkSection');
@@ -49,7 +60,18 @@ modoOscuro.addEventListener("click", (e)  =>{
         line.classList.replace('Whiteline','Darkline');
 
     }else{
+
+        let body = document.querySelector('body');
+        let imagentb = document.querySelector('#imgtb');
+        let seccion = document.querySelector('#newRecipeSection');
+        let manyinputs = document.querySelectorAll('.Darkrecipetit');
+        let maintt = document.querySelectorAll('.Darkmaintt');
+        let wimg = document.querySelectorAll('.Darkimgr');
+        let btn = document.querySelector('#addStepBtn');
+        let line = document.querySelector('#tittlePasos');
+
         localStorage.setItem("Theme", "claro");
+        isDark = false;
         imagentb.src="./iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');
         seccion.classList.replace('DarkSection','WhiteSection');
