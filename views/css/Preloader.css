@@ -92,18 +92,6 @@
         transform: scale(1) rotate(360deg);
     }
 }
-@keyframes puntos {
-    0%{
-        content: ".";
-    }
-    50%{
-        content: "..";
-    }
-    100%{
-        content: "...";
-    }
-    
-}
 /*--Responsive height--*/
 @media (max-height:820px){
     .Preloader{

@@ -248,20 +248,20 @@ body{
          left: 55%;
      }
 }
-@media (max-height: 800px){
-    .aback{
-        top: -6vh;
-        left: 5%;
-    }
-}
  @media (width: 1024px) and (height: 600px){
      .aback{
-         top: -2vh !important;
+         top: -10vh !important;
          left: 46% !important;
      }
      .aback img{
          filter: invert(0) !important;
      }
+ }
+ @media (width:1280px) and (height:800px){
+    .aback{
+        left:46% !important;
+        top:-9vh;
+    }
  }
  @media (width: 1024px) and (height: 1366px){
      .aback{
@@ -364,8 +364,8 @@ body{
  }
  @media (max-width: 360px){
      .aback{
-         top: -10vh;
-         left: 37%;
+         top: -14vh;
+         left: 9%;
          filter: invert(1);
      }
      .aback h6{
@@ -388,8 +388,8 @@ body{
  @media (max-height: 880px){
     .responsive-header{
         top: 8.5vh;
-        width: 90%;
-        left: 5%;
+        width: 70%;
+        left: 15%;
     }
     .form-done{
        overflow-y: scroll;
@@ -409,8 +409,8 @@ body{
  @media (max-height: 830px){
      .responsive-header{
          top: 8.5vh;
-         width: 90%;
-         left: 5%;
+         width: 70%;
+         left: 15%;
      }
      .form-done{
         overflow-y: scroll;
@@ -430,16 +430,6 @@ body{
      .info-form{
          height: 90%;
      }
-     .aback{
-         top: -15%;
-         left: 35%;
-     }
-     .aback img{
-         filter: invert(1);
-     }
-     .aback h6{
-         font-size: 1.5em;
-     }
      .responsive-header{
          top: 13vh;
      }
@@ -448,52 +438,30 @@ body{
     }
  }
  @media (max-height: 736px){
-    .aback{
-        top: -2%;
-        left: 9%;
-    }
     .responsive-header{
-        top: 12vh;
+        top: 7vh;
     }
 }
  @media (max-height: 731px){
-    .aback{
-        top: -2%;
-        left: 9%;
-    }
     .responsive-header{
-        top: 12vh;
+        top: 6vh;
     }
 }
 @media (max-height: 653px){
-    .aback{
-        top: -12%;
-        left: 32%;
-    }
     .responsive-header{
-        top: 13vh;
-        left: 3%;
-        width: 94%;
+        top: 5vh;
+        left: 15%;
+        width: 70%;
     }
 }
  @media (max-height: 640px){
     .info-form{
         height: 89%;
     }
-    .aback{
-        top: -12%;
-        left: 36%;
-    }
-    .aback img{
-        filter: invert(1);
-    }
-    .aback h6{
-        font-size: 1.5em;
-    }
     .responsive-header{
-        top: 13vh;
-        left: 3%;
-        width: 94%;
+        top: 5vh;
+        left: 15%;
+        width: 70%;
     }
     .form-done{
        overflow: scroll;
@@ -501,11 +469,11 @@ body{
 }
  @media (height: 720px) and (width: 540px){
      .aback{
-            top: -2%;
+            top: -7%;
             left: 20%;
      }
     .responsive-header{
-        top: 11vh;
+        top: 7vh;
         width: 70%;
         left: 15%;
 }
@@ -523,16 +491,6 @@ body{
      .info-form{
          height: 95%;
      }
-     .aback{
-         left: 5%;
-         top: -20vh;
-     }
-     .aback img{
-         height: 4vh;
-     }
-     .aback h6{
-         font-size: 1.5em;
-     }
      .responsive-header{
          top: 7vh;
      }
@@ -544,16 +502,6 @@ body{
  @media (max-height: 640px){
      .info-form{
          height: 100%;
-     }
-     .aback{
-         left: 7%;
-         top: -8vh
-     }
-     .aback img{
-         height: 3vh;
-     }
-     .aback h6{
-         font-size: 1.2em;
      }
      .responsive-header{
          top: 5vh;
@@ -567,18 +515,6 @@ body{
      .info-form{
          height: 95%;
      }
-     .aback{
-         left: 9%;
-         top: -6.5vh;
-     }
-     .aback img{
-         height: 2.5vh;
- 
-     }
-     .aback h6{
-         font-size: 1em;
- 
-     }
      .responsive-header{
          top: 5vh;
      }
@@ -591,15 +527,6 @@ body{
      .info-form{
          height: 100%;
      }
-     .aback{
-         top: 9vh;
-     }
-     .aback img{
-         height: 4vh;
-     }
-     .aback h6{
-         font-size: 1.5em;
-     }
      .form-done{
         overflow: scroll;
     }
@@ -608,4 +535,15 @@ body{
     }
 }
 }
+}
+@media (max-height:895px) and (max-width:515px){
+    .responsive-header{
+        width:88.4%;
+        left: 5.3%;
+    }
+}
+@media (max-height:895px) and (max-width:360px){
+    .responsive-header{
+        top: 9vh !important;
+    }
 }

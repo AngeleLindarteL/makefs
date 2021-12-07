@@ -8,6 +8,7 @@
     <link href="./css/login.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/notificationsLog.css">
     <link href="./css/normalize.css" rel="stylesheet">
+    <link href="./css/DarkLogin.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
     
     <title>Login - Makefs</title>
@@ -16,7 +17,7 @@
     ?>
     <?php include("./components/tokenControl.php") ?>
 </head>
-<body>
+<body class="White">
     <header id="header">
         <div class="logocont">
             <h1>Makef's</h1>
@@ -38,15 +39,15 @@
         <div class="formcont">
             <div class="info-form">
                 <form action="../controllers/loginC.php" method="POST" class="form-done">
-                    <a class="aback" href="./index.php"><img src="./iconos/second-back.svg" alt="backbtn"><h6>Volver</h6></a>
-                    <h1>Inicia sesión</h1>
-                    <h5 class="mainsubtitle">Nombre de usuario</h5>
-                    <input class="inputtxt" type="text" name="username" required>
-                    <h5>Contraseña</h5>
-                    <input class="inputtxt" type="password" name="pw" required>
+                    <a class="aback" href="./index.php"><img class="Whiteimg" src="./iconos/second-back.svg" alt="backbtn"><h6 class="Whiteback">Volver</h6></a>
+                    <h1 class="Whiteform">Inicia sesión</h1>
+                    <h5 class="mainsubtitle Whiteform">Nombre de usuario</h5>
+                    <input class="inputtxt Whiteinp" type="text" name="username" required>
+                    <h5 class="Whiteform">Contraseña</h5>
+                    <input class="inputtxt Whiteinp" type="password" name="pw" required>
                     <input type="submit" name="logeo" value="Ingresar" class="submitbtn">
-                    <h4 class="aregister"><p>No tienes una cuenta?</p><span><a href="./register.php"> Registrate!</a></span></h4>
-                    <h4 class="aregister forgetpsw"><p>Perdiste tu contraseña?</p><span><a href=""> Recuperala!</a></span></h4>
+                    <h4 class="aregister Whiteform"><p>No tienes una cuenta?</p><span><a href="./register.php"> Registrate!</a></span></h4>
+                    <h4 class="aregister forgetpsw Whiteform"><p>Perdiste tu contraseña?</p><span><a href=""> Recuperala!</a></span></h4>
 
                 </form>
             </div>
@@ -72,5 +73,6 @@
         }
     ?>
     <script src="./js/logNotifications.js"></script>
+    <script src="./js/DarkLogin.js"></script>
 </body>
 </html>
