@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="./css/DarkMenu.css">
         <link rel="stylesheet" href="./css/Preloader.css">
 
-        <title>Inicio Makef's</title>
+        
     <?php
         session_start();
         if (!isset($_GET["region"]) || !isset($_GET["type"])) {
@@ -99,7 +99,9 @@
         if(isset($_SESSION["errorLog"])){
             unset($_SESSION["errorLog"]);
         }
+        $name = $_GET["region"]." en ".$_GET["type"]; 
     ?>
+    <title><?php echo $name?></title>
 </head>
 <body class="White">
     <?php
@@ -111,7 +113,7 @@
         <div class="makefsContainer recipe-body">
             <?php 
                 include("./components/test_inputs.php");
-                $name = $_GET["region"]." en ".$_GET["type"]; 
+                
                 echo "<h2 id='title-ctc'>¡Lo mejor de $name!</h2>";
             ?>
             <div class="general-recipes-container">
@@ -134,6 +136,15 @@
                                     <p>$recipe->views Views</p>
                                 </a>
                             </div>
+                        </div>
+                    EOT;
+                    $recipe = true;
+                }
+                if(empty($recipe) && empty($recipe)){
+                    echo <<<EOT
+                        <div id="notFoundRecipes" class="Whitecookie">
+                            <img src="./img/notrecipesSearch.png">
+                            <h3>No se han encontrado recetas con tu búsqueda.</h3>
                         </div>
                     EOT;
                 }
