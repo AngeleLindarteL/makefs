@@ -792,7 +792,7 @@ section{
 
 @media (max-width: 970px) {
     #categorias{
-        display:flex;
+        display:none;
         padding: 6px 3vh;
         position:relative;
         top:-10vh;

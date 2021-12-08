@@ -18,11 +18,9 @@ section{
 }
 
 .makefsContainer{
-    padding: 0;
-    height: 100%;
+    height: fit-content;
     width: 100%;
     max-width: 2000px;
-    margin: auto;
     
 }
 
@@ -36,7 +34,7 @@ section{
 }
 
 #chef-view{
-    height: 98vh;
+    height: fit-content;
     width: 100%;
     max-height: 2500px;
     text-align: center;
@@ -45,7 +43,7 @@ section{
 /*------------------------------------------------------------------------Contenedor User*/
 #userNoChefContainer{
     width: 80%;
-    height: 100vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -297,7 +295,7 @@ section{
 #cambiarFoto{
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 10;
     display: flex;
@@ -377,7 +375,7 @@ section{
     font-weight: bold;
 }
 #profile-edit-close-chef{
-    position: absolute;
+    position: fixed;
     background-color: transparent;
     border: none;
     width: 6vh;
@@ -415,7 +413,7 @@ section{
 #cambiarPass{
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 10;
     display: flex;
@@ -469,7 +467,7 @@ section{
 
 
 #profile-close-passChange{
-    position: absolute;
+    position: fixed;
     background-color: transparent;
     border: none;
     width: 6vh;
@@ -494,7 +492,7 @@ section{
 #deleteAccountContainer{
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 10;
     display: flex;
@@ -703,16 +701,16 @@ section{
     }
     .profile-pic-user{
         width: 30vh;
+        height: 30vh;
     }
     .divUser-view{
-        margin-top: 28vh;
         display: flex;
         padding-bottom: 4vh;
     }
     #firstdiv{
         display: flex;
         flex-direction: column;
-        margin-top: 42vh;
+        margin-top: 5vh;
     }
     #cambiarPass{
         height: 122vh;
@@ -735,7 +733,7 @@ section{
 @media (max-width:800px){
     #infoData-User{
         width: 100%;
-        margin: 19vh 0 0 0;
+        margin: 0 0 0 0;
     }
     .divUser-view{
         display: flex;
@@ -748,13 +746,13 @@ section{
         padding: 0 0 13vh 0;
     }
     #firstdiv{
-        margin-top: 48vh;
+        margin-top: 5vh;
     }
     #cambiarPass{
         height: 150vh;
     }
     #passChange{
-        width: 80%;
+        width: 100%;
     }
     #cambiarFoto{
         height: 150vh;
@@ -777,10 +775,13 @@ section{
     #msgVidContract{
         width: 100%;
     }
+    #deleteAccount{
+        width: 100%;
+    }
 }
 @media (max-width:505px){
     #firstdiv{
-        margin-top: 55vh;
+        margin-top: 5vh;
     }
 }
 @media (max-width:485px){
@@ -814,18 +815,17 @@ section{
 }
 @media (max-width:372px){
     .divUser-view{
-        margin-top: 33vh;
         padding-bottom: 4vh;
     }
     #socialMediaUser{
         margin: 5vh 0 0 0;
     }
     #firstdiv{
-        margin-top: 62vh;
+        margin-top: 6vh;
     }
     #infoData-User{
         width: 100%;
-        margin: 23vh 0 3vh 0;
+        margin: 0vh 0 3vh 0;
     }
     #msgVidContract{
         width: 100%;
@@ -855,27 +855,39 @@ section{
     }
 }
 /*-----Responsive height-----*/
+@media (max-height:850px){
+    #passChange{
+        height:52vh;
+    }
+}
 @media (max-height:800px){
     #socialMediaUser{
         padding: 5vh 0 13vh 0;
     }
     .divUser-view{
-        margin-top: 42vh;
         padding-bottom: 4vh;
     }
     #firstdiv{
-        margin-top: 83vh;
+        margin-top: 5vh;
     }
     #divBtnBeChef button{
         font-size: 1em;
     }
+    #makefsContract{
+        overflow-y:scroll;
+    }
+}
+@media (max-height:680px){
+    #deleteAccount{
+        height: 55vh;
+    }
 }
 @media (max-height:680px){
     #firstdiv{
-        margin-top: 122vh;
+        margin-top: 5vh;
     }
-    .divUser-view{
-        margin-top: 60vh;
+    #passChange{
+        height:61vh;
     }
 }
 @media (max-height:780px){
@@ -912,10 +924,9 @@ section{
         padding: 5vh 0 13vh 0;
     }
     .divUser-view{
-        margin-top: 63vh;
         padding-bottom: 4vh;
     }
     #firstdiv{
-        margin-top: 125vh;
+        margin-top: 5vh;
     }
 }

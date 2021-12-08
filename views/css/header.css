@@ -739,7 +739,7 @@ header{
 @media (max-width: 970px) {
     .categoriasOpen{
         position: relative;
-        top: -16vh;
+        top: 0vh;
     }
     .header_logreg{
         width:20% !important;
@@ -1143,6 +1143,7 @@ header{
 @media (max-width:380px){
     #categorias{
         top: -8vh;
+        display:none;
     }
 }
 @media (max-width:380px){
