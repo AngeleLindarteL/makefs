@@ -229,7 +229,11 @@ const showStepAnotation = (minutesRange,stepNum,stepText) => {
     anotationStepShowMore.style.display = "none";
     anotationStep.children[2].style.opacity = "0%";
     anotationStep.children[2].style.display = "block";
-    anotationStep.style.width = "50%";
+    if (video.offsetWidth > 768) {
+        anotationStep.style.width = "50%";
+    }else{
+        anotationStep.style.width = "98%";
+    }
     setTimeout(() => {
         anotationStep.children[2].style.opacity = "100%";
         if (anotationStep.clientHeight < anotationStep.children[2].clientHeight) {

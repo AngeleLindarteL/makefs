@@ -103,7 +103,7 @@ section{
     width: 100%;
     height: 90%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 #barraLateralNewRecipe{
@@ -147,7 +147,6 @@ section{
 #inputsLateralesNewRecipe{
     width: 90%;
     height: 80%;
-    overflow: auto;
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
@@ -298,9 +297,9 @@ section{
 }
 .oneStepNewRecipe{
     width: 100%;
-    height: 10%;
+    height: fit-content;
     margin-bottom: 5%;
-
+    display: flex;
 }
 .oneStepNewRecipe input{
     padding: 5px;
@@ -316,14 +315,48 @@ section{
    
 }
 .minInicioInput{
+    transition: .2s;
     width: 15%;
     margin-right: 5%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .minFinInput{
+    transition: .2s;
     width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.minInicioInput::after, .minFinInput::after{
+    content: ":";
+    position: absolute;
+    top: auto;
+    left: auto;
+    color: white;
+}
+.min-in-input{
+    height: 100%;
+    width: 50%;
+    background: transparent;
+    color: white;
     text-align: center;
 }
+.oneStepNewRecipe input{
+    padding: 0;
+}
+.min-in-input::-webkit-outer-spin-button,
+.min-in-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.min-in-input[type=number] {
+  -moz-appearance: textfield;
+}
+
 
 #inputsSteps::-webkit-scrollbar{
     background-color: rgb(209, 209, 209);
@@ -610,6 +643,9 @@ section{
     background-position: center;
     background-color: #FF2C29;
 }
+#recipebodydiv{
+    margin: 0;
+}
 /*--Responsive--*/
 @media (max-width:1450px){
     #ingredientsTittle{
@@ -643,7 +679,6 @@ section{
     #recipebodydiv{
         display: flex;
         flex-direction: column-reverse;
-        margin: 35vh 0 0 0;
     }
     #barraLateralNewRecipe{
         padding: 0 0 10vh 0;
@@ -660,50 +695,172 @@ section{
         width: 90%;
     }
     #stepsNewRecipe{
-        height: 18vh;
+        height: fit-content;
+        margin-bottom: 5%;
     }
     #menuIngredientesNewRecipe{
         height: 23vh;
     }
     #etiquetasNewRecipe{
-        height: 30vh;
-    }
-    .minInicioInput{
-        width: 8%;
-    }
-    .minFinInput{
-        width: 8%;
-    }
-}
-@media (max-width:400px){
-    #tittlePasos{
-        padding-bottom: 2vh;
-    }
-    #recipetittlediv{
-        flex-direction: column;
-        margin-bottom: 8vh;
-    }
-    #uploadBtn{
-        width: 48%;
-        margin-top: 1vh;
-    }
-}
-@media (width:1024px) and (height:600px){
-    #recipebodydiv{
-        margin: 7vh 0 0 0;
-    }
-    #recipetittlediv{
-        margin-top: 2vh;
+        height: 35vh;
     }
 }
 .mini-reproductor{
     width: 30%;
-    height: 30vh;
     position: fixed;
     z-index: 1000;
     bottom: 0;
-    right: 0;
+    left: 0;
     margin: 2%;
     background: rgba(0, 0, 0, 0.822);
-    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+.mini-reproductor::after{
+    content: "El reproductor esta minimizado";
+    color: white;
+    position: absolute;
+    left: 3%;
+    top: auto;
+}
+#closeMRBtn{
+    width: 3vh;
+    height: 3vh;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 50%;
+    position: absolute;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.MRShowing{
+    height: 30vh;
+}
+.MRShowing #closeMRBtn{
+    top: 3%;
+    right: 3%;
+    transform: rotate(360deg);
+}
+.MRShowing::after{
+    display: none;
+}
+.MRShowing video{
+    height: 100%;
+    width: 100%;
+}
+.MRHidding{
+    height: 6vh;
+}
+.MRHidding #closeMRBtn{
+    top: auto;
+    right: 3%;
+    transform: rotate(180deg);
+}
+.MRHidding::after{
+    display: flex;
+}
+.MRHidding video{
+    height: 100%;
+    width: 0%;
+}
+
+@media (max-width: 970px) {
+    .mini-reproductor{
+        bottom: 8vh;
+    }
+}
+
+@media (max-width: 880px) {
+    .mini-reproductor{
+        width: 49%;
+    }
+}
+@media (max-width: 690px) {
+    #tittlePasos {
+        height: fit-content;
+    }
+    #recipetittlediv {
+        flex-wrap: wrap;    
+        height: fit-content;
+        margin-bottom: 4%;
+    }
+    #recipetittlediv #recipeTittle{
+        width: 100%;
+        height: 25%;
+    }#madePrivate {
+        height: 8vh;
+        width: 50%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    #madePrivate input:not(:checked) {
+        width: 3vh;
+        height: 3vh;
+    }
+    #uploadBtn{
+        width: 50%;
+        background-size: 13%;
+    }
+}
+@media (max-width: 450px) {
+    .mini-reproductor{
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width: 380px) {
+    #recipebodydiv{
+        height: fit-content;
+        margin: 3% 0;
+    }
+    #multimediaNewRecipe{
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+    }
+    .divMultimedia{
+        width: 100%;
+        height: 46%;
+        margin: 2%;
+    }
+
+}
+@media (min-width: 380px) {
+    #multimediaNewRecipe{
+        width: 100%;
+        height: fit-content;
+    }
+    .divMultimedia{
+        height: 24vh;
+    }
+}
+@media (min-width: 690px) {
+    #menuIngredientesNewRecipe{
+        overflow: auto;
+        max-height: 28vh;
+    }
+    #etiquetasNewRecipe {
+        max-height: 34vh;
+    }
+}
+@media (min-width: 691px) {
+    #recipebodydiv{
+        margin: 5vh 0;
+    }
+}
+#menuIngredientesNewRecipe{
+    overflow: auto;
+}
+.footer{
+    margin-top: 10vh!important;
+}
+.containerNewRecipe{
+    height: fit-content;
+}
+#newRecipeSection{
+    height: fit-content;
 }

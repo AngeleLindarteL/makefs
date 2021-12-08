@@ -9,6 +9,7 @@ let arrayIngredients = [];
 let arrayEtiquetas = [];
 let steps = [];
 let duration;
+let splitedDuration = [];
 
 /*--------------------------------Update data*/
 /*-----------------------------Notification */
@@ -69,11 +70,10 @@ uploadRecipe.addEventListener("click", async (e)=>{
     contenedorSteps.forEach(element =>{
 
         let inputs = element.querySelectorAll(".steps");
-        let step = [];
-        inputs.forEach(elements=>{
-            step.push(elements.value);
-        })
-        steps.push(step);
+        minIn = inputs[1].children[0].value + ":" + inputs[1].children[1].value;
+        minFn = inputs[2].children[0].value + ":" + inputs[2].children[1].value;
+        steptxt = inputs[0].value;
+        steps.push([steptxt,minIn,minFn]);
     });
     
     let ingredients = document.querySelectorAll(".ingredient");
@@ -233,20 +233,53 @@ const validateFile = (file) => {
 
     var video2 = document.createElement('video');
     video2.preload = 'metadata';
-
+    
     video2.onloadedmetadata = () => {
-        let vid = document.createElement("video");
-        vid.className = "mini-reproductor"
-        vid.setAttribute("controls","true")
-        vid.src = video2.src;
-        document.querySelector("body").appendChild(vid)
-        // window.URL.revokeObjectURL(video2.src);
-
         if (video2.duration < 1) {
             console.log("Invalid Video! video is less than 1 second");
             return;
         }
-	duration = video2.duration;
+        let vid = document.createElement("video");
+        let vidCont = document.createElement("div");
+        let actButton = document.createElement("button");
+
+        vidCont.className = "mini-reproductor";
+        vid.setAttribute("controls","true");
+        vid.volume = 0.5;
+        actButton.textContent = "x";
+        vidCont.classList.add("MRShowing");
+        actButton.id = "closeMRBtn";
+        actButton.addEventListener("click", () => {
+            if (vidCont.classList.contains("MRShowing")) {
+                vidCont.classList.replace("MRShowing", "MRHidding");
+                actButton.textContent = "v"
+            }else{
+                vidCont.classList.replace("MRHidding","MRShowing");
+                actButton.textContent = "x"
+            }
+        })
+        vid.addEventListener("seeking", () => {
+            if (localStorage.getItem("MinutesPointer") === null) {
+                return;
+            }
+            let pointers = localStorage.getItem("MinutesPointer").split(",");
+            let step = document.querySelectorAll(".oneStepNewRecipe")[pointers[0]].children[pointers[1]]
+            let splitedTime = (new Date(vid.currentTime * 1000).toISOString().substr(14, 5)).split(":");
+            step.style.background = "#ff2d29";
+            step.children[0].value = splitedTime[0];
+            step.children[1].value = splitedTime[1];
+        })
+        vid.addEventListener("seeked", () => {
+            let pointers = localStorage.getItem("MinutesPointer").split(",");
+            let step = document.querySelectorAll(".oneStepNewRecipe")[pointers[0]].children[pointers[1]]
+            step.removeAttribute("style");
+        })
+        vid.src = video2.src;
+        vidCont.appendChild(vid);
+        vidCont.appendChild(actButton);
+        document.querySelector("body").appendChild(vidCont);
+    	duration = video2.duration;
+        splitedDuration = (new Date(duration * 1000).toISOString().substr(14, 5)).split(":");
     }
 
     video2.src = URL.createObjectURL(file);
