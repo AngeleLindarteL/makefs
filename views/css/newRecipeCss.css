@@ -518,7 +518,7 @@ section{
 
 #recipetittlediv2{
     width: 100%;
-    height: 5%;
+    height: 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -630,7 +630,7 @@ section{
     -webkit-appearance:none;
     -o-appearance:none;
     cursor: pointer;
-    width: 2.5vh;
+    width: 4.5vh;
     height: 3vh;
 }
 #madePrivate input:not(:checked){
@@ -810,6 +810,12 @@ section{
     .mini-reproductor{
         width: 100%;
         margin: 0;
+    }
+    #sectionEditRecipeMultimedia{
+        width:90%;
+    }
+    #madePrivate{
+        margin-top:3%;
     }
 }
 @media (max-width: 380px) {

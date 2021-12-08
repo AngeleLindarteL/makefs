@@ -301,7 +301,6 @@ section{
 }
 #followedName{
     font-size: 1em;
-    color: black;
     cursor: pointer;
 }
 #followedsContainer::-webkit-scrollbar{

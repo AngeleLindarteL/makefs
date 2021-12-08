@@ -33,14 +33,9 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
 
-        let body = document.querySelector('body');
-        let imagentb = document.querySelector('#imgtb');
-        let seccion = document.querySelector('#newRecipeSection');
-        let manyinputs = document.querySelectorAll('.Whiterecipetit');
-        let maintt = document.querySelectorAll('.Whitemaintt');
-        let wimg = document.querySelectorAll('.Whiteimgr');
-        let btn = document.querySelector('#addStepBtn');
-        let line = document.querySelector('#tittlePasos');
+        manyinputs = document.querySelectorAll('.Whiterecipetit');
+        maintt = document.querySelectorAll('.Whitemaintt');
+        wimg = document.querySelectorAll('.Whiteimgr');
 
         localStorage.setItem("Theme", "oscuro");
         isDark = true;
@@ -61,14 +56,9 @@ modoOscuro.addEventListener("click", (e)  =>{
 
     }else{
 
-        let body = document.querySelector('body');
-        let imagentb = document.querySelector('#imgtb');
-        let seccion = document.querySelector('#newRecipeSection');
-        let manyinputs = document.querySelectorAll('.Darkrecipetit');
-        let maintt = document.querySelectorAll('.Darkmaintt');
-        let wimg = document.querySelectorAll('.Darkimgr');
-        let btn = document.querySelector('#addStepBtn');
-        let line = document.querySelector('#tittlePasos');
+        manyinputs = document.querySelectorAll('.Darkrecipetit');
+        maintt = document.querySelectorAll('.Darkmaintt');
+        wimg = document.querySelectorAll('.Darkimgr');
 
         localStorage.setItem("Theme", "claro");
         isDark = false;
