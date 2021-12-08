@@ -168,24 +168,35 @@
             ?>
             <div class="general-recipes-container">
                 <?php 
-                foreach ($response->recipes as $key => $recipe) {
-                    $recipe->rate = number_format($recipe->rate, 1);
-                    $title = test_input($recipe->namer);
-                    $chefname = test_input($recipe->chefname);
-                    echo <<<EOT
-                        <div class="recipe-template">
-                            <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
-                                <img src="../mediaDB/recipeImages/$recipe->imagen">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
-                            </a>
-                            <div class="next-text-recipe WhiteModeP">
-                                <img src="../mediaDB/usersImg/$recipe->chefpic">
-                                <a href="./chef-view.php?chef=$recipe->chefid">
-                                    <h3 class="text-template">$title</h3>
-                                    <p>$chefname</p>
-                                    <p>$recipe->views Views</p>
+                if(isset($recipe)){
+
+                    foreach ($response->recipes as $key => $recipe) {
+                        $recipe->rate = number_format($recipe->rate, 1);
+                        $title = test_input($recipe->namer);
+                        $chefname = test_input($recipe->chefname);
+                        echo <<<EOT
+                            <div class="recipe-template">
+                                <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
+                                    <img src="../mediaDB/recipeImages/$recipe->imagen">
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
                                 </a>
+                                <div class="next-text-recipe WhiteModeP">
+                                    <img src="../mediaDB/usersImg/$recipe->chefpic">
+                                    <a href="./chef-view.php?chef=$recipe->chefid">
+                                        <h3 class="text-template">$title</h3>
+                                        <p>$chefname</p>
+                                        <p>$recipe->views Views</p>
+                                    </a>
+                                </div>
                             </div>
+                        EOT;
+                    }
+                }
+                if(empty($recipe) && empty($recipe)){
+                    echo <<<EOT
+                        <div id="notFoundRecipes" class="Whitecookie">
+                            <img src="./img/notrecipesSearch.png">
+                            <h3>No hay videos disponibles. Sube uno!</h3>
                         </div>
                     EOT;
                 }
