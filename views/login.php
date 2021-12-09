@@ -10,7 +10,8 @@
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/DarkLogin.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
-    
+    <meta name="description" content="Logueate en Makefs!">
+    <meta name="robots" content="index, follow">
     <title>Login - Makefs</title>
     <?php
         include('./components/sessionControlUnloged.php');
@@ -33,7 +34,7 @@
     </header>
     <section id="continfo">
         <div class="viewlogo">
-            <a href="./index.php"><img src="./img/makefsinvert.jpg" alt="img"></a>
+            <a href="./index.php"><img src="./img/makefsinvert.jpg" alt="logo makefs"></a>
             <h6>makef's</h6>
         </div>
         <div class="formcont">

@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/DarkMenu.css">
         <link rel="stylesheet" href="./css/Preloader.css">
+        <meta name="description" content="Encuentra las mejores recetas de comida con la forma más sencilla de verlas!">
+        <meta name="robots" content="index, follow">
 
         <title>Inicio Makef's</title>
     <?php
@@ -177,11 +179,11 @@
                         echo <<<EOT
                             <div class="recipe-template">
                                 <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
-                                    <img src="../mediaDB/recipeImages/$recipe->imagen">
-                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
+                                    <img src="../mediaDB/recipeImages/$recipe->imagen" alt="imagen de receta">
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$recipe->rate</b></figure>
                                 </a>
                                 <div class="next-text-recipe WhiteModeP">
-                                    <img src="../mediaDB/usersImg/$recipe->chefpic">
+                                    <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
                                     <a href="./chef-view.php?chef=$recipe->chefid">
                                         <h3 class="text-template">$title</h3>
                                         <p>$chefname</p>
@@ -195,7 +197,7 @@
                 if(empty($recipe) && empty($recipe)){
                     echo <<<EOT
                         <div id="notFoundRecipes" class="Whitecookie">
-                            <img src="./img/notrecipesSearch.png">
+                            <img src="./img/notrecipesSearch.png" alt="cookie">
                             <h3>No hay videos disponibles. Sube uno!</h3>
                         </div>
                     EOT;

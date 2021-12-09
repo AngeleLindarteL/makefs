@@ -19,6 +19,8 @@
     <link href="./css/Darkddr.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/Preloader.css">
+    <meta name="description" content="Mira la preparacion de tu receta que deseas aprender y aprende a cocinar">
+    <meta name="robots" content="index, follow">
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
@@ -173,7 +175,7 @@
         $res = $conn->prepare($query);
         $res->execute(array(":ID"=>$videoId));
         $res = $res->fetch(PDO::FETCH_ASSOC);
-        echo "<title>$res[namer]</title>";
+        echo "<title>Cocina: $res[namer]</title>";
     }catch(Exception $e){
         header("location: ./error.html");
         exit;
@@ -312,7 +314,7 @@
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">En espera</p></article>
     </div>
     <div class="bookshelf-notification WhiteNotif">
-        <img id="bookshelf-icon" src="./iconos/book.png">
+        <img id="bookshelf-icon" src="./iconos/book.png" alt="guardados">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
         <a target="_blank" href="./library.php?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
     </div>
@@ -410,8 +412,8 @@
                     <h1 class="makefs-video-info-title Whitetitlevideo"><?php echo test_input($res["namer"])?></h1>
                     <a class="makefs-video-info-chef" href="./chef-view.php?chef=<?php echo $res['chefid']; ?>">
                         <div id="foto-chef-ddr">
-                            <img src="../mediaDB/usersImg/<?PHP echo $res["minpic"]?>">
-                            <?php if($isVerify){ echo "<img class='verified2' src='./img/chef-verified.png'>";} ?>
+                            <img src="../mediaDB/usersImg/<?PHP echo $res["minpic"]?>" alt="imagen de usuario">
+                            <?php if($isVerify){ echo "<img class='verified2' src='./img/chef-verified.png' alt='verificacion'>";} ?>
                         </div>
                         
                         <article>
@@ -461,7 +463,7 @@
                             if ($_SESSION["id"] == 0) {
                                 echo <<<EOT
                                 <div class="not-registered-advise">
-                                    <img src="./iconos/makefslogo.jpg">
+                                    <img src="./iconos/makefslogo.jpg" alt='makefslogo'>
                                     <button id="hide-not-register-notif">x</button>
                                     <article>
                                         <p>Para poder interactuar con este video debes estar registrado</p>
@@ -507,11 +509,11 @@
                             echo <<<EOT
                                 <div class="recipe-template ddr-recipe">
                                     <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
-                                        <img src="../mediaDB/recipeImages/$recipe->imagen">
-                                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
+                                        <img src="../mediaDB/recipeImages/$recipe->imagen" alt='imagen de receta'>
+                                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt='estrellas de receta'><b id="starCount">$recipe->rate</b></figure>
                                     </a>
                                     <div class="next-text-recipe WhiteModeP">
-                                        <img src="../mediaDB/usersImg/$recipe->chefpic">
+                                        <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
                                         <a href="./chef-view.php?chef=$recipe->chefid">
                                             <h3 class="text-template">$title</h3>
                                             <p>$chefname</p>

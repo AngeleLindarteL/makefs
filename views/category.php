@@ -12,8 +12,9 @@
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/DarkMenu.css">
         <link rel="stylesheet" href="./css/Preloader.css">
+        <meta name="description" content="Aprende a cocinar, realiza todo tipo de preparaciones">
+        <meta name="robots" content="index, follow">
 
-        
     <?php
         session_start();
         if (!isset($_GET["region"]) || !isset($_GET["type"])) {
@@ -101,7 +102,7 @@
         }
         $name = $_GET["region"]." en ".$_GET["type"]; 
     ?>
-    <title><?php echo $name?></title>
+    <title>Cocina sobre:<?php echo $name?></title>
 </head>
 <body class="White">
     <?php
@@ -125,11 +126,11 @@
                     echo <<<EOT
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
-                                <img src="../mediaDB/recipeImages/$recipe->imagen">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
+                                <img src="../mediaDB/recipeImages/$recipe->imagen alt="recetas comida">
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas de valoracion"><b id="starCount">$recipe->rate</b></figure>
                             </a>
                             <div class="next-text-recipe WhiteModeP">
-                                <img src="../mediaDB/usersImg/$recipe->chefpic">
+                                <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
                                 <a href="./chef-view.php?chef=$recipe->chefid">
                                     <h3 class="text-template">$title</h3>
                                     <p>$chefname</p>
@@ -143,7 +144,7 @@
                 if(empty($recipe) && empty($recipe)){
                     echo <<<EOT
                         <div id="notFoundRecipes" class="Whitecookie">
-                            <img src="./img/notrecipesSearch.png">
+                            <img src="./img/notrecipesSearch.png" alt="noSeEncontraronRecetas">
                             <h3>No se han encontrado recetas con tu búsqueda.</h3>
                         </div>
                     EOT;

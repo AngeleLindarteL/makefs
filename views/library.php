@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tus recetas guardadas para despues cocinarlas!">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
-    <title>Tu biblioteca</title>
+    <title>Tu biblioteca Makefs</title>
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
@@ -71,7 +73,7 @@
         <p>En pila</p>
     </div>
     <div class="bookshelf-notification">
-        <img id="bookshelf-icon" src="./iconos/book.png">
+        <img id="bookshelf-icon" src="./iconos/book.png" alt="guardados">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
         <a target="_blank" id="cancel-elimination" to_cancel="0">Deshacer</a>
     </div>
@@ -91,7 +93,7 @@
     <section id="bookshelf">
         <div class="makefsContainer bookshelf-container">
             <div class="saved-recipes-user-portrait">
-                <a class="saved-recipes-user-img"><img src="../mediaDB/usersImg/<?php  echo $_SESSION["midpic"] ?>" id="saved-user-img"></a>
+                <a class="saved-recipes-user-img"><img src="../mediaDB/usersImg/<?php  echo $_SESSION["midpic"] ?>" alt="imagen de usuario" id="saved-user-img"></a>
             </div>
             <article class="saved-recipes-main-text">
                 <h1 class="WhiteWellib">Bienvenido a tu biblioteca <?php echo $_SESSION["username"] ?></h1>
@@ -132,11 +134,11 @@
                         echo <<< EOT
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
-                                <img src="../mediaDB/recipeImages/$imagen">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                <img src="../mediaDB/recipeImages/$imagen" alt="imagen de receta">
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
                             </a>
                             <div class="next-text-recipe whiterecipet">
-                                <img src="../mediaDB/usersImg/$midpic">
+                                <img src="../mediaDB/usersImg/$midpic" alt="imagen de usuario">
                                 <a href="./chef-view.php?chef=$chefid" target="__blank">
                                      <h3 class='text-template'>$recetaname</h3>
                                      <p>$username</p>
@@ -153,7 +155,7 @@
                     if(empty($dataAll["recipeid"]) && empty($recipe)){
                         echo <<<EOT
                             <div id="notFoundRecipes">
-                                <img src="./img/notFoundRecipes.png">
+                                <img src="./img/notFoundRecipes.png" alt="cookie">
                                 <h3>No tienes recetas aún! Empieza a guardar tus favoritas</h3>
                             </div>
                         EOT;
@@ -200,11 +202,11 @@
                             echo <<< EOT
                             <div class="recipe-template">
                                 <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
-                                    <img src="../mediaDB/recipeImages/$imagen">
-                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                    <img src="../mediaDB/recipeImages/$imagen" alt="imagen de receta">
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
                                 </a>
                                 <div class="next-text-recipe whiterecipet">
-                                    <img src="../mediaDB/usersImg/$midpic">
+                                    <img src="../mediaDB/usersImg/$midpic" alt="imagen de usuario">
                                     <a href="./chef-view.php?chef=$chefid" target="__blank">
                             EOT;
                                         echo "<h3 class='text-template'>$recetaname</h3>";

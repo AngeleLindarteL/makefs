@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Recipe!</title>
+    <meta name="description" content="Crea una nueva receta para la comunidad!">
+    <meta name="robots" content="index, follow">
+    <title>Nueva Receta! Makefs</title>
     <link rel="stylesheet" href="./css/chef-index.css">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/newRecipeCss.css">
@@ -94,14 +96,14 @@
                     <div id="multimediaNewRecipe">
                         <div class="divMultimedia" id="divUploadVideo">
                             <label for="recipeVideo"  id="btnVideoUpload">
-                                <img class="Whiteimgr" src="./img/addVideoRecipe.png" alt="">
+                                <img class="Whiteimgr" src="./img/addVideoRecipe.png" alt="agregar video">
                             </label>
                             <h4 class="Whitemaintt">Inserta tu video Preparacion</h4>
                             <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="video/mp4, video/webm" required> 
                         </div>
                         <div class="divMultimedia" id="divUploadImg">
                             <label for="recipeImg"  id="btnImgUpload" class="Whiteimgr">
-                                <img  src="./img/imagen.png" alt="">
+                                <img  src="./img/imagen.png" alt="agregar imagen">
                             </label>
                             <h4 class="Whitemaintt">Inserta la imagen de tu receta</h4>
                             <input type="file" id="recipeImg" class="inputfileNewRecipe" name="recipeImg" accept=".jpg, .png" required> 
@@ -110,7 +112,7 @@
                     <div id="stepsNewRecipe">
                         <div id="tittlePasos" class="Whitemaintt Whiteline">
                             <div id="hatPasosyTxt">
-                                <img src="./img/chefHatRed.png" alt="">
+                                <img src="./img/chefHatRed.png" alt="chef hat">
                                 <h2>Pasos</h2>
                             </div>
                             <div id="btnsSteps">
