@@ -145,7 +145,7 @@
                         <figure class="profile-pic">
                             <img class="profile-pic-img" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>" alt="imagen de usuario">
                             <?php if($isTheChef){ echo "<a id='profile-edit'></a>";} ?>
-                            <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png'> alt='verificacion'";} ?>
+                            <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png' alt='verificacion'> ";} ?>
                             <div class="followers" ><img src="./img/hico-followers.png" alt="seguidores"><p id="followersSection" ><?php echo $seguidores ?></p></div>
                         </figure>
                         <article class="profile-chars">
