@@ -102,7 +102,7 @@
         }
         $name = $_GET["region"]." en ".$_GET["type"]; 
     ?>
-    <title>Cocina sobre:<?php echo $name?></title>
+    <title>Cocina sobre: <?php echo $_GET["type"]." de ".$_GET["region"]?></title>
 </head>
 <body class="White">
     <?php

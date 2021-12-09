@@ -16,7 +16,7 @@
     <link href="./css/DarkRecipe.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <?php
         include('./components/sessionControl.php');
         include("./components/tokenControl.php");

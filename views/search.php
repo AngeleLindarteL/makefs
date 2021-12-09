@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Busqueda de lo que requieras cocinar">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">

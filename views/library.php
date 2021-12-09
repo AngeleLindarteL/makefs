@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tus recetas guardadas para despues cocinarlas!">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <title>Tu biblioteca Makefs</title>
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
