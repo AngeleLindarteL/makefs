@@ -132,7 +132,7 @@
     
                 $response = json_decode(curl_exec($ch));
                 curl_close($ch);
-
+                print_r($response);
                 if ($response->status == 200){
                     # code...
                 }
