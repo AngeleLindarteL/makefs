@@ -134,10 +134,6 @@
     
                 $response = json_decode(curl_exec($ch));
                 curl_close($ch);
-                print_r($response);
-                if ($response->status == 200){
-                    # code...
-                }
             } catch (Exception $th) {
                 print_r($th);
             }
@@ -170,7 +166,7 @@
             ?>
             <div class="general-recipes-container">
                 <?php 
-                if(isset($recipe)){
+                if(isset($response)){
 
                     foreach ($response->recipes as $key => $recipe) {
                         $recipe->rate = number_format($recipe->rate, 1);
