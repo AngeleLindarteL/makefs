@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/chef-index.css">
     <link href="./css/footer.css" rel="stylesheet">
@@ -14,7 +14,9 @@
     <link href="./css/DarkUser.css" rel="stylesheet">
     <link href="./css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Perfil</title>
+    <meta name="description" content="Tu perfil Makefs, mira tu informacion personal y modificala">
+    <meta name="robots" content="index, follow">
+    <title>Perfil - Makefs</title>
     <?php
         include('./components/sessionControl.php');
         include("./components/tokenControl.php");
@@ -172,6 +174,5 @@
     <script src="./js/upload_pic_user_view.js"></script>
     <script src="./js/DarkModeUser.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
-    <script src="./js/footerHidden.js"></script>
 </body>
 </html>

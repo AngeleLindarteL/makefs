@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registrate en Makef's!">
+    <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/register.css" rel="stylesheet">
     <link href="./css/normalize.css" rel="stylesheet">
@@ -33,7 +35,7 @@
     </header>
     <section id="continfo">
         <div class="viewlogo">
-            <a href="./index.php"><img src="./img/makefsinvert.jpg" alt="img"></a>
+            <a href="./index.php"><img src="./img/makefsinvert.jpg" alt="logo makefs"></a>
             <h6>makef's</h6>
         </div>
         <div class="formcont">

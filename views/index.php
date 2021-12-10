@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
         <link href="./css/normalize.css" rel="stylesheet">
         <link href="./css/chef-index.css" rel="stylesheet">
         <link href="./css/header.css" rel="stylesheet">
@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="./css/footer.css">
         <link rel="stylesheet" href="./css/DarkMenu.css">
         <link rel="stylesheet" href="./css/Preloader.css">
+        <meta name="description" content="Encuentra las mejores recetas de comida con la forma más sencilla de verlas!">
+        <meta name="robots" content="index, follow">
 
         <title>Inicio Makef's</title>
     <?php
@@ -168,24 +170,35 @@
             ?>
             <div class="general-recipes-container">
                 <?php 
-                foreach ($response->recipes as $key => $recipe) {
-                    $recipe->rate = number_format($recipe->rate, 1);
-                    $title = test_input($recipe->namer);
-                    $chefname = test_input($recipe->chefname);
-                    echo <<<EOT
-                        <div class="recipe-template">
-                            <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
-                                <img src="../mediaDB/recipeImages/$recipe->imagen">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$recipe->rate</b></figure>
-                            </a>
-                            <div class="next-text-recipe WhiteModeP">
-                                <img src="../mediaDB/usersImg/$recipe->chefpic">
-                                <a href="./chef-view.php?chef=$recipe->chefid">
-                                    <h3 class="text-template">$title</h3>
-                                    <p>$chefname</p>
-                                    <p>$recipe->views Views</p>
+                if(isset($recipe)){
+
+                    foreach ($response->recipes as $key => $recipe) {
+                        $recipe->rate = number_format($recipe->rate, 1);
+                        $title = test_input($recipe->namer);
+                        $chefname = test_input($recipe->chefname);
+                        echo <<<EOT
+                            <div class="recipe-template">
+                                <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
+                                    <img src="../mediaDB/recipeImages/$recipe->imagen" alt="imagen de receta">
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$recipe->rate</b></figure>
                                 </a>
+                                <div class="next-text-recipe WhiteModeP">
+                                    <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
+                                    <a href="./chef-view.php?chef=$recipe->chefid">
+                                        <h3 class="text-template">$title</h3>
+                                        <p>$chefname</p>
+                                        <p>$recipe->views Views</p>
+                                    </a>
+                                </div>
                             </div>
+                        EOT;
+                    }
+                }
+                if(empty($recipe) && empty($recipe)){
+                    echo <<<EOT
+                        <div id="notFoundRecipes" class="Whitecookie">
+                            <img src="./img/notrecipesSearch.png" alt="cookie">
+                            <h3>No hay videos disponibles. Sube uno!</h3>
                         </div>
                     EOT;
                 }

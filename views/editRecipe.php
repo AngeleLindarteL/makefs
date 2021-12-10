@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Edita tus recetas subidas a makefs">
+    <meta name="robots" content="index, follow">
     <title>Editando Receta</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/chef-index.css">
@@ -219,7 +221,7 @@
                     <div id="stepsEditRecipe">
                         <div id="tittlePasos" class="Whitemaintt">
                             <div id="hatPasosyTxt">
-                                <img src="./img/chefHatRed.png" alt="">
+                                <img src="./img/chefHatRed.png" alt="chef hat">
                                 <h2>Pasos</h2>
                             </div>
                             <div id="btnsSteps">

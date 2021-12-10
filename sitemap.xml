@@ -1,0 +1,87 @@
+<urlset>
+	<url>
+		<loc>makefs location index</loc>
+		<lastmod>2021-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>1</priority>
+	</url>
+
+	<url>
+		<loc>makefs location login</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<url>
+		<loc>makefs location register</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.8</priority>
+	</url>
+
+	<url>
+		<loc>makefs location category</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+
+	<url>
+		<loc>makefs location search</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.7</priority>
+	</url>
+
+    <url>
+		<loc>makefs location chef-view</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+    <url>
+		<loc>makefs location library</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+
+    <url>
+		<loc>makefs location ddr</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.5</priority>
+	</url>
+
+    <url>
+		<loc>makefs location user-view</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.3</priority>
+	</url>
+
+    <url>
+		<loc>makefs location newRecipe</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.2</priority>
+	</url>
+
+    <url>
+		<loc>makefs location editRecipe</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.2</priority>
+	</url>
+
+    <url>
+		<loc>makefs location error</loc>
+		<lastmod>2009-12-09</lastmod>
+		<changefreq>yearly</changefreq>
+		<priority>0.1</priority>
+	</url>
+
+    
+</urlset>

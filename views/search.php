@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <meta name="description" content="Busqueda de lo que requieras cocinar">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
@@ -94,11 +95,11 @@
                         echo <<< EOT
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
-                                <img src="../mediaDB/recipeImages/$imagen">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                <img src="../mediaDB/recipeImages/$imagen" alt="imagen de receta">
+                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
                             </a>
                             <div class="next-text-recipe Whiterecipe">
-                                <img src="../mediaDB/usersImg/$minpic">
+                                <img src="../mediaDB/usersImg/$minpic" alt="imagen de usuario">
                                 <a href="./chef-view.php?chef=$chefid" target="__blank">
                                     <h3 class='text-template'>$recetaname</h3>
                                     <p>$username</p>
@@ -114,7 +115,7 @@
                      if(empty($dataAll["recipeid"]) && empty($recipe)){
                         echo <<<EOT
                             <div id="notFoundRecipes" class="Whitecookie">
-                                <img src="./img/notrecipesSearch.png">
+                                <img src="./img/notrecipesSearch.png" alt="cookie">
                                 <h3>No se han encontrado recetas con tu búsqueda.</h3>
                             </div>
                         EOT;

@@ -678,7 +678,7 @@ section{
 
 #notFoundRecipes{
     width: 100%;
-    height: 100%;
+    height: 34vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -792,7 +792,7 @@ section{
 
 @media (max-width: 970px) {
     #categorias{
-        display:flex;
+        display:none;
         padding: 6px 3vh;
         position:relative;
         top:-10vh;

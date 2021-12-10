@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
     <link href="./css/normalize.css" rel="stylesheet">
     <link href="./css/chef-index.css" rel="stylesheet">
     <link href="./css/header.css" rel="stylesheet">
@@ -13,9 +13,11 @@
     <link href="./css/DarkModecss.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/DarkMenu.css">
     <link rel="stylesheet" href="./css/Preloader.css">
+    <meta name="description" content="Perfil de chef!, mira las mejores recetas de nuestros chefs.">
+    <meta name="robots" content="index, follow">
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Chef view</title>
+    <title>Makefs Perfil Chef!</title>
     <?php
         include("../models/conexion.php");
         include("./components/test_inputs.php");
@@ -141,10 +143,10 @@
                 <div class="chef-char">
                     <div class="char-template">
                         <figure class="profile-pic">
-                            <img class="profile-pic-img" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
+                            <img class="profile-pic-img" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>" alt="imagen de usuario">
                             <?php if($isTheChef){ echo "<a id='profile-edit'></a>";} ?>
-                            <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png'>";} ?>
-                            <div class="followers" ><img src="./img/hico-followers.png"><p id="followersSection" ><?php echo $seguidores ?></p></div>
+                            <?php if($isVerify){ echo "<img class='verified' src='./img/chef-verified.png' alt='verificacion'> ";} ?>
+                            <div class="followers" ><img src="./img/hico-followers.png" alt="seguidores"><p id="followersSection" ><?php echo $seguidores ?></p></div>
                         </figure>
                         <article class="profile-chars">
                             
@@ -157,10 +159,10 @@
                             <p class="description" id="description-space-chef"><?php echo test_input($res["descript"])?></p>
                             <p id="contact-space-chef">Contacto: <?php echo  test_input($res["email"])?></p>
                             <ul class="chef-social-media">
-                                <a href="<?php echo test_input($res["facebook"]) ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png"></a>
-                                <a href="<?php echo test_input($res["instagram"]) ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png"></a>
-                                <a href="<?php echo test_input($res["twitter"]) ?>" id="twTxt" target="__blank"><img src="./img/user-twitter.png"></a>
-                                <a href="<?php echo test_input($res["youtube"]) ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png"></a>
+                                <a href="<?php echo test_input($res["facebook"]) ?>" id="fbTxT" target="__blank"><img src="./img/user-facebook.png" alt="facebookPage"></a>
+                                <a href="<?php echo test_input($res["instagram"]) ?>" id="igTxT" target="__blank"><img src="./img/user-instagram.png" alt="instagramPage"></a>
+                                <a href="<?php echo test_input($res["twitter"]) ?>" id="twTxt" target="__blank"><img src="./img/user-twitter.png" alt="twitterPage"></a>
+                                <a href="<?php echo test_input($res["youtube"]) ?>" id="ytTxT" target="__blank"><img src="./img/user-youtube.png" alt="youtubeChannel"></a>
                             </ul>
                             <?php
                                 if($_SESSION['id']==0){
@@ -192,8 +194,8 @@
                     if($isTheChef){
                         echo <<<EOT
                             <div class="action-buttons-container">
-                                <a href="./newRecipe.php" class="action-btn"><img src="./img/chef-add.png"><p>Añadir recetas</p></a>
-                                <a class="action-btn"><img src="./img/chef-flag.png"><p>Reportes</p></a>
+                                <a href="./newRecipe.php" class="action-btn"><img src="./img/chef-add.png" alt="agregar"><p>Añadir recetas</p></a>
+                                <a class="action-btn"><img src="./img/chef-flag.png" alt="reportar"><p>Reportes</p></a>
                                 <button id="chef-config"></button>
                             </div>
                         EOT;
@@ -239,11 +241,11 @@
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
                                 <a class="image-template" href="./ddr.php?video=$dataRecipes[recipeid]">
-                                    <img src="../mediaDB/recipeImages/$dataRecipes[imagen]">
-                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png"><b id="starCount">$average</b></figure>
+                                    <img src="../mediaDB/recipeImages/$dataRecipes[imagen]" alt="imagen de receta">
+                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas de receta"><b id="starCount">$average</b></figure>
                                 </a>
                                 <div class="next-text-recipe WhiteModeP">
-                                    <img src="../mediaDB/usersImg/$res[midpic]">
+                                    <img src="../mediaDB/usersImg/$res[midpic]" alt="imagen de usuario">
                                     <a href="./chef-view.php?chef=$res[chefid]">
                             EOT;
                                         echo "<h3 class='text-template'>".test_input($dataRecipes['namer'])."</h3>";
@@ -262,14 +264,14 @@
                         if($isTheChef){
                             echo <<<EOT
                                 <div id="notFoundRecipes" class="WhiteBannerNone">
-                                    <img src="./img/notFoundRecipes.png">
+                                    <img src="./img/notFoundRecipes.png" alt="recetas no encontradas">
                                     <h3>No tienes recetas aún! Empieza a subir contenido!</h3>
                                 </div>
                             EOT;
                         }else{
                             echo <<<EOT
                                 <div id="notFoundRecipes">
-                                    <img src="./img/notFoundRecipes.png">
+                                    <img src="./img/notFoundRecipes.png" alt="recetas no encontradas">
                                     <h3>Este chef no tiene recetas!</h3>
                                 </div>
                             EOT;
@@ -285,8 +287,8 @@
         <div id="chefContainer" class="WhiteChefCont">
             <div class="divChef-view" id="firstdiv-chef">
                 <figure class="profile-pic-chef" id="change-chef-info-pic">
-                        <img class="profile-pic-img-chef" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>">
-                        <img class="verified-chef" src="./img/chef-verified.png">
+                        <img class="profile-pic-img-chef" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>" alt="imagen de usuario">
+                        <img class="verified-chef" src="./img/chef-verified.png" alt="verificacion">
                         <button id="profile-edit-photo"></button>
                 </figure>
                 <section class="divChef-view" id="cambiarFoto-chef">
@@ -354,19 +356,19 @@
                     </div>
                     <div id="socialMediaChef">
                         <div class="socialmediadiv-chef">
-                            <img src="./img/user-facebook.png" alt="">
+                            <img src="./img/user-facebook.png" alt="facebookPage">
                             <input type="text" class="infoInputsChef" id="fbinput-Chef" value="<?php echo test_input($res["facebook"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
-                            <img src="./img/user-instagram.png" alt="">
+                            <img src="./img/user-instagram.png" alt="instagramPage">
                             <input type="text" class="infoInputsChef" id="iginput-Chef" value="<?php echo test_input($res["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
-                            <img src="./img/user-twitter.png" alt="">
+                            <img src="./img/user-twitter.png" alt="twitterPage">
                             <input type="text" class="infoInputsChef" id="twinput-chef" value="<?php echo test_input($res["twitter"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef">
-                            <img src="./img/user-youtube.png" alt="">
+                            <img src="./img/user-youtube.png" alt="youtubeChannel">
                             <input type="text" class="infoInputsChef" id="ytinput-Chef" value="<?php echo test_input($res["youtube"])?>" disabled>
                         </div>
                         <div class="socialmediadiv-chef" id="updateInfo">
