@@ -75,7 +75,7 @@ section{
     width: 83%;
     max-width: 83%;
     position: fixed;
-    height: 9vh;
+    height: fit-content;
     bottom: 0.5%;
     left: 8.5%;
     backdrop-filter: blur(15px);
@@ -90,6 +90,7 @@ section{
     opacity: 0;
     z-index: 10;
     background-color: white;
+    flex-wrap: wrap;
 }
 
 .categoryDiv{
@@ -804,6 +805,7 @@ section{
     }
     .subcategories-down{
         display:none;
+        bottom: 10.5%;
     }
     .action-btn{
         width: 8vh;
