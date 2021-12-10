@@ -1007,8 +1007,8 @@ section{
         margin-bottom: 1%;
     }
     #btnCategoriesShow{
-        bottom: 30vh;
-        right: 47%;
+        bottom: 1.2vh;
+        right: 8%;
         z-index: 999999;
     }
 }
@@ -1067,18 +1067,17 @@ section{
     .categoryDiv{
         width: 35%;
     }
-    #btnCategoriesShow{
-        bottom: 36vh;
-        right: 44%;
-    }
+    
 }
-@media (max-width: 430px){
+@media (max-width: 520px){
     .summary-info article p{
         font-size: 1rem;
     }
     #btnCategoriesShow{
-        bottom: 70vh;
+        bottom: 13vh;
+        box-shadow: rgba(255, 255, 255, 0.26) 0 0 20px 1px ;
     }
+    
     .description{
         font-size: .9rem;
     }
@@ -1096,6 +1095,8 @@ section{
         font-size: 1.5em;
     }
 }
+ 
+
 @media (max-width: 280px){
     #title-ctc{
         font-size: 1.5em;

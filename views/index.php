@@ -210,12 +210,12 @@
         include('./components/footer.php');
     ?>
     <script src="./js/index.js"></script>
-    <script src="./js/categoriesmenu.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/darkModeIndex.js"></script>
     <script src="./js/DarkModeMenu.js"></script>
-    <script src="./js/footerHidden.js"></script>
     <script src="./js/DarkLoader.js"></script>
     <script src="./js/preloader.js"></script>
+    <script src="./js/responsiveCategories.js"></script>
+    <script id="categoriesRes" src="./js/categoriesResponsive.js"></script>
     </body>
 </html>
