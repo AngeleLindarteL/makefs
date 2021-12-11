@@ -366,7 +366,6 @@ body{
      .aback{
          top: -14vh;
          left: 9%;
-         filter: invert(1);
      }
      .aback h6{
          font-size: 1.5em;

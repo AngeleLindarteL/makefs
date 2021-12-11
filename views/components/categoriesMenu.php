@@ -1,7 +1,10 @@
 <?php
-    if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1){
+    if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1 && sizeof(explode("/",$_SERVER["REQUEST_URI"])) < 3){
         $viewsUrl = "../views";
         $mediaUrl = "../mediaDB";
+    }else if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 2){
+        $viewsUrl = "../../views";
+        $mediaUrl = "../../mediaDB";
     }else{
         $viewsUrl = "views";
         $mediaUrl = "mediaDB";
@@ -53,37 +56,37 @@
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=latam&type=sopas">
+                <a href="/category/latam/sopas">
                     <img src="$viewsUrl/img/sopaCat.png" alt="Colombian">
                     <h2>Sopas</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href./category.php?region=latam&type=vegana">
+                <a href./category.php?latam/vegana">
                     <img src="$viewsUrl/img/vegetarianCat.png" alt="Italian">
                     <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=latam&type=gourmet">
+                <a href="/category/latam/gourmet">
                     <img src="$viewsUrl/img/gourmetCat.png" alt="Mexican">
                     <h2>Gourmet</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=latam&type=postres">
+                <a href="/category/latam/postres">
                     <img src="$viewsUrl/img/postresCat.png" alt="Mexican">
                     <h2>Postres</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=latam&type=casero">
+                <a href="/category/latam/casero">
                     <img src="$viewsUrl/img/caseroCat.png" alt="Vegetarian">
                     <h2>Casero</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=latam&type=tipicas">
+                <a href="/category/latam/tipicas">
                     <img src="$viewsUrl/img/latamTipica.png" alt="Hamburguesa">
                     <h2>Tipicas</h2>
                 </a>
@@ -97,37 +100,37 @@
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=asia&type=sopas">
+                <a href="/category/asia/sopas">
                     <img src="$viewsUrl/img/sopaCat.png" alt="Colombian">
                     <h2>Sopas</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=asia&type=vegana">
+                <a href="/category/asia/vegana">
                     <img src="$viewsUrl/img/vegetarianCat.png" alt="Italian">
                     <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=asia&type=gourmet">
+                <a href="/category/asia/gourmet">
                     <img src="$viewsUrl/img/gourmetCat.png" alt="Mexican">
                     <h2>Gourmet</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=asia&type=postres">
+                <a href="/category/asia/postres">
                     <img src="$viewsUrl/img/postresCat.png" alt="Mexican">
                     <h2>Postres</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=asia&type=casero">
+                <a href="/category/asia/casero">
                     <img src="$viewsUrl/img/caseroCat.png" alt="Vegetarian">
                     <h2>Casero</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=asia&type=tipicas">
+                <a href="/category/asia/tipicas">
                     <img src="$viewsUrl/img/asiaTipica.png" alt="Hamburguesa">
                     <h2>Tipicas</h2>
                 </a>
@@ -141,37 +144,37 @@
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=nortea&type=sopas">
+                <a href="/category/nortea/sopas">
                     <img src="$viewsUrl/img/sopaCat.png" alt="Colombian">
                     <h2>Sopas</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=nortea&type=vegana">
+                <a href="/category/nortea/vegana">
                     <img src="$viewsUrl/img/vegetarianCat.png" alt="Italian">
                     <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=nortea&type=gourmet">
+                <a href="/category/nortea/gourmet">
                     <img src="$viewsUrl/img/gourmetCat.png" alt="Mexican">
                     <h2>Gourmet</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=nortea&type=postres">
+                <a href="/category/nortea/postres">
                     <img src="$viewsUrl/img/postresCat.png" alt="Mexican">
                     <h2>Postres</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=nortea&type=casero">
+                <a href="/category/nortea/casero">
                     <img src="$viewsUrl/img/caseroCat.png" alt="Vegetarian">
                     <h2>Casero</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=nortea&type=tipicas">
+                <a href="/category/nortea/tipicas">
                     <img src="$viewsUrl/img/norteamericaTipica.png" alt="Hamburguesa">
                     <h2>Tipicas</h2>
                 </a>
@@ -185,37 +188,37 @@
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=europa&type=sopas">
+                <a href="/category/europa/sopas">
                     <img src="$viewsUrl/img/sopaCat.png" alt="Colombian">
                     <h2>Sopas</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=europa&type=vegana">
+                <a href="/category/europa/vegana">
                     <img src="$viewsUrl/img/vegetarianCat.png" alt="Italian">
                     <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=europa&type=gourmet">
+                <a href="/category/europa/gourmet">
                     <img src="$viewsUrl/img/gourmetCat.png" alt="Mexican">
                     <h2>Gourmet</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=europa&type=postres">
+                <a href="/category/europa/postres">
                     <img src="$viewsUrl/img/postresCat.png" alt="Mexican">
                     <h2>Postres</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=europa&type=casero">
+                <a href="/category/europa/casero">
                     <img src="$viewsUrl/img/caseroCat.png" alt="Vegetarian">
                     <h2>Casero</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=europa&type=tipicas">
+                <a href="/category/europa/tipicas">
                     <img src="$viewsUrl/img/europaTipica.png" alt="Hamburguesa">
                     <h2>Tipicas</h2>
                 </a>
@@ -229,37 +232,37 @@
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=africa&type=sopas">
+                <a href="/category/africa/sopas">
                     <img src="$viewsUrl/img/sopaCat.png" alt="Colombian">
                     <h2>Sopas</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=africa&type=vegana">
+                <a href="/category/africa/vegana">
                     <img src="$viewsUrl/img/vegetarianCat.png" alt="Italian">
                     <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=africa&type=gourmet">
+                <a href="/category/africa/gourmet">
                     <img src="$viewsUrl/img/gourmetCat.png" alt="Mexican">
                     <h2>Gourmet</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=africa&type=postres">
+                <a href="/category/africa/postres">
                     <img src="$viewsUrl/img/postresCat.png" alt="Mexican">
                     <h2>Postres</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=africa&type=casero">
+                <a href="/category/africa/casero">
                     <img src="$viewsUrl/img/caseroCat.png" alt="Vegetarian">
                     <h2>Casero</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=africa&type=tipicas">
+                <a href="/category/africa/tipicas">
                     <img src="$viewsUrl/img/africaTipica.png" alt="Hamburguesa">
                     <h2>Tipicas</h2>
                 </a>
@@ -273,37 +276,37 @@
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=oceania&type=sopas">
+                <a href="/category/oceania/sopas">
                     <img src="$viewsUrl/img/sopaCat.png" alt="Colombian">
                     <h2>Sopas</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=oceania&type=vegana">
+                <a href="/category/oceania/vegana">
                     <img src="$viewsUrl/img/vegetarianCat.png" alt="Italian">
                     <h2>Vegana</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=oceania&type=gourmet">
+                <a href="/category/oceania/gourmet">
                     <img src="$viewsUrl/img/gourmetCat.png" alt="Mexican">
                     <h2>Gourmet</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=oceania&type=postres">
+                <a href="/category/oceania/postres">
                     <img src="$viewsUrl/img/postresCat.png" alt="Mexican">
                     <h2>Postres</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=oceania&type=casero">
+                <a href="/category/oceania/casero">
                     <img src="$viewsUrl/img/caseroCat.png" alt="Vegetarian">
                     <h2>Casero</h2>
                 </a>
             </div>
             <div class="categoryDiv Whiteindice">
-                <a href="./category.php?region=oceania&type=tipicas">
+                <a href="/category/oceania/tipicas">
                     <img src="$viewsUrl/img/oceaniaTipica.png" alt="Hamburguesa">
                     <h2>Tipicas</h2>
                 </a>

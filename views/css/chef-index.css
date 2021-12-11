@@ -75,7 +75,7 @@ section{
     width: 83%;
     max-width: 83%;
     position: fixed;
-    height: 9vh;
+    height: fit-content;
     bottom: 0.5%;
     left: 8.5%;
     backdrop-filter: blur(15px);
@@ -90,6 +90,7 @@ section{
     opacity: 0;
     z-index: 10;
     background-color: white;
+    flex-wrap: wrap;
 }
 
 .categoryDiv{
@@ -678,12 +679,14 @@ section{
 
 #notFoundRecipes{
     width: 100%;
-    height: 34vh;
+    height: 72vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     align-items: center;
     color: #FFB5B5;
+    margin: 9% 0 0 0;
 }
 #notFoundRecipes img{
     width: 25vh;
@@ -802,6 +805,7 @@ section{
     }
     .subcategories-down{
         display:none;
+        bottom: 10.5%;
     }
     .action-btn{
         width: 8vh;
@@ -993,7 +997,21 @@ section{
         width: 6vh;
         height: 6vh;
     }.categories-down{
-        visibility:hidden;
+        bottom: 8.5%;
+        height: fit-content;
+        flex-wrap: wrap;
+    }
+    .categoryDiv img{
+        display: none;
+    }
+    .categoryDiv{
+        width: 25%;
+        margin-bottom: 1%;
+    }
+    #btnCategoriesShow{
+        bottom: 1.2vh;
+        right: 8%;
+        z-index: 999999;
     }
 }
 @media (max-width: 690px) {
@@ -1048,16 +1066,42 @@ section{
     }.next-text-recipe a p{
         font-size: .90rem;
     }
+    .categoryDiv{
+        width: 35%;
+    }
+    
 }
-@media (max-width: 430px){
+@media (max-width: 520px){
     .summary-info article p{
         font-size: 1rem;
     }
+    #btnCategoriesShow{
+        bottom: 13vh;
+        box-shadow: rgba(255, 255, 255, 0.26) 0 0 20px 1px ;
+    }
+    
     .description{
         font-size: .9rem;
     }
     .chef-social-media a img{
         object-fit: contain;
+    }
+    .Darkindice{
+        width: 65%;
+        margin-bottom: 5%;
+    }
+    .categories-down{
+        height: fit-content;
+    }
+    #title-ctc{
+        font-size: 1.5em;
+    }
+}
+ 
+
+@media (max-width: 280px){
+    #title-ctc{
+        font-size: 1.5em;
     }
 }
 @media (max-height: 783px){

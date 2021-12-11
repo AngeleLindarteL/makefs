@@ -44,6 +44,14 @@ if (isset($_GET["view"])) {
             $_GET["receta"] = $view[1];
             include "./views/editRecipe.php";
             break;
+        case 'category':
+            if (!isset($view[1])){
+                include "./views/error.php";
+            }
+            $_GET["region"] = $view[1];
+            $_GET["type"] = $view[2];
+            include "./views/category.php";
+            break;
         default:
             include "./views/error.php";
         break;

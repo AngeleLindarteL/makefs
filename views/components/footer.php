@@ -1,11 +1,14 @@
 <?php
-if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1){
-	$viewsUrl = "../views";
-	$mediaUrl = "../mediaDB";
-}else{
-	$viewsUrl = "views";
-	$mediaUrl = "mediaDB";
-}
+    if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1 && sizeof(explode("/",$_SERVER["REQUEST_URI"])) < 3){
+        $viewsUrl = "../views";
+        $mediaUrl = "../mediaDB";
+    }else if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 2){
+        $viewsUrl = "../../views";
+        $mediaUrl = "../../mediaDB";
+    }else{
+        $viewsUrl = "views";
+        $mediaUrl = "mediaDB";
+    }
 echo <<<EOT
 	<footer class="footer">
 		<div class="titlemakefs">

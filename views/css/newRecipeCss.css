@@ -340,7 +340,7 @@ section{
     height: 100%;
     width: 50%;
     background: transparent;
-    color: white;
+    color: inherit;
     text-align: center;
 }
 .oneStepNewRecipe input{

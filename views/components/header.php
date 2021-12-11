@@ -11,9 +11,12 @@
     }else{
         $isloged = false;
     }
-    if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1){
+    if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1 && sizeof(explode("/",$_SERVER["REQUEST_URI"])) < 3){
         $viewsUrl = "../views";
         $mediaUrl = "../mediaDB";
+    }else if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 2){
+        $viewsUrl = "../../views";
+        $mediaUrl = "../../mediaDB";
     }else{
         $viewsUrl = "views";
         $mediaUrl = "mediaDB";
