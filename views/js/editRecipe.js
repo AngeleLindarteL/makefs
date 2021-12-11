@@ -82,14 +82,30 @@ btnLessIngredients.addEventListener("click",()=>{
 })
 
 
+let recipeContainers = document.querySelectorAll(".oneStepNewRecipe");
+let generalCount = 0;
 
+recipeContainers.forEach(stepContainer => {
+    const actualCount = generalCount;
+    stepContainer.children[1].addEventListener("click", () => {
+        localStorage.setItem("MinutesPointer",[actualCount,1])
+    })
+    stepContainer.children[2].addEventListener("click", () => {
+        localStorage.setItem("MinutesPointer",[actualCount,2])
+    })
+    generalCount++;
+});
 
 addStep.addEventListener("click",()=>{
     btnLessSteps.style.display="inline-block";
     let steps = document.createElement("div");
     let inputTxt = document.createElement("input");
-    let inputMinInicio = document.createElement("input");
-    let inputMinFin = document.createElement("input");
+    let inputMinInicio = document.createElement("div");
+    let inputMinFin = document.createElement("div");
+    let fcMinInicio = document.createElement("input");
+    let lcMinInicio = document.createElement("input");
+    let fcMinFin = document.createElement("input");
+    let lcMinFin = document.createElement("input");
 
     steps.className="oneStepNewRecipe";
 
@@ -100,7 +116,17 @@ addStep.addEventListener("click",()=>{
     }else{
         inputTxt.classList.add("Whiterecipetit");
     }
+
     inputTxt.placeholder="Paso"
+
+    const actualCount = generalCount
+
+    inputMinInicio.addEventListener("click", (e)=>{
+        localStorage.setItem("MinutesPointer",[actualCount,1])
+    })
+    inputMinFin.addEventListener("click", (e)=>{
+        localStorage.setItem("MinutesPointer",[actualCount,2])
+    })
 
     inputMinInicio.type="text";
     inputMinInicio.classList.add("minInicioInput","steps");
@@ -109,9 +135,47 @@ addStep.addEventListener("click",()=>{
     }else{
         inputMinInicio.classList.add("Whiterecipetit");
     }
-    inputMinInicio.placeholder="minInicio"
 
-    inputMinFin.type="text";
+    fcMinInicio.type="number";
+    fcMinInicio.classList="min-in-input";
+    lcMinInicio.type="number";
+    lcMinInicio.classList="min-in-input";
+
+    fcMinInicio.addEventListener("change", () => {
+        if (fcMinInicio.value > splitedDuration[0] || fcMinFin.value < 0) {
+            fcMinInicio.value = splitedDuration[0]
+            lcMinInicio.value = splitedDuration[1]
+        }
+    })
+    lcMinInicio.addEventListener("change", () => {
+        if (lcMinInicio.value > splitedDuration[1] || fcMinFin.value < 0){
+            lcMinInicio.value = splitedDuration[1]
+        }
+    })
+    
+    fcMinFin.type="number";
+    fcMinFin.classList="min-in-input";
+    lcMinFin.type="number";
+    lcMinFin.classList="min-in-input";
+    fcMinFin.addEventListener("change", () => {
+        if (fcMinFin.value > splitedDuration[0] || fcMinFin.value < 0){
+            fcMinFin.value = splitedDuration[0]
+            lcMinFin.value = splitedDuration[1]
+        }
+    })
+    lcMinFin.addEventListener("change", () => {
+        if (lcMinFin.value > splitedDuration[1] || fcMinFin.value < 0){
+            lcMinFin.value = splitedDuration[1]
+        }
+    })
+    
+
+    inputMinInicio.appendChild(fcMinInicio)
+    inputMinInicio.appendChild(lcMinInicio)
+    inputMinFin.appendChild(fcMinFin)
+    inputMinFin.appendChild(lcMinFin)
+    generalCount++
+
     inputMinFin.classList.add("minFinInput","steps");
     if(isDark){
         inputMinFin.classList.add("Darkrecipetit");

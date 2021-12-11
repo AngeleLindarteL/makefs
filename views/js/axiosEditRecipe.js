@@ -21,7 +21,7 @@ deleteRecipe.addEventListener("click",(e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
+                   window.location.href=`/chef/${chefid}`;
                 }
             }
         )
@@ -41,13 +41,11 @@ uploadRecipe.addEventListener("click", (e)=>{
     let contenedorSteps = document.querySelectorAll(".oneStepNewRecipe");
 
     contenedorSteps.forEach(element =>{
-
-        let inputs = element.querySelectorAll(".steps");
-        let step = [];
-        inputs.forEach(elements=>{
-            step.push(elements.value);
-        })
-        steps.push(step);
+            let inputs = element.querySelectorAll(".steps");
+            minIn = inputs[1].children[0].value + ":" + inputs[1].children[1].value;
+            minFn = inputs[2].children[0].value + ":" + inputs[2].children[1].value;
+            steptxt = inputs[0].value;
+            steps.push([steptxt,minIn,minFn]);
     });
     
     let ingredients = document.querySelectorAll(".ingredient");
@@ -78,7 +76,7 @@ uploadRecipe.addEventListener("click", (e)=>{
             res => {
                 console.log(res);
                 if(res.status==200){
-                   window.location.href=`../views/chef-view.php?chef=${chefid}`;
+                   window.location.href=`/chef/${chefid}`;
                 }
             }
         )

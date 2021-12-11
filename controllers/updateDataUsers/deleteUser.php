@@ -26,7 +26,7 @@ include("../../models/conexion.php");
                 $delete->execute(array(":id"=>$_SESSION["id"]));
                 $conn->commit();
                 include('../cerrar.php');
-                header("location: ../../views/login.php");
+                header("location: /login");
             }catch(Exception $e){
                 $conn->rollBack();
                 echo "Failed: " . $e->getMessage();

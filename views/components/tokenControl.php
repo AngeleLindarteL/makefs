@@ -1,5 +1,5 @@
 <?php
-    include("../controllers/jwtController.php");
+    include("controllers/jwtController.php");
     if (!isset($_SESSION["token"])) {
         echo <<<EOT
             <script>
@@ -23,8 +23,8 @@
             $validatingToken = validateToken($token);
         }catch(Exception $e){
             destroyToken($token);
-            include('../controllers/cerrar.php');
-            header("Location: ../views/login.php");
+            include('controllers/cerrar.php');
+            header("Location: /login");
         }
     }
 ?>

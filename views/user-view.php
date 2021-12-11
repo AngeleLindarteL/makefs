@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-    <link href="./css/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/chef-index.css">
-    <link href="./css/footer.css" rel="stylesheet">
-    <link href="./css/user-view.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet">
-    <link href="./css/notifications.css" rel="stylesheet">
-    <link href="./css/DarkUser.css" rel="stylesheet">
-    <link href="./css/DarkMenu.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
+    <link href="views/css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="views/css/chef-index.css">
+    <link href="views/css/footer.css" rel="stylesheet">
+    <link href="views/css/user-view.css" rel="stylesheet">
+    <link href="views/css/header.css" rel="stylesheet">
+    <link href="views/css/notifications.css" rel="stylesheet">
+    <link href="views/css/DarkUser.css" rel="stylesheet">
+    <link href="views/css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="description" content="Tu perfil Makefs, mira tu informacion personal y modificala">
     <meta name="robots" content="index, follow">
     <title>Perfil - Makefs</title>
     <?php
-        include('./components/sessionControl.php');
-        include("./components/tokenControl.php");
+        include('views/components/sessionControl.php');
+        include("views/components/tokenControl.php");
         if(isset($_SESSION["chefid"])){
-            header("location: ./chef-view.php");
+            header("location: /chef");
         }
     ?>
     <script>
@@ -30,9 +30,9 @@
 </head>
 <body class="White">
     <?php
-        include('./components/header.php');
-        include('./components/menudesplegable.php');
-        include("./components/test_inputs.php");
+        include('views/components/header.php');
+        include('views/components/menudesplegable.php');
+        include("views/components/test_inputs.php");
     ?>
     <div class="makefs-notification">
         <figure class="makefs-notification-rep"></figure>
@@ -43,7 +43,7 @@
             <div id="userNoChefContainer" class="WhiteChefcont">
                 <div class="divUser-view" id="firstdiv">
                     <figure class="profile-pic-user">
-                        <img class="profile-pic-img-user" src="../mediaDB/usersImg/<?php echo $_SESSION['midpic']; ?>">
+                        <img class="profile-pic-img-user" src="mediaDB/usersImg/<?php echo $_SESSION['midpic']; ?>">
                         <button id="profile-edit"></button>
                     </figure>
                     <section class="divUser-view" id="cambiarFoto">
@@ -64,7 +64,7 @@
                     </section>
                     <section class="divUser-view" id="deleteAccountContainer">
                         <button id="profile-close-deleteAccount"></button>
-                        <form action="../controllers/updateDataUsers/deleteUser.php" id="deleteAccount" method="POST">
+                        <form action="controllers/updateDataUsers/deleteUser.php" id="deleteAccount" method="POST">
                             <h2>BORRAR CUENTA</h2>
                             <h3>Esta decisión es permanente, ingresa tu contraseña para probar que eres tu.</h3>
                             <input type="text" class="passInput" placeholder="Contraseña" name="deleteUserPass">
@@ -93,7 +93,7 @@
                                 <p>Los videos que no estén acorde a la plataforma o que contengan contenido para adultos será eliminado.</p>
                             </div>
                             <div id="divBtnBeChef">
-                                <button id="wantBeChefBtn"><h4>Acepto, ¡A Cocinar!</h4><img src="./img/chefHatRed.png" alt=""></button>
+                                <button id="wantBeChefBtn"><h4>Acepto, ¡A Cocinar!</h4><img src="views/img/chefHatRed.png" alt=""></button>
                             </div>
                         </div>
                             
@@ -110,19 +110,19 @@
                 <form class="divUser-view importantDataUser" action="" method="POST"> 
                     <div id="socialMediaUser">
                         <div class="socialmediadiv">
-                            <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT-user" target="__blank"><img src="./img/user-facebook.png"></a>
+                            <a href="<?php echo $_SESSION["facebook"] ?>" id="fbTxT-user" target="__blank"><img src="views/img/user-facebook.png"></a>
                             <input type="text" class="inputsToEnable" id="fbinput" value="<?php echo test_input($_SESSION["facebook"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT-user" target="__blank"><img src="./img/user-instagram.png"></a>
+                            <a href="<?php echo $_SESSION["instagram"] ?>" id="igTxT-user" target="__blank"><img src="views/img/user-instagram.png"></a>
                             <input type="text" class="inputsToEnable" id="iginput" value="<?php echo test_input($_SESSION["instagram"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <a href="<?php echo $_SESSION["twitter"] ?>" id="twTxt-user" target="__blank"><img src="./img/user-twitter.png"></a>
+                            <a href="<?php echo $_SESSION["twitter"] ?>" id="twTxt-user" target="__blank"><img src="views/img/user-twitter.png"></a>
                             <input type="text" class="inputsToEnable" id="twinput" value="<?php echo test_input($_SESSION["twitter"])?>" disabled>
                         </div>
                         <div class="socialmediadiv">
-                            <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="./img/user-youtube.png"></a>
+                            <a href="<?php echo $_SESSION["youtube"] ?>" id="ytTxT-user" target="__blank"><img src="views/img/user-youtube.png"></a>
                             <input type="text" class="inputsToEnable" id="ytinput" value="<?php echo test_input($_SESSION["youtube"])?>" disabled>
                         </div>
                         
@@ -164,15 +164,15 @@
         </div>
     </section>
     <?php
-        include('./components/footer.php');
+        include('views/components/footer.php');
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/chef-view.js"></script>
-    <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/chageInfoUser.js"></script>
-    <script src="./js/axiosUser.js"></script>
-    <script src="./js/upload_pic_user_view.js"></script>
-    <script src="./js/DarkModeUser.js"></script>
-    <script src="./js/DarkModeMenu.js"></script>
+    <script src="views/js/index.js"></script>
+    <script src="views/js/chef-view.js"></script>
+    <script src="views/js/menuDesplegable.js"></script>
+    <script src="views/js/chageInfoUser.js"></script>
+    <script src="views/js/axiosUser.js"></script>
+    <script src="views/js/upload_pic_user_view.js"></script>
+    <script src="views/js/DarkModeUser.js"></script>
+    <script src="views/js/DarkModeMenu.js"></script>
 </body>
 </html>

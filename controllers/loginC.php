@@ -1,14 +1,21 @@
 <?php
 session_start();
-include("./jwtController.php");
+
+try {
+    include_once("../vendor/autoload.php");
+    include_once("../models/conexion.php");
+    include("jwtController.php");
+} catch (Exception $th) {
+
+}
 include("../views/components/test_inputs.php");
     if(isset($_POST['cerrar_sesion'])){
         destroyToken($_SESSION["token"]);
-        include('./cerrar.php');
-        header("Location: ../views/login.php");
+        include('controllers/cerrar.php');
+        header("Location: /login");
     }
     if(isset($_SESSION['auth'])){
-        header("Location: ../views/index.php");      
+        header("Location: /");      
     }
 
     if(isset($_POST['logeo'])){
@@ -95,17 +102,17 @@ include("../views/components/test_inputs.php");
                     }
                     
                     $_SESSION["token"] = $token;
-                    header("location: ../views/index.php");
+                    header("location: /");
                     
 
                 }else{
                     $_SESSION["errorLog"] = "contrasena";
-                    header("location: ../views/login.php");
+                    header("location: /login");
                 }
                 
             }else{
                 $_SESSION["errorLog"] = "user";
-                header("location: ../views/login.php");
+                header("location: /login");
             }
             
         }

@@ -170,7 +170,7 @@ const playAction = () => {
     if(video.paused){
         video.play();
         centralPanel.classList.add("makefs-video-in-panel-played");
-        play.style.backgroundImage = "url(./img/video-controls/pause.png)";
+        play.style.backgroundImage = "url(../views/img/video-controls/pause.png)";
         progressBar.setAttribute("max",duration);
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-played")
@@ -182,7 +182,7 @@ const playAction = () => {
     }else{
         video.pause();
         centralPanel.classList.add("makefs-video-in-panel-paused");
-        play.style.backgroundImage = "url(./img/video-controls/play.png)";
+        play.style.backgroundImage = "url(../views/img/video-controls/play.png)";
         setTimeout(() => {
             centralPanel.classList.remove("makefs-video-in-panel-paused")
         },180);
@@ -359,11 +359,11 @@ const muteAction = () => {
         }
         video.muted = false;
         localStorage.setItem("muted", false);
-        mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
+        mute.style.backgroundImage = "url(../views/img/video-controls/volume.png)";
     }else{
         video.muted = true;
         localStorage.setItem("muted", true);
-        mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)";
+        mute.style.backgroundImage = "url(../views/img/video-controls/volume-muted.png)";
     }
 }
 
@@ -372,7 +372,7 @@ const changeVolume = (vol) => {
         video.volume = 0;
         video.muted = true;
         localStorage.setItem("muted", true);
-        mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)";
+        mute.style.backgroundImage = "url(../views/img/video-controls/volume-muted.png)";
     }
     if (vol > 1){
         video.volume = 1;
@@ -380,7 +380,7 @@ const changeVolume = (vol) => {
     if (vol > 0) {
         video.muted = false;
         localStorage.setItem("muted", false);
-        mute.style.backgroundImage = "url(./img/video-controls/volume.png)";
+        mute.style.backgroundImage = "url(../views/img/video-controls/volume.png)";
     }
     video.volume = vol;
     window.localStorage.setItem("common_volume", video.volume)
@@ -624,7 +624,7 @@ draggable_progress.addEventListener("dragend", (e)=>{
 })
 
 video.addEventListener("ended", () => {
-    play.style.backgroundImage = "url(./img/video-controls/play.png)";
+    play.style.backgroundImage = "url(../views/img/video-controls/play.png)";
 })
 
 config.addEventListener("click", () => {
@@ -669,10 +669,10 @@ if (window.localStorage.getItem("common_volume")) {
 
 if(localStorage.getItem("muted") === "false"){
     video.mute = false;
-    mute.style.backgroundImage = "url(./img/video-controls/volume.png)"
+    mute.style.backgroundImage = "url(../views/img/video-controls/volume.png)"
 }else{
     video.muted = true;
-    mute.style.backgroundImage = "url(./img/video-controls/volume-muted.png)"
+    mute.style.backgroundImage = "url(../views/img/video-controls/volume-muted.png)"
 }
 
 // In video Steps Section
@@ -691,7 +691,7 @@ const changeStepPanelState = () =>{
     }else{
         videoPlayerProperties.isInStepsPanel = true;
         stepsContainer.style.right = "0px";
-        stepsButton.style.backgroundImage = "url(./img/video-controls/steps-close.png)";
+        stepsButton.style.backgroundImage = "url(../views/img/video-controls/steps-close.png)";
         stepsButton.style.transform = "rotate(360deg)";
         stepsButton.style.opacity = "100%";
     }
@@ -781,9 +781,9 @@ const loading_animation = document.querySelector(".loading-rate-action");
 let allStarsContainer = document.querySelectorAll(".makefs-selection-star-container");
 let starTimeOut = null;
 const starImages = {
-    "empty": "./img/video-controls/star-empty.png",
-    "mid": "./img/video-controls/star-mid-rate.png",
-    "full": "./img/video-controls/star-full-rate.png",
+    "empty": "../views/img/video-controls/star-empty.png",
+    "mid": "../views/img/video-controls/star-mid-rate.png",
+    "full": "../views/img/video-controls/star-full-rate.png",
 }
 
 

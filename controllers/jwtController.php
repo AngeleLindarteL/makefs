@@ -1,10 +1,10 @@
 <?php
-
-    include_once "../vendor/autoload.php";
-    include_once "../models/conexion.php";
+    try {
+        include_once "vendor/autoload.php";
+        include_once "models/conexion.php";
+    } catch (Exception $th) {
+    }
     use Firebase\JWT\JWT;
-    use Firebase\JWT\ExpiredException;
-    use Firebase\JWT\SignatureInvalidException;
 
 use function PHPSTORM_META\type;
 

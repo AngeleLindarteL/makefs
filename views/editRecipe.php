@@ -7,22 +7,22 @@
     <meta name="description" content="Edita tus recetas subidas a makefs">
     <meta name="robots" content="index, follow">
     <title>Editando Receta</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/chef-index.css">
-    <link rel="stylesheet" href="./css/newRecipeCss.css">
-    <link rel="stylesheet" href="./css/newRecipeEdit.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/DarkEdit.css">
-    <link rel="stylesheet" href="./css/DarkMenu.css">
+    <link rel="stylesheet" href="../views/css/normalize.css">
+    <link rel="stylesheet" href="../views/css/chef-index.css">
+    <link rel="stylesheet" href="../views/css/newRecipeCss.css">
+    <link rel="stylesheet" href="../views/css/newRecipeEdit.css">
+    <link rel="stylesheet" href="../views/css/header.css">
+    <link rel="stylesheet" href="../views/css/footer.css">
+    <link rel="stylesheet" href="../views/css/DarkEdit.css">
+    <link rel="stylesheet" href="../views/css/DarkMenu.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
     <?php
-        include('./components/sessionControl.php');
-        include("./components/tokenControl.php");
-        include("./components/test_inputs.php");
+        include('views/components/sessionControl.php');
+        include("views/components/tokenControl.php");
+        include("views/components/test_inputs.php");
         if (!isset($_GET["receta"]) || empty($_GET["receta"])){
-            header("location: ./error.html");
+            header("location: /error");
             exit;
         }
         $idRecipe = $_GET["receta"];
@@ -34,11 +34,11 @@
         $data = $data->fetch(PDO::FETCH_ASSOC);
 
         if(empty($_SESSION["chefid"])){
-            header("location: ./error.html");
+            header("location: /error");
         }
 
         if($_SESSION["chefid"]!=$data["chefid"]){
-            header("location: ./error.html");
+            header("location: /error");
         }
         
         $nombreRecipe = $data["namer"];
@@ -62,8 +62,8 @@
 </head>
 <body class="White">
     <?php
-        include('./components/header.php');
-        include('./components/menudesplegable.php');
+        include('views/components/header.php');
+        include('views/components/menudesplegable.php');
     ?>
     <section id="newRecipeSection">
         <div class="makefsContainer containerNewRecipe">
@@ -221,7 +221,7 @@
                     <div id="stepsEditRecipe">
                         <div id="tittlePasos" class="Whitemaintt">
                             <div id="hatPasosyTxt">
-                                <img src="./img/chefHatRed.png" alt="chef hat">
+                                <img src="../views/img/chefHatRed.png" alt="chef hat">
                                 <h2>Pasos</h2>
                             </div>
                             <div id="btnsSteps">
@@ -233,11 +233,19 @@
                         <div id="inputsSteps">
                             <?php
                                 foreach($steps as $step){
+                                    $minIn = explode(":",$step[1]);
+                                    $minFn = explode(":",$step[2]);
                                     echo <<<EOT
                                     <div class="oneStepNewRecipe">
-                                        <input required type="text" class="stepTxtInput steps Whiterecipetit" value="$step[0]">
-                                        <input required type="number" class="minInicioInput steps Whiterecipetit" value="$step[1]">
-                                        <input required type="number" class="minFinInput steps Whiterecipetit" value="$step[2]">
+                                        <input type="text" class="stepTxtInput steps Whiterecipetit" placeholder="Paso" value="$step[0]">
+                                        <div class="minInicioInput steps Whiterecipetit">
+                                            <input type="number" class="min-in-input" value="$minIn[0]">
+                                            <input type="number" class="min-in-input" value="$minIn[1]">
+                                        </div>
+                                        <div class="minFinInput steps Whiterecipetit">
+                                            <input type="number" class="min-in-input" value="$minFn[0]">  
+                                            <input type="number" class="min-in-input" value="$minFn[1]">
+                                        </div>
                                     </div>
                                     EOT;
                                 }
@@ -248,19 +256,23 @@
                     
                 </div>
                 <div>
-
                 </div>
             </div>
         </div>
     </section>
+    <div class="mini-reproductor MRShowing">
+        <video controls="true" src="<?php echo "../mediaDB/recipeVideos/$data[video]"?>"></video>
+        <button id="closeMRBtn">x</button>
+    </div>
     <?php
-        include('./components/footer.php');
+        include('views/components/footer.php');
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/editRecipe.js"></script>
-    <script src="./js/axiosEditRecipe.js"></script>
-    <script src="./js/DarkModeEdit.js"></script>
-    <script src="./js/DarkModeMenu.js"></script>
+    <script src="../views/js/index.js"></script>
+    <script src="../views/js/menuDesplegable.js"></script>
+    <script src="../views/js/editRecipe.js"></script>
+    <script src="../views/js/axiosEditRecipe.js"></script>
+    <script src="../views/js/mediaPlayer.js"></script>
+    <script src="../views/js/DarkModeEdit.js"></script>
+    <script src="../views/js/DarkModeMenu.js"></script>
 </body>
 </html>

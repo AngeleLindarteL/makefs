@@ -7,21 +7,21 @@
     <meta name="description" content="Crea una nueva receta para la comunidad!">
     <meta name="robots" content="index, follow">
     <title>Nueva Receta! Makefs</title>
-    <link rel="stylesheet" href="./css/chef-index.css">
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/newRecipeCss.css">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link href="./css/notifications.css" rel="stylesheet">
-    <link href="./css/DarkRecipe.css" rel="stylesheet">
-    <link href="./css/DarkMenu.css" rel="stylesheet">
+    <link rel="stylesheet" href="views/css/chef-index.css">
+    <link rel="stylesheet" href="views/css/normalize.css">
+    <link rel="stylesheet" href="views/css/newRecipeCss.css">
+    <link rel="stylesheet" href="views/css/footer.css">
+    <link rel="stylesheet" href="views/css/header.css">
+    <link href="views/css/notifications.css" rel="stylesheet">
+    <link href="views/css/DarkRecipe.css" rel="stylesheet">
+    <link href="views/css/DarkMenu.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
     <?php
-        include('./components/sessionControl.php');
-        include("./components/tokenControl.php");
+        include('views/components/sessionControl.php');
+        include("views/components/tokenControl.php");
         if(empty($_SESSION['chefid'])){
-            header("location: ./error.html");
+            // header("location: /error");
         }
         echo <<<EOT
             <script>
@@ -33,8 +33,8 @@
 </head>
 <body class="White">
     <?php
-        include('./components/header.php');
-        include('./components/menudesplegable.php');
+        include('views/components/header.php');
+        include('views/components/menudesplegable.php');
     ?>
     <div class="makefs-notification">
         <figure class="makefs-notification-rep"></figure>
@@ -96,14 +96,14 @@
                     <div id="multimediaNewRecipe">
                         <div class="divMultimedia" id="divUploadVideo">
                             <label for="recipeVideo"  id="btnVideoUpload">
-                                <img class="Whiteimgr" src="./img/addVideoRecipe.png" alt="agregar video">
+                                <img class="Whiteimgr" src="views/img/addVideoRecipe.png" alt="agregar video">
                             </label>
                             <h4 class="Whitemaintt">Inserta tu video Preparacion</h4>
                             <input type="file" id="recipeVideo" class="inputfileNewRecipe" name="recipeVideo" accept="video/mp4, video/webm" required> 
                         </div>
                         <div class="divMultimedia" id="divUploadImg">
                             <label for="recipeImg"  id="btnImgUpload" class="Whiteimgr">
-                                <img  src="./img/imagen.png" alt="agregar imagen">
+                                <img  src="views/img/imagen.png" alt="agregar imagen">
                             </label>
                             <h4 class="Whitemaintt">Inserta la imagen de tu receta</h4>
                             <input type="file" id="recipeImg" class="inputfileNewRecipe" name="recipeImg" accept=".jpg, .png" required> 
@@ -112,7 +112,7 @@
                     <div id="stepsNewRecipe">
                         <div id="tittlePasos" class="Whitemaintt Whiteline">
                             <div id="hatPasosyTxt">
-                                <img src="./img/chefHatRed.png" alt="chef hat">
+                                <img src="views/img/chefHatRed.png" alt="chef hat">
                                 <h2>Pasos</h2>
                             </div>
                             <div id="btnsSteps">
@@ -132,13 +132,13 @@
         </div>
     </section>
     <?php
-        include('./components/footer.php');
+        include('views/components/footer.php');
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/newRecipe.js"></script>
-    <script src="./js/axiosNewRecipe.js"></script>
-    <script src="./js/DarkModeRecipe.js"></script>
-    <script src="./js/DarkModeMenu.js"></script>
+    <script src="views/js/index.js"></script>
+    <script src="views/js/menuDesplegable.js"></script>
+    <script src="views/js/newRecipe.js"></script>
+    <script src="views/js/axiosNewRecipe.js"></script>
+    <script src="views/js/DarkModeRecipe.js"></script>
+    <script src="views/js/DarkModeMenu.js"></script>
 </body>
 </html>

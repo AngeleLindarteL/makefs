@@ -1,0 +1,7 @@
+Options All -Indexes
+
+ErrorDocument 400 /makefs/views/error.html
+ErrorDocument 401 /makefs/views/error.html
+ErrorDocument 403 /makefs/views/error.html
+ErrorDocument 404 /makefs/views/error.html
+ErrorDocument 500 /makefs/views/error.html

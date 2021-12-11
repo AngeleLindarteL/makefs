@@ -4,7 +4,7 @@
         <form action="#" method="POST" id="report">
             <div class="reasonReport">
                 <div id="closereport"> 
-                    <img src="./img/icoCloseReport.png"  alt="closereport">
+                    <img src="../views/img/icoCloseReport.png"  alt="closereport">
                 </div>
                 
                 <select id="reasonSelect">

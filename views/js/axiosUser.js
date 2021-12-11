@@ -72,7 +72,7 @@ updatePassBtn.addEventListener("click",(e)=>{
         axios.post("../controllers/updateDataUsers/updatePass.php",infoPass).then(
             res=> {
                 console.log(res);
-                window.location.href="../views/login.php";
+                window.location.href="/login";
             }
         )
         
@@ -94,7 +94,7 @@ beChefbtn.addEventListener("click",(e)=>{
         axios.post("../controllers/updateDataUsers/beChefController.php",infoBeChef).then(
             res=> {
                 console.log(res);
-                window.location.href=`../views/chef-view.php?chef=${res.data}`;
+                window.location.href=`/chef/${res.data}`;
             }
         )
         

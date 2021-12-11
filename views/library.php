@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tus recetas guardadas para despues cocinarlas!">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../views/favicon/makefslogo.png">
     <title>Tu biblioteca Makefs</title>
-    <link href="./css/normalize.css" rel="stylesheet">
-    <link href="./css/chef-index.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet">
-    <link href="./css/footer.css" rel="stylesheet">
-    <link href="./css/notifications.css" rel="stylesheet">
-    <link href="./css/libraryNotif.css" rel="stylesheet">
-    <link href="./css/libraryNotif.css" rel="stylesheet">
-    <link href="./css/library.css" rel="stylesheet">
-    <link href="./css/Darklibrary.css" rel="stylesheet">
-    <link href="./css/DarkMenu.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/Preloader.css">
+    <link href="../views/css/normalize.css" rel="stylesheet">
+    <link href="../views/css/chef-index.css" rel="stylesheet">
+    <link href="../views/css/header.css" rel="stylesheet">
+    <link href="../views/css/footer.css" rel="stylesheet">
+    <link href="../views/css/notifications.css" rel="stylesheet">
+    <link href="../views/css/libraryNotif.css" rel="stylesheet">
+    <link href="../views/css/libraryNotif.css" rel="stylesheet">
+    <link href="../views/css/library.css" rel="stylesheet">
+    <link href="../views/css/Darklibrary.css" rel="stylesheet">
+    <link href="../views/css/DarkMenu.css" rel="stylesheet">
+    <link rel="stylesheet" href="../views/css/Preloader.css">
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <?php
-        include("../models/conexion.php");
-        include("./components/sessionControl.php");
-        include("./components/tokenControl.php");
-        include("./components/test_inputs.php");
+        include("models/conexion.php");
+        include("./views/components/sessionControl.php");
+        include("./views/components/tokenControl.php");
+        include("./views/components/test_inputs.php");
         $ToCompareUserId = json_decode(decodeUserData($_SESSION["token"]));
         if (
             $ToCompareUserId->id != $_SESSION["id"] ||
@@ -65,15 +65,15 @@
 </head>
 <body class="White">
     <?php
-    include('./components/header.php');
-    include('./components/menudesplegable.php');
-    include('./components/preloader.php');
+    include('./views/components/header.php');
+    include('./views/components/menudesplegable.php');
+    include('./views/components/preloader.php');
     ?>
     <div class="pile-waiting">
         <p>En pila</p>
     </div>
     <div class="bookshelf-notification">
-        <img id="bookshelf-icon" src="./iconos/book.png" alt="guardados">
+        <img id="bookshelf-icon" src="../views/iconos/book.png" alt="guardados">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
         <a target="_blank" id="cancel-elimination" to_cancel="0">Deshacer</a>
     </div>
@@ -133,13 +133,13 @@
                         }
                         echo <<< EOT
                         <div class="recipe-template">
-                            <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
+                            <a class="image-template" href="/recipe/$recipeid">
                                 <img src="../mediaDB/recipeImages/$imagen" alt="imagen de receta">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
+                                <figure class="star-template WhiteStar"><img src="../views/img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
                             </a>
                             <div class="next-text-recipe whiterecipet">
                                 <img src="../mediaDB/usersImg/$midpic" alt="imagen de usuario">
-                                <a href="./chef-view.php?chef=$chefid" target="__blank">
+                                <a href="./chef/$chefid" target="__blank">
                                      <h3 class='text-template'>$recetaname</h3>
                                      <p>$username</p>
                                         <p>$views Views</p>
@@ -155,7 +155,7 @@
                     if(empty($dataAll["recipeid"]) && empty($recipe)){
                         echo <<<EOT
                             <div id="notFoundRecipes">
-                                <img src="./img/notFoundRecipes.png" alt="cookie">
+                                <img src="../views/img/notFoundRecipes.png" alt="cookie">
                                 <h3>No tienes recetas aún! Empieza a guardar tus favoritas</h3>
                             </div>
                         EOT;
@@ -203,7 +203,7 @@
                             <div class="recipe-template">
                                 <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
                                     <img src="../mediaDB/recipeImages/$imagen" alt="imagen de receta">
-                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
+                                    <figure class="star-template WhiteStar"><img src="../views/img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
                                 </a>
                                 <div class="next-text-recipe whiterecipet">
                                     <img src="../mediaDB/usersImg/$midpic" alt="imagen de usuario">
@@ -232,14 +232,13 @@
         </div>
     </section>
     <?php
-        include("./components/footer.php");
+        include("./views/components/footer.php");
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/library.js"></script>
-    <script src="./js/DarkModeLibrary.js"></script>
-    <script src="./js/DarkModeMenu.js"></script>
-    <script src="./js/footerHidden.js"></script>
-    <script src="./js/DarkLoader.js"></script>
-<script src="./js/preloader.js"></script>
+    <script src="../views/js/index.js"></script>
+    <script src="../views/js/library.js"></script>
+    <script src="../views/js/DarkModeLibrary.js"></script>
+    <script src="../views/js/DarkModeMenu.js"></script>
+    <script src="../views/js/DarkLoader.js"></script>
+<script src="../views/js/preloader.js"></script>
 </body>
 </html>

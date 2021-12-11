@@ -38,7 +38,7 @@ include("../models/conexion.php");
                         unset($_SESSION["errorLog"]);
                     }
 
-                    header("location: ../views/login.php");
+                    header("location: /login");
                     
                     $url = "https://makefsapi.herokuapp.com/user/$id";
                     
@@ -51,7 +51,7 @@ include("../models/conexion.php");
                 }catch(PDOException $e){
                     $conexion->rollBack();
                     $_SESSION["errorRegister"] = $e->getMessage();
-                    header("location: ../views/register.php");
+                    header("location: /register");
                 }catch(Exception $e){
                     $conexion->rollBack();
                     $_SESSION["errorRegister"] = $e;
@@ -61,7 +61,7 @@ include("../models/conexion.php");
             }
         }else{
             $_SESSION["errorRegister"] = "contrasNoCoinciden";
-            header("location: ../views/register.php");
+            header("location: /register");
         }   
     }else{
         echo "Llena todos los campos";

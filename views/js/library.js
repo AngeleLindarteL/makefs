@@ -61,7 +61,7 @@ const hideNotification = () => {
     },5000)
 }
 
-const setNotificationState = ({img="./iconos/book.png",msg="Bookshlef Notification",isLoad=false,hideButton=true,recipeCancelId,recipeTitle,containerPos}) => {
+const setNotificationState = ({img="../views/iconos/book.png",msg="Bookshlef Notification",isLoad=false,hideButton=true,recipeCancelId,recipeTitle,containerPos}) => {
     notification.style.display = "flex";
     setTimeout(() => {
         notification.style.opacity = "1";
@@ -106,15 +106,15 @@ const axiosToLib = (libVideoId,videoTitle,recipePos) => {
         console.log(res);
         if (res.data == "removed"){
             let msg = responseStates.deleted + videoTitle;
-            setNotificationState({img:"./iconos/remove-book.png",msg:msg,isLoad:false,hideButton:false,recipeCancelId:libVideoId,recipeTitle:videoTitle,containerPos:recipePos});
+            setNotificationState({img:"../views/iconos/remove-book.png",msg:msg,isLoad:false,hideButton:false,recipeCancelId:libVideoId,recipeTitle:videoTitle,containerPos:recipePos});
             allRecipes[parseInt(recipePos)].style.width = "0";
             allRecipes[parseInt(recipePos)].style.margin = "0";
         }else if(res.data == "saved"){
             let msg = responseStates.canceled + videoTitle;
-            setNotificationState({img:"./iconos/book.png",msg:msg,isLoad:false})
+            setNotificationState({img:"../views/iconos/book.png",msg:msg,isLoad:false})
             allRecipes[parseInt(recipePos)].removeAttribute("style");
         }else{
-            setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.error,isLoad:true})
+            setNotificationState({img:"../views/iconos/loading-circles.png",msg:responseStates.error,isLoad:true})
         }
         if (asyncHandler.nextInPile.length > 0) {
             asyncHandler.pileNextHandler = setTimeout(() => {
@@ -122,7 +122,7 @@ const axiosToLib = (libVideoId,videoTitle,recipePos) => {
                 axiosToLib(el[0],el[1],el[2]);
                 asyncHandler.nextInPile.shift();
                 asyncHandler.pileIds.shift();
-                setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.loading,isLoad:true})
+                setNotificationState({img:"../views/iconos/loading-circles.png",msg:responseStates.loading,isLoad:true})
                 pileContainer.removeChild(document.querySelectorAll(".waiting-pile")[0]);
                 if (asyncHandler.nextInPile.length == 0){
                     pileContainer.removeAttribute("style");
@@ -133,7 +133,7 @@ const axiosToLib = (libVideoId,videoTitle,recipePos) => {
         }
     })
     .catch((res) => {
-        setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.error,isLoad:true})
+        setNotificationState({img:"../views/iconos/loading-circles.png",msg:responseStates.error,isLoad:true})
     })
 }
 
@@ -176,7 +176,7 @@ triggerConfirmDelete.addEventListener("click", () => {
         pileContainer.style.display = "flex";
         return;
     }
-    setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.loading,isLoad:true});
+    setNotificationState({img:"../views/iconos/loading-circles.png",msg:responseStates.loading,isLoad:true});
     axiosToLib(id,title,pos);
 })
 triggerCancelDelete.addEventListener("click", () => {
@@ -187,7 +187,7 @@ notificationCancelBtn.addEventListener("click", () => {
     let recipeid = notificationCancelBtn.getAttribute("recipeid");
     let recipeTitle = notificationCancelBtn.getAttribute("title");
     let containerPos = notificationCancelBtn.getAttribute("pos");
-    setNotificationState({img:"./iconos/loading-circles.png",msg:responseStates.loading,isLoad:true})
+    setNotificationState({img:"../views/iconos/loading-circles.png",msg:responseStates.loading,isLoad:true})
     if (asyncHandler.pileNextHandler != null){
         clearTimeout(asyncHandler.pileNextHandler);
         asyncHandler.pileNextHandler = null;

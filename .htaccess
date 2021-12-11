@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+Options All -Indexes
+RewriteEngine On
+
+ErrorDocument 400 /views/error.php
+ErrorDocument 401 /views/error.php
+ErrorDocument 403 /views/error.php
+ErrorDocument 404 /views/error.php
+ErrorDocument 500 /views/error.php
+
+RewriteRule ^([A-zA-Z0-9/]+)$ index.php?view=$1

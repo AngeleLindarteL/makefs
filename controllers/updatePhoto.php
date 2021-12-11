@@ -1,7 +1,13 @@
 <?php 
-include("./jwtController.php");
 $headers = apache_request_headers();
+error_reporting(E_ALL ^ E_WARNING); 
+try {
+    include_once("../vendor/autoload.php");
+    include_once("../models/conexion.php");
+    include("jwtController.php");
+} catch (Exception $th) {
 
+}
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

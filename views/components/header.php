@@ -1,15 +1,22 @@
 <?php
     if(isset($_SESSION["chefid"])){
         $ischef = true;
-        $userhome = "../views/chef-view.php?chef=$_SESSION[chefid]";
+        $userhome = "/chef/$_SESSION[chefid]";
     }else{
-        $userhome = "../views/user-view.php";
+        $userhome = "/user";
         $ischef = false;
     }
     if(isset($_SESSION['token'])){
         $isloged = true;
     }else{
         $isloged = false;
+    }
+    if(sizeof(explode("/",$_SERVER["REQUEST_URI"])) > 1){
+        $viewsUrl = "../views";
+        $mediaUrl = "../mediaDB";
+    }else{
+        $viewsUrl = "views";
+        $mediaUrl = "mediaDB";
     }
     echo <<<EOT
     <header>
@@ -26,52 +33,52 @@
                     <h1>Makefs</h1>
                     <h2>Making Chef's</h2>
                 </article>
-                <img class="headlogo_logo" src="./img/makefs-logo.png">
+                <img class="headlogo_logo" src="$viewsUrl/img/makefs-logo.png">
             </div>
     EOT;
         if($isloged){
             echo <<<EOT
                 <div class="header_logreg">
                     <a id="userlog">
-                        <img src="../mediaDB/usersImg/$_SESSION[minpic]">
+                        <img src="$mediaUrl/usersImg/$_SESSION[minpic]">
                     </a>
                     <ul id="user_selection" class="userSelectClose">
                         <div class="userMiniInfo">
-                            <img src="../mediaDB/usersImg/$_SESSION[minpic]">
+                            <img src="$mediaUrl/usersImg/$_SESSION[minpic]">
                             <div class="infoUser">
                                 <h6>$_SESSION[username]</h6>
                                 <p>$_SESSION[email]</p>
                             </div>
                         </div>
                         <a class="headlog_btn" href="$userhome" >
-                            <img id="profileImg" class="headlog_ico first" src="./img/rhico-chef-white.png">
+                            <img id="profileImg" class="headlog_ico first" src="$viewsUrl/img/rhico-chef-white.png">
                             <p>Tu cuenta</p>
                         </a>
             EOT;
                         if($ischef){
                             echo <<<EOT
-                                <a class="headlog_btn" href="./newRecipe.php">
-                                    <img class="headlog_ico first" src="./iconos/upload.png">
+                                <a class="headlog_btn" href="/newrecipe">
+                                    <img class="headlog_ico first" src="$viewsUrl/iconos/upload.png">
                                     <p>Subir contenido</p>
                                 </a>
                             EOT;
                         }
                         if($_SESSION["rol"]=="administrador"){
                             echo <<<EOT
-                                <a class="headlog_btn" href="./adminMakefs.php">
-                                    <img class="headlog_ico first" src="./img/adminPanel.png">
+                                <a class="headlog_btn" href="$viewsUrl/adminMakefs.php">
+                                    <img class="headlog_ico first" src="$viewsUrl/img/adminPanel.png">
                                     <p>Admin Panel</p>
                                 </a>
                             EOT;
                         }
             echo <<<EOT
                         <a class="headlog_btn" id="tb" href="">
-                            <img class="headlog_ico first" id="imgtb"  src="./iconos/moon.svg">
+                            <img class="headlog_ico first" id="imgtb"  src="$viewsUrl/iconos/moon.svg">
                             <p>Cambiar tema</p>
                         </a>
-                        <form action="../controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">
+                        <form action="controllers/loginC.php" method="POST" class="headlog_btn" id="cerrarstyle">
                         <a>
-                            <img class="headlog_ico first" src="./iconos/logout.png">
+                            <img class="headlog_ico first" src="$viewsUrl/iconos/logout.png">
                             <input type="submit" name="cerrar_sesion" id="close_session" value="Cerrar sesion"/>
                         </a>
                         </form>
@@ -82,19 +89,19 @@
             echo <<<EOT
             <div class="header_logreg">
                 <a id="userlog">
-                    <img src="../views/img/hico-user.png">
+                    <img src="$viewsUrl/img/hico-user.png">
                 </a>
                 <ul id="user_selection" class="userSelectClose">
-                    <a class="headlog_btn" href="../views/register.php">
-                        <img class="headlog_ico first" src="./img/registerIcon.png">
+                    <a class="headlog_btn" href="/register">
+                        <img class="headlog_ico first" src="$viewsUrl/img/registerIcon.png">
                         <p>Registrarse</p>
                     </a>
-                    <a class="headlog_btn" href="../views/login.php">
-                        <img class="headlog_ico first" src="./img/loginIcon.png">
+                    <a class="headlog_btn" href="/login">
+                        <img class="headlog_ico first" src="$viewsUrl/img/loginIcon.png">
                         <p>Iniciar Sesión</p>
                     </a>
                     <a class="headlog_btn" id="tb" href="">
-                        <img class="headlog_ico first" id="imgtb"  src="./iconos/moon.svg">
+                        <img class="headlog_ico first" id="imgtb"  src="$viewsUrl/iconos/moon.svg">
                         <p>Cambiar tema</p>
                     </a>
                 </ul>
@@ -109,7 +116,7 @@
     echo <<<EOT
         </div>
         </header>
-        <script src='./js/homesave.js'></script>
-        <script src='./js/headerindex.js'></script>
+        <script src='$viewsUrl/js/homesave.js'></script>
+        <script src='$viewsUrl/js/headerindex.js'></script>
     EOT;
 ?>

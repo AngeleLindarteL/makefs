@@ -34,7 +34,7 @@ const upload = (inputTypeFile) => {
         return;
     }
     imageFormated.append("photo",image);
-    axiosImage.post("../controllers/updatePhoto.php", imageFormated)
+    axiosImage.post("controllers/updatePhoto.php", imageFormated)
     .then(res =>{
         console.log(res)
         if (res.data.msg == "success_200") {

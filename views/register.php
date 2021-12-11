@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Registrate en Makef's!">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-    <link href="./css/register.css" rel="stylesheet">
-    <link href="./css/normalize.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/notificationsLog.css">
-    <link rel="stylesheet" href="./css/DarkRegister.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
+    <link href="views/css/register.css" rel="stylesheet">
+    <link href="views/css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="views/css/notificationsLog.css">
+    <link rel="stylesheet" href="views/css/DarkRegister.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
 
     <title>Register - Makefs</title>
     <?php
-        include('./components/sessionControlUnloged.php');
-        include("./components/tokenControl.php");
+        include('views/components/sessionControlUnloged.php');
+        include("views/components/tokenControl.php");
     ?>
 </head>
 <body class="White">
@@ -25,8 +25,8 @@
             <h1>Makef's</h1>
         </div>
         <div class="titlecont">
-            <a href="./index.php">
-                <img src="./img/makefs-logo.png" alt="logo makefs">
+            <a href="/">
+                <img src="views/img/makefs-logo.png" alt="logo makefs">
             </a>
         </div>
         <div class="responsive-header">
@@ -35,13 +35,13 @@
     </header>
     <section id="continfo">
         <div class="viewlogo">
-            <a href="./index.php"><img src="./img/makefsinvert.jpg" alt="logo makefs"></a>
+            <a href="/"><img src="views/img/makefsinvert.jpg" alt="logo makefs"></a>
             <h6>makef's</h6>
         </div>
         <div class="formcont">
             <div class="info-form">
-                <form action="../controllers/registerC.php" method="POST" class="form-done WhiteForm">
-                    <a class="aback" href="./index.php"><img class="Whiteimg"src="./iconos/second-back.svg" alt="backbtn"><h6 class="Whiteback">Volver</h6></a>
+                <form action="controllers/registerC.php" method="POST" class="form-done WhiteForm">
+                    <a class="aback" href="/"><img class="Whiteimg"src="views/iconos/second-back.svg" alt="backbtn"><h6 class="Whiteback">Volver</h6></a>
                     <h1 class="Whiteform">Registrate!</h1>
                     <h5 class="mainsubtitle Whiteform">Nombre</h5>
                     <input class="inputtxt Whiteinp" type="text" name="realname" maxlength="59" required>
@@ -57,7 +57,7 @@
                     <h5 class="Whiteform">Fecha de nacimiento</h5>
                     <input class="inputtxt Whiteinp" min="1940-01-01" max="2006-12-30" type="date" name="date" required>
                     <input type="submit" value="Registrarse" name="register" class="submitbtn">
-                    <h4 class="aregister Whiteform"><p>Ya tienes una cuenta?</p><span><a href="./login.php"> Inicia sesion!</a></span></h4>
+                    <h4 class="aregister Whiteform"><p>Ya tienes una cuenta?</p><span><a href="/login"> Inicia sesion!</a></span></h4>
                 </form>
             </div>
         </div>
@@ -70,10 +70,10 @@
                     <figure class="makefs-notification-rep"></figure>
                     <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg"></p></article>
                 </div>
-                <script src="./js/registerNotifications.js"></script>
+                <script src="views/js/registerNotifications.js"></script>
             EOT;
         }
     ?>
-    <script src="./js/DarkRegister.js"></script>
+    <script src="views/js/DarkRegister.js"></script>
 </body>
 </html>

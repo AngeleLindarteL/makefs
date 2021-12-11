@@ -4,14 +4,14 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-        <link href="./css/normalize.css" rel="stylesheet">
-        <link href="./css/chef-index.css" rel="stylesheet">
-        <link href="./css/header.css" rel="stylesheet">
-        <link href="./css/DarkModeIndex.css" rel="stylesheet">
-        <link rel="stylesheet" href="./css/footer.css">
-        <link rel="stylesheet" href="./css/DarkMenu.css">
-        <link rel="stylesheet" href="./css/Preloader.css">
+        <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
+        <link href="views/css/normalize.css" rel="stylesheet">
+        <link href="views/css/chef-index.css" rel="stylesheet">
+        <link href="views/css/header.css" rel="stylesheet">
+        <link href="views/css/DarkModeIndex.css" rel="stylesheet">
+        <link rel="stylesheet" href="views/css/footer.css">
+        <link rel="stylesheet" href="views/css/DarkMenu.css">
+        <link rel="stylesheet" href="views/css/Preloader.css">
         <meta name="description" content="Encuentra las mejores recetas de comida con la forma más sencilla de verlas!">
         <meta name="robots" content="index, follow">
 
@@ -19,7 +19,7 @@
     <?php
         session_start();
         if (!isset($_SESSION["id"]) || $_SESSION["id"] == 0){
-            include_once("../models/conexion.php");
+            include_once("models/conexion.php");
             $rConn = new Conexion();
             try {
                 $rConn = $rConn->Conectar();
@@ -89,7 +89,7 @@
                 $rConn->rollBack();
             }
         }else{
-            include("./components/tokenControl.php");
+            include("views/components/tokenControl.php");
             $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]/vr";
 
             $ch = curl_init($url);
@@ -149,14 +149,14 @@
 </head>
 <body class="White">
     <?php
-        include('./components/header.php');
-        include('./components/menudesplegable.php');
-        include('./components/preloader.php');
+        include('views/components/header.php');
+        include('views/components/menudesplegable.php');
+        include('views/components/preloader.php');
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
             <?php 
-                include("./components/test_inputs.php");
+                include("views/components/test_inputs.php");
                 if (isset($_SESSION["id"]) && $_SESSION["id"] > 0){
                     $name = explode(" ",test_input($_SESSION["nombre"]))[0]; 
                     echo "<h2 id='title-ctc'>¡Hola $name! Tenemos Recomendaciones para ti</h2>";
@@ -174,13 +174,13 @@
                         $chefname = test_input($recipe->chefname);
                         echo <<<EOT
                             <div class="recipe-template">
-                                <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
-                                    <img src="../mediaDB/recipeImages/$recipe->imagen" alt="imagen de receta">
-                                    <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$recipe->rate</b></figure>
+                                <a class="image-template" href="/recipe/$recipe->recipeid">
+                                    <img src="mediaDB/recipeImages/$recipe->imagen" alt="imagen de receta">
+                                    <figure class="star-template WhiteStar"><img src="views/img/hico-star-red.png" alt="estrellas"><b id="starCount">$recipe->rate</b></figure>
                                 </a>
                                 <div class="next-text-recipe WhiteModeP">
-                                    <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
-                                    <a href="./chef-view.php?chef=$recipe->chefid">
+                                    <img src="mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
+                                    <a href="/chef/$recipe->chefid">
                                         <h3 class="text-template">$title</h3>
                                         <p>$chefname</p>
                                         <p>$recipe->views Views</p>
@@ -193,29 +193,29 @@
                 if(empty($recipe) && empty($recipe)){
                     echo <<<EOT
                         <div id="notFoundRecipes" class="Whitecookie">
-                            <img src="./img/notrecipesSearch.png" alt="cookie">
+                            <img src="views/img/notrecipesSearch.png" alt="cookie">
                             <h3>No hay videos disponibles. Sube uno!</h3>
                         </div>
                     EOT;
                 }
                 ?>
                 <?php
-                    include('./components/categoriesMenu.php');
+                    include('views/components/categoriesMenu.php');
                 ?>
             </div>
             
         </div>
     </section>
     <?php
-        include('./components/footer.php');
+        include('views/components/footer.php');
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/categoriesmenu.js"></script>
-    <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/darkModeIndex.js"></script>
-    <script src="./js/DarkModeMenu.js"></script>
-    <script src="./js/footerHidden.js"></script>
-    <script src="./js/DarkLoader.js"></script>
-    <script src="./js/preloader.js"></script>
+    <script src="views/js/index.js"></script>
+    <script src="views/js/categoriesmenu.js"></script>
+    <script src="views/js/menuDesplegable.js"></script>
+    <script src="views/js/darkModeIndex.js"></script>
+    <script src="views/js/DarkModeMenu.js"></script>
+    <script src="views/js/footerHidden.js"></script>
+    <script src="views/js/DarkLoader.js"></script>
+    <script src="views/js/preloader.js"></script>
     </body>
 </html>

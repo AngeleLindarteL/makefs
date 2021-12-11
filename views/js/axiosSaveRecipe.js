@@ -55,15 +55,16 @@ saveTrigger.addEventListener("click", () => {
     }
     axios.post("../controllers/saveRecipe.php",JSON.stringify(data))
     .then(res => {
+        console.log(res)
         if (res.data === "saved"){
-            showNotif(notifstates.saved,"./iconos/book.png");
+            showNotif(notifstates.saved,"../views/iconos/book.png");
             setButtonState(true);
         }else{
-            showNotif(notifstates.removed,"./iconos/remove-book.png");
+            showNotif(notifstates.removed,"../views/iconos/remove-book.png");
             setButtonState(false);
         }
     }).catch(err => {
-        showNotif(notifstates.error, "./iconos/error.png");
+        showNotif(notifstates.error, "../views/iconos/error.png");
         setButtonState(isSaved);
      })
 })

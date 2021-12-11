@@ -20,7 +20,7 @@ if(localStorage.getItem("Theme")=="claro"){
 }else{
     isDark = true;
 }
-
+ 
 btnLessSteps.addEventListener("click",()=>{
     let countStepsDivs = stepsSpace.childElementCount;
     if(countStepsDivs==2){

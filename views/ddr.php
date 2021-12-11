@@ -7,18 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-    <link href="./css/normalize.css" rel="stylesheet">
-    <link href="./css/chef-index.css" rel="stylesheet">
-    <link href="./css/report.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet">
-    <link href="./css/footer.css" rel="stylesheet">
-    <link href="./css/ddr.css" rel="stylesheet">
-    <link href="./css/notifications.css" rel="stylesheet">
-    <link href="./css/libraryNotif.css" rel="stylesheet">
-    <link href="./css/not-registered.css" rel="stylesheet">
-    <link href="./css/Darkddr.css" rel="stylesheet">
-    <link href="./css/DarkMenu.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/Preloader.css">
+    <link href="../views/css/normalize.css" rel="stylesheet">
+    <link href="../views/css/chef-index.css" rel="stylesheet">
+    <link href="../views/css/report.css" rel="stylesheet">
+    <link href="../views/css/header.css" rel="stylesheet">
+    <link href="../views/css/footer.css" rel="stylesheet">
+    <link href="../views/css/ddr.css" rel="stylesheet">
+    <link href="../views/css/notifications.css" rel="stylesheet">
+    <link href="../views/css/libraryNotif.css" rel="stylesheet">
+    <link href="../views/css/not-registered.css" rel="stylesheet">
+    <link href="../views/css/Darkddr.css" rel="stylesheet">
+    <link href="../views/css/DarkMenu.css" rel="stylesheet">
+    <link rel="stylesheet" href="../views/css/Preloader.css">
     <meta name="description" content="Mira la preparacion de tu receta que deseas aprender y aprende a cocinar">
     <meta name="robots" content="index, follow">
 
@@ -31,9 +31,13 @@
         }
     </script>
     <?php
-    include("../models/conexion.php");
-    include("./components/test_inputs.php");
+    include("models/conexion.php");
+    include("views/components/test_inputs.php");
     session_start();
+    if(!isset($_SESSION['id'])){
+        $_SESSION['id']=0;
+        $_SESSION['chefid']=0;
+    }
     if (!isset($_SESSION["id"]) || $_SESSION["id"] == 0){
         $rConn = new Conexion();
         try {
@@ -108,7 +112,7 @@
             $_SESSION['id']=0;
             $_SESSION['chefid']=0;
         }else{
-            include("./components/tokenControl.php");
+            include("views/components/tokenControl.php");
         }
         $url = "https://makefsapi.herokuapp.com/user/$_SESSION[id]/vr";
 
@@ -164,7 +168,7 @@
         }
     }
     if (!isset($_GET["video"]) || empty($_GET["video"])){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     $videoId = $_GET["video"];
@@ -177,11 +181,11 @@
         $res = $res->fetch(PDO::FETCH_ASSOC);
         echo "<title>Cocina: $res[namer]</title>";
     }catch(Exception $e){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     if($res == false || empty($res)){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     $step_times_json = base64_decode($res["steps"]);
@@ -229,7 +233,7 @@
             $followid = null;
         }
     }catch(Exception $e){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     $query = "SELECT COUNT(*) FROM follows WHERE chefid = :chefid";
@@ -240,7 +244,7 @@
         ));
         $seguidores = $seguidores->fetchColumn();
     }catch(Exception $e){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     $query = "SELECT verify FROM chef WHERE chefid = :chefid";
@@ -251,7 +255,7 @@
         ));
         $verify = $verify->fetchColumn();
     }catch(Exception $e){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     if($verify=="yes"){
@@ -273,7 +277,7 @@
             echo "<script>let lastRate = null</script>";
         }
     }catch(Exception $e){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     $query = "SELECT * FROM saveds WHERE recipeid = :recipeid AND userid = :userid";
@@ -290,7 +294,7 @@
             echo "<script>const isSaved = false</script>";
         }
     }catch(Exception $e){
-        header("location: ./error.html");
+        header("location: /error");
         exit;
     }
     if(isset($_SESSION["errorRegister"])){
@@ -304,19 +308,19 @@
 </head>
 <body class="White">
     <?php
-    include('./components/header.php');
-    include('./components/menudesplegable.php');
-    include("./components/report.php");
-    include('./components/preloader.php');
+    include('views/components/header.php');
+    include('views/components/menudesplegable.php');
+    include("views/components/report.php");
+    include('views/components/preloader.php');
     ?>
     <div class="makefs-notification ddr-in-notification">
         <figure class="makefs-notification-rep"></figure>
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-msg">En espera</p></article>
     </div>
     <div class="bookshelf-notification WhiteNotif">
-        <img id="bookshelf-icon" src="./iconos/book.png" alt="guardados">
+        <img id="bookshelf-icon" src="../views/iconos/book.png" alt="guardados">
         <article class="makefs-notification-info"><b class="notification-title">Notificación</b><p id="notification-save-msg">bookshelf Notification</p></article>
-        <a target="_blank" href="./library.php?user=<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
+        <a target="_blank" href="/library/<?php echo $_SESSION["id"]?>">Ir a biblioteca</a>
     </div>
     <section id="recipe_section">
         <div class="recipe_container">
@@ -410,10 +414,10 @@
             <div class="ddr-bottom-panels">
                 <div class="makefs-video-info-panels">
                     <h1 class="makefs-video-info-title Whitetitlevideo"><?php echo test_input($res["namer"])?></h1>
-                    <a class="makefs-video-info-chef" href="./chef-view.php?chef=<?php echo $res['chefid']; ?>">
+                    <a class="makefs-video-info-chef" href="/chef/<?php echo $res['chefid']; ?>">
                         <div id="foto-chef-ddr">
                             <img src="../mediaDB/usersImg/<?PHP echo $res["minpic"]?>" alt="imagen de usuario">
-                            <?php if($isVerify){ echo "<img class='verified2' src='./img/chef-verified.png' alt='verificacion'>";} ?>
+                            <?php if($isVerify){ echo "<img class='verified2' src='../views/img/chef-verified.png' alt='verificacion'>";} ?>
                         </div>
                         
                         <article>
@@ -463,7 +467,7 @@
                             if ($_SESSION["id"] == 0) {
                                 echo <<<EOT
                                 <div class="not-registered-advise">
-                                    <img src="./iconos/makefslogo.jpg" alt='makefslogo'>
+                                    <img src="../views/iconos/makefslogo.jpg" alt='makefslogo'>
                                     <button id="hide-not-register-notif">x</button>
                                     <article>
                                         <p>Para poder interactuar con este video debes estar registrado</p>
@@ -508,13 +512,13 @@
                             $chefname = test_input($recipe->chefname);
                             echo <<<EOT
                                 <div class="recipe-template ddr-recipe">
-                                    <a class="image-template" href="./ddr.php?video=$recipe->recipeid">
+                                    <a class="image-template" href="/recipe/$recipe->recipeid">
                                         <img src="../mediaDB/recipeImages/$recipe->imagen" alt='imagen de receta'>
-                                        <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt='estrellas de receta'><b id="starCount">$recipe->rate</b></figure>
+                                        <figure class="star-template WhiteStar"><img src="../views/img/hico-star-red.png" alt='estrellas de receta'><b id="starCount">$recipe->rate</b></figure>
                                     </a>
                                     <div class="next-text-recipe WhiteModeP">
                                         <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
-                                        <a href="./chef-view.php?chef=$recipe->chefid">
+                                        <a href="./chef/$recipe->chefid">
                                             <h3 class="text-template">$title</h3>
                                             <p>$chefname</p>
                                             <p>$recipe->views Views</p>
@@ -540,31 +544,31 @@
                 </div>
             </div>
                 <?php
-                    include('./components/categoriesMenu.php');
+                    include('views/components/categoriesMenu.php');
                 ?>
         </div>
     </section>
     <?php
-        include('./components/footer.php');
+        include('views/components/footer.php');
         if($_SESSION['id']!=0){
             echo <<<EOT
-                <script src='./js/axiosFollow.js'></script>
-                <script src="./js/axiosReport.js"></script>
-                <script src="./js/axiosSaveRecipe.js"></script>
+                <script src='../views/js/axiosFollow.js'></script>
+                <script src="../views/js/axiosReport.js"></script>
+                <script src="../views/js/axiosSaveRecipe.js"></script>
             EOT;
         }
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/ddr.js"></script>
-    <script src="./js/followUnloged.js"></script>
-    <script src="./js/report.js"></script>
-    <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/DarkModeddr.js"></script>
-    <script src="./js/DarkModeMenu.js"></script>
-    <script src="./js/categoriesmenu.js"></script>
-    <script src="./js/footerHidden.js"></script>
-    <script src="./js/DarkLoader.js"></script>
-<script src="./js/preloader.js"></script>
+    <script src="../views/js/index.js"></script>
+    <script src="../views/js/ddr.js"></script>
+    <script src="../views/js/followUnloged.js"></script>
+    <script src="../views/js/report.js"></script>
+    <script src="../views/js/menuDesplegable.js"></script>
+    <script src="../views/js/DarkModeddr.js"></script>
+    <script src="../views/js/DarkModeMenu.js"></script>
+    <script src="../views/js/categoriesmenu.js"></script>
+    <script src="../views/js/footerHidden.js"></script>
+    <script src="../views/js/DarkLoader.js"></script>
+<script src="../views/js/preloader.js"></script>
 </body>
 
 </html>

@@ -79,10 +79,9 @@ updatePassBtn.addEventListener("click",(e)=>{
         axios.post("../controllers/updateDataUsers/updatePass.php",infoPass).then(
             res=> {
                 console.log(res);
-                window.location.href="../views/login.php";
+                window.location.href="/login";
             }
         )
-        
     }catch(e){
         updateStatus.textContent = "Error al actualizar datos, Detalles" + e;
     }

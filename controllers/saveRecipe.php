@@ -1,7 +1,12 @@
 <?php 
 
-include("../models/conexion.php");
-include("./jwtController.php");
+error_reporting(E_ALL ^ E_WARNING); 
+try {
+    include("../models/conexion.php");
+    include("../vendor/autoload.php");
+    include("jwtController.php");
+} catch (Exception $th) {
+}
 
 $data = json_decode(file_get_contents("php://input",true));
 if (session_status() === PHP_SESSION_NONE) {
