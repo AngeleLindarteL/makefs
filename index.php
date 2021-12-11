@@ -52,6 +52,13 @@ if (isset($_GET["view"])) {
             $_GET["type"] = $view[2];
             include "./views/category.php";
             break;
+        case 'search':
+            if (!isset($view[1])){
+                include "./views/error.php";
+            }
+            $_GET["search"] = $view[1];
+            include "./views/search.php";
+            break;
         default:
             include "./views/error.php";
         break;

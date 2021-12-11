@@ -5,19 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Busqueda de lo que requieras cocinar">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/makefslogo.png">
-    <link href="./css/normalize.css" rel="stylesheet">
-    <link href="./css/chef-index.css" rel="stylesheet">
-    <link href="./css/header.css" rel="stylesheet">
-    <link href="./css/DarkModeSe.css" rel="stylesheet">
-    <link href="./css/DarkMenu.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/footer.css">
-    <link rel="stylesheet" href="./css/Preloader.css">
+    <link rel="icon" type="image/png" sizes="96x96" href="../views/favicon/makefslogo.png">
+    <link href="../views/css/normalize.css" rel="stylesheet">
+    <link href="../views/css/chef-index.css" rel="stylesheet">
+    <link href="../views/css/header.css" rel="stylesheet">
+    <link href="../views/css/DarkModeSe.css" rel="stylesheet">
+    <link href="../views/css/DarkMenu.css" rel="stylesheet">
+    <link rel="stylesheet" href="../views/css/footer.css">
+    <link rel="stylesheet" href="../views/css/Preloader.css">
 
     
     <?php
-        include("../models/conexion.php");
-        include("./components/test_inputs.php");
+        include("models/conexion.php");
+        include("views/components/test_inputs.php");
         session_start();
         if(empty($_GET["search"]) && !isset($_GET["search"])){
             header("location: ./error.html");
@@ -57,9 +57,9 @@
 </head>
 <body class="White">
     <?php
-        include('./components/header.php');
-        include('./components/menudesplegable.php');
-        include('./components/preloader.php');
+        include('views/components/header.php');
+        include('views/components/menudesplegable.php');
+        include('views/components/preloader.php');
     ?>
     <section class="recipe-container" id="principal-recipes">
         <div class="makefsContainer recipe-body">
@@ -96,7 +96,7 @@
                         <div class="recipe-template">
                             <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
                                 <img src="../mediaDB/recipeImages/$imagen" alt="imagen de receta">
-                                <figure class="star-template WhiteStar"><img src="./img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
+                                <figure class="star-template WhiteStar"><img src="../views/img/hico-star-red.png" alt="estrellas"><b id="starCount">$average</b></figure>
                             </a>
                             <div class="next-text-recipe Whiterecipe">
                                 <img src="../mediaDB/usersImg/$minpic" alt="imagen de usuario">
@@ -115,28 +115,28 @@
                      if(empty($dataAll["recipeid"]) && empty($recipe)){
                         echo <<<EOT
                             <div id="notFoundRecipes" class="Whitecookie">
-                                <img src="./img/notrecipesSearch.png" alt="cookie">
+                                <img src="../views/img/notrecipesSearch.png" alt="cookie">
                                 <h3>No se han encontrado recetas con tu búsqueda.</h3>
                             </div>
                         EOT;
                     }
-                    include('./components/categoriesMenu.php');
+                    include('views/components/categoriesMenu.php');
                 ?>
             </div>
         </div>
     </section>
     <?php
-        include('./components/footer.php');
+        include('views/components/footer.php');
     ?>
-    <script src="./js/index.js"></script>
-    <script src="./js/menuDesplegable.js"></script>
-    <script src="./js/darkModeSe.js"></script>
-    <script src="./js/darkModeMenu.js"></script>
-    <script src="./js/DarkLoader.js"></script>
-    <script src="./js/preloader.js"></script>
-    <script src="../../views/js/responsiveCategories.js"></script>
-    <script id="categories2" src="../../views/js/footerHidden.js"></script>
-    <script id="categories1" src="../../views/js/categoriesmenu.js"></script>
-    <script id="categoriesRes" src="../../views/js/categoriesResponsive.js"></script>
+    <script src="../views/js/index.js"></script>
+    <script src="../views/js/menuDesplegable.js"></script>
+    <script src="../views/js/darkModeSe.js"></script>
+    <script src="../views/js/darkModeMenu.js"></script>
+    <script src="../views/js/DarkLoader.js"></script>
+    <script src="../views/js/preloader.js"></script>
+    <script src="../views/js/responsiveCategories.js"></script>
+    <script id="categories2" src="../views/js/footerHidden.js"></script>
+    <script id="categories1" src="../views/js/categoriesmenu.js"></script>
+    <script id="categoriesRes" src="../views/js/categoriesResponsive.js"></script>
 </body>
 </html>

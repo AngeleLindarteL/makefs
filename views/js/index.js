@@ -14,14 +14,14 @@ let btnBusqueda = document.querySelector("#sendBusqueda");
 busqueda.addEventListener("keydown",(e)=>{
     if(e.key=="Enter"){
         busqueda = busqueda.value;
-        window.location.href=`../views/search.php?search=${busqueda}`;
+        window.location.href=`/search/${busqueda}`;
     }
 })
 
 btnBusqueda.addEventListener("click",(e)=>{
     e.preventDefault();
     busqueda = busqueda.value;
-    window.location.href=`../views/search.php?search=${busqueda}`;
+    window.location.href=`/search/${busqueda}`;
 })
 
 
