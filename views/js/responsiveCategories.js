@@ -15,18 +15,18 @@ window.addEventListener("load", ()=>{
         }
         if(!document.querySelector("#categoriesRes")){
             scriptRes = document.createElement("script");
-            scriptRes.src = "./js/categoriesResponsive.js";
+            scriptRes.src = "views/js/categoriesResponsive.js";
             scriptRes.id = "categoriesRes"
             bodyy.appendChild(scriptRes);
         }
     }else{
         if(!document.querySelector("#categories1")){
             script1 = document.createElement("script");
-            script1.src= "./js/categoriesmenu.js";
+            script1.src= "views/js/categoriesmenu.js";
             script1.id = "categories1";
 
             script2 = document.createElement("script");
-            script2.src= "./js/footerHidden.js";
+            script2.src= "views/js/footerHidden.js";
             script2.id = "categories2";
 
 
