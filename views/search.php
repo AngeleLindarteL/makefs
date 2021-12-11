@@ -129,12 +129,14 @@
         include('./components/footer.php');
     ?>
     <script src="./js/index.js"></script>
-    <script src="./js/categoriesmenu.js"></script>
     <script src="./js/menuDesplegable.js"></script>
     <script src="./js/darkModeSe.js"></script>
     <script src="./js/darkModeMenu.js"></script>
-    <script src="./js/footerHidden.js"></script>
     <script src="./js/DarkLoader.js"></script>
     <script src="./js/preloader.js"></script>
+    <script src="../../views/js/responsiveCategories.js"></script>
+    <script id="categories2" src="../../views/js/footerHidden.js"></script>
+    <script id="categories1" src="../../views/js/categoriesmenu.js"></script>
+    <script id="categoriesRes" src="../../views/js/categoriesResponsive.js"></script>
 </body>
 </html>
