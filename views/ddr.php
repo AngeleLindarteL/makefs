@@ -566,10 +566,7 @@
     <script src="../views/js/DarkModeddr.js"></script>
     <script src="../views/js/DarkModeMenu.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
-    <script src="../../views/js/responsiveCategories.js"></script>
-    <script id="categories2" src="../../views/js/footerHidden.js"></script>
-    <script id="categories1" src="../../views/js/categoriesmenu.js"></script>
-    <script id="categoriesRes" src="../../views/js/categoriesResponsive.js"></script>
+    <script src="../../views/js/responsiveCategoriesOutIndex.js"></script>
 <script src="../views/js/preloader.js"></script>
 </body>
 
