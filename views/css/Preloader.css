@@ -67,15 +67,12 @@
     height: 16vh;
     animation: loading 1.5s linear infinite;
 }
-.loading{
+.loadingg{
     font-size: 1.5em;
     color: #FFB5B5;
     display: flex;
 }
-.loading h3::selection{
-    background-color: none;
-    color: #FFB5B5;
-}
+
 .dots::after{
     animation: puntos 2s linear infinite;
 }
@@ -141,7 +138,7 @@
     }
 }
 @media (max-width:285px){
-    .loading{
+    .loadingg{
         flex-direction: column;
     }
 }
