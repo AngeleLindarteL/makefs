@@ -24,7 +24,7 @@
             <h1>Makef's</h1>
         </div>
         <div class="titlecont">
-            <a href="views/index.php">
+            <a href="/">
               <img src="views/img/makefs-logo.png" alt="logo makefs">
             </a>
         </div>

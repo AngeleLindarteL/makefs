@@ -41,7 +41,13 @@ updateUser.addEventListener("click", (e)=>{
         
         axios.post("../controllers/updateDataUsers/updateUser.php",info).then(
             res => {
-                let msgNotifi = res.data.msg.errorInfo[2];
+                let msgNotifi;
+                try{
+                    msgNotifi = res.data.msg.errorInfo[2];
+                }catch{
+                    msgNotifi = null;
+                }
+
                 if(res.status==200 && !msgNotifi){
                     nameTxt.textContent=namem.value;
                     descriptTxt.textContent=descript.value;
@@ -98,7 +104,12 @@ updatePassBtn.addEventListener("click",(e)=>{
     try{
         axios.post("../controllers/updateDataUsers/updatePass.php",infoPass).then(
             res=> {
-                let msgNotifiPass = res.data.msg;
+                let msgNotifiPass;
+                try{
+                    msgNotifiPass = res.data.msg;
+                }catch{
+                    msgNotifiPass = null;
+                }
                 if(res.status==200 && !msgNotifiPass){
                     window.location.href="/login";
                 }else{
