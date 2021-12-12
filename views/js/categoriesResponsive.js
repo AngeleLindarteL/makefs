@@ -21,6 +21,12 @@ let menuAFF = document.getElementById("africa");
 let menuOCC = document.getElementById("oceania");
 
 
+menuCATEE.style.bottom='-200%';
+btnArrowMenuu.style.transform="rotate(270deg)";
+isUpMenuu=true;
+console.log("entre");
+
+
 btnArrowMenuu.addEventListener("click",(e)=>{
     if(isUpMenuu){
         menuCATEE.style.bottom='10%';
