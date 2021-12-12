@@ -267,12 +267,12 @@
     <?php
         include('views/components/footer.php');
     ?>
+    <script src="../views/js/DarkModeMenu.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
     <script src="../views/js/editRecipe.js"></script>
     <script src="../views/js/axiosEditRecipe.js"></script>
     <script src="../views/js/mediaPlayer.js"></script>
     <script src="../views/js/DarkModeEdit.js"></script>
-    <script src="../views/js/DarkModeMenu.js"></script>
 </body>
 </html>

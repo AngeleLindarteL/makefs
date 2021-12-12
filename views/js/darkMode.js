@@ -10,18 +10,6 @@ let deleteForm = document.querySelector('#deleteAccount-chef');
 let PhotoForm = document.querySelector('#fotoChange-chef');
 let InputPhotoForm = document.querySelector('.updateFotoInput-chef');
 let logomachefs = document.querySelector('#notFoundRecipes');
-const url = window.location.pathname.split("/");
-url.shift();
-let viewsUrl;
-
-if(url.length > 1 && url.length < 3){
-    viewsUrl = "../views";
-    console.log(window.location.pathname.split("/").length)
-}else if(url.length > 2){
-    viewsUrl = "../../views";
-}else{
-    viewsUrl = "views";
-}
 /*---Code---*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");

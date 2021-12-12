@@ -208,10 +208,10 @@
     </section>
     <?php
         include('views/components/footer.php');
-    ?>
+        ?>
+        <script src="views/js/DarkModeMenu.js"></script>
     <script src="views/js/index.js"></script>
     <script src="views/js/darkModeIndex.js"></script>
-    <script src="views/js/DarkModeMenu.js"></script>
     <script src="views/js/DarkLoader.js"></script>
     <script src="views/js/preloader.js"></script>
     <script src="views/js/menuDesplegable.js"></script>

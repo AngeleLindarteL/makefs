@@ -234,11 +234,11 @@
     <?php
         include("./views/components/footer.php");
     ?>
+    <script src="../views/js/DarkModeMenu.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/library.js"></script>
     <script src="../views/js/DarkModeLibrary.js"></script>
-    <script src="../views/js/DarkModeMenu.js"></script>
 <script src="../views/js/preloader.js"></script>
 </body>
 </html>

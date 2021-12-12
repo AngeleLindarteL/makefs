@@ -134,11 +134,11 @@
     <?php
         include('views/components/footer.php');
     ?>
+    <script src="views/js/DarkModeMenu.js"></script>
     <script src="views/js/index.js"></script>
     <script src="views/js/menuDesplegable.js"></script>
     <script src="views/js/newRecipe.js"></script>
     <script src="views/js/axiosNewRecipe.js"></script>
     <script src="views/js/DarkModeRecipe.js"></script>
-    <script src="views/js/DarkModeMenu.js"></script>
 </body>
 </html>
