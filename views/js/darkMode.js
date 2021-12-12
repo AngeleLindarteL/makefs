@@ -10,6 +10,18 @@ let deleteForm = document.querySelector('#deleteAccount-chef');
 let PhotoForm = document.querySelector('#fotoChange-chef');
 let InputPhotoForm = document.querySelector('.updateFotoInput-chef');
 let logomachefs = document.querySelector('#notFoundRecipes');
+const url = window.location.pathname.split("/");
+url.shift();
+let viewsUrl;
+
+if(url.length > 1 && url.length < 3){
+    viewsUrl = "../views";
+    console.log(window.location.pathname.split("/").length)
+}else if(url.length > 2){
+    viewsUrl = "../../views";
+}else{
+    viewsUrl = "views";
+}
 /*---Code---*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -40,7 +52,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src="./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         ChefCont.classList.replace('WhiteChefCont','DarkChefCont');
         deleteForm.classList.replace('WhiteDelete','DarkDelete');
@@ -61,7 +73,7 @@ modoOscuro.addEventListener("click", (e)  =>{
         }) 
     }else{
         localStorage.setItem("Theme", "claro");
-        imagentb.src="./iconos/moon.svg";
+        imagentb.src=viewsUrl+"./iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');
         ChefCont.classList.replace('DarkChefCont','WhiteChefCont');
         deleteForm.classList.replace('DarkDelete','WhiteDelete');
