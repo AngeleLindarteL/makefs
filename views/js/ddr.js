@@ -255,8 +255,20 @@ const showStepAnotation = (minutesRange,stepNum,stepText) => {
 }
 
 const relocateConfigPanel = () => {
-    let height = configPanel.clientHeight;
-    configPanel.style.top = "-"+`${height}px`;
+    if (window.innerWidth > 450) {
+        let height = configPanel.clientHeight;
+        configPanel.style.top = "-"+`${height}px`;
+    }else{
+        if (window.fullscreen) {
+            if (window.screen.orientation.angle == 0) {
+                let height = configPanel.clientHeight;
+                configPanel.style.top = "-"+`${height}px`;
+                configPanel.height = "fit-content";
+            }
+            return;
+        }
+        configPanel.style.top = "-25vh";
+    }
 }
 
 const changeStepState = () => {

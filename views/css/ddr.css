@@ -1247,10 +1247,40 @@
   }
 }
 
+@media(max-width: 810px){
+  .makefs-video-config-menu button {
+    height: 7vh;
+    background-size: 3.2vh;
+    padding-left: 7vh;
+  }
+}
 @media(max-width: 450px){
   .step-anotation{
     min-height: 28%;
     max-height: 32%;
+  }
+  .config-options {
+    max-width: none;
+    height: 35vh;
+    width: 100vw;
+    top: -25vh;
+  }
+  #speedrate-options{
+    flex-flow: row wrap;
+  }
+  #speedrate-options .makefs-video-controls-speedrate{
+    padding: 0;
+    width: 33%;
+    height: 6.6vh;
+    justify-content: center;
+  }
+  #speedrate-options .makefs-video-controls-speedrate:last-child{
+    border-bottom: 1px solid #ffffff14;
+    width: 50%;
+  }
+  #speedrate-options .makefs-video-controls-speedrate:nth-child(8){
+    border-bottom: 1px solid #ffffff14;
+    width: 50%;
   }
 }
 @media(max-width: 450px){
@@ -1260,7 +1290,7 @@
   }
 }
 
-@media(max-width: 350px){
+@media(max-width: 370px){
   .makefs-video-info-title{
     margin-bottom: 1vh;
     text-align: center;
@@ -1362,7 +1392,39 @@
     height: 3vh;
     width: 16%;
   }
-
+}
+@media (max-height:450px){
+  .step-anotation{
+    min-height: 28%;
+    max-height: 32%;
+  }
+  .config-options {
+    max-width: none;
+    height: 35vh;
+    width: 50vw;
+    top: -25vh;
+  }
+  .makefs-video-config-menu button {
+    height: 9vh;
+    background-size: 4.2vh;
+  }
+  #speedrate-options{
+    flex-flow: row wrap;
+  }
+  #speedrate-options .makefs-video-controls-speedrate{
+    padding: 0;
+    width: 33%;
+    height: 6.6vh;
+    justify-content: center;
+  }
+  #speedrate-options .makefs-video-controls-speedrate:last-child{
+    border-bottom: 1px solid #ffffff14;
+    width: 50%;
+  }
+  #speedrate-options .makefs-video-controls-speedrate:nth-child(8){
+    border-bottom: 1px solid #ffffff14;
+    width: 50%;
+  }
 }
   
 .footer{
