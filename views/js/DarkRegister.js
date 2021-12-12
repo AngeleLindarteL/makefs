@@ -5,6 +5,7 @@ let logoback = document.querySelector('.Whiteimg');
 let backtit = document.querySelector('.Whiteback');
 let wordform = document.querySelectorAll('.Whiteform');
 let inpo = document.querySelectorAll('.Whiteinp');
+let aback = document.querySelector('.aWhite');
 /*--Code--*/
 if (localStorage.getItem("Theme") == "claro"){
     Lobody.classList.add("White");
@@ -17,6 +18,7 @@ if (localStorage.getItem("Theme") == "claro"){
     inpo.forEach(inpu =>{
         inpu.classList.add('Whiteinp');
     })
+    aback.classList.add('aWhite');
 }else{
     if (localStorage.getItem("Theme") == "oscuro"){
         Lobody.classList.replace('White','Dark');
@@ -29,5 +31,6 @@ if (localStorage.getItem("Theme") == "claro"){
         inpo.forEach(inpu =>{
             inpu.classList.replace('Whiteinp','Darkinp');
         })
+        aback.classList.replace('aWhite','aDark');
     }
 }

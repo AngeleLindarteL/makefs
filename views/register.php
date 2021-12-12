@@ -41,7 +41,7 @@
         <div class="formcont">
             <div class="info-form">
                 <form action="controllers/registerC.php" method="POST" class="form-done WhiteForm">
-                    <a class="aback" href="/"><img class="Whiteimg"src="views/iconos/second-back.svg" alt="backbtn"><h6 class="Whiteback">Volver</h6></a>
+                    <a class="aback aWhite" href="/"><img class="Whiteimg"src="views/iconos/second-back.svg" alt="backbtn"><h6 class="Whiteback">Volver</h6></a>
                     <h1 class="Whiteform">Registrate!</h1>
                     <h5 class="mainsubtitle Whiteform">Nombre</h5>
                     <input class="inputtxt Whiteinp" type="text" name="realname" maxlength="59" required>
