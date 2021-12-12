@@ -38,7 +38,7 @@ echo <<<EOT
 				<a href="#">Politicas de privacidad</a>
 			</li>
 		</ul>
-		<p class="copyright">Copyright © 2021. Todos los derechos reservados. Kodastr</p>
+		<p class="copyright">Copyright © 2021. Todos los derechos reservados.</p>
 
 	</footer>
 	EOT;
