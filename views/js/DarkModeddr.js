@@ -15,6 +15,18 @@ let BannersubDown = document.querySelectorAll('.subcategories-down');
 let categoriesregion = document.querySelectorAll('.categoryDiv');
 let BannerDown = document.querySelector('.categories-down');
 let btndisplay = document.querySelector('#btnCategoriesShow');
+const url = window.location.pathname.split("/");
+url.shift();
+let viewsUrl;
+
+if(url.length > 1 && url.length < 3){
+    viewsUrl = "../views";
+    console.log(window.location.pathname.split("/").length)
+}else if(url.length > 2){
+    viewsUrl = "../../views";
+}else{
+    viewsUrl = "views";
+}
 /*--Code--*/
 if (localStorage.getItem("Theme") == null){
     localStorage.setItem("Theme", "claro");
@@ -49,7 +61,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src="./iconos/clear.svg";
+        imagentb.src=  viewsUrl+"./iconos/clear.svg";
         bodyddr.classList.replace('White', 'DarkModeBody');
         pselector.forEach(parrafo => {
             parrafo.classList.replace('WhiteModeP', 'DarkModeP');
@@ -75,7 +87,7 @@ modoOscuro.addEventListener("click", (e)  =>{
 
     }else{
         localStorage.setItem("Theme", "claro");
-        imagentb.src="./iconos/moon.svg";
+        imagentb.src=viewsUrl+"./iconos/moon.svg";
         bodyddr.classList.replace('DarkModeBody','White');
         pselector.forEach(parrafo => {
             parrafo.classList.replace('DarkModeP','WhiteModeP');
