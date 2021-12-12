@@ -135,9 +135,13 @@ body{
     padding: 0;
     left: 53%;
     height: 10%;
-    width: 7%;
     text-decoration: none;
     color: black;
+    background: white;
+    width: fit-content;
+    padding: 0 1%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 #00000054;
     transition: .2s;
 }
 .aback:hover{

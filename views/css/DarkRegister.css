@@ -18,6 +18,9 @@
     background-color: #100f0f;
     color: #FF2C29;
 }
+.aDark{
+    background-color: #100f0f;
+}
 /*--White mode--*/
 .White{
     background-color: white;
@@ -37,4 +40,7 @@
 .Whiteinp{
     background-color: white;
     color: black;
+}
+.aWhite{
+    background-color: white;
 }
