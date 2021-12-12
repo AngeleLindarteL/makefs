@@ -13,7 +13,11 @@ const notifstates = {
 const setButtonState = (isAcSaved) => {
     if (isAcSaved){
         saveTrigger.style.backgroundColor = "var(--color5)";
-        saveTrigger.style.width = "fit-content";
+        if (window.innerWidth < 371) {
+            saveTrigger.style.width = "40%";
+        }else{
+            saveTrigger.style.width = "fit-content";
+        }
         saveTrigger.style.color = "white";
         saveTrigger.textContent = "Guardado✔";
         recipeProperties.savedrecipes = 1;
@@ -38,7 +42,7 @@ const showNotif = (msg, ico) => {
         saveNotification.style.bottom = "-50%";
         setTimeout(() => {
             saveNotification.style.display = "none";
-            if (window.innerWidth > 970) {
+            if (window.innerWidth > 971) {
                 saveNotification.style.bottom = "0";
             }else{
                 saveNotification.style.bottom = "10vh";

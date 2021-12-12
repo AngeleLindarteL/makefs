@@ -52,19 +52,32 @@
     color: black;
     cursor: pointer;
 }
-@media (max-width:1000px){
+@media (max-width:1200px){
     .bookshelf-notification{
+        height: 11vh;
         width: 80%;
     }
-}
-@media (max-width:375px){
-    .bookshelf-notification{
-        width: 96%;
-        font-size: 0.88em;
+    #bookshelf-icon{
+        height: 11vh;
     }
 }
-@media (max-width:300px){
+@media (max-width:970px){
     .bookshelf-notification{
-        width: 95%;
+        height: 11vh;
+        width: 80%;
+    }
+    #bookshelf-icon{
+        height: 11vh;
+    }
+    .bookshelf-notification{
+        width: 97%;
+        font-size: 0.88em;
+        bottom: 9vh;
+    }
+}
+@media (max-width:540px){
+    .bookshelf-notification a{
+        transform: scale(0.7);
+        margin: 1%;
     }
 }
