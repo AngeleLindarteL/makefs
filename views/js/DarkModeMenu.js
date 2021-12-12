@@ -40,7 +40,7 @@ if (localStorage.getItem("Theme") == null){
 }
 modoOscuro.addEventListener("click", ()  =>{
     if(localStorage.getItem("Theme") == "oscuro"){
-        imagentb.src= viewsUrl+"./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         Menu.classList.replace('WhiteMenu','DarkMenu');
         menuup.classList.replace('WhiteSearch','DarkSearch');
         homesave.forEach(desp =>{
@@ -53,7 +53,7 @@ modoOscuro.addEventListener("click", ()  =>{
         })
         
     }else{
-        imagentb.src=viewsUrl+"./iconos/moon.svg";
+        imagentb.src=viewsUrl+"/iconos/moon.svg";
         Menu.classList.replace('DarkMenu','WhiteMenu');
         menuup.classList.replace('DarkSearch','WhiteSearch');
         homesave.forEach(desp =>{
