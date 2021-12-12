@@ -41,8 +41,8 @@ updateUser.addEventListener("click", (e)=>{
         
         axios.post("../controllers/updateDataUsers/updateUser.php",info).then(
             res => {
-                console.log(res);
-                if(res.status==200){
+                let msgNotifi = res.data.msg.errorInfo[2];
+                if(res.status==200 && !msgNotifi){
                     nameTxt.textContent=namem.value;
                     descriptTxt.textContent=descript.value;
                     contactTxt.textContent="Contacto:"+email.value;
@@ -55,6 +55,26 @@ updateUser.addEventListener("click", (e)=>{
                     igTxT.setAttribute("href",instagram.value);
                     ytTxT.setAttribute("href",youtube.value);
                     twTxt.setAttribute("href",twitter.value);
+                }else{
+                    notification_container.classList.add("error");
+                    notification_container.style.display = "flex";
+                    setTimeout(() => {
+                        notification_container.style.top = "11vh";
+                        notification_container.style.opacity = "100%";
+                        setTimeout(() => {
+                            notification_container.style.opacity = "0";
+                            setTimeout(()=>{
+                                notification_container.style.display = "none";
+                            },1000)
+                        }, 5000);
+                    }, 1000);
+                    if((msgNotifi.indexOf('userm_username_key')) !== -1){
+                        msgErorr = "Nombre de usuario ya en uso, intenta con otro ya que no se modificó.";
+                        notification_msg.textContent = msgErorr;
+                    }else if((msgNotifi.indexOf('userm_email_key')) !== -1){
+                        msgErorr = "Email en uso, Intenta con otro ya que no fue modificado."
+                        notification_msg.textContent = msgErorr;
+                    }
                 }
             }
         )
@@ -78,8 +98,24 @@ updatePassBtn.addEventListener("click",(e)=>{
     try{
         axios.post("../controllers/updateDataUsers/updatePass.php",infoPass).then(
             res=> {
-                console.log(res);
-                window.location.href="/login";
+                let msgNotifiPass = res.data.msg;
+                if(res.status==200 && !msgNotifiPass){
+                    window.location.href="/login";
+                }else{
+                    notification_container.classList.add("error");
+                    notification_container.style.display = "flex";
+                    setTimeout(() => {
+                        notification_container.style.top = "11vh";
+                        notification_container.style.opacity = "100%";
+                        setTimeout(() => {
+                            notification_container.style.opacity = "0";
+                            setTimeout(()=>{
+                                notification_container.style.display = "none";
+                            },1000)
+                        }, 5000);
+                    }, 1000);
+                    notification_msg.textContent = msgNotifiPass;
+                }
             }
         )
     }catch(e){

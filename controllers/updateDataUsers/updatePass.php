@@ -41,6 +41,6 @@
             echo "Failed: " . $e->getMessage();
         }
     }else{
-        echo "contraseñas incorrectas";
+        echo json_encode(array("msg"=>"Verificación de contraseña fallido"));
     }
 ?>

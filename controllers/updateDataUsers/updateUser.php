@@ -44,6 +44,7 @@ session_start();
             $_SESSION['twitter']=$req_info->twitter;
         }catch(Exception $e){
             $conn->rollBack();
-            echo http_response_code(400);
+            echo json_encode(array("msg"=>$e));
+            exit;
         }
 ?>
