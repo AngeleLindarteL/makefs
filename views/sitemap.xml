@@ -21,7 +21,11 @@
 	</url>
 
 	<url>
+<<<<<<< HEAD
 		<loc>https://makefs.site/categories</loc>
+=======
+		<loc>https://makefs.site/category</loc>
+>>>>>>> 859fc997f9143214e2e03a60555f12034500b8e4
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.7</priority>
@@ -42,7 +46,7 @@
 	</url>
 
     <url>
-		<loc>https://makefs.site/user</loc>
+		<loc>https://makefs.site/library</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
@@ -56,28 +60,28 @@
 	</url>
 
     <url>
-		<loc>makefs location user-view</loc>
+		<loc>https://makefs.site/user</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.3</priority>
 	</url>
 
     <url>
-		<loc>makefs location newRecipe</loc>
+		<loc>https://makefs.site/newrecipe</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
     <url>
-		<loc>makefs location editRecipe</loc>
+		<loc>https://makefs.site/editrecipe</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.2</priority>
 	</url>
 
     <url>
-		<loc>makefs location error</loc>
+		<loc>https://makefs.site/error</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>yearly</changefreq>
 		<priority>0.1</priority>

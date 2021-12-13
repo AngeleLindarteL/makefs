@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../views/css/DarkEdit.css">
     <link rel="stylesheet" href="../views/css/DarkMenu.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
     <?php
         include('views/components/sessionControl.php');
         include("views/components/tokenControl.php");
@@ -267,11 +267,12 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="../views/js/DarkModeMenu.js"></script>
+    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
     <script src="../views/js/editRecipe.js"></script>
     <script src="../views/js/axiosEditRecipe.js"></script>
+    <script src="../views/js/darkModeM.js"></script>
     <script src="../views/js/mediaPlayer.js"></script>
     <script src="../views/js/DarkModeEdit.js"></script>
 </body>

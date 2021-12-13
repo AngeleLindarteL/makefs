@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tus recetas guardadas para despues cocinarlas!">
     <meta name="robots" content="index, follow">
-    <link rel="icon" type="image/png" sizes="96x96" href="../views/favicon/makefslogo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
     <title>Tu biblioteca Makefs</title>
     <link href="../views/css/normalize.css" rel="stylesheet">
     <link href="../views/css/chef-index.css" rel="stylesheet">
@@ -234,11 +234,12 @@
     <?php
         include("./views/components/footer.php");
     ?>
-    <script src="../views/js/DarkModeMenu.js"></script>
+    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/library.js"></script>
     <script src="../views/js/DarkModeLibrary.js"></script>
-<script src="../views/js/preloader.js"></script>
+    <script src="../views/js/preloader.js"></script>
+    <script src="../views/js/darkModeM.js"></script>
 </body>
 </html>

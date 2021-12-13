@@ -46,16 +46,16 @@ const videoInteractionsViews = document.querySelector("#makefs-video-views");
 stepsButton.style.display = "none";
 // Action functions -----------------------------------------------------
 
-url = null;
-newChef = null;
+let urlTo = null;
+let newChef = null;
 
 axios.get(`https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`)
 .then(res =>{
     if (res.data.data.isReported == false){
-        url = `https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`;
+        urlTo = `https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`;
         newChef = false;
     }else if(res.data.data == false){
-        url = `https://makefsapi.herokuapp.com/user/${followerid}/chefs`;
+        urlTo = `https://makefsapi.herokuapp.com/user/${followerid}/chefs`;
         newChef = true;
     }
 })
@@ -90,7 +90,7 @@ sendTimeBeacon = () => {
         }).then(res => {
             console.log(res)
         })
-        axios.post(url,{
+        axios.post(urlTo,{
             "chefID": newChef === true ? chefid : null,
             "viewedTime": videoPlayerProperties.watchedTime,
             "rate": recipeProperties.rate,

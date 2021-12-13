@@ -14,6 +14,7 @@ ECHO <<<EOT
   <title>Error 404</title>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="$viewsUrl/style.css">
+  <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
   <link rel="stylesheet" href="$viewsUrl/css/error.css">
 </head>
 <body>

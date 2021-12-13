@@ -1,1 +1,2 @@
-Sitemap: sitiodondequedeMakefs/sitemap.xml
+Sitemap: https//:makefs.site/sitemap.xml
+Sitemap: /sitemap.xml

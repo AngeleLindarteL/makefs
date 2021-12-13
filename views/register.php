@@ -74,6 +74,7 @@
             EOT;
         }
     ?>
+    <script src="views/js/defineUrl.js"></script>
     <script src="views/js/DarkRegister.js"></script>
 </body>
 </html>
