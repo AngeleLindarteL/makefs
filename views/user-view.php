@@ -166,7 +166,6 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="views/js/DarkModeMenu.js"></script>
     <script src="views/js/index.js"></script>
     <script src="views/js/chef-view.js"></script>
     <script src="views/js/menuDesplegable.js"></script>
@@ -174,5 +173,7 @@
     <script src="views/js/upload_pic_user_view.js"></script>
     <script src="views/js/axiosUser.js"></script>
     <script src="views/js/DarkModeUser.js"></script>
+    <script src="views/js/DarkModeMenu.js"></script>
+    <script src="views/js/defineUrl.js"></script>
 </body>
 </html>

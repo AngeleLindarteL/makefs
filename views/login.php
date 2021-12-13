@@ -73,6 +73,7 @@
             }
         }
     ?>
+    <script src="views/js/defineUrl.js"></script>
     <script src="views/js/logNotifications.js"></script>
     <script src="views/js/DarkLogin.js"></script>
 </body>
