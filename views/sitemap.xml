@@ -1,55 +1,55 @@
 <urlset>
 	<url>
-		<loc>makefs location index</loc>
+		<loc>https://makefs.site</loc>
 		<lastmod>2021-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1</priority>
 	</url>
 
 	<url>
-		<loc>makefs location login</loc>
+		<loc>https://makefs.site/login</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
 	</url>
 
 	<url>
-		<loc>makefs location register</loc>
+		<loc>https://makefs.site/register</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.8</priority>
 	</url>
 
 	<url>
-		<loc>makefs location category</loc>
+		<loc>https://makefs.site/categories</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.7</priority>
 	</url>
 
 	<url>
-		<loc>makefs location search</loc>
+		<loc>https://makefs.site/search</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.7</priority>
 	</url>
 
     <url>
-		<loc>makefs location chef-view</loc>
+		<loc>https://makefs.site/chef</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 
     <url>
-		<loc>makefs location library</loc>
+		<loc>https://makefs.site/user</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
 
     <url>
-		<loc>makefs location ddr</loc>
+		<loc>https://makefs.site/recipe</loc>
 		<lastmod>2009-12-09</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.5</priority>
