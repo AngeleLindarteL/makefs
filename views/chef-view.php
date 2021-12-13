@@ -272,7 +272,7 @@
             <div class="divChef-view" id="firstdiv-chef">
                 <figure class="profile-pic-chef" id="change-chef-info-pic">
                         <img class="profile-pic-img-chef" src="../mediaDB/usersImg/<?php echo $res['midpic']; ?>" alt="imagen de usuario">
-                        <img class="verified-chef" src="../views/img/chef-verified.png" alt="verificacion">
+                        <?php if($isVerify){ echo "<img class='verified' src='../views/img/chef-verified.png' alt='verificacion'> ";} ?>
                         <button id="profile-edit-photo"></button>
                 </figure>
                 <section class="divChef-view" id="cambiarFoto-chef">
