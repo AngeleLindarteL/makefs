@@ -128,13 +128,13 @@
     <?php
         include('views/components/footer.php');
     ?>
+    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
     <script src="../views/js/darkModeSe.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/preloader.js"></script>
     <script src="../views/js/darkModeMenu.js"></script>
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../../views/js/responsiveCategoriesOutIndex.js"></script>
 </body>
 </html>

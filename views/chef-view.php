@@ -375,6 +375,7 @@
         }
     ?>
     
+    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/chef-view.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
@@ -382,7 +383,6 @@
     <script src="../views/js/darkMode.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/DarkModeMenu.js"></script>
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/preloader.js"></script>
 </body>
 </html>

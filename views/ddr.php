@@ -558,6 +558,7 @@
             EOT;
         }
     ?>
+    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/ddr.js"></script>
     <script src="../views/js/followUnloged.js"></script>
@@ -566,7 +567,6 @@
     <script src="../views/js/DarkModeddr.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/DarkModeMenu.js"></script>
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../../views/js/responsiveCategoriesOutIndex.js"></script>
 <script src="../views/js/preloader.js"></script>
 </body>
