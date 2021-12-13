@@ -101,7 +101,7 @@
                             </a>
                             <div class="next-text-recipe Whiterecipe">
                                 <img src="../mediaDB/usersImg/$minpic" alt="imagen de usuario">
-                                <a href="./chef-view.php?chef=$chefid" target="__blank">
+                                <a href="/chef/$chefid" target="__blank">
                                     <h3 class='text-template'>$recetaname</h3>
                                     <p>$username</p>
                                         <p>$views Views</p>
