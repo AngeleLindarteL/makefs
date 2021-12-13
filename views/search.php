@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Busqueda de lo que requieras cocinar">
-    <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../views/favicon/makefslogo.png">
     <script src="../views/js/defineUrl.js"></script>
     <link href="../views/css/normalize.css" rel="stylesheet">
     <link href="../views/css/chef-index.css" rel="stylesheet">
@@ -101,7 +101,7 @@
                             </a>
                             <div class="next-text-recipe Whiterecipe">
                                 <img src="../mediaDB/usersImg/$minpic" alt="imagen de usuario">
-                                <a href="./chef-view.php?chef=$chefid" target="__blank">
+                                <a href="/chef/$chefid" target="__blank">
                                     <h3 class='text-template'>$recetaname</h3>
                                     <p>$username</p>
                                         <p>$views Views</p>
