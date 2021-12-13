@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="../../views/css/footer.css">
         <link rel="stylesheet" href="../../views/css/DarkMenu.css">
         <link rel="stylesheet" href="../../views/css/Preloader.css">
+        <script src="../../views/js/defineUrl.js"></script>
         <meta name="description" content="Aprende a cocinar, realiza todo tipo de preparaciones">
         <meta name="robots" content="index, follow">
 
@@ -160,7 +161,6 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="../../views/js/defineUrl.js"></script>
     <script src="../../views/js/index.js"></script>
     <script src="../../views/js/menuDesplegable.js"></script>
     <script src="../../views/js/darkModeIndex.js"></script>

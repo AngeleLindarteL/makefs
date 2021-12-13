@@ -8,6 +8,7 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
     <title>Tu biblioteca Makefs</title>
+    <script src="../views/js/defineUrl.js"></script>
     <link href="../views/css/normalize.css" rel="stylesheet">
     <link href="../views/css/chef-index.css" rel="stylesheet">
     <link href="../views/css/header.css" rel="stylesheet">
@@ -234,7 +235,6 @@
     <?php
         include("./views/components/footer.php");
     ?>
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/library.js"></script>

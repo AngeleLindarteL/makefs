@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="views/css/notificationsLog.css">
     <link rel="stylesheet" href="views/css/DarkRegister.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
-
+    <script src="views/js/defineUrl.js"></script>
     <title>Register - Makefs</title>
     <?php
         include('views/components/sessionControlUnloged.php');
@@ -74,7 +74,6 @@
             EOT;
         }
     ?>
-    <script src="views/js/defineUrl.js"></script>
     <script src="views/js/DarkRegister.js"></script>
 </body>
 </html>

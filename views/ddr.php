@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../views/css/Preloader.css">
     <meta name="description" content="Mira la preparacion de tu receta que deseas aprender y aprende a cocinar">
     <meta name="robots" content="index, follow">
-
+    <script src="../views/js/defineUrl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         let recipeProperties = {
@@ -558,7 +558,6 @@
             EOT;
         }
     ?>
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/ddr.js"></script>
     <script src="../views/js/followUnloged.js"></script>
