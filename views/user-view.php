@@ -13,6 +13,7 @@
     <link href="views/css/notifications.css" rel="stylesheet">
     <link href="views/css/DarkUser.css" rel="stylesheet">
     <link href="views/css/DarkMenu.css" rel="stylesheet">
+    <script src="views/js/defineUrl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="description" content="Tu perfil Makefs, mira tu informacion personal y modificala">
     <meta name="robots" content="index, follow">
@@ -166,7 +167,6 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="views/js/defineUrl.js"></script>
     <script src="views/js/index.js"></script>
     <script src="views/js/chef-view.js"></script>
     <script src="views/js/menuDesplegable.js"></script>

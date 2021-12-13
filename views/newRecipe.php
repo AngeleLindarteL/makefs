@@ -15,6 +15,7 @@
     <link href="views/css/notifications.css" rel="stylesheet">
     <link href="views/css/DarkRecipe.css" rel="stylesheet">
     <link href="views/css/DarkMenu.css" rel="stylesheet">
+    <script src="views/js/defineUrl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
     <?php
@@ -134,7 +135,6 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="views/js/defineUrl.js"></script>
     <script src="views/js/index.js"></script>
     <script src="views/js/menuDesplegable.js"></script>
     <script src="views/js/newRecipe.js"></script>

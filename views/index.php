@@ -9,6 +9,7 @@
         <link href="views/css/chef-index.css" rel="stylesheet">
         <link href="views/css/header.css" rel="stylesheet">
         <link href="views/css/DarkModeIndex.css" rel="stylesheet">
+        <script src="views/js/defineUrl.js"></script>
         <link rel="stylesheet" href="views/css/footer.css">
         <link rel="stylesheet" href="views/css/DarkMenu.css">
         <link rel="stylesheet" href="views/css/Preloader.css">
@@ -209,7 +210,6 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="views/js/defineUrl.js"></script>
     <script src="views/js/index.js"></script>
     <script src="views/js/darkModeIndex.js"></script>
     <script src="views/js/DarkLoader.js"></script>

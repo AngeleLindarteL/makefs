@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Busqueda de lo que requieras cocinar">
     <link rel="icon" type="image/png" sizes="96x96" href="views/favicon/makefslogo.png">
+    <script src="../views/js/defineUrl.js"></script>
     <link href="../views/css/normalize.css" rel="stylesheet">
     <link href="../views/css/chef-index.css" rel="stylesheet">
     <link href="../views/css/header.css" rel="stylesheet">
@@ -128,7 +129,6 @@
     <?php
         include('views/components/footer.php');
     ?>
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
     <script src="../views/js/darkModeSe.js"></script>

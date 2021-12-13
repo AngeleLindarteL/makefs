@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../views/css/Preloader.css">
     <meta name="description" content="Perfil de chef!, mira las mejores recetas de nuestros chefs.">
     <meta name="robots" content="index, follow">
-
+    <script src="../views/js/defineUrl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Makefs Perfil Chef!</title>
     <?php
@@ -375,7 +375,6 @@
         }
     ?>
     
-    <script src="../views/js/defineUrl.js"></script>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/chef-view.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
