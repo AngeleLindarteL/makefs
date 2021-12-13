@@ -1008,6 +1008,7 @@ section{
     .categoryDiv{
         width: 25%;
         margin-bottom: 1%;
+        height: 10vh;
     }
     #btnCategoriesShow{
         bottom: 1.2vh;

@@ -127,11 +127,11 @@
                     echo <<<EOT
                         <div class="recipe-template">
                             <a class="image-template" href="/recipe/$recipe->recipeid">
-                                <img src="mediaDB/recipeImages/$recipe->imagen alt="recetas comida">
+                                <img src="../../mediaDB/recipeImages/$recipe->imagen" alt="recetas comida">
                                 <figure class="star-template WhiteStar"><img src="../../views/img/hico-star-red.png" alt="estrellas de valoracion"><b id="starCount">$recipe->rate</b></figure>
                             </a>
                             <div class="next-text-recipe WhiteModeP">
-                                <img src="../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
+                                <img src="../../mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
                                 <a href="/chef/$recipe->chefid">
                                     <h3 class="text-template">$title</h3>
                                     <p>$chefname</p>
