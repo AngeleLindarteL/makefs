@@ -38,7 +38,7 @@ modoOscuro.addEventListener("click", (e)  =>{
         let wimg = document.querySelectorAll('.Whiteimgr');
 
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src=  viewsUrl+"./iconos/clear.svg";
+        imagentb.src=  viewsUrl+"/iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         seccion.classList.replace('WhiteSection','DarkSection');
         manyinputs.forEach(inpu => {

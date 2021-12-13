@@ -33,7 +33,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src= viewsUrl+"./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         Chefcont.classList.replace('WhiteChefcont','DarkChefcont');
         labeluser.forEach(label => {
@@ -48,7 +48,7 @@ modoOscuro.addEventListener("click", (e)  =>{
         })
     }else{
         localStorage.setItem("Theme", "claro");
-        imagentb.src= viewsUrl+"./iconos/moon.svg";
+        imagentb.src= viewsUrl+"/iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');
         Chefcont.classList.replace('DarkChefcont','WhiteChefcont');
         labeluser.forEach(label => {

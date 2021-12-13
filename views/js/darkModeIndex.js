@@ -35,7 +35,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src= viewsUrl+"./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         BannerDown.classList.replace('WhiteModeCategories','DarkModeCategories');
         BannersubDown.forEach(subcategories=>{

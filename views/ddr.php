@@ -565,7 +565,7 @@
     <script src="../views/js/menuDesplegable.js"></script>
     <script src="../views/js/DarkModeddr.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
-    <script src="../views/js/darkModeM.js"></script>
+    <script src="../views/js/DarkModeM.js"></script>
     <script src="../../views/js/responsiveCategoriesOutIndex.js"></script>
 <script src="../views/js/preloader.js"></script>
 </body>

@@ -30,7 +30,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src= viewsUrl+"./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         bodylib.classList.replace('White', 'DarkModeBody');
         welcome.classList.replace('WhiteWellib','DarkWellib');
         recipetitle.classList.replace('WhiteRecipelib','DarkRecipelib');
