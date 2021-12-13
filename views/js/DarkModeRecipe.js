@@ -39,7 +39,7 @@ modoOscuro.addEventListener("click", (e)  =>{
 
         localStorage.setItem("Theme", "oscuro");
         isDark = true;
-        imagentb.src= viewsUrl+"./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         seccion.classList.replace('WhiteSection','DarkSection');
         manyinputs.forEach(inpu => {
@@ -62,7 +62,7 @@ modoOscuro.addEventListener("click", (e)  =>{
 
         localStorage.setItem("Theme", "claro");
         isDark = false;
-        imagentb.src= viewsUrl+"./iconos/moon.svg";
+        imagentb.src= viewsUrl+"/iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');
         seccion.classList.replace('DarkSection','WhiteSection');
         manyinputs.forEach(inpu => {

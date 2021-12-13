@@ -49,7 +49,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src=  viewsUrl+"./iconos/clear.svg";
+        imagentb.src=  viewsUrl+"/iconos/clear.svg";
         bodyddr.classList.replace('White', 'DarkModeBody');
         pselector.forEach(parrafo => {
             parrafo.classList.replace('WhiteModeP', 'DarkModeP');

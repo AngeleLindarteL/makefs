@@ -41,7 +41,7 @@ modoOscuro.addEventListener("click", (e)  =>{
     e.preventDefault();
     if(localStorage.getItem("Theme") == "claro"){
         localStorage.setItem("Theme", "oscuro");
-        imagentb.src= viewsUrl+"./iconos/clear.svg";
+        imagentb.src= viewsUrl+"/iconos/clear.svg";
         body.classList.replace('White', 'DarkModeBody');
         star.forEach(sta => {
             sta.classList.replace('WhiteStar', 'DarkStar');
@@ -64,7 +64,7 @@ modoOscuro.addEventListener("click", (e)  =>{
         })
     }else{
         localStorage.setItem("Theme", "claro");
-        imagentb.src= viewsUrl+"./iconos/moon.svg";
+        imagentb.src= viewsUrl+"/iconos/moon.svg";
         body.classList.replace('DarkModeBody','White');
         star.forEach(sta => {
             sta.classList.replace('DarkStar','WhiteStar');

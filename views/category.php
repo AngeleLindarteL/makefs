@@ -166,7 +166,7 @@
     <script src="../../views/js/darkModeIndex.js"></script>
     <script src="../../views/js/DarkLoader.js"></script>
     <script src="../../views/js/preloader.js"></script>
-    <script src="../../views/js/darkModeM.js"></script>
+    <script src="../../views/js/DarkModeM.js"></script>
     <script src="../../views/js/responsiveCategoriesOutIndex.js"></script>
     </body>
 </html>
