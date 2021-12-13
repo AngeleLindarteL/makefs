@@ -240,6 +240,6 @@
     <script src="../views/js/library.js"></script>
     <script src="../views/js/DarkModeLibrary.js"></script>
     <script src="../views/js/preloader.js"></script>
-    <script src="../views/js/DarkModeMenu.js"></script>
+    <script src="../views/js/darkModeM.js"></script>
 </body>
 </html>

@@ -134,7 +134,7 @@
     <script src="../views/js/darkModeSe.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/preloader.js"></script>
-    <script src="../views/js/darkModeMenu.js"></script>
+    <script src="../views/js/darkModeM.js"></script>
     <script src="../../views/js/responsiveCategoriesOutIndex.js"></script>
 </body>
 </html>

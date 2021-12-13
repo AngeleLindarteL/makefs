@@ -382,7 +382,7 @@
     <script src="../views/js/followUnloged.js"></script>
     <script src="../views/js/darkMode.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
-    <script src="../views/js/DarkModeMenu.js"></script>
+    <script src="../views/js/darkModeM.js"></script>
     <script src="../views/js/preloader.js"></script>
 </body>
 </html>

@@ -215,7 +215,7 @@
     <script src="views/js/DarkLoader.js"></script>
     <script src="views/js/preloader.js"></script>
     <script src="views/js/menuDesplegable.js"></script>
-    <script src="views/js/DarkModeMenu.js"></script>
+    <script src="views/js/darkModeM.js"></script>
     <script src="views/js/responsiveCategories.js"></script>
     </body>
 </html>

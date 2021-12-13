@@ -174,6 +174,6 @@
     <script src="views/js/upload_pic_user_view.js"></script>
     <script src="views/js/axiosUser.js"></script>
     <script src="views/js/DarkModeUser.js"></script>
-    <script src="views/js/DarkModeMenu.js"></script>
+    <script src="views/js/darkModeM.js"></script>
 </body>
 </html>
