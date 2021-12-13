@@ -131,7 +131,7 @@
     ?>
     <script src="../views/js/index.js"></script>
     <script src="../views/js/menuDesplegable.js"></script>
-    <script src="../views/js/darkModeSe.js"></script>
+    <script src="../views/js/DarkModeSe.js"></script>
     <script src="../views/js/DarkLoader.js"></script>
     <script src="../views/js/preloader.js"></script>
     <script src="../views/js/DarkModeM.js"></script>
