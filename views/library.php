@@ -132,6 +132,8 @@
                             print_r($e);
                             exit;
                         }
+                        $average = number_format($average,1);
+
                         echo <<< EOT
                         <div class="recipe-template">
                             <a class="image-template" href="/recipe/$recipeid">
@@ -140,11 +142,13 @@
                             </a>
                             <div class="next-text-recipe whiterecipet">
                                 <img src="../mediaDB/usersImg/$midpic" alt="imagen de usuario">
-                                <a href="./chef/$chefid" target="__blank">
-                                     <h3 class='text-template'>$recetaname</h3>
-                                     <p>$username</p>
+                                <div>
+                                    <a href="/recipe/$recipeid"><h3 class="text-template">$recetaname</h3></a>
+                                    <a href="/chef/$chefid" target="__blank">
+                                        <p>$username</p>
                                         <p>$views Views</p>
                                     </a>
+                                </div>
                             </div>
                             <button class="del-bookshelf" library_id="$recipeid" chefName="$username" recipeTitle="$recetaname" picDir="../mediaDB/recipeImages/$imagen" position_in_library="$i"></button>
                             </a>
@@ -181,6 +185,7 @@
                             $midpic = $dataAll[$i]['minpic'];
                             $chefid = $dataAll[$i]['chefid'];
                             $recetaname = test_input($dataAll[$i]['namer']);
+                            
                             $username = test_input($dataAll[$i]['username']);
                             if($i<=2){
                                 continue;
@@ -200,6 +205,7 @@
                                 print_r($e);
                                 exit;
                             }
+                            $average = number_format($average,1);
                             echo <<< EOT
                             <div class="recipe-template">
                                 <a class="image-template" href="./ddr.php?video=$recipeid" target="__blank">
@@ -208,13 +214,13 @@
                                 </a>
                                 <div class="next-text-recipe whiterecipet">
                                     <img src="../mediaDB/usersImg/$midpic" alt="imagen de usuario">
-                                    <a href="./chef-view.php?chef=$chefid" target="__blank">
-                            EOT;
-                                        echo "<h3 class='text-template'>$recetaname</h3>";
-                                        echo "<p>$username</p>";
-                            echo <<<EOT
+                                    <div>
+                                        <a href="/recipe/$recipeid"><h3 class="text-template">$recetaname</h3></a>
+                                        <a href="/chef/$chefid" target="__blank">
+                                            <p>$username</p>
                                             <p>$views Views</p>
                                         </a>
+                                    </div>
                                 </div>
                                 <button class="del-bookshelf" library_id="$recipeid" chefName="$username" recipeTitle="$recetaname" picDir="../mediaDB/recipeImages/$imagen" position_in_library="$i"></button>
                                 </a>    

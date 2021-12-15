@@ -5,7 +5,7 @@ let buttonGoToLog = document.querySelector("#logRedirect")
 
 buttonGoToLog.addEventListener("click", (e)=>{
     e.preventDefault();
-    window.location.href="../views/login.php";
+    window.location.href="/login";
 })
 
 btnFollowUnloged.addEventListener("click",(e)=>{

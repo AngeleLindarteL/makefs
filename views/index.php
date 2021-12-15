@@ -181,11 +181,13 @@
                                 </a>
                                 <div class="next-text-recipe WhiteModeP">
                                     <img src="mediaDB/usersImg/$recipe->chefpic" alt="imagen de usuario">
-                                    <a href="/chef/$recipe->chefid">
-                                        <h3 class="text-template">$title</h3>
-                                        <p>$chefname</p>
-                                        <p>$recipe->views Views</p>
-                                    </a>
+                                    <div>
+                                        <a href="/recipe/$recipe->recipeid"><h3 class="text-template">$title</h3></a>
+                                        <a href="/chef/$recipe->chefid">
+                                            <p>$chefname</p>
+                                            <p>$recipe->views Views</p>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         EOT;

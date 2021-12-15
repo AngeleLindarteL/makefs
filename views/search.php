@@ -101,11 +101,13 @@
                             </a>
                             <div class="next-text-recipe Whiterecipe">
                                 <img src="../mediaDB/usersImg/$minpic" alt="imagen de usuario">
-                                <a href="/chef/$chefid" target="__blank">
-                                    <h3 class='text-template'>$recetaname</h3>
-                                    <p>$username</p>
+                                <div>
+                                    <a href="/recipe/$recipeid"><h3 class="text-template">$recetaname</h3></a>
+                                    <a href="/chef/$chefid" target="__blank">
+                                        <p>$username</p>
                                         <p>$views Views</p>
                                     </a>
+                                </div>
                             </div>
                             </a>
                             

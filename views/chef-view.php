@@ -222,6 +222,9 @@
                         }else{
                             $isPrivate = false;
                         }
+                    $tittle = test_input($dataRecipes['namer']);
+                    $rate = number_format($dataRecipes['rate']);
+                    $username = test_input($res['username']);
                         echo <<<EOT
                             <div class="recipe-template editable-recipe">
                                 <a class="image-template" href="/recipe/$dataRecipes[recipeid]">
@@ -230,13 +233,13 @@
                                 </a>
                                 <div class="next-text-recipe WhiteModeP">
                                     <img src="../mediaDB/usersImg/$res[midpic]" alt="imagen de usuario">
-                                    <a href="/chef/$res[chefid]">
-                            EOT;
-                                    echo "<h3 class='text-template'>".test_input($dataRecipes['namer'])."</h3>";
-                                    echo "<p>".test_input($res['username'])."</p>";
-                        echo <<<EOT
-                                        <p>$dataRecipes[views] Views</p>
-                                    </a>
+                                    <div>
+                                        <a href="/recipe/$dataRecipes[recipeid]"><h3 class="text-template">$tittle</h3></a>
+                                        <a href="/chef/$res[chefid]">
+                                            <p>$username</p>
+                                            <p>$dataRecipes[views] Views</p>
+                                        </a>
+                                    </div>
                             </div>
                         EOT;
                             if($isTheChef){ echo "<a class='edit-template' href='/editrecipe/$dataRecipes[recipeid]' ></a>";}
