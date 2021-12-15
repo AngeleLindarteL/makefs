@@ -10,7 +10,7 @@
     <title>Tu biblioteca Makefs</title>
     <script src="../views/js/defineUrl.js"></script>
     <link href="../views/css/normalize.css" rel="stylesheet">
-    <link href="../views/css/chef-index.css" rel="stylesheet">
+    <link href="../views/css/chefinx.css" rel="stylesheet">
     <link href="../views/css/header.css" rel="stylesheet">
     <link href="../views/css/footer.css" rel="stylesheet">
     <link href="../views/css/notifications.css" rel="stylesheet">

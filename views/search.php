@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="../views/favicon/makefslogo.png">
     <script src="../views/js/defineUrl.js"></script>
     <link href="../views/css/normalize.css" rel="stylesheet">
-    <link href="../views/css/chef-index.css" rel="stylesheet">
+    <link href="../views/css/chefinx.css" rel="stylesheet">
     <link href="../views/css/header.css" rel="stylesheet">
     <link href="../views/css/DarkModeSe.css" rel="stylesheet">
     <link href="../views/css/DarkMenu.css" rel="stylesheet">

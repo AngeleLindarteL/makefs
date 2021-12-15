@@ -7,7 +7,7 @@
     <meta name="description" content="Crea una nueva receta para la comunidad!">
     <meta name="robots" content="index, follow">
     <title>Nueva Receta! Makefs</title>
-    <link rel="stylesheet" href="views/css/chef-index.css">
+    <link rel="stylesheet" href="views/css/chefinx.css">
     <link rel="stylesheet" href="views/css/normalize.css">
     <link rel="stylesheet" href="views/css/newRecipeCss.css">
     <link rel="stylesheet" href="views/css/footer.css">

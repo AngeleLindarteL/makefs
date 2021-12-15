@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow">
     <title>Editando Receta</title>
     <link rel="stylesheet" href="../views/css/normalize.css">
-    <link rel="stylesheet" href="../views/css/chef-index.css">
+    <link rel="stylesheet" href="../views/css/chefinx.css">
     <link rel="stylesheet" href="../views/css/newRecipeCss.css">
     <link rel="stylesheet" href="../views/css/newRecipeEdit.css">
     <link rel="stylesheet" href="../views/css/header.css">
