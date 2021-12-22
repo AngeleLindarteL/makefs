@@ -159,10 +159,6 @@
 
             $response = json_decode(curl_exec($ch));
             curl_close($ch);
-
-            if ($response->status == 200){
-                # code...
-            }
         } catch (Exception $th) {
             print_r($th);
         }

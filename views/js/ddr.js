@@ -46,19 +46,7 @@ const videoInteractionsViews = document.querySelector("#makefs-video-views");
 stepsButton.style.display = "none";
 // Action functions -----------------------------------------------------
 
-let urlTo = null;
-let newChef = null;
-
-axios.get(`https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`)
-.then(res =>{
-    if (res.data.data.isReported == false){
-        urlTo = `https://makefsapi.herokuapp.com/user/${followerid}/chefs/${chefid}`;
-        newChef = false;
-    }else if(res.data.data == false){
-        urlTo = `https://makefsapi.herokuapp.com/user/${followerid}/chefs`;
-        newChef = true;
-    }
-})
+urlTo = `https://makefsapi.herokuapp.com/user/${followerid}/chefs`;
 
 let interval = {
     isActive: false,
@@ -84,14 +72,14 @@ let videoPlayerProperties = {
 sendTimeBeacon = () => {
     if (videoPlayerProperties.watchedTime > 5 || (duration < 5 && videoPlayerProperties.watchedTime > duration / 2)) {
         axios.post(`https://makefsapi.herokuapp.com/user/${followerid}/vr`,{
-            "recipeID": videoID,
+            "recipeid": videoID,
             "viewedSeconds": videoPlayerProperties.watchedTime,
             "videoDuration": duration
         }).then(res => {
             console.log(res)
         })
         axios.post(urlTo,{
-            "chefID": newChef === true ? chefid : null,
+            "chefid": chefid,
             "viewedTime": videoPlayerProperties.watchedTime,
             "rate": recipeProperties.rate,
             "savedRecipes": recipeProperties.savedrecipes,
